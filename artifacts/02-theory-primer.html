@@ -1,4 +1,4 @@
-<title>Causal Memory · 02 The Machinery</title>
+<title>因果记忆 · 02 理论机制</title>
 <style>
 /* ============================================================
    CAUSAL MEMORY — shared design system (kit v1)
@@ -6,8 +6,9 @@
    Accent = carrier teal (the color the papers use for memory).
    ============================================================ */
 :root{
-  --font-serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Charter,Georgia,Cambria,'Times New Roman',serif;
-  --font-mono:ui-monospace,'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',Menlo,Consolas,'Liberation Mono',monospace;
+  --font-serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Charter,Georgia,Cambria,'Times New Roman','Songti SC','Songti TC','Noto Serif CJK SC','Source Han Serif SC','Source Han Serif CN',STSong,SimSun,serif;
+  --font-mono:ui-monospace,'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',Menlo,Consolas,'Liberation Mono','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',monospace;
+  --font-cjk-serif:'Songti SC','Noto Serif CJK SC','Source Han Serif SC',STSong,SimSun,serif;
 
   --paper:#F1F5F4;
   --surface:#FBFCFC;
@@ -237,12 +238,12 @@ svg .amark-c{fill:var(--carrier)}
 
 <div class="topbar">
   <div class="topbar-in">
-    <span class="brand"><b>Causal&nbsp;Memory</b><span class="brand-extra"> · a research program</span></span>
-    <nav class="series" aria-label="Series">
-      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720">01 Overview</a>
-      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb" aria-current="page">02 Theory</a>
-      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f">03 Formulation</a>
-      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201">04 Plan</a>
+    <span class="brand"><b>因果记忆</b><span class="brand-extra"> · 一项研究计划</span></span>
+    <nav class="series" aria-label="系列导航">
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720">01 总览</a>
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb" aria-current="page">02 理论</a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f">03 表述</a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201">04 计划</a>
     </nav>
   </div>
 </div>
@@ -252,14 +253,14 @@ svg .amark-c{fill:var(--carrier)}
   <div class="hero-in">
     <div class="kicker">
       <span class="num">02 / 04</span>
-      <span class="eyebrow">The machinery</span>
+      <span class="eyebrow">理论机制</span>
     </div>
-    <h1 class="title">The theory you need, <span class="q">from square one</span>.</h1>
-    <p class="subtitle">Everything the formulation leans on — structural causal models, reading independence off a graph, identifiability, and the one confound that can fake memory — taught in the order the argument uses it.</p>
+    <h1 class="title">你所需的理论，<span class="q">从零开始</span>。</h1>
+    <p class="subtitle">该表述所依赖的一切——结构因果模型、从图上读出独立性、可辨识性，以及那个能够伪装成记忆的混淆——都按论证使用它们的顺序讲授。</p>
     <div class="byline">
-      <span><span class="dot"></span> assumes ML and RL</span>
-      <span>no prior causal formalism required</span>
-      <span>read it once, top to bottom</span>
+      <span><span class="dot"></span> 假定读者了解 ML 与 RL</span>
+      <span>无需任何因果形式化基础</span>
+      <span>读一遍，自上而下</span>
     </div>
   </div>
 </header>
@@ -269,16 +270,16 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ============ SCMs ============ -->
 <section class="band">
   <div class="wrap stack">
-    <p class="eyebrow">Structural causal models</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">A graph that answers "what if", not just "what co-occurs"</h2>
-    <p>A structural causal model is a set of variables, a DAG <span class="m">G</span> over them, and one assignment per variable, <span class="m">V<span class="fn" style="font-size:.8em">i</span></span> = <span class="m fn">f<span style="font-size:.8em">i</span></span>(<span class="op">Pa</span>(<span class="m">V<span class="fn" style="font-size:.8em">i</span></span>), <span class="m">ε<span class="fn" style="font-size:.8em">i</span></span>), where the parents <span class="op">Pa</span>(<span class="m">V<span class="fn" style="font-size:.8em">i</span></span>) are the nodes with edges pointing into <span class="m">V<span class="fn" style="font-size:.8em">i</span></span> — its direct causes — and the noises are mutually independent. It entails a distribution <span class="m">P</span> — but it is more than a distribution: the intervention <span class="op">do</span>(<span class="m">V<span class="fn" style="font-size:.8em">i</span></span> := <span class="m">v</span>) deletes that variable's assignment, fixes it to <span class="m">v</span>, and leaves every other mechanism untouched — graphically, it cuts all edges <em>into</em> the variable.</p>
-    <p>That is why an edge here is a claim about what happens under manipulation, not about correlation. The memory-carrier definition is deliberately stated with <span class="op">do</span>(·) for exactly this reason: it builds the confabulation test into the concept itself.</p>
+    <p class="eyebrow">结构因果模型</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">一张回答“如果……会怎样”而非只是“什么与什么共现”的图</h2>
+    <p>结构因果模型由一组变量、这些变量上的一个 DAG <span class="m">G</span>，以及每个变量对应的一个赋值 <span class="m">V<span class="fn" style="font-size:.8em">i</span></span> = <span class="m fn">f<span style="font-size:.8em">i</span></span>(<span class="op">Pa</span>(<span class="m">V<span class="fn" style="font-size:.8em">i</span></span>), <span class="m">ε<span class="fn" style="font-size:.8em">i</span></span>) 组成，其中父节点 <span class="op">Pa</span>(<span class="m">V<span class="fn" style="font-size:.8em">i</span></span>) 是指向 <span class="m">V<span class="fn" style="font-size:.8em">i</span></span> 的节点——即其直接原因——且各噪声相互独立。它蕴含一个分布 <span class="m">P</span>——但它不止是一个分布：干预 <span class="op">do</span>(<span class="m">V<span class="fn" style="font-size:.8em">i</span></span> := <span class="m">v</span>) 会删除该变量的赋值，将其固定为 <span class="m">v</span>，并保持其余每个机制不变——从图上看，它切断所有<em>指入</em>该变量的边。</p>
+    <p>这正是为什么这里的一条边是关于操纵之下会发生什么的主张，而非关于相关性的主张。记忆载体的定义特意用 <span class="op">do</span>(·) 陈述，正是出于这个原因：它把虚构测试内建进了概念本身。</p>
   </div>
 
   <div class="wrap">
     <figure>
       <div class="fig">
-        <svg viewBox="0 0 700 250" role="img" aria-label="The three path motifs: chain X to Z to Y, fork X from Z to Y, and collider X to Z from Y, with the blocking rule for each.">
+        <svg viewBox="0 0 700 250" role="img" aria-label="三种路径模体：链 X 到 Z 到 Y、叉 X 从 Z 到 Y、对撞节点 X 到 Z 从 Y，并给出各自的阻断规则。">
           <defs>
             <marker id="m2a" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker>
           </defs>
@@ -289,8 +290,8 @@ svg .amark-c{fill:var(--carrier)}
             <circle class="node" cx="260" cy="42" r="18"/><text class="node-lbl" x="260" y="47" text-anchor="middle">Y</text>
             <path class="edge" d="M58,42 L131,42" marker-end="url(#m2a)"/>
             <path class="edge" d="M168,42 L241,42" marker-end="url(#m2a)"/>
-            <text class="cap-c" x="300" y="38" style="font-size:12px">chain</text>
-            <text class="cap" x="300" y="54">open by default · blocked when Z ∈ S</text>
+            <text class="cap-c" x="300" y="38" style="font-size:12px">链</text>
+            <text class="cap" x="300" y="54">默认开放 · 当 Z ∈ S 时被阻断</text>
           </g>
           <!-- fork -->
           <g>
@@ -299,8 +300,8 @@ svg .amark-c{fill:var(--carrier)}
             <circle class="node" cx="260" cy="125" r="18"/><text class="node-lbl" x="260" y="130" text-anchor="middle">Y</text>
             <path class="edge" d="M132,125 L59,125" marker-end="url(#m2a)"/>
             <path class="edge" d="M168,125 L241,125" marker-end="url(#m2a)"/>
-            <text class="cap-c" x="300" y="121" style="font-size:12px">fork</text>
-            <text class="cap" x="300" y="137">open by default · blocked when Z ∈ S</text>
+            <text class="cap-c" x="300" y="121" style="font-size:12px">叉</text>
+            <text class="cap" x="300" y="137">默认开放 · 当 Z ∈ S 时被阻断</text>
           </g>
           <!-- collider -->
           <g>
@@ -309,23 +310,23 @@ svg .amark-c{fill:var(--carrier)}
             <circle class="node" cx="260" cy="208" r="18"/><text class="node-lbl" x="260" y="213" text-anchor="middle">Y</text>
             <path class="edge" d="M58,208 L131,208" marker-end="url(#m2a)"/>
             <path class="edge" d="M242,208 L169,208" marker-end="url(#m2a)"/>
-            <text class="cap-c" x="300" y="204" style="font-size:12px">collider</text>
-            <text class="cap" x="300" y="220" fill="var(--rose)" style="font-size:10px">blocked by default · OPENED when Z or a descendant ∈ S</text>
+            <text class="cap-c" x="300" y="204" style="font-size:12px">对撞节点</text>
+            <text class="cap" x="300" y="220" fill="var(--rose)" style="font-size:10px">默认被阻断 · 当 Z 或其后代 ∈ S 时被打开</text>
           </g>
         </svg>
       </div>
-      <figcaption><b>The three path motifs.</b> Whether a path transmits dependence given a conditioning set <span class="m">S</span> is decided locally at each intermediate node. Every d-separation argument in the project — the frontier lemma, the selection construction — reduces to these three rules. The collider is the dangerous one: conditioning on it <em>creates</em> dependence.</figcaption>
+      <figcaption><b>三种路径模体。</b>给定条件集 <span class="m">S</span>，一条路径是否传递依赖，是在每个中间节点上局部地决定的。项目中每一个 d-分离论证——前沿引理、选择构造——都归结为这三条规则。对撞节点是危险的那个：对它取条件<em>制造</em>依赖。</figcaption>
     </figure>
   </div>
 
   <div class="wrap stack">
-    <h3 style="font-size:1.15rem;margin-top:.5rem">Markov and faithfulness — and why the project needs both directions</h3>
-    <p>Two bridge assumptions connect graph and distribution, and you must know which claim uses which, because Yujia will ask.</p>
+    <h3 style="font-size:1.15rem;margin-top:.5rem">马尔可夫与忠实性——以及为什么项目两个方向都需要</h3>
+    <p>两条桥梁假设把图与分布连接起来，你必须清楚哪个主张用的是哪一条，因为 Yujia 会问。</p>
     <div class="grid two">
-      <div class="card stack"><span class="tag">Markov</span><p>d-separation in <span class="m">G</span> <span class="op">⟹</span> independence in <span class="m">P</span>. The <em>sufficiency</em> half of the frontier lemma (the frontier screens off the rest of the past) uses only this.</p></div>
-      <div class="card stack"><span class="tag">Faithfulness</span><p>independence in <span class="m">P</span> <span class="op">⟹</span> d-separation in <span class="m">G</span> — no accidental cancellations manufacture independences. The <em>minimality</em> half (every separating set contains the frontier) needs this, because it argues from an active path to an actual dependence.</p></div>
+      <div class="card stack"><span class="tag">马尔可夫</span><p><span class="m">G</span> 中的 d-分离 <span class="op">⟹</span> <span class="m">P</span> 中的独立。前沿引理的<em>充分性</em>那一半（前沿屏蔽掉其余的过去）只用到这一条。</p></div>
+      <div class="card stack"><span class="tag">忠实性</span><p><span class="m">P</span> 中的独立 <span class="op">⟹</span> <span class="m">G</span> 中的 d-分离——没有偶然抵消制造出独立性。<em>极小性</em>那一半（每个分离集都包含前沿）需要它，因为它从一条活跃路径论证到一个真实存在的依赖。</p></div>
     </div>
-    <p class="small">Keep the population / estimation split sharp: faithfulness can hold exactly for the true model while conditional-independence <em>tests</em> still fail in practice. That gap is precisely what near-deterministic holds do — and it is the Layer-1 shadow of the whole identifiability story.</p>
+    <p class="small">把总体 / 估计的区分保持得清晰：忠实性可以对真实模型精确成立，而条件独立<em>检验</em>在实践中仍然失败。这一落差恰恰就是近乎确定性的保持所导致的——而它正是整个可辨识性故事在第一层的投影。</p>
   </div>
 </section>
 
@@ -334,14 +335,14 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ============ TEMPORAL SCMs ============ -->
 <section class="band">
   <div class="wrap stack">
-    <p class="eyebrow">Temporal SCMs</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">The unrolled graph</h2>
-    <p>Index variables by time. The <strong>unrolled graph</strong> has one node per variable per timestep, with edges from lagged parents and optionally instantaneous edges inside a slice. This project works on the unrolled graph — not the time-collapsed summary graph — because memory is precisely a claim about <em>which</em> timesteps depend on which.</p>
+    <p class="eyebrow">时序 SCM</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">展开图</h2>
+    <p>用时间给变量加下标。<strong>展开图</strong>为每个变量在每个时间步各设一个节点，边来自滞后父节点，并可选地在同一时间切片内含瞬时边。本项目工作在展开图上——而非时间坍缩的汇总图上——因为记忆恰恰是关于<em>哪些</em>时间步依赖于哪些时间步的主张。</p>
   </div>
   <div class="wrap">
     <figure>
       <div class="fig">
-        <svg viewBox="0 0 640 240" role="img" aria-label="An unrolled temporal SCM across three timeslices with lag-1 edges and one instantaneous edge; a bracket marks the analysis window W.">
+        <svg viewBox="0 0 640 240" role="img" aria-label="跨三个时间切片的展开时序 SCM，含滞后-1 边与一条瞬时边；一个括号标出分析窗口 W。">
           <defs><marker id="m2b" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker>
           <marker id="m2c" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="amark-c"/></marker></defs>
           <g>
@@ -371,14 +372,14 @@ svg .amark-c{fill:var(--carrier)}
             <path class="edge" d="M317,180 L543,180" marker-end="url(#m2b)"/>
             <!-- instantaneous -->
             <path class="edge-c" style="stroke-dasharray:4 3" d="M300,57 C270,80 270,90 300,93" marker-end="url(#m2c)"/>
-            <text class="cap-c" x="238" y="80">instantaneous</text>
+            <text class="cap-c" x="238" y="80">瞬时</text>
             <!-- window bracket -->
             <path class="edge" style="stroke-dasharray:3 3" d="M43,205 L43,225 L317,225 L317,205"/>
-            <text class="cap" x="180" y="240" text-anchor="middle">window W · engineering threshold, swept — never a theoretical bound</text>
+            <text class="cap" x="180" y="240" text-anchor="middle">窗口 W · 工程阈值，需扫描 —— 绝非理论界</text>
           </g>
         </svg>
       </div>
-      <figcaption><b>An unrolled temporal SCM</b> with lag-1 edges (solid) and one instantaneous edge (dashed teal). The arrow of time orients every lagged edge for free — a large practical gift to discovery. The regime process <span class="m">u<span class="fn" style="font-size:.8em">t</span></span> (values like <span class="mono">write</span>, <span class="mono">hold</span>, <span class="mono">read</span>) gates which edges are active while the graph itself stays time-invariant.</figcaption>
+      <figcaption><b>一个展开时序 SCM</b>，含滞后-1 边（实线）与一条瞬时边（青色虚线）。时间之箭免费地为每一条滞后边定向——这对发现是一份巨大的实践馈赠。区制过程 <span class="m">u<span class="fn" style="font-size:.8em">t</span></span>（取值如 <span class="mono">write</span>、<span class="mono">hold</span>、<span class="mono">read</span>）门控哪些边处于活跃状态，而图本身保持时不变。</figcaption>
     </figure>
   </div>
 </section>
@@ -388,20 +389,20 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ============ DISCOVERY ============ -->
 <section class="band">
   <div class="wrap stack">
-    <p class="eyebrow">Layer 1's toolbox</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">Causal discovery in practice</h2>
-    <p>All four algorithms take trajectories of <em>observed</em> variables and return a graph over time-indexed nodes.</p>
+    <p class="eyebrow">第一层的工具箱</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">因果发现在实践中</h2>
+    <p>全部四种算法都接收<em>观测</em>变量的轨迹，并返回一张以时间下标节点为节点的图。</p>
     <div class="grid two">
-      <div class="card stack"><span class="tag">PC · PC-stable</span><p>Test independence for growing conditioning sets, delete accepted edges, orient v-structures. In time series the arrow of time orients all lagged edges for free.</p></div>
-      <div class="card stack"><span class="tag">PCMCI⁺</span><p>PC engineered for autocorrelated series: a condition-selection stage finds each variable's lagged parents so the final tests keep power. The Layer-1 workhorse in E0.</p></div>
-      <div class="card accent stack"><span class="tag">CD-NOD</span><p>Adds the context index — for us, the regime <span class="m">u<span class="fn" style="font-size:.8em">t</span></span> — as an observed node. Given gated stationarity, this is the most natural fit of the three; say so if asked.</p></div>
-      <div class="card stack"><span class="tag">DYNOTEARS</span><p>Score-based: continuous optimization of adjacency matrices under an acyclicity penalty. Fast, but its guarantees lean on parametric assumptions — treat it as a cross-check.</p></div>
+      <div class="card stack"><span class="tag">PC · PC-stable</span><p>对逐渐增大的条件集检验独立性，删除被接受的边，为 v-结构定向。在时间序列中，时间之箭免费地为所有滞后边定向。</p></div>
+      <div class="card stack"><span class="tag">PCMCI⁺</span><p>为自相关序列而工程化的 PC：一个条件选择阶段找出每个变量的滞后父节点，使最终的检验保持功效。E0 中第一层的主力。</p></div>
+      <div class="card accent stack"><span class="tag">CD-NOD</span><p>把上下文索引——对我们而言即区制 <span class="m">u<span class="fn" style="font-size:.8em">t</span></span>——加入为一个观测节点。在门控平稳性下，这是三者中最自然的契合；若被问到，就这么说。</p></div>
+      <div class="card stack"><span class="tag">DYNOTEARS</span><p>基于评分：在无环性惩罚下对邻接矩阵做连续优化。快，但其保证依赖参数化假设——把它当作一次交叉核对。</p></div>
     </div>
-    <p style="margin-top:.4rem">What matters for memory is what each assumption <em>failure</em> looks like in the output, because the first experiment is designed to elicit exactly these signatures:</p>
+    <p style="margin-top:.4rem">对记忆而言真正要紧的，是每个假设<em>失效</em>时在输出中呈现的样子，因为第一个实验正是为诱发这些特征而设计的：</p>
     <ul class="stack" style="padding-left:1.1rem;margin:0">
-      <li><strong>Frozen-variable regime (F1).</strong> When <span class="m">m<span class="fn" style="font-size:.8em">t</span></span> ≈ <span class="m">m<span class="fn" style="font-size:.8em">t−1</span></span>, tests conditioning on its past value can't tell it from a constant. Precisely the variables doing the memorizing are the ones discovery sees worst — <em>mid-hold</em>. Recovery concentrates at write/read boundaries, where events inject variance. That asymmetry is Prediction P1.</li>
-      <li><strong>Latent confounder (F4).</strong> Clusters of spurious edges among the confounded variables.</li>
-      <li><strong>Selection (F2).</strong> Confident edges between jointly-selected variables, with no carrier in the true graph.</li>
+      <li><strong>冻结变量区制（F1）。</strong>当 <span class="m">m<span class="fn" style="font-size:.8em">t</span></span> ≈ <span class="m">m<span class="fn" style="font-size:.8em">t−1</span></span> 时，以其过去取值为条件的检验无法把它与一个常数区分开来。恰恰是那些正在做记忆工作的变量，是发现看得最差的——<em>保持中段</em>。恢复集中在写入/读出边界处，那里事件注入方差。这种不对称性即预测 P1。</li>
+      <li><strong>潜混淆因子（F4）。</strong>在被混淆的变量之间出现成簇的伪边。</li>
+      <li><strong>选择（F2）。</strong>在被联合选择的变量之间出现自信的边，而真实图中并无载体。</li>
     </ul>
   </div>
 </section>
@@ -411,14 +412,14 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ============ IDENTIFIABILITY (the heart) ============ -->
 <section class="band">
   <div class="wrap stack">
-    <p class="eyebrow">The heart of the background · read twice</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">Causal representation learning and identifiability</h2>
-    <p>Suppose observations are generated as <span class="m">x</span> = <span class="m fn">g</span>(<span class="m">z</span>) with <span class="m fn">g</span> unknown and invertible, and all you are given is <span class="m">P</span>(<span class="m">x</span>). Then for <em>any</em> invertible map <span class="m fn">h</span>, the alternative model <span class="m">ẑ</span> = <span class="m fn">h</span>(<span class="m">z</span>), <span class="m">ĝ</span> = <span class="m fn">g</span> ∘ <span class="m fn">h</span><sup>−1</sup> produces exactly the same <span class="m">P</span>(<span class="m">x</span>). Recovering <span class="m">z</span> is not merely hard — without further structure it is <em>meaningless</em>: infinitely many latent descriptions are observationally indistinguishable.</p>
+    <p class="eyebrow">背景的核心 · 读两遍</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">因果表示学习与可辨识性</h2>
+    <p>设观测由 <span class="m">x</span> = <span class="m fn">g</span>(<span class="m">z</span>) 生成，其中 <span class="m fn">g</span> 未知且可逆，而你所拥有的一切只是 <span class="m">P</span>(<span class="m">x</span>)。那么对<em>任意</em>可逆映射 <span class="m fn">h</span>，替代模型 <span class="m">ẑ</span> = <span class="m fn">h</span>(<span class="m">z</span>)、<span class="m">ĝ</span> = <span class="m fn">g</span> ∘ <span class="m fn">h</span><sup>−1</sup> 都产生完全相同的 <span class="m">P</span>(<span class="m">x</span>)。恢复 <span class="m">z</span> 不仅仅是困难——在没有进一步结构的情况下它是<em>无意义的</em>：有无穷多个潜变量描述在观测上无法区分。</p>
   </div>
   <div class="wrap">
     <figure>
       <div class="fig">
-        <svg viewBox="0 0 620 210" role="img" aria-label="The fundamental indeterminacy: z maps to x via g, and z-hat equals h of z maps to x via g composed with h-inverse; both generate the same distribution of x.">
+        <svg viewBox="0 0 620 210" role="img" aria-label="根本性的不确定性：z 经 g 映射到 x，而 z-hat 等于 h 作用于 z 后经 g 与 h-逆的复合映射到 x；两者生成相同的 x 分布。">
           <defs><marker id="m2d" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker>
           <marker id="m2e" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="amark"/></marker></defs>
           <circle class="node" cx="70" cy="45" r="24"/><text class="node-lbl" x="70" y="50" text-anchor="middle">z</text>
@@ -428,37 +429,37 @@ svg .amark-c{fill:var(--carrier)}
           <path class="edge" d="M98,150 L306,112" marker-end="url(#m2d)"/><text class="cap" x="185" y="150">ĝ = g ∘ h⁻¹</text>
           <path class="edge-c" style="stroke-dasharray:4 3" d="M70,71 L70,128"/>
           <path class="amark-c" d="M66,74 l4,-8 l4,8 z"/><path class="amark-c" d="M66,125 l4,8 l4,-8 z"/>
-          <text class="cap-c" x="80" y="104">h · any invertible map</text>
-          <text class="cap" x="380" y="90" style="font-size:12px">Both models generate the same P(x).</text>
-          <text class="cap" x="380" y="108" style="font-size:12px">Identifiability = shrinking the set of</text>
-          <text class="cap" x="380" y="126" style="font-size:12px">compatible h to a harmless group.</text>
+          <text class="cap-c" x="80" y="104">h · 任意可逆映射</text>
+          <text class="cap" x="380" y="90" style="font-size:12px">两个模型生成相同的 P(x)。</text>
+          <text class="cap" x="380" y="108" style="font-size:12px">可辨识性 = 把兼容的 h 之集</text>
+          <text class="cap" x="380" y="126" style="font-size:12px">收缩为一个无害的群。</text>
         </svg>
       </div>
-      <figcaption><b>The fundamental indeterminacy</b>, and the definition of identifiability as symmetry reduction. Every identifiability theorem says: <em>within a restricted model class, the set of compatible <span class="m fn">h</span> shrinks from "all invertible maps" to something harmless.</em></figcaption>
+      <figcaption><b>根本性的不确定性</b>，以及把可辨识性定义为对称性约减。每一个可辨识性定理都在说：<em>在一个受限的模型类之内，兼容的 <span class="m fn">h</span> 之集从“所有可逆映射”收缩为某个无害的东西。</em></figcaption>
     </figure>
   </div>
 
   <div class="wrap stack">
-    <h3 style="font-size:1.15rem">Identifiability classes, in decreasing strength</h3>
+    <h3 style="font-size:1.15rem">可辨识性等级，按强度递减</h3>
     <div class="certs">
-      <div class="cert"><span class="rn">A</span><div><h4>Component-wise — the gold standard</h4><p><span class="m">ẑ</span> equals <span class="m">z</span> up to a permutation of coordinates and an invertible scalar per coordinate. This is what "the agent memorized the true value" means formally — certificate (i) of trustworthy memory.</p></div></div>
-      <div class="cert"><span class="rn">B</span><div><h4>Block-wise</h4><p>A known group of coordinates is recovered up to an invertible transform of the whole block: you know <em>where</em> the information lives, but not the coordinates within.</p></div></div>
-      <div class="cert"><span class="rn">C</span><div><h4>Set-level</h4><p>Latents are recovered as sets, with guarantees about membership rather than individual coordinates — the natural target where component-wise is provably impossible, and the honest fallback for frozen memory blocks mid-hold.</p></div></div>
+      <div class="cert"><span class="rn">A</span><div><h4>分量级——黄金标准</h4><p><span class="m">ẑ</span> 至多相差各坐标的一个置换与每坐标一个可逆标量地等于 <span class="m">z</span>。这就是“智能体记住了真实取值”的形式化含义——可信记忆的凭证 (i)。</p></div></div>
+      <div class="cert"><span class="rn">B</span><div><h4>块级</h4><p>一组已知坐标被恢复到至多相差整块的一个可逆变换：你知道信息<em>位于何处</em>，但不知道块内的各坐标。</p></div></div>
+      <div class="cert"><span class="rn">C</span><div><h4>集合级</h4><p>潜变量作为集合被恢复，保证的是成员归属而非各个坐标——在分量级可证不可能之处，这是自然的目标，也是保持中段冻结记忆块的诚实退路。</p></div></div>
     </div>
 
-    <blockquote class="pull">Think of the <em>indeterminacy group</em> — the transformations <span class="m fn">h</span> that map solutions to solutions. Identification shrinks it. Memory <em>holds</em> do the opposite: freezing <span class="m">k</span> latents <em>enlarges</em> the group by every invertible mixing of the frozen block. The three mechanisms in the formulation are three ways of shrinking it back down.</blockquote>
+    <blockquote class="pull">把它想成<em>不确定性群</em>——将解映射为解的那些变换 <span class="m fn">h</span>。辨识使其收缩。记忆<em>保持</em>做相反的事：冻结 <span class="m">k</span> 个潜变量会以冻结块的每一个可逆混合<em>扩大</em>该群。表述文档中的三种机制，正是把它重新收缩回去的三种方式。</blockquote>
 
-    <h3 style="font-size:1.15rem">The two classical routes to identification</h3>
+    <h3 style="font-size:1.15rem">通往辨识的两条经典路线</h3>
     <div class="grid two">
-      <div class="card layer stack"><span class="tag">Route 1 · variation</span><p>If the latent prior changes with an observed auxiliary variable <span class="m">u</span> — environment index, regime, timestamp — and the conditionals vary <em>enough</em>, the changes pin down the coordinates. <strong>Identification is purchased with variation.</strong></p></div>
-      <div class="card layer l2 stack"><span class="tag" style="color:var(--amber)">Route 2 · structure</span><p>Yujia's own line: if the mixing or latent graph is sparse and <em>structurally diverse</em>, identification follows from structure alone — even in the Gaussian case where Route 1 is hopeless. <strong>Structurally identical implies indistinguishable.</strong></p></div>
+      <div class="card layer stack"><span class="tag">路线 1 · 变化</span><p>若潜变量先验随一个观测到的辅助变量 <span class="m">u</span>（环境索引、区制、时间戳）而变化，且各条件分布变化得<em>足够多</em>，这些变化便能钉住各坐标。<strong>辨识是用变化换来的。</strong></p></div>
+      <div class="card layer l2 stack"><span class="tag" style="color:var(--amber)">路线 2 · 结构</span><p>Yujia 本人的路线：若混合或潜变量图是稀疏且<em>结构多样</em>的，仅凭结构便可导出辨识——即便在路线 1 全然无望的高斯情形下也是如此。<strong>结构相同意味着无法区分。</strong></p></div>
     </div>
-    <p class="small">That single slogan explains the whole memory difficulty: a frozen coordinate contributes no variation (holds are poison), while a write/read event is a large, localized variation (events are medicine). And two simultaneously frozen items are structurally identical during the hold — which is the capacity limit, in one line.</p>
+    <p class="small">这一句口号就解释了整个记忆难题：一个冻结坐标贡献不出任何变化（保持是毒药），而一个写入/读出事件是一次大而局部的变化（事件是良药）。而两个同时冻结的条目在保持期间是结构相同的——这一行就是容量极限所在。</p>
 
-    <h3 style="font-size:1.15rem;margin-top:.4rem">How recovery is scored</h3>
+    <h3 style="font-size:1.15rem;margin-top:.4rem">恢复如何评分</h3>
     <div class="grid two">
-      <div class="card stack"><span class="tag">MCC</span><p>Best one-to-one matching of absolute correlations between estimated and true latents (Hungarian assignment), averaged. Component-wise identification predicts MCC → 1; a set-identifiable frozen block predicts high <em>block</em>-MCC with low component-wise MCC — and that gap is itself evidence.</p></div>
-      <div class="card stack"><span class="tag">Edge F₁ · SHD</span><p>Graph recovery against the true unrolled adjacency, <em>always split by edge type</em> (write / hold / read) — because the whole point is that recovery is not uniform across the motif.</p></div>
+      <div class="card stack"><span class="tag">MCC</span><p>在估计潜变量与真实潜变量之间，对绝对相关做最优一一匹配（匈牙利指派）后取平均。分量级辨识预测 MCC → 1；一个集合可辨识的冻结块预测高<em>块</em>-MCC 伴随低分量级 MCC——而这一落差本身就是证据。</p></div>
+      <div class="card stack"><span class="tag">边 F₁ · SHD</span><p>针对真实展开邻接的图恢复，<em>始终按边类型拆分</em>（写入 / 保持 / 读出）——因为要点恰在于恢复在模体各处并不均匀。</p></div>
     </div>
   </div>
 </section>
@@ -468,14 +469,14 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ============ SELECTION ============ -->
 <section class="band">
   <div class="wrap stack">
-    <p class="eyebrow">The one confound that can fake memory</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">Selection</h2>
-    <p>Conditioning on a collider creates dependence between its causes. If a selection variable <span class="m">S</span> is computed from both cue and readout and the dataset keeps only <span class="m">S</span>=1 episodes, then <em>inside</em> the dataset the cue and readout are dependent even when <strong>no path</strong> connects them in the true graph. The dependence has no carrier, survives at any lag, and looks exactly like memory to any method that must explain dependence generatively.</p>
+    <p class="eyebrow">那个能伪装成记忆的唯一混淆</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">选择</h2>
+    <p>对一个对撞节点取条件，会在它的诸原因之间制造依赖。若一个选择变量 <span class="m">S</span> 由线索与读出共同计算得来，且数据集只保留 <span class="m">S</span>=1 的幕，那么在数据集<em>内部</em>，线索与读出是相依的——即便真实图中<strong>没有路径</strong>连接它们。这种依赖没有载体，在任意滞后下都存续，并且对任何必须以生成方式解释依赖的方法来说，看起来都与记忆一模一样。</p>
   </div>
   <div class="wrap">
     <figure>
       <div class="fig">
-        <svg viewBox="0 -26 620 246" role="img" aria-label="The selection construction: there is no path from cue to readout; a selection variable S is a collider of both, and conditioning the dataset on S manufactures dependence.">
+        <svg viewBox="0 -26 620 246" role="img" aria-label="选择构造：从线索到读出没有路径；一个选择变量 S 是两者的对撞节点，把数据集以 S 为条件便制造出依赖。">
           <defs><marker id="m2f" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker>
           <marker id="m2g" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto-start-reverse"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--rose)"/></marker></defs>
           <circle class="node" cx="70" cy="55" r="22"/><text class="node-lbl" x="70" y="60" text-anchor="middle">c</text>
@@ -488,26 +489,26 @@ svg .amark-c{fill:var(--carrier)}
           <path class="edge" d="M85,73 C150,120 200,145 250,150" marker-end="url(#m2f)"/>
           <path class="edge" d="M498,77 C470,120 420,145 400,150" marker-end="url(#m2f)"/>
           <path style="stroke:var(--rose);stroke-width:2;stroke-dasharray:5 4;fill:none" d="M90,40 C220,4 402,4 486,40" marker-start="url(#m2g)" marker-end="url(#m2g)"/>
-          <text x="288" y="-12" text-anchor="middle" fill="var(--rose)" style="font-family:var(--font-mono);font-size:11px">induced dependence · no carrier</text>
+          <text x="288" y="-12" text-anchor="middle" fill="var(--rose)" style="font-family:var(--font-mono);font-size:11px">诱导出的依赖 · 无载体</text>
         </svg>
       </div>
-      <figcaption><b>The selection construction.</b> There is no path from cue to readout; conditioning the dataset on the collider-like <span class="m">S</span> manufactures the dependence. Certificate (iii) of trustworthy memory exists to catch exactly this.</figcaption>
+      <figcaption><b>选择构造。</b>从线索到读出没有路径；把数据集以对撞节点式的 <span class="m">S</span> 为条件便制造出该依赖。可信记忆的凭证 (iii) 存在的意义正是为了抓住此类情形。</figcaption>
     </figure>
   </div>
   <div class="wrap stack">
-    <p>This is first-order, not a corner case: agent data is selected on <em>by construction.</em> Imitation keeps successful episodes (selection on return); RLHF filters on preference; and a NeurIPS 2024 result shows subgoal structure in demonstrations <em>is</em> a selection on state–action pairs, formally. So the no-selection assumption is false for precisely the corpora agents are trained on — which is why trustworthy memory carries a certificate that can report <span class="mono">"dependence present, carrier absent, cause: selection."</span></p>
+    <p>这是一阶的事，而非边角情形：智能体数据<em>在构造上</em>就是被选择过的。模仿保留成功的幕（按回报选择）；RLHF 依偏好过滤；而 NeurIPS 2024 的一项结果表明，演示中的子目标结构在形式上<em>就是</em>对状态–动作对的一种选择。因此无选择假设，对智能体所训练的那些语料而言恰恰是假的——这也正是为什么可信记忆携带一个凭证，能够报告 <span class="mono">“依赖存在，载体缺失，成因：选择。”</span></p>
   </div>
 </section>
 
 <!-- ============ NEXT ============ -->
 <section class="band" style="padding-top:.5rem">
   <div class="wrap">
-    <p class="eyebrow">Read in order</p>
-    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem);margin-bottom:.2rem">Next in the series</h2>
+    <p class="eyebrow">按序阅读</p>
+    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem);margin-bottom:.2rem">系列下一篇</h2>
     <div class="next">
-      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720"><span class="n">01 · Overview</span><h4>The thesis</h4><p>The one-paragraph claim, the two layers, trustworthy memory, and why this is not the memory-agent literature.</p></a>
-      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f"><span class="n">03 · Formulation v0.1</span><h4>The numbered claims</h4><p>Now that you have the machinery: assumptions, the frontier lemma with proof, conjectures, predictions, experiments.</p></a>
-      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201"><span class="n">04 · Plan</span><h4>From zero to productive</h4><p>Requirements, status, decision trees, the E0 runbook, risks, and the timeline to the 2027 cycle.</p></a>
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720"><span class="n">01 · 概览</span><h4>论点</h4><p>一段话的主张、两个层次、可信记忆，以及为什么这不是记忆-智能体那套文献。</p></a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f"><span class="n">03 · Formulation v0.1</span><h4>编号化的主张</h4><p>既然你已掌握理论机制：假设、带证明的前沿引理、猜想、预测、实验。</p></a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201"><span class="n">04 · 计划</span><h4>从零到富有成效</h4><p>需求、状态、决策树、E0 操作手册、风险，以及通往 2027 周期的时间线。</p></a>
     </div>
   </div>
 </section>
@@ -517,8 +518,8 @@ svg .amark-c{fill:var(--carrier)}
 
 <footer>
   <div class="foot-in">
-    <b>Causal Memory · Formulation v0.1</b> — Memory as identifiable temporal structure in the data-generating process.<br/>
-    Mian (Nothern) Wu, prepared for step-by-step verification with Yujia Zheng · July 2026.<br/>
-    Part 02 of a four-part series · rendered from <b>causal_memory_formulation.tex</b> and <b>causal_memory_onboarding.tex</b>.
+    <b>因果记忆 · 表述文档 v0.1</b> —— 将记忆定义为数据生成过程中可辨识的时序结构。<br/>
+    Mian (Nothern) Wu 撰写，供与 Yujia Zheng 逐步核验 · 2026 年 7 月。<br/>
+    四部曲之第 02 部 · 由 <b>causal_memory_formulation.tex</b> 与 <b>causal_memory_onboarding.tex</b> 生成。
   </div>
 </footer>

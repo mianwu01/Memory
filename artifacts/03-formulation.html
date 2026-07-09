@@ -1,4 +1,4 @@
-<title>Causal Memory · 03 The Formulation</title>
+<title>因果记忆 · 03 表述文档</title>
 <style>
 /* ============================================================
    CAUSAL MEMORY — shared design system (kit v1)
@@ -6,8 +6,9 @@
    Accent = carrier teal (the color the papers use for memory).
    ============================================================ */
 :root{
-  --font-serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Charter,Georgia,Cambria,'Times New Roman',serif;
-  --font-mono:ui-monospace,'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',Menlo,Consolas,'Liberation Mono',monospace;
+  --font-serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Charter,Georgia,Cambria,'Times New Roman','Songti SC','Songti TC','Noto Serif CJK SC','Source Han Serif SC','Source Han Serif CN',STSong,SimSun,serif;
+  --font-mono:ui-monospace,'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',Menlo,Consolas,'Liberation Mono','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',monospace;
+  --font-cjk-serif:'Songti SC','Noto Serif CJK SC','Source Han Serif SC',STSong,SimSun,serif;
 
   --paper:#F1F5F4;
   --surface:#FBFCFC;
@@ -237,12 +238,12 @@ svg .amark-c{fill:var(--carrier)}
 
 <div class="topbar">
   <div class="topbar-in">
-    <span class="brand"><b>Causal&nbsp;Memory</b><span class="brand-extra"> · a research program</span></span>
-    <nav class="series" aria-label="Series">
-      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720">01 Overview</a>
-      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb">02 Theory</a>
-      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f" aria-current="page">03 Formulation</a>
-      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201">04 Plan</a>
+    <span class="brand"><b>因果记忆</b><span class="brand-extra"> · 一项研究计划</span></span>
+    <nav class="series" aria-label="系列导航">
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720">01 总览</a>
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb">02 理论</a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f" aria-current="page">03 表述</a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201">04 计划</a>
     </nav>
   </div>
 </div>
@@ -252,12 +253,12 @@ svg .amark-c{fill:var(--carrier)}
   <div class="hero-in">
     <div class="kicker">
       <span class="num">03 / 04</span>
-      <span class="eyebrow">The formulation · v0.1</span>
+      <span class="eyebrow">表述 · v0.1</span>
     </div>
-    <h1 class="title">Every load-bearing step, <span class="q">numbered to be checked</span>.</h1>
-    <p class="subtitle">Assumptions, definitions, one proved lemma, two conjectures, four falsifiable predictions, and the experiments that stay gated until the document is signed off. Each item can be marked correct, wrong, or needs-rewrite.</p>
+    <h1 class="title">每一个承重步骤，<span class="q">都编号以待核验</span>。</h1>
+    <p class="subtitle">假设、定义、一条已证引理、两个猜想、四个可证伪的预测，以及在文档签署确认前始终处于门控状态的实验。每一条目都可被标记为正确、错误或需重写。</p>
     <div class="byline">
-      <span><span class="dot"></span> A · assumptions</span><span>D · definitions</span><span>P · predictions</span><span>Q · questions</span>
+      <span><span class="dot"></span> A · 假设</span><span>D · 定义</span><span>P · 预测</span><span>Q · 问题</span>
     </div>
   </div>
 </header>
@@ -267,13 +268,13 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===== SETUP ===== -->
 <section class="band">
   <div class="wrap stack">
-    <p class="eyebrow">Formal setup</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">The temporal SCM and its three observation models</h2>
-    <p>Latent state <span class="m">z<span class="fn" style="font-size:.8em">t</span></span> ∈ ℝ<sup>n</sup> evolves over an episode with structural assignments <span class="m">z<span class="fn" style="font-size:.8em">t,i</span></span> = <span class="m fn">f<span style="font-size:.8em">i</span></span>(<span class="op">Pa</span>(<span class="m">z<span class="fn" style="font-size:.8em">t,i</span></span>), <span class="m">ε<span class="fn" style="font-size:.8em">t,i</span></span>), parents drawn from lags 0…<span class="m">L</span>, the instantaneous part acyclic, noises mutually independent. Nonstationarity enters only through an observed regime process that gates edge activations — so discrete events (a write, a read) live inside a stationary model.</p>
+    <p class="eyebrow">形式化设定</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">时序 SCM 及其三种观测模型</h2>
+    <p>潜变量状态 <span class="m">z<span class="fn" style="font-size:.8em">t</span></span> ∈ ℝ<sup>n</sup> 在一幕中依结构赋值 <span class="m">z<span class="fn" style="font-size:.8em">t,i</span></span> = <span class="m fn">f<span style="font-size:.8em">i</span></span>(<span class="op">Pa</span>(<span class="m">z<span class="fn" style="font-size:.8em">t,i</span></span>), <span class="m">ε<span class="fn" style="font-size:.8em">t,i</span></span>) 演化，父节点取自滞后 0…<span class="m">L</span>，瞬时部分无环，噪声相互独立。非平稳性仅通过一个门控边激活的可观测区制过程进入——因此离散事件（一次写入、一次读取）栖居于平稳模型之内。</p>
     <div class="grid three">
-      <div class="card stack"><span class="tag">O1 · Layer 1</span><p>The latents <em>are</em> the observations, <span class="m">s<span class="fn" style="font-size:.8em">t</span></span> = <span class="m">z<span class="fn" style="font-size:.8em">t</span></span>. No mixing to undo; discovery applies directly.</p></div>
-      <div class="card accent stack"><span class="tag">O2a · internal state</span><p><span class="m">x<span class="fn" style="font-size:.8em">t</span></span> = <span class="m fn">g</span>(<span class="m">z<span class="fn" style="font-size:.8em">t</span></span>), <span class="m fn">g</span> unknown but injective — an agent's own hidden state, which necessarily carries <span class="m">m</span>. The well-posed first target: <em>Program A.</em></p></div>
-      <div class="card stack"><span class="tag">O2b · environmental</span><p>During holds, memory and cue are excluded from what generates <span class="m">x<span class="fn" style="font-size:.8em">t</span></span>. Per-step inversion is impossible in principle — the ambitious extension, <em>Program B.</em></p></div>
+      <div class="card stack"><span class="tag">O1 · 第 1 层</span><p>潜变量<em>即</em>观测，<span class="m">s<span class="fn" style="font-size:.8em">t</span></span> = <span class="m">z<span class="fn" style="font-size:.8em">t</span></span>。无混合需还原；发现方法直接适用。</p></div>
+      <div class="card accent stack"><span class="tag">O2a · 内部状态</span><p><span class="m">x<span class="fn" style="font-size:.8em">t</span></span> = <span class="m fn">g</span>(<span class="m">z<span class="fn" style="font-size:.8em">t</span></span>)，<span class="m fn">g</span> 未知但单射——智能体自身的隐藏状态，其必然携带 <span class="m">m</span>。适定的首要目标：<em>方案 A。</em></p></div>
+      <div class="card stack"><span class="tag">O2b · 环境性</span><p>在保持期间，记忆与线索被排除于生成 <span class="m">x<span class="fn" style="font-size:.8em">t</span></span> 的因素之外。逐步反演在原理上不可能——这是雄心勃勃的扩展，<em>方案 B。</em></p></div>
     </div>
   </div>
 </section>
@@ -284,18 +285,18 @@ svg .amark-c{fill:var(--carrier)}
 <section class="band">
   <div class="wrap">
     <p class="eyebrow">A1 – A9</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">The assumptions, annotated for defense</h2>
-    <p class="small" style="margin-bottom:1.2rem">Each says what it means, why it is there, and — where it matters — the pushback to expect.</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">这些假设，为答辩而注解</h2>
+    <p class="small" style="margin-bottom:1.2rem">每一条都说明其含义、其存在的理由，以及——在关键处——应当预期的质疑。</p>
     <div class="certs">
-      <div class="cert"><span class="rn">A1</span><div><h4>Temporal SCM, max lag <span class="m">L</span></h4><p>Time-indexed SCM, bounded lags, acyclic instantaneous edges. Long-range influence comes precisely <em>through</em> bounded-lag edges — the carrier chain — which is the point of the motif.</p></div></div>
-      <div class="cert"><span class="rn">A2</span><div><h4>Gated stationarity</h4><p>Mechanisms are time-invariant; events enter as an observed regime <span class="m">u<span class="fn" style="font-size:.8em">t</span></span> gating edges. Simultaneously CD-NOD's input format and the auxiliary variable Conjecture 1 leans on. Whether to keep it is <span class="mono">Q1</span>.</p></div></div>
-      <div class="cert"><span class="rn">A3</span><div><h4>Independent noises</h4><p>Mutual independence across components and time, <em>regime-dependent distributions allowed.</em> That "allowed" clause is load-bearing: mechanism (c) needs the freedom to make hold noise non-Gaussian.</p></div></div>
-      <div class="cert"><span class="rn">A4</span><div><h4>Observation models</h4><p>O1 / O2a / O2b as above. O2a is the natural model for analyzing a trained agent's internals; O2b gets its own impossibility-flavored observation rather than being assumed away.</p></div></div>
-      <div class="cert"><span class="rn">A5</span><div><h4>Regimes observed or estimable</h4><p>Event times known in synthetic data, estimable by change-point detection otherwise. A5 gives event <em>times</em>, not content or structure — so it is not circular.</p></div></div>
-      <div class="cert"><span class="rn">A6</span><div><h4>Markov &amp; faithfulness</h4><p>With the caveat stated inside: near-deterministic holds break test <em>power</em>, not the true model's faithfulness. This is what lets Lemma 1 (population) and failure mode F1 (estimation) coexist.</p></div></div>
-      <div class="cert"><span class="rn">A7</span><div><h4>No selection, unless modeled</h4><p>Explicitly <em>false by construction</em> for goal-filtered agent corpora — the reason the selection section exists. Stated as a feature, not softened.</p></div></div>
-      <div class="cert"><span class="rn">A8</span><div><h4>Fixed policy; structure is <span class="m">P<span class="fn" style="font-size:.8em">π</span></span>-relative</h4><p>The recovered graph depends on the behavior policy, since the policy reads memory to act. Whether invariance belongs in the definition is <span class="mono">Q7</span>.</p></div></div>
-      <div class="cert"><span class="rn">A9</span><div><h4>Causal sufficiency (Layer 1)</h4><p>No latent confounders among observed state variables; relaxable to FCI-class methods at the cost of weaker output. Named as failure mode F4.</p></div></div>
+      <div class="cert"><span class="rn">A1</span><div><h4>时序 SCM，最大滞后 <span class="m">L</span></h4><p>时间索引的 SCM，滞后有界，瞬时边无环。长程影响恰恰<em>经由</em>有界滞后边——即载体链——传递，这正是该模体的要义。</p></div></div>
+      <div class="cert"><span class="rn">A2</span><div><h4>门控平稳性</h4><p>机制随时间不变；事件作为门控边的可观测区制 <span class="m">u<span class="fn" style="font-size:.8em">t</span></span> 进入。它同时是 CD-NOD 的输入格式，也是猜想 1 所依赖的辅助变量。是否保留它是 <span class="mono">Q1</span>。</p></div></div>
+      <div class="cert"><span class="rn">A3</span><div><h4>独立噪声</h4><p>跨分量与跨时间相互独立，<em>允许区制相关的分布。</em>那句"允许"是承重的：机制 (c) 需要使保持噪声成为非高斯的自由度。</p></div></div>
+      <div class="cert"><span class="rn">A4</span><div><h4>观测模型</h4><p>如上所述的 O1 / O2a / O2b。O2a 是分析已训练智能体内部状态的自然模型；O2b 则获得其自身带有不可能性色彩的观察，而非被假设掉。</p></div></div>
+      <div class="cert"><span class="rn">A5</span><div><h4>区制可观测或可估计</h4><p>合成数据中事件时刻已知，否则可由变点检测估计。A5 给出的是事件<em>时刻</em>，而非内容或结构——因此并不循环。</p></div></div>
+      <div class="cert"><span class="rn">A6</span><div><h4>马尔可夫与忠实性</h4><p>附有其中所述的告诫：近乎确定性的保持破坏的是检验<em>功效</em>，而非真实模型的忠实性。这正是引理 1（总体）与失效模式 F1（估计）得以共存的原因。</p></div></div>
+      <div class="cert"><span class="rn">A7</span><div><h4>无选择，除非建模</h4><p>对于以目标筛选的智能体语料而言，此假设<em>按构造为假</em>——这正是选择章节存在的理由。作为一项特性陈述，而不加以软化。</p></div></div>
+      <div class="cert"><span class="rn">A8</span><div><h4>固定策略；结构是相对于 <span class="m">P<span class="fn" style="font-size:.8em">π</span></span> 的</h4><p>所恢复的图依赖于行为策略，因为该策略读取记忆以行动。不变性是否应属于定义之内是 <span class="mono">Q7</span>。</p></div></div>
+      <div class="cert"><span class="rn">A9</span><div><h4>因果充分性（第 1 层）</h4><p>观测状态变量之间无潜在混淆因子；可放宽至 FCI 类方法，代价是更弱的输出。命名为失效模式 F4。</p></div></div>
     </div>
   </div>
 </section>
@@ -305,27 +306,27 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===== D1 + LEMMA ===== -->
 <section class="band">
   <div class="wrap stack">
-    <p class="eyebrow">D1 · the memory carrier</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">Why the definition is interventional</h2>
+    <p class="eyebrow">D1 · 记忆载体</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">为何该定义是干预性的</h2>
     <div class="defbox">
-      <span class="tag">Definition D1 — memory carrier</span>
-      <p style="margin:0">The process <span class="m">(m<span class="fn" style="font-size:.8em">s</span>)</span> is a memory carrier for <span class="m">(c<span class="fn" style="font-size:.8em">t₀</span>, y<span class="fn" style="font-size:.8em">t₁</span>)</span> if the long-lag dependence exists <em>and</em> cutting the chain at any hold step by <span class="op">do</span>(<span class="m">m<span class="fn" style="font-size:.8em">s</span></span> := <span class="m">m̃</span>) destroys it — equivalently, every active path from cue to readout passes through the carrier.</p>
+      <span class="tag">定义 D1 —— 记忆载体</span>
+      <p style="margin:0">过程 <span class="m">(m<span class="fn" style="font-size:.8em">s</span>)</span> 是 <span class="m">(c<span class="fn" style="font-size:.8em">t₀</span>, y<span class="fn" style="font-size:.8em">t₁</span>)</span> 的记忆载体，当且仅当长滞后依赖存在<em>且</em>在任一保持步以 <span class="op">do</span>(<span class="m">m<span class="fn" style="font-size:.8em">s</span></span> := <span class="m">m̃</span>) 切断该链会摧毁它——等价地，从线索到读出的每一条活跃路径都经过该载体。</p>
     </div>
-    <p>Two design choices to be able to justify. First, <strong>interventional rather than associational</strong>: association at a lag is exactly what selection can fake, and <span class="op">do</span>(·) is the thing selection cannot fake — so the definition builds the confabulation test into the concept. Second, <strong>quantified over every cross-section</strong>: memory is carried <em>continuously</em> through the hold, so cutting anywhere must sever it. That makes "the carrier" a process, not a single node — the property the gluing step later exploits.</p>
+    <p>有两项设计选择需要能够辩护。其一，<strong>采用干预性而非关联性</strong>：某一滞后处的关联恰恰是选择能够伪造的，而 <span class="op">do</span>(·) 正是选择无法伪造之物——因此该定义将虚构检验内建于概念之中。其二，<strong>对每一个横截面量化</strong>：记忆是贯穿保持<em>连续</em>携带的，故在任一处切断都必须将其斩断。这使"载体"成为一个过程，而非单一节点——正是后续粘合步骤所利用的性质。</p>
   </div>
 
   <div class="wrap stack">
-    <p class="eyebrow">Lemma 1 · the causal frontier</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">The unique minimum memory</h2>
-    <p>The one fully proved result — the anchor of Layer 1. Informally: at any moment there is a unique <em>smallest</em> set of past variables that carries everything the future task needs, and it has a clean graph description.</p>
+    <p class="eyebrow">引理 1 · 因果前沿</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">唯一的最小记忆</h2>
+    <p>这唯一一条得到完整证明的结果——是第 1 层的锚点。通俗地说：在任一时刻，都存在一个唯一的<em>最小</em>过去变量集合，它携带了未来任务所需的一切，并且具有干净的图论刻画。</p>
     <div class="eq">F<span style="font-size:.75em;font-style:normal">t</span>(Y) = { <span class="op">v</span> at time ≤ t : v has a child w at time &gt; t with w ∈ An*(Y) }</div>
-    <p>In words: the past variables that are, right now, <em>one edge away</em> from mattering to the future of the task. Not everything correlated with the future, not all ancestors of <span class="m">Y</span> — the last past layer of the relevant part of the graph.</p>
+    <p>用言语来说：那些此刻<em>距离</em>影响任务未来仅<em>一条边之遥</em>的过去变量。既非一切与未来相关者，也非 <span class="m">Y</span> 的所有祖先——而是图中相关部分的最后一层过去。</p>
   </div>
 
   <div class="wrap">
     <figure>
       <div class="fig">
-        <svg viewBox="0 0 600 260" role="img" aria-label="Worked frontier example over four timesteps with boundary at t=2 and task Y equal to y4. The frontier F2 is m2 and q1, both highlighted.">
+        <svg viewBox="0 0 600 260" role="img" aria-label="跨四个时间步的前沿实例，边界位于 t=2，任务 Y 等于 y4。前沿 F2 为 m2 与 q1，二者均高亮。">
           <defs><marker id="m3a" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker></defs>
           <!-- columns t1..t4 -->
           <!-- c1 -->
@@ -355,34 +356,34 @@ svg .amark-c{fill:var(--carrier)}
           <path class="edge" d="M403,224 L527,224" marker-end="url(#m3a)"/>
           <!-- boundary -->
           <path style="stroke:var(--ink-faint);stroke-width:1.4;stroke-dasharray:5 4" d="M302,18 L302,246"/>
-          <text class="cap" x="302" y="14" text-anchor="middle">now: t = 2</text>
+          <text class="cap" x="302" y="14" text-anchor="middle">当前：t = 2</text>
         </svg>
       </div>
-      <figcaption><b>Worked frontier example</b>, <span class="m">Y</span> = {<span class="m">y₄</span>}. Highlighted nodes form <span class="m">F₂</span> = {<span class="m">m₂</span>, <span class="m">q₁</span>} — two nodes instead of six. <span class="m">m₁</span> is screened by <span class="m">m₂</span> (everything it knew was handed on); <span class="m">d₂</span> has a future child but not one that matters to the task; <span class="m">q₁</span> shows the frontier can reach back <em>past</em> the current slice.</figcaption>
+      <figcaption><b>前沿实例演算</b>，<span class="m">Y</span> = {<span class="m">y₄</span>}。高亮节点构成 <span class="m">F₂</span> = {<span class="m">m₂</span>, <span class="m">q₁</span>}——两个节点而非六个。<span class="m">m₁</span> 被 <span class="m">m₂</span> 屏蔽（它所知的一切都已传递下去）；<span class="m">d₂</span> 有一个未来子节点，但并非对任务重要的那种；<span class="m">q₁</span> 表明前沿可以回溯到当前切片<em>之前</em>。</figcaption>
     </figure>
   </div>
 
   <div class="wrap stack">
-    <h3 style="font-size:1.15rem">The proof, as a story</h3>
-    <p>Two halves, using the two bridge assumptions <em>separately</em> — itself worth saying, because it shows the proof knows what it is spending.</p>
+    <h3 style="font-size:1.15rem">证明，作为一个故事</h3>
+    <p>两个部分，<em>分别</em>使用两条桥接假设——这本身值得一提，因为它表明证明清楚自己在花费什么。</p>
     <div class="grid two">
       <div class="card layer stack">
-        <span class="tag">Sufficiency · Markov only</span>
-        <p>Take any past-to-future path. Edges never point backward in time, so the path crosses the boundary along some <span class="m">v→w</span>, arrowhead on the future node <span class="m">w</span>. Once in the future it can never turn around: turning back makes a future collider, and a collider only opens if it or a descendant is conditioned — but all descendants of future nodes are future, and the conditioning set is entirely past. So the path marches directedly forward to <span class="m">y</span>, making <span class="m">w</span> an ancestor of <span class="m">Y</span> and <span class="m">v ∈ F<span class="fn" style="font-size:.8em">t</span></span>, a non-collider on the path. Condition on the frontier and every such path dies.</p>
+        <span class="tag">充分性 · 仅用马尔可夫</span>
+        <p>取任一从过去到未来的路径。边在时间上从不指向过去，故该路径沿某条 <span class="m">v→w</span> 跨越边界，箭头指向未来节点 <span class="m">w</span>。一旦进入未来便再也无法折返：折回会形成一个未来对撞节点，而对撞节点仅当其自身或某后代被条件化时才开启——但未来节点的所有后代都是未来节点，而条件集完全是过去的。于是该路径沿有向方向前进直至 <span class="m">y</span>，使 <span class="m">w</span> 成为 <span class="m">Y</span> 的祖先、<span class="m">v ∈ F<span class="fn" style="font-size:.8em">t</span></span> 成为路径上的非对撞节点。以前沿为条件，每一条这样的路径都消亡。</p>
       </div>
       <div class="card layer l2 stack">
-        <span class="tag" style="color:var(--amber)">Minimality · faithfulness</span>
-        <p>Take any <span class="m">f ∈ F<span class="fn" style="font-size:.8em">t</span></span> with boundary edge <span class="m">f→w</span> and extend to a directed path <span class="m">f→w→…→y</span>. Every node after <span class="m">f</span> is future, hence outside any past conditioning set; a directed path has no colliders; so if <span class="m">f</span> is not conditioned on, the path is active, and faithfulness upgrades "active" to "actually dependent." Any separating set that omits <span class="m">f</span> fails — so every separating set contains all of the frontier.</p>
+        <span class="tag" style="color:var(--amber)">最小性 · 忠实性</span>
+        <p>取任一带有边界边 <span class="m">f→w</span> 的 <span class="m">f ∈ F<span class="fn" style="font-size:.8em">t</span></span>，并延拓为有向路径 <span class="m">f→w→…→y</span>。<span class="m">f</span> 之后的每个节点都是未来节点，因而落在任何过去条件集之外；有向路径没有对撞节点；故若不以 <span class="m">f</span> 为条件，该路径便是活跃的，而忠实性将"活跃"升级为"实际依赖"。任何遗漏 <span class="m">f</span> 的分离集都会失败——因此每个分离集都包含整个前沿。</p>
       </div>
     </div>
-    <p>Combined: the frontier is not just <em>a</em> minimal separator, it is the unique <em>minimum</em> one — the intersection of all valid memories, and itself valid.</p>
+    <p>合而言之：前沿不仅是<em>某一个</em>最小分离子，它是唯一的<em>最小</em>者——所有有效记忆的交集，且其自身有效。</p>
 
-    <h3 style="font-size:1.15rem;margin-top:.5rem">The corollaries, and what each is for</h3>
+    <h3 style="font-size:1.15rem;margin-top:.5rem">诸推论，及其各自用途</h3>
     <div class="grid two">
-      <div class="card stack"><span class="tag">Planning</span><p>𝔼[φ(<span class="m">Y</span>) | past] = 𝔼[φ(<span class="m">Y</span>) | <span class="m">F<span class="fn" style="font-size:.8em">t</span></span>] — the "conditional set for planning" made exact.</p></div>
-      <div class="card stack"><span class="tag">Online recursion</span><p><span class="m">F<span class="fn" style="font-size:.8em">t+1</span></span> ⊆ <span class="m">F<span class="fn" style="font-size:.8em">t</span></span> ∪ <span class="m">V<span class="fn" style="font-size:.8em">t+1</span></span>: add the new slice, retire nodes whose relevant children have passed. That recursion <em>is</em> an online memory rule with budget <span class="m">|F<span class="fn" style="font-size:.8em">t</span></span>|.</p></div>
-      <div class="card stack"><span class="tag">Task-conditioning</span><p><span class="m">F<span class="fn" style="font-size:.8em">t</span></span> depends on <span class="m">Y</span> and the horizon; different tasks induce different memories — the bridge to generalist-to-specialist.</p></div>
-      <div class="card stack"><span class="tag">Scope</span><p>All of this is about the <em>true</em> graph. Whether the frontier is <em>estimable</em> in memory regimes is what Layer 1 and the first experiment interrogate. Is it the right formal target? — <span class="mono">Q3</span>.</p></div>
+      <div class="card stack"><span class="tag">规划</span><p>𝔼[φ(<span class="m">Y</span>) | past] = 𝔼[φ(<span class="m">Y</span>) | <span class="m">F<span class="fn" style="font-size:.8em">t</span></span>]——将"用于规划的条件集"精确化。</p></div>
+      <div class="card stack"><span class="tag">在线递归</span><p><span class="m">F<span class="fn" style="font-size:.8em">t+1</span></span> ⊆ <span class="m">F<span class="fn" style="font-size:.8em">t</span></span> ∪ <span class="m">V<span class="fn" style="font-size:.8em">t+1</span></span>：加入新切片，退役其相关子节点已过去的节点。该递归<em>即</em>一条预算为 <span class="m">|F<span class="fn" style="font-size:.8em">t</span></span>| 的在线记忆规则。</p></div>
+      <div class="card stack"><span class="tag">任务条件化</span><p><span class="m">F<span class="fn" style="font-size:.8em">t</span></span> 依赖于 <span class="m">Y</span> 与时域；不同任务诱导出不同记忆——这是通向从通才到专才的桥梁。</p></div>
+      <div class="card stack"><span class="tag">适用范围</span><p>所有这些都关乎<em>真实</em>图。前沿在记忆区制下是否<em>可估计</em>，正是第 1 层与首个实验所审视的。它是否为正确的形式化目标？——<span class="mono">Q3</span>。</p></div>
     </div>
   </div>
 </section>
@@ -392,19 +393,19 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===== LAYER 2 ===== -->
 <section class="band">
   <div class="wrap stack">
-    <p class="eyebrow">Layer 2 · the identification story</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">Holds enlarge the symmetry group</h2>
-    <p><strong>Observation 1.</strong> Take <span class="m">k</span> items written together, frozen (<span class="m">σ</span>=0), read together through a shared readout. Then for <em>any</em> invertible <span class="m">R</span> on the block, the substitution <span class="m">m ↦ R(m)</span>, <span class="m">w ↦ R∘w</span>, <span class="m">r ↦ r∘R</span><sup>−1</sup> changes nothing observable — and the hold dynamics survive, because a constant is still a constant after <span class="m">R</span>. Mid-hold, the block is set-identifiable at best. The standard escapes are closed by the regime itself: at <span class="m">σ</span>=0 the transition is a point mass, so IDOL's smooth-density assumption fails outright, and as <span class="m">σ</span>→0 the variability directions tied to <span class="m">m</span> collapse.</p>
+    <p class="eyebrow">第 2 层 · 辨识的故事</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">保持扩大了对称群</h2>
+    <p><strong>观察 1。</strong>取 <span class="m">k</span> 个一同写入、冻结（<span class="m">σ</span>=0）、经共享读出一同读取的条目。那么对块上<em>任意</em>可逆 <span class="m">R</span>，替换 <span class="m">m ↦ R(m)</span>、<span class="m">w ↦ R∘w</span>、<span class="m">r ↦ r∘R</span><sup>−1</sup> 都不改变任何可观测量——而且保持动态存续，因为常数经 <span class="m">R</span> 后仍是常数。保持中段，该块至多是集合可辨识的。标准的逃逸途径被该区制本身封闭：在 <span class="m">σ</span>=0 处转移是一个点质量，故 IDOL 的光滑密度假设彻底失效，而随 <span class="m">σ</span>→0，与 <span class="m">m</span> 绑定的变化方向坍缩。</p>
   </div>
   <div class="wrap">
     <figure>
       <div class="fig">
-        <svg viewBox="0 0 600 200" role="img" aria-label="Observation 1: two cues write into a frozen two-item memory block that is read into a shared readout; any invertible mixing R of the block is observationally equivalent.">
+        <svg viewBox="0 0 600 200" role="img" aria-label="观察 1：两个线索写入一个冻结的双条目记忆块，该块被读入共享读出；块的任意可逆混合 R 在观测上等价。">
           <defs><marker id="m3b" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker></defs>
           <circle class="node" cx="45" cy="60" r="20"/><text class="node-lbl" x="45" y="65" text-anchor="middle">c¹</text>
           <circle class="node" cx="45" cy="140" r="20"/><text class="node-lbl" x="45" y="145" text-anchor="middle">c²</text>
           <rect x="185" y="26" width="150" height="148" rx="12" fill="none" stroke="var(--line-strong)" stroke-dasharray="4 4"/>
-          <text class="cap" x="260" y="20" text-anchor="middle">frozen block · hold, σ = 0</text>
+          <text class="cap" x="260" y="20" text-anchor="middle">冻结块 · 保持，σ = 0</text>
           <circle class="node mem" cx="260" cy="60" r="20"/><text class="node-lbl" x="260" y="65" text-anchor="middle">m¹</text>
           <circle class="node mem" cx="260" cy="140" r="20"/><text class="node-lbl" x="260" y="145" text-anchor="middle">m²</text>
           <circle class="node" cx="440" cy="100" r="22"/><text class="node-lbl" x="440" y="105" text-anchor="middle">y</text>
@@ -413,37 +414,37 @@ svg .amark-c{fill:var(--carrier)}
           <path class="edge" d="M282,66 L420,92" marker-end="url(#m3b)"/>
           <path class="edge" d="M282,134 L420,108" marker-end="url(#m3b)"/>
           <path style="stroke:var(--rose);stroke-width:2;stroke-dasharray:5 4;fill:none" d="M283,66 C315,88 315,112 283,134"/>
-          <text x="330" y="104" fill="var(--rose)" style="font-family:var(--font-mono);font-size:11px">any invertible R</text>
-          <text class="cap" x="478" y="96">absorbed by</text>
+          <text x="330" y="104" fill="var(--rose)" style="font-family:var(--font-mono);font-size:11px">任意可逆 R</text>
+          <text class="cap" x="478" y="96">被吸收进</text>
           <text class="cap" x="478" y="110">w↦R∘w, r↦r∘R⁻¹</text>
         </svg>
       </div>
-      <figcaption><b>Observation 1.</b> Simultaneous write, frozen hold, shared readout: the indeterminacy group contains every invertible mixing of the block, so identification is set-level at best mid-hold. <em>Structurally identical implies indistinguishable.</em></figcaption>
+      <figcaption><b>观察 1。</b>同时写入、冻结保持、共享读出：不确定性群包含该块的每一个可逆混合，故在保持中段辨识至多是集合级的。<em>结构相同即不可区分。</em></figcaption>
     </figure>
   </div>
 
   <div class="wrap stack">
-    <h3 style="font-size:1.15rem">The three mechanisms that shrink the group back</h3>
-    <p class="small">Each kills the rotation by a different argument, and each maps to a dedicated experimental arm.</p>
+    <h3 style="font-size:1.15rem">使该群重新收缩的三种机制</h3>
+    <p class="small">每一种都以不同的论证扼杀旋转，且各自对应一条专门的实验分支。</p>
     <div class="certs">
-      <div class="cert"><span class="rn">a</span><div><h4>Structural diversity of reads</h4><p>Give each item its own read child. Then <span class="m">r∘R</span><sup>−1</sup> densifies the read Jacobian unless <span class="m">R</span> is a permutation-scaling — a sparsity-seeking estimator forces component-wise recovery. <span class="mono small">shared-vs-per-item arm.</span></p></div></div>
-      <div class="cert"><span class="rn">b</span><div><h4>Temporal diversity — staggering</h4><p>Under the gate, <span class="m">(Rm)<span class="fn" style="font-size:.8em">j</span></span> may only change at item <span class="m">j</span>'s own events; distinct write times force <span class="m">R</span> diagonal, else an item would jump when another is written. <span class="mono small">simultaneous-vs-staggered arm.</span></p></div></div>
-      <div class="cert"><span class="rn">c</span><div><h4>Non-Gaussian hold noise</h4><p>With <span class="m">σ</span>&gt;0, transformed innovations must stay independent. Isotropic Gaussian lets every orthogonal <span class="m">R</span> through (the classical failure); non-Gaussian admits only permutation-scalings — the hold noise runs ICA inside the block for free. <span class="mono small">Gaussian-vs-Laplace arm · P4.</span></p></div></div>
+      <div class="cert"><span class="rn">a</span><div><h4>读取的结构多样性</h4><p>给每个条目各自的读取子节点。那么除非 <span class="m">R</span> 是置换–缩放，<span class="m">r∘R</span><sup>−1</sup> 会使读取雅可比稠密化——一个寻求稀疏性的估计器迫使分量级恢复。<span class="mono small">共享 vs 逐条目分支。</span></p></div></div>
+      <div class="cert"><span class="rn">b</span><div><h4>时序多样性——错开</h4><p>在门控下，<span class="m">(Rm)<span class="fn" style="font-size:.8em">j</span></span> 只能在条目 <span class="m">j</span> 自身的事件处改变；不同的写入时刻迫使 <span class="m">R</span> 对角，否则某条目会在另一条目被写入时跳变。<span class="mono small">同时 vs 错开分支。</span></p></div></div>
+      <div class="cert"><span class="rn">c</span><div><h4>非高斯保持噪声</h4><p>当 <span class="m">σ</span>&gt;0 时，变换后的创新量必须保持独立。各向同性高斯放行每一个正交 <span class="m">R</span>（经典失效）；非高斯则只容许置换–缩放——保持噪声在块内免费运行了 ICA。<span class="mono small">高斯 vs 拉普拉斯分支 · P4。</span></p></div></div>
     </div>
 
-    <h3 style="font-size:1.15rem;margin-top:.5rem">Conjecture 1, decomposed by risk</h3>
+    <h3 style="font-size:1.15rem;margin-top:.5rem">猜想 1，按风险分解</h3>
     <div class="grid three">
-      <div class="card stack"><span class="tag">C1a · boundary</span><p>At write/read times, memory components are component-wise identifiable — events are large localized changes, and change is Route-1's currency. <span class="pill done" style="margin-top:.5rem">low risk</span></p></div>
-      <div class="card stack"><span class="tag">C1b · mid-hold</span><p>Within a hold, the frozen block is recoverable as a set, by the set-identifiability machinery applied within regimes. <span class="pill pend" style="margin-top:.5rem">low–med risk</span></p></div>
-      <div class="card stack"><span class="tag">C1c · gluing</span><p>Boundary labels transport through the hold because the transition is diagonal by construction — upgrading set-level to component-wise whenever (a), (b) or (c) holds. <span class="pill block" style="margin-top:.5rem">where a proof most plausibly breaks</span></p></div>
+      <div class="card stack"><span class="tag">C1a · 边界</span><p>在写入/读取时刻，记忆分量是分量级可辨识的——事件是大幅局部化的变化，而变化是路线 1 的硬通货。<span class="pill done" style="margin-top:.5rem">低风险</span></p></div>
+      <div class="card stack"><span class="tag">C1b · 保持中段</span><p>在一次保持内，通过将集合可辨识性机制施加于区制内部，冻结块可作为集合被恢复。<span class="pill pend" style="margin-top:.5rem">低至中风险</span></p></div>
+      <div class="card stack"><span class="tag">C1c · 粘合</span><p>边界标签得以贯穿保持传输，因为转移按构造是对角的——每当 (a)、(b) 或 (c) 成立时，便将集合级升级为分量级。<span class="pill block" style="margin-top:.5rem">证明最有可能失败之处</span></p></div>
     </div>
-    <div class="note"><b>Q2.</b> Is the regime-change + set-identifiability + gluing strategy viable, or is there a cleaner route through the nonparametric-concepts machinery? The gluing step is handed to Yujia with the alternative route pre-named.</div>
+    <div class="note"><b>Q2。</b>区制变化 + 集合可辨识性 + 粘合的策略是否可行，抑或存在一条经由非参数概念机制的更干净的路线？粘合步骤在预先命名了替代路线后交给 Yujia。</div>
 
-    <h3 style="font-size:1.15rem;margin-top:.4rem">Conjecture 2 · capacity is distinguishability</h3>
-    <p>Working-memory capacity limits, in this theory, are not <em>storage</em> limits but <em>identification</em> limits. Simultaneously written, jointly read, Gaussian-held items are indistinguishable within their block no matter how much capacity the substrate has; staggering or structural diversity restores distinguishability item by item.</p>
+    <h3 style="font-size:1.15rem;margin-top:.4rem">猜想 2 · 容量即可区分性</h3>
+    <p>在本理论中，工作记忆的容量上限不是<em>存储</em>上限，而是<em>辨识</em>上限。同时写入、联合读取、以高斯保持的条目，无论底层拥有多大容量，在其块内都不可区分；错开或结构多样性则逐条目地恢复可区分性。</p>
 
-    <h3 style="font-size:1.15rem;margin-top:.4rem">Observation 2 · identifying memory requires memory</h3>
-    <p>Under O2b the cue is visible only at write and <span class="m">m</span> never generates observations during the hold, so mid-hold observations are independent of the memory content: any encoder whose window fails to reach back to the write event outputs a statistic with <span class="m">I</span>(<span class="m">T</span>; <span class="m">m<span class="fn" style="font-size:.8em">s</span></span>) = 0 — chance by construction. The estimator must itself carry information over span ≥ <span class="m">Δ</span>. The neuroscience echo: activity-silent working memory is exactly the O2b regime, a carrier invisible to per-step measurement.</p>
+    <h3 style="font-size:1.15rem;margin-top:.4rem">观察 2 · 辨识记忆需要记忆</h3>
+    <p>在 O2b 下，线索仅在写入时可见，且 <span class="m">m</span> 在保持期间从不生成观测，故保持中段的观测独立于记忆内容：任何其窗口未能回溯到写入事件的编码器，都输出一个满足 <span class="m">I</span>(<span class="m">T</span>; <span class="m">m<span class="fn" style="font-size:.8em">s</span></span>) = 0 的统计量——按构造只有随机水平。估计器自身必须携带信息跨越跨度 ≥ <span class="m">Δ</span>。神经科学的回响：活动静默的工作记忆恰是 O2b 区制，一种对逐步测量而言不可见的载体。</p>
   </div>
 </section>
 
@@ -452,30 +453,30 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===== PREDICTIONS + EXPERIMENTS ===== -->
 <section class="band">
   <div class="wrap">
-    <p class="eyebrow">P1 – P4 · pre-registered &amp; falsifiable</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">The predictions</h2>
+    <p class="eyebrow">P1 – P4 · 预注册且可证伪</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">诸预测</h2>
     <div class="certs">
-      <div class="cert"><span class="rn">P1</span><div><h4>Time-localized recovery</h4><p>Write/read boundaries are recovered markedly better than mid-hold structure, degrading as <span class="m">σ</span>→0 and <span class="m">Δ</span> grows — at both layers.</p></div></div>
-      <div class="cert"><span class="rn">P2</span><div><h4>Selection fakes a memory edge</h4><p>On the selection-only construction, pipelines <em>without</em> the gate assert a spurious long-lag edge; <em>with</em> the gate, dependence is correctly attributed to selection.</p></div></div>
-      <div class="cert"><span class="rn">P3</span><div><h4>Capacity is block-wise</h4><p>Simultaneous <span class="m">k</span>-item recovery is block-wise, not component-wise (within-block MCC near chance under Gaussian noise + shared readout); staggering or distinct read children restores it.</p></div></div>
-      <div class="cert"><span class="rn">P4</span><div><h4>Laplace beats Gaussian</h4><p>With simultaneous events and a shared readout, Laplace hold noise yields higher within-block MCC than Gaussian at matched <span class="m">σ</span> — mechanism (c).</p></div></div>
+      <div class="cert"><span class="rn">P1</span><div><h4>时间局部化的恢复</h4><p>写入/读取边界的恢复显著优于保持中段的结构，并随 <span class="m">σ</span>→0 与 <span class="m">Δ</span> 增大而退化——在两层皆然。</p></div></div>
+      <div class="cert"><span class="rn">P2</span><div><h4>选择伪造出一条记忆边</h4><p>在仅含选择的构造上，<em>不带</em>门控的流水线断言出一条虚假的长滞后边；<em>带</em>门控时，依赖被正确归因于选择。</p></div></div>
+      <div class="cert"><span class="rn">P3</span><div><h4>容量是块级的</h4><p>同时的 <span class="m">k</span> 条目恢复是块级的，而非分量级的（在高斯噪声 + 共享读出下，块内 MCC 接近随机水平）；错开或不同的读取子节点将其恢复。</p></div></div>
+      <div class="cert"><span class="rn">P4</span><div><h4>拉普拉斯胜过高斯</h4><p>在同时事件与共享读出下，于匹配的 <span class="m">σ</span> 处，拉普拉斯保持噪声产生的块内 MCC 高于高斯——机制 (c)。</p></div></div>
     </div>
   </div>
 
   <div class="wrap stack">
-    <p class="eyebrow">The experiments · run only after sign-off</p>
-    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem)">E0 and E1</h2>
+    <p class="eyebrow">诸实验 · 仅在签署确认后运行</p>
+    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem)">E0 与 E1</h2>
     <div class="grid two">
       <div class="card accent stack">
-        <span class="tag">E0 · discovery on the observed motif</span>
-        <p>CPU-only, days. No mixing, no VAE — any failure is attributable to the memory regime itself. Sweep <span class="m">Δ, σ, k</span>, simultaneous vs. staggered, window <span class="m">W</span>. <strong>Pass:</strong> read-edge <span class="m">F₁</span> &gt; 0.7 at (Δ,k,σ)=(10,1,0.01). <strong>Deliverable regardless:</strong> the recovery-frontier heatmap.</p>
+        <span class="tag">E0 · 在可观测模体上做发现</span>
+        <p>仅用 CPU，数天。无混合，无 VAE——任何失效都可归因于记忆区制本身。扫描 <span class="m">Δ, σ, k</span>、同时 vs 错开、窗口 <span class="m">W</span>。<strong>通过：</strong>在 (Δ,k,σ)=(10,1,0.01) 处读取边 <span class="m">F₁</span> &gt; 0.7。<strong>无论如何均可交付：</strong>恢复前沿热力图。</p>
       </div>
       <div class="card stack">
-        <span class="tag">E1 · CRL with unknown mixing</span>
-        <p>1 GPU, 2–3 weeks. Adds a 3-layer MLP <span class="m">g</span>, O2a and O2b arms, an IDOL-style sequential VAE plus an event-gated variant. Dedicated theory-testing arms: encoder context ≥ Δ vs. &lt; Δ (Observation 2), Gaussian vs. Laplace (mechanism c). <strong>Pass:</strong> MCC(<span class="m">m</span>) &gt; 0.8 and read-edge <span class="m">F₁</span> &gt; 0.7 under O2a.</p>
+        <span class="tag">E1 · 混合未知的 CRL</span>
+        <p>1 块 GPU，2–3 周。加入一个 3 层 MLP <span class="m">g</span>、O2a 与 O2b 分支、一个 IDOL 风格的序列 VAE 加上一个事件门控变体。专门的理论检验分支：编码器上下文 ≥ Δ vs &lt; Δ（观察 2）、高斯 vs 拉普拉斯（机制 c）。<strong>通过：</strong>在 O2a 下 MCC(<span class="m">m</span>) &gt; 0.8 且读取边 <span class="m">F₁</span> &gt; 0.7。</p>
       </div>
     </div>
-    <div class="note">Both experiments are informative under any outcome: mild degradation validates the premise; severe degradation makes event-gated estimation the methods contribution. And none of it runs before sign-off.</div>
+    <div class="note">两项实验在任何结果下都富有信息量：轻度退化验证前提；严重退化则使事件门控估计成为方法上的贡献。而这一切在签署确认前均不运行。</div>
   </div>
 </section>
 
@@ -484,21 +485,21 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===== POSITIONING ===== -->
 <section class="band">
   <div class="wrap">
-    <p class="eyebrow">Positioning · the novelty defense</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">Sufficiency everywhere, correspondence nowhere else</h2>
-    <p class="small" style="margin-bottom:.6rem">Memorize the pattern, not the rows.</p>
+    <p class="eyebrow">定位 · 新颖性的辩护</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">充分性处处皆有，对应性别无他处</h2>
+    <p class="small" style="margin-bottom:.6rem">记住模式，而非行目。</p>
     <div class="tbl-wrap">
       <table class="tbl">
-        <thead><tr><th>Formalism</th><th>What it gives</th><th>What it lacks — your one-liner</th></tr></thead>
+        <thead><tr><th>形式框架</th><th>它给出什么</th><th>它欠缺什么——你的一句话</th></tr></thead>
         <tbody>
-          <tr><td class="k">POMDP belief states</td><td class="give">Sufficient statistic of history</td><td>No claim that the belief coordinates are the true latents</td></tr>
-          <tr><td class="k">Predictive state reps</td><td class="give">Sufficiency in observable predictions</td><td>Predictive, not causal; no value correspondence</td></tr>
-          <tr><td class="k">Causal states (ε-machines)</td><td class="give">Minimal sufficient partition of histories</td><td>Equivalence classes, not identified generative latents</td></tr>
-          <tr><td class="k">World models (Dreamer)</td><td class="give">Useful learned latents and dynamics</td><td>No identifiability, so no trustworthiness certificate</td></tr>
-          <tr><td class="k">DNC / MERLIN</td><td class="give">Trainable external memory</td><td>Storage engineered, never certified against the true process</td></tr>
-          <tr><td class="k">MemGPT · Reflexion · HippoRAG</td><td class="give">Practical storage, retrieval, reflection</td><td>No correctness criterion at all — the gap Yujia named</td></tr>
-          <tr><td class="k">Mech-interp probing</td><td class="give">Descriptive access to internal memory</td><td>Descriptive, not guaranteed; ours is interventional access to <em>identified</em> carriers</td></tr>
-          <tr><td class="k">ROME / MEMIT</td><td class="give">Model editing at scale</td><td>The application, not the theory: where certificate-grade identification pays off</td></tr>
+          <tr><td class="k">POMDP 信念状态</td><td class="give">历史的充分统计量</td><td>并不主张信念坐标即真实潜变量</td></tr>
+          <tr><td class="k">预测状态表示</td><td class="give">可观测预测上的充分性</td><td>是预测性的，非因果的；无取值对应</td></tr>
+          <tr><td class="k">因果状态（ε-机）</td><td class="give">历史的最小充分划分</td><td>是等价类，非已辨识的生成潜变量</td></tr>
+          <tr><td class="k">世界模型（Dreamer）</td><td class="give">有用的习得潜变量与动态</td><td>无可辨识性，故无可信性凭证</td></tr>
+          <tr><td class="k">DNC / MERLIN</td><td class="give">可训练的外部记忆</td><td>存储经工程设计，但从未针对真实过程加以认证</td></tr>
+          <tr><td class="k">MemGPT · Reflexion · HippoRAG</td><td class="give">实用的存储、检索、反思</td><td>全无正确性准则——正是 Yujia 所指出的缺口</td></tr>
+          <tr><td class="k">机制可解释性探针</td><td class="give">对内部记忆的描述性访问</td><td>是描述性的，非有保证的；我们的则是对<em>已辨识</em>载体的干预性访问</td></tr>
+          <tr><td class="k">ROME / MEMIT</td><td class="give">大规模模型编辑</td><td>是应用，非理论：即凭证级辨识得以回报之处</td></tr>
         </tbody>
       </table>
     </div>
@@ -510,17 +511,17 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===== QUESTIONS ===== -->
 <section class="band">
   <div class="wrap">
-    <p class="eyebrow">Q1 – Q7 · the decision points</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">The open questions</h2>
-    <p class="small" style="margin-bottom:1.1rem">Collected for Yujia — each stated so it can be answered with a verdict, not an essay. The priority three for the next meeting are Q1–Q3.</p>
+    <p class="eyebrow">Q1 – Q7 · 诸决策点</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">诸开放问题</h2>
+    <p class="small" style="margin-bottom:1.1rem">为 Yujia 汇集——每一问的陈述都力求能以裁决而非长篇作答。下次会议优先的三问为 Q1–Q3。</p>
     <div class="grid two">
-      <div class="card stack"><span class="tag">Q1 · priority</span><p>Gated SCM, or a regime-free nonstationary-transition formulation with events implicit?</p></div>
-      <div class="card stack"><span class="tag">Q2 · priority</span><p>Is the regime-change + set-identifiability + gluing strategy viable, and is the diagonal-hold transport sound?</p></div>
-      <div class="card stack"><span class="tag">Q3 · priority</span><p>Is the causal frontier the formalization you want for "memorize only what matters"?</p></div>
-      <div class="card stack"><span class="tag">Q4</span><p>Selection: preprocessing gate, or jointly modeled inside the estimator?</p></div>
-      <div class="card stack"><span class="tag">Q5</span><p>Is Layer 1 a publishable unit on its own, or scaffolding for the Layer 2 paper?</p></div>
-      <div class="card stack"><span class="tag">Q6</span><p>May E0-scale synthetic sanity checks run in parallel while the document iterates, or does all compute wait for sign-off?</p></div>
-      <div class="card stack"><span class="tag">Q7</span><p>Is <span class="m">P<span class="fn" style="font-size:.8em">π</span></span>-relative structure acceptable, or should invariance across policies be part of the definition of memory itself?</p></div>
+      <div class="card stack"><span class="tag">Q1 · 优先</span><p>是门控 SCM，还是一个事件隐含、无区制的非平稳转移表述？</p></div>
+      <div class="card stack"><span class="tag">Q2 · 优先</span><p>区制变化 + 集合可辨识性 + 粘合的策略是否可行，且对角保持传输是否稳健？</p></div>
+      <div class="card stack"><span class="tag">Q3 · 优先</span><p>因果前沿是否是你想要的"只记住重要之物"的形式化？</p></div>
+      <div class="card stack"><span class="tag">Q4</span><p>选择：作为预处理门控，还是在估计器内部联合建模？</p></div>
+      <div class="card stack"><span class="tag">Q5</span><p>第 1 层本身是否为可独立发表的单元，还是第 2 层论文的脚手架？</p></div>
+      <div class="card stack"><span class="tag">Q6</span><p>在文档迭代期间，E0 规模的合成健全性检查可否并行运行，还是所有计算都须等待签署确认？</p></div>
+      <div class="card stack"><span class="tag">Q7</span><p>相对于 <span class="m">P<span class="fn" style="font-size:.8em">π</span></span> 的结构是否可接受，还是跨策略的不变性应成为记忆自身定义的一部分？</p></div>
     </div>
   </div>
 </section>
@@ -528,12 +529,12 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===== NEXT ===== -->
 <section class="band" style="padding-top:.5rem">
   <div class="wrap">
-    <p class="eyebrow">Read in order</p>
-    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem);margin-bottom:.2rem">Next in the series</h2>
+    <p class="eyebrow">按序阅读</p>
+    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem);margin-bottom:.2rem">本系列的下一篇</h2>
     <div class="next">
-      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720"><span class="n">01 · Overview</span><h4>The thesis</h4><p>The claim in one paragraph, the two layers, and trustworthy memory.</p></a>
-      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb"><span class="n">02 · Theory</span><h4>The machinery</h4><p>SCMs, identifiability, and the selection confound — the background these claims stand on.</p></a>
-      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201"><span class="n">04 · Plan</span><h4>From zero to productive</h4><p>How every numbered item above becomes status, a runbook, and a timeline.</p></a>
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720"><span class="n">01 · 概览</span><h4>论点</h4><p>一段话陈明主张、两个层次，以及可信记忆。</p></a>
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb"><span class="n">02 · 理论</span><h4>机制</h4><p>SCM、可辨识性与选择混淆——这些主张所立足的背景。</p></a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201"><span class="n">04 · 计划</span><h4>从零到高效产出</h4><p>上述每一个编号条目如何变为状态、一份操作手册与一条时间线。</p></a>
     </div>
   </div>
 </section>
@@ -543,8 +544,8 @@ svg .amark-c{fill:var(--carrier)}
 
 <footer>
   <div class="foot-in">
-    <b>Causal Memory · Formulation v0.1</b> — Memory as identifiable temporal structure in the data-generating process.<br/>
-    Mian (Nothern) Wu, prepared for step-by-step verification with Yujia Zheng · July 2026.<br/>
-    Part 03 of a four-part series · rendered from <b>causal_memory_formulation.tex</b> and <b>causal_memory_onboarding.tex</b>.
+    <b>因果记忆 · 表述文档 v0.1</b> —— 将记忆定义为数据生成过程中可辨识的时序结构。<br/>
+    Mian (Nothern) Wu 撰写，供与 Yujia Zheng 逐步核验 · 2026 年 7 月。<br/>
+    四部曲之第 03 部 · 由 <b>causal_memory_formulation.tex</b> 与 <b>causal_memory_onboarding.tex</b> 生成。
   </div>
 </footer>

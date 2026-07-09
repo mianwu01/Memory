@@ -1,4 +1,4 @@
-<title>Causal Memory · 01 The Thesis</title>
+<title>因果记忆 · 01 论题</title>
 <style>
 /* ============================================================
    CAUSAL MEMORY — shared design system (kit v1)
@@ -6,8 +6,9 @@
    Accent = carrier teal (the color the papers use for memory).
    ============================================================ */
 :root{
-  --font-serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Charter,Georgia,Cambria,'Times New Roman',serif;
-  --font-mono:ui-monospace,'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',Menlo,Consolas,'Liberation Mono',monospace;
+  --font-serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Charter,Georgia,Cambria,'Times New Roman','Songti SC','Songti TC','Noto Serif CJK SC','Source Han Serif SC','Source Han Serif CN',STSong,SimSun,serif;
+  --font-mono:ui-monospace,'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',Menlo,Consolas,'Liberation Mono','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',monospace;
+  --font-cjk-serif:'Songti SC','Noto Serif CJK SC','Source Han Serif SC',STSong,SimSun,serif;
 
   --paper:#F1F5F4;
   --surface:#FBFCFC;
@@ -237,12 +238,12 @@ svg .amark-c{fill:var(--carrier)}
 
 <div class="topbar">
   <div class="topbar-in">
-    <span class="brand"><b>Causal&nbsp;Memory</b><span class="brand-extra"> · a research program</span></span>
-    <nav class="series" aria-label="Series">
-      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720" aria-current="page">01 Overview</a>
-      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb">02 Theory</a>
-      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f">03 Formulation</a>
-      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201">04 Plan</a>
+    <span class="brand"><b>因果记忆</b><span class="brand-extra"> · 一项研究计划</span></span>
+    <nav class="series" aria-label="系列导航">
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720" aria-current="page">01 总览</a>
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb">02 理论</a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f">03 表述</a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201">04 计划</a>
     </nav>
   </div>
 </div>
@@ -252,14 +253,14 @@ svg .amark-c{fill:var(--carrier)}
   <div class="hero-in">
     <div class="kicker">
       <span class="num">01 / 04</span>
-      <span class="eyebrow">The thesis</span>
+      <span class="eyebrow">论题</span>
     </div>
-    <h1 class="title">Memory is <span class="q">identifiable causal structure</span> in the process that makes the data.</h1>
-    <p class="subtitle">An agent should not store every signal at every moment. It should store what corresponds to the truthful process that generates its observations — and read the past through that process's dependency structure.</p>
+    <h1 class="title">记忆是生成数据的过程中<span class="q">可辨识的因果结构</span>。</h1>
+    <p class="subtitle">智能体不应存储每一时刻的每一个信号。它应存储与生成其观测的真实过程相对应的内容——并通过该过程的依赖结构去读取过去。</p>
     <div class="byline">
       <span><span class="dot"></span> Mian&nbsp;(Nothern)&nbsp;Wu</span>
-      <span>prepared for verification with Yujia&nbsp;Zheng</span>
-      <span>Formulation v0.1 · July&nbsp;2026</span>
+      <span>与 Yujia&nbsp;Zheng 共同准备以供验证</span>
+      <span>表述 v0.1 · 2026 年 7 月</span>
     </div>
   </div>
 </header>
@@ -269,19 +270,19 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===================== HERO FIGURE: THE MOTIF ===================== -->
 <section class="band" style="padding-bottom:0">
   <div class="wrap">
-    <p class="eyebrow">The unit of memory</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin:.3rem 0 .2rem">The write–hold–read motif</h2>
-    <p class="lede" style="margin-top:.5rem">Everything in the program is analyzed on one small structure: a cue is <em>written</em> into a memory latent, the latent is <em>held</em> across a delay, then <em>read</em> into a downstream response while distractors run in parallel. The teal path is the carrier.</p>
+    <p class="eyebrow">记忆的基本单元</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin:.3rem 0 .2rem">写入–保持–读取模体</h2>
+    <p class="lede" style="margin-top:.5rem">整个方案的一切都建立在一个小结构之上进行分析：一个线索被<em>写入</em>记忆潜变量，该潜变量跨越一段延迟被<em>保持</em>，随后被<em>读取</em>为下游响应，而干扰变量则并行运行。青色路径即为载体。</p>
     <figure>
       <div class="fig">
-        <svg viewBox="0 0 720 300" role="img" aria-label="The write-hold-read motif: a cue is written into a memory latent, held across a delay, then read into a readout, with distractors running along the bottom into the readout.">
+        <svg viewBox="0 0 720 300" role="img" aria-label="写入–保持–读取模体：线索被写入记忆潜变量，跨延迟保持，随后读取为读出，干扰变量沿底部并行汇入读出。">
           <defs>
             <marker id="a" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker>
             <marker id="ac" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark-c"/></marker>
           </defs>
           <!-- cue -->
           <circle class="node" cx="60" cy="70" r="26"/><text class="node-lbl" x="60" y="75" text-anchor="middle">c</text>
-          <text class="cap" x="60" y="38" text-anchor="middle">cue · resampled each episode</text>
+          <text class="cap" x="60" y="38" text-anchor="middle">线索 · 每幕重采样</text>
           <!-- memory chain -->
           <g>
             <rect class="mem" x="34" y="128" width="52" height="44" rx="10"/><text class="node-lbl" x="60" y="155" text-anchor="middle">m<tspan dy="4" font-size="10">t₀</tspan></text>
@@ -291,24 +292,24 @@ svg .amark-c{fill:var(--carrier)}
           </g>
           <!-- readout -->
           <circle class="node" cx="650" cy="70" r="26"/><text class="node-lbl" x="650" y="75" text-anchor="middle">y</text>
-          <text class="cap" x="650" y="38" text-anchor="middle">readout</text>
+          <text class="cap" x="650" y="38" text-anchor="middle">读出</text>
           <!-- distractors -->
           <circle class="node" cx="60" cy="250" r="22"/><text class="node-lbl" x="60" y="255" text-anchor="middle">d</text>
           <circle class="node" cx="226" cy="250" r="22"/><text class="node-lbl" x="226" y="255" text-anchor="middle">d</text>
           <text class="node-lbl" x="360" y="255" text-anchor="middle" style="font-size:20px">···</text>
           <circle class="node" cx="496" cy="250" r="22"/><text class="node-lbl" x="496" y="255" text-anchor="middle">d</text>
-          <text class="cap" x="278" y="292" text-anchor="middle">distractors · full-rank dynamics throughout</text>
+          <text class="cap" x="278" y="292" text-anchor="middle">干扰变量 · 全程满秩动力学</text>
           <!-- edges: write -->
           <path class="edge-c" d="M60,96 L60,124" marker-end="url(#ac)"/>
-          <text class="cap-c" x="70" y="116">write · u=write</text>
+          <text class="cap-c" x="70" y="116">写入 · u=write</text>
           <!-- hold -->
           <path class="edge-c" d="M88,150 L192,150" marker-end="url(#ac)"/>
           <path class="edge-c" d="M258,150 L332,150" marker-end="url(#ac)"/>
           <path class="edge-c" d="M388,150 L466,150" marker-end="url(#ac)"/>
-          <text class="cap-c" x="300" y="120" text-anchor="middle">hold · m_t = m_{t-1} + σ·ε_t</text>
+          <text class="cap-c" x="300" y="120" text-anchor="middle">保持 · m_t = m_{t-1} + σ·ε_t</text>
           <!-- read -->
           <path class="edge-c" d="M520,132 C580,110 600,96 626,84" marker-end="url(#ac)"/>
-          <text class="cap-c" x="600" y="128" text-anchor="middle">read · u=read</text>
+          <text class="cap-c" x="600" y="128" text-anchor="middle">读取 · u=read</text>
           <!-- distractor edges -->
           <path class="edge" d="M82,250 L202,250" marker-end="url(#a)"/>
           <path class="edge" d="M248,250 L332,250" marker-end="url(#a)"/>
@@ -316,10 +317,10 @@ svg .amark-c{fill:var(--carrier)}
           <path class="edge" d="M517,236 C580,205 604,120 640,92" marker-end="url(#a)"/>
           <!-- delta bracket -->
           <path class="edge" style="stroke-dasharray:3 3" d="M60,188 L60,200 L496,200 L496,188"/>
-          <text class="cap" x="278" y="216" text-anchor="middle">delay  Δ = t₁ − t₀</text>
+          <text class="cap" x="278" y="216" text-anchor="middle">延迟  Δ = t₁ − t₀</text>
         </svg>
       </div>
-      <figcaption><b>The write–hold–read motif</b> — the smallest structure in which "memory" is a well-posed graph property. Two knobs organize the whole project: hold noise <span class="m">σ</span> and delay <span class="m">Δ</span>. Everything difficult lives in the corner <span class="m">σ</span>→0, <span class="m">Δ</span> large. Load-<span class="m">k</span> runs <span class="m">k</span> items at once, written/read simultaneously or staggered.</figcaption>
+      <figcaption><b>写入–保持–读取模体</b>——“记忆”作为一个良定义的图性质所依托的最小结构。两个旋钮统领整个项目：保持噪声 <span class="m">σ</span> 与延迟 <span class="m">Δ</span>。所有困难都存在于 <span class="m">σ</span>→0、<span class="m">Δ</span> 较大的角落。负载-<span class="m">k</span> 同时运行 <span class="m">k</span> 个项，同时或错开地写入/读取。</figcaption>
     </figure>
   </div>
 </section>
@@ -327,11 +328,11 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===================== THE THESIS ===================== -->
 <section class="band">
   <div class="wrap stack">
-    <p class="eyebrow">In one paragraph</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">What the project claims</h2>
-    <p>Memory is <strong>time-delayed dependency structure inside the true data-generating process</strong> — not a separate external module. An external store is formally just a variable with identity dynamics and gated write/read edges, so the internal/external distinction dissolves at the level of the graph. A memory system is <strong>trustworthy</strong> exactly when its stored values and its write/read structure correspond, up to allowed indeterminacies, to that process.</p>
-    <p>The primary contribution is <em>correctness of what is memorized.</em> Reliability and efficiency follow as byproducts — they are not the headline. Getting there needs two things nothing in the memory-agent literature supplies: a guarantee that a learned representation <span class="m">ẑ</span> corresponds to the true hidden process <span class="m">z</span>, and a test that separates genuine storage from dependence that mere <em>selection</em> can fake.</p>
-    <blockquote class="pull">Adjacent formalisms give <em>sufficiency</em> or <em>usefulness</em>. None gives <em>correspondence to the true generating process</em> — which is exactly what identifiability adds, and the entire reason the project exists.</blockquote>
+    <p class="eyebrow">一段话概括</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">本项目的主张</h2>
+    <p>记忆是<strong>真实数据生成过程内部的时延依赖结构</strong>——而非一个独立的外部模块。一个外部存储在形式上只不过是一个具有恒等动力学与门控写入/读取边的变量，因此内部/外部的区分在图的层面上便消解了。一个记忆系统<strong>可信</strong>，当且仅当其存储的取值及其写入/读取结构在允许的不确定性范围内与该过程相对应。</p>
+    <p>首要贡献在于<em>所记忆内容的正确性。</em>可靠性与效率作为副产物随之而来——它们并非核心。要达到这一点，需要两样记忆智能体文献均未提供的东西：一个关于所学表示 <span class="m">ẑ</span> 对应于真实隐藏过程 <span class="m">z</span> 的保证，以及一个能将真正的存储与仅靠<em>选择</em>即可伪造的依赖区分开来的检验。</p>
+    <blockquote class="pull">相邻的形式化框架给出的是<em>充分性</em>或<em>有用性</em>。没有一个给出<em>对真实生成过程的对应</em>——而这恰恰是可辨识性所增添的，也正是本项目存在的全部理由。</blockquote>
   </div>
 </section>
 
@@ -340,48 +341,48 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===================== TWO LAYERS ===================== -->
 <section class="band">
   <div class="wrap">
-    <p class="eyebrow">The program</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.4rem">Two layers</h2>
-    <p class="small" style="margin-bottom:1.3rem">Both layers analyze the same object — the motif above — at different depths of guarantee.</p>
+    <p class="eyebrow">方案</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.4rem">两层</h2>
+    <p class="small" style="margin-bottom:1.3rem">两层分析的是同一个对象——上方的模体——只是在不同的保证深度上进行。</p>
     <div class="grid two">
       <div class="card layer stack">
-        <span class="tag">Layer 1 · discovery-as-masking</span>
-        <h3>Recover the structure</h3>
-        <p>Run temporal causal discovery over observed state variables. Use the recovered cross-time graph as a <strong>mask</strong> for what to memorize and as the <strong>conditional set</strong> for planning. No latent-value recovery — this de-risks the program.</p>
+        <span class="tag">第 1 层 · 发现即掩码</span>
+        <h3>恢复结构</h3>
+        <p>在观测状态变量上运行时序因果发现。将恢复出的跨时图用作决定何者应被记忆的<strong>掩码</strong>，以及用于规划的<strong>条件集</strong>。不进行潜变量取值恢复——这为方案降低了风险。</p>
       </div>
       <div class="card layer l2 stack">
-        <span class="tag" style="color:var(--amber)">Layer 2 · representation learning</span>
-        <h3>Recover the values</h3>
-        <p>Temporal causal representation learning with <strong>identifiability guarantees</strong>: what the agent stores must equal the true latent value, not merely a predictive embedding of it. First reconstruct the truthful latent states, then recover their dependencies.</p>
+        <span class="tag" style="color:var(--amber)">第 2 层 · 表示学习</span>
+        <h3>恢复取值</h3>
+        <p>带<strong>可辨识性保证</strong>的时序因果表示学习：智能体所存储的必须等于真实的潜变量取值，而不仅是它的一个预测性嵌入。首先重建真实的潜状态，然后恢复它们的依赖关系。</p>
       </div>
     </div>
 
     <figure>
       <div class="fig">
-        <svg viewBox="0 0 760 250" role="img" aria-label="End-to-end two-layer pipeline: trajectories feed Layer 1 discovery producing a graph and a mask, and Layer 2 CRL producing latents, a graph and certificates; both flow into trustworthy memory.">
+        <svg viewBox="0 0 760 250" role="img" aria-label="端到端两层流水线：轨迹送入第 1 层发现，产出图与掩码；第 2 层 CRL 产出潜变量、图与凭证；两者共同汇入可信记忆。">
           <defs><marker id="p" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker></defs>
           <g font-family="var(--font-serif)">
           <rect class="node" x="16" y="98" width="120" height="54" rx="10"/>
-          <text class="cap" x="76" y="120" text-anchor="middle">trajectories</text>
+          <text class="cap" x="76" y="120" text-anchor="middle">轨迹</text>
           <text class="cap" x="76" y="135" text-anchor="middle">s₁:T · u₁:T</text>
 
           <rect x="196" y="26" width="150" height="52" rx="10" fill="var(--carrier-tint)" stroke="var(--carrier)"/>
-          <text class="cap-c" x="271" y="47" text-anchor="middle">Layer 1 · discovery</text>
+          <text class="cap-c" x="271" y="47" text-anchor="middle">第 1 层 · 发现</text>
           <text class="cap-c" x="271" y="62" text-anchor="middle">PCMCI⁺ · CD-NOD</text>
           <rect x="404" y="26" width="120" height="52" rx="10" fill="var(--carrier-tint)" stroke="var(--carrier)"/>
-          <text class="cap-c" x="464" y="47" text-anchor="middle">mask F̂ₜ(Y)</text>
-          <text class="cap-c" x="464" y="62" text-anchor="middle">retain + plan</text>
+          <text class="cap-c" x="464" y="47" text-anchor="middle">掩码 F̂ₜ(Y)</text>
+          <text class="cap-c" x="464" y="62" text-anchor="middle">保留 + 规划</text>
 
           <rect x="196" y="172" width="150" height="52" rx="10" fill="var(--surface-2)" stroke="var(--amber)"/>
-          <text class="cap" x="271" y="193" text-anchor="middle" fill="var(--amber)">Layer 2 · CRL</text>
-          <text class="cap" x="271" y="208" text-anchor="middle" fill="var(--amber)">seq-VAE + sparsity</text>
+          <text class="cap" x="271" y="193" text-anchor="middle" fill="var(--amber)">第 2 层 · CRL</text>
+          <text class="cap" x="271" y="208" text-anchor="middle" fill="var(--amber)">seq-VAE + 稀疏性</text>
           <rect x="404" y="172" width="120" height="52" rx="10" fill="var(--surface-2)" stroke="var(--amber)"/>
-          <text class="cap" x="464" y="190" text-anchor="middle" fill="var(--amber)">certificates</text>
-          <text class="cap" x="464" y="205" text-anchor="middle" fill="var(--amber)">MCC · F₁ · gate</text>
+          <text class="cap" x="464" y="190" text-anchor="middle" fill="var(--amber)">凭证</text>
+          <text class="cap" x="464" y="205" text-anchor="middle" fill="var(--amber)">MCC · F₁ · 门控</text>
 
           <rect x="592" y="98" width="150" height="54" rx="10" fill="var(--paper)" stroke="var(--carrier)" stroke-width="1.8"/>
-          <text class="cap-c" x="667" y="119" text-anchor="middle">trustworthy</text>
-          <text class="cap-c" x="667" y="134" text-anchor="middle">memory</text>
+          <text class="cap-c" x="667" y="119" text-anchor="middle">可信</text>
+          <text class="cap-c" x="667" y="134" text-anchor="middle">记忆</text>
 
           <path class="edge" d="M136,116 C165,100 175,70 194,58" marker-end="url(#p)"/>
           <path class="edge" d="M136,134 C165,150 175,182 194,192" marker-end="url(#p)"/>
@@ -392,7 +393,7 @@ svg .amark-c{fill:var(--carrier)}
           </g>
         </svg>
       </div>
-      <figcaption><b>The pipeline, end to end.</b> Layer 1 needs no latent-value recovery and de-risks the program; Layer 2 adds the identifiability guarantees that make the memory trustworthy.</figcaption>
+      <figcaption><b>端到端的流水线。</b>第 1 层无需潜变量取值恢复，为方案降低风险；第 2 层增添使记忆得以可信的可辨识性保证。</figcaption>
     </figure>
   </div>
 </section>
@@ -402,17 +403,17 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===================== TRUSTWORTHY MEMORY ===================== -->
 <section class="band">
   <div class="wrap">
-    <p class="eyebrow">Definition D3</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.4rem">Trustworthy memory</h2>
-    <p class="small" style="margin-bottom:.4rem">An estimated system — latents <span class="m">ẑ</span>, graph <span class="m">Ĝ</span>, write/read maps — is trustworthy on a memory-relevant index set when three certificates hold. Each is tied to an operational test, so "trustworthy" never floats free.</p>
+    <p class="eyebrow">定义 D3</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.4rem">可信记忆</h2>
+    <p class="small" style="margin-bottom:.4rem">一个估计出的系统——潜变量 <span class="m">ẑ</span>、图 <span class="m">Ĝ</span>、写入/读取映射——在一个与记忆相关的索引集上是可信的，当三项凭证成立时。每一项都绑定到一个可操作的检验，因此“可信”从不悬空。</p>
     <div class="certs">
-      <div class="cert"><span class="rn">i</span><div><h4>Value correspondence</h4><p>Stored latents equal the true ones up to permutation and per-coordinate invertible maps (component-wise identifiability), relaxing honestly to block-wise on frozen subspaces where component-wise is provably impossible. <span class="mono small">measured by MCC.</span></p></div></div>
-      <div class="cert"><span class="rn">ii</span><div><h4>Structure correspondence</h4><p>The write, hold, and read edges of <span class="m">Ĝ</span> match those of the true graph. <span class="mono small">measured by edge F₁ and SHD, split by edge type.</span></p></div></div>
-      <div class="cert"><span class="rn">iii</span><div><h4>Selection soundness</h4><p>On data whose long-lag dependence arises from selection alone, the system reports <em>no carrier</em> rather than inventing a memory edge. <span class="mono small">measured by false-positive rate on selection-only data.</span></p></div></div>
+      <div class="cert"><span class="rn">i</span><div><h4>取值对应</h4><p>存储的潜变量在置换与逐坐标可逆映射的意义下等于真实的潜变量（分量级可辨识性），在分量级被证明不可能的冻结子空间上诚实地松弛为块级。<span class="mono small">以 MCC 度量。</span></p></div></div>
+      <div class="cert"><span class="rn">ii</span><div><h4>结构对应</h4><p><span class="m">Ĝ</span> 的写入、保持与读取边与真实图的相应边相匹配。<span class="mono small">以边 F₁ 与 SHD 度量，按边类型分别统计。</span></p></div></div>
+      <div class="cert"><span class="rn">iii</span><div><h4>选择稳健性</h4><p>在长滞后依赖仅源自选择的数据上，系统报告<em>无载体</em>，而非臆造出一条记忆边。<span class="mono small">以仅含选择的数据上的假阳性率度量。</span></p></div></div>
     </div>
     <div class="grid two" style="margin-top:1.3rem">
-      <div class="card accent stack"><span class="tag">Byproduct · trustworthiness in use</span><p>With value + structure correspondence, intervening on <span class="m">m̂</span> intervenes on the true <span class="m">m</span>: memory <strong>editing</strong> inherits specificity, recall becomes auditable against an identified carrier, and confabulation — recall without a carrier — becomes detectable.</p></div>
-      <div class="card accent stack"><span class="tag">Byproduct · efficiency</span><p>Retaining only the causal frontier <span class="m">F<span class="fn" style="font-size:.8em">t</span></span> instead of the whole history shrinks the memory budget from <span class="m">O</span>(<span class="m">nT</span>) to <span class="m">|F<span class="fn" style="font-size:.8em">t</span>|</span> with no task-relevant loss, and planning conditions on the frontier alone.</p></div>
+      <div class="card accent stack"><span class="tag">副产物 · 使用中的可信性</span><p>在取值对应 + 结构对应成立时，对 <span class="m">m̂</span> 的干预即是对真实 <span class="m">m</span> 的干预：记忆<strong>编辑</strong>继承了特异性，召回可对照一个已辨识的载体进行审计，而虚构——无载体的召回——变得可检测。</p></div>
+      <div class="card accent stack"><span class="tag">副产物 · 效率</span><p>只保留因果前沿 <span class="m">F<span class="fn" style="font-size:.8em">t</span></span> 而非整个历史，可将记忆预算从 <span class="m">O</span>(<span class="m">nT</span>) 缩减至 <span class="m">|F<span class="fn" style="font-size:.8em">t</span>|</span> 且无任务相关的损失，而规划仅以该前沿为条件。</p></div>
     </div>
   </div>
 </section>
@@ -422,33 +423,34 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===================== WHAT'S NEW ===================== -->
 <section class="band">
   <div class="wrap stack">
-    <p class="eyebrow">Positioning</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">Why this is not the memory-agent literature</h2>
-    <p>Predictive-sufficiency formalisms — POMDP belief states, predictive state representations, computational-mechanics causal states — already define memory as a minimal sufficient statistic of history. World models learn useful latents. Agent-memory systems engineer storage and retrieval. Every one of them is missing the same half: <strong>no guarantee that the learned statistic corresponds to the true generating process.</strong></p>
-    <p>That correspondence is what identifiability supplies, and it is the one thing that makes stored content <em>editable with specificity</em>, <em>auditable</em>, and <em>falsifiable</em> as confabulation. The differentiator is not a benchmark number — it is interventional access to <em>identified</em> carriers.</p>
+    <p class="eyebrow">定位</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">为何这不是记忆智能体文献</h2>
+    <p>预测充分性的形式化框架——POMDP 信念状态、预测状态表示、计算力学的因果态——早已将记忆定义为历史的一个极小充分统计量。世界模型学习有用的潜变量。智能体记忆系统对存储与检索进行工程化。它们每一个都缺失了同样的那一半：<strong>没有任何保证，使所学统计量对应于真实的生成过程。</strong></p>
+    <p>正是可辨识性提供了这种对应，而它也是使存储内容<em>可具特异性地编辑</em>、<em>可审计</em>、并可作为虚构而<em>可证伪</em>的唯一要素。真正的区分点不是某个基准数字——而是对<em>已辨识</em>载体的干预性访问。</p>
   </div>
 </section>
 
 <!-- ===================== THE MAP / NEXT ===================== -->
 <section class="band" style="padding-top:.5rem">
   <div class="wrap">
-    <p class="eyebrow">Read in order</p>
-    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem);margin-bottom:.2rem">The rest of the series</h2>
-    <p class="small">This overview is the entry point. The next three go from the machinery you need, to the numbered claims themselves, to the plan that ships them.</p>
+    <p class="eyebrow">按序阅读</p>
+    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem);margin-bottom:.2rem">系列的其余部分</h2>
+    <p class="small">本综述是入口。接下来的三篇依次从所需的机制，到那些带编号的主张本身，再到交付它们的计划。</p>
     <div class="next">
-      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb"><span class="n">02 · Theory</span><h4>The machinery, from square one</h4><p>SCMs and d-separation, temporal graphs, the identifiability impossibility and its escapes, how recovery is scored, and the selection confound.</p></a>
-      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f"><span class="n">03 · Formulation v0.1</span><h4>The numbered claims</h4><p>Assumptions A1–A9, the causal-frontier lemma with proof, two conjectures, four predictions, the pre-registered experiments, and the open questions.</p></a>
-      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201"><span class="n">04 · Plan</span><h4>From zero to productive</h4><p>Requirement traceability, project status, decision trees for the open questions, the E0 runbook, the risk register, and the timeline to the 2027 cycle.</p></a>
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb"><span class="n">02 · 理论</span><h4>从零开始的机制</h4><p>SCM 与 d-分离、时序图、可辨识性不可能性及其突破口、如何为恢复评分，以及选择混淆。</p></a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f"><span class="n">03 · 表述 v0.1</span><h4>带编号的主张</h4><p>假设 A1–A9、带证明的因果前沿引理、两个猜想、四个预测、预注册实验，以及开放问题。</p></a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201"><span class="n">04 · 计划</span><h4>从零到高效产出</h4><p>需求可追溯性、项目状态、开放问题的决策树、E0 操作手册、风险登记表，以及通往 2027 周期的时间线。</p></a>
     </div>
   </div>
 </section>
 
 </main>
 
+
 <footer>
   <div class="foot-in">
-    <b>Causal Memory · Formulation v0.1</b> — Memory as identifiable temporal structure in the data-generating process.<br/>
-    Mian (Nothern) Wu, prepared for step-by-step verification with Yujia Zheng · July 2026.<br/>
-    Part 01 of a four-part series · rendered from <b>causal_memory_formulation.tex</b> and <b>causal_memory_onboarding.tex</b>.
+    <b>因果记忆 · 表述文档 v0.1</b> —— 将记忆定义为数据生成过程中可辨识的时序结构。<br/>
+    Mian (Nothern) Wu 撰写，供与 Yujia Zheng 逐步核验 · 2026 年 7 月。<br/>
+    四部曲之第 01 部 · 由 <b>causal_memory_formulation.tex</b> 与 <b>causal_memory_onboarding.tex</b> 生成。
   </div>
 </footer>

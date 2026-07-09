@@ -1,4 +1,4 @@
-<title>Causal Memory · 04 The Plan</title>
+<title>因果记忆 · 04 计划</title>
 <style>
 /* ============================================================
    CAUSAL MEMORY — shared design system (kit v1)
@@ -6,8 +6,9 @@
    Accent = carrier teal (the color the papers use for memory).
    ============================================================ */
 :root{
-  --font-serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Charter,Georgia,Cambria,'Times New Roman',serif;
-  --font-mono:ui-monospace,'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',Menlo,Consolas,'Liberation Mono',monospace;
+  --font-serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Charter,Georgia,Cambria,'Times New Roman','Songti SC','Songti TC','Noto Serif CJK SC','Source Han Serif SC','Source Han Serif CN',STSong,SimSun,serif;
+  --font-mono:ui-monospace,'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',Menlo,Consolas,'Liberation Mono','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',monospace;
+  --font-cjk-serif:'Songti SC','Noto Serif CJK SC','Source Han Serif SC',STSong,SimSun,serif;
 
   --paper:#F1F5F4;
   --surface:#FBFCFC;
@@ -237,12 +238,12 @@ svg .amark-c{fill:var(--carrier)}
 
 <div class="topbar">
   <div class="topbar-in">
-    <span class="brand"><b>Causal&nbsp;Memory</b><span class="brand-extra"> · a research program</span></span>
-    <nav class="series" aria-label="Series">
-      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720">01 Overview</a>
-      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb">02 Theory</a>
-      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f">03 Formulation</a>
-      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201" aria-current="page">04 Plan</a>
+    <span class="brand"><b>因果记忆</b><span class="brand-extra"> · 一项研究计划</span></span>
+    <nav class="series" aria-label="系列导航">
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720">01 总览</a>
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb">02 理论</a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f">03 表述</a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201" aria-current="page">04 计划</a>
     </nav>
   </div>
 </div>
@@ -252,14 +253,14 @@ svg .amark-c{fill:var(--carrier)}
   <div class="hero-in">
     <div class="kicker">
       <span class="num">04 / 04</span>
-      <span class="eyebrow">Status &amp; execution</span>
+      <span class="eyebrow">状态与执行</span>
     </div>
-    <h1 class="title">From zero to productive — <span class="q">and defensible</span>.</h1>
-    <p class="subtitle">The operational layer: what the advisor requires, where the work stands, how the open questions resolve, the runbook precise enough to start coding from, and the timeline to the Fall 2027 cycle.</p>
+    <h1 class="title">从零到高效产出 —— <span class="q">且经得起辩护</span>。</h1>
+    <p class="subtitle">执行层面：导师的要求、工作当前进展、开放问题如何收敛、精确到足以据此开始编码的操作手册，以及通往 2027 年秋季申请周期的时间线。</p>
     <div class="byline">
-      <span><span class="dot"></span> status as of July 9, 2026</span>
-      <span>DONE means produced, not approved</span>
-      <span>nothing is reviewed until Yujia marks it</span>
+      <span><span class="dot"></span> 截至 2026 年 7 月 9 日的状态</span>
+      <span>DONE 意为已产出，而非已批准</span>
+      <span>在 Yujia 标注之前，任何内容都未经审阅</span>
     </div>
   </div>
 </header>
@@ -269,26 +270,26 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===== REQUIREMENTS ===== -->
 <section class="band">
   <div class="wrap">
-    <p class="eyebrow">R1 – R9 · traceability</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">The advisor's explicit requirements</h2>
-    <p class="small" style="margin-bottom:.4rem">Extracted from two meetings and an email, kept close to his wording. <span class="mono">DONE</span> means addressed in v0.1 or decided — not reviewed.</p>
+    <p class="eyebrow">R1 – R9 · 可追溯性</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">导师明确提出的需求</h2>
+    <p class="small" style="margin-bottom:.4rem">摘自两次会面和一封邮件，尽量贴近他的原话。<span class="mono">DONE</span> 意为已在 v0.1 中处理或已作决定 —— 而非已审阅。</p>
     <div class="tbl-wrap">
       <table class="tbl">
-        <thead><tr><th>#</th><th>Requirement</th><th>Status</th><th>Remaining action</th></tr></thead>
+        <thead><tr><th>#</th><th>需求</th><th>状态</th><th>剩余行动</th></tr></thead>
         <tbody>
-          <tr><td class="k">R1</td><td>Do not rush into experiments; formulation first</td><td><span class="pill done">done</span></td><td class="give">All compute stays gated on sign-off</td></tr>
-          <tr><td class="k">R2</td><td>Write a shared doc of your understanding for step-by-step checking</td><td><span class="pill done">done</span></td><td class="give">Create the Overleaf project, share, request review</td></tr>
-          <tr><td class="k">R3</td><td>Read the related work: temporal CRL &amp; discovery, then agent-memory surveys</td><td><span class="pill pend">pending</span></td><td class="give">Execute the 3-week reading plan</td></tr>
-          <tr><td class="k">R4</td><td>State the CD vs. CRL distinction correctly</td><td><span class="pill done">done</span></td><td class="give">In v0.1 §1; be ready to say it aloud</td></tr>
-          <tr><td class="k">R5</td><td>Understand why a causal graph is not a knowledge graph</td><td><span class="pill done">done</span></td><td class="give">In v0.1 §1; be ready to say it aloud</td></tr>
-          <tr><td class="k">R6</td><td>Decompose into two layers: discovery-as-masking, then CRL</td><td><span class="pill done">done</span></td><td class="give">Layers are §4 and §5 of v0.1</td></tr>
-          <tr><td class="k">R7</td><td>Frame the contribution as correctness; byproducts are trust &amp; efficiency</td><td><span class="pill done">done</span></td><td class="give">Framing is v0.1 §1 and §3.1</td></tr>
-          <tr><td class="k">R8</td><td>Timestamps are not a theoretical bound; the window is engineering</td><td><span class="pill done">done</span></td><td class="give"><span class="m">W</span> is a swept hyperparameter in E0</td></tr>
-          <tr><td class="k">R9</td><td>Choose the track: theory, or the empirical masking fallback</td><td><span class="pill done">done</span></td><td class="give">Theory track chosen and recorded in v0.1</td></tr>
+          <tr><td class="k">R1</td><td>不要急于做实验；先做形式化</td><td><span class="pill done">已完成</span></td><td class="give">所有算力都以签署确认为前提</td></tr>
+          <tr><td class="k">R2</td><td>写一份共享文档阐述你的理解，以便逐条核对</td><td><span class="pill done">已完成</span></td><td class="give">创建 Overleaf 项目、共享、请求审阅</td></tr>
+          <tr><td class="k">R3</td><td>阅读相关工作：时序 CRL 与因果发现，再读智能体记忆综述</td><td><span class="pill pend">待办</span></td><td class="give">执行为期 3 周的阅读计划</td></tr>
+          <tr><td class="k">R4</td><td>正确陈述 CD 与 CRL 的区别</td><td><span class="pill done">已完成</span></td><td class="give">见 v0.1 §1；须能口头清晰阐述</td></tr>
+          <tr><td class="k">R5</td><td>理解为何因果图不是知识图谱</td><td><span class="pill done">已完成</span></td><td class="give">见 v0.1 §1；须能口头清晰阐述</td></tr>
+          <tr><td class="k">R6</td><td>分解为两层：发现即掩码，再做 CRL</td><td><span class="pill done">已完成</span></td><td class="give">两层分别为 v0.1 的 §4 和 §5</td></tr>
+          <tr><td class="k">R7</td><td>将贡献界定为正确性；可信性与效率为副产物</td><td><span class="pill done">已完成</span></td><td class="give">界定见 v0.1 §1 和 §3.1</td></tr>
+          <tr><td class="k">R8</td><td>时间戳不是理论上界；窗口属于工程范畴</td><td><span class="pill done">已完成</span></td><td class="give"><span class="m">W</span> 在 E0 中作为待扫描的超参数</td></tr>
+          <tr><td class="k">R9</td><td>选定路线：理论路线，或实证掩码的退路</td><td><span class="pill done">已完成</span></td><td class="give">已选定理论路线并记录于 v0.1</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="note"><b>Do not drift.</b> The escape hatch was offered twice — run the project empirically as learned masking, without identifiability. It was declined; the identifiability framing is exactly what distinguishes this from the memory-agent literature. If the theory stalls, raise it explicitly rather than quietly substituting engineering.</div>
+    <div class="note"><b>不要偏离。</b>那条退路已被提出过两次 —— 即以习得掩码的方式实证地推进项目，不涉及可辨识性。这条退路已被拒绝；可辨识性的界定框架正是本项目区别于记忆智能体文献之处。若理论陷入停滞，应明确提出，而非悄然以工程替代之。</div>
   </div>
 </section>
 
@@ -297,53 +298,53 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===== STATUS ===== -->
 <section class="band">
   <div class="wrap">
-    <p class="eyebrow">Status snapshot · July 9, 2026</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">Where the work stands</h2>
+    <p class="eyebrow">状态快照 · 2026 年 7 月 9 日</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">工作当前进展</h2>
     <div class="tbl-wrap">
       <table class="tbl">
-        <thead><tr><th>Item</th><th>State</th><th>Status</th></tr></thead>
+        <thead><tr><th>项目</th><th>状态</th><th>标记</th></tr></thead>
         <tbody>
-          <tr><td>Formulation v0.1 (.tex + 11-page PDF)</td><td class="give">Written, compiles clean, all items numbered</td><td><span class="pill done">done</span></td></tr>
-          <tr><td>Overleaf project shared with Yujia</td><td class="give">Not yet — this is action item one</td><td><span class="pill pend">pending</span></td></tr>
-          <tr><td>Yujia's review of any numbered item</td><td class="give">None yet; nothing is verified</td><td><span class="pill pend">pending</span></td></tr>
-          <tr><td>Reading plan (3 weeks)</td><td class="give">Not started in earnest</td><td><span class="pill pend">pending</span></td></tr>
-          <tr><td>Lemma 1 (frontier, with proof)</td><td class="give">Proved in v0.1; awaiting check</td><td><span class="pill done">done</span></td></tr>
-          <tr><td>Observations 1–2; Conjectures 1–2</td><td class="give">Stated with arguments / strategies</td><td><span class="pill done">done</span></td></tr>
-          <tr><td>E0 (discovery on observed motif)</td><td class="give">Pre-registered; gated on sign-off &amp; Q6</td><td><span class="pill block">blocked</span></td></tr>
-          <tr><td>E1 (CRL with mixing)</td><td class="give">Pre-registered; gated on sign-off</td><td><span class="pill block">blocked</span></td></tr>
-          <tr><td>Minimal theorem (σ=0, k=1)</td><td class="give">Statement fixed; proof not attempted</td><td><span class="pill pend">pending</span></td></tr>
+          <tr><td>形式化 v0.1（.tex + 11 页 PDF）</td><td class="give">已写就，编译无误，所有条目均已编号</td><td><span class="pill done">已完成</span></td></tr>
+          <tr><td>Overleaf 项目已与 Yujia 共享</td><td class="give">尚未 —— 这是第一项行动</td><td><span class="pill pend">待办</span></td></tr>
+          <tr><td>Yujia 对任何编号条目的审阅</td><td class="give">尚无；任何内容都未经核验</td><td><span class="pill pend">待办</span></td></tr>
+          <tr><td>阅读计划（3 周）</td><td class="give">尚未正式开始</td><td><span class="pill pend">待办</span></td></tr>
+          <tr><td>引理 1（前沿，附证明）</td><td class="give">已在 v0.1 中证明；待核验</td><td><span class="pill done">已完成</span></td></tr>
+          <tr><td>观察 1–2；猜想 1–2</td><td class="give">已陈述并附论证／策略</td><td><span class="pill done">已完成</span></td></tr>
+          <tr><td>E0（在可观测模体上做因果发现）</td><td class="give">已预注册；以签署确认与 Q6 为前提</td><td><span class="pill block">受阻</span></td></tr>
+          <tr><td>E1（含混合的 CRL）</td><td class="give">已预注册；以签署确认为前提</td><td><span class="pill block">受阻</span></td></tr>
+          <tr><td>最小定理（σ=0, k=1）</td><td class="give">陈述已定；尚未尝试证明</td><td><span class="pill pend">待办</span></td></tr>
         </tbody>
       </table>
     </div>
 
     <figure>
       <div class="fig">
-        <svg viewBox="0 0 900 120" role="img" aria-label="Project state machine: v0.1 written, Overleaf shared (you are here), Yujia review, revise to v0.2, sign-off plus Q6, E0, minimal theorem, E1, papers.">
+        <svg viewBox="0 0 900 120" role="img" aria-label="项目状态机：v0.1 已写就，Overleaf 已共享（你在此处），Yujia 审阅，修订为 v0.2，签署确认加 Q6，E0，最小定理，E1，论文。">
           <defs><marker id="m4a" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker></defs>
           <g font-family="var(--font-mono)" font-size="11">
           <!-- stages -->
           <g>
             <rect x="8"   y="40" width="86" height="40" rx="9" fill="var(--carrier-tint)" stroke="var(--carrier)"/>
-            <text x="51"  y="64" text-anchor="middle" fill="var(--carrier-deep)">v0.1 written</text>
+            <text x="51"  y="64" text-anchor="middle" fill="var(--carrier-deep)">v0.1 已写就</text>
             <rect x="112" y="40" width="86" height="40" rx="9" fill="var(--amber-tint)" stroke="var(--amber)"/>
             <text x="155" y="59" text-anchor="middle" fill="var(--amber)">Overleaf</text>
-            <text x="155" y="72" text-anchor="middle" fill="var(--amber)">shared</text>
+            <text x="155" y="72" text-anchor="middle" fill="var(--amber)">已共享</text>
             <rect x="216" y="40" width="86" height="40" rx="9" class="node"/>
-            <text x="259" y="64" text-anchor="middle" fill="var(--ink-soft)">Yujia review</text>
+            <text x="259" y="64" text-anchor="middle" fill="var(--ink-soft)">Yujia 审阅</text>
             <rect x="320" y="40" width="86" height="40" rx="9" class="node"/>
-            <text x="363" y="64" text-anchor="middle" fill="var(--ink-soft)">revise v0.2</text>
+            <text x="363" y="64" text-anchor="middle" fill="var(--ink-soft)">修订 v0.2</text>
             <rect x="424" y="40" width="90" height="40" rx="9" class="node"/>
-            <text x="469" y="59" text-anchor="middle" fill="var(--ink-soft)">sign-off</text>
+            <text x="469" y="59" text-anchor="middle" fill="var(--ink-soft)">签署确认</text>
             <text x="469" y="72" text-anchor="middle" fill="var(--ink-soft)">(+ Q6)</text>
             <rect x="532" y="40" width="60" height="40" rx="9" class="node"/>
             <text x="562" y="64" text-anchor="middle" fill="var(--ink-soft)">E0</text>
             <rect x="610" y="40" width="92" height="40" rx="9" class="node"/>
-            <text x="656" y="59" text-anchor="middle" fill="var(--ink-soft)">minimal</text>
-            <text x="656" y="72" text-anchor="middle" fill="var(--ink-soft)">theorem</text>
+            <text x="656" y="59" text-anchor="middle" fill="var(--ink-soft)">最小</text>
+            <text x="656" y="72" text-anchor="middle" fill="var(--ink-soft)">定理</text>
             <rect x="720" y="40" width="60" height="40" rx="9" class="node"/>
             <text x="750" y="64" text-anchor="middle" fill="var(--ink-soft)">E1</text>
             <rect x="798" y="40" width="86" height="40" rx="9" class="node"/>
-            <text x="841" y="64" text-anchor="middle" fill="var(--ink-soft)">paper(s)</text>
+            <text x="841" y="64" text-anchor="middle" fill="var(--ink-soft)">论文</text>
           </g>
           <path class="edge" d="M94,60 L110,60" marker-end="url(#m4a)"/>
           <path class="edge" d="M198,60 L214,60" marker-end="url(#m4a)"/>
@@ -355,11 +356,11 @@ svg .amark-c{fill:var(--carrier)}
           <path class="edge" d="M780,60 L796,60" marker-end="url(#m4a)"/>
           <!-- you are here -->
           <path style="stroke:var(--amber);stroke-width:1.6" d="M155,96 L155,84" marker-end="url(#m4a)"/>
-          <text x="155" y="112" text-anchor="middle" fill="var(--amber)">you are here</text>
+          <text x="155" y="112" text-anchor="middle" fill="var(--amber)">你在此处</text>
           </g>
         </svg>
       </div>
-      <figcaption><b>Project state machine.</b> E0 and the minimal theorem can proceed in parallel after sign-off; E1 waits for both. <span class="m">Current blockers:</span> Yujia's sign-off, and his answer to Q6 (whether sanity-scale sims may run during iteration). Everything computational is downstream of these two.</figcaption>
+      <figcaption><b>项目状态机。</b>签署确认之后，E0 与最小定理可并行推进；E1 须等待二者均完成。<span class="m">当前阻塞项：</span>Yujia 的签署确认，以及他对 Q6 的回复（迭代期间是否可运行验证规模的模拟）。所有计算性工作都在这两点的下游。</figcaption>
     </figure>
   </div>
 </section>
@@ -369,17 +370,17 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===== DECISION TREES ===== -->
 <section class="band">
   <div class="wrap">
-    <p class="eyebrow">The open questions as decisions</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">A recommendation he can veto</h2>
-    <p class="small" style="margin-bottom:1rem">He responds better to a vetoable proposal than an open question. Each carries the stake and the position to present. Q1–Q3 are the priority three.</p>
+    <p class="eyebrow">将开放问题化为决策</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">一份他可以否决的建议</h2>
+    <p class="small" style="margin-bottom:1rem">相比开放式提问，他对可否决的提案反应更好。每一项都附带其利害关系与拟呈上的立场。Q1–Q3 是优先处理的三项。</p>
     <div class="grid two">
-      <div class="card accent stack"><span class="tag">Q1 · gated vs. regime-free</span><p><b>Keep the gated formulation</b> — it matches CD-NOD's input and makes events explicit. If he prefers regime-free: rework A2/A5 into nonstationary transitions, switch C1a to continuous sufficient-change. ~1–2 days.</p></div>
-      <div class="card accent stack"><span class="tag">Q2 · the gluing step</span><p><b>Attempt diagonal-hold transport as written</b>, but ask whether the nonparametric-concepts machinery gives a cleaner bridge. If redirected: read the ICML 2025 proof and rebuild C1c on its skeleton first.</p></div>
-      <div class="card accent stack"><span class="tag">Q3 · is F<sub>t</sub> the target</span><p><b>Keep it</b>, with a Markov-blanket rephrasing offered as cosmetic. If he wants a soft information-theoretic variant: add an ε-sufficient relaxation without deleting the exact version the proof supports.</p></div>
-      <div class="card stack"><span class="tag">Q4 · gate vs. joint model</span><p><b>Preprocessing gate first</b> — modular, matches the ICML 2024 framework as published. Joint modeling makes certificate (iii) a model-comparison statement; medium rework.</p></div>
-      <div class="card stack"><span class="tag">Q5 · Layer 1 alone</span><p><b>Treat as scaffolding</b> unless E0's heatmaps are surprisingly rich. Either answer only changes packaging, not the work.</p></div>
-      <div class="card stack"><span class="tag">Q6 · sims during iteration</span><p><b>Ask permission for generator + ground-truth scaffolding only</b> (no discovery runs) — respects R1 while removing dead time. If no: the repo skeleton is still written on paper below.</p></div>
-      <div class="card stack" style="grid-column:1/-1"><span class="tag">Q7 · policy-relativity</span><p><b>Defend A8 as honest and standard</b>; offer cross-policy invariance as a stronger later target, not a definitional requirement. If he insists it belongs in the definition, scope it as its own section with its own conjecture rather than silently strengthening D1.</p></div>
+      <div class="card accent stack"><span class="tag">Q1 · 门控 vs. 无区制</span><p><b>保留门控形式化</b> —— 它与 CD-NOD 的输入相匹配，并使事件显式化。若他更倾向无区制：将 A2/A5 改写为非平稳转移，把 C1a 换为连续充分变化。约 1–2 天。</p></div>
+      <div class="card accent stack"><span class="tag">Q2 · 粘合步骤</span><p><b>按原文尝试对角保持传输</b>，但询问非参数概念的机制是否能给出更清晰的桥接。若被引导改向：先读 ICML 2025 的证明，并在其骨架之上重建 C1c。</p></div>
+      <div class="card accent stack"><span class="tag">Q3 · F<sub>t</sub> 是否为目标</span><p><b>保留</b>，并附上一个马尔可夫毯的改写作为形式上的替代。若他想要一个软性的信息论变体：加入一个 ε-充分的松弛版本，但不删去证明所支持的精确版本。</p></div>
+      <div class="card stack"><span class="tag">Q4 · 门控 vs. 联合模型</span><p><b>先用预处理门控</b> —— 模块化，且与已发表的 ICML 2024 框架相符。联合建模会使凭证 (iii) 变为一个模型比较的陈述；需中等程度返工。</p></div>
+      <div class="card stack"><span class="tag">Q5 · 仅第 1 层</span><p><b>视作脚手架</b>，除非 E0 的热力图出人意料地丰富。无论哪种答案都只改变呈现方式，而非工作本身。</p></div>
+      <div class="card stack"><span class="tag">Q6 · 迭代期间的模拟</span><p><b>仅就生成器与真值脚手架请求许可</b>（不做发现运行）—— 既遵守 R1，又消除空转时间。若不许可：仓库骨架仍以纸面形式写于下方。</p></div>
+      <div class="card stack" style="grid-column:1/-1"><span class="tag">Q7 · 策略相对性</span><p><b>将 A8 辩护为诚实且标准的做法</b>；把跨策略不变性作为更强的后续目标提出，而非定义层面的要求。若他坚持它应属于定义，则将其作为独立章节、附带独立猜想来处理，而非悄然强化 D1。</p></div>
     </div>
   </div>
 </section>
@@ -389,25 +390,25 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===== 14-DAY PLAN ===== -->
 <section class="band">
   <div class="wrap">
-    <p class="eyebrow">Fourteen days</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">The work plan</h2>
-    <p class="small" style="margin-bottom:.3rem">Assuming the meeting lands on day 7. Reading and document iteration run in parallel by design.</p>
+    <p class="eyebrow">十四天</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">工作计划</h2>
+    <p class="small" style="margin-bottom:.3rem">假定会面落在第 7 天。阅读与文档迭代按设计并行进行。</p>
     <div class="tbl-wrap">
       <table class="tbl">
-        <thead><tr><th>Day</th><th>Focus</th><th>Output</th></tr></thead>
+        <thead><tr><th>天</th><th>重点</th><th>产出</th></tr></thead>
         <tbody>
-          <tr><td class="k">0</td><td>Create Overleaf, paste v0.1, share; send the note</td><td class="give">Link sent; review requested</td></tr>
-          <tr><td class="k">1–2</td><td>IDOL + Song blog, with the extraction template</td><td class="give">1-page note: A1/A2 verbatim, where each degenerates at σ→0</td></tr>
-          <tr><td class="k">3</td><td>LEAP + TDRL conditions</td><td class="give">Conditions table feeding Observation 1</td></tr>
-          <tr><td class="k">4</td><td>ICML 2025 set-identifiability</td><td class="give">Which statements apply verbatim within a hold regime (C1b)</td></tr>
-          <tr><td class="k">5</td><td>ICML 2024 selection + NeurIPS 2024 subtasks</td><td class="give">Certificate spec: their assumptions vs. our motif</td></tr>
-          <tr><td class="k">6</td><td>Meeting prep; whiteboard dry-run of Lemma 1</td><td class="give">Agenda; Q1–Q3 with recommendations</td></tr>
-          <tr><td class="k">7</td><td>Meeting; same-day minutes; changelog; bump to v0.2</td><td class="give">v0.2 + decision log</td></tr>
-          <tr><td class="k">8–9</td><td>Implement revisions; if Q6 allows, scaffold E0 (generator only)</td><td class="give">v0.2 stabilized; repo skeleton</td></tr>
-          <tr><td class="k">10</td><td>NeurIPS 2022 + ICML 2026</td><td class="give">Positioning table refreshed with exact conditions</td></tr>
-          <tr><td class="k">11–12</td><td>Minimal theorem: formal setup + boundary step</td><td class="give">Draft proof or a precise list of stuck points</td></tr>
-          <tr><td class="k">13</td><td>CaRiNG + tigramite / causal-learn docs</td><td class="give">E0 configs finalized</td></tr>
-          <tr><td class="k">14</td><td>Second meeting prep</td><td class="give">Agenda with theorem progress as item one</td></tr>
+          <tr><td class="k">0</td><td>创建 Overleaf，粘入 v0.1，共享；发送说明</td><td class="give">链接已发送；已请求审阅</td></tr>
+          <tr><td class="k">1–2</td><td>IDOL + Song 博客，配合提取模板</td><td class="give">1 页笔记：A1/A2 逐字摘录，各自在 σ→0 时于何处退化</td></tr>
+          <tr><td class="k">3</td><td>LEAP + TDRL 条件</td><td class="give">支撑观察 1 的条件表</td></tr>
+          <tr><td class="k">4</td><td>ICML 2025 集合可辨识性</td><td class="give">哪些陈述在单个保持区制内逐字适用（C1b）</td></tr>
+          <tr><td class="k">5</td><td>ICML 2024 选择 + NeurIPS 2024 子任务</td><td class="give">凭证规格：他们的假设 vs. 我们的模体</td></tr>
+          <tr><td class="k">6</td><td>会面准备；引理 1 的白板预演</td><td class="give">议程；Q1–Q3 及建议</td></tr>
+          <tr><td class="k">7</td><td>会面；当日纪要；变更日志；升级至 v0.2</td><td class="give">v0.2 + 决策记录</td></tr>
+          <tr><td class="k">8–9</td><td>实施修订；若 Q6 允许，搭建 E0（仅生成器）</td><td class="give">v0.2 稳定化；仓库骨架</td></tr>
+          <tr><td class="k">10</td><td>NeurIPS 2022 + ICML 2026</td><td class="give">以精确条件刷新定位表</td></tr>
+          <tr><td class="k">11–12</td><td>最小定理：形式化设置 + 边界步骤</td><td class="give">证明草稿，或一份精确的卡点清单</td></tr>
+          <tr><td class="k">13</td><td>CaRiNG + tigramite / causal-learn 文档</td><td class="give">E0 配置定稿</td></tr>
+          <tr><td class="k">14</td><td>第二次会面准备</td><td class="give">以定理进展为首项的议程</td></tr>
         </tbody>
       </table>
     </div>
@@ -419,33 +420,33 @@ svg .amark-c{fill:var(--carrier)}
 <!-- ===== E0 RUNBOOK ===== -->
 <section class="band">
   <div class="wrap stack">
-    <p class="eyebrow">E0 runbook · precise enough to start coding</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">The first experiment, on paper</h2>
-    <p>Discovery on the fully observed motif — no mixing, no VAE, CPU-only — so any failure is attributable to the memory regime itself. <span class="mono small">tigramite for PCMCI⁺; causal-learn for PC-stable and CD-NOD.</span></p>
-    <pre class="code"><span class="cm"># repository skeleton</span>
+    <p class="eyebrow">E0 操作手册 · 精确到足以开始编码</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">纸面上的第一个实验</h2>
+    <p>在完全可观测的模体上做因果发现 —— 无混合、无 VAE、仅用 CPU —— 使任何失败都可归因于记忆区制本身。<span class="mono small">用 tigramite 跑 PCMCI⁺；用 causal-learn 跑 PC-stable 和 CD-NOD。</span></p>
+    <pre class="code"><span class="cm"># 仓库骨架</span>
 causal-memory/
-  gen/motif.py          <span class="cm"># episode generator</span>
-  gen/ground_truth.py   <span class="cm"># unrolled adjacency + true frontier F_t(Y)</span>
+  gen/motif.py          <span class="cm"># 幕生成器</span>
+  gen/ground_truth.py   <span class="cm"># 展开邻接矩阵 + 真实前沿 F_t(Y)</span>
   disc/run_pcmci.py     <span class="cm"># tigramite PCMCI+ (ParCorr, GPDC)</span>
-  disc/run_pc.py        <span class="cm"># causal-learn PC-stable, window-unrolled</span>
-  disc/run_cdnod.py     <span class="cm"># causal-learn CD-NOD, u_t as context index</span>
-  metrics/edges.py      <span class="cm"># edge F1 by type, SHD, frontier P/R</span>
-  configs/grid.yaml     <span class="cm"># the sweep</span>
+  disc/run_pc.py        <span class="cm"># causal-learn PC-stable，按窗口展开</span>
+  disc/run_cdnod.py     <span class="cm"># causal-learn CD-NOD，u_t 作为上下文索引</span>
+  metrics/edges.py      <span class="cm"># 按类型的边 F1、SHD、前沿 P/R</span>
+  configs/grid.yaml     <span class="cm"># 扫描网格</span>
   notebooks/frontier_heatmap.ipynb
 
-<span class="cm"># episode generator — the core</span>
+<span class="cm"># 幕生成器 —— 核心</span>
 <span class="kw">def</span> sample_episode(Delta, k, sigma, staggered, per_item_readout,
                    selection_arm, n_distractors, seed):
-    <span class="cm"># cues resampled per episode  (cue diversity is REQUIRED)</span>
-    <span class="cm"># distractors: d_t = tanh(W_d @ d_{t-1}) + eps   (full-rank)</span>
-    <span class="cm"># write:  m_{t0} = w(c) + eps_w        (write gate)</span>
-    <span class="cm"># hold:   m_t = m_{t-1} + sigma*eps     (Gaussian or Laplace)</span>
-    <span class="cm"># read:   shared  y = r(m_1..m_k, d) ; per-item  y_j = r_j(m_j,d)</span>
-    <span class="cm"># selection arm: y has NO m-parent; keep iff phi(c,y) &gt; theta</span>
-    <span class="cm"># emit: s_1:T (observed), u_1:T (regimes), true adjacency, F_t(Y)</span></pre>
+    <span class="cm"># 每幕重新采样线索（线索多样性为必需）</span>
+    <span class="cm"># 干扰变量：d_t = tanh(W_d @ d_{t-1}) + eps   （满秩）</span>
+    <span class="cm"># 写入：  m_{t0} = w(c) + eps_w        （写入门）</span>
+    <span class="cm"># 保持：  m_t = m_{t-1} + sigma*eps     （高斯或拉普拉斯）</span>
+    <span class="cm"># 读取：  共享  y = r(m_1..m_k, d) ；逐项  y_j = r_j(m_j,d)</span>
+    <span class="cm"># 选择臂：y 无 m-父节点；当 phi(c,y) &gt; theta 时保留</span>
+    <span class="cm"># 输出：s_1:T（观测）、u_1:T（区制）、真实邻接矩阵、F_t(Y)</span></pre>
     <div class="grid two">
-      <div class="card stack"><span class="tag">the sweep</span><p><span class="m">Δ</span> ∈ {1,2,5,10,20,50} · <span class="m">σ</span> ∈ {0, 0.01, 0.1} · <span class="m">k</span> ∈ {1,2,4} · simultaneous/staggered · shared/per-item · window <span class="m">W</span> ∈ {Δ, 2Δ, too-small}. 10⁴ episodes/config, three algorithms, five seeds — ~1,500–2,000 runs, under a day of CPU wall-clock.</p></div>
-      <div class="card stack"><span class="tag">deliverable plots</span><p>Heatmap of read-edge <span class="m">F₁</span> over (Δ,σ) per <span class="m">k</span> — the headline regardless of pass/fail; boundary vs. mid-hold bars (P1); simultaneous/staggered &amp; shared/per-item (P3); selection FPR with gate on/off (P2); <span class="m">W</span>-sensitivity (R8).</p></div>
+      <div class="card stack"><span class="tag">扫描网格</span><p><span class="m">Δ</span> ∈ {1,2,5,10,20,50} · <span class="m">σ</span> ∈ {0, 0.01, 0.1} · <span class="m">k</span> ∈ {1,2,4} · 同时/错开 · 共享/逐项 · 窗口 <span class="m">W</span> ∈ {Δ, 2Δ, too-small}。每配置 10⁴ 幕，三种算法，五个种子 —— 约 1,500–2,000 次运行，CPU 实际耗时不足一天。</p></div>
+      <div class="card stack"><span class="tag">交付图表</span><p>读取边 <span class="m">F₁</span> 在 (Δ,σ) 上按 <span class="m">k</span> 的热力图 —— 无论通过与否都是核心结果；边界 vs. 保持中段柱状图（P1）；同时/错开与共享/逐项（P3）；门控开/关下的选择 FPR（P2）；<span class="m">W</span> 敏感性（R8）。</p></div>
     </div>
   </div>
 </section>
@@ -455,40 +456,40 @@ causal-memory/
 <!-- ===== RISK + TIMELINE ===== -->
 <section class="band">
   <div class="wrap">
-    <p class="eyebrow">Risk register</p>
-    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">Every mitigation routes through a numbered question or a pre-registered fallback</h2>
+    <p class="eyebrow">风险登记表</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">每一项缓解措施都通过某个编号问题或预注册退路来落实</h2>
     <div class="tbl-wrap">
       <table class="tbl">
-        <thead><tr><th>Risk</th><th>Exposure</th><th>Mitigation</th></tr></thead>
+        <thead><tr><th>风险</th><th>暴露程度</th><th>缓解措施</th></tr></thead>
         <tbody>
-          <tr><td>C1c gluing fails</td><td><span class="pill pend">medium</span></td><td class="give">Ship the k=1 theorem (gluing trivial) + honest set-level statement for k&gt;1; escalate via Q2</td></tr>
-          <tr><td>Yujia rejects the gated formulation</td><td><span class="pill pend">medium</span></td><td class="give">Q1 branch: 1–2-day rework of A2/A5; C1a switches to continuous sufficient change</td></tr>
-          <tr><td>Selection assumptions unmet on the motif</td><td><span class="pill pend">low–med</span></td><td class="give">Restrict the E0 construction to match the ICML 2024 hypotheses; document the gap</td></tr>
-          <tr><td>E0 fails even at boundaries</td><td><span class="pill done">low</span></td><td class="give">The frontier heatmap is the deliverable either way; event-gated estimators become the contribution</td></tr>
-          <tr><td>Policy-relativity objection hardens (Q7)</td><td><span class="pill done">low</span></td><td class="give">Scope invariance as its own future section; do not strengthen D1 silently</td></tr>
-          <tr><td>Timeline slips against NeurIPS 2027</td><td><span class="pill pend">medium</span></td><td class="give">Q5 branch: split a Layer-1 paper; the minimal theorem + E0 is a workshop-grade unit</td></tr>
+          <tr><td>C1c 粘合失败</td><td><span class="pill pend">中</span></td><td class="give">交付 k=1 定理（粘合平凡）+ k&gt;1 的诚实集合级陈述；经 Q2 升级处理</td></tr>
+          <tr><td>Yujia 否决门控形式化</td><td><span class="pill pend">中</span></td><td class="give">Q1 分支：1–2 天返工 A2/A5；C1a 切换为连续充分变化</td></tr>
+          <tr><td>模体上不满足选择假设</td><td><span class="pill pend">低–中</span></td><td class="give">将 E0 的构造限制为契合 ICML 2024 的前提；记录差距</td></tr>
+          <tr><td>E0 即便在边界处也失败</td><td><span class="pill done">低</span></td><td class="give">无论如何前沿热力图都是交付物；事件门控估计器则成为贡献</td></tr>
+          <tr><td>策略相对性异议加剧（Q7）</td><td><span class="pill done">低</span></td><td class="give">将不变性作为独立的后续章节处理；不悄然强化 D1</td></tr>
+          <tr><td>时间线相对 NeurIPS 2027 滑期</td><td><span class="pill pend">中</span></td><td class="give">Q5 分支：拆出一篇第 1 层论文；最小定理 + E0 即为一个研讨会级别的成果单元</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
   <div class="wrap stack">
-    <p class="eyebrow">Working backward from letters, November 2027</p>
-    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem)">Timeline to the Fall 2027 cycle</h2>
+    <p class="eyebrow">从 2027 年 11 月的推荐信倒推</p>
+    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem)">通往 2027 年秋季申请周期的时间线</h2>
     <div class="tbl-wrap">
       <table class="tbl">
-        <thead><tr><th>When</th><th>Milestone</th></tr></thead>
+        <thead><tr><th>时间</th><th>里程碑</th></tr></thead>
         <tbody>
-          <tr><td class="k">Jul 2026</td><td>Sign-off on the formulation</td></tr>
-          <tr><td class="k">Early Aug</td><td>E0 complete — the frontier maps</td></tr>
-          <tr><td class="k">End Aug</td><td>Minimal theorem drafted (σ=0, k=1)</td></tr>
-          <tr><td class="k">Sep</td><td>E1 through the mixing arms</td></tr>
-          <tr><td class="k">Oct–Jan</td><td>Full theory push: C1 in generality, capacity &amp; selection propositions</td></tr>
-          <tr><td class="k">Feb–Apr 2027</td><td>Paper assembly · target NeurIPS 2027 (ICLR 2028 fallback)</td></tr>
+          <tr><td class="k">2026 年 7 月</td><td>形式化获得签署确认</td></tr>
+          <tr><td class="k">8 月初</td><td>E0 完成 —— 前沿图谱</td></tr>
+          <tr><td class="k">8 月末</td><td>最小定理起草完成（σ=0, k=1）</td></tr>
+          <tr><td class="k">9 月</td><td>E1 贯通各个混合臂</td></tr>
+          <tr><td class="k">10 月–次年 1 月</td><td>全面理论攻坚：一般情形下的 C1、容量与选择相关命题</td></tr>
+          <tr><td class="k">2027 年 2 月–4 月</td><td>论文组装 · 目标 NeurIPS 2027（ICLR 2028 为退路）</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="small">By application time the record should read: a signed-off formulation, the frontier maps, at least one theorem, and a submission with Yujia. Slack exists — and it is consumed by exactly one thing: iterating v0.x until sign-off, which is why the reading runs in parallel.</p>
+    <p class="small">到申请之时，履历应呈现为：一份经签署确认的形式化、前沿图谱、至少一条定理，以及一篇与 Yujia 合作的投稿。存在余量 —— 而它恰好被一件事消耗：迭代 v0.x 直至获得签署确认，这也正是阅读须并行进行的原因。</p>
   </div>
 </section>
 
@@ -497,14 +498,14 @@ causal-memory/
 <!-- ===== THE NOTE ===== -->
 <section class="band">
   <div class="wrap stack">
-    <p class="eyebrow">Action item one</p>
-    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem)">The note to send with the Overleaf link</h2>
+    <p class="eyebrow">第一项行动</p>
+    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem)">随 Overleaf 链接发送的说明</h2>
     <div class="defbox" style="background:var(--surface)">
-      <span class="tag">draft message</span>
+      <span class="tag">草拟消息</span>
       <p style="font-style:italic;margin:0 0 .7rem">Hi Yujia,</p>
-      <p style="font-style:italic;margin:0 0 .7rem">I wrote up the formulation as an Overleaf doc: [link]. Every assumption and claim is numbered so you can mark each one directly. The part I'd most like you to check is the Lemma 1 proof (the minimal-memory characterization); Q1 to Q7 at the end collect the decision points, each with my recommendation.</p>
-      <p style="font-style:italic;margin:0 0 .7rem">Nothing runs before your sign-off.</p>
-      <p style="font-style:italic;margin:0">Best,<br/>Nothern</p>
+      <p style="font-style:italic;margin:0 0 .7rem">我把形式化整理成了一份 Overleaf 文档：[link]。每一条假设和主张都已编号，方便你直接逐条标注。我最希望你核对的部分是引理 1 的证明（最小记忆的刻画）；文末的 Q1 至 Q7 汇集了各个决策点，每一项都附有我的建议。</p>
+      <p style="font-style:italic;margin:0 0 .7rem">在你签署确认之前，不会运行任何东西。</p>
+      <p style="font-style:italic;margin:0">此致，<br/>Nothern</p>
     </div>
   </div>
 </section>
@@ -512,12 +513,12 @@ causal-memory/
 <!-- ===== NEXT ===== -->
 <section class="band" style="padding-top:.5rem">
   <div class="wrap">
-    <p class="eyebrow">The series</p>
-    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem);margin-bottom:.2rem">Back to the start</h2>
+    <p class="eyebrow">本系列</p>
+    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem);margin-bottom:.2rem">回到起点</h2>
     <div class="next">
-      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720"><span class="n">01 · Overview</span><h4>The thesis</h4><p>Memory as identifiable causal structure — the claim, the two layers, trustworthy memory.</p></a>
-      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb"><span class="n">02 · Theory</span><h4>The machinery</h4><p>SCMs, identifiability, and the selection confound.</p></a>
-      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f"><span class="n">03 · Formulation v0.1</span><h4>The numbered claims</h4><p>Assumptions, the frontier lemma, conjectures, predictions, experiments.</p></a>
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720"><span class="n">01 · 概览</span><h4>论题</h4><p>将记忆视作可辨识的因果结构 —— 主张、两层结构、可信记忆。</p></a>
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb"><span class="n">02 · 理论</span><h4>理论机制</h4><p>SCM、可辨识性，以及选择混淆。</p></a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f"><span class="n">03 · 形式化 v0.1</span><h4>编号化的各项主张</h4><p>假设、前沿引理、猜想、预测、实验。</p></a>
     </div>
   </div>
 </section>
@@ -527,8 +528,8 @@ causal-memory/
 
 <footer>
   <div class="foot-in">
-    <b>Causal Memory · Formulation v0.1</b> — Memory as identifiable temporal structure in the data-generating process.<br/>
-    Mian (Nothern) Wu, prepared for step-by-step verification with Yujia Zheng · July 2026.<br/>
-    Part 04 of a four-part series · rendered from <b>causal_memory_formulation.tex</b> and <b>causal_memory_onboarding.tex</b>.
+    <b>因果记忆 · 表述文档 v0.1</b> —— 将记忆定义为数据生成过程中可辨识的时序结构。<br/>
+    Mian (Nothern) Wu 撰写，供与 Yujia Zheng 逐步核验 · 2026 年 7 月。<br/>
+    四部曲之第 04 部 · 由 <b>causal_memory_formulation.tex</b> 与 <b>causal_memory_onboarding.tex</b> 生成。
   </div>
 </footer>

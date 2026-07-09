@@ -1,48 +1,46 @@
-# Causal Memory — a four-part web series
+# 因果记忆 —— 四部曲网页作品（中文版）
 
-An ordered set of self-contained web artifacts that render the **Causal Memory** research
-program — memory defined as identifiable temporal causal structure in the data-generating
-process — from two source LaTeX documents (`causal_memory_formulation.tex` v0.1 and its
-companion `causal_memory_onboarding.tex`).
+一套按顺序阅读的自包含网页作品，将 **因果记忆** 研究计划——把记忆定义为数据生成过程中
+可辨识的时序因果结构——由两份源 LaTeX 文档（`causal_memory_formulation.tex` v0.1 及其
+配套文档 `causal_memory_onboarding.tex`）渲染而成。
 
-Read **in order**:
+**按顺序阅读：**
 
-| # | Artifact | What it covers | Live |
-|---|----------|----------------|------|
-| 01 | **The Thesis** | The one-paragraph claim, the two-layer program, the write–hold–read motif, trustworthy memory (D3), and positioning against the memory-agent literature. | https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720 |
-| 02 | **The Machinery** | SCMs and d-separation, the unrolled temporal graph, causal discovery, the identifiability impossibility / classes / two routes, MCC, and the selection confound. | https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb |
-| 03 | **The Formulation v0.1** | Assumptions A1–A9, the causal-frontier lemma with its worked example and two-half proof, Observations 1–2, Conjectures 1–2, Predictions P1–P4, experiments E0/E1, positioning table, and open questions Q1–Q7. | https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f |
-| 04 | **The Plan** | Requirement traceability R1–R9, status snapshot and state machine, the Q1–Q7 decision trees, the 14-day plan, the E0 runbook, the risk register, and the timeline to the Fall 2027 cycle. | https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201 |
+| # | 作品 | 内容 | 在线链接 |
+|---|------|------|---------|
+| 01 | **论题** | 一段话的核心主张、两层框架、写入–保持–读取模体、可信记忆（D3），以及相对记忆-智能体文献的定位。 | https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720 |
+| 02 | **理论机制** | 结构因果模型与 d-分离、展开时序图、因果发现、可辨识性的不可能性/层级/两条路线、MCC，以及选择混淆。 | https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb |
+| 03 | **表述文档 v0.1** | 假设 A1–A9、含证明与算例的因果前沿引理、观察 1–2、猜想 1–2、预测 P1–P4、实验 E0/E1、定位表，以及开放问题 Q1–Q7。 | https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f |
+| 04 | **计划** | 需求可追溯 R1–R9、状态快照与状态机、Q1–Q7 决策树、14 天工作计划、E0 操作手册、风险登记表，以及通往 2027 申请季的时间线。 | https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201 |
 
-## Files
+## 文件
 
 ```
 artifacts/
-  01-overview.html        # 01 · The Thesis
-  02-theory-primer.html   # 02 · The Machinery
-  03-formulation.html     # 03 · The Formulation v0.1
-  04-execution.html       # 04 · The Plan
+  01-overview.html        # 01 · 论题
+  02-theory-primer.html   # 02 · 理论机制
+  03-formulation.html     # 03 · 表述文档 v0.1
+  04-execution.html       # 04 · 计划
 ```
 
-Each file is a self-contained fragment (title + inlined `<style>` + content). It renders both
-as a published Artifact and when opened directly in a browser. The in-page series navigation
-links to the live artifact URLs above.
+每个文件都是自包含的片段（标题 + 内联 `<style>` + 正文），既可作为已发布的 Artifact 渲染，
+也可直接在浏览器中打开。页内的系列导航链接指向上表中的在线地址。
 
-## Design
+## 设计
 
-One shared design system across all four pages:
+四页共享同一套设计系统：
 
-- **Type** — a humanist serif (Iowan / Palatino / Charter / Georgia stack) for all reading
-  text, paired with a monospace face for eyebrows, labels, identifiers, and code. Math is
-  hand-typeset with styled spans; no external MathJax.
-- **Color** — a cool "paper" ground with **carrier teal** as the accent (the color the source
-  papers use for the memory carrier). Amber and rose carry status semantics, kept distinct from
-  the accent. Full light and dark themes, driven by `prefers-color-scheme` with an explicit
-  `data-theme` override.
-- **Figures** — the key TikZ diagrams (the motif, the three d-separation motifs, the unrolled
-  graph, the identifiability indeterminacy, the frontier worked example, the rotation/frozen
-  block, the selection collider, the pipeline, and the project state machine) redrawn as clean
-  inline SVG.
+- **字体** —— 正文与标题使用衬线体（宋体 / 思源宋体等 CJK 衬线栈，回退至 Iowan / Palatino /
+  Georgia），营造学术专著的气质；眉标、标签、标识符与代码使用等宽体（回退至 PingFang /
+  微软雅黑 / Noto Sans CJK）。数学公式以样式化 `<span>` 手工排版，不依赖外部 MathJax。
+- **配色** —— 冷调"纸面"底色，以 **载体青（carrier teal）** 为强调色（即源论文中标记记忆载体
+  的颜色）。琥珀色与玫红色承载状态语义，与强调色区分。完整的浅色/深色双主题，由
+  `prefers-color-scheme` 驱动，并以显式 `data-theme` 覆盖。
+- **插图** —— 关键 TikZ 图（模体、三种 d-分离模体、展开图、可辨识性不确定性、前沿算例、
+  旋转/冻结块、选择对撞、流水线与项目状态机）均重绘为干净的内联 SVG。
 
-Every page was render-verified (light / dark / mobile, no console errors, no horizontal
-overflow) and reviewed for fidelity against the source `.tex`.
+每一页均经过渲染核验（浅色 / 深色 / 移动端，无控制台报错，无横向溢出），并对照源 `.tex`
+逐项核对术语与论断的忠实度。人名、机构、算法/库/会议名称与数学符号保留原文形式。
+
+> 英文版保留在本仓库的 Git 历史中（此中文版之前的提交）。如需同时保留中英双语两套作品，
+> 或将英文版恢复为独立链接，请告知。
