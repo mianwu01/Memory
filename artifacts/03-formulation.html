@@ -1,0 +1,550 @@
+<title>Causal Memory · 03 The Formulation</title>
+<style>
+/* ============================================================
+   CAUSAL MEMORY — shared design system (kit v1)
+   Serif monograph + monospace formal register.
+   Accent = carrier teal (the color the papers use for memory).
+   ============================================================ */
+:root{
+  --font-serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Charter,Georgia,Cambria,'Times New Roman',serif;
+  --font-mono:ui-monospace,'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',Menlo,Consolas,'Liberation Mono',monospace;
+
+  --paper:#F1F5F4;
+  --surface:#FBFCFC;
+  --surface-2:#EAF0EE;
+  --ink:#0F201E;
+  --ink-soft:#3B4E4B;
+  --ink-faint:#69807C;
+  --line:#D6E1DE;
+  --line-strong:#BFCECA;
+
+  --carrier:#0B7C72;
+  --carrier-deep:#075B54;
+  --carrier-tint:#E0EFEC;
+  --carrier-glow:rgba(11,124,114,.14);
+
+  --amber:#A5651A;
+  --amber-tint:#F4E8D5;
+  --rose:#AC3548;
+  --rose-tint:#F3DBDF;
+
+  --shadow:0 1px 2px rgba(15,32,30,.05),0 8px 30px rgba(15,32,30,.06);
+  --shadow-lg:0 2px 6px rgba(15,32,30,.06),0 24px 60px rgba(15,32,30,.10);
+
+  --col:69ch;
+  --pad:clamp(1.2rem,5vw,2.6rem);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#081211;
+    --surface:#0F1E1C;
+    --surface-2:#132523;
+    --ink:#E7F0EE;
+    --ink-soft:#A6BAB6;
+    --ink-faint:#6D817D;
+    --line:#1D2F2C;
+    --line-strong:#294139;
+    --carrier:#41D9C6;
+    --carrier-deep:#82F0E2;
+    --carrier-tint:#0E2A27;
+    --carrier-glow:rgba(65,217,198,.16);
+    --amber:#DDA351;
+    --amber-tint:#241C10;
+    --rose:#E6828F;
+    --rose-tint:#2A151A;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.5);
+    --shadow-lg:0 2px 6px rgba(0,0,0,.45),0 30px 70px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="light"]{
+  --paper:#F1F5F4;--surface:#FBFCFC;--surface-2:#EAF0EE;--ink:#0F201E;--ink-soft:#3B4E4B;--ink-faint:#69807C;
+  --line:#D6E1DE;--line-strong:#BFCECA;--carrier:#0B7C72;--carrier-deep:#075B54;--carrier-tint:#E0EFEC;--carrier-glow:rgba(11,124,114,.14);
+  --amber:#A5651A;--amber-tint:#F4E8D5;--rose:#AC3548;--rose-tint:#F3DBDF;
+  --shadow:0 1px 2px rgba(15,32,30,.05),0 8px 30px rgba(15,32,30,.06);--shadow-lg:0 2px 6px rgba(15,32,30,.06),0 24px 60px rgba(15,32,30,.10);
+}
+:root[data-theme="dark"]{
+  --paper:#081211;--surface:#0F1E1C;--surface-2:#132523;--ink:#E7F0EE;--ink-soft:#A6BAB6;--ink-faint:#6D817D;
+  --line:#1D2F2C;--line-strong:#294139;--carrier:#41D9C6;--carrier-deep:#82F0E2;--carrier-tint:#0E2A27;--carrier-glow:rgba(65,217,198,.16);
+  --amber:#DDA351;--amber-tint:#241C10;--rose:#E6828F;--rose-tint:#2A151A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.5);--shadow-lg:0 2px 6px rgba(0,0,0,.45),0 30px 70px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-serif);font-size:1.0625rem;line-height:1.68;
+  font-feature-settings:"kern" 1,"liga" 1;text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--carrier-glow);color:var(--ink)}
+a{color:var(--carrier-deep);text-decoration-color:color-mix(in srgb,var(--carrier) 45%,transparent);text-underline-offset:2px}
+a:hover{text-decoration-color:var(--carrier)}
+:focus-visible{outline:2px solid var(--carrier);outline-offset:3px;border-radius:3px}
+img,svg{max-width:100%}
+h1,h2,h3{text-wrap:balance;line-height:1.12;font-weight:700;letter-spacing:-.012em}
+
+/* ---------- shell ---------- */
+.wrap{max-width:var(--col);margin-inline:auto;padding-inline:var(--pad)}
+.band{padding-block:clamp(2.4rem,6vw,4.2rem)}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+.mono{font-family:var(--font-mono)}
+.eyebrow{
+  font-family:var(--font-mono);font-size:.72rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--carrier-deep);
+}
+.lede{font-size:1.28rem;line-height:1.5;color:var(--ink-soft)}
+.small{font-size:.9rem;color:var(--ink-faint)}
+p{margin:0 0 1rem}
+.stack>*+*{margin-top:1.05rem}
+
+/* ---------- top series bar ---------- */
+.topbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:var(--col);margin-inline:auto;padding:.5rem var(--pad);display:flex;align-items:center;gap:.6rem .9rem;justify-content:space-between;flex-wrap:wrap}
+.brand{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+@media (max-width:600px){.brand .brand-extra{display:none}}
+.brand b{color:var(--carrier-deep);font-weight:700}
+.series{display:flex;gap:.35rem;flex-wrap:wrap}
+.series a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.02em;text-decoration:none;color:var(--ink-faint);
+  border:1px solid var(--line);border-radius:999px;padding:.16rem .6rem;transition:.16s}
+.series a:hover{border-color:var(--carrier);color:var(--carrier-deep)}
+.series a[aria-current="page"]{background:var(--carrier);border-color:var(--carrier);color:#fff}
+@media (prefers-color-scheme:dark){.series a[aria-current="page"]{color:#08110f}}
+:root[data-theme="dark"] .series a[aria-current="page"]{color:#08110f}
+:root[data-theme="light"] .series a[aria-current="page"]{color:#fff}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-bg{position:absolute;inset:0;pointer-events:none;
+  background:
+   radial-gradient(60% 80% at 82% 8%,var(--carrier-glow),transparent 70%),
+   radial-gradient(50% 60% at 6% 96%,var(--carrier-glow),transparent 72%);}
+.hero-in{position:relative;max-width:var(--col);margin-inline:auto;padding:clamp(2.2rem,6vw,4rem) var(--pad) clamp(1.6rem,4vw,2.6rem)}
+.kicker{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem}
+.kicker .num{font-family:var(--font-mono);font-size:.8rem;letter-spacing:.1em;color:var(--carrier-deep);border:1px solid var(--carrier);border-radius:6px;padding:.1rem .45rem}
+h1.title{font-size:clamp(2.25rem,6.2vw,3.9rem);margin:.2rem 0 .1rem;letter-spacing:-.02em}
+h1.title .q{color:var(--carrier-deep)}
+.subtitle{font-size:clamp(1.1rem,2.6vw,1.5rem);color:var(--ink-soft);font-style:italic;margin:.4rem 0 0;line-height:1.35}
+.byline{margin-top:1.4rem;font-family:var(--font-mono);font-size:.78rem;color:var(--ink-faint);letter-spacing:.02em;
+  display:flex;gap:.5rem 1.2rem;flex-wrap:wrap;align-items:center}
+.byline .dot{width:5px;height:5px;border-radius:50%;background:var(--carrier);display:inline-block}
+
+/* ---------- figures ---------- */
+figure{margin:1.8rem 0}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+  padding:clamp(1rem,3vw,1.8rem);overflow-x:auto}
+.fig svg{display:block;margin-inline:auto;height:auto}
+figcaption{font-family:var(--font-mono);font-size:.78rem;line-height:1.5;color:var(--ink-faint);margin-top:.9rem;text-align:left}
+figcaption b{color:var(--carrier-deep);font-weight:600}
+
+/* ---------- cards ---------- */
+.grid{display:grid;gap:1rem}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:1.15rem 1.2rem;box-shadow:var(--shadow)}
+.card h3{margin:.1rem 0 .5rem;font-size:1.12rem}
+.card p{font-size:.98rem;color:var(--ink-soft);margin:0}
+.card .tag{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--carrier-deep);display:block;margin-bottom:.45rem}
+.card.accent{border-color:color-mix(in srgb,var(--carrier) 40%,var(--line));
+  background:linear-gradient(180deg,var(--carrier-tint),var(--surface) 60%)}
+
+/* labelled layer cards */
+.layer{position:relative;padding-left:1.4rem}
+.layer::before{content:"";position:absolute;left:0;top:.2rem;bottom:.2rem;width:4px;border-radius:4px;background:var(--carrier)}
+.layer.l2::before{background:var(--amber)}
+
+/* ---------- certificate list ---------- */
+.certs{counter-reset:cert;display:grid;gap:.7rem;margin:1.2rem 0}
+.cert{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start;
+  background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:.9rem 1rem}
+.cert .rn{font-family:var(--font-mono);font-weight:700;color:var(--carrier-deep);
+  border:1px solid var(--carrier);border-radius:8px;min-width:2.1rem;text-align:center;padding:.25rem 0;font-size:.82rem}
+.cert h4{margin:.05rem 0 .25rem;font-size:1.02rem}
+.cert p{margin:0;font-size:.94rem;color:var(--ink-soft)}
+
+/* ---------- math ---------- */
+.m{font-family:var(--font-serif);font-style:italic}
+.m .fn{font-style:normal}
+.eq{font-family:var(--font-serif);font-style:italic;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:8px;padding:.7rem 1rem;margin:1.1rem 0;overflow-x:auto;font-size:1.05rem;line-height:1.9}
+.op{font-style:normal;color:var(--carrier-deep);padding:0 .12em}
+kbd,code{font-family:var(--font-mono);font-size:.86em;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:5px;padding:.06em .38em}
+
+/* ---------- pill / status ---------- */
+.pill{font-family:var(--font-mono);font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:999px;padding:.15rem .55rem;border:1px solid;white-space:nowrap}
+.pill.done{color:var(--carrier-deep);border-color:color-mix(in srgb,var(--carrier) 50%,transparent);background:var(--carrier-tint)}
+.pill.pend{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 50%,transparent);background:var(--amber-tint)}
+.pill.block{color:var(--rose);border-color:color-mix(in srgb,var(--rose) 50%,transparent);background:var(--rose-tint)}
+
+/* ---------- next / nav cards ---------- */
+.next{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin-top:1.4rem}
+.next a{text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:13px;
+  padding:1.05rem 1.15rem;box-shadow:var(--shadow);transition:.18s;display:block}
+.next a:hover{border-color:var(--carrier);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.next .n{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;color:var(--carrier-deep)}
+.next h4{margin:.35rem 0 .3rem;font-size:1.08rem}
+.next p{margin:0;font-size:.9rem;color:var(--ink-faint)}
+
+/* ---------- pull quote ---------- */
+.pull{border-left:3px solid var(--carrier);padding:.2rem 0 .2rem 1.1rem;margin:1.6rem 0;font-size:1.18rem;
+  font-style:italic;color:var(--ink);line-height:1.45}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);margin-top:1rem}
+.foot-in{max-width:var(--col);margin-inline:auto;padding:2rem var(--pad) 3rem;font-family:var(--font-mono);
+  font-size:.76rem;color:var(--ink-faint);line-height:1.7}
+.foot-in b{color:var(--ink-soft)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- tables (shared, used by 03/04) ---------- */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);margin:1.4rem 0;background:var(--surface)}
+table.tbl{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+table.tbl th,table.tbl td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+table.tbl thead th{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);background:var(--surface-2);white-space:nowrap;position:sticky;top:0}
+table.tbl tbody tr:last-child td{border-bottom:0}
+table.tbl tbody tr:hover{background:var(--surface-2)}
+table.tbl td.k{font-family:var(--font-mono);font-size:.82rem;color:var(--carrier-deep);white-space:nowrap;font-weight:600}
+table.tbl .give{color:var(--ink-soft)}
+
+/* ---------- code block (shared, used by 04) ---------- */
+pre.code{font-family:var(--font-mono);font-size:.79rem;line-height:1.65;background:var(--surface-2);border:1px solid var(--line);border-radius:11px;padding:1rem 1.1rem;overflow-x:auto;color:var(--ink-soft);margin:1.2rem 0;box-shadow:var(--shadow)}
+pre.code .cm{color:var(--carrier-deep)}
+pre.code .kw{color:var(--amber)}
+pre.code b{color:var(--ink);font-weight:600}
+
+/* ---------- definition + note callouts (shared) ---------- */
+.defbox{background:linear-gradient(180deg,var(--carrier-tint),var(--surface) 55%);border:1px solid color-mix(in srgb,var(--carrier) 40%,var(--line));border-radius:13px;padding:1.1rem 1.25rem;box-shadow:var(--shadow);margin:1.4rem 0}
+.defbox>.tag{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--carrier-deep);display:block;margin-bottom:.4rem}
+.defbox h3{margin:.1rem 0 .5rem;font-size:1.15rem}
+.note{border-left:3px solid var(--amber);background:var(--amber-tint);border-radius:0 8px 8px 0;padding:.7rem .95rem;font-size:.93rem;color:var(--ink-soft);margin:1.2rem 0}
+.note b{color:var(--amber)}
+
+/* SVG shared classes */
+svg .node{fill:var(--surface);stroke:var(--line-strong);stroke-width:1.5}
+svg .node-lbl{fill:var(--ink);font-family:var(--font-serif);font-style:italic;font-size:15px}
+svg .mem{fill:var(--carrier-tint);stroke:var(--carrier);stroke-width:1.6}
+svg .edge{stroke:var(--line-strong);stroke-width:1.6;fill:none}
+svg .edge-c{stroke:var(--carrier);stroke-width:2.4;fill:none}
+svg .cap{fill:var(--ink-faint);font-family:var(--font-mono);font-size:11px}
+svg .cap-c{fill:var(--carrier-deep);font-family:var(--font-mono);font-size:11px}
+svg .amark{fill:var(--line-strong)}
+svg .amark-c{fill:var(--carrier)}
+</style>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <span class="brand"><b>Causal&nbsp;Memory</b><span class="brand-extra"> · a research program</span></span>
+    <nav class="series" aria-label="Series">
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720">01 Overview</a>
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb">02 Theory</a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f" aria-current="page">03 Formulation</a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201">04 Plan</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-in">
+    <div class="kicker">
+      <span class="num">03 / 04</span>
+      <span class="eyebrow">The formulation · v0.1</span>
+    </div>
+    <h1 class="title">Every load-bearing step, <span class="q">numbered to be checked</span>.</h1>
+    <p class="subtitle">Assumptions, definitions, one proved lemma, two conjectures, four falsifiable predictions, and the experiments that stay gated until the document is signed off. Each item can be marked correct, wrong, or needs-rewrite.</p>
+    <div class="byline">
+      <span><span class="dot"></span> A · assumptions</span><span>D · definitions</span><span>P · predictions</span><span>Q · questions</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== SETUP ===== -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">Formal setup</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">The temporal SCM and its three observation models</h2>
+    <p>Latent state <span class="m">z<span class="fn" style="font-size:.8em">t</span></span> ∈ ℝ<sup>n</sup> evolves over an episode with structural assignments <span class="m">z<span class="fn" style="font-size:.8em">t,i</span></span> = <span class="m fn">f<span style="font-size:.8em">i</span></span>(<span class="op">Pa</span>(<span class="m">z<span class="fn" style="font-size:.8em">t,i</span></span>), <span class="m">ε<span class="fn" style="font-size:.8em">t,i</span></span>), parents drawn from lags 0…<span class="m">L</span>, the instantaneous part acyclic, noises mutually independent. Nonstationarity enters only through an observed regime process that gates edge activations — so discrete events (a write, a read) live inside a stationary model.</p>
+    <div class="grid three">
+      <div class="card stack"><span class="tag">O1 · Layer 1</span><p>The latents <em>are</em> the observations, <span class="m">s<span class="fn" style="font-size:.8em">t</span></span> = <span class="m">z<span class="fn" style="font-size:.8em">t</span></span>. No mixing to undo; discovery applies directly.</p></div>
+      <div class="card accent stack"><span class="tag">O2a · internal state</span><p><span class="m">x<span class="fn" style="font-size:.8em">t</span></span> = <span class="m fn">g</span>(<span class="m">z<span class="fn" style="font-size:.8em">t</span></span>), <span class="m fn">g</span> unknown but injective — an agent's own hidden state, which necessarily carries <span class="m">m</span>. The well-posed first target: <em>Program A.</em></p></div>
+      <div class="card stack"><span class="tag">O2b · environmental</span><p>During holds, memory and cue are excluded from what generates <span class="m">x<span class="fn" style="font-size:.8em">t</span></span>. Per-step inversion is impossible in principle — the ambitious extension, <em>Program B.</em></p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===== ASSUMPTIONS ===== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">A1 – A9</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">The assumptions, annotated for defense</h2>
+    <p class="small" style="margin-bottom:1.2rem">Each says what it means, why it is there, and — where it matters — the pushback to expect.</p>
+    <div class="certs">
+      <div class="cert"><span class="rn">A1</span><div><h4>Temporal SCM, max lag <span class="m">L</span></h4><p>Time-indexed SCM, bounded lags, acyclic instantaneous edges. Long-range influence comes precisely <em>through</em> bounded-lag edges — the carrier chain — which is the point of the motif.</p></div></div>
+      <div class="cert"><span class="rn">A2</span><div><h4>Gated stationarity</h4><p>Mechanisms are time-invariant; events enter as an observed regime <span class="m">u<span class="fn" style="font-size:.8em">t</span></span> gating edges. Simultaneously CD-NOD's input format and the auxiliary variable Conjecture 1 leans on. Whether to keep it is <span class="mono">Q1</span>.</p></div></div>
+      <div class="cert"><span class="rn">A3</span><div><h4>Independent noises</h4><p>Mutual independence across components and time, <em>regime-dependent distributions allowed.</em> That "allowed" clause is load-bearing: mechanism (c) needs the freedom to make hold noise non-Gaussian.</p></div></div>
+      <div class="cert"><span class="rn">A4</span><div><h4>Observation models</h4><p>O1 / O2a / O2b as above. O2a is the natural model for analyzing a trained agent's internals; O2b gets its own impossibility-flavored observation rather than being assumed away.</p></div></div>
+      <div class="cert"><span class="rn">A5</span><div><h4>Regimes observed or estimable</h4><p>Event times known in synthetic data, estimable by change-point detection otherwise. A5 gives event <em>times</em>, not content or structure — so it is not circular.</p></div></div>
+      <div class="cert"><span class="rn">A6</span><div><h4>Markov &amp; faithfulness</h4><p>With the caveat stated inside: near-deterministic holds break test <em>power</em>, not the true model's faithfulness. This is what lets Lemma 1 (population) and failure mode F1 (estimation) coexist.</p></div></div>
+      <div class="cert"><span class="rn">A7</span><div><h4>No selection, unless modeled</h4><p>Explicitly <em>false by construction</em> for goal-filtered agent corpora — the reason the selection section exists. Stated as a feature, not softened.</p></div></div>
+      <div class="cert"><span class="rn">A8</span><div><h4>Fixed policy; structure is <span class="m">P<span class="fn" style="font-size:.8em">π</span></span>-relative</h4><p>The recovered graph depends on the behavior policy, since the policy reads memory to act. Whether invariance belongs in the definition is <span class="mono">Q7</span>.</p></div></div>
+      <div class="cert"><span class="rn">A9</span><div><h4>Causal sufficiency (Layer 1)</h4><p>No latent confounders among observed state variables; relaxable to FCI-class methods at the cost of weaker output. Named as failure mode F4.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===== D1 + LEMMA ===== -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">D1 · the memory carrier</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">Why the definition is interventional</h2>
+    <div class="defbox">
+      <span class="tag">Definition D1 — memory carrier</span>
+      <p style="margin:0">The process <span class="m">(m<span class="fn" style="font-size:.8em">s</span>)</span> is a memory carrier for <span class="m">(c<span class="fn" style="font-size:.8em">t₀</span>, y<span class="fn" style="font-size:.8em">t₁</span>)</span> if the long-lag dependence exists <em>and</em> cutting the chain at any hold step by <span class="op">do</span>(<span class="m">m<span class="fn" style="font-size:.8em">s</span></span> := <span class="m">m̃</span>) destroys it — equivalently, every active path from cue to readout passes through the carrier.</p>
+    </div>
+    <p>Two design choices to be able to justify. First, <strong>interventional rather than associational</strong>: association at a lag is exactly what selection can fake, and <span class="op">do</span>(·) is the thing selection cannot fake — so the definition builds the confabulation test into the concept. Second, <strong>quantified over every cross-section</strong>: memory is carried <em>continuously</em> through the hold, so cutting anywhere must sever it. That makes "the carrier" a process, not a single node — the property the gluing step later exploits.</p>
+  </div>
+
+  <div class="wrap stack">
+    <p class="eyebrow">Lemma 1 · the causal frontier</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">The unique minimum memory</h2>
+    <p>The one fully proved result — the anchor of Layer 1. Informally: at any moment there is a unique <em>smallest</em> set of past variables that carries everything the future task needs, and it has a clean graph description.</p>
+    <div class="eq">F<span style="font-size:.75em;font-style:normal">t</span>(Y) = { <span class="op">v</span> at time ≤ t : v has a child w at time &gt; t with w ∈ An*(Y) }</div>
+    <p>In words: the past variables that are, right now, <em>one edge away</em> from mattering to the future of the task. Not everything correlated with the future, not all ancestors of <span class="m">Y</span> — the last past layer of the relevant part of the graph.</p>
+  </div>
+
+  <div class="wrap">
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 0 600 260" role="img" aria-label="Worked frontier example over four timesteps with boundary at t=2 and task Y equal to y4. The frontier F2 is m2 and q1, both highlighted.">
+          <defs><marker id="m3a" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker></defs>
+          <!-- columns t1..t4 -->
+          <!-- c1 -->
+          <circle class="node" cx="55" cy="38" r="18"/><text class="node-lbl" x="55" y="43" text-anchor="middle">c₁</text>
+          <!-- m row -->
+          <circle class="node" cx="55" cy="100" r="18"/><text class="node-lbl" x="55" y="105" text-anchor="middle">m₁</text>
+          <circle class="node mem" cx="220" cy="100" r="19"/><text class="node-lbl" x="220" y="105" text-anchor="middle">m₂</text>
+          <circle class="node" cx="385" cy="100" r="18"/><text class="node-lbl" x="385" y="105" text-anchor="middle">m₃</text>
+          <circle class="node" cx="545" cy="100" r="18"/><text class="node-lbl" x="545" y="105" text-anchor="middle">y₄</text>
+          <!-- q row -->
+          <circle class="node mem" cx="55" cy="162" r="19"/><text class="node-lbl" x="55" y="167" text-anchor="middle">q₁</text>
+          <circle class="node" cx="385" cy="162" r="18"/><text class="node-lbl" x="385" y="167" text-anchor="middle">r₃</text>
+          <!-- d row -->
+          <circle class="node" cx="55" cy="224" r="18"/><text class="node-lbl" x="55" y="229" text-anchor="middle">d₁</text>
+          <circle class="node" cx="220" cy="224" r="18"/><text class="node-lbl" x="220" y="229" text-anchor="middle">d₂</text>
+          <circle class="node" cx="385" cy="224" r="18"/><text class="node-lbl" x="385" y="229" text-anchor="middle">d₃</text>
+          <circle class="node" cx="545" cy="224" r="18"/><text class="node-lbl" x="545" y="229" text-anchor="middle">d₄</text>
+          <!-- edges -->
+          <path class="edge" d="M55,56 L55,82" marker-end="url(#m3a)"/>
+          <path class="edge" d="M73,100 L201,100" marker-end="url(#m3a)"/>
+          <path class="edge" d="M239,100 L367,100" marker-end="url(#m3a)"/>
+          <path class="edge" d="M403,100 L527,100" marker-end="url(#m3a)"/>
+          <path class="edge" d="M73,162 L367,162" marker-end="url(#m3a)"/>
+          <path class="edge" d="M401,150 C470,130 500,120 531,110" marker-end="url(#m3a)"/>
+          <path class="edge" d="M73,224 L202,224" marker-end="url(#m3a)"/>
+          <path class="edge" d="M238,224 L367,224" marker-end="url(#m3a)"/>
+          <path class="edge" d="M403,224 L527,224" marker-end="url(#m3a)"/>
+          <!-- boundary -->
+          <path style="stroke:var(--ink-faint);stroke-width:1.4;stroke-dasharray:5 4" d="M302,18 L302,246"/>
+          <text class="cap" x="302" y="14" text-anchor="middle">now: t = 2</text>
+        </svg>
+      </div>
+      <figcaption><b>Worked frontier example</b>, <span class="m">Y</span> = {<span class="m">y₄</span>}. Highlighted nodes form <span class="m">F₂</span> = {<span class="m">m₂</span>, <span class="m">q₁</span>} — two nodes instead of six. <span class="m">m₁</span> is screened by <span class="m">m₂</span> (everything it knew was handed on); <span class="m">d₂</span> has a future child but not one that matters to the task; <span class="m">q₁</span> shows the frontier can reach back <em>past</em> the current slice.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap stack">
+    <h3 style="font-size:1.15rem">The proof, as a story</h3>
+    <p>Two halves, using the two bridge assumptions <em>separately</em> — itself worth saying, because it shows the proof knows what it is spending.</p>
+    <div class="grid two">
+      <div class="card layer stack">
+        <span class="tag">Sufficiency · Markov only</span>
+        <p>Take any past-to-future path. Edges never point backward in time, so the path crosses the boundary along some <span class="m">v→w</span>, arrowhead on the future node <span class="m">w</span>. Once in the future it can never turn around: turning back makes a future collider, and a collider only opens if it or a descendant is conditioned — but all descendants of future nodes are future, and the conditioning set is entirely past. So the path marches directedly forward to <span class="m">y</span>, making <span class="m">w</span> an ancestor of <span class="m">Y</span> and <span class="m">v ∈ F<span class="fn" style="font-size:.8em">t</span></span>, a non-collider on the path. Condition on the frontier and every such path dies.</p>
+      </div>
+      <div class="card layer l2 stack">
+        <span class="tag" style="color:var(--amber)">Minimality · faithfulness</span>
+        <p>Take any <span class="m">f ∈ F<span class="fn" style="font-size:.8em">t</span></span> with boundary edge <span class="m">f→w</span> and extend to a directed path <span class="m">f→w→…→y</span>. Every node after <span class="m">f</span> is future, hence outside any past conditioning set; a directed path has no colliders; so if <span class="m">f</span> is not conditioned on, the path is active, and faithfulness upgrades "active" to "actually dependent." Any separating set that omits <span class="m">f</span> fails — so every separating set contains all of the frontier.</p>
+      </div>
+    </div>
+    <p>Combined: the frontier is not just <em>a</em> minimal separator, it is the unique <em>minimum</em> one — the intersection of all valid memories, and itself valid.</p>
+
+    <h3 style="font-size:1.15rem;margin-top:.5rem">The corollaries, and what each is for</h3>
+    <div class="grid two">
+      <div class="card stack"><span class="tag">Planning</span><p>𝔼[φ(<span class="m">Y</span>) | past] = 𝔼[φ(<span class="m">Y</span>) | <span class="m">F<span class="fn" style="font-size:.8em">t</span></span>] — the "conditional set for planning" made exact.</p></div>
+      <div class="card stack"><span class="tag">Online recursion</span><p><span class="m">F<span class="fn" style="font-size:.8em">t+1</span></span> ⊆ <span class="m">F<span class="fn" style="font-size:.8em">t</span></span> ∪ <span class="m">V<span class="fn" style="font-size:.8em">t+1</span></span>: add the new slice, retire nodes whose relevant children have passed. That recursion <em>is</em> an online memory rule with budget <span class="m">|F<span class="fn" style="font-size:.8em">t</span></span>|.</p></div>
+      <div class="card stack"><span class="tag">Task-conditioning</span><p><span class="m">F<span class="fn" style="font-size:.8em">t</span></span> depends on <span class="m">Y</span> and the horizon; different tasks induce different memories — the bridge to generalist-to-specialist.</p></div>
+      <div class="card stack"><span class="tag">Scope</span><p>All of this is about the <em>true</em> graph. Whether the frontier is <em>estimable</em> in memory regimes is what Layer 1 and the first experiment interrogate. Is it the right formal target? — <span class="mono">Q3</span>.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===== LAYER 2 ===== -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">Layer 2 · the identification story</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">Holds enlarge the symmetry group</h2>
+    <p><strong>Observation 1.</strong> Take <span class="m">k</span> items written together, frozen (<span class="m">σ</span>=0), read together through a shared readout. Then for <em>any</em> invertible <span class="m">R</span> on the block, the substitution <span class="m">m ↦ R(m)</span>, <span class="m">w ↦ R∘w</span>, <span class="m">r ↦ r∘R</span><sup>−1</sup> changes nothing observable — and the hold dynamics survive, because a constant is still a constant after <span class="m">R</span>. Mid-hold, the block is set-identifiable at best. The standard escapes are closed by the regime itself: at <span class="m">σ</span>=0 the transition is a point mass, so IDOL's smooth-density assumption fails outright, and as <span class="m">σ</span>→0 the variability directions tied to <span class="m">m</span> collapse.</p>
+  </div>
+  <div class="wrap">
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 0 600 200" role="img" aria-label="Observation 1: two cues write into a frozen two-item memory block that is read into a shared readout; any invertible mixing R of the block is observationally equivalent.">
+          <defs><marker id="m3b" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker></defs>
+          <circle class="node" cx="45" cy="60" r="20"/><text class="node-lbl" x="45" y="65" text-anchor="middle">c¹</text>
+          <circle class="node" cx="45" cy="140" r="20"/><text class="node-lbl" x="45" y="145" text-anchor="middle">c²</text>
+          <rect x="185" y="26" width="150" height="148" rx="12" fill="none" stroke="var(--line-strong)" stroke-dasharray="4 4"/>
+          <text class="cap" x="260" y="20" text-anchor="middle">frozen block · hold, σ = 0</text>
+          <circle class="node mem" cx="260" cy="60" r="20"/><text class="node-lbl" x="260" y="65" text-anchor="middle">m¹</text>
+          <circle class="node mem" cx="260" cy="140" r="20"/><text class="node-lbl" x="260" y="145" text-anchor="middle">m²</text>
+          <circle class="node" cx="440" cy="100" r="22"/><text class="node-lbl" x="440" y="105" text-anchor="middle">y</text>
+          <path class="edge" d="M65,60 L237,60" marker-end="url(#m3b)"/>
+          <path class="edge" d="M65,140 L237,140" marker-end="url(#m3b)"/>
+          <path class="edge" d="M282,66 L420,92" marker-end="url(#m3b)"/>
+          <path class="edge" d="M282,134 L420,108" marker-end="url(#m3b)"/>
+          <path style="stroke:var(--rose);stroke-width:2;stroke-dasharray:5 4;fill:none" d="M283,66 C315,88 315,112 283,134"/>
+          <text x="330" y="104" fill="var(--rose)" style="font-family:var(--font-mono);font-size:11px">any invertible R</text>
+          <text class="cap" x="478" y="96">absorbed by</text>
+          <text class="cap" x="478" y="110">w↦R∘w, r↦r∘R⁻¹</text>
+        </svg>
+      </div>
+      <figcaption><b>Observation 1.</b> Simultaneous write, frozen hold, shared readout: the indeterminacy group contains every invertible mixing of the block, so identification is set-level at best mid-hold. <em>Structurally identical implies indistinguishable.</em></figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap stack">
+    <h3 style="font-size:1.15rem">The three mechanisms that shrink the group back</h3>
+    <p class="small">Each kills the rotation by a different argument, and each maps to a dedicated experimental arm.</p>
+    <div class="certs">
+      <div class="cert"><span class="rn">a</span><div><h4>Structural diversity of reads</h4><p>Give each item its own read child. Then <span class="m">r∘R</span><sup>−1</sup> densifies the read Jacobian unless <span class="m">R</span> is a permutation-scaling — a sparsity-seeking estimator forces component-wise recovery. <span class="mono small">shared-vs-per-item arm.</span></p></div></div>
+      <div class="cert"><span class="rn">b</span><div><h4>Temporal diversity — staggering</h4><p>Under the gate, <span class="m">(Rm)<span class="fn" style="font-size:.8em">j</span></span> may only change at item <span class="m">j</span>'s own events; distinct write times force <span class="m">R</span> diagonal, else an item would jump when another is written. <span class="mono small">simultaneous-vs-staggered arm.</span></p></div></div>
+      <div class="cert"><span class="rn">c</span><div><h4>Non-Gaussian hold noise</h4><p>With <span class="m">σ</span>&gt;0, transformed innovations must stay independent. Isotropic Gaussian lets every orthogonal <span class="m">R</span> through (the classical failure); non-Gaussian admits only permutation-scalings — the hold noise runs ICA inside the block for free. <span class="mono small">Gaussian-vs-Laplace arm · P4.</span></p></div></div>
+    </div>
+
+    <h3 style="font-size:1.15rem;margin-top:.5rem">Conjecture 1, decomposed by risk</h3>
+    <div class="grid three">
+      <div class="card stack"><span class="tag">C1a · boundary</span><p>At write/read times, memory components are component-wise identifiable — events are large localized changes, and change is Route-1's currency. <span class="pill done" style="margin-top:.5rem">low risk</span></p></div>
+      <div class="card stack"><span class="tag">C1b · mid-hold</span><p>Within a hold, the frozen block is recoverable as a set, by the set-identifiability machinery applied within regimes. <span class="pill pend" style="margin-top:.5rem">low–med risk</span></p></div>
+      <div class="card stack"><span class="tag">C1c · gluing</span><p>Boundary labels transport through the hold because the transition is diagonal by construction — upgrading set-level to component-wise whenever (a), (b) or (c) holds. <span class="pill block" style="margin-top:.5rem">where a proof most plausibly breaks</span></p></div>
+    </div>
+    <div class="note"><b>Q2.</b> Is the regime-change + set-identifiability + gluing strategy viable, or is there a cleaner route through the nonparametric-concepts machinery? The gluing step is handed to Yujia with the alternative route pre-named.</div>
+
+    <h3 style="font-size:1.15rem;margin-top:.4rem">Conjecture 2 · capacity is distinguishability</h3>
+    <p>Working-memory capacity limits, in this theory, are not <em>storage</em> limits but <em>identification</em> limits. Simultaneously written, jointly read, Gaussian-held items are indistinguishable within their block no matter how much capacity the substrate has; staggering or structural diversity restores distinguishability item by item.</p>
+
+    <h3 style="font-size:1.15rem;margin-top:.4rem">Observation 2 · identifying memory requires memory</h3>
+    <p>Under O2b the cue is visible only at write and <span class="m">m</span> never generates observations during the hold, so mid-hold observations are independent of the memory content: any encoder whose window fails to reach back to the write event outputs a statistic with <span class="m">I</span>(<span class="m">T</span>; <span class="m">m<span class="fn" style="font-size:.8em">s</span></span>) = 0 — chance by construction. The estimator must itself carry information over span ≥ <span class="m">Δ</span>. The neuroscience echo: activity-silent working memory is exactly the O2b regime, a carrier invisible to per-step measurement.</p>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===== PREDICTIONS + EXPERIMENTS ===== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">P1 – P4 · pre-registered &amp; falsifiable</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">The predictions</h2>
+    <div class="certs">
+      <div class="cert"><span class="rn">P1</span><div><h4>Time-localized recovery</h4><p>Write/read boundaries are recovered markedly better than mid-hold structure, degrading as <span class="m">σ</span>→0 and <span class="m">Δ</span> grows — at both layers.</p></div></div>
+      <div class="cert"><span class="rn">P2</span><div><h4>Selection fakes a memory edge</h4><p>On the selection-only construction, pipelines <em>without</em> the gate assert a spurious long-lag edge; <em>with</em> the gate, dependence is correctly attributed to selection.</p></div></div>
+      <div class="cert"><span class="rn">P3</span><div><h4>Capacity is block-wise</h4><p>Simultaneous <span class="m">k</span>-item recovery is block-wise, not component-wise (within-block MCC near chance under Gaussian noise + shared readout); staggering or distinct read children restores it.</p></div></div>
+      <div class="cert"><span class="rn">P4</span><div><h4>Laplace beats Gaussian</h4><p>With simultaneous events and a shared readout, Laplace hold noise yields higher within-block MCC than Gaussian at matched <span class="m">σ</span> — mechanism (c).</p></div></div>
+    </div>
+  </div>
+
+  <div class="wrap stack">
+    <p class="eyebrow">The experiments · run only after sign-off</p>
+    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem)">E0 and E1</h2>
+    <div class="grid two">
+      <div class="card accent stack">
+        <span class="tag">E0 · discovery on the observed motif</span>
+        <p>CPU-only, days. No mixing, no VAE — any failure is attributable to the memory regime itself. Sweep <span class="m">Δ, σ, k</span>, simultaneous vs. staggered, window <span class="m">W</span>. <strong>Pass:</strong> read-edge <span class="m">F₁</span> &gt; 0.7 at (Δ,k,σ)=(10,1,0.01). <strong>Deliverable regardless:</strong> the recovery-frontier heatmap.</p>
+      </div>
+      <div class="card stack">
+        <span class="tag">E1 · CRL with unknown mixing</span>
+        <p>1 GPU, 2–3 weeks. Adds a 3-layer MLP <span class="m">g</span>, O2a and O2b arms, an IDOL-style sequential VAE plus an event-gated variant. Dedicated theory-testing arms: encoder context ≥ Δ vs. &lt; Δ (Observation 2), Gaussian vs. Laplace (mechanism c). <strong>Pass:</strong> MCC(<span class="m">m</span>) &gt; 0.8 and read-edge <span class="m">F₁</span> &gt; 0.7 under O2a.</p>
+      </div>
+    </div>
+    <div class="note">Both experiments are informative under any outcome: mild degradation validates the premise; severe degradation makes event-gated estimation the methods contribution. And none of it runs before sign-off.</div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===== POSITIONING ===== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Positioning · the novelty defense</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">Sufficiency everywhere, correspondence nowhere else</h2>
+    <p class="small" style="margin-bottom:.6rem">Memorize the pattern, not the rows.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>Formalism</th><th>What it gives</th><th>What it lacks — your one-liner</th></tr></thead>
+        <tbody>
+          <tr><td class="k">POMDP belief states</td><td class="give">Sufficient statistic of history</td><td>No claim that the belief coordinates are the true latents</td></tr>
+          <tr><td class="k">Predictive state reps</td><td class="give">Sufficiency in observable predictions</td><td>Predictive, not causal; no value correspondence</td></tr>
+          <tr><td class="k">Causal states (ε-machines)</td><td class="give">Minimal sufficient partition of histories</td><td>Equivalence classes, not identified generative latents</td></tr>
+          <tr><td class="k">World models (Dreamer)</td><td class="give">Useful learned latents and dynamics</td><td>No identifiability, so no trustworthiness certificate</td></tr>
+          <tr><td class="k">DNC / MERLIN</td><td class="give">Trainable external memory</td><td>Storage engineered, never certified against the true process</td></tr>
+          <tr><td class="k">MemGPT · Reflexion · HippoRAG</td><td class="give">Practical storage, retrieval, reflection</td><td>No correctness criterion at all — the gap Yujia named</td></tr>
+          <tr><td class="k">Mech-interp probing</td><td class="give">Descriptive access to internal memory</td><td>Descriptive, not guaranteed; ours is interventional access to <em>identified</em> carriers</td></tr>
+          <tr><td class="k">ROME / MEMIT</td><td class="give">Model editing at scale</td><td>The application, not the theory: where certificate-grade identification pays off</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===== QUESTIONS ===== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Q1 – Q7 · the decision points</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">The open questions</h2>
+    <p class="small" style="margin-bottom:1.1rem">Collected for Yujia — each stated so it can be answered with a verdict, not an essay. The priority three for the next meeting are Q1–Q3.</p>
+    <div class="grid two">
+      <div class="card stack"><span class="tag">Q1 · priority</span><p>Gated SCM, or a regime-free nonstationary-transition formulation with events implicit?</p></div>
+      <div class="card stack"><span class="tag">Q2 · priority</span><p>Is the regime-change + set-identifiability + gluing strategy viable, and is the diagonal-hold transport sound?</p></div>
+      <div class="card stack"><span class="tag">Q3 · priority</span><p>Is the causal frontier the formalization you want for "memorize only what matters"?</p></div>
+      <div class="card stack"><span class="tag">Q4</span><p>Selection: preprocessing gate, or jointly modeled inside the estimator?</p></div>
+      <div class="card stack"><span class="tag">Q5</span><p>Is Layer 1 a publishable unit on its own, or scaffolding for the Layer 2 paper?</p></div>
+      <div class="card stack"><span class="tag">Q6</span><p>May E0-scale synthetic sanity checks run in parallel while the document iterates, or does all compute wait for sign-off?</p></div>
+      <div class="card stack"><span class="tag">Q7</span><p>Is <span class="m">P<span class="fn" style="font-size:.8em">π</span></span>-relative structure acceptable, or should invariance across policies be part of the definition of memory itself?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEXT ===== -->
+<section class="band" style="padding-top:.5rem">
+  <div class="wrap">
+    <p class="eyebrow">Read in order</p>
+    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem);margin-bottom:.2rem">Next in the series</h2>
+    <div class="next">
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720"><span class="n">01 · Overview</span><h4>The thesis</h4><p>The claim in one paragraph, the two layers, and trustworthy memory.</p></a>
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb"><span class="n">02 · Theory</span><h4>The machinery</h4><p>SCMs, identifiability, and the selection confound — the background these claims stand on.</p></a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201"><span class="n">04 · Plan</span><h4>From zero to productive</h4><p>How every numbered item above becomes status, a runbook, and a timeline.</p></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="foot-in">
+    <b>Causal Memory · Formulation v0.1</b> — Memory as identifiable temporal structure in the data-generating process.<br/>
+    Mian (Nothern) Wu, prepared for step-by-step verification with Yujia Zheng · July 2026.<br/>
+    Part 03 of a four-part series · rendered from <b>causal_memory_formulation.tex</b> and <b>causal_memory_onboarding.tex</b>.
+  </div>
+</footer>

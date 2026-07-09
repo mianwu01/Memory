@@ -1,0 +1,524 @@
+<title>Causal Memory · 02 The Machinery</title>
+<style>
+/* ============================================================
+   CAUSAL MEMORY — shared design system (kit v1)
+   Serif monograph + monospace formal register.
+   Accent = carrier teal (the color the papers use for memory).
+   ============================================================ */
+:root{
+  --font-serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Charter,Georgia,Cambria,'Times New Roman',serif;
+  --font-mono:ui-monospace,'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',Menlo,Consolas,'Liberation Mono',monospace;
+
+  --paper:#F1F5F4;
+  --surface:#FBFCFC;
+  --surface-2:#EAF0EE;
+  --ink:#0F201E;
+  --ink-soft:#3B4E4B;
+  --ink-faint:#69807C;
+  --line:#D6E1DE;
+  --line-strong:#BFCECA;
+
+  --carrier:#0B7C72;
+  --carrier-deep:#075B54;
+  --carrier-tint:#E0EFEC;
+  --carrier-glow:rgba(11,124,114,.14);
+
+  --amber:#A5651A;
+  --amber-tint:#F4E8D5;
+  --rose:#AC3548;
+  --rose-tint:#F3DBDF;
+
+  --shadow:0 1px 2px rgba(15,32,30,.05),0 8px 30px rgba(15,32,30,.06);
+  --shadow-lg:0 2px 6px rgba(15,32,30,.06),0 24px 60px rgba(15,32,30,.10);
+
+  --col:69ch;
+  --pad:clamp(1.2rem,5vw,2.6rem);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#081211;
+    --surface:#0F1E1C;
+    --surface-2:#132523;
+    --ink:#E7F0EE;
+    --ink-soft:#A6BAB6;
+    --ink-faint:#6D817D;
+    --line:#1D2F2C;
+    --line-strong:#294139;
+    --carrier:#41D9C6;
+    --carrier-deep:#82F0E2;
+    --carrier-tint:#0E2A27;
+    --carrier-glow:rgba(65,217,198,.16);
+    --amber:#DDA351;
+    --amber-tint:#241C10;
+    --rose:#E6828F;
+    --rose-tint:#2A151A;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.5);
+    --shadow-lg:0 2px 6px rgba(0,0,0,.45),0 30px 70px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="light"]{
+  --paper:#F1F5F4;--surface:#FBFCFC;--surface-2:#EAF0EE;--ink:#0F201E;--ink-soft:#3B4E4B;--ink-faint:#69807C;
+  --line:#D6E1DE;--line-strong:#BFCECA;--carrier:#0B7C72;--carrier-deep:#075B54;--carrier-tint:#E0EFEC;--carrier-glow:rgba(11,124,114,.14);
+  --amber:#A5651A;--amber-tint:#F4E8D5;--rose:#AC3548;--rose-tint:#F3DBDF;
+  --shadow:0 1px 2px rgba(15,32,30,.05),0 8px 30px rgba(15,32,30,.06);--shadow-lg:0 2px 6px rgba(15,32,30,.06),0 24px 60px rgba(15,32,30,.10);
+}
+:root[data-theme="dark"]{
+  --paper:#081211;--surface:#0F1E1C;--surface-2:#132523;--ink:#E7F0EE;--ink-soft:#A6BAB6;--ink-faint:#6D817D;
+  --line:#1D2F2C;--line-strong:#294139;--carrier:#41D9C6;--carrier-deep:#82F0E2;--carrier-tint:#0E2A27;--carrier-glow:rgba(65,217,198,.16);
+  --amber:#DDA351;--amber-tint:#241C10;--rose:#E6828F;--rose-tint:#2A151A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.5);--shadow-lg:0 2px 6px rgba(0,0,0,.45),0 30px 70px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-serif);font-size:1.0625rem;line-height:1.68;
+  font-feature-settings:"kern" 1,"liga" 1;text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--carrier-glow);color:var(--ink)}
+a{color:var(--carrier-deep);text-decoration-color:color-mix(in srgb,var(--carrier) 45%,transparent);text-underline-offset:2px}
+a:hover{text-decoration-color:var(--carrier)}
+:focus-visible{outline:2px solid var(--carrier);outline-offset:3px;border-radius:3px}
+img,svg{max-width:100%}
+h1,h2,h3{text-wrap:balance;line-height:1.12;font-weight:700;letter-spacing:-.012em}
+
+/* ---------- shell ---------- */
+.wrap{max-width:var(--col);margin-inline:auto;padding-inline:var(--pad)}
+.band{padding-block:clamp(2.4rem,6vw,4.2rem)}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+.mono{font-family:var(--font-mono)}
+.eyebrow{
+  font-family:var(--font-mono);font-size:.72rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--carrier-deep);
+}
+.lede{font-size:1.28rem;line-height:1.5;color:var(--ink-soft)}
+.small{font-size:.9rem;color:var(--ink-faint)}
+p{margin:0 0 1rem}
+.stack>*+*{margin-top:1.05rem}
+
+/* ---------- top series bar ---------- */
+.topbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:var(--col);margin-inline:auto;padding:.5rem var(--pad);display:flex;align-items:center;gap:.6rem .9rem;justify-content:space-between;flex-wrap:wrap}
+.brand{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+@media (max-width:600px){.brand .brand-extra{display:none}}
+.brand b{color:var(--carrier-deep);font-weight:700}
+.series{display:flex;gap:.35rem;flex-wrap:wrap}
+.series a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.02em;text-decoration:none;color:var(--ink-faint);
+  border:1px solid var(--line);border-radius:999px;padding:.16rem .6rem;transition:.16s}
+.series a:hover{border-color:var(--carrier);color:var(--carrier-deep)}
+.series a[aria-current="page"]{background:var(--carrier);border-color:var(--carrier);color:#fff}
+@media (prefers-color-scheme:dark){.series a[aria-current="page"]{color:#08110f}}
+:root[data-theme="dark"] .series a[aria-current="page"]{color:#08110f}
+:root[data-theme="light"] .series a[aria-current="page"]{color:#fff}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-bg{position:absolute;inset:0;pointer-events:none;
+  background:
+   radial-gradient(60% 80% at 82% 8%,var(--carrier-glow),transparent 70%),
+   radial-gradient(50% 60% at 6% 96%,var(--carrier-glow),transparent 72%);}
+.hero-in{position:relative;max-width:var(--col);margin-inline:auto;padding:clamp(2.2rem,6vw,4rem) var(--pad) clamp(1.6rem,4vw,2.6rem)}
+.kicker{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem}
+.kicker .num{font-family:var(--font-mono);font-size:.8rem;letter-spacing:.1em;color:var(--carrier-deep);border:1px solid var(--carrier);border-radius:6px;padding:.1rem .45rem}
+h1.title{font-size:clamp(2.25rem,6.2vw,3.9rem);margin:.2rem 0 .1rem;letter-spacing:-.02em}
+h1.title .q{color:var(--carrier-deep)}
+.subtitle{font-size:clamp(1.1rem,2.6vw,1.5rem);color:var(--ink-soft);font-style:italic;margin:.4rem 0 0;line-height:1.35}
+.byline{margin-top:1.4rem;font-family:var(--font-mono);font-size:.78rem;color:var(--ink-faint);letter-spacing:.02em;
+  display:flex;gap:.5rem 1.2rem;flex-wrap:wrap;align-items:center}
+.byline .dot{width:5px;height:5px;border-radius:50%;background:var(--carrier);display:inline-block}
+
+/* ---------- figures ---------- */
+figure{margin:1.8rem 0}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+  padding:clamp(1rem,3vw,1.8rem);overflow-x:auto}
+.fig svg{display:block;margin-inline:auto;height:auto}
+figcaption{font-family:var(--font-mono);font-size:.78rem;line-height:1.5;color:var(--ink-faint);margin-top:.9rem;text-align:left}
+figcaption b{color:var(--carrier-deep);font-weight:600}
+
+/* ---------- cards ---------- */
+.grid{display:grid;gap:1rem}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:1.15rem 1.2rem;box-shadow:var(--shadow)}
+.card h3{margin:.1rem 0 .5rem;font-size:1.12rem}
+.card p{font-size:.98rem;color:var(--ink-soft);margin:0}
+.card .tag{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--carrier-deep);display:block;margin-bottom:.45rem}
+.card.accent{border-color:color-mix(in srgb,var(--carrier) 40%,var(--line));
+  background:linear-gradient(180deg,var(--carrier-tint),var(--surface) 60%)}
+
+/* labelled layer cards */
+.layer{position:relative;padding-left:1.4rem}
+.layer::before{content:"";position:absolute;left:0;top:.2rem;bottom:.2rem;width:4px;border-radius:4px;background:var(--carrier)}
+.layer.l2::before{background:var(--amber)}
+
+/* ---------- certificate list ---------- */
+.certs{counter-reset:cert;display:grid;gap:.7rem;margin:1.2rem 0}
+.cert{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start;
+  background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:.9rem 1rem}
+.cert .rn{font-family:var(--font-mono);font-weight:700;color:var(--carrier-deep);
+  border:1px solid var(--carrier);border-radius:8px;min-width:2.1rem;text-align:center;padding:.25rem 0;font-size:.82rem}
+.cert h4{margin:.05rem 0 .25rem;font-size:1.02rem}
+.cert p{margin:0;font-size:.94rem;color:var(--ink-soft)}
+
+/* ---------- math ---------- */
+.m{font-family:var(--font-serif);font-style:italic}
+.m .fn{font-style:normal}
+.eq{font-family:var(--font-serif);font-style:italic;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:8px;padding:.7rem 1rem;margin:1.1rem 0;overflow-x:auto;font-size:1.05rem;line-height:1.9}
+.op{font-style:normal;color:var(--carrier-deep);padding:0 .12em}
+kbd,code{font-family:var(--font-mono);font-size:.86em;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:5px;padding:.06em .38em}
+
+/* ---------- pill / status ---------- */
+.pill{font-family:var(--font-mono);font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:999px;padding:.15rem .55rem;border:1px solid;white-space:nowrap}
+.pill.done{color:var(--carrier-deep);border-color:color-mix(in srgb,var(--carrier) 50%,transparent);background:var(--carrier-tint)}
+.pill.pend{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 50%,transparent);background:var(--amber-tint)}
+.pill.block{color:var(--rose);border-color:color-mix(in srgb,var(--rose) 50%,transparent);background:var(--rose-tint)}
+
+/* ---------- next / nav cards ---------- */
+.next{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin-top:1.4rem}
+.next a{text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:13px;
+  padding:1.05rem 1.15rem;box-shadow:var(--shadow);transition:.18s;display:block}
+.next a:hover{border-color:var(--carrier);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.next .n{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;color:var(--carrier-deep)}
+.next h4{margin:.35rem 0 .3rem;font-size:1.08rem}
+.next p{margin:0;font-size:.9rem;color:var(--ink-faint)}
+
+/* ---------- pull quote ---------- */
+.pull{border-left:3px solid var(--carrier);padding:.2rem 0 .2rem 1.1rem;margin:1.6rem 0;font-size:1.18rem;
+  font-style:italic;color:var(--ink);line-height:1.45}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);margin-top:1rem}
+.foot-in{max-width:var(--col);margin-inline:auto;padding:2rem var(--pad) 3rem;font-family:var(--font-mono);
+  font-size:.76rem;color:var(--ink-faint);line-height:1.7}
+.foot-in b{color:var(--ink-soft)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- tables (shared, used by 03/04) ---------- */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);margin:1.4rem 0;background:var(--surface)}
+table.tbl{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+table.tbl th,table.tbl td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+table.tbl thead th{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);background:var(--surface-2);white-space:nowrap;position:sticky;top:0}
+table.tbl tbody tr:last-child td{border-bottom:0}
+table.tbl tbody tr:hover{background:var(--surface-2)}
+table.tbl td.k{font-family:var(--font-mono);font-size:.82rem;color:var(--carrier-deep);white-space:nowrap;font-weight:600}
+table.tbl .give{color:var(--ink-soft)}
+
+/* ---------- code block (shared, used by 04) ---------- */
+pre.code{font-family:var(--font-mono);font-size:.79rem;line-height:1.65;background:var(--surface-2);border:1px solid var(--line);border-radius:11px;padding:1rem 1.1rem;overflow-x:auto;color:var(--ink-soft);margin:1.2rem 0;box-shadow:var(--shadow)}
+pre.code .cm{color:var(--carrier-deep)}
+pre.code .kw{color:var(--amber)}
+pre.code b{color:var(--ink);font-weight:600}
+
+/* ---------- definition + note callouts (shared) ---------- */
+.defbox{background:linear-gradient(180deg,var(--carrier-tint),var(--surface) 55%);border:1px solid color-mix(in srgb,var(--carrier) 40%,var(--line));border-radius:13px;padding:1.1rem 1.25rem;box-shadow:var(--shadow);margin:1.4rem 0}
+.defbox>.tag{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--carrier-deep);display:block;margin-bottom:.4rem}
+.defbox h3{margin:.1rem 0 .5rem;font-size:1.15rem}
+.note{border-left:3px solid var(--amber);background:var(--amber-tint);border-radius:0 8px 8px 0;padding:.7rem .95rem;font-size:.93rem;color:var(--ink-soft);margin:1.2rem 0}
+.note b{color:var(--amber)}
+
+/* SVG shared classes */
+svg .node{fill:var(--surface);stroke:var(--line-strong);stroke-width:1.5}
+svg .node-lbl{fill:var(--ink);font-family:var(--font-serif);font-style:italic;font-size:15px}
+svg .mem{fill:var(--carrier-tint);stroke:var(--carrier);stroke-width:1.6}
+svg .edge{stroke:var(--line-strong);stroke-width:1.6;fill:none}
+svg .edge-c{stroke:var(--carrier);stroke-width:2.4;fill:none}
+svg .cap{fill:var(--ink-faint);font-family:var(--font-mono);font-size:11px}
+svg .cap-c{fill:var(--carrier-deep);font-family:var(--font-mono);font-size:11px}
+svg .amark{fill:var(--line-strong)}
+svg .amark-c{fill:var(--carrier)}
+</style>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <span class="brand"><b>Causal&nbsp;Memory</b><span class="brand-extra"> · a research program</span></span>
+    <nav class="series" aria-label="Series">
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720">01 Overview</a>
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb" aria-current="page">02 Theory</a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f">03 Formulation</a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201">04 Plan</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-in">
+    <div class="kicker">
+      <span class="num">02 / 04</span>
+      <span class="eyebrow">The machinery</span>
+    </div>
+    <h1 class="title">The theory you need, <span class="q">from square one</span>.</h1>
+    <p class="subtitle">Everything the formulation leans on — structural causal models, reading independence off a graph, identifiability, and the one confound that can fake memory — taught in the order the argument uses it.</p>
+    <div class="byline">
+      <span><span class="dot"></span> assumes ML and RL</span>
+      <span>no prior causal formalism required</span>
+      <span>read it once, top to bottom</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ SCMs ============ -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">Structural causal models</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">A graph that answers "what if", not just "what co-occurs"</h2>
+    <p>A structural causal model is a set of variables, a DAG <span class="m">G</span> over them, and one assignment per variable, <span class="m">V<span class="fn" style="font-size:.8em">i</span></span> = <span class="m fn">f<span style="font-size:.8em">i</span></span>(<span class="op">Pa</span>(<span class="m">V<span class="fn" style="font-size:.8em">i</span></span>), <span class="m">ε<span class="fn" style="font-size:.8em">i</span></span>), where the parents <span class="op">Pa</span>(<span class="m">V<span class="fn" style="font-size:.8em">i</span></span>) are the nodes with edges pointing into <span class="m">V<span class="fn" style="font-size:.8em">i</span></span> — its direct causes — and the noises are mutually independent. It entails a distribution <span class="m">P</span> — but it is more than a distribution: the intervention <span class="op">do</span>(<span class="m">V<span class="fn" style="font-size:.8em">i</span></span> := <span class="m">v</span>) deletes that variable's assignment, fixes it to <span class="m">v</span>, and leaves every other mechanism untouched — graphically, it cuts all edges <em>into</em> the variable.</p>
+    <p>That is why an edge here is a claim about what happens under manipulation, not about correlation. The memory-carrier definition is deliberately stated with <span class="op">do</span>(·) for exactly this reason: it builds the confabulation test into the concept itself.</p>
+  </div>
+
+  <div class="wrap">
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 0 700 250" role="img" aria-label="The three path motifs: chain X to Z to Y, fork X from Z to Y, and collider X to Z from Y, with the blocking rule for each.">
+          <defs>
+            <marker id="m2a" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker>
+          </defs>
+          <!-- chain -->
+          <g>
+            <circle class="node" cx="40" cy="42" r="18"/><text class="node-lbl" x="40" y="47" text-anchor="middle">X</text>
+            <circle class="node" cx="150" cy="42" r="18"/><text class="node-lbl" x="150" y="47" text-anchor="middle">Z</text>
+            <circle class="node" cx="260" cy="42" r="18"/><text class="node-lbl" x="260" y="47" text-anchor="middle">Y</text>
+            <path class="edge" d="M58,42 L131,42" marker-end="url(#m2a)"/>
+            <path class="edge" d="M168,42 L241,42" marker-end="url(#m2a)"/>
+            <text class="cap-c" x="300" y="38" style="font-size:12px">chain</text>
+            <text class="cap" x="300" y="54">open by default · blocked when Z ∈ S</text>
+          </g>
+          <!-- fork -->
+          <g>
+            <circle class="node" cx="40" cy="125" r="18"/><text class="node-lbl" x="40" y="130" text-anchor="middle">X</text>
+            <circle class="node" cx="150" cy="125" r="18"/><text class="node-lbl" x="150" y="130" text-anchor="middle">Z</text>
+            <circle class="node" cx="260" cy="125" r="18"/><text class="node-lbl" x="260" y="130" text-anchor="middle">Y</text>
+            <path class="edge" d="M132,125 L59,125" marker-end="url(#m2a)"/>
+            <path class="edge" d="M168,125 L241,125" marker-end="url(#m2a)"/>
+            <text class="cap-c" x="300" y="121" style="font-size:12px">fork</text>
+            <text class="cap" x="300" y="137">open by default · blocked when Z ∈ S</text>
+          </g>
+          <!-- collider -->
+          <g>
+            <circle class="node" cx="40" cy="208" r="18"/><text class="node-lbl" x="40" y="213" text-anchor="middle">X</text>
+            <circle class="node mem" cx="150" cy="208" r="18"/><text class="node-lbl" x="150" y="213" text-anchor="middle">Z</text>
+            <circle class="node" cx="260" cy="208" r="18"/><text class="node-lbl" x="260" y="213" text-anchor="middle">Y</text>
+            <path class="edge" d="M58,208 L131,208" marker-end="url(#m2a)"/>
+            <path class="edge" d="M242,208 L169,208" marker-end="url(#m2a)"/>
+            <text class="cap-c" x="300" y="204" style="font-size:12px">collider</text>
+            <text class="cap" x="300" y="220" fill="var(--rose)" style="font-size:10px">blocked by default · OPENED when Z or a descendant ∈ S</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption><b>The three path motifs.</b> Whether a path transmits dependence given a conditioning set <span class="m">S</span> is decided locally at each intermediate node. Every d-separation argument in the project — the frontier lemma, the selection construction — reduces to these three rules. The collider is the dangerous one: conditioning on it <em>creates</em> dependence.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap stack">
+    <h3 style="font-size:1.15rem;margin-top:.5rem">Markov and faithfulness — and why the project needs both directions</h3>
+    <p>Two bridge assumptions connect graph and distribution, and you must know which claim uses which, because Yujia will ask.</p>
+    <div class="grid two">
+      <div class="card stack"><span class="tag">Markov</span><p>d-separation in <span class="m">G</span> <span class="op">⟹</span> independence in <span class="m">P</span>. The <em>sufficiency</em> half of the frontier lemma (the frontier screens off the rest of the past) uses only this.</p></div>
+      <div class="card stack"><span class="tag">Faithfulness</span><p>independence in <span class="m">P</span> <span class="op">⟹</span> d-separation in <span class="m">G</span> — no accidental cancellations manufacture independences. The <em>minimality</em> half (every separating set contains the frontier) needs this, because it argues from an active path to an actual dependence.</p></div>
+    </div>
+    <p class="small">Keep the population / estimation split sharp: faithfulness can hold exactly for the true model while conditional-independence <em>tests</em> still fail in practice. That gap is precisely what near-deterministic holds do — and it is the Layer-1 shadow of the whole identifiability story.</p>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ============ TEMPORAL SCMs ============ -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">Temporal SCMs</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">The unrolled graph</h2>
+    <p>Index variables by time. The <strong>unrolled graph</strong> has one node per variable per timestep, with edges from lagged parents and optionally instantaneous edges inside a slice. This project works on the unrolled graph — not the time-collapsed summary graph — because memory is precisely a claim about <em>which</em> timesteps depend on which.</p>
+  </div>
+  <div class="wrap">
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 0 640 240" role="img" aria-label="An unrolled temporal SCM across three timeslices with lag-1 edges and one instantaneous edge; a bracket marks the analysis window W.">
+          <defs><marker id="m2b" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker>
+          <marker id="m2c" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="amark-c"/></marker></defs>
+          <g>
+            <!-- t-1 -->
+            <circle class="node" cx="60" cy="40" r="17"/><text class="cap" x="60" y="44" text-anchor="middle">z</text>
+            <circle class="node" cx="60" cy="110" r="17"/><text class="cap" x="60" y="114" text-anchor="middle">z</text>
+            <circle class="node" cx="60" cy="180" r="17"/><text class="cap" x="60" y="184" text-anchor="middle">z</text>
+            <text class="cap" x="60" y="215" text-anchor="middle">t−1</text>
+            <!-- t -->
+            <circle class="node" cx="300" cy="40" r="17"/><text class="cap" x="300" y="44" text-anchor="middle">z</text>
+            <circle class="node" cx="300" cy="110" r="17"/><text class="cap" x="300" y="114" text-anchor="middle">z</text>
+            <circle class="node" cx="300" cy="180" r="17"/><text class="cap" x="300" y="184" text-anchor="middle">z</text>
+            <text class="cap" x="300" y="215" text-anchor="middle">t</text>
+            <!-- t+1 -->
+            <circle class="node" cx="560" cy="40" r="17"/><text class="cap" x="560" y="44" text-anchor="middle">z</text>
+            <circle class="node" cx="560" cy="110" r="17"/><text class="cap" x="560" y="114" text-anchor="middle">z</text>
+            <circle class="node" cx="560" cy="180" r="17"/><text class="cap" x="560" y="184" text-anchor="middle">z</text>
+            <text class="cap" x="560" y="215" text-anchor="middle">t+1</text>
+            <!-- lagged edges -->
+            <path class="edge" d="M77,40 L283,40" marker-end="url(#m2b)"/>
+            <path class="edge" d="M77,46 L283,104" marker-end="url(#m2b)"/>
+            <path class="edge" d="M77,110 L283,110" marker-end="url(#m2b)"/>
+            <path class="edge" d="M77,180 L283,180" marker-end="url(#m2b)"/>
+            <path class="edge" d="M317,40 L543,40" marker-end="url(#m2b)"/>
+            <path class="edge" d="M317,46 L543,104" marker-end="url(#m2b)"/>
+            <path class="edge" d="M317,110 L543,110" marker-end="url(#m2b)"/>
+            <path class="edge" d="M317,180 L543,180" marker-end="url(#m2b)"/>
+            <!-- instantaneous -->
+            <path class="edge-c" style="stroke-dasharray:4 3" d="M300,57 C270,80 270,90 300,93" marker-end="url(#m2c)"/>
+            <text class="cap-c" x="238" y="80">instantaneous</text>
+            <!-- window bracket -->
+            <path class="edge" style="stroke-dasharray:3 3" d="M43,205 L43,225 L317,225 L317,205"/>
+            <text class="cap" x="180" y="240" text-anchor="middle">window W · engineering threshold, swept — never a theoretical bound</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption><b>An unrolled temporal SCM</b> with lag-1 edges (solid) and one instantaneous edge (dashed teal). The arrow of time orients every lagged edge for free — a large practical gift to discovery. The regime process <span class="m">u<span class="fn" style="font-size:.8em">t</span></span> (values like <span class="mono">write</span>, <span class="mono">hold</span>, <span class="mono">read</span>) gates which edges are active while the graph itself stays time-invariant.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ============ DISCOVERY ============ -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">Layer 1's toolbox</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">Causal discovery in practice</h2>
+    <p>All four algorithms take trajectories of <em>observed</em> variables and return a graph over time-indexed nodes.</p>
+    <div class="grid two">
+      <div class="card stack"><span class="tag">PC · PC-stable</span><p>Test independence for growing conditioning sets, delete accepted edges, orient v-structures. In time series the arrow of time orients all lagged edges for free.</p></div>
+      <div class="card stack"><span class="tag">PCMCI⁺</span><p>PC engineered for autocorrelated series: a condition-selection stage finds each variable's lagged parents so the final tests keep power. The Layer-1 workhorse in E0.</p></div>
+      <div class="card accent stack"><span class="tag">CD-NOD</span><p>Adds the context index — for us, the regime <span class="m">u<span class="fn" style="font-size:.8em">t</span></span> — as an observed node. Given gated stationarity, this is the most natural fit of the three; say so if asked.</p></div>
+      <div class="card stack"><span class="tag">DYNOTEARS</span><p>Score-based: continuous optimization of adjacency matrices under an acyclicity penalty. Fast, but its guarantees lean on parametric assumptions — treat it as a cross-check.</p></div>
+    </div>
+    <p style="margin-top:.4rem">What matters for memory is what each assumption <em>failure</em> looks like in the output, because the first experiment is designed to elicit exactly these signatures:</p>
+    <ul class="stack" style="padding-left:1.1rem;margin:0">
+      <li><strong>Frozen-variable regime (F1).</strong> When <span class="m">m<span class="fn" style="font-size:.8em">t</span></span> ≈ <span class="m">m<span class="fn" style="font-size:.8em">t−1</span></span>, tests conditioning on its past value can't tell it from a constant. Precisely the variables doing the memorizing are the ones discovery sees worst — <em>mid-hold</em>. Recovery concentrates at write/read boundaries, where events inject variance. That asymmetry is Prediction P1.</li>
+      <li><strong>Latent confounder (F4).</strong> Clusters of spurious edges among the confounded variables.</li>
+      <li><strong>Selection (F2).</strong> Confident edges between jointly-selected variables, with no carrier in the true graph.</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ============ IDENTIFIABILITY (the heart) ============ -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">The heart of the background · read twice</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">Causal representation learning and identifiability</h2>
+    <p>Suppose observations are generated as <span class="m">x</span> = <span class="m fn">g</span>(<span class="m">z</span>) with <span class="m fn">g</span> unknown and invertible, and all you are given is <span class="m">P</span>(<span class="m">x</span>). Then for <em>any</em> invertible map <span class="m fn">h</span>, the alternative model <span class="m">ẑ</span> = <span class="m fn">h</span>(<span class="m">z</span>), <span class="m">ĝ</span> = <span class="m fn">g</span> ∘ <span class="m fn">h</span><sup>−1</sup> produces exactly the same <span class="m">P</span>(<span class="m">x</span>). Recovering <span class="m">z</span> is not merely hard — without further structure it is <em>meaningless</em>: infinitely many latent descriptions are observationally indistinguishable.</p>
+  </div>
+  <div class="wrap">
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 0 620 210" role="img" aria-label="The fundamental indeterminacy: z maps to x via g, and z-hat equals h of z maps to x via g composed with h-inverse; both generate the same distribution of x.">
+          <defs><marker id="m2d" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker>
+          <marker id="m2e" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="amark"/></marker></defs>
+          <circle class="node" cx="70" cy="45" r="24"/><text class="node-lbl" x="70" y="50" text-anchor="middle">z</text>
+          <circle class="node mem" cx="70" cy="160" r="30"/><text class="node-lbl" x="70" y="165" text-anchor="middle">ẑ=h(z)</text>
+          <circle class="node" cx="330" cy="100" r="26"/><text class="node-lbl" x="330" y="105" text-anchor="middle">x</text>
+          <path class="edge" d="M92,55 L306,95" marker-end="url(#m2d)"/><text class="cap" x="185" y="62">g</text>
+          <path class="edge" d="M98,150 L306,112" marker-end="url(#m2d)"/><text class="cap" x="185" y="150">ĝ = g ∘ h⁻¹</text>
+          <path class="edge-c" style="stroke-dasharray:4 3" d="M70,71 L70,128"/>
+          <path class="amark-c" d="M66,74 l4,-8 l4,8 z"/><path class="amark-c" d="M66,125 l4,8 l4,-8 z"/>
+          <text class="cap-c" x="80" y="104">h · any invertible map</text>
+          <text class="cap" x="380" y="90" style="font-size:12px">Both models generate the same P(x).</text>
+          <text class="cap" x="380" y="108" style="font-size:12px">Identifiability = shrinking the set of</text>
+          <text class="cap" x="380" y="126" style="font-size:12px">compatible h to a harmless group.</text>
+        </svg>
+      </div>
+      <figcaption><b>The fundamental indeterminacy</b>, and the definition of identifiability as symmetry reduction. Every identifiability theorem says: <em>within a restricted model class, the set of compatible <span class="m fn">h</span> shrinks from "all invertible maps" to something harmless.</em></figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap stack">
+    <h3 style="font-size:1.15rem">Identifiability classes, in decreasing strength</h3>
+    <div class="certs">
+      <div class="cert"><span class="rn">A</span><div><h4>Component-wise — the gold standard</h4><p><span class="m">ẑ</span> equals <span class="m">z</span> up to a permutation of coordinates and an invertible scalar per coordinate. This is what "the agent memorized the true value" means formally — certificate (i) of trustworthy memory.</p></div></div>
+      <div class="cert"><span class="rn">B</span><div><h4>Block-wise</h4><p>A known group of coordinates is recovered up to an invertible transform of the whole block: you know <em>where</em> the information lives, but not the coordinates within.</p></div></div>
+      <div class="cert"><span class="rn">C</span><div><h4>Set-level</h4><p>Latents are recovered as sets, with guarantees about membership rather than individual coordinates — the natural target where component-wise is provably impossible, and the honest fallback for frozen memory blocks mid-hold.</p></div></div>
+    </div>
+
+    <blockquote class="pull">Think of the <em>indeterminacy group</em> — the transformations <span class="m fn">h</span> that map solutions to solutions. Identification shrinks it. Memory <em>holds</em> do the opposite: freezing <span class="m">k</span> latents <em>enlarges</em> the group by every invertible mixing of the frozen block. The three mechanisms in the formulation are three ways of shrinking it back down.</blockquote>
+
+    <h3 style="font-size:1.15rem">The two classical routes to identification</h3>
+    <div class="grid two">
+      <div class="card layer stack"><span class="tag">Route 1 · variation</span><p>If the latent prior changes with an observed auxiliary variable <span class="m">u</span> — environment index, regime, timestamp — and the conditionals vary <em>enough</em>, the changes pin down the coordinates. <strong>Identification is purchased with variation.</strong></p></div>
+      <div class="card layer l2 stack"><span class="tag" style="color:var(--amber)">Route 2 · structure</span><p>Yujia's own line: if the mixing or latent graph is sparse and <em>structurally diverse</em>, identification follows from structure alone — even in the Gaussian case where Route 1 is hopeless. <strong>Structurally identical implies indistinguishable.</strong></p></div>
+    </div>
+    <p class="small">That single slogan explains the whole memory difficulty: a frozen coordinate contributes no variation (holds are poison), while a write/read event is a large, localized variation (events are medicine). And two simultaneously frozen items are structurally identical during the hold — which is the capacity limit, in one line.</p>
+
+    <h3 style="font-size:1.15rem;margin-top:.4rem">How recovery is scored</h3>
+    <div class="grid two">
+      <div class="card stack"><span class="tag">MCC</span><p>Best one-to-one matching of absolute correlations between estimated and true latents (Hungarian assignment), averaged. Component-wise identification predicts MCC → 1; a set-identifiable frozen block predicts high <em>block</em>-MCC with low component-wise MCC — and that gap is itself evidence.</p></div>
+      <div class="card stack"><span class="tag">Edge F₁ · SHD</span><p>Graph recovery against the true unrolled adjacency, <em>always split by edge type</em> (write / hold / read) — because the whole point is that recovery is not uniform across the motif.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ============ SELECTION ============ -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">The one confound that can fake memory</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">Selection</h2>
+    <p>Conditioning on a collider creates dependence between its causes. If a selection variable <span class="m">S</span> is computed from both cue and readout and the dataset keeps only <span class="m">S</span>=1 episodes, then <em>inside</em> the dataset the cue and readout are dependent even when <strong>no path</strong> connects them in the true graph. The dependence has no carrier, survives at any lag, and looks exactly like memory to any method that must explain dependence generatively.</p>
+  </div>
+  <div class="wrap">
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 -26 620 246" role="img" aria-label="The selection construction: there is no path from cue to readout; a selection variable S is a collider of both, and conditioning the dataset on S manufactures dependence.">
+          <defs><marker id="m2f" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker>
+          <marker id="m2g" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto-start-reverse"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--rose)"/></marker></defs>
+          <circle class="node" cx="70" cy="55" r="22"/><text class="node-lbl" x="70" y="60" text-anchor="middle">c</text>
+          <circle class="node" cx="350" cy="55" r="22"/><text class="node-lbl" x="350" y="60" text-anchor="middle">d</text>
+          <circle class="node" cx="500" cy="55" r="22"/><text class="node-lbl" x="500" y="60" text-anchor="middle">y</text>
+          <path class="edge" d="M372,55 L476,55" marker-end="url(#m2f)"/>
+          <rect x="210" y="150" width="230" height="46" rx="10" fill="var(--amber-tint)" stroke="var(--amber)"/>
+          <text class="cap" x="325" y="170" text-anchor="middle" fill="var(--amber)">S = 1{ φ(c, y) &gt; θ }</text>
+          <text class="cap" x="325" y="186" text-anchor="middle" fill="var(--amber)">dataset = { S = 1 }</text>
+          <path class="edge" d="M85,73 C150,120 200,145 250,150" marker-end="url(#m2f)"/>
+          <path class="edge" d="M498,77 C470,120 420,145 400,150" marker-end="url(#m2f)"/>
+          <path style="stroke:var(--rose);stroke-width:2;stroke-dasharray:5 4;fill:none" d="M90,40 C220,4 402,4 486,40" marker-start="url(#m2g)" marker-end="url(#m2g)"/>
+          <text x="288" y="-12" text-anchor="middle" fill="var(--rose)" style="font-family:var(--font-mono);font-size:11px">induced dependence · no carrier</text>
+        </svg>
+      </div>
+      <figcaption><b>The selection construction.</b> There is no path from cue to readout; conditioning the dataset on the collider-like <span class="m">S</span> manufactures the dependence. Certificate (iii) of trustworthy memory exists to catch exactly this.</figcaption>
+    </figure>
+  </div>
+  <div class="wrap stack">
+    <p>This is first-order, not a corner case: agent data is selected on <em>by construction.</em> Imitation keeps successful episodes (selection on return); RLHF filters on preference; and a NeurIPS 2024 result shows subgoal structure in demonstrations <em>is</em> a selection on state–action pairs, formally. So the no-selection assumption is false for precisely the corpora agents are trained on — which is why trustworthy memory carries a certificate that can report <span class="mono">"dependence present, carrier absent, cause: selection."</span></p>
+  </div>
+</section>
+
+<!-- ============ NEXT ============ -->
+<section class="band" style="padding-top:.5rem">
+  <div class="wrap">
+    <p class="eyebrow">Read in order</p>
+    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem);margin-bottom:.2rem">Next in the series</h2>
+    <div class="next">
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720"><span class="n">01 · Overview</span><h4>The thesis</h4><p>The one-paragraph claim, the two layers, trustworthy memory, and why this is not the memory-agent literature.</p></a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f"><span class="n">03 · Formulation v0.1</span><h4>The numbered claims</h4><p>Now that you have the machinery: assumptions, the frontier lemma with proof, conjectures, predictions, experiments.</p></a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201"><span class="n">04 · Plan</span><h4>From zero to productive</h4><p>Requirements, status, decision trees, the E0 runbook, risks, and the timeline to the 2027 cycle.</p></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="foot-in">
+    <b>Causal Memory · Formulation v0.1</b> — Memory as identifiable temporal structure in the data-generating process.<br/>
+    Mian (Nothern) Wu, prepared for step-by-step verification with Yujia Zheng · July 2026.<br/>
+    Part 02 of a four-part series · rendered from <b>causal_memory_formulation.tex</b> and <b>causal_memory_onboarding.tex</b>.
+  </div>
+</footer>

@@ -1,0 +1,534 @@
+<title>Causal Memory · 04 The Plan</title>
+<style>
+/* ============================================================
+   CAUSAL MEMORY — shared design system (kit v1)
+   Serif monograph + monospace formal register.
+   Accent = carrier teal (the color the papers use for memory).
+   ============================================================ */
+:root{
+  --font-serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Charter,Georgia,Cambria,'Times New Roman',serif;
+  --font-mono:ui-monospace,'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',Menlo,Consolas,'Liberation Mono',monospace;
+
+  --paper:#F1F5F4;
+  --surface:#FBFCFC;
+  --surface-2:#EAF0EE;
+  --ink:#0F201E;
+  --ink-soft:#3B4E4B;
+  --ink-faint:#69807C;
+  --line:#D6E1DE;
+  --line-strong:#BFCECA;
+
+  --carrier:#0B7C72;
+  --carrier-deep:#075B54;
+  --carrier-tint:#E0EFEC;
+  --carrier-glow:rgba(11,124,114,.14);
+
+  --amber:#A5651A;
+  --amber-tint:#F4E8D5;
+  --rose:#AC3548;
+  --rose-tint:#F3DBDF;
+
+  --shadow:0 1px 2px rgba(15,32,30,.05),0 8px 30px rgba(15,32,30,.06);
+  --shadow-lg:0 2px 6px rgba(15,32,30,.06),0 24px 60px rgba(15,32,30,.10);
+
+  --col:69ch;
+  --pad:clamp(1.2rem,5vw,2.6rem);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#081211;
+    --surface:#0F1E1C;
+    --surface-2:#132523;
+    --ink:#E7F0EE;
+    --ink-soft:#A6BAB6;
+    --ink-faint:#6D817D;
+    --line:#1D2F2C;
+    --line-strong:#294139;
+    --carrier:#41D9C6;
+    --carrier-deep:#82F0E2;
+    --carrier-tint:#0E2A27;
+    --carrier-glow:rgba(65,217,198,.16);
+    --amber:#DDA351;
+    --amber-tint:#241C10;
+    --rose:#E6828F;
+    --rose-tint:#2A151A;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.5);
+    --shadow-lg:0 2px 6px rgba(0,0,0,.45),0 30px 70px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="light"]{
+  --paper:#F1F5F4;--surface:#FBFCFC;--surface-2:#EAF0EE;--ink:#0F201E;--ink-soft:#3B4E4B;--ink-faint:#69807C;
+  --line:#D6E1DE;--line-strong:#BFCECA;--carrier:#0B7C72;--carrier-deep:#075B54;--carrier-tint:#E0EFEC;--carrier-glow:rgba(11,124,114,.14);
+  --amber:#A5651A;--amber-tint:#F4E8D5;--rose:#AC3548;--rose-tint:#F3DBDF;
+  --shadow:0 1px 2px rgba(15,32,30,.05),0 8px 30px rgba(15,32,30,.06);--shadow-lg:0 2px 6px rgba(15,32,30,.06),0 24px 60px rgba(15,32,30,.10);
+}
+:root[data-theme="dark"]{
+  --paper:#081211;--surface:#0F1E1C;--surface-2:#132523;--ink:#E7F0EE;--ink-soft:#A6BAB6;--ink-faint:#6D817D;
+  --line:#1D2F2C;--line-strong:#294139;--carrier:#41D9C6;--carrier-deep:#82F0E2;--carrier-tint:#0E2A27;--carrier-glow:rgba(65,217,198,.16);
+  --amber:#DDA351;--amber-tint:#241C10;--rose:#E6828F;--rose-tint:#2A151A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.5);--shadow-lg:0 2px 6px rgba(0,0,0,.45),0 30px 70px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-serif);font-size:1.0625rem;line-height:1.68;
+  font-feature-settings:"kern" 1,"liga" 1;text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--carrier-glow);color:var(--ink)}
+a{color:var(--carrier-deep);text-decoration-color:color-mix(in srgb,var(--carrier) 45%,transparent);text-underline-offset:2px}
+a:hover{text-decoration-color:var(--carrier)}
+:focus-visible{outline:2px solid var(--carrier);outline-offset:3px;border-radius:3px}
+img,svg{max-width:100%}
+h1,h2,h3{text-wrap:balance;line-height:1.12;font-weight:700;letter-spacing:-.012em}
+
+/* ---------- shell ---------- */
+.wrap{max-width:var(--col);margin-inline:auto;padding-inline:var(--pad)}
+.band{padding-block:clamp(2.4rem,6vw,4.2rem)}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+.mono{font-family:var(--font-mono)}
+.eyebrow{
+  font-family:var(--font-mono);font-size:.72rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--carrier-deep);
+}
+.lede{font-size:1.28rem;line-height:1.5;color:var(--ink-soft)}
+.small{font-size:.9rem;color:var(--ink-faint)}
+p{margin:0 0 1rem}
+.stack>*+*{margin-top:1.05rem}
+
+/* ---------- top series bar ---------- */
+.topbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:var(--col);margin-inline:auto;padding:.5rem var(--pad);display:flex;align-items:center;gap:.6rem .9rem;justify-content:space-between;flex-wrap:wrap}
+.brand{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+@media (max-width:600px){.brand .brand-extra{display:none}}
+.brand b{color:var(--carrier-deep);font-weight:700}
+.series{display:flex;gap:.35rem;flex-wrap:wrap}
+.series a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.02em;text-decoration:none;color:var(--ink-faint);
+  border:1px solid var(--line);border-radius:999px;padding:.16rem .6rem;transition:.16s}
+.series a:hover{border-color:var(--carrier);color:var(--carrier-deep)}
+.series a[aria-current="page"]{background:var(--carrier);border-color:var(--carrier);color:#fff}
+@media (prefers-color-scheme:dark){.series a[aria-current="page"]{color:#08110f}}
+:root[data-theme="dark"] .series a[aria-current="page"]{color:#08110f}
+:root[data-theme="light"] .series a[aria-current="page"]{color:#fff}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-bg{position:absolute;inset:0;pointer-events:none;
+  background:
+   radial-gradient(60% 80% at 82% 8%,var(--carrier-glow),transparent 70%),
+   radial-gradient(50% 60% at 6% 96%,var(--carrier-glow),transparent 72%);}
+.hero-in{position:relative;max-width:var(--col);margin-inline:auto;padding:clamp(2.2rem,6vw,4rem) var(--pad) clamp(1.6rem,4vw,2.6rem)}
+.kicker{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem}
+.kicker .num{font-family:var(--font-mono);font-size:.8rem;letter-spacing:.1em;color:var(--carrier-deep);border:1px solid var(--carrier);border-radius:6px;padding:.1rem .45rem}
+h1.title{font-size:clamp(2.25rem,6.2vw,3.9rem);margin:.2rem 0 .1rem;letter-spacing:-.02em}
+h1.title .q{color:var(--carrier-deep)}
+.subtitle{font-size:clamp(1.1rem,2.6vw,1.5rem);color:var(--ink-soft);font-style:italic;margin:.4rem 0 0;line-height:1.35}
+.byline{margin-top:1.4rem;font-family:var(--font-mono);font-size:.78rem;color:var(--ink-faint);letter-spacing:.02em;
+  display:flex;gap:.5rem 1.2rem;flex-wrap:wrap;align-items:center}
+.byline .dot{width:5px;height:5px;border-radius:50%;background:var(--carrier);display:inline-block}
+
+/* ---------- figures ---------- */
+figure{margin:1.8rem 0}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+  padding:clamp(1rem,3vw,1.8rem);overflow-x:auto}
+.fig svg{display:block;margin-inline:auto;height:auto}
+figcaption{font-family:var(--font-mono);font-size:.78rem;line-height:1.5;color:var(--ink-faint);margin-top:.9rem;text-align:left}
+figcaption b{color:var(--carrier-deep);font-weight:600}
+
+/* ---------- cards ---------- */
+.grid{display:grid;gap:1rem}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:1.15rem 1.2rem;box-shadow:var(--shadow)}
+.card h3{margin:.1rem 0 .5rem;font-size:1.12rem}
+.card p{font-size:.98rem;color:var(--ink-soft);margin:0}
+.card .tag{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--carrier-deep);display:block;margin-bottom:.45rem}
+.card.accent{border-color:color-mix(in srgb,var(--carrier) 40%,var(--line));
+  background:linear-gradient(180deg,var(--carrier-tint),var(--surface) 60%)}
+
+/* labelled layer cards */
+.layer{position:relative;padding-left:1.4rem}
+.layer::before{content:"";position:absolute;left:0;top:.2rem;bottom:.2rem;width:4px;border-radius:4px;background:var(--carrier)}
+.layer.l2::before{background:var(--amber)}
+
+/* ---------- certificate list ---------- */
+.certs{counter-reset:cert;display:grid;gap:.7rem;margin:1.2rem 0}
+.cert{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start;
+  background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:.9rem 1rem}
+.cert .rn{font-family:var(--font-mono);font-weight:700;color:var(--carrier-deep);
+  border:1px solid var(--carrier);border-radius:8px;min-width:2.1rem;text-align:center;padding:.25rem 0;font-size:.82rem}
+.cert h4{margin:.05rem 0 .25rem;font-size:1.02rem}
+.cert p{margin:0;font-size:.94rem;color:var(--ink-soft)}
+
+/* ---------- math ---------- */
+.m{font-family:var(--font-serif);font-style:italic}
+.m .fn{font-style:normal}
+.eq{font-family:var(--font-serif);font-style:italic;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:8px;padding:.7rem 1rem;margin:1.1rem 0;overflow-x:auto;font-size:1.05rem;line-height:1.9}
+.op{font-style:normal;color:var(--carrier-deep);padding:0 .12em}
+kbd,code{font-family:var(--font-mono);font-size:.86em;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:5px;padding:.06em .38em}
+
+/* ---------- pill / status ---------- */
+.pill{font-family:var(--font-mono);font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:999px;padding:.15rem .55rem;border:1px solid;white-space:nowrap}
+.pill.done{color:var(--carrier-deep);border-color:color-mix(in srgb,var(--carrier) 50%,transparent);background:var(--carrier-tint)}
+.pill.pend{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 50%,transparent);background:var(--amber-tint)}
+.pill.block{color:var(--rose);border-color:color-mix(in srgb,var(--rose) 50%,transparent);background:var(--rose-tint)}
+
+/* ---------- next / nav cards ---------- */
+.next{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin-top:1.4rem}
+.next a{text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:13px;
+  padding:1.05rem 1.15rem;box-shadow:var(--shadow);transition:.18s;display:block}
+.next a:hover{border-color:var(--carrier);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.next .n{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;color:var(--carrier-deep)}
+.next h4{margin:.35rem 0 .3rem;font-size:1.08rem}
+.next p{margin:0;font-size:.9rem;color:var(--ink-faint)}
+
+/* ---------- pull quote ---------- */
+.pull{border-left:3px solid var(--carrier);padding:.2rem 0 .2rem 1.1rem;margin:1.6rem 0;font-size:1.18rem;
+  font-style:italic;color:var(--ink);line-height:1.45}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);margin-top:1rem}
+.foot-in{max-width:var(--col);margin-inline:auto;padding:2rem var(--pad) 3rem;font-family:var(--font-mono);
+  font-size:.76rem;color:var(--ink-faint);line-height:1.7}
+.foot-in b{color:var(--ink-soft)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- tables (shared, used by 03/04) ---------- */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);margin:1.4rem 0;background:var(--surface)}
+table.tbl{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+table.tbl th,table.tbl td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+table.tbl thead th{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);background:var(--surface-2);white-space:nowrap;position:sticky;top:0}
+table.tbl tbody tr:last-child td{border-bottom:0}
+table.tbl tbody tr:hover{background:var(--surface-2)}
+table.tbl td.k{font-family:var(--font-mono);font-size:.82rem;color:var(--carrier-deep);white-space:nowrap;font-weight:600}
+table.tbl .give{color:var(--ink-soft)}
+
+/* ---------- code block (shared, used by 04) ---------- */
+pre.code{font-family:var(--font-mono);font-size:.79rem;line-height:1.65;background:var(--surface-2);border:1px solid var(--line);border-radius:11px;padding:1rem 1.1rem;overflow-x:auto;color:var(--ink-soft);margin:1.2rem 0;box-shadow:var(--shadow)}
+pre.code .cm{color:var(--carrier-deep)}
+pre.code .kw{color:var(--amber)}
+pre.code b{color:var(--ink);font-weight:600}
+
+/* ---------- definition + note callouts (shared) ---------- */
+.defbox{background:linear-gradient(180deg,var(--carrier-tint),var(--surface) 55%);border:1px solid color-mix(in srgb,var(--carrier) 40%,var(--line));border-radius:13px;padding:1.1rem 1.25rem;box-shadow:var(--shadow);margin:1.4rem 0}
+.defbox>.tag{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--carrier-deep);display:block;margin-bottom:.4rem}
+.defbox h3{margin:.1rem 0 .5rem;font-size:1.15rem}
+.note{border-left:3px solid var(--amber);background:var(--amber-tint);border-radius:0 8px 8px 0;padding:.7rem .95rem;font-size:.93rem;color:var(--ink-soft);margin:1.2rem 0}
+.note b{color:var(--amber)}
+
+/* SVG shared classes */
+svg .node{fill:var(--surface);stroke:var(--line-strong);stroke-width:1.5}
+svg .node-lbl{fill:var(--ink);font-family:var(--font-serif);font-style:italic;font-size:15px}
+svg .mem{fill:var(--carrier-tint);stroke:var(--carrier);stroke-width:1.6}
+svg .edge{stroke:var(--line-strong);stroke-width:1.6;fill:none}
+svg .edge-c{stroke:var(--carrier);stroke-width:2.4;fill:none}
+svg .cap{fill:var(--ink-faint);font-family:var(--font-mono);font-size:11px}
+svg .cap-c{fill:var(--carrier-deep);font-family:var(--font-mono);font-size:11px}
+svg .amark{fill:var(--line-strong)}
+svg .amark-c{fill:var(--carrier)}
+</style>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <span class="brand"><b>Causal&nbsp;Memory</b><span class="brand-extra"> · a research program</span></span>
+    <nav class="series" aria-label="Series">
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720">01 Overview</a>
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb">02 Theory</a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f">03 Formulation</a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201" aria-current="page">04 Plan</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-in">
+    <div class="kicker">
+      <span class="num">04 / 04</span>
+      <span class="eyebrow">Status &amp; execution</span>
+    </div>
+    <h1 class="title">From zero to productive — <span class="q">and defensible</span>.</h1>
+    <p class="subtitle">The operational layer: what the advisor requires, where the work stands, how the open questions resolve, the runbook precise enough to start coding from, and the timeline to the Fall 2027 cycle.</p>
+    <div class="byline">
+      <span><span class="dot"></span> status as of July 9, 2026</span>
+      <span>DONE means produced, not approved</span>
+      <span>nothing is reviewed until Yujia marks it</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== REQUIREMENTS ===== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">R1 – R9 · traceability</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">The advisor's explicit requirements</h2>
+    <p class="small" style="margin-bottom:.4rem">Extracted from two meetings and an email, kept close to his wording. <span class="mono">DONE</span> means addressed in v0.1 or decided — not reviewed.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>#</th><th>Requirement</th><th>Status</th><th>Remaining action</th></tr></thead>
+        <tbody>
+          <tr><td class="k">R1</td><td>Do not rush into experiments; formulation first</td><td><span class="pill done">done</span></td><td class="give">All compute stays gated on sign-off</td></tr>
+          <tr><td class="k">R2</td><td>Write a shared doc of your understanding for step-by-step checking</td><td><span class="pill done">done</span></td><td class="give">Create the Overleaf project, share, request review</td></tr>
+          <tr><td class="k">R3</td><td>Read the related work: temporal CRL &amp; discovery, then agent-memory surveys</td><td><span class="pill pend">pending</span></td><td class="give">Execute the 3-week reading plan</td></tr>
+          <tr><td class="k">R4</td><td>State the CD vs. CRL distinction correctly</td><td><span class="pill done">done</span></td><td class="give">In v0.1 §1; be ready to say it aloud</td></tr>
+          <tr><td class="k">R5</td><td>Understand why a causal graph is not a knowledge graph</td><td><span class="pill done">done</span></td><td class="give">In v0.1 §1; be ready to say it aloud</td></tr>
+          <tr><td class="k">R6</td><td>Decompose into two layers: discovery-as-masking, then CRL</td><td><span class="pill done">done</span></td><td class="give">Layers are §4 and §5 of v0.1</td></tr>
+          <tr><td class="k">R7</td><td>Frame the contribution as correctness; byproducts are trust &amp; efficiency</td><td><span class="pill done">done</span></td><td class="give">Framing is v0.1 §1 and §3.1</td></tr>
+          <tr><td class="k">R8</td><td>Timestamps are not a theoretical bound; the window is engineering</td><td><span class="pill done">done</span></td><td class="give"><span class="m">W</span> is a swept hyperparameter in E0</td></tr>
+          <tr><td class="k">R9</td><td>Choose the track: theory, or the empirical masking fallback</td><td><span class="pill done">done</span></td><td class="give">Theory track chosen and recorded in v0.1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><b>Do not drift.</b> The escape hatch was offered twice — run the project empirically as learned masking, without identifiability. It was declined; the identifiability framing is exactly what distinguishes this from the memory-agent literature. If the theory stalls, raise it explicitly rather than quietly substituting engineering.</div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===== STATUS ===== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Status snapshot · July 9, 2026</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">Where the work stands</h2>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>Item</th><th>State</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Formulation v0.1 (.tex + 11-page PDF)</td><td class="give">Written, compiles clean, all items numbered</td><td><span class="pill done">done</span></td></tr>
+          <tr><td>Overleaf project shared with Yujia</td><td class="give">Not yet — this is action item one</td><td><span class="pill pend">pending</span></td></tr>
+          <tr><td>Yujia's review of any numbered item</td><td class="give">None yet; nothing is verified</td><td><span class="pill pend">pending</span></td></tr>
+          <tr><td>Reading plan (3 weeks)</td><td class="give">Not started in earnest</td><td><span class="pill pend">pending</span></td></tr>
+          <tr><td>Lemma 1 (frontier, with proof)</td><td class="give">Proved in v0.1; awaiting check</td><td><span class="pill done">done</span></td></tr>
+          <tr><td>Observations 1–2; Conjectures 1–2</td><td class="give">Stated with arguments / strategies</td><td><span class="pill done">done</span></td></tr>
+          <tr><td>E0 (discovery on observed motif)</td><td class="give">Pre-registered; gated on sign-off &amp; Q6</td><td><span class="pill block">blocked</span></td></tr>
+          <tr><td>E1 (CRL with mixing)</td><td class="give">Pre-registered; gated on sign-off</td><td><span class="pill block">blocked</span></td></tr>
+          <tr><td>Minimal theorem (σ=0, k=1)</td><td class="give">Statement fixed; proof not attempted</td><td><span class="pill pend">pending</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 0 900 120" role="img" aria-label="Project state machine: v0.1 written, Overleaf shared (you are here), Yujia review, revise to v0.2, sign-off plus Q6, E0, minimal theorem, E1, papers.">
+          <defs><marker id="m4a" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker></defs>
+          <g font-family="var(--font-mono)" font-size="11">
+          <!-- stages -->
+          <g>
+            <rect x="8"   y="40" width="86" height="40" rx="9" fill="var(--carrier-tint)" stroke="var(--carrier)"/>
+            <text x="51"  y="64" text-anchor="middle" fill="var(--carrier-deep)">v0.1 written</text>
+            <rect x="112" y="40" width="86" height="40" rx="9" fill="var(--amber-tint)" stroke="var(--amber)"/>
+            <text x="155" y="59" text-anchor="middle" fill="var(--amber)">Overleaf</text>
+            <text x="155" y="72" text-anchor="middle" fill="var(--amber)">shared</text>
+            <rect x="216" y="40" width="86" height="40" rx="9" class="node"/>
+            <text x="259" y="64" text-anchor="middle" fill="var(--ink-soft)">Yujia review</text>
+            <rect x="320" y="40" width="86" height="40" rx="9" class="node"/>
+            <text x="363" y="64" text-anchor="middle" fill="var(--ink-soft)">revise v0.2</text>
+            <rect x="424" y="40" width="90" height="40" rx="9" class="node"/>
+            <text x="469" y="59" text-anchor="middle" fill="var(--ink-soft)">sign-off</text>
+            <text x="469" y="72" text-anchor="middle" fill="var(--ink-soft)">(+ Q6)</text>
+            <rect x="532" y="40" width="60" height="40" rx="9" class="node"/>
+            <text x="562" y="64" text-anchor="middle" fill="var(--ink-soft)">E0</text>
+            <rect x="610" y="40" width="92" height="40" rx="9" class="node"/>
+            <text x="656" y="59" text-anchor="middle" fill="var(--ink-soft)">minimal</text>
+            <text x="656" y="72" text-anchor="middle" fill="var(--ink-soft)">theorem</text>
+            <rect x="720" y="40" width="60" height="40" rx="9" class="node"/>
+            <text x="750" y="64" text-anchor="middle" fill="var(--ink-soft)">E1</text>
+            <rect x="798" y="40" width="86" height="40" rx="9" class="node"/>
+            <text x="841" y="64" text-anchor="middle" fill="var(--ink-soft)">paper(s)</text>
+          </g>
+          <path class="edge" d="M94,60 L110,60" marker-end="url(#m4a)"/>
+          <path class="edge" d="M198,60 L214,60" marker-end="url(#m4a)"/>
+          <path class="edge" d="M302,60 L318,60" marker-end="url(#m4a)"/>
+          <path class="edge" d="M406,60 L422,60" marker-end="url(#m4a)"/>
+          <path class="edge" d="M514,60 L530,60" marker-end="url(#m4a)"/>
+          <path class="edge" d="M592,60 L608,60" marker-end="url(#m4a)"/>
+          <path class="edge" d="M702,60 L718,60" marker-end="url(#m4a)"/>
+          <path class="edge" d="M780,60 L796,60" marker-end="url(#m4a)"/>
+          <!-- you are here -->
+          <path style="stroke:var(--amber);stroke-width:1.6" d="M155,96 L155,84" marker-end="url(#m4a)"/>
+          <text x="155" y="112" text-anchor="middle" fill="var(--amber)">you are here</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption><b>Project state machine.</b> E0 and the minimal theorem can proceed in parallel after sign-off; E1 waits for both. <span class="m">Current blockers:</span> Yujia's sign-off, and his answer to Q6 (whether sanity-scale sims may run during iteration). Everything computational is downstream of these two.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===== DECISION TREES ===== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The open questions as decisions</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">A recommendation he can veto</h2>
+    <p class="small" style="margin-bottom:1rem">He responds better to a vetoable proposal than an open question. Each carries the stake and the position to present. Q1–Q3 are the priority three.</p>
+    <div class="grid two">
+      <div class="card accent stack"><span class="tag">Q1 · gated vs. regime-free</span><p><b>Keep the gated formulation</b> — it matches CD-NOD's input and makes events explicit. If he prefers regime-free: rework A2/A5 into nonstationary transitions, switch C1a to continuous sufficient-change. ~1–2 days.</p></div>
+      <div class="card accent stack"><span class="tag">Q2 · the gluing step</span><p><b>Attempt diagonal-hold transport as written</b>, but ask whether the nonparametric-concepts machinery gives a cleaner bridge. If redirected: read the ICML 2025 proof and rebuild C1c on its skeleton first.</p></div>
+      <div class="card accent stack"><span class="tag">Q3 · is F<sub>t</sub> the target</span><p><b>Keep it</b>, with a Markov-blanket rephrasing offered as cosmetic. If he wants a soft information-theoretic variant: add an ε-sufficient relaxation without deleting the exact version the proof supports.</p></div>
+      <div class="card stack"><span class="tag">Q4 · gate vs. joint model</span><p><b>Preprocessing gate first</b> — modular, matches the ICML 2024 framework as published. Joint modeling makes certificate (iii) a model-comparison statement; medium rework.</p></div>
+      <div class="card stack"><span class="tag">Q5 · Layer 1 alone</span><p><b>Treat as scaffolding</b> unless E0's heatmaps are surprisingly rich. Either answer only changes packaging, not the work.</p></div>
+      <div class="card stack"><span class="tag">Q6 · sims during iteration</span><p><b>Ask permission for generator + ground-truth scaffolding only</b> (no discovery runs) — respects R1 while removing dead time. If no: the repo skeleton is still written on paper below.</p></div>
+      <div class="card stack" style="grid-column:1/-1"><span class="tag">Q7 · policy-relativity</span><p><b>Defend A8 as honest and standard</b>; offer cross-policy invariance as a stronger later target, not a definitional requirement. If he insists it belongs in the definition, scope it as its own section with its own conjecture rather than silently strengthening D1.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===== 14-DAY PLAN ===== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Fourteen days</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">The work plan</h2>
+    <p class="small" style="margin-bottom:.3rem">Assuming the meeting lands on day 7. Reading and document iteration run in parallel by design.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>Day</th><th>Focus</th><th>Output</th></tr></thead>
+        <tbody>
+          <tr><td class="k">0</td><td>Create Overleaf, paste v0.1, share; send the note</td><td class="give">Link sent; review requested</td></tr>
+          <tr><td class="k">1–2</td><td>IDOL + Song blog, with the extraction template</td><td class="give">1-page note: A1/A2 verbatim, where each degenerates at σ→0</td></tr>
+          <tr><td class="k">3</td><td>LEAP + TDRL conditions</td><td class="give">Conditions table feeding Observation 1</td></tr>
+          <tr><td class="k">4</td><td>ICML 2025 set-identifiability</td><td class="give">Which statements apply verbatim within a hold regime (C1b)</td></tr>
+          <tr><td class="k">5</td><td>ICML 2024 selection + NeurIPS 2024 subtasks</td><td class="give">Certificate spec: their assumptions vs. our motif</td></tr>
+          <tr><td class="k">6</td><td>Meeting prep; whiteboard dry-run of Lemma 1</td><td class="give">Agenda; Q1–Q3 with recommendations</td></tr>
+          <tr><td class="k">7</td><td>Meeting; same-day minutes; changelog; bump to v0.2</td><td class="give">v0.2 + decision log</td></tr>
+          <tr><td class="k">8–9</td><td>Implement revisions; if Q6 allows, scaffold E0 (generator only)</td><td class="give">v0.2 stabilized; repo skeleton</td></tr>
+          <tr><td class="k">10</td><td>NeurIPS 2022 + ICML 2026</td><td class="give">Positioning table refreshed with exact conditions</td></tr>
+          <tr><td class="k">11–12</td><td>Minimal theorem: formal setup + boundary step</td><td class="give">Draft proof or a precise list of stuck points</td></tr>
+          <tr><td class="k">13</td><td>CaRiNG + tigramite / causal-learn docs</td><td class="give">E0 configs finalized</td></tr>
+          <tr><td class="k">14</td><td>Second meeting prep</td><td class="give">Agenda with theorem progress as item one</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===== E0 RUNBOOK ===== -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">E0 runbook · precise enough to start coding</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">The first experiment, on paper</h2>
+    <p>Discovery on the fully observed motif — no mixing, no VAE, CPU-only — so any failure is attributable to the memory regime itself. <span class="mono small">tigramite for PCMCI⁺; causal-learn for PC-stable and CD-NOD.</span></p>
+    <pre class="code"><span class="cm"># repository skeleton</span>
+causal-memory/
+  gen/motif.py          <span class="cm"># episode generator</span>
+  gen/ground_truth.py   <span class="cm"># unrolled adjacency + true frontier F_t(Y)</span>
+  disc/run_pcmci.py     <span class="cm"># tigramite PCMCI+ (ParCorr, GPDC)</span>
+  disc/run_pc.py        <span class="cm"># causal-learn PC-stable, window-unrolled</span>
+  disc/run_cdnod.py     <span class="cm"># causal-learn CD-NOD, u_t as context index</span>
+  metrics/edges.py      <span class="cm"># edge F1 by type, SHD, frontier P/R</span>
+  configs/grid.yaml     <span class="cm"># the sweep</span>
+  notebooks/frontier_heatmap.ipynb
+
+<span class="cm"># episode generator — the core</span>
+<span class="kw">def</span> sample_episode(Delta, k, sigma, staggered, per_item_readout,
+                   selection_arm, n_distractors, seed):
+    <span class="cm"># cues resampled per episode  (cue diversity is REQUIRED)</span>
+    <span class="cm"># distractors: d_t = tanh(W_d @ d_{t-1}) + eps   (full-rank)</span>
+    <span class="cm"># write:  m_{t0} = w(c) + eps_w        (write gate)</span>
+    <span class="cm"># hold:   m_t = m_{t-1} + sigma*eps     (Gaussian or Laplace)</span>
+    <span class="cm"># read:   shared  y = r(m_1..m_k, d) ; per-item  y_j = r_j(m_j,d)</span>
+    <span class="cm"># selection arm: y has NO m-parent; keep iff phi(c,y) &gt; theta</span>
+    <span class="cm"># emit: s_1:T (observed), u_1:T (regimes), true adjacency, F_t(Y)</span></pre>
+    <div class="grid two">
+      <div class="card stack"><span class="tag">the sweep</span><p><span class="m">Δ</span> ∈ {1,2,5,10,20,50} · <span class="m">σ</span> ∈ {0, 0.01, 0.1} · <span class="m">k</span> ∈ {1,2,4} · simultaneous/staggered · shared/per-item · window <span class="m">W</span> ∈ {Δ, 2Δ, too-small}. 10⁴ episodes/config, three algorithms, five seeds — ~1,500–2,000 runs, under a day of CPU wall-clock.</p></div>
+      <div class="card stack"><span class="tag">deliverable plots</span><p>Heatmap of read-edge <span class="m">F₁</span> over (Δ,σ) per <span class="m">k</span> — the headline regardless of pass/fail; boundary vs. mid-hold bars (P1); simultaneous/staggered &amp; shared/per-item (P3); selection FPR with gate on/off (P2); <span class="m">W</span>-sensitivity (R8).</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===== RISK + TIMELINE ===== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Risk register</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.3rem">Every mitigation routes through a numbered question or a pre-registered fallback</h2>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>Risk</th><th>Exposure</th><th>Mitigation</th></tr></thead>
+        <tbody>
+          <tr><td>C1c gluing fails</td><td><span class="pill pend">medium</span></td><td class="give">Ship the k=1 theorem (gluing trivial) + honest set-level statement for k&gt;1; escalate via Q2</td></tr>
+          <tr><td>Yujia rejects the gated formulation</td><td><span class="pill pend">medium</span></td><td class="give">Q1 branch: 1–2-day rework of A2/A5; C1a switches to continuous sufficient change</td></tr>
+          <tr><td>Selection assumptions unmet on the motif</td><td><span class="pill pend">low–med</span></td><td class="give">Restrict the E0 construction to match the ICML 2024 hypotheses; document the gap</td></tr>
+          <tr><td>E0 fails even at boundaries</td><td><span class="pill done">low</span></td><td class="give">The frontier heatmap is the deliverable either way; event-gated estimators become the contribution</td></tr>
+          <tr><td>Policy-relativity objection hardens (Q7)</td><td><span class="pill done">low</span></td><td class="give">Scope invariance as its own future section; do not strengthen D1 silently</td></tr>
+          <tr><td>Timeline slips against NeurIPS 2027</td><td><span class="pill pend">medium</span></td><td class="give">Q5 branch: split a Layer-1 paper; the minimal theorem + E0 is a workshop-grade unit</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="wrap stack">
+    <p class="eyebrow">Working backward from letters, November 2027</p>
+    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem)">Timeline to the Fall 2027 cycle</h2>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>When</th><th>Milestone</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Jul 2026</td><td>Sign-off on the formulation</td></tr>
+          <tr><td class="k">Early Aug</td><td>E0 complete — the frontier maps</td></tr>
+          <tr><td class="k">End Aug</td><td>Minimal theorem drafted (σ=0, k=1)</td></tr>
+          <tr><td class="k">Sep</td><td>E1 through the mixing arms</td></tr>
+          <tr><td class="k">Oct–Jan</td><td>Full theory push: C1 in generality, capacity &amp; selection propositions</td></tr>
+          <tr><td class="k">Feb–Apr 2027</td><td>Paper assembly · target NeurIPS 2027 (ICLR 2028 fallback)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">By application time the record should read: a signed-off formulation, the frontier maps, at least one theorem, and a submission with Yujia. Slack exists — and it is consumed by exactly one thing: iterating v0.x until sign-off, which is why the reading runs in parallel.</p>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===== THE NOTE ===== -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">Action item one</p>
+    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem)">The note to send with the Overleaf link</h2>
+    <div class="defbox" style="background:var(--surface)">
+      <span class="tag">draft message</span>
+      <p style="font-style:italic;margin:0 0 .7rem">Hi Yujia,</p>
+      <p style="font-style:italic;margin:0 0 .7rem">I wrote up the formulation as an Overleaf doc: [link]. Every assumption and claim is numbered so you can mark each one directly. The part I'd most like you to check is the Lemma 1 proof (the minimal-memory characterization); Q1 to Q7 at the end collect the decision points, each with my recommendation.</p>
+      <p style="font-style:italic;margin:0 0 .7rem">Nothing runs before your sign-off.</p>
+      <p style="font-style:italic;margin:0">Best,<br/>Nothern</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEXT ===== -->
+<section class="band" style="padding-top:.5rem">
+  <div class="wrap">
+    <p class="eyebrow">The series</p>
+    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem);margin-bottom:.2rem">Back to the start</h2>
+    <div class="next">
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720"><span class="n">01 · Overview</span><h4>The thesis</h4><p>Memory as identifiable causal structure — the claim, the two layers, trustworthy memory.</p></a>
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb"><span class="n">02 · Theory</span><h4>The machinery</h4><p>SCMs, identifiability, and the selection confound.</p></a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f"><span class="n">03 · Formulation v0.1</span><h4>The numbered claims</h4><p>Assumptions, the frontier lemma, conjectures, predictions, experiments.</p></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="foot-in">
+    <b>Causal Memory · Formulation v0.1</b> — Memory as identifiable temporal structure in the data-generating process.<br/>
+    Mian (Nothern) Wu, prepared for step-by-step verification with Yujia Zheng · July 2026.<br/>
+    Part 04 of a four-part series · rendered from <b>causal_memory_formulation.tex</b> and <b>causal_memory_onboarding.tex</b>.
+  </div>
+</footer>

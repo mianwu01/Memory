@@ -1,0 +1,454 @@
+<title>Causal Memory · 01 The Thesis</title>
+<style>
+/* ============================================================
+   CAUSAL MEMORY — shared design system (kit v1)
+   Serif monograph + monospace formal register.
+   Accent = carrier teal (the color the papers use for memory).
+   ============================================================ */
+:root{
+  --font-serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Charter,Georgia,Cambria,'Times New Roman',serif;
+  --font-mono:ui-monospace,'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',Menlo,Consolas,'Liberation Mono',monospace;
+
+  --paper:#F1F5F4;
+  --surface:#FBFCFC;
+  --surface-2:#EAF0EE;
+  --ink:#0F201E;
+  --ink-soft:#3B4E4B;
+  --ink-faint:#69807C;
+  --line:#D6E1DE;
+  --line-strong:#BFCECA;
+
+  --carrier:#0B7C72;
+  --carrier-deep:#075B54;
+  --carrier-tint:#E0EFEC;
+  --carrier-glow:rgba(11,124,114,.14);
+
+  --amber:#A5651A;
+  --amber-tint:#F4E8D5;
+  --rose:#AC3548;
+  --rose-tint:#F3DBDF;
+
+  --shadow:0 1px 2px rgba(15,32,30,.05),0 8px 30px rgba(15,32,30,.06);
+  --shadow-lg:0 2px 6px rgba(15,32,30,.06),0 24px 60px rgba(15,32,30,.10);
+
+  --col:69ch;
+  --pad:clamp(1.2rem,5vw,2.6rem);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#081211;
+    --surface:#0F1E1C;
+    --surface-2:#132523;
+    --ink:#E7F0EE;
+    --ink-soft:#A6BAB6;
+    --ink-faint:#6D817D;
+    --line:#1D2F2C;
+    --line-strong:#294139;
+    --carrier:#41D9C6;
+    --carrier-deep:#82F0E2;
+    --carrier-tint:#0E2A27;
+    --carrier-glow:rgba(65,217,198,.16);
+    --amber:#DDA351;
+    --amber-tint:#241C10;
+    --rose:#E6828F;
+    --rose-tint:#2A151A;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.5);
+    --shadow-lg:0 2px 6px rgba(0,0,0,.45),0 30px 70px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="light"]{
+  --paper:#F1F5F4;--surface:#FBFCFC;--surface-2:#EAF0EE;--ink:#0F201E;--ink-soft:#3B4E4B;--ink-faint:#69807C;
+  --line:#D6E1DE;--line-strong:#BFCECA;--carrier:#0B7C72;--carrier-deep:#075B54;--carrier-tint:#E0EFEC;--carrier-glow:rgba(11,124,114,.14);
+  --amber:#A5651A;--amber-tint:#F4E8D5;--rose:#AC3548;--rose-tint:#F3DBDF;
+  --shadow:0 1px 2px rgba(15,32,30,.05),0 8px 30px rgba(15,32,30,.06);--shadow-lg:0 2px 6px rgba(15,32,30,.06),0 24px 60px rgba(15,32,30,.10);
+}
+:root[data-theme="dark"]{
+  --paper:#081211;--surface:#0F1E1C;--surface-2:#132523;--ink:#E7F0EE;--ink-soft:#A6BAB6;--ink-faint:#6D817D;
+  --line:#1D2F2C;--line-strong:#294139;--carrier:#41D9C6;--carrier-deep:#82F0E2;--carrier-tint:#0E2A27;--carrier-glow:rgba(65,217,198,.16);
+  --amber:#DDA351;--amber-tint:#241C10;--rose:#E6828F;--rose-tint:#2A151A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.5);--shadow-lg:0 2px 6px rgba(0,0,0,.45),0 30px 70px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-serif);font-size:1.0625rem;line-height:1.68;
+  font-feature-settings:"kern" 1,"liga" 1;text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--carrier-glow);color:var(--ink)}
+a{color:var(--carrier-deep);text-decoration-color:color-mix(in srgb,var(--carrier) 45%,transparent);text-underline-offset:2px}
+a:hover{text-decoration-color:var(--carrier)}
+:focus-visible{outline:2px solid var(--carrier);outline-offset:3px;border-radius:3px}
+img,svg{max-width:100%}
+h1,h2,h3{text-wrap:balance;line-height:1.12;font-weight:700;letter-spacing:-.012em}
+
+/* ---------- shell ---------- */
+.wrap{max-width:var(--col);margin-inline:auto;padding-inline:var(--pad)}
+.band{padding-block:clamp(2.4rem,6vw,4.2rem)}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+.mono{font-family:var(--font-mono)}
+.eyebrow{
+  font-family:var(--font-mono);font-size:.72rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--carrier-deep);
+}
+.lede{font-size:1.28rem;line-height:1.5;color:var(--ink-soft)}
+.small{font-size:.9rem;color:var(--ink-faint)}
+p{margin:0 0 1rem}
+.stack>*+*{margin-top:1.05rem}
+
+/* ---------- top series bar ---------- */
+.topbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:var(--col);margin-inline:auto;padding:.5rem var(--pad);display:flex;align-items:center;gap:.6rem .9rem;justify-content:space-between;flex-wrap:wrap}
+.brand{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+@media (max-width:600px){.brand .brand-extra{display:none}}
+.brand b{color:var(--carrier-deep);font-weight:700}
+.series{display:flex;gap:.35rem;flex-wrap:wrap}
+.series a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.02em;text-decoration:none;color:var(--ink-faint);
+  border:1px solid var(--line);border-radius:999px;padding:.16rem .6rem;transition:.16s}
+.series a:hover{border-color:var(--carrier);color:var(--carrier-deep)}
+.series a[aria-current="page"]{background:var(--carrier);border-color:var(--carrier);color:#fff}
+@media (prefers-color-scheme:dark){.series a[aria-current="page"]{color:#08110f}}
+:root[data-theme="dark"] .series a[aria-current="page"]{color:#08110f}
+:root[data-theme="light"] .series a[aria-current="page"]{color:#fff}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-bg{position:absolute;inset:0;pointer-events:none;
+  background:
+   radial-gradient(60% 80% at 82% 8%,var(--carrier-glow),transparent 70%),
+   radial-gradient(50% 60% at 6% 96%,var(--carrier-glow),transparent 72%);}
+.hero-in{position:relative;max-width:var(--col);margin-inline:auto;padding:clamp(2.2rem,6vw,4rem) var(--pad) clamp(1.6rem,4vw,2.6rem)}
+.kicker{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem}
+.kicker .num{font-family:var(--font-mono);font-size:.8rem;letter-spacing:.1em;color:var(--carrier-deep);border:1px solid var(--carrier);border-radius:6px;padding:.1rem .45rem}
+h1.title{font-size:clamp(2.25rem,6.2vw,3.9rem);margin:.2rem 0 .1rem;letter-spacing:-.02em}
+h1.title .q{color:var(--carrier-deep)}
+.subtitle{font-size:clamp(1.1rem,2.6vw,1.5rem);color:var(--ink-soft);font-style:italic;margin:.4rem 0 0;line-height:1.35}
+.byline{margin-top:1.4rem;font-family:var(--font-mono);font-size:.78rem;color:var(--ink-faint);letter-spacing:.02em;
+  display:flex;gap:.5rem 1.2rem;flex-wrap:wrap;align-items:center}
+.byline .dot{width:5px;height:5px;border-radius:50%;background:var(--carrier);display:inline-block}
+
+/* ---------- figures ---------- */
+figure{margin:1.8rem 0}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+  padding:clamp(1rem,3vw,1.8rem);overflow-x:auto}
+.fig svg{display:block;margin-inline:auto;height:auto}
+figcaption{font-family:var(--font-mono);font-size:.78rem;line-height:1.5;color:var(--ink-faint);margin-top:.9rem;text-align:left}
+figcaption b{color:var(--carrier-deep);font-weight:600}
+
+/* ---------- cards ---------- */
+.grid{display:grid;gap:1rem}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:1.15rem 1.2rem;box-shadow:var(--shadow)}
+.card h3{margin:.1rem 0 .5rem;font-size:1.12rem}
+.card p{font-size:.98rem;color:var(--ink-soft);margin:0}
+.card .tag{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--carrier-deep);display:block;margin-bottom:.45rem}
+.card.accent{border-color:color-mix(in srgb,var(--carrier) 40%,var(--line));
+  background:linear-gradient(180deg,var(--carrier-tint),var(--surface) 60%)}
+
+/* labelled layer cards */
+.layer{position:relative;padding-left:1.4rem}
+.layer::before{content:"";position:absolute;left:0;top:.2rem;bottom:.2rem;width:4px;border-radius:4px;background:var(--carrier)}
+.layer.l2::before{background:var(--amber)}
+
+/* ---------- certificate list ---------- */
+.certs{counter-reset:cert;display:grid;gap:.7rem;margin:1.2rem 0}
+.cert{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start;
+  background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:.9rem 1rem}
+.cert .rn{font-family:var(--font-mono);font-weight:700;color:var(--carrier-deep);
+  border:1px solid var(--carrier);border-radius:8px;min-width:2.1rem;text-align:center;padding:.25rem 0;font-size:.82rem}
+.cert h4{margin:.05rem 0 .25rem;font-size:1.02rem}
+.cert p{margin:0;font-size:.94rem;color:var(--ink-soft)}
+
+/* ---------- math ---------- */
+.m{font-family:var(--font-serif);font-style:italic}
+.m .fn{font-style:normal}
+.eq{font-family:var(--font-serif);font-style:italic;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:8px;padding:.7rem 1rem;margin:1.1rem 0;overflow-x:auto;font-size:1.05rem;line-height:1.9}
+.op{font-style:normal;color:var(--carrier-deep);padding:0 .12em}
+kbd,code{font-family:var(--font-mono);font-size:.86em;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:5px;padding:.06em .38em}
+
+/* ---------- pill / status ---------- */
+.pill{font-family:var(--font-mono);font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:999px;padding:.15rem .55rem;border:1px solid;white-space:nowrap}
+.pill.done{color:var(--carrier-deep);border-color:color-mix(in srgb,var(--carrier) 50%,transparent);background:var(--carrier-tint)}
+.pill.pend{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 50%,transparent);background:var(--amber-tint)}
+.pill.block{color:var(--rose);border-color:color-mix(in srgb,var(--rose) 50%,transparent);background:var(--rose-tint)}
+
+/* ---------- next / nav cards ---------- */
+.next{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin-top:1.4rem}
+.next a{text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:13px;
+  padding:1.05rem 1.15rem;box-shadow:var(--shadow);transition:.18s;display:block}
+.next a:hover{border-color:var(--carrier);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.next .n{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;color:var(--carrier-deep)}
+.next h4{margin:.35rem 0 .3rem;font-size:1.08rem}
+.next p{margin:0;font-size:.9rem;color:var(--ink-faint)}
+
+/* ---------- pull quote ---------- */
+.pull{border-left:3px solid var(--carrier);padding:.2rem 0 .2rem 1.1rem;margin:1.6rem 0;font-size:1.18rem;
+  font-style:italic;color:var(--ink);line-height:1.45}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);margin-top:1rem}
+.foot-in{max-width:var(--col);margin-inline:auto;padding:2rem var(--pad) 3rem;font-family:var(--font-mono);
+  font-size:.76rem;color:var(--ink-faint);line-height:1.7}
+.foot-in b{color:var(--ink-soft)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- tables (shared, used by 03/04) ---------- */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);margin:1.4rem 0;background:var(--surface)}
+table.tbl{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+table.tbl th,table.tbl td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+table.tbl thead th{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);background:var(--surface-2);white-space:nowrap;position:sticky;top:0}
+table.tbl tbody tr:last-child td{border-bottom:0}
+table.tbl tbody tr:hover{background:var(--surface-2)}
+table.tbl td.k{font-family:var(--font-mono);font-size:.82rem;color:var(--carrier-deep);white-space:nowrap;font-weight:600}
+table.tbl .give{color:var(--ink-soft)}
+
+/* ---------- code block (shared, used by 04) ---------- */
+pre.code{font-family:var(--font-mono);font-size:.79rem;line-height:1.65;background:var(--surface-2);border:1px solid var(--line);border-radius:11px;padding:1rem 1.1rem;overflow-x:auto;color:var(--ink-soft);margin:1.2rem 0;box-shadow:var(--shadow)}
+pre.code .cm{color:var(--carrier-deep)}
+pre.code .kw{color:var(--amber)}
+pre.code b{color:var(--ink);font-weight:600}
+
+/* ---------- definition + note callouts (shared) ---------- */
+.defbox{background:linear-gradient(180deg,var(--carrier-tint),var(--surface) 55%);border:1px solid color-mix(in srgb,var(--carrier) 40%,var(--line));border-radius:13px;padding:1.1rem 1.25rem;box-shadow:var(--shadow);margin:1.4rem 0}
+.defbox>.tag{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--carrier-deep);display:block;margin-bottom:.4rem}
+.defbox h3{margin:.1rem 0 .5rem;font-size:1.15rem}
+.note{border-left:3px solid var(--amber);background:var(--amber-tint);border-radius:0 8px 8px 0;padding:.7rem .95rem;font-size:.93rem;color:var(--ink-soft);margin:1.2rem 0}
+.note b{color:var(--amber)}
+
+/* SVG shared classes */
+svg .node{fill:var(--surface);stroke:var(--line-strong);stroke-width:1.5}
+svg .node-lbl{fill:var(--ink);font-family:var(--font-serif);font-style:italic;font-size:15px}
+svg .mem{fill:var(--carrier-tint);stroke:var(--carrier);stroke-width:1.6}
+svg .edge{stroke:var(--line-strong);stroke-width:1.6;fill:none}
+svg .edge-c{stroke:var(--carrier);stroke-width:2.4;fill:none}
+svg .cap{fill:var(--ink-faint);font-family:var(--font-mono);font-size:11px}
+svg .cap-c{fill:var(--carrier-deep);font-family:var(--font-mono);font-size:11px}
+svg .amark{fill:var(--line-strong)}
+svg .amark-c{fill:var(--carrier)}
+</style>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <span class="brand"><b>Causal&nbsp;Memory</b><span class="brand-extra"> · a research program</span></span>
+    <nav class="series" aria-label="Series">
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720" aria-current="page">01 Overview</a>
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb">02 Theory</a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f">03 Formulation</a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201">04 Plan</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-in">
+    <div class="kicker">
+      <span class="num">01 / 04</span>
+      <span class="eyebrow">The thesis</span>
+    </div>
+    <h1 class="title">Memory is <span class="q">identifiable causal structure</span> in the process that makes the data.</h1>
+    <p class="subtitle">An agent should not store every signal at every moment. It should store what corresponds to the truthful process that generates its observations — and read the past through that process's dependency structure.</p>
+    <div class="byline">
+      <span><span class="dot"></span> Mian&nbsp;(Nothern)&nbsp;Wu</span>
+      <span>prepared for verification with Yujia&nbsp;Zheng</span>
+      <span>Formulation v0.1 · July&nbsp;2026</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== HERO FIGURE: THE MOTIF ===================== -->
+<section class="band" style="padding-bottom:0">
+  <div class="wrap">
+    <p class="eyebrow">The unit of memory</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin:.3rem 0 .2rem">The write–hold–read motif</h2>
+    <p class="lede" style="margin-top:.5rem">Everything in the program is analyzed on one small structure: a cue is <em>written</em> into a memory latent, the latent is <em>held</em> across a delay, then <em>read</em> into a downstream response while distractors run in parallel. The teal path is the carrier.</p>
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 0 720 300" role="img" aria-label="The write-hold-read motif: a cue is written into a memory latent, held across a delay, then read into a readout, with distractors running along the bottom into the readout.">
+          <defs>
+            <marker id="a" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker>
+            <marker id="ac" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark-c"/></marker>
+          </defs>
+          <!-- cue -->
+          <circle class="node" cx="60" cy="70" r="26"/><text class="node-lbl" x="60" y="75" text-anchor="middle">c</text>
+          <text class="cap" x="60" y="38" text-anchor="middle">cue · resampled each episode</text>
+          <!-- memory chain -->
+          <g>
+            <rect class="mem" x="34" y="128" width="52" height="44" rx="10"/><text class="node-lbl" x="60" y="155" text-anchor="middle">m<tspan dy="4" font-size="10">t₀</tspan></text>
+            <rect class="mem" x="196" y="128" width="60" height="44" rx="10"/><text class="node-lbl" x="226" y="155" text-anchor="middle">m<tspan dy="4" font-size="10">t₀+1</tspan></text>
+            <text class="node-lbl" x="360" y="156" text-anchor="middle" style="font-size:20px">···</text>
+            <rect class="mem" x="470" y="128" width="52" height="44" rx="10"/><text class="node-lbl" x="496" y="155" text-anchor="middle">m<tspan dy="4" font-size="10">t₁</tspan></text>
+          </g>
+          <!-- readout -->
+          <circle class="node" cx="650" cy="70" r="26"/><text class="node-lbl" x="650" y="75" text-anchor="middle">y</text>
+          <text class="cap" x="650" y="38" text-anchor="middle">readout</text>
+          <!-- distractors -->
+          <circle class="node" cx="60" cy="250" r="22"/><text class="node-lbl" x="60" y="255" text-anchor="middle">d</text>
+          <circle class="node" cx="226" cy="250" r="22"/><text class="node-lbl" x="226" y="255" text-anchor="middle">d</text>
+          <text class="node-lbl" x="360" y="255" text-anchor="middle" style="font-size:20px">···</text>
+          <circle class="node" cx="496" cy="250" r="22"/><text class="node-lbl" x="496" y="255" text-anchor="middle">d</text>
+          <text class="cap" x="278" y="292" text-anchor="middle">distractors · full-rank dynamics throughout</text>
+          <!-- edges: write -->
+          <path class="edge-c" d="M60,96 L60,124" marker-end="url(#ac)"/>
+          <text class="cap-c" x="70" y="116">write · u=write</text>
+          <!-- hold -->
+          <path class="edge-c" d="M88,150 L192,150" marker-end="url(#ac)"/>
+          <path class="edge-c" d="M258,150 L332,150" marker-end="url(#ac)"/>
+          <path class="edge-c" d="M388,150 L466,150" marker-end="url(#ac)"/>
+          <text class="cap-c" x="300" y="120" text-anchor="middle">hold · m_t = m_{t-1} + σ·ε_t</text>
+          <!-- read -->
+          <path class="edge-c" d="M520,132 C580,110 600,96 626,84" marker-end="url(#ac)"/>
+          <text class="cap-c" x="600" y="128" text-anchor="middle">read · u=read</text>
+          <!-- distractor edges -->
+          <path class="edge" d="M82,250 L202,250" marker-end="url(#a)"/>
+          <path class="edge" d="M248,250 L332,250" marker-end="url(#a)"/>
+          <path class="edge" d="M388,250 L472,250" marker-end="url(#a)"/>
+          <path class="edge" d="M517,236 C580,205 604,120 640,92" marker-end="url(#a)"/>
+          <!-- delta bracket -->
+          <path class="edge" style="stroke-dasharray:3 3" d="M60,188 L60,200 L496,200 L496,188"/>
+          <text class="cap" x="278" y="216" text-anchor="middle">delay  Δ = t₁ − t₀</text>
+        </svg>
+      </div>
+      <figcaption><b>The write–hold–read motif</b> — the smallest structure in which "memory" is a well-posed graph property. Two knobs organize the whole project: hold noise <span class="m">σ</span> and delay <span class="m">Δ</span>. Everything difficult lives in the corner <span class="m">σ</span>→0, <span class="m">Δ</span> large. Load-<span class="m">k</span> runs <span class="m">k</span> items at once, written/read simultaneously or staggered.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== THE THESIS ===================== -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">In one paragraph</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">What the project claims</h2>
+    <p>Memory is <strong>time-delayed dependency structure inside the true data-generating process</strong> — not a separate external module. An external store is formally just a variable with identity dynamics and gated write/read edges, so the internal/external distinction dissolves at the level of the graph. A memory system is <strong>trustworthy</strong> exactly when its stored values and its write/read structure correspond, up to allowed indeterminacies, to that process.</p>
+    <p>The primary contribution is <em>correctness of what is memorized.</em> Reliability and efficiency follow as byproducts — they are not the headline. Getting there needs two things nothing in the memory-agent literature supplies: a guarantee that a learned representation <span class="m">ẑ</span> corresponds to the true hidden process <span class="m">z</span>, and a test that separates genuine storage from dependence that mere <em>selection</em> can fake.</p>
+    <blockquote class="pull">Adjacent formalisms give <em>sufficiency</em> or <em>usefulness</em>. None gives <em>correspondence to the true generating process</em> — which is exactly what identifiability adds, and the entire reason the project exists.</blockquote>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===================== TWO LAYERS ===================== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The program</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.4rem">Two layers</h2>
+    <p class="small" style="margin-bottom:1.3rem">Both layers analyze the same object — the motif above — at different depths of guarantee.</p>
+    <div class="grid two">
+      <div class="card layer stack">
+        <span class="tag">Layer 1 · discovery-as-masking</span>
+        <h3>Recover the structure</h3>
+        <p>Run temporal causal discovery over observed state variables. Use the recovered cross-time graph as a <strong>mask</strong> for what to memorize and as the <strong>conditional set</strong> for planning. No latent-value recovery — this de-risks the program.</p>
+      </div>
+      <div class="card layer l2 stack">
+        <span class="tag" style="color:var(--amber)">Layer 2 · representation learning</span>
+        <h3>Recover the values</h3>
+        <p>Temporal causal representation learning with <strong>identifiability guarantees</strong>: what the agent stores must equal the true latent value, not merely a predictive embedding of it. First reconstruct the truthful latent states, then recover their dependencies.</p>
+      </div>
+    </div>
+
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 0 760 250" role="img" aria-label="End-to-end two-layer pipeline: trajectories feed Layer 1 discovery producing a graph and a mask, and Layer 2 CRL producing latents, a graph and certificates; both flow into trustworthy memory.">
+          <defs><marker id="p" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker></defs>
+          <g font-family="var(--font-serif)">
+          <rect class="node" x="16" y="98" width="120" height="54" rx="10"/>
+          <text class="cap" x="76" y="120" text-anchor="middle">trajectories</text>
+          <text class="cap" x="76" y="135" text-anchor="middle">s₁:T · u₁:T</text>
+
+          <rect x="196" y="26" width="150" height="52" rx="10" fill="var(--carrier-tint)" stroke="var(--carrier)"/>
+          <text class="cap-c" x="271" y="47" text-anchor="middle">Layer 1 · discovery</text>
+          <text class="cap-c" x="271" y="62" text-anchor="middle">PCMCI⁺ · CD-NOD</text>
+          <rect x="404" y="26" width="120" height="52" rx="10" fill="var(--carrier-tint)" stroke="var(--carrier)"/>
+          <text class="cap-c" x="464" y="47" text-anchor="middle">mask F̂ₜ(Y)</text>
+          <text class="cap-c" x="464" y="62" text-anchor="middle">retain + plan</text>
+
+          <rect x="196" y="172" width="150" height="52" rx="10" fill="var(--surface-2)" stroke="var(--amber)"/>
+          <text class="cap" x="271" y="193" text-anchor="middle" fill="var(--amber)">Layer 2 · CRL</text>
+          <text class="cap" x="271" y="208" text-anchor="middle" fill="var(--amber)">seq-VAE + sparsity</text>
+          <rect x="404" y="172" width="120" height="52" rx="10" fill="var(--surface-2)" stroke="var(--amber)"/>
+          <text class="cap" x="464" y="190" text-anchor="middle" fill="var(--amber)">certificates</text>
+          <text class="cap" x="464" y="205" text-anchor="middle" fill="var(--amber)">MCC · F₁ · gate</text>
+
+          <rect x="592" y="98" width="150" height="54" rx="10" fill="var(--paper)" stroke="var(--carrier)" stroke-width="1.8"/>
+          <text class="cap-c" x="667" y="119" text-anchor="middle">trustworthy</text>
+          <text class="cap-c" x="667" y="134" text-anchor="middle">memory</text>
+
+          <path class="edge" d="M136,116 C165,100 175,70 194,58" marker-end="url(#p)"/>
+          <path class="edge" d="M136,134 C165,150 175,182 194,192" marker-end="url(#p)"/>
+          <path class="edge" d="M346,52 L400,52" marker-end="url(#p)"/>
+          <path class="edge" d="M346,198 L400,198" marker-end="url(#p)"/>
+          <path class="edge" d="M524,52 C560,66 572,92 590,112" marker-end="url(#p)"/>
+          <path class="edge" d="M524,198 C560,184 572,158 590,140" marker-end="url(#p)"/>
+          </g>
+        </svg>
+      </div>
+      <figcaption><b>The pipeline, end to end.</b> Layer 1 needs no latent-value recovery and de-risks the program; Layer 2 adds the identifiability guarantees that make the memory trustworthy.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===================== TRUSTWORTHY MEMORY ===================== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Definition D3</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:.4rem">Trustworthy memory</h2>
+    <p class="small" style="margin-bottom:.4rem">An estimated system — latents <span class="m">ẑ</span>, graph <span class="m">Ĝ</span>, write/read maps — is trustworthy on a memory-relevant index set when three certificates hold. Each is tied to an operational test, so "trustworthy" never floats free.</p>
+    <div class="certs">
+      <div class="cert"><span class="rn">i</span><div><h4>Value correspondence</h4><p>Stored latents equal the true ones up to permutation and per-coordinate invertible maps (component-wise identifiability), relaxing honestly to block-wise on frozen subspaces where component-wise is provably impossible. <span class="mono small">measured by MCC.</span></p></div></div>
+      <div class="cert"><span class="rn">ii</span><div><h4>Structure correspondence</h4><p>The write, hold, and read edges of <span class="m">Ĝ</span> match those of the true graph. <span class="mono small">measured by edge F₁ and SHD, split by edge type.</span></p></div></div>
+      <div class="cert"><span class="rn">iii</span><div><h4>Selection soundness</h4><p>On data whose long-lag dependence arises from selection alone, the system reports <em>no carrier</em> rather than inventing a memory edge. <span class="mono small">measured by false-positive rate on selection-only data.</span></p></div></div>
+    </div>
+    <div class="grid two" style="margin-top:1.3rem">
+      <div class="card accent stack"><span class="tag">Byproduct · trustworthiness in use</span><p>With value + structure correspondence, intervening on <span class="m">m̂</span> intervenes on the true <span class="m">m</span>: memory <strong>editing</strong> inherits specificity, recall becomes auditable against an identified carrier, and confabulation — recall without a carrier — becomes detectable.</p></div>
+      <div class="card accent stack"><span class="tag">Byproduct · efficiency</span><p>Retaining only the causal frontier <span class="m">F<span class="fn" style="font-size:.8em">t</span></span> instead of the whole history shrinks the memory budget from <span class="m">O</span>(<span class="m">nT</span>) to <span class="m">|F<span class="fn" style="font-size:.8em">t</span>|</span> with no task-relevant loss, and planning conditions on the frontier alone.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ===================== WHAT'S NEW ===================== -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">Positioning</p>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem)">Why this is not the memory-agent literature</h2>
+    <p>Predictive-sufficiency formalisms — POMDP belief states, predictive state representations, computational-mechanics causal states — already define memory as a minimal sufficient statistic of history. World models learn useful latents. Agent-memory systems engineer storage and retrieval. Every one of them is missing the same half: <strong>no guarantee that the learned statistic corresponds to the true generating process.</strong></p>
+    <p>That correspondence is what identifiability supplies, and it is the one thing that makes stored content <em>editable with specificity</em>, <em>auditable</em>, and <em>falsifiable</em> as confabulation. The differentiator is not a benchmark number — it is interventional access to <em>identified</em> carriers.</p>
+  </div>
+</section>
+
+<!-- ===================== THE MAP / NEXT ===================== -->
+<section class="band" style="padding-top:.5rem">
+  <div class="wrap">
+    <p class="eyebrow">Read in order</p>
+    <h2 style="font-size:clamp(1.4rem,3.4vw,1.9rem);margin-bottom:.2rem">The rest of the series</h2>
+    <p class="small">This overview is the entry point. The next three go from the machinery you need, to the numbered claims themselves, to the plan that ships them.</p>
+    <div class="next">
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb"><span class="n">02 · Theory</span><h4>The machinery, from square one</h4><p>SCMs and d-separation, temporal graphs, the identifiability impossibility and its escapes, how recovery is scored, and the selection confound.</p></a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f"><span class="n">03 · Formulation v0.1</span><h4>The numbered claims</h4><p>Assumptions A1–A9, the causal-frontier lemma with proof, two conjectures, four predictions, the pre-registered experiments, and the open questions.</p></a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201"><span class="n">04 · Plan</span><h4>From zero to productive</h4><p>Requirement traceability, project status, decision trees for the open questions, the E0 runbook, the risk register, and the timeline to the 2027 cycle.</p></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-in">
+    <b>Causal Memory · Formulation v0.1</b> — Memory as identifiable temporal structure in the data-generating process.<br/>
+    Mian (Nothern) Wu, prepared for step-by-step verification with Yujia Zheng · July 2026.<br/>
+    Part 01 of a four-part series · rendered from <b>causal_memory_formulation.tex</b> and <b>causal_memory_onboarding.tex</b>.
+  </div>
+</footer>
