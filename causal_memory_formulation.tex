@@ -1,0 +1,349 @@
+% ============================================================
+% Causal Memory: Formulation Document v0.1
+% Prepared for step-by-step verification with Yujia Zheng.
+% Compile with pdfLaTeX. Single self-contained file for Overleaf.
+% ============================================================
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+
+\newcommand{\indep}{\perp\!\!\!\perp}
+\newcommand{\nindep}{\not\!\perp\!\!\!\perp}
+\newcommand{\Do}{\mathrm{do}}
+\newcommand{\An}{\mathrm{An}}
+\newcommand{\Pa}{\mathrm{Pa}}
+\newcommand{\De}{\mathrm{De}}
+\newcommand{\past}{V_{\le t}}
+\newcommand{\future}{V_{> t}}
+\newcommand{\checkY}[1]{\textcolor{teal}{\footnotesize [check: #1]}}
+
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{observation}{Observation}
+\theoremstyle{definition}
+\newtheorem{assumption}{A}
+\newtheorem{definitionx}{D}
+\newtheorem{prediction}{P}
+\newtheorem{questionx}{Q}
+\newtheorem{remark}{Remark}
+
+\title{\textbf{Causal Memory: Formulation Document (v0.1)}\\[2mm]
+\large Memory as identifiable temporal structure in the data-generating process}
+\author{Mian (Nothern) Wu \\ \small prepared for verification with Yujia Zheng}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent This document writes down my understanding of the causal-memory direction so that every step can be checked before any experiment runs. The thesis: memory should be defined as time-delayed dependency structure within the true data-generating process, and a memory system is \emph{trustworthy} exactly when its stored values and its write/read structure correspond, up to allowed indeterminacies, to that process. The program has two layers, following our meeting: Layer~1 uses temporal causal discovery over observed variables to build causal masks for memorization and planning; Layer~2 uses temporal causal representation learning to guarantee that what is memorized corresponds to the true latent process. The primary contribution is correctness of what is memorized; trustworthiness-derived reliability and efficiency are byproducts. Every load-bearing statement below is numbered (A for assumptions, D for definitions, P for predictions, Q for questions), so each can be marked correct, wrong, or needs-rewrite. Section~\ref{sec:exp} pre-registers the first experiments, which run only after this document is signed off.
+\end{abstract}
+
+\paragraph{How to read this document.} Statements I believe are settled are stated as Definitions or the Lemma (with proof). Statements I believe are true but cannot yet prove are Conjectures with proof strategies. Statements that are empirical commitments are Predictions, falsifiable in the pre-registered experiments. Inline \checkY{like this} marks flag the specific places where I most want correction. Collected questions are in Section~\ref{sec:questions}. I am committing to the theory track rather than the empirical masking fallback: the identifiability framing is what makes this direction different from the memory-agent literature, and I am comfortable working in it.
+
+\section{Problem statement and thesis}\label{sec:thesis}
+
+An agent in a rich environment should not memorize every signal at every timestamp. It should memorize the information that corresponds to the truthful causal data-generating process, and it should read past information according to the dependency structure of that process. Two claims make this precise. First, a \emph{definitional} claim: memory is time-delayed dependency among the variables (observed or latent) of a temporal causal model, not a separate external module; an external store is formally just a variable with identity dynamics and gated write/read edges, so the internal/external dichotomy dissolves at the level of the graph (Remark~\ref{rem:external}). Second, an \emph{epistemic} claim, which is where our contribution lives: without identifiability guarantees, a learned memory representation $\hat z$ need not correspond to the true hidden process $z$; causal discovery and causal representation learning supply exactly those guarantees. The primary target is therefore \emph{trustworthy memory} (Definition~\ref{def:trust}); improved reliability and efficiency follow as byproducts (Section~\ref{sec:byproducts}).
+
+\paragraph{Causal discovery versus causal representation learning (my understanding, for checking).}
+Causal discovery takes a set of variables whose values are given, observed variables or hypothesized latents, and recovers the \emph{structure} among them: given a table with columns as variables, it outputs a graph. Causal representation learning is deeper: the relevant variables are latent, so their \emph{values} must first be recovered from observations $x = g(z)$ up to a permitted indeterminacy, and only then can structure over them be recovered. Identifiability is the guarantee that the estimated $\hat z$ stands in a one-to-one (component-wise invertible) or otherwise controlled relation to the true $z$, so that fitting the data perfectly implies recovering the true hidden process. Memory needs the CRL level of guarantee at Layer~2 because what the agent stores must equal the true latent value, not merely a predictive embedding of it. \checkY{is this restatement of the CD/CRL distinction accurate?}
+
+\paragraph{Why this graph is not a knowledge graph.}
+A knowledge graph is a representation of asserted relations among entities, typically tuples; its edges encode what someone claims about the world. The graph in this project is the \emph{generating mechanism}: nodes are variables of the process by which nature produces each observation, and edges are the direct causal dependencies of that process. It supports interventional and counterfactual statements, which relation graphs do not, and it is discovered from data under identifiability conditions rather than curated. Nothing below depends on knowledge-graph machinery.
+
+\paragraph{Relation to Direction 1 (what to remember).}
+The framework answers the ``learning what to remember in a new environment'' question as a corollary: the information worth storing at time $t$ is the minimal past set that screens off the future task variables, which Lemma~\ref{lem:frontier} characterizes exactly as the causal frontier $F_t$. So Direction~1 is subsumed rather than separate.
+
+\section{Formal setup}\label{sec:setup}
+
+\paragraph{Temporal SCM.}
+Let $z_t = (z_{t,1},\dots,z_{t,n}) \in \mathbb{R}^n$ evolve over $t = 1,\dots,T$ within episodes drawn i.i.d. Let $G$ be the unrolled DAG over nodes $V = \{z_{t,i}\}$, with structural assignments
+\[
+z_{t,i} \;=\; f_i\big(\Pa(z_{t,i}),\, \varepsilon_{t,i}\big),
+\qquad \Pa(z_{t,i}) \subseteq \{z_{t-\tau, j} : 0 \le \tau \le L\},
+\]
+where the instantaneous ($\tau = 0$) part is acyclic and the noises $\varepsilon_{t,i}$ are mutually independent.
+
+\begin{assumption}\label{a:scm}
+The process is a temporal SCM as above with maximum lag $L$ and acyclic instantaneous dependencies.
+\end{assumption}
+
+\begin{assumption}\label{a:gated}
+(Gated stationarity.) The graph $G$ and mechanisms $\{f_i\}$ are time-invariant; time-variation enters only through a regime process $u_t \in \mathcal{U}$ (e.g., $\mathsf{write}_j$, $\mathsf{hold}$, $\mathsf{read}_j$) that gates edge activations: each edge $e$ carries $\alpha_e(u_t) \in \{0,1\}$ and $f_i$ may depend on $u_t$. This encodes write/read events without giving up a stationary underlying model. \checkY{Q1 asks whether you prefer this or a regime-free nonstationary-transition formulation.}
+\end{assumption}
+
+\begin{assumption}\label{a:noise}
+Noises are mutually independent across components and time, with regime-dependent distributions allowed.
+\end{assumption}
+
+\begin{assumption}\label{a:obs}
+(Observation models.) One of:
+\textbf{(O1)} Layer 1: $s_t = z_t$ is directly observed (or a known subvector).
+\textbf{(O2a)} Internal-state observation: $x_t = g(z_t)$ with $g$ unknown, injective; the intended instance is an agent's internal state (recurrent state, residual stream), which carries its memory.
+\textbf{(O2b)} Environmental observation: $x_t = g\big(z_t^{\mathrm{vis}(u_t)}\big)$, where during holds the memory and cue components are excluded from the visible part; per-step inversion is then impossible and identification becomes a filtering problem (Observation~\ref{obs:window}).
+\end{assumption}
+
+\begin{assumption}\label{a:regime}
+Regime labels $u_t$ (event times) are observed, or estimable by change-point detection. In synthetic settings they are known by construction.
+\end{assumption}
+
+\begin{assumption}\label{a:mf}
+Markov and faithfulness hold for $(G, P)$. Practical caveat, developed in Section~\ref{sec:layer1}: near-deterministic hold dynamics do not violate faithfulness of the true model but destroy the statistical power of tests that rely on it, so population-level claims and estimation-level claims are kept separate throughout.
+\end{assumption}
+
+\begin{assumption}\label{a:nosel}
+No selection on the data, unless selection is explicitly modeled and tested as in Section~\ref{sec:selection}. This assumption is \emph{false by construction} for goal-filtered agent corpora, which is why Section~\ref{sec:selection} exists.
+\end{assumption}
+
+\begin{assumption}\label{a:policy}
+Data are generated under a fixed behavior policy $\pi$; all recovered structure is relative to $P_\pi$. Interventions on the policy change the graph. \checkY{Q7: is policy-relativity acceptable in the definition, or should cross-policy invariance be part of it?}
+\end{assumption}
+
+\begin{assumption}\label{a:suff}
+(Layer 1 only.) Causal sufficiency over the observed $s_t$; relaxable to latent-confounder-tolerant discovery (FCI, LPCMCI) at the cost of weaker output.
+\end{assumption}
+
+\paragraph{The write-hold-read motif (unit of memory).}
+Fix indices: a cue $c$, a memory latent $m$, a readout $y$, and distractors $d$ with full-rank stationary dynamics. Within an episode with write time $t_0$ and read time $t_1 = t_0 + \Delta$:
+\[
+\underbrace{m_{t_0} = w(c_{t_0}, \varepsilon)}_{\text{write, gated by } u_{t_0} = \mathsf{write}}
+\qquad
+\underbrace{m_t = m_{t-1} + \sigma\,\varepsilon_t \ \ (t_0 < t < t_1)}_{\text{hold}}
+\qquad
+\underbrace{y_{t_1} = r(m_{t_1}, d_{t_1}, \varepsilon)}_{\text{read, gated by } u_{t_1} = \mathsf{read}}
+\]
+The cue varies across episodes (cue diversity). The load-$k$ variant runs $k$ items $(c^j, m^j, y^j)$ with write/read times either simultaneous or staggered. Two knobs matter throughout: the hold noise $\sigma \ge 0$ and the delay $\Delta$. On the number of timestamps: per our meeting, $T$ is not a theoretical bound, since identification targets what truly matters and truly varies; the analysis window $W$ used by estimators is an engineering threshold to be swept, not a modeling commitment.
+
+\section{Definitions: memory, masks, and trustworthiness}\label{sec:defs}
+
+\begin{definitionx}[Memory carrier]\label{def:carrier}
+The process $(m_s)_{t_0 \le s \le t_1}$ is a \emph{memory carrier} for the pair $(c_{t_0}, y_{t_1})$ if
+(i) $c_{t_0} \nindep y_{t_1}$ under $P_\pi$ with $\Delta = t_1 - t_0 \ge \Delta_{\min}$, and
+(ii) for every $s \in (t_0, t_1]$ and every constant $\tilde m$, $c_{t_0} \indep y_{t_1}$ under $P_\pi^{\Do(m_s := \tilde m)}$.
+Equivalently, every active path from $c_{t_0}$ to $y_{t_1}$ in $G$ intersects $\{m_s\}$. Memory is thus \emph{mediated long-lag dependence through a persistent variable}, an interventional notion, which is what separates it from selection-induced dependence (Section~\ref{sec:selection}).
+\end{definitionx}
+
+\begin{remark}\label{rem:external}
+An external memory module is the special case of D\ref{def:carrier} where $m$ has exact identity dynamics ($\sigma = 0$) and gated write/read edges implemented by the retrieval mechanism. The formulation is therefore implementation-agnostic: internal states and external stores are the same object in $G$, and claims proved about the motif cover both.
+\end{remark}
+
+\begin{definitionx}[Causal frontier / memory mask]\label{def:frontier}
+Let $\past$ be all nodes at times $\le t$, and let $Y \subseteq \future$ be the task variables in a horizon window (e.g., $y$-nodes in $(t, t+H]$). Write $\An^*(Y) = \An(Y) \cup Y$. The \emph{causal frontier} is
+\[
+F_t(Y) \;=\; \big\{\, v \in \past \;:\; \exists\, w \in \future,\ v \to w \in G,\ w \in \An^*(Y) \,\big\}.
+\]
+\end{definitionx}
+
+\begin{lemma}[$F_t$ is the unique minimum memory]\label{lem:frontier}
+Under A\ref{a:scm} and the Markov property, \emph{(i)} $Y \indep \past \setminus F_t \,\big|\, F_t$. Under faithfulness in addition, \emph{(ii)} every $S \subseteq \past$ with $Y \indep \past \setminus S \mid S$ satisfies $F_t \subseteq S$. Hence $F_t$ is the unique inclusion-minimal past-measurable set that screens off the future task variables, and $|F_t|$ lower-bounds the size of any lossless memory of the past.
+\end{lemma}
+
+\begin{proof}
+\emph{(i)} Let $S \subseteq \past$ be any past conditioning set and consider a path from some $a \in \past$ to some $y \in Y$. Because edges never point backward in time, the step at which the path first moves from a past node to a future node traverses an edge $v \to w$ forward, with arrowhead at $w \in \future$. From $w$ onward the path can never contain a future collider: a future node's descendants are all future, so no future node or descendant of it lies in $S$, and any collider there blocks the path. Arriving at $w$ with an arrowhead, the path must therefore leave along an outgoing edge $w \to w'$, and inductively the entire suffix is a directed path $w \to \cdots \to y$ inside $\future$; in particular it cannot re-enter the past. Hence $w \in \An^*(Y)$, so $v \in F_t$ by definition. Now take $S = F_t$ and $a \in \past \setminus F_t$: on any such path, $v \in F_t$ is a non-collider (the path leaves $v$ along the tail of $v \to w$), $v \ne a$, and $v$ is conditioned, so the path is blocked. No active path exists, giving (i) by the Markov property.
+
+\emph{(ii)} Let $f \in F_t$ with boundary edge $f \to w$, $w \in \An^*(Y)$, and pick a directed path $w \to \cdots \to y$; all its nodes lie in $\future$. Suppose $f \notin S$. The path $f \to w \to \cdots \to y$ is directed (no colliders), and none of its non-endpoint nodes can be in $S \subseteq \past$. It is therefore active given $S$, and faithfulness gives $f \nindep y \mid S$, contradicting the separating property of $S$. Hence $f \in S$ for every separating $S$, i.e., $F_t \subseteq S$, and since $F_t$ itself separates by (i), it is the unique minimum.
+\end{proof}
+
+\begin{remark}[Consequences]\label{rem:frontier}
+(a) \emph{Planning}: $\mathbb{E}[\phi(Y) \mid \past] = \mathbb{E}[\phi(Y) \mid F_t]$, so a planner may condition on $F_t$ alone; this is the ``conditional set for planning'' from our meeting made exact.
+(b) \emph{Online maintenance}: $F_{t+1} \subseteq F_t \cup V_{t+1}$, because any $v \le t$ with a child in $V_{> t+1} \cap \An^*(Y)$ already had a child in $V_{>t} \cap \An^*(Y)$; so the mask can be maintained recursively by adding the new slice and retiring nodes whose forward-relevant children have all passed. This recursion \emph{is} an online memory rule.
+(c) \emph{Task conditioning}: $F_t$ depends on $Y$ and $H$; different tasks induce different masks, matching the temporal and state-based task conditioning of the generalist-to-specialist line \cite{zheng2026specialist}.
+(d) \emph{Scope}: Lemma~\ref{lem:frontier} is a population statement about the true $G$. Whether $F_t$ can be \emph{estimated} in memory-like regimes is exactly the question of Sections~\ref{sec:layer1} and~\ref{sec:layer2}. \checkY{Q3: happy with $F_t$ as the formal answer to ``what deserves storage''?}
+\end{remark}
+
+\begin{definitionx}[Trustworthy memory]\label{def:trust}
+An estimated memory system, consisting of latents $\hat z$, graph $\hat G$, and write/read maps, is \emph{trustworthy} on a memory-relevant index set $M$ if:
+\emph{(i) value correspondence}: there is a permutation $\rho$ and component-wise invertible maps $h_i$ with $\hat z_{\rho(i)} = h_i(z_i)$ for all $i \in M$ (component-wise identifiability), with the stated relaxation to block-wise correspondence on frozen subspaces where component-wise is provably impossible (Observation~\ref{obs:frozen});
+\emph{(ii) structure correspondence}: the write, hold, and read edges of $\hat G$ match those of $G$ on $M$ (reported as edge $F_1$ and SHD, target exact);
+\emph{(iii) selection soundness}: on data whose long-lag dependence arises from selection alone, the system reports \emph{no carrier} rather than a memory edge.
+\end{definitionx}
+
+\subsection{The two byproducts}\label{sec:byproducts}
+Primary claim: what is memorized is \emph{correct} in the sense of D\ref{def:trust}. Two byproducts follow, and they are byproducts, not the headline. \emph{Trustworthiness in use}: with (i) and (ii), an intervention on $\hat m$ implements an intervention on the true $m$, so memory \emph{editing} inherits specificity guarantees (effects flow only through true read children), recalled content is auditable against an identified carrier, and recall without a carrier is detectable as confabulation; entangled representations enjoy none of this. \emph{Efficiency}: by Lemma~\ref{lem:frontier}, retaining $F_t$ instead of the full history shrinks the memory budget from $O(nT)$ to $|F_t|$ without information loss for the task, and planning conditions on $F_t$ alone. We do not need to beat task-performance baselines across the board; one functional payoff (editing specificity, or equal performance at frontier-sized context) suffices to demonstrate the byproducts, and I propose keeping exactly one such result in scope.
+
+\section{Layer 1: temporal causal discovery as causal masking}\label{sec:layer1}
+
+\paragraph{Procedure.} Given observed $s_t$ (O1), estimate the window-$W$ lagged graph $\hat G_W$ with constraint-based discovery (PC-stable on unrolled variables; PCMCI$^+$ \cite{runge2020}), score-based dynamic methods (DYNOTEARS \cite{pamfil2020}), and, because A\ref{a:gated} makes the process regime-switching, CD-NOD-style discovery with $u_t$ as the observed context index \cite{huang2020}. From $\hat G_W$, construct $\hat F_t(Y)$ and use it as (a) the memory-retention mask and (b) the planning conditional set (Remark~\ref{rem:frontier}). $W$ is swept as a hyperparameter per the meeting; long-$\Delta$ memory beyond $W$ is a declared detection limit of the window, partially mitigated by the recursive maintenance rule in Remark~\ref{rem:frontier}(b).
+
+\paragraph{Failure modes specific to memory (each becomes an experimental arm).}
+\emph{(F1) Frozen-variable regime.} During holds, $\mathrm{Var}(m_t - m_{t-1}) = \sigma^2 \approx 0$: the hold chain is near-deterministic, conditional-independence tests lose power, and near-determinism undermines the practical reliability of faithfulness-based inference even though the population model is fine. Predicted signature: hold edges and long chains are recovered poorly mid-hold, while write/read edges are recovered well because events inject variance (Prediction~\ref{p:boundary}). This is the Layer-1 shadow of the identifiability tension in Section~\ref{sec:layer2}.
+\emph{(F2) Selection.} Goal-filtered trajectories violate A\ref{a:nosel} by construction; Section~\ref{sec:selection}.
+\emph{(F3) Policy confounding.} The policy reads memory to act, making actions mediators or colliders between past and future; A\ref{a:policy} keeps this honest by declaring all structure $P_\pi$-relative.
+\emph{(F4) Latent confounders.} A\ref{a:suff} may fail (goals, unobserved context); the fallback is FCI-class output, with correspondingly weaker masks.
+
+\section{Layer 2: temporal CRL and the identification questions}\label{sec:layer2}
+
+What existing results give us, in one line each: nonstationarity or auxiliary variables yield component-wise identifiability \cite{hyvarinen2016, hyvarinen2017, khemakhem2020, yao2021leap}; stationary processes with sufficiently variable transitions are covered by TDRL \cite{yao2022tdrl}; instantaneous dependencies are handled under sparse latent processes by IDOL \cite{li2025idol}; non-invertible generation is handled by aggregating temporal context in CaRiNG \cite{chen2024caring}; and the structural-diversity line gives identifiability from structure alone, including set-level identifiability when element-wise is impossible \cite{zheng2022, zheng2023, zheng2025concepts, zhang2024multidist}. None of these was built for the memory regime, and the memory regime stresses them in a specific way:
+
+\begin{observation}[Holds are exactly the degenerate regime]\label{obs:frozen}
+Consider $k$ items written simultaneously at $t_0$, held with $\sigma = 0$, and read jointly at $t_1$ (O2a). For \emph{any} invertible $R : \mathbb{R}^k \to \mathbb{R}^k$, replacing $m \mapsto R(m)$, $w \mapsto R \circ w$, $r \mapsto r \circ R^{-1}$ (and adjusting $g$ on the memory block) yields an observationally equivalent model in which the hold dynamics are still the identity. Hence the frozen block is identifiable at most up to a joint invertible transform: set-wise, not component-wise. Where the standard conditions fail: at $\sigma = 0$ the hold transition is deterministic, so the smooth-positive-density assumption of IDOL (their A1) fails outright, and as $\sigma \to 0$ the sufficient-variability directions associated with $m$ (their A2) degenerate; two frozen latents are structurally identical during the hold, and structurally identical implies indistinguishable.
+\end{observation}
+
+Three mechanisms break the $R$-indeterminacy, and they are the substantive content of the direction:
+\emph{(a) Structural diversity of reads.} If items have pairwise distinct read children ($y^j$ per item), then $r \circ R^{-1}$ densifies the read Jacobian unless $R$ is a permutation-scaling; a sparsity-minimizing estimator, or the structural-diversity conditions of \cite{zheng2022, zheng2025concepts}, then forces component-wise identification. This is the temporal analog of the mixing-sparsity route to Gaussian ICA identifiability.
+\emph{(b) Temporal diversity (staggering).} Under A\ref{a:gated}, $m'_j = (Rm)_j$ must change only at item $j$'s own events; if items have distinct write or read times, a mixing $R$ makes $m'_j$ jump at other items' events, contradicting the hold gate, so $R$ must be block-diagonal with respect to the event pattern, and with all-distinct events, diagonal.
+\emph{(c) Non-Gaussian hold noise.} With $\sigma > 0$, the transformed innovations $R\varepsilon$ must remain component-wise independent. For isotropic Gaussian $\varepsilon$ every orthogonal $R$ preserves this, so the rotation indeterminacy survives, which is precisely the classical Gaussian non-identifiability; for non-Gaussian $\varepsilon$ only permutation-scalings do, i.e., the hold noise itself performs ICA within the frozen block. Gaussian hold noise is therefore exactly the regime where structure, (a) or (b), must do the work, connecting this project directly to the Gaussian-ICA-via-structure result \cite{zheng2022}.
+
+\begin{conjecture}[Boundary identifiability with gluing]\label{conj:boundary}
+Under A\ref{a:scm} to A\ref{a:mf} with O2a, observed regimes $u_t$, cue diversity across episodes, and IDOL-type sparsity for the ambient (distractor) process: memory components are component-wise identifiable at write and read times; within holds the frozen block is set-identifiable; and because the hold transition is component-wise by construction (diagonal transition Jacobian on the block), boundary labels transport through the hold, giving component-wise identification of entire memory trajectories whenever any of mechanisms (a), (b), (c) holds.
+\emph{Proof strategy.} Treat $u_t$ as an auxiliary regime variable partitioning episodes into segments; apply sufficient-change arguments across regime switches (the LEAP/iVAE route) to isolate the components that change at events, which are precisely the written/read $m$; apply set-identifiability \cite{zheng2025concepts} within regimes; glue via the diagonal hold dynamics. Read-edge orientation: delayed edges orient by time; instantaneous read edges need the distinct-time-delayed-parents condition of IDOL Theorem~3.
+\emph{Known risks.} The gluing step is where a proof most plausibly breaks; and if only Markov-equivalence-class recovery is available mid-hold, the transported labels are block-consistent rather than element-wise unless (a)/(b)/(c) is invoked. \checkY{Q2: is this strategy viable, or do you see a cleaner route through the nonparametric-concepts machinery?}
+\end{conjecture}
+
+\begin{conjecture}[Capacity from identifiability]\label{conj:capacity}
+With simultaneous writes, simultaneous reads into a shared readout, and Gaussian hold noise, the $k$-item block is identifiable only as a block (Observation~\ref{obs:frozen}); component-wise identifiability is restored by staggering events (mechanism b) or by distinct read children (mechanism a), and degradation with simultaneous $k$ is monotone. This gives an identifiability-theoretic account of working-memory-style capacity and interference limits: capacity is bounded not by storage but by \emph{distinguishability} of concurrently held items.
+\end{conjecture}
+
+\begin{observation}[Identifying memory requires memory]\label{obs:window}
+Under O2b with the cue visible only at $t_0$ and distractors independent of the cue, $x_{t_0+1:t_1-1} \indep m_s$ for $s$ in the hold. Hence any estimator whose encoder is a function of $x_{s-V+1:s}$ with $s - V + 1 > t_0$ outputs a statistic independent of $m_s$: $I(T; m_s) = 0$, and recovery is at chance. Recovering memory content mid-hold from environmental observations therefore requires an encoder whose effective context covers the write event, $V \ge s - t_0$; the estimator must itself implement memory of span $\ge \Delta$. CaRiNG's window-inversion assumption instantiates this with window length scaling in $\Delta$ \cite{chen2024caring}. Under O2a the problem dissolves because the internal state carries $m$. Consequence: \emph{Program A} (agent internals as observations) is the well-posed first target; \emph{Program B} (environmental observations) is the ambitious extension, and both run on the same task in E1. The neuroscience analog is activity-silent working memory, where the carrier is invisible to per-step measurement \cite{stokes2015}.
+\end{observation}
+
+\paragraph{Proof plan (order of attack).}
+(1) Lemma~\ref{lem:frontier}: done above, please check.
+(2) Observations~\ref{obs:frozen} and~\ref{obs:window}: short arguments as stated; formalize the model classes.
+(3) Conjecture~\ref{conj:boundary} restricted to $\sigma = 0$, $k = 1$: boundary identification via regime changes plus trivial gluing; this is the minimal theorem worth writing.
+(4) Conjecture~\ref{conj:capacity} via mechanisms (a) and (b); mechanism (c) reduces to within-block ICA and should follow from classical results plus \cite{zheng2022} for the Gaussian case.
+(5) Selection proposition (Section~\ref{sec:selection}) by adapting \cite{zheng2024selection}.
+
+\section{Selection versus storage: the confabulation control}\label{sec:selection}
+
+Long-lag dependence does not imply a carrier. Construct: $y_{t_1} = r(d_{t_1}, \varepsilon)$ with \emph{no} path from $c$; keep an episode iff $S = \mathbf{1}\{\phi(c_{t_0}, y_{t_1}) > \theta\} = 1$. In the selected population $c_{t_0} \nindep y_{t_1}$ at lag $\Delta$, purely by conditioning on the collider-like selection variable, and D\ref{def:carrier}(ii) fails: no intervention on any candidate carrier removes the dependence, because there is nothing to cut. A pipeline that must explain all dependence generatively will hallucinate a memory edge or a phantom persistent latent on such data (Prediction~\ref{p:selection}).
+
+This is first-order for us, not a corner case: agent corpora are goal-filtered by construction. Imitation of successful episodes, RLHF-style filtering, and subgoal-conditioned behavior all condition on selection variables; indeed subgoals in demonstration data are provably selections on $(s_t, a_t)$ \cite{qiu2024subtask}. The remedy is to make certificate (iii) of D\ref{def:trust} operational: run the sequential selection-structure identification of \cite{zheng2024selection} as a gate at both layers, attributing dependence to selection, direct relation, or confounding before any memory edge is asserted; only carrier-mediated dependence surviving the gate counts as memory. This also makes the tightest cross-line story in the group's portfolio: temporal CRL supplies the values, selection identification supplies the soundness certificate. \checkY{Q4: preprocessing gate versus jointly modeling selection?}
+
+\section{Pre-registered validation}\label{sec:exp}
+
+Per the instruction not to rush into experiments, everything here runs \emph{only after} this document is checked; Q6 asks whether small synthetic sanity checks may proceed in parallel during iteration. Both experiments are cheap by design and either outcome is informative: mild degradation validates the premise; severe degradation motivates event-gated estimators as the methods contribution.
+
+\paragraph{E0: discovery on the fully observed motif (CPU-only, days).}
+Instantiate the Section~\ref{sec:setup} SCM with $n \in \{8,\dots,12\}$: one cue, $k \in \{1,2,4\}$ memory items, readouts (shared versus per-item), distractors with MLP dynamics; $\sim 10^4$ episodes. Sweep $\Delta \in \{1,2,5,10,20,50\}$, $\sigma \in \{0, 0.01, 0.1\}$, simultaneous versus staggered events, and window $W$. Algorithms: PCMCI$^+$, PC-stable on unrolled variables, CD-NOD with $u_t$ as context index. Metrics: edge $F_1$ and SHD \emph{split by edge type} (write, hold, read); boundary versus mid-hold recovery; precision/recall of $\hat F_t$ against the true frontier. Selection arm: the Section~\ref{sec:selection} construction with success filtering, run with and without the selection gate. \emph{Pass criterion}: read-edge $F_1 > 0.7$ at $(\Delta, k, \sigma) = (10, 1, 0.01)$. \emph{Deliverable regardless of pass/fail}: the $(\Delta, \sigma, k)$ recovery-frontier heatmaps.
+
+\paragraph{E1: CRL with unknown mixing (1 GPU, 2 to 3 weeks).}
+Same SCM plus a 3-layer MLP $g$, in two arms: O2a, and O2b with the memory block masked out of $g$ during holds. Estimator: sequential VAE with flow-based learned transition prior and Jacobian sparsity penalty in the IDOL style, plus an event-gated variant whose transition network conditions on $u_t$. Baselines: vanilla seq-VAE, TDRL, TCL/PCL, SlowVAE, $\beta$-VAE. Metrics: component-wise MCC on $m$; block-MCC (CCA-style) on the frozen subspace; edge $F_1$; per-time-slice MCC to separate boundary from mid-hold; sensitivity to misspecified latent dimension. Dedicated arms: encoder context $\ge \Delta$ versus $< \Delta$ under O2b (tests Observation~\ref{obs:window} directly); Gaussian versus Laplace hold noise at matched $\sigma$ (tests mechanism c). \emph{Pass criterion}: MCC$(m) > 0.8$ and read-edge $F_1 > 0.7$ at $(10, 1, 0.01)$ under O2a.
+
+\begin{prediction}\label{p:boundary}
+At both layers, recovery is time-localized: write/read boundaries are recovered markedly better than mid-hold structure, and recovery degrades systematically as $\sigma \to 0$ and $\Delta$ grows.
+\end{prediction}
+\begin{prediction}\label{p:selection}
+On the selection-only construction, pipelines without the gate assert a spurious long-lag memory edge (or phantom latent); with the gate, dependence is correctly attributed to selection.
+\end{prediction}
+\begin{prediction}\label{p:capacity}
+Simultaneous $k$-item recovery is block-wise but not component-wise (within-block MCC near chance under Gaussian noise and shared readout); staggering events or assigning distinct read children restores component-wise recovery (Conjecture~\ref{conj:capacity}).
+\end{prediction}
+\begin{prediction}\label{p:ica}
+With simultaneous events and shared readout, Laplace hold noise yields higher within-block MCC than Gaussian hold noise at matched $\sigma$ (mechanism c).
+\end{prediction}
+
+\section{Positioning against adjacent formalisms}\label{sec:related}
+
+Predictive-sufficiency formalisms, POMDP belief states \cite{kaelbling1998}, predictive state representations \cite{littman2001}, and computational-mechanics causal states \cite{shalizi2001}, already define memory as a minimal sufficient statistic of history, so the definitional claim alone is old; what they lack is the value-recovery half: no guarantee that the learned statistic corresponds to the true generating process, which is exactly what identifiability adds. World models with recurrent latent states \cite{hafner2019} and learned memory architectures \cite{graves2016, wayne2018} train useful latents with no correspondence guarantee. The memory-agent literature \cite{zhang2024survey, packer2023, park2023, shinn2023, gutierrez2024} engineers storage, retrieval, and reflection heuristically; per our meeting, its gap is precisely the absence of a correctness criterion grounding memory in the truthful process, and this document's D\ref{def:trust} is that criterion. Mechanistic-interpretability probing and patching give descriptive access to internal memory without guarantees; our differentiator must therefore be \emph{interventional} access to identified carriers, with model editing \cite{meng2022, meng2023} as the natural application where certificate-grade identification should pay off in edit specificity. Slow feature analysis \cite{wiskott2002} anticipates the persistence intuition without the causal semantics.
+
+\section{Collected questions}\label{sec:questions}
+
+\begin{questionx}
+Formulation: is the gated-SCM model (A\ref{a:gated}, A\ref{a:regime}) the right way to encode write/read events, or would you rather work in a regime-free nonstationary-transition formulation and let events be implicit?
+\end{questionx}
+\begin{questionx}
+Conjecture~\ref{conj:boundary}: is the regime-change-plus-set-identifiability-plus-gluing strategy viable in your view, and is the diagonal-hold-transport step sound, or is there a cleaner route through the nonparametric latent-concepts machinery?
+\end{questionx}
+\begin{questionx}
+Is the causal frontier $F_t$ (D\ref{def:frontier}, Lemma~\ref{lem:frontier}) the formalization you want for ``memorize only what matters,'' or do you prefer a different variant (e.g., a Markov-blanket phrasing, or a soft information-theoretic relaxation)?
+\end{questionx}
+\begin{questionx}
+Selection: should the certificate be a preprocessing gate (detect, then discover on the cleared part) or jointly modeled inside the estimator?
+\end{questionx}
+\begin{questionx}
+Scope: is Layer 1 (discovery-based masking with the frontier lemma and the frontier heatmaps) a publishable unit on its own, or scaffolding for the Layer 2 paper?
+\end{questionx}
+\begin{questionx}
+Process: does ``don't rush into experiments'' permit E0-scale synthetic sanity checks to run in parallel while this document iterates, or should all compute wait for sign-off?
+\end{questionx}
+\begin{questionx}
+Definition scope: is $P_\pi$-relative structure (A\ref{a:policy}) acceptable, or should some invariance across behavior policies be built into the definition of memory itself?
+\end{questionx}
+
+\appendix
+\section{Reading plan (three weeks, per meeting homework)}
+
+\paragraph{Week 1: temporal CRL foundations.} IDOL \cite{li2025idol} together with Xiangchen Song's blog series (\url{https://xiangchensong.github.io/blog/page/2/}); LEAP \cite{yao2021leap}; TDRL \cite{yao2022tdrl}. Extract: the exact sufficient-variability and density conditions, and precisely where each degenerates under near-identity hold dynamics (feeds Observation~\ref{obs:frozen} and Conjecture~\ref{conj:boundary}).
+
+\paragraph{Week 2: the group's identifiability line.} Structural sparsity and beyond \cite{zheng2022, zheng2023}; nonparametric latent concepts and set identifiability \cite{zheng2025concepts} (the hold-block tool); multiple-distribution CRL \cite{zhang2024multidist}; selection in sequential data \cite{zheng2024selection} and subgoals-as-selections \cite{qiu2024subtask} (the certificate); generalist-to-specialist \cite{zheng2026specialist} (aligns $F_t$ with task conditioning); CaRiNG \cite{chen2024caring} (the O2b regime). Extract: which set-identifiability statements apply verbatim within a hold regime, and the exact assumptions of the selection tests.
+
+\paragraph{Week 3: the contrast class and tooling.} Agent-memory surveys \cite{zhang2024survey} (optionally also arXiv 2504.15965) with skims of MemGPT, Generative Agents, Reflexion, HippoRAG \cite{packer2023, park2023, shinn2023, gutierrez2024}; extract the shared absence of a correctness criterion, one sentence each for the related-work table. One-pagers on PSRs, causal states, belief states \cite{littman2001, shalizi2001, kaelbling1998} for the novelty defense. PCMCI$^+$ \cite{runge2019, runge2020} and CD-NOD \cite{huang2020} as E0 tooling (both in causal-learn). ROME/MEMIT \cite{meng2022, meng2023} for the editing payoff.
+
+\begin{thebibliography}{99}\small
+
+\bibitem{yao2021leap} W. Yao, Y. Sun, A. Ho, C. Sun, K. Zhang. Learning temporally causal latent processes from general temporal data. ICLR 2022. arXiv:2110.05428.
+
+\bibitem{yao2022tdrl} W. Yao, G. Chen, K. Zhang. Temporally disentangled representation learning. NeurIPS 2022.
+
+\bibitem{li2025idol} Z. Li, Y. Shen, K. Zheng, R. Cai, X. Song, M. Gong, G. Chen, K. Zhang. On the identification of temporally causal representation with instantaneous dependence. ICLR 2025. arXiv:2405.15325.
+
+\bibitem{chen2024caring} G. Chen, Y. Shen, Z. Chen, X. Song, Y. Sun, W. Yao, X. Liu, K. Zhang. CaRiNG: learning temporal causal representation under non-invertible generation process. ICML 2024. arXiv:2401.14535.
+
+\bibitem{zheng2022} Y. Zheng, I. Ng, K. Zhang. On the identifiability of nonlinear ICA: sparsity and beyond. NeurIPS 2022. arXiv:2206.07751.
+
+\bibitem{zheng2023} Y. Zheng, K. Zhang. Generalizing nonlinear ICA beyond structural sparsity. NeurIPS 2023 (Oral).
+
+\bibitem{zheng2025concepts} Y. Zheng, S. Xie, K. Zhang. Nonparametric identification of latent concepts. ICML 2025.
+
+\bibitem{zhang2024multidist} K. Zhang, S. Xie, I. Ng, Y. Zheng. Causal representation learning from multiple distributions: a general setting. ICML 2024.
+
+\bibitem{zheng2024selection} Y. Zheng, Z. Tang, Y. Qiu, B. Sch\"olkopf, K. Zhang. Detecting and identifying selection structure in sequential data. ICML 2024. arXiv:2407.00529.
+
+\bibitem{qiu2024subtask} Y. Qiu, Y. Zheng, K. Zhang. Identifying selections for unsupervised subtask discovery. NeurIPS 2024. arXiv:2410.21616.
+
+\bibitem{zheng2026specialist} Y. Zheng, F. Feng, Y. Li, S. Xie, K. Murphy, K. Zhang. From generalist to specialist representation. ICML 2026. arXiv:2605.12733.
+
+\bibitem{hyvarinen2016} A. Hyv\"arinen, H. Morioka. Unsupervised feature extraction by time-contrastive learning and nonlinear ICA. NeurIPS 2016.
+
+\bibitem{hyvarinen2017} A. Hyv\"arinen, H. Morioka. Nonlinear ICA of temporally dependent stationary sources. AISTATS 2017.
+
+\bibitem{khemakhem2020} I. Khemakhem, D. Kingma, R. Monti, A. Hyv\"arinen. Variational autoencoders and nonlinear ICA: a unifying framework. AISTATS 2020.
+
+\bibitem{huang2020} B. Huang, K. Zhang, J. Zhang, J. Ramsey, R. Sanchez-Romero, C. Glymour, B. Sch\"olkopf. Causal discovery from heterogeneous/nonstationary data. JMLR 2020.
+
+\bibitem{runge2019} J. Runge, P. Nowack, M. Kretschmer, S. Flaxman, D. Sejdinovic. Detecting and quantifying causal associations in large nonlinear time series datasets. Science Advances 2019.
+
+\bibitem{runge2020} J. Runge. Discovering contemporaneous and lagged causal relations in autocorrelated nonlinear time series datasets. UAI 2020.
+
+\bibitem{pamfil2020} R. Pamfil, N. Sriwattanaworachai, S. Desai, P. Pilgerstorfer, P. Beaumont, K. Georgatzis, B. Aragam. DYNOTEARS: structure learning from time-series data. AISTATS 2020.
+
+\bibitem{spirtes2000} P. Spirtes, C. Glymour, R. Scheines. Causation, Prediction, and Search. MIT Press, 2000.
+
+\bibitem{littman2001} M. Littman, R. Sutton, S. Singh. Predictive representations of state. NeurIPS 2001.
+
+\bibitem{shalizi2001} C. Shalizi, J. Crutchfield. Computational mechanics: pattern and prediction, structure and simplicity. Journal of Statistical Physics 2001.
+
+\bibitem{kaelbling1998} L. Kaelbling, M. Littman, A. Cassandra. Planning and acting in partially observable stochastic domains. Artificial Intelligence 1998.
+
+\bibitem{hafner2019} D. Hafner, T. Lillicrap, I. Fischer, R. Villegas, D. Ha, H. Lee, J. Davidson. Learning latent dynamics for planning from pixels. ICML 2019.
+
+\bibitem{wayne2018} G. Wayne, C.-C. Hung, D. Amos, et al. Unsupervised predictive memory in a goal-directed agent. arXiv:1803.10760, 2018.
+
+\bibitem{graves2016} A. Graves, G. Wayne, M. Reynolds, et al. Hybrid computing using a neural network with dynamic external memory. Nature 2016.
+
+\bibitem{zhang2024survey} Z. Zhang, X. Bo, C. Ma, R. Li, X. Chen, Q. Dai, J. Zhu, Z. Dong, J.-R. Wen. A survey on the memory mechanism of large language model based agents. arXiv:2404.13501; ACM TOIS 2025.
+
+\bibitem{packer2023} C. Packer, S. Wooders, K. Lin, et al. MemGPT: towards LLMs as operating systems. arXiv:2310.08560, 2023.
+
+\bibitem{park2023} J. S. Park, J. O'Brien, C. Cai, M. Morris, P. Liang, M. Bernstein. Generative agents: interactive simulacra of human behavior. UIST 2023. arXiv:2304.03442.
+
+\bibitem{shinn2023} N. Shinn, F. Cassano, E. Berman, A. Gopinath, K. Narasimhan, S. Yao. Reflexion: language agents with verbal reinforcement learning. NeurIPS 2023. arXiv:2303.11366.
+
+\bibitem{gutierrez2024} B. Guti\'errez, Y. Shu, Y. Gu, M. Yasunaga, Y. Su. HippoRAG: neurobiologically inspired long-term memory for large language models. NeurIPS 2024. arXiv:2405.14831.
+
+\bibitem{meng2022} K. Meng, D. Bau, A. Andonian, Y. Belinkov. Locating and editing factual associations in GPT. NeurIPS 2022. arXiv:2202.05262.
+
+\bibitem{meng2023} K. Meng, A. Sen Sharma, A. Andonian, Y. Belinkov, D. Bau. Mass-editing memory in a transformer. ICLR 2023. arXiv:2210.07229.
+
+\bibitem{stokes2015} M. Stokes. `Activity-silent' working memory in prefrontal cortex: a dynamic coding framework. Trends in Cognitive Sciences 2015.
+
+\bibitem{wiskott2002} L. Wiskott, T. Sejnowski. Slow feature analysis: unsupervised learning of invariances. Neural Computation 2002.
+
+\end{thebibliography}
+
+\end{document}
