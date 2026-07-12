@@ -1,17 +1,17 @@
 % ============================================================
-% Causal Memory: Formulation v0.1 -- FOUNDATIONS (share version)
-% The ~3-page slice for step-by-step verification with Yujia.
-% The full draft (Layer-2 analysis, selection section, E0/E1
-% pre-registration, positioning) lives in
-% causal_memory_formulation.tex and enters at v0.2+ as these
-% foundations receive verdicts.
+% Causal Memory: short formulation note (share version)
+% The ~2-page understanding-check note to send to Yujia.
+% The full draft (proof, Layer-2 analysis, selection section,
+% E0/E1 pre-registration, positioning, full bibliography) lives
+% in causal_memory_formulation.tex and enters later, as the
+% foundations here receive verdicts.
 % Compile with pdfLaTeX. Single self-contained file for Overleaf.
 % ============================================================
 \documentclass[10pt]{article}
 \usepackage[margin=0.9in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{xcolor}
-\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
 
 \newcommand{\indep}{\perp\!\!\!\perp}
 \newcommand{\nindep}{\not\!\perp\!\!\!\perp}
@@ -38,29 +38,22 @@
 \newtheorem{assumption}{A}
 \newtheorem{definitionx}{D}
 \newtheorem{questionx}{Q}
-\newtheorem{remark}{Remark}
 
 \begin{document}
 \begin{center}
-{\LARGE\bfseries Causal Memory: Formulation Document (v0.1)}\\[3pt]
-{\large Foundations for step-by-step verification: setup, definitions, and the frontier lemma}\\[5pt]
-{\small Mian (Nothern) Wu \;\textperiodcentered\; prepared for verification with Yujia Zheng \;\textperiodcentered\; July 2026}
+{\LARGE\bfseries Causal Memory: Formulation Note (v0.1)}\\[3pt]
+{\small Mian (Nothern) Wu \;\textperiodcentered\; for step-by-step checking with Yujia Zheng \;\textperiodcentered\; July 2026}
 \end{center}
 \vspace{2pt}
 
-\begin{abstract}
-\noindent Memory should be defined as time-delayed dependency structure within the true data-generating process; a memory system is \emph{trustworthy} exactly when its stored values and its write/read structure correspond, up to allowed indeterminacies, to that process. This note contains only the foundations to be checked first: setup (A1--A9), definitions (D1--D3), one proved lemma, and decision points (Q1--Q7). The Layer-2 identification analysis and the pre-registered experiments are drafted separately and enter at v0.2 once these have verdicts; nothing runs before sign-off. Inline \checkY{like this} flags mark where I most want correction. I am committing to the theory track: the identifiability framing is what distinguishes this direction from the memory-agent literature.
-\end{abstract}
+\noindent\emph{Purpose.} This is a short formulation note, not a paper draft: it writes down my current understanding of the object, the setup, and the key definitions, so that each can be corrected before I expand the Layer-2 identifiability arguments. Numbered items are what I would like verdicts on; inline \checkY{like this} flags mark where I most expect to need correction. Nothing runs before sign-off.
 
-\section{Thesis}\label{sec:thesis}
+\section{My understanding of the project}\label{sec:thesis}
 
-An agent should not memorize every signal at every timestamp; it should store what corresponds to the truthful causal data-generating process, and read the past through that process's dependency structure. Two claims make this precise. \emph{Definitional}: memory is time-delayed dependency among the variables (observed or latent) of a temporal causal model, not a separate external module; an external store is just a variable with identity dynamics and gated write/read edges (Remark~\ref{rem:external}). \emph{Epistemic}, where the contribution lies: without identifiability guarantees, a learned memory representation $\hat z$ need not correspond to the true hidden process $z$; causal discovery and causal representation learning supply those guarantees, making \emph{trustworthy memory} (D\ref{def:trust}) the target; reliability and efficiency follow as byproducts.
+Memory should be formalized as time-delayed causal dependence among the variables (observed or latent) of a temporal SCM; an external store is just a variable with identity dynamics and gated write/read edges, so internal and external memory are the same object in the graph. The goal is \emph{trustworthy memory}: the stored representation should correspond to the true memory-relevant latent variables and their write/hold/read structure, up to the indeterminacies allowed by the model class --- value correspondence, structure correspondence, and selection soundness (D\ref{def:trust}). Improved reliability and efficiency are byproducts, not the target. This graph is a generating mechanism supporting $\Do(\cdot)$-statements, not a knowledge graph of asserted relations.
 
-\paragraph{Causal discovery versus causal representation learning (my understanding, for checking).}
-Causal discovery takes variables whose values are given and recovers the \emph{structure} among them: a data table in, a graph over its variables out. Causal representation learning is deeper: the relevant variables are latent, so their \emph{values} must first be recovered from observations $x = g(z)$ up to a permitted indeterminacy, and only then structure over them. Identifiability is the guarantee that the estimated $\hat z$ stands in a controlled (ideally component-wise invertible) relation to the true $z$. Memory needs the CRL level of guarantee at Layer~2: what the agent stores must equal the true latent value, not merely a predictive embedding of it. \checkY{is this restatement of the CD/CRL distinction accurate?}
-
-\paragraph{Why this graph is not a knowledge graph.}
-A knowledge graph asserts relations among entities; its edges encode claims. The graph here is the \emph{generating mechanism}: nodes are variables of the process that produces each observation, edges are its direct causal dependencies, and it supports interventional and counterfactual statements, which relation graphs do not.
+\paragraph{Division of labor between CD and CRL (my understanding, for checking).}
+Layer~1 is a causal-discovery problem: the relevant variables $s_t = z_t$ are observed, and the task is to recover the temporal structure over them and use it to define the memory mask $F_t$. Layer~2 is a causal-representation-learning problem: the memory variables are latent inside $x = g(z)$, so the central issue is whether $\hat z$ corresponds to the true memory latents $z$, up to the allowed indeterminacy, rather than merely being predictive; only then can the recovered memory structure be trusted. \checkY{is this the right role distinction between CD and CRL in this project?}
 
 \section{Formal setup}\label{sec:setup}
 
@@ -78,33 +71,9 @@ The process is a temporal SCM as above with maximum lag $L$ and acyclic instanta
 (Gated stationarity.) $G$ and $\{f_i\}$ are time-invariant; time-variation enters only through a regime process $u_t \in \mathcal{U}$ (e.g., $\mathsf{write}_j$, $\mathsf{hold}$, $\mathsf{read}_j$) gating edge activations: each edge $e$ carries $\alpha_e(u_t) \in \{0,1\}$, and $f_i$ may depend on $u_t$. \checkY{Q1: this, or a regime-free nonstationary-transition formulation?}
 \end{assumption}
 
-\begin{assumption}\label{a:noise}
-Noises are mutually independent across components and time; regime-dependent distributions allowed.
-\end{assumption}
+\paragraph{Observation models.} Layer 1 observes the state directly, $s_t = z_t$. Layer 2 observes $x_t = g(z_t)$ with $g$ unknown and injective; the intended instance is an agent's internal state, which carries its memory. The harder variant, where memory and cue do not generate observations during holds, turns identification into a filtering problem and is deferred to the Layer-2 note.
 
-\begin{assumption}\label{a:obs}
-(Observation models.) \textbf{(O1)} Layer 1: $s_t = z_t$ observed. \textbf{(O2a)} $x_t = g(z_t)$, $g$ unknown, injective; intended instance: an agent's internal state, which carries its memory. \textbf{(O2b)} memory and cue are excluded from what generates $x_t$ during holds; per-step inversion is then impossible and identification becomes a filtering problem (Layer-2 note).
-\end{assumption}
-
-\begin{assumption}\label{a:regime}
-Regime labels $u_t$ are observed, or estimable by change-point detection; known by construction in synthetic settings.
-\end{assumption}
-
-\begin{assumption}\label{a:mf}
-Markov and faithfulness hold for $(G, P)$. Caveat: near-deterministic holds do not violate faithfulness of the true model, but they destroy the power of tests that rely on it; population and estimation claims are kept separate.
-\end{assumption}
-
-\begin{assumption}\label{a:nosel}
-No selection on the data, unless explicitly modeled and tested. False by construction for goal-filtered agent corpora, where subgoals are provably selections on $(s_t, a_t)$ \cite{qiu2024subtask}; certificate (iii) of D\ref{def:trust} exists because of this.
-\end{assumption}
-
-\begin{assumption}\label{a:policy}
-Data come from a fixed behavior policy $\pi$; recovered structure is relative to $P_\pi$. \checkY{Q7: is policy-relativity acceptable in the definition?}
-\end{assumption}
-
-\begin{assumption}\label{a:suff}
-(Layer 1 only.) Causal sufficiency over the observed $s_t$; relaxable to FCI-class discovery at the cost of weaker output.
-\end{assumption}
+\paragraph{Working assumptions (for the population statements below).} Noises are mutually independent across components and time, with regime-dependent distributions allowed; regime labels $u_t$ are observed (known by construction in synthetic settings); Markov and faithfulness hold for $(G,P)$ --- near-deterministic holds do not violate faithfulness of the true model, but they do destroy the power of tests that rely on it, so population and estimation claims are kept separate; there is no selection on the data --- false by construction for goal-filtered agent corpora, which is why D\ref{def:trust} carries certificate (iii); and data come from a fixed behavior policy $\pi$, so all recovered structure is relative to $P_\pi$. \checkY{are these the right working assumptions, or should selection, policy, or regimes be modeled differently from the start?}
 
 \paragraph{The write-hold-read motif (unit of memory).}
 Fix a cue $c$, a memory latent $m$, a readout $y$, and distractors $d$ with full-rank stationary dynamics; write at $t_0$, read at $t_1 = t_0 + \Delta$:
@@ -117,18 +86,14 @@ Fix a cue $c$, a memory latent $m$, a readout $y$, and distractors $d$ with full
 \]
 The cue varies across episodes; the load-$k$ variant runs $k$ items, simultaneous or staggered. Two knobs organize everything: hold noise $\sigma \ge 0$ and delay $\Delta$. Per our meeting, $T$ is not a theoretical bound; the estimator's window $W$ is an engineering threshold to sweep.
 
-\section{Memory, masks, and trustworthiness}\label{sec:defs}
+\section{Definitions I want checked}\label{sec:defs}
 
 \begin{definitionx}[Memory carrier]\label{def:carrier}
 The process $(m_s)_{t_0 \le s \le t_1}$ is a \emph{memory carrier} for $(c_{t_0}, y_{t_1})$ if
 (i) $c_{t_0} \nindep y_{t_1}$ under $P_\pi$ with $\Delta \ge \Delta_{\min}$, and
 (ii) for every $s \in (t_0, t_1]$ and constant $\tilde m$, $c_{t_0} \indep y_{t_1}$ under $P_\pi^{\Do(m_s := \tilde m)}$.
-Equivalently, every active path from $c_{t_0}$ to $y_{t_1}$ intersects $\{m_s\}$. Memory is thus mediated long-lag dependence through a persistent variable, an interventional notion, which separates storage from selection-induced dependence.
+Graphically, in the causally sufficient, no-selection case, the intended reading is that every path from $c_{t_0}$ to $y_{t_1}$ is mediated by the persistent process $(m_s)$. The definition is deliberately interventional: association at a lag is exactly what selection can fake.
 \end{definitionx}
-
-\begin{remark}\label{rem:external}
-An external memory module is the special case with exact identity dynamics ($\sigma = 0$) and gated write/read edges implemented by retrieval; internal states and external stores are the same object in $G$.
-\end{remark}
 
 \begin{definitionx}[Causal frontier / memory mask]\label{def:frontier}
 With $\past$ the nodes at times $\le t$, $Y \subseteq \future$ the task variables in a horizon window, and $\An^*(Y) = \An(Y) \cup Y$:
@@ -137,79 +102,36 @@ F_t(Y) \;=\; \big\{\, v \in \past \;:\; \exists\, w \in \future,\ v \to w \in G,
 \]
 \end{definitionx}
 
-\begin{lemma}[$F_t$ is the unique minimum memory]\label{lem:frontier}
-Under A\ref{a:scm} and the Markov property, \emph{(i)} $Y \indep \past \setminus F_t \,\big|\, F_t$. Under faithfulness in addition, \emph{(ii)} every $S \subseteq \past$ with $Y \indep \past \setminus S \mid S$ satisfies $F_t \subseteq S$. Hence $F_t$ is the unique inclusion-minimal past-measurable set screening off the future task variables, and $|F_t|$ lower-bounds any lossless memory of the past.
+\begin{lemma}[$F_t$ is the unique minimal sufficient memory]\label{lem:frontier}
+Under A\ref{a:scm} and the Markov property, \emph{(i)} $Y \indep \past \setminus F_t \,\big|\, F_t$. Under faithfulness in addition, \emph{(ii)} every $S \subseteq \past$ with $Y \indep \past \setminus S \mid S$ satisfies $F_t \subseteq S$.
 \end{lemma}
 
-\begin{proof}
-\emph{(i)} Let $S \subseteq \past$ and consider a path from $a \in \past$ to $y \in Y$. Edges never point backward in time, so the step at which the path first moves from past to future traverses an edge $v \to w$ forward, arrowhead at $w \in \future$. From $w$ onward the path cannot contain a future collider: a future node's descendants are all future, so none lies in $S$, and any collider there blocks the path. Arriving at $w$ with an arrowhead, the path must leave along an outgoing edge, and inductively its suffix is a directed path $w \to \cdots \to y$ inside $\future$; in particular it never re-enters the past. Hence $w \in \An^*(Y)$ and $v \in F_t$. Now take $S = F_t$ and $a \in \past \setminus F_t$: on any such path, $v$ is a non-collider (the path leaves along the tail of $v \to w$), $v \ne a$, and $v \in S$, so the path is blocked. No active path exists, giving (i) by Markov.
-
-\emph{(ii)} Let $f \in F_t$ with boundary edge $f \to w$, $w \in \An^*(Y)$, and pick a directed path $w \to \cdots \to y$, all inside $\future$. If $f \notin S$, the path $f \to w \to \cdots \to y$ is directed (no colliders) with no non-endpoint node in $S \subseteq \past$; it is active given $S$, and faithfulness gives $f \nindep y \mid S$, contradicting separation. So every separating $S$ contains $F_t$, and $F_t$ itself separates by (i).
-\end{proof}
-
-\begin{remark}[Consequences]\label{rem:frontier}
-(a) \emph{Planning}: $\mathbb{E}[\phi(Y) \mid \past] = \mathbb{E}[\phi(Y) \mid F_t]$, the ``conditional set for planning'' from our meeting made exact; it also answers ``what to remember'' as a corollary.
-(b) \emph{Online maintenance (fixed $Y$)}: $F_{t+1}(Y) \subseteq F_t(Y) \cup V_{t+1}$: add the new slice, retire nodes whose forward-relevant children have passed. For a sliding horizon window the task set changes with $t$ and the recursion needs restating. \checkY{is fixed-$Y$ the right scope, or should the sliding-window recursion be worked out?}
-(c) \emph{Task conditioning}: $F_t$ depends on $Y$ and the horizon, matching task-conditioned representations \cite{zheng2026specialist}.
-(d) \emph{Scope}: a population statement about the true $G$; estimability in memory regimes is the Layer-1/Layer-2 question. \checkY{Q3: happy with $F_t$ as the formal answer to ``what deserves storage''?}
-\end{remark}
+\noindent A short proof is drafted in my working file; I will include it once the statement itself is the right target. Consequence, if correct: $F_t$ is the population-level object for ``what should be retained for planning,'' since $\mathbb{E}[\phi(Y) \mid \past] = \mathbb{E}[\phi(Y) \mid F_t]$; estimating it in memory regimes is then the Layer-1/Layer-2 problem. \checkY{is $F_t$ the right formal object for ``what deserves storage''?}
 
 \begin{definitionx}[Trustworthy memory]\label{def:trust}
 An estimated system ($\hat z$, $\hat G$, write/read maps) is \emph{trustworthy} on a memory-relevant index set $M$ if:
-\emph{(i) value correspondence}: $\hat z_{\rho(i)} = h_i(z_i)$ for all $i \in M$, for some permutation $\rho$ and component-wise invertible $h_i$; where this is provably impossible (simultaneously frozen items admit an arbitrary invertible mixing mid-hold), the certificate relaxes to block level (Layer-2 note);
-\emph{(ii) structure correspondence}: write/hold/read edges of $\hat G$ match $G$ on $M$ (edge $F_1$, SHD);
-\emph{(iii) selection soundness}: on data whose long-lag dependence arises from selection alone, the system reports \emph{no carrier} \cite{zheng2024selection}.
-Byproducts: with (i)+(ii), interventions on $\hat m$ implement interventions on $m$ (editing specificity, auditable recall, detectable confabulation); by Lemma~\ref{lem:frontier}, retaining $F_t$ shrinks the budget from $O(nT)$ to $|F_t|$ with no task-relevant loss.
+\emph{(i) value correspondence}: $\hat z_{\rho(i)} = h_i(z_i)$ for all $i \in M$, for some permutation $\rho$ and component-wise invertible $h_i$; where this is provably impossible (simultaneously frozen items admit an arbitrary invertible mixing mid-hold), the certificate relaxes to block level;
+\emph{(ii) structure correspondence}: the write/hold/read edges of $\hat G$ match those of $G$ on $M$;
+\emph{(iii) selection soundness}: on data whose long-lag dependence arises from selection alone, the system reports \emph{no carrier}.
+The intended payoff is that interventions on $\hat m$ can be read as interventions on the true carrier $m$, and that retention can shrink from the full history to $F_t$.
 \end{definitionx}
-
-\section{The program from here}\label{sec:program}
-
-Layer 1 runs temporal discovery on observed $s_t$ (PC-stable; PCMCI$^+$ \cite{runge2020}; CD-NOD with $u_t$ as context \cite{huang2020}, the natural match to A\ref{a:gated}), uses $\hat F_t(Y)$ as retention mask and planning set, and treats its memory-specific failure modes (near-deterministic holds, selection, policy confounding, latent confounders) as experimental arms. Layer 2 asks when the stored \emph{values} are identifiable: write/read events supply auxiliary variation \cite{yao2021leap}, IDOL-type sparsity covers the ambient process \cite{li2025idol}, frozen blocks are set-identifiable at best mid-hold \cite{zheng2025concepts}, and distinct read children, staggered events, or non-Gaussian hold noise \cite{zheng2022} restore component-wise recovery; precise statements enter at v0.2. A selection gate \cite{zheng2024selection} runs at both layers before any memory edge is asserted. E0 (discovery on the observed motif) and E1 (CRL under unknown mixing) are pre-registered in the full draft, gated on sign-off.
 
 \section{Questions}\label{sec:questions}
 
 \begin{questionx}
-Gated SCM (A\ref{a:gated}, A\ref{a:regime}), or a regime-free nonstationary-transition formulation with events implicit?
-\end{questionx}
-\begin{questionx}
-Layer 2: is regime-change boundary identification + set-identifiability within holds + gluing along the diagonal hold transition viable, or is the nonparametric-concepts route cleaner?
+Gated SCM (A\ref{a:gated}), or a regime-free nonstationary-transition formulation with events implicit?
 \end{questionx}
 \begin{questionx}
 Is $F_t$ (D\ref{def:frontier}, Lemma~\ref{lem:frontier}) the right formalization of ``memorize only what matters,'' or do you prefer a Markov-blanket or soft information-theoretic variant?
 \end{questionx}
 \begin{questionx}
+Is $P_\pi$-relative structure acceptable, or should cross-policy invariance enter the definition of memory itself?
+\end{questionx}
+\begin{questionx}
 Selection: preprocessing gate, or jointly modeled inside the estimator?
 \end{questionx}
 \begin{questionx}
-Layer 1: publishable on its own, or scaffolding for the Layer-2 paper?
+May small synthetic sanity checks run while this note iterates, or does all compute wait for sign-off?
 \end{questionx}
-\begin{questionx}
-May small synthetic sanity checks run while this document iterates, or does all compute wait for sign-off?
-\end{questionx}
-\begin{questionx}
-Is $P_\pi$-relative structure (A\ref{a:policy}) acceptable, or should cross-policy invariance enter the definition of memory itself?
-\end{questionx}
-
-\begin{thebibliography}{9}\footnotesize\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
-
-\bibitem{yao2021leap} W. Yao, Y. Sun, A. Ho, C. Sun, K. Zhang. Learning temporally causal latent processes from general temporal data. ICLR 2022. arXiv:2110.05428.
-
-\bibitem{li2025idol} Z. Li, Y. Shen, K. Zheng, R. Cai, X. Song, M. Gong, G. Chen, K. Zhang. On the identification of temporally causal representation with instantaneous dependence. ICLR 2025. arXiv:2405.15325.
-
-\bibitem{zheng2022} Y. Zheng, I. Ng, K. Zhang. On the identifiability of nonlinear ICA: sparsity and beyond. NeurIPS 2022. arXiv:2206.07751.
-
-\bibitem{zheng2025concepts} Y. Zheng, S. Xie, K. Zhang. Nonparametric identification of latent concepts. ICML 2025.
-
-\bibitem{zheng2024selection} Y. Zheng, Z. Tang, Y. Qiu, B. Sch\"olkopf, K. Zhang. Detecting and identifying selection structure in sequential data. ICML 2024. arXiv:2407.00529.
-
-\bibitem{qiu2024subtask} Y. Qiu, Y. Zheng, K. Zhang. Identifying selections for unsupervised subtask discovery. NeurIPS 2024. arXiv:2410.21616.
-
-\bibitem{zheng2026specialist} Y. Zheng, F. Feng, Y. Li, S. Xie, K. Murphy, K. Zhang. From generalist to specialist representation. ICML 2026. arXiv:2605.12733.
-
-\bibitem{huang2020} B. Huang, K. Zhang, J. Zhang, J. Ramsey, R. Sanchez-Romero, C. Glymour, B. Sch\"olkopf. Causal discovery from heterogeneous/nonstationary data. JMLR 2020.
-
-\bibitem{runge2020} J. Runge. Discovering contemporaneous and lagged causal relations in autocorrelated nonlinear time series datasets. UAI 2020.
-
-\end{thebibliography}
 
 \end{document}
