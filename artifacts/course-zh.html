@@ -1,0 +1,684 @@
+<title>因果记忆 · 零基础课程</title>
+<style>
+/* ============================================================
+   CAUSAL MEMORY — shared design system (kit v1)
+   Serif monograph + monospace formal register.
+   Accent = carrier teal (the color the papers use for memory).
+   ============================================================ */
+:root{
+  --font-serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Charter,Georgia,Cambria,'Times New Roman','Songti SC','Songti TC','Noto Serif CJK SC','Source Han Serif SC','Source Han Serif CN',STSong,SimSun,serif;
+  --font-mono:ui-monospace,'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',Menlo,Consolas,'Liberation Mono','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',monospace;
+  --font-cjk-serif:'Songti SC','Noto Serif CJK SC','Source Han Serif SC',STSong,SimSun,serif;
+
+  --paper:#F1F5F4;
+  --surface:#FBFCFC;
+  --surface-2:#EAF0EE;
+  --ink:#0F201E;
+  --ink-soft:#3B4E4B;
+  --ink-faint:#69807C;
+  --line:#D6E1DE;
+  --line-strong:#BFCECA;
+
+  --carrier:#0B7C72;
+  --carrier-deep:#075B54;
+  --carrier-tint:#E0EFEC;
+  --carrier-glow:rgba(11,124,114,.14);
+
+  --amber:#A5651A;
+  --amber-tint:#F4E8D5;
+  --rose:#AC3548;
+  --rose-tint:#F3DBDF;
+
+  --shadow:0 1px 2px rgba(15,32,30,.05),0 8px 30px rgba(15,32,30,.06);
+  --shadow-lg:0 2px 6px rgba(15,32,30,.06),0 24px 60px rgba(15,32,30,.10);
+
+  --col:69ch;
+  --pad:clamp(1.2rem,5vw,2.6rem);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#081211;
+    --surface:#0F1E1C;
+    --surface-2:#132523;
+    --ink:#E7F0EE;
+    --ink-soft:#A6BAB6;
+    --ink-faint:#6D817D;
+    --line:#1D2F2C;
+    --line-strong:#294139;
+    --carrier:#41D9C6;
+    --carrier-deep:#82F0E2;
+    --carrier-tint:#0E2A27;
+    --carrier-glow:rgba(65,217,198,.16);
+    --amber:#DDA351;
+    --amber-tint:#241C10;
+    --rose:#E6828F;
+    --rose-tint:#2A151A;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.5);
+    --shadow-lg:0 2px 6px rgba(0,0,0,.45),0 30px 70px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="light"]{
+  --paper:#F1F5F4;--surface:#FBFCFC;--surface-2:#EAF0EE;--ink:#0F201E;--ink-soft:#3B4E4B;--ink-faint:#69807C;
+  --line:#D6E1DE;--line-strong:#BFCECA;--carrier:#0B7C72;--carrier-deep:#075B54;--carrier-tint:#E0EFEC;--carrier-glow:rgba(11,124,114,.14);
+  --amber:#A5651A;--amber-tint:#F4E8D5;--rose:#AC3548;--rose-tint:#F3DBDF;
+  --shadow:0 1px 2px rgba(15,32,30,.05),0 8px 30px rgba(15,32,30,.06);--shadow-lg:0 2px 6px rgba(15,32,30,.06),0 24px 60px rgba(15,32,30,.10);
+}
+:root[data-theme="dark"]{
+  --paper:#081211;--surface:#0F1E1C;--surface-2:#132523;--ink:#E7F0EE;--ink-soft:#A6BAB6;--ink-faint:#6D817D;
+  --line:#1D2F2C;--line-strong:#294139;--carrier:#41D9C6;--carrier-deep:#82F0E2;--carrier-tint:#0E2A27;--carrier-glow:rgba(65,217,198,.16);
+  --amber:#DDA351;--amber-tint:#241C10;--rose:#E6828F;--rose-tint:#2A151A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.5);--shadow-lg:0 2px 6px rgba(0,0,0,.45),0 30px 70px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-serif);font-size:1.0625rem;line-height:1.68;
+  font-feature-settings:"kern" 1,"liga" 1;text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--carrier-glow);color:var(--ink)}
+a{color:var(--carrier-deep);text-decoration-color:color-mix(in srgb,var(--carrier) 45%,transparent);text-underline-offset:2px}
+a:hover{text-decoration-color:var(--carrier)}
+:focus-visible{outline:2px solid var(--carrier);outline-offset:3px;border-radius:3px}
+img,svg{max-width:100%}
+h1,h2,h3{text-wrap:balance;line-height:1.12;font-weight:700;letter-spacing:-.012em}
+
+/* ---------- shell ---------- */
+.wrap{max-width:var(--col);margin-inline:auto;padding-inline:var(--pad)}
+.band{padding-block:clamp(2.4rem,6vw,4.2rem)}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+.mono{font-family:var(--font-mono)}
+.eyebrow{
+  font-family:var(--font-mono);font-size:.72rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--carrier-deep);
+}
+.lede{font-size:1.28rem;line-height:1.5;color:var(--ink-soft)}
+.small{font-size:.9rem;color:var(--ink-faint)}
+p{margin:0 0 1rem}
+.stack>*+*{margin-top:1.05rem}
+
+/* ---------- top series bar ---------- */
+.topbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:var(--col);margin-inline:auto;padding:.5rem var(--pad);display:flex;align-items:center;gap:.6rem .9rem;justify-content:space-between;flex-wrap:wrap}
+.brand{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+@media (max-width:600px){.brand .brand-extra{display:none}}
+.brand b{color:var(--carrier-deep);font-weight:700}
+.series{display:flex;gap:.35rem;flex-wrap:wrap}
+.series a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.02em;text-decoration:none;color:var(--ink-faint);
+  border:1px solid var(--line);border-radius:999px;padding:.16rem .6rem;transition:.16s}
+.series a:hover{border-color:var(--carrier);color:var(--carrier-deep)}
+.series a[aria-current="page"]{background:var(--carrier);border-color:var(--carrier);color:#fff}
+@media (prefers-color-scheme:dark){.series a[aria-current="page"]{color:#08110f}}
+:root[data-theme="dark"] .series a[aria-current="page"]{color:#08110f}
+:root[data-theme="light"] .series a[aria-current="page"]{color:#fff}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-bg{position:absolute;inset:0;pointer-events:none;
+  background:
+   radial-gradient(60% 80% at 82% 8%,var(--carrier-glow),transparent 70%),
+   radial-gradient(50% 60% at 6% 96%,var(--carrier-glow),transparent 72%);}
+.hero-in{position:relative;max-width:var(--col);margin-inline:auto;padding:clamp(2.2rem,6vw,4rem) var(--pad) clamp(1.6rem,4vw,2.6rem)}
+.kicker{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem}
+.kicker .num{font-family:var(--font-mono);font-size:.8rem;letter-spacing:.1em;color:var(--carrier-deep);border:1px solid var(--carrier);border-radius:6px;padding:.1rem .45rem}
+h1.title{font-size:clamp(2.25rem,6.2vw,3.9rem);margin:.2rem 0 .1rem;letter-spacing:-.02em}
+h1.title .q{color:var(--carrier-deep)}
+.subtitle{font-size:clamp(1.1rem,2.6vw,1.5rem);color:var(--ink-soft);font-style:italic;margin:.4rem 0 0;line-height:1.35}
+.byline{margin-top:1.4rem;font-family:var(--font-mono);font-size:.78rem;color:var(--ink-faint);letter-spacing:.02em;
+  display:flex;gap:.5rem 1.2rem;flex-wrap:wrap;align-items:center}
+.byline .dot{width:5px;height:5px;border-radius:50%;background:var(--carrier);display:inline-block}
+
+/* ---------- figures ---------- */
+figure{margin:1.8rem 0}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+  padding:clamp(1rem,3vw,1.8rem);overflow-x:auto}
+.fig svg{display:block;margin-inline:auto;height:auto}
+figcaption{font-family:var(--font-mono);font-size:.78rem;line-height:1.5;color:var(--ink-faint);margin-top:.9rem;text-align:left}
+figcaption b{color:var(--carrier-deep);font-weight:600}
+
+/* ---------- cards ---------- */
+.grid{display:grid;gap:1rem}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:1.15rem 1.2rem;box-shadow:var(--shadow)}
+.card h3{margin:.1rem 0 .5rem;font-size:1.12rem}
+.card p{font-size:.98rem;color:var(--ink-soft);margin:0}
+.card .tag{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--carrier-deep);display:block;margin-bottom:.45rem}
+.card.accent{border-color:color-mix(in srgb,var(--carrier) 40%,var(--line));
+  background:linear-gradient(180deg,var(--carrier-tint),var(--surface) 60%)}
+
+/* labelled layer cards */
+.layer{position:relative;padding-left:1.4rem}
+.layer::before{content:"";position:absolute;left:0;top:.2rem;bottom:.2rem;width:4px;border-radius:4px;background:var(--carrier)}
+.layer.l2::before{background:var(--amber)}
+
+/* ---------- certificate list ---------- */
+.certs{counter-reset:cert;display:grid;gap:.7rem;margin:1.2rem 0}
+.cert{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start;
+  background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:.9rem 1rem}
+.cert .rn{font-family:var(--font-mono);font-weight:700;color:var(--carrier-deep);
+  border:1px solid var(--carrier);border-radius:8px;min-width:2.1rem;text-align:center;padding:.25rem 0;font-size:.82rem}
+.cert h4{margin:.05rem 0 .25rem;font-size:1.02rem}
+.cert p{margin:0;font-size:.94rem;color:var(--ink-soft)}
+
+/* ---------- math ---------- */
+.m{font-family:var(--font-serif);font-style:italic}
+.m .fn{font-style:normal}
+.eq{font-family:var(--font-serif);font-style:italic;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:8px;padding:.7rem 1rem;margin:1.1rem 0;overflow-x:auto;font-size:1.05rem;line-height:1.9}
+.op{font-style:normal;color:var(--carrier-deep);padding:0 .12em}
+kbd,code{font-family:var(--font-mono);font-size:.86em;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:5px;padding:.06em .38em}
+
+/* ---------- pill / status ---------- */
+.pill{font-family:var(--font-mono);font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:999px;padding:.15rem .55rem;border:1px solid;white-space:nowrap}
+.pill.done{color:var(--carrier-deep);border-color:color-mix(in srgb,var(--carrier) 50%,transparent);background:var(--carrier-tint)}
+.pill.pend{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 50%,transparent);background:var(--amber-tint)}
+.pill.block{color:var(--rose);border-color:color-mix(in srgb,var(--rose) 50%,transparent);background:var(--rose-tint)}
+
+/* ---------- next / nav cards ---------- */
+.next{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin-top:1.4rem}
+.next a{text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:13px;
+  padding:1.05rem 1.15rem;box-shadow:var(--shadow);transition:.18s;display:block}
+.next a:hover{border-color:var(--carrier);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.next .n{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;color:var(--carrier-deep)}
+.next h4{margin:.35rem 0 .3rem;font-size:1.08rem}
+.next p{margin:0;font-size:.9rem;color:var(--ink-faint)}
+
+/* ---------- pull quote ---------- */
+.pull{border-left:3px solid var(--carrier);padding:.2rem 0 .2rem 1.1rem;margin:1.6rem 0;font-size:1.18rem;
+  font-style:italic;color:var(--ink);line-height:1.45}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);margin-top:1rem}
+.foot-in{max-width:var(--col);margin-inline:auto;padding:2rem var(--pad) 3rem;font-family:var(--font-mono);
+  font-size:.76rem;color:var(--ink-faint);line-height:1.7}
+.foot-in b{color:var(--ink-soft)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- tables (shared, used by 03/04) ---------- */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);margin:1.4rem 0;background:var(--surface)}
+table.tbl{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+table.tbl th,table.tbl td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+table.tbl thead th{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);background:var(--surface-2);white-space:nowrap;position:sticky;top:0}
+table.tbl tbody tr:last-child td{border-bottom:0}
+table.tbl tbody tr:hover{background:var(--surface-2)}
+table.tbl td.k{font-family:var(--font-mono);font-size:.82rem;color:var(--carrier-deep);white-space:nowrap;font-weight:600}
+table.tbl .give{color:var(--ink-soft)}
+
+/* ---------- code block (shared, used by 04) ---------- */
+pre.code{font-family:var(--font-mono);font-size:.79rem;line-height:1.65;background:var(--surface-2);border:1px solid var(--line);border-radius:11px;padding:1rem 1.1rem;overflow-x:auto;color:var(--ink-soft);margin:1.2rem 0;box-shadow:var(--shadow)}
+pre.code .cm{color:var(--carrier-deep)}
+pre.code .kw{color:var(--amber)}
+pre.code b{color:var(--ink);font-weight:600}
+
+/* ---------- definition + note callouts (shared) ---------- */
+.defbox{background:linear-gradient(180deg,var(--carrier-tint),var(--surface) 55%);border:1px solid color-mix(in srgb,var(--carrier) 40%,var(--line));border-radius:13px;padding:1.1rem 1.25rem;box-shadow:var(--shadow);margin:1.4rem 0}
+.defbox>.tag{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--carrier-deep);display:block;margin-bottom:.4rem}
+.defbox h3{margin:.1rem 0 .5rem;font-size:1.15rem}
+.note{border-left:3px solid var(--amber);background:var(--amber-tint);border-radius:0 8px 8px 0;padding:.7rem .95rem;font-size:.93rem;color:var(--ink-soft);margin:1.2rem 0}
+.note b{color:var(--amber)}
+
+/* SVG shared classes */
+svg .node{fill:var(--surface);stroke:var(--line-strong);stroke-width:1.5}
+svg .node-lbl{fill:var(--ink);font-family:var(--font-serif);font-style:italic;font-size:15px}
+svg .mem{fill:var(--carrier-tint);stroke:var(--carrier);stroke-width:1.6}
+svg .edge{stroke:var(--line-strong);stroke-width:1.6;fill:none}
+svg .edge-c{stroke:var(--carrier);stroke-width:2.4;fill:none}
+svg .cap{fill:var(--ink-faint);font-family:var(--font-mono);font-size:11px}
+svg .cap-c{fill:var(--carrier-deep);font-family:var(--font-mono);font-size:11px}
+svg .amark{fill:var(--line-strong)}
+svg .amark-c{fill:var(--carrier)}
+
+
+/* ---------- course additions ---------- */
+.toc{display:grid;gap:.55rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));margin:1.4rem 0}
+.toc a{display:flex;align-items:baseline;gap:.55rem;text-decoration:none;color:var(--ink-soft);background:var(--surface);
+  border:1px solid var(--line);border-radius:11px;padding:.6rem .8rem;font-size:.92rem;transition:.15s;box-shadow:var(--shadow)}
+.toc a:hover{border-color:var(--carrier);color:var(--carrier-deep)}
+.toc a b{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;color:var(--carrier-deep);white-space:nowrap}
+.lesson h2{font-size:clamp(1.5rem,3.6vw,2rem)}
+.lesson h3{font-size:1.12rem;margin:1.2rem 0 .2rem}
+.goal{background:var(--carrier-tint);border:1px solid color-mix(in srgb,var(--carrier) 38%,var(--line));border-radius:11px;
+  padding:.7rem .95rem;font-size:.95rem;color:var(--ink-soft)}
+.goal b{color:var(--carrier-deep)}
+.connect{border-left:3px solid var(--carrier);background:var(--surface);border-radius:0 10px 10px 0;
+  padding:.75rem 1rem;font-size:.95rem;color:var(--ink-soft);box-shadow:var(--shadow)}
+.connect b{color:var(--carrier-deep)}
+.speak{background:var(--amber-tint);border:1px solid color-mix(in srgb,var(--amber) 42%,var(--line));border-radius:11px;
+  padding:.75rem 1rem;font-size:.95rem;color:var(--ink-soft)}
+.speak b{color:var(--amber)}
+details.quiz{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:.6rem .9rem;box-shadow:var(--shadow)}
+details.quiz summary{cursor:pointer;font-weight:600;color:var(--carrier-deep);font-size:.95rem}
+details.quiz summary:hover{color:var(--carrier)}
+details.quiz p{margin:.6rem 0 0;font-size:.93rem;color:var(--ink-soft)}
+details.quiz .ans{border-top:1px dashed var(--line-strong);padding-top:.6rem}
+details.quiz .ans b{color:var(--carrier-deep)}
+.checklist{list-style:none;padding:0;margin:.6rem 0;display:grid;gap:.45rem}
+.checklist li{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:.5rem .8rem .5rem 2.1rem;
+  position:relative;font-size:.93rem;color:var(--ink-soft)}
+.checklist li::before{content:"☐";position:absolute;left:.75rem;color:var(--carrier);font-size:1rem}
+.lesson .stack>.connect,.lesson .stack>.speak,.lesson .stack>.goal{margin-top:1.2rem}
+</style>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <span class="brand"><b>因果记忆</b><span class="brand-extra"> · 零基础课程</span></span>
+    <nav class="series" aria-label="参考手册">
+      <a href="https://claude.ai/code/artifact/666eab19-67ec-4271-9ddb-fdb51bf6a720">手册01 总览</a>
+      <a href="https://claude.ai/code/artifact/fa83cd20-089d-49f5-86b7-4f563c94b7cb">手册02 理论</a>
+      <a href="https://claude.ai/code/artifact/6b553c0a-60ed-4663-990f-26b329f92e2f">手册03 表述</a>
+      <a href="https://claude.ai/code/artifact/89685ae4-ac33-4bc8-9e06-4629b8042201">手册04 计划</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-in">
+    <div class="kicker">
+      <span class="num">课程</span>
+      <span class="eyebrow">从零开始 · 像上课一样学</span>
+    </div>
+    <h1 class="title">八节课,学会用<span class="q">自己的话</span>讲清这个项目。</h1>
+    <p class="subtitle">不求快。每课 20–40 分钟:一个生活例子引入,白话讲透,才碰公式;课末有练习和「讲给我听」自测。学完一课,回到对话里讲给我听,我来当 Yujia。</p>
+    <div class="byline">
+      <span><span class="dot"></span> 规则只有一条:讲不出来 = 还没学会</span>
+      <span>参考手册(01–04)留作查阅,课程才是入口</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== 使用说明 + 目录 ===== -->
+<section class="band" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="defbox">
+      <span class="tag">怎么用这门课</span>
+      <p style="margin:0 0 .6rem">① 按顺序上课,<strong>不要跳</strong>——每课都建立在前一课上。② 每课末尾有「合上页面,讲给我听」:真的合上页面,回到对话里用中文讲,我来批改。③ 练习先自己做,再点开答案。④ 一天最多两三课,贪多嚼不烂。</p>
+      <p style="margin:0" class="small">学完整门课,你就能:脱稿讲清 Layer-1 表述;看懂自己笔记里的每一个符号;知道哪些问题值得带去问 Yujia。</p>
+    </div>
+    <nav class="toc" aria-label="课程目录">
+      <a href="#l1"><b>第 1 课</b>相关不是因果:do 算子</a>
+      <a href="#l2"><b>第 2 课</b>三种路径与 d-分离</a>
+      <a href="#l3"><b>第 3 课</b>两座桥:马尔可夫与忠实性</a>
+      <a href="#l4"><b>第 4 课</b>时间进场:展开图</a>
+      <a href="#l5"><b>第 5 课</b>记忆的最小标本:写–保持–读</a>
+      <a href="#l6"><b>第 6 课</b>该记住什么:因果前沿</a>
+      <a href="#l7"><b>第 7 课</b>两层:你能看见什么</a>
+      <a href="#l8"><b>第 8 课</b>VARLiNGAM 入门</a>
+      <a href="#final"><b>结课</b>自测清单 · 与 Yujia 的话题</a>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ 第 1 课 ============ -->
+<section class="band lesson" id="l1">
+  <div class="wrap stack">
+    <p class="eyebrow">第 1 课 · 约 25 分钟</p>
+    <h2>相关不是因果:do 算子</h2>
+    <div class="goal"><b>本课目标:</b>能说清"观测到"和"动手改"的区别,并解释为什么这个项目的图是机制、不是知识图谱。</div>
+
+    <h3>先讲个夏天的故事</h3>
+    <p>统计上,冰淇淋销量高的日子,溺水的人也多。冰淇淋导致溺水吗?当然不是——是<strong>气温</strong>同时推高了两者。数据里"一起变"的东西(相关),背后可能根本没有因果箭头。这就是为什么只看数据分布不够,我们需要一种能区分"一起变"和"谁导致谁"的语言。</p>
+
+    <h3>do 算子:动手改,而不是看到</h3>
+    <p>再看一个例子:房间温度和温度计读数完全同步。<strong>观测</strong>到温度计显示 30°C,你可以推断房间很热;但如果你<strong>动手把指针拨到</strong> 30°C——房间不会因此变热。这两件事在数据里看起来一样(读数=30),在因果上完全不同。"动手改"就是干预,记作 <span class="m">do(温度计 := 30)</span>:它切断所有指向被改变量的箭头(指针不再由室温决定,而由你的手决定),其余机制原封不动。</p>
+    <p>一张因果图的每条边,都是关于"动手改会怎样"的承诺:<span class="m">A → B</span> 的意思是,固定其他条件、动手改 A,B 会变。所以因果图能回答反事实问题,而"知识图谱"(实体间断言的关系,比如"姚明—效力于—火箭队")不能——那只是记录了谁声称了什么。</p>
+
+    <div class="connect"><b>和你的项目对上:</b>你笔记里 D1(记忆载体)刻意用 do 算子定义——"切断保持链上任何一环,线索和读出就独立了"。为什么非要用干预、不用相关?第 2 课的"对撞"会给你答案:<strong>相关是可以被伪造的,干预不能</strong>。另外 Yujia 问过你"为什么这不是知识图谱"——本课第三段就是标准答案。</p>
+
+    <details class="quiz"><summary>练习 1:下面哪个是干预?</summary>
+      <p>(a) 看到路面湿,推断下过雨;(b) 用洒水车把路面弄湿,看会不会下雨;(c) 看到带伞的人多,推断今天有雨。</p>
+      <p class="ans"><b>答案:</b>(b) 是干预(do(路面:=湿)),而且它显示"路面湿"不会导致下雨——箭头方向是 雨→路湿,不可倒过来。(a)(c) 都是观测推断,合法,但回答不了"改了会怎样"。</p>
+    </details>
+
+    <div class="speak"><b>合上页面,讲给我听:</b>① 用冰淇淋的例子讲"相关不是因果";② 用温度计的例子讲 do(·) 和观测的区别;③ 一句话:为什么这个项目的图不是知识图谱?</div>
+  </div>
+</section>
+
+<!-- ============ 第 2 课 ============ -->
+<section class="band lesson" id="l2">
+  <div class="wrap stack">
+    <p class="eyebrow">第 2 课 · 约 40 分钟 · 全课程最重要的一课</p>
+    <h2>三种路径与 d-分离</h2>
+    <div class="goal"><b>本课目标:</b>给你任何一张小图和一个条件集,你能判断两个变量独立还是相关。这是整个领域的"乘法口诀"。</div>
+
+    <h3>依赖是顺着路径流动的</h3>
+    <p>图里两个变量之间如果有路径相连,信息(依赖)就可能顺着路径流动。是否真的流动,取决于路径中间每个节点的"形状"——只有三种形状,记住它们就够了:</p>
+
+    <p><strong>① 链(chain):雨 → 路滑 → 摔倒。</strong>下雨让路滑,路滑让人摔倒,所以"下雨"和"摔倒"相关。但如果我<strong>已经知道路滑不滑</strong>(条件化在"路滑"上),再告诉我下没下雨,对预测摔倒没有新帮助——路滑把信息全部转达了。链:默认通,条件化中间节点后<strong>堵</strong>。</p>
+
+    <p><strong>② 叉(fork):冰淇淋 ← 气温 → 溺水。</strong>共同原因让两端相关。但如果<strong>已知今天的气温</strong>,冰淇淋销量就不再提供关于溺水的额外信息。叉:默认通,条件化中间(共因)后<strong>堵</strong>。</p>
+
+    <p><strong>③ 对撞(collider):才华 → 录取 ← 家境。</strong>这是最反直觉、也是对你的项目最重要的一个。假设某学校录取要么靠才华、要么靠家境,两者在全人群中<strong>互不相关</strong>。现在只看被录取的学生:得知某人家境一般,你会推断"那他大概率很有才华"——否则进不来。<strong>在录取者内部,才华和家境变成负相关了!</strong>这个相关是被"只看录取者"这个动作凭空制造出来的,现实中不存在任何箭头连接两者。对撞:默认<strong>堵</strong>,条件化对撞点(或它的后代)后反而<strong>打开</strong>。</p>
+
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 0 700 250" role="img" aria-label="三种路径模体：链 X 到 Z 到 Y、叉 X 从 Z 到 Y、对撞节点 X 到 Z 从 Y，并给出各自的阻断规则。">
+          <defs>
+            <marker id="m2a" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker>
+          </defs>
+          <!-- chain -->
+          <g>
+            <circle class="node" cx="40" cy="42" r="18"/><text class="node-lbl" x="40" y="47" text-anchor="middle">X</text>
+            <circle class="node" cx="150" cy="42" r="18"/><text class="node-lbl" x="150" y="47" text-anchor="middle">Z</text>
+            <circle class="node" cx="260" cy="42" r="18"/><text class="node-lbl" x="260" y="47" text-anchor="middle">Y</text>
+            <path class="edge" d="M58,42 L131,42" marker-end="url(#m2a)"/>
+            <path class="edge" d="M168,42 L241,42" marker-end="url(#m2a)"/>
+            <text class="cap-c" x="300" y="38" style="font-size:12px">链</text>
+            <text class="cap" x="300" y="54">默认开放 · 当 Z ∈ S 时被阻断</text>
+          </g>
+          <!-- fork -->
+          <g>
+            <circle class="node" cx="40" cy="125" r="18"/><text class="node-lbl" x="40" y="130" text-anchor="middle">X</text>
+            <circle class="node" cx="150" cy="125" r="18"/><text class="node-lbl" x="150" y="130" text-anchor="middle">Z</text>
+            <circle class="node" cx="260" cy="125" r="18"/><text class="node-lbl" x="260" y="130" text-anchor="middle">Y</text>
+            <path class="edge" d="M132,125 L59,125" marker-end="url(#m2a)"/>
+            <path class="edge" d="M168,125 L241,125" marker-end="url(#m2a)"/>
+            <text class="cap-c" x="300" y="121" style="font-size:12px">叉</text>
+            <text class="cap" x="300" y="137">默认开放 · 当 Z ∈ S 时被阻断</text>
+          </g>
+          <!-- collider -->
+          <g>
+            <circle class="node" cx="40" cy="208" r="18"/><text class="node-lbl" x="40" y="213" text-anchor="middle">X</text>
+            <circle class="node mem" cx="150" cy="208" r="18"/><text class="node-lbl" x="150" y="213" text-anchor="middle">Z</text>
+            <circle class="node" cx="260" cy="208" r="18"/><text class="node-lbl" x="260" y="213" text-anchor="middle">Y</text>
+            <path class="edge" d="M58,208 L131,208" marker-end="url(#m2a)"/>
+            <path class="edge" d="M242,208 L169,208" marker-end="url(#m2a)"/>
+            <text class="cap-c" x="300" y="204" style="font-size:12px">对撞节点</text>
+            <text class="cap" x="300" y="220" fill="var(--rose)" style="font-size:10px">默认被阻断 · 当 Z 或其后代 ∈ S 时被打开</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption><b>三种路径模体。</b>给定条件集 <span class="m">S</span>，一条路径是否传递依赖，是在每个中间节点上局部地决定的。项目中每一个 d-分离论证——前沿引理、选择构造——都归结为这三条规则。对撞节点是危险的那个：对它取条件<em>制造</em>依赖。</figcaption>
+    </figure>
+
+    <p>有了三条口诀,判断规则只有一句话:<strong>两个变量给定条件集 S 独立,当且仅当它们之间每一条路径都被堵住</strong>(链/叉的中间点在 S 里,或对撞点及其后代都不在 S 里)。这叫 <strong>d-分离</strong>。</p>
+
+    <div class="connect"><b>和你的项目对上:</b>对撞的例子就是你笔记里"选择(selection)"的原型:agent 的训练数据往往<strong>只保留成功的轨迹</strong>——这等于条件化在"成功"这个对撞点上,会在线索和结果之间制造出<strong>没有载体的假相关,看起来就像记忆</strong>。这就是 D3 凭证 (iii)(选择稳健性)存在的全部理由,也是 D1 为什么必须用 do 算子。</p>
+
+    <details class="quiz"><summary>练习 2:堵还是通?</summary>
+      <p>图:吸烟 → 黄手指,吸烟 → 肺病。问:(a) 黄手指和肺病相关吗?(b) 已知一个人吸不吸烟之后呢?</p>
+      <p class="ans"><b>答案:</b>(a) 相关——路径 黄手指 ← 吸烟 → 肺病 是一个叉,默认通(黄手指是肺病的"标志"但不是原因);(b) 独立——条件化共因"吸烟"把叉堵住了。</p>
+    </details>
+    <details class="quiz"><summary>练习 3(难一点):对撞的后代</summary>
+      <p>图:才华 → 录取 ← 家境,录取 → 出现在校园里。只看"出现在校园里"的人,才华和家境相关吗?</p>
+      <p class="ans"><b>答案:</b>相关。条件化对撞点<strong>的后代</strong>("出现在校园里"是"录取"的后代)同样会打开对撞。这就是为什么口诀里要加"或它的后代"。</p>
+    </details>
+
+    <div class="speak"><b>合上页面,讲给我听:</b>① 三种形状各自的默认状态和条件化后的变化,每个配一个自己的例子;② 用"录取"例子讲清为什么对撞危险;③ 它和 agent 训练数据"只留成功轨迹"有什么关系?</div>
+  </div>
+</section>
+
+<!-- ============ 第 3 课 ============ -->
+<section class="band lesson" id="l3">
+  <div class="wrap stack">
+    <p class="eyebrow">第 3 课 · 约 20 分钟</p>
+    <h2>两座桥:马尔可夫与忠实性</h2>
+    <div class="goal"><b>本课目标:</b>能说清"图"和"数据"之间靠哪两个假设连接,方向各是什么,以及哪一个在"保持期"会出问题。</div>
+
+    <p>第 2 课教你从图读出独立性。但图是我们假设的,数据是真实的——两者凭什么对得上?靠两座桥,方向相反:</p>
+    <p><strong>马尔可夫(图 ⇒ 数据):</strong>图上 d-分离的,数据里就独立。"图承诺的独立,数据兑现。"</p>
+    <p><strong>忠实性(数据 ⇒ 图):</strong>数据里独立的,图上必须 d-分离——不允许"参数恰好抵消"造出图上没有的独立。比如 A 既直接升高 B、又通过 C 降低 B,两条路恰好抵消,数据里 A、B 看起来独立,但图上明明有边。忠实性假设这种巧合不发生。</p>
+    <p>为什么两座桥都要?<strong>因果发现算法</strong>(下面第 8 课的 VARLiNGAM 家族)靠数据里的独立性反推图——这条推理用的是忠实性;而用图做预测、算该条件化什么——用的是马尔可夫。</p>
+
+    <h3>一个对你的项目致命的细节</h3>
+    <p>忠实性说的是<strong>总体</strong>(无穷数据)层面。实际中我们做的是<strong>统计检验</strong>,检验需要变化才有功效。想象冰箱监控:冷藏的东西整夜纹丝不动,看录像你什么也发现不了——<strong>不是里面没东西,是它不动,所以测不出来</strong>。记忆的"保持期"恰恰就是这种状态:\(m_t \approx m_{t-1}\),几乎不变,独立性检验在这里近乎失明。真模型的忠实性没有被破坏,但检验的功效碎了——这就是你笔记里那句"population and estimation claims are kept separate"的全部含义,也是"恢复集中在写/读边界"这个预测(P1)的机制。</p>
+
+    <div class="connect"><b>和你的项目对上:</b>引理的两半恰好各用一座桥:充分性(前沿足以屏蔽其余过去)只用马尔可夫;最小性(任何合格的记忆集都必须包含前沿)要用忠实性。Yujia 若问"你的引理花了什么假设",这就是答案。</p>
+
+    <div class="speak"><b>合上页面,讲给我听:</b>① 两座桥各自的方向和一句话解释;② 用冰箱的比喻讲"总体忠实性没坏、检验却失明"是什么意思,它和记忆的保持期有什么关系?</div>
+  </div>
+</section>
+
+<!-- ============ 第 4 课 ============ -->
+<section class="band lesson" id="l4">
+  <div class="wrap stack">
+    <p class="eyebrow">第 4 课 · 约 25 分钟</p>
+    <h2>时间进场:展开图</h2>
+    <div class="goal"><b>本课目标:</b>能解释什么是展开图、它和汇总图的区别,以及为什么"记忆"只能在展开图上定义。</div>
+
+    <p>前三课的图没有时间。现在变量随时间演化:今天的库存影响明天的库存,今天的广告影响明天的销量。表示方法有两种:</p>
+    <p><strong>汇总图:</strong>每个变量一个节点("库存""销量"),只记"库存曾在某个滞后影响销量"。紧凑,但丢掉了<strong>何时</strong>。</p>
+    <p><strong>展开图:</strong>像记账本,<strong>每天翻一页,每页把所有变量重抄一遍</strong>:库存₁、库存₂、库存₃……每个"变量 × 时刻"是一个独立节点,边只能从早指向晚。如果你训练过 RNN,这就是"沿时间展开"的同一个操作。</p>
+    <p>为什么这个项目必须用展开图?因为<strong>记忆本身就是一个关于"哪些时刻依赖哪些时刻"的命题</strong>:"读出时刻的 y 依赖写入时刻的 c,且信息一步步经由 m 传递"——在汇总图里,这整条链塌缩成 m 上的一个自环,"在第 s 步切断链条"这句话根本无法表述。</p>
+    <p>三个附带概念,一句话各:<strong>滞后边</strong>(跨页的边,方向由时间白送,发现算法不用猜);<strong>瞬时边</strong>(同一页内的边,仍需定向);<strong>窗口 W</strong>(算法往回看几页——工程超参数,扫一遍即可,不是理论上限;这是 Yujia 明确说过的)。</p>
+
+    <div class="connect"><b>和你的项目对上:</b>会上 Yujia 复述你们的设定时说的就是这个:"每个时间步有一组变量,时间步之间有依赖关系——这就是 temporal causal graph"。你笔记 §2 的第一行公式,就是给这本"账本"的每一页写下生成规则。</p>
+
+    <details class="quiz"><summary>练习 4:为什么汇总图不够?</summary>
+      <p>用一句话回答:为什么"agent 在第 3 步记住了密码、第 10 步用它开门"这件事在汇总图上说不出来?</p>
+      <p class="ans"><b>答案:</b>汇总图里只有"密码→记忆→门"三个节点和自环,没有"第 3 步""第 10 步"这些对象;而这件事的全部内容恰恰是特定时刻之间的依赖——只有把每个时刻展开成独立节点才能陈述。</p>
+    </details>
+
+    <div class="speak"><b>合上页面,讲给我听:</b>① 用记账本或 RNN 的比喻讲什么是展开图;② 汇总图丢了什么?③ 滞后边为什么"方向白送"?</div>
+  </div>
+</section>
+
+<!-- ============ 第 5 课 ============ -->
+<section class="band lesson" id="l5">
+  <div class="wrap stack">
+    <p class="eyebrow">第 5 课 · 约 30 分钟</p>
+    <h2>记忆的最小标本:写–保持–读</h2>
+    <div class="goal"><b>本课目标:</b>能画出模体的图,说清每个字母是什么、两个旋钮控制什么、"外部记忆库"为什么是同一个对象。</div>
+
+    <h3>一个具体的故事</h3>
+    <p>朋友在电话里报给你一个门牌号(<strong>写入</strong>:线索 c 进入你的脑子,变成记忆 m);你骑车穿过五条街,一路默念,街上车水马龙与门牌号无关(<strong>保持</strong>:m 几乎不变地往前传,旁边全是干扰 d);到了楼下,你按记忆敲门(<strong>读取</strong>:读出 y 由 m 和现场情况共同决定)。这就是全部——项目里每一个定理、每一个实验,都在这个五条街的故事上陈述:</p>
+
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 0 720 300" role="img" aria-label="写入–保持–读取模体：线索被写入记忆潜变量，跨延迟保持，随后读取为读出，干扰变量沿底部并行汇入读出。">
+          <defs>
+            <marker id="a" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker>
+            <marker id="ac" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark-c"/></marker>
+          </defs>
+          <!-- cue -->
+          <circle class="node" cx="60" cy="70" r="26"/><text class="node-lbl" x="60" y="75" text-anchor="middle">c</text>
+          <text class="cap" x="60" y="38" text-anchor="middle">线索 · 每幕重采样</text>
+          <!-- memory chain -->
+          <g>
+            <rect class="mem" x="34" y="128" width="52" height="44" rx="10"/><text class="node-lbl" x="60" y="155" text-anchor="middle">m<tspan dy="4" font-size="10">t₀</tspan></text>
+            <rect class="mem" x="196" y="128" width="60" height="44" rx="10"/><text class="node-lbl" x="226" y="155" text-anchor="middle">m<tspan dy="4" font-size="10">t₀+1</tspan></text>
+            <text class="node-lbl" x="360" y="156" text-anchor="middle" style="font-size:20px">···</text>
+            <rect class="mem" x="470" y="128" width="52" height="44" rx="10"/><text class="node-lbl" x="496" y="155" text-anchor="middle">m<tspan dy="4" font-size="10">t₁</tspan></text>
+          </g>
+          <!-- readout -->
+          <circle class="node" cx="650" cy="70" r="26"/><text class="node-lbl" x="650" y="75" text-anchor="middle">y</text>
+          <text class="cap" x="650" y="38" text-anchor="middle">读出</text>
+          <!-- distractors -->
+          <circle class="node" cx="60" cy="250" r="22"/><text class="node-lbl" x="60" y="255" text-anchor="middle">d</text>
+          <circle class="node" cx="226" cy="250" r="22"/><text class="node-lbl" x="226" y="255" text-anchor="middle">d</text>
+          <text class="node-lbl" x="360" y="255" text-anchor="middle" style="font-size:20px">···</text>
+          <circle class="node" cx="496" cy="250" r="22"/><text class="node-lbl" x="496" y="255" text-anchor="middle">d</text>
+          <text class="cap" x="278" y="292" text-anchor="middle">干扰变量 · 全程满秩动力学</text>
+          <!-- edges: write -->
+          <path class="edge-c" d="M60,96 L60,124" marker-end="url(#ac)"/>
+          <text class="cap-c" x="70" y="116">写入 · u=write</text>
+          <!-- hold -->
+          <path class="edge-c" d="M88,150 L192,150" marker-end="url(#ac)"/>
+          <path class="edge-c" d="M258,150 L332,150" marker-end="url(#ac)"/>
+          <path class="edge-c" d="M388,150 L466,150" marker-end="url(#ac)"/>
+          <text class="cap-c" x="300" y="120" text-anchor="middle">保持 · m_t = m_{t-1} + σ·ε_t</text>
+          <!-- read -->
+          <path class="edge-c" d="M520,132 C580,110 600,96 626,84" marker-end="url(#ac)"/>
+          <text class="cap-c" x="600" y="128" text-anchor="middle">读取 · u=read</text>
+          <!-- distractor edges -->
+          <path class="edge" d="M82,250 L202,250" marker-end="url(#a)"/>
+          <path class="edge" d="M248,250 L332,250" marker-end="url(#a)"/>
+          <path class="edge" d="M388,250 L472,250" marker-end="url(#a)"/>
+          <path class="edge" d="M517,236 C580,205 604,120 640,92" marker-end="url(#a)"/>
+          <!-- delta bracket -->
+          <path class="edge" style="stroke-dasharray:3 3" d="M60,188 L60,200 L496,200 L496,188"/>
+          <text class="cap" x="278" y="216" text-anchor="middle">延迟  Δ = t₁ − t₀</text>
+        </svg>
+      </div>
+      <figcaption><b>写入–保持–读取模体</b>——“记忆”作为一个良定义的图性质所依托的最小结构。两个旋钮统领整个项目：保持噪声 <span class="m">σ</span> 与延迟 <span class="m">Δ</span>。所有困难都存在于 <span class="m">σ</span>→0、<span class="m">Δ</span> 较大的角落。负载-<span class="m">k</span> 同时运行 <span class="m">k</span> 个项，同时或错开地写入/读取。</figcaption>
+    </figure>
+
+    <p>模体里只有四类角色:<strong>c 线索</strong>(每一幕重新随机——朋友每次报不同的门牌号,这个"多样性"以后是辨识的本钱)、<strong>m 记忆潜变量</strong>(青色链条,即"载体")、<strong>y 读出</strong>、<strong>d 干扰</strong>(一直在丰富地变化,防止方法靠"忽略世界"作弊)。</p>
+    <p>两个旋钮统治一切难度:<strong>保持噪声 σ</strong>(默念得多稳?σ=0 是一字不差)和<strong>延迟 Δ</strong>(骑几条街?)。所有困难都住在 <strong>σ→0 且 Δ 大</strong>的角落——记得第 3 课的冰箱吗?越稳定的记忆,检验越看不见它。</p>
+    <p>最后一个漂亮的观察:<strong>外部记忆库(向量数据库、笔记本)在图上就是 σ=0 加上门控读写边的特例</strong>——把号码写在手机备忘录里,备忘录就是一个"绝对不动的 m"。所以"内部记忆 vs 外部记忆"的区分在图的层面消失了,证明的定理同时覆盖两者。</p>
+
+    <div class="connect"><b>和你的项目对上:</b>笔记 §2 那三段公式(write/hold/read)就是这个故事的形式化。"写入"和"读取"这两个<strong>离散事件</strong>怎么住进一个平稳模型?答案是 A2 的门控:机制永远不变,一个观测标签 u_t(write/hold/read)决定哪些边通电——会上 Yujia 把 u_t 叫作 <strong>auxiliary variable</strong>,并说"每个标签一张不同边集的图,makes sense",这条已获他认可。</p>
+
+    <div class="speak"><b>合上页面,讲给我听:</b>① 用门牌号的故事把 c、m、y、d、σ、Δ 全部指认一遍;② 为什么说外部记忆库是同一个对象?③ u_t 是什么,它解决了什么矛盾?</div>
+  </div>
+</section>
+
+<!-- ============ 第 6 课 ============ -->
+<section class="band lesson" id="l6">
+  <div class="wrap stack">
+    <p class="eyebrow">第 6 课 · 约 35 分钟</p>
+    <h2>该记住什么:因果前沿 F<sub>t</sub></h2>
+    <div class="goal"><b>本课目标:</b>能用自己的话定义前沿、在小图上把它算出来,并讲出"唯一最小"两半各靠什么。</div>
+
+    <h3>下班打包问题</h3>
+    <p>今天下班(时刻 t),桌上摊着一整天的材料。明天有个任务 Y。你要贴<strong>最少的便签</strong>,保证明天不用翻今天之前的任何东西。该贴哪些?两个原则:<strong>已经交接掉的不用贴</strong>(上午的草稿内容已并入下午的定稿,贴定稿就够了);<strong>和明天任务无关的不用贴</strong>(今天的外卖单再新也不贴)。剩下的——"到此刻为止、还会直接影响明天任务链条"的那几张——就是<strong>因果前沿 F_t(Y)</strong>。</p>
+    <p>形式化只有一句话:<strong>F_t(Y) = 过去的节点中,有一条边直接指向"未来且是任务 Y 的祖先"的那些</strong>。三个关键词:过去的节点;有边跨过"现在"这条线;落点必须通向任务。</p>
+
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 0 600 260" role="img" aria-label="跨四个时间步的前沿实例，边界位于 t=2，任务 Y 等于 y4。前沿 F2 为 m2 与 q1，二者均高亮。">
+          <defs><marker id="m3a" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" class="amark"/></marker></defs>
+          <!-- columns t1..t4 -->
+          <!-- c1 -->
+          <circle class="node" cx="55" cy="38" r="18"/><text class="node-lbl" x="55" y="43" text-anchor="middle">c₁</text>
+          <!-- m row -->
+          <circle class="node" cx="55" cy="100" r="18"/><text class="node-lbl" x="55" y="105" text-anchor="middle">m₁</text>
+          <circle class="node mem" cx="220" cy="100" r="19"/><text class="node-lbl" x="220" y="105" text-anchor="middle">m₂</text>
+          <circle class="node" cx="385" cy="100" r="18"/><text class="node-lbl" x="385" y="105" text-anchor="middle">m₃</text>
+          <circle class="node" cx="545" cy="100" r="18"/><text class="node-lbl" x="545" y="105" text-anchor="middle">y₄</text>
+          <!-- q row -->
+          <circle class="node mem" cx="55" cy="162" r="19"/><text class="node-lbl" x="55" y="167" text-anchor="middle">q₁</text>
+          <circle class="node" cx="385" cy="162" r="18"/><text class="node-lbl" x="385" y="167" text-anchor="middle">r₃</text>
+          <!-- d row -->
+          <circle class="node" cx="55" cy="224" r="18"/><text class="node-lbl" x="55" y="229" text-anchor="middle">d₁</text>
+          <circle class="node" cx="220" cy="224" r="18"/><text class="node-lbl" x="220" y="229" text-anchor="middle">d₂</text>
+          <circle class="node" cx="385" cy="224" r="18"/><text class="node-lbl" x="385" y="229" text-anchor="middle">d₃</text>
+          <circle class="node" cx="545" cy="224" r="18"/><text class="node-lbl" x="545" y="229" text-anchor="middle">d₄</text>
+          <!-- edges -->
+          <path class="edge" d="M55,56 L55,82" marker-end="url(#m3a)"/>
+          <path class="edge" d="M73,100 L201,100" marker-end="url(#m3a)"/>
+          <path class="edge" d="M239,100 L367,100" marker-end="url(#m3a)"/>
+          <path class="edge" d="M403,100 L527,100" marker-end="url(#m3a)"/>
+          <path class="edge" d="M73,162 L367,162" marker-end="url(#m3a)"/>
+          <path class="edge" d="M401,150 C470,130 500,120 531,110" marker-end="url(#m3a)"/>
+          <path class="edge" d="M73,224 L202,224" marker-end="url(#m3a)"/>
+          <path class="edge" d="M238,224 L367,224" marker-end="url(#m3a)"/>
+          <path class="edge" d="M403,224 L527,224" marker-end="url(#m3a)"/>
+          <!-- boundary -->
+          <path style="stroke:var(--ink-faint);stroke-width:1.4;stroke-dasharray:5 4" d="M302,18 L302,246"/>
+          <text class="cap" x="302" y="14" text-anchor="middle">当前：t = 2</text>
+        </svg>
+      </div>
+      <figcaption><b>前沿实例演算</b>，<span class="m">Y</span> = {<span class="m">y₄</span>}。高亮节点构成 <span class="m">F₂</span> = {<span class="m">m₂</span>, <span class="m">q₁</span>}——两个节点而非六个。<span class="m">m₁</span> 被 <span class="m">m₂</span> 屏蔽（它所知的一切都已传递下去）；<span class="m">d₂</span> 有一个未来子节点，但并非对任务重要的那种；<span class="m">q₁</span> 表明前沿可以回溯到当前切片<em>之前</em>。</figcaption>
+    </figure>
+
+    <p>照着图走一遍定义(这就是你以后在白板上要做的):m₂ 有孩子 m₃,m₃ 通向 y₄ ✓ 入选;q₁ 的孩子 r₃ 通向 y₄ ✓ 入选——<strong>注意它从时刻 1 直接跨线,前沿不是"第 t 页"</strong>;m₁ 的孩子只有 m₂,没跨线 ✗(它知道的都交接给 m₂ 了);d₂ 有未来的孩子 d₃,但 d₃ 不通向任务 ✗。结果:六个过去节点,只需记两个。</p>
+
+    <h3>引理在说什么(先懂,再证)</h3>
+    <p><strong>充分性:</strong>条件化 F_t 后,过去的其余部分与 Y 独立——每条从过去通往 Y 的路径都必须跨线,跨线处的节点恰好被 F_t 拿住(只用马尔可夫)。<strong>最小性:</strong>少贴任何一张便签 f,路径 f→…→y 是一条全在未来、无对撞的直路,依然活着,忠实性把"活着"升级为"真的相关"——所以每个合格的记忆集都必须包含整个 F_t。两半合起来:<strong>F_t 是唯一的最小充分记忆</strong>。</p>
+
+    <div class="connect"><b>和你的项目对上(这是全课程的高光时刻):</b>会上 Yujia 主动问"辨识出时序结构后怎么用?朴素的想法是——下游任务不要依赖全部历史,只依赖和未来相关的那些时间步"。<strong>他口头描述的就是 F_t</strong>,而你手里有他"朴素版"没有的东西:唯一最小性的引理。他接着说"更进一步,不只选时间步,还要选时间步里的具体变量"——注意,<strong>前沿本来就是变量级的</strong>(它选的是节点 = 变量 × 时刻,不是整页)。下次可以直接说:the frontier is already variable-level — it selects nodes, not slices。</p>
+
+    <details class="quiz"><summary>练习 5:自己算一个前沿</summary>
+      <p>图:a₁ → a₂ → b₃ → y₄,c₂ → y₄,d₁ → d₂(d 与 y 无关)。现在 t=2,任务 Y={y₄}。F₂ 是什么?</p>
+      <p class="ans"><b>答案:</b>{a₂, c₂}。a₂ 有孩子 b₃(未来,y₄ 的祖先)✓;c₂ 有孩子 y₄(未来,任务本身)✓;a₁ 的孩子 a₂ 在过去 ✗(被 a₂ 屏蔽);d 系全部无关 ✗。</p>
+    </details>
+
+    <div class="speak"><b>合上页面,讲给我听:</b>① 用便签的比喻讲前沿是什么;② 对着算例把四类节点(入选两种、落选两种)各讲一个;③ 充分性和最小性各用哪座桥?④ Yujia 会上那段"how to leverage"和 F_t 是什么关系?</div>
+  </div>
+</section>
+
+<!-- ============ 第 7 课 ============ -->
+<section class="band lesson" id="l7">
+  <div class="wrap stack">
+    <p class="eyebrow">第 7 课 · 约 25 分钟</p>
+    <h2>两层:你能看见什么,决定问题多难</h2>
+    <div class="goal"><b>本课目标:</b>能讲清 Layer 1 / Layer 2 的分界线在哪,KV cache 属于哪层、为什么,以及项目为什么先做 Layer 1。</div>
+
+    <p>同一个隐藏过程,难度完全取决于<strong>观测通道</strong>:</p>
+    <p><strong>Layer 1(全观测):</strong>体检报告——血压、血糖每一项指标都直接在表上。变量已知,只需回答"谁影响谁":这是<strong>时序因果发现</strong>问题,输入一张表,输出一张图。</p>
+    <p><strong>Layer 2(潜变量):</strong>只有 CT 影像——你关心的器官状态藏在像素背后,必须先从 x = g(z) <strong>反演出变量的取值</strong>,然后才谈得上结构。这是<strong>因果表示学习</strong>,难一个数量级,因为无穷多套"变量+结构"能生成同样的数据(可辨识性问题,Layer 2 阶段再学)。</p>
+
+    <h3>会上的两个关键判定(务必记住)</h3>
+    <p><strong>其一,"记忆本质上是潜的":</strong>Yujia 原话——"memory should be something latent, right? If everything is observed, then it's not a memory, it's just a direct observation."(全都看得见的话,那不叫记忆,叫直接观测。)这句话把 Layer 2 定为"记忆"的本命场景,值得原样写进 v0.2 的动机。</p>
+    <p><strong>其二,KV cache 是 Layer 1,不是 Layer 2:</strong>很多 agent-memory 工作把 KV cache、开源模型的激活层叫"内部/潜在记忆"。但只要模型开源,这些数字<strong>拿得到</strong>——从这个框架看它们就是<strong>观测变量</strong>,对应的是更简单的 Layer-1 表述。这是 Yujia 对你笔记唯一的实质纠正("internal state"的措辞要改:可访问的内部 ≠ 隐藏的内部)。他还给了 Layer 2 的标准实例:<strong>x = agent 各轮的回复,z = 隐空间里的"想法"</strong>——它记住了什么、在计划什么。</p>
+
+    <h3>为什么先做 Layer 1</h3>
+    <p>他给的路线:把现有 KV-cache 式记忆工作<strong>统一</strong>进"agent memory with observed state"这个表述,用时序因果发现注入结构(比如只依赖前沿而不是全历史),看能否提升它们的性能——"that contribution can be a paper by itself"。做出来之后,再进 Layer 2 挖真正潜在的记忆。先易后难,每一步都能独立成果。</p>
+
+    <div class="speak"><b>合上页面,讲给我听:</b>① 用体检报告 vs CT 的比喻讲两层的分界;② 为什么 KV cache 算观测?"内部"和"隐藏"差在哪?③ 复述"memory should be latent"这句话的含义;④ Layer-1 论文的一句话定位。</div>
+  </div>
+</section>
+
+<!-- ============ 第 8 课 ============ -->
+<section class="band lesson" id="l8">
+  <div class="wrap stack">
+    <p class="eyebrow">第 8 课 · 约 35 分钟</p>
+    <h2>VARLiNGAM 入门</h2>
+    <div class="goal"><b>本课目标:</b>能说清 VARLiNGAM 的两个组成部分、它输出什么、靠什么定方向,以及对你们设定的一个潜在不匹配(值得问 Yujia 的那种)。</div>
+
+    <h3>拆名字:VAR + LiNGAM</h3>
+    <p><strong>VAR(向量自回归):</strong>"今天的每个变量 = 昨天(和前几天)所有变量的加权和 + 噪声"。写成 <span class="m">x_t = B₁x_{t−1} + ⋯ + B_τx_{t−τ} + e_t</span>。矩阵 B₁ 的第 (i,j) 格就是"昨天的变量 j 对今天的变量 i 的影响"——<strong>滞后边的权重表</strong>。这部分是普通回归,方向由时间白送(第 4 课)。</p>
+    <p><strong>LiNGAM(线性非高斯无环模型):</strong>负责难的那半——<strong>同一时刻内</strong>的瞬时边 B₀ 怎么定向?这里时间帮不上忙。LiNGAM 的洞见:如果噪声是<strong>高斯</strong>的,x→y 和 y→x 拟合得一样好,方向原则上分不出来(高斯太"圆",没有指纹);但只要噪声<strong>非高斯</strong>(偏的、尖的、重尾的),错误方向的残差会和输入变量露出统计依赖的马脚——非高斯性就是留在数据里的指纹,靠它可以<strong>唯一确定</strong>方向。</p>
+    <p>合起来,VARLiNGAM 的输出就是两组矩阵:<strong>B₀(瞬时图)+ B₁…B_τ(滞后图)</strong>——恰好是你们展开图的一页之内和跨页的全部边。这就是 Yujia 点名它做 Layer-1 入口的原因:它是"全观测时序因果发现"的经典基线,而且有现成的 Python 包(<code>lingam</code>)。</p>
+
+    <h3>诚实的一句话:它的假设 vs 你们的设定</h3>
+    <p>VARLiNGAM 假设<strong>线性、平稳、无隐混淆</strong>。你们的模体里有两处潜在不匹配:①写入/读取是<strong>门控切换</strong>(不同区制不同机制),而 VARLiNGAM 假设一套恒定的矩阵——直接跑会把"有时通电、有时断电"的边平均掉;②保持期近确定性(σ→0),对任何检验都难。<strong>这不是坏消息,这是好的讨论素材</strong>:是分区制各跑一遍(按 u_t 切数据),还是用非平稳方法?——这正是"学到东西后自然知道该和 Yujia 聊什么"的实例。</p>
+
+    <div class="connect"><b>动手作业(比读十遍论文有用):</b>我给你搭一个三变量的玩具时序 SCM 数据生成器,你来跑 <code>lingam.VARLiNGAM</code>,对着恢复出的 B₀、B₁ 回答:哪条边找对了?哪条错了?把 σ 调小(保持期变稳)再跑,看哪些边先丢——你会亲眼看到第 3 课冰箱比喻变成数字。跑完把矩阵截图发给我,我们一起解读。</p>
+
+    <div class="speak"><b>合上页面,讲给我听:</b>① VAR 管什么、LiNGAM 管什么?② 为什么高斯噪声定不了方向、非高斯可以?(用"指纹"讲)③ 它输出的两组矩阵对应展开图的什么?④ 它和你们模体的哪两处假设可能不匹配?</div>
+  </div>
+</section>
+
+<!-- ============ 结课 ============ -->
+<section class="band lesson" id="final">
+  <div class="wrap stack">
+    <p class="eyebrow">结课 · 通关检查</p>
+    <h2>自测清单,和值得带去见 Yujia 的话题</h2>
+
+    <h3>通关自测(全部能脱稿讲,才算毕业)</h3>
+    <ul class="checklist">
+      <li>用温度计例子讲 do(·);一句话说清为什么不是知识图谱</li>
+      <li>三种路径形状 + 各一个自己的例子;录取例子讲对撞与选择</li>
+      <li>两座桥的方向;冰箱比喻讲"保持期检验失明"</li>
+      <li>记账本比喻讲展开图;为什么记忆必须在展开图上定义</li>
+      <li>门牌号故事讲全模体;u_t 解决了什么矛盾</li>
+      <li>便签比喻 + 算例讲前沿;引理两半各用哪座桥</li>
+      <li>体检/CT 比喻讲两层;KV cache 为什么是 Layer 1</li>
+      <li>VARLiNGAM 两个部件、输出、非高斯指纹、两处不匹配</li>
+    </ul>
+
+    <h3>学完自然浮现的、值得和 Yujia 交流的话题</h3>
+    <div class="grid two">
+      <div class="card stack"><span class="tag">方法适配</span><p>VARLiNGAM 假设恒定机制,我们的边是门控的——按 u_t 分区制分别估计,还是上非平稳方法(如 CD-NOD 类)?(第 8 课)</p></div>
+      <div class="card stack"><span class="tag">前沿的粒度</span><p>您说的"变量级依赖"——前沿本身就是节点级对象;那么 Layer-1 论文里,掩码就用 F̂_t 吗?软化版(带权重)要不要?(第 6 课)</p></div>
+      <div class="card stack"><span class="tag">评价对象</span><p>要统一的 KV-cache 记忆工作,以哪几篇为代表?对照实验的任务和指标怎么选?(第 7 课)</p></div>
+      <div class="card stack"><span class="tag">保持期难题</span><p>近确定性保持导致检验失明是 Layer-1 绕不开的坑——写/读边界恢复好、保持段恢复差,这个预测值得先在玩具数据上验证吗?(第 3 课)</p></div>
+    </div>
+
+    <h3>毕业后的下一步</h3>
+    <p>① 跑完 VARLiNGAM 玩具实验并能解读;② <strong>你自己</strong>用中文写一页"我的理解",硬规则:每句话都能脱稿讲;③ 我当 Yujia 把你问穿;④ 你自己翻成英文,我只标错不代写——那就是 v0.2。</p>
+    <p class="small">参考手册(总览 / 理论 / 表述 / 计划)仍在,课程学完后它们会突然变得能读了——那是查阅用的地图,不是入门的路。</p>
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="foot-in">
+    <b>因果记忆 · 零基础课程</b> —— 八节课,用自己的话讲清这个项目。<br/>
+    学习方式:每课学完,回到对话里「讲给我听」;讲不出来 = 还没学会。<br/>
+    配套参考手册:总览 · 理论 · 表述 · 计划(顶栏链接)。
+  </div>
+</footer>
