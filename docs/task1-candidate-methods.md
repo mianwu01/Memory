@@ -108,8 +108,13 @@ M_t → TCD → C_t ;   M_t^causal = C_t ⊙ M_t ;   → existing memory system 
 ```
 
 - **MemoryAgentBench**：`all_context_chunks` 就是 `List[List[str]]`，`initialization.py::_memorize_context_chunks` 逐条喂 → `M_t` 可枚举 ✅
-- **MemoryArena**：统一接口只有 `add_chunk` / `wrap_user_prompt`，**后者返回拼好的 prompt 字符串而非记忆列表**；
-  13 个异构后端没有统一的"枚举当前记忆集"操作 → `C_t ⊙ M_t` **在其统一接口上表达不出来** ❌
+- **MemoryArena**：统一接口只有 `add_chunk` / `wrap_user_prompt`，后者返回拼好的 prompt 字符串而非记忆列表；
+  13 个异构后端没有统一的"枚举当前记忆集"操作。
+
+> ⚠️ **上面那条对 MemoryArena 的否定判断已修正**（见 `form-a-representation.md` §6.9）。
+> 它只在"去 mask 别人的记忆系统"这个前提下成立。正确做法是**我们自己注册成一个记忆系统** ——
+> 实现 `add_chunk` / `wrap_user_prompt` 并注册进 `MEMORY_FACTORIES`，`M_t` 由我们自己持有因而可枚举，
+> mask 在 `wrap_user_prompt` 内部施加。约一天工作量，且天然与其余 13 套同台对比。
 
 > ⚠️ **本节原先那句「数千 chunk 正是 500–5000 变量区间」已作废** —— 那是把时间步当成了变量。
 > chunk 是按序喂入的**时间步**（`T`），不是变量（`d`）。
