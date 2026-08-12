@@ -290,6 +290,100 @@ knowledge-update 的 gold 包含**已被覆盖的旧值**所在 session。所以
 
 ---
 
+## 6.6 `Y_q` vs `E(q)` 小样本实验（30 例，已完成）
+
+**设计**：30 例分层抽样（multi-session 10、temporal-reasoning 8、knowledge-update 7、preference 5，剔除 abstention）。
+**先只看题目盲写**语义扩展词、落盘固定，**之后才揭 gold**。用同一套 BM25 客观打分，
+避免"我事后比对 slot 集合"式的自圆其说。
+
+- **A** = query 原文（≈ 字面目标 `Y_q`）
+- **B** = query + 盲写语义扩展（≈ `E(q)`）
+
+| k | A recall | B recall | Δ |
+|---|---|---|---|
+| 1 | 0.408 | 0.536 | +0.128 |
+| 2 | 0.750 | 0.867 | +0.117 |
+| 3 | 0.836 | 0.925 | +0.089 |
+| 5 | 0.914 | 0.958 | +0.044 |
+| **10** | **0.958** | **0.969** | **+0.011** |
+
+按题型（recall@5）：
+
+| 题型 | A | B | Δ |
+|---|---|---|---|
+| multi-session | 0.917 | **1.000** | +0.083 |
+| temporal-reasoning | 0.781 | 0.844 | +0.062 |
+| knowledge-update | 1.000 | 1.000 | 0.000 |
+| single-session-preference | 1.000 | 1.000 | 0.000 |
+
+### 残差：`B@5` 仍漏掉的只有 3 例，且全是 temporal-reasoning
+
+| # | 题 | 漏掉 |
+|---|---|---|
+| 11 | Which group did I join **first**, 'Page Turners' or 'Marketing Professionals'? | idx 14 |
+| 15 | I mentioned participating in a sports event **two weeks ago**. What was the event? | idx 11, 32 |
+| 17 | How many months since I participated in two charity events **on consecutive days**? | idx 6 |
+
+**三例的共同点：约束是时间算术（"first"、"two weeks ago"、"consecutive days"），不是内容。**
+字面与语义匹配都用不上这种约束 —— 但解决它的是**日期索引**（LongMemEval 现成提供
+`question_date` 与 `haystack_dates`），**不是因果发现**。
+
+### ❌ 结论：`G` 在 LongMemEval 上没有可证明的空间
+
+```
+E(q)  ≈  An_G(Y_q)        —— 语义扩展已经吃掉几乎全部可解释部分
+残差   =  时间记账，用日期过滤解决，与因果结构无关
+```
+
+`k=10` 时语义扩展只比字面 query 多 **+0.011**；而 gold 只占 4%、召回天花板本就很近。
+**没有出现"语义相关性解释不了、却能由时序依赖结构系统预测"的那部分。**
+
+### 必须声明的三条局限
+
+1. **n=30**，且偏向难题型，置信区间宽。
+2. `E(q)` 是**我**盲写的，比朴素 LLM 扩展可能更强 —— 这会让 B 偏强、从而**偏向"因果无空间"这个结论**。
+   但即便 B 弱一些，天花板仍受"gold 占 4%、BM25@10 已 0.95"限制。
+3. **本实验只测了召回轴，没测压缩轴。** 因果结构仍有可能在
+   "同等 QA 质量下保留更少记忆"上有贡献 —— 这一点**未被证伪，也未获得任何正信号**。
+
+---
+
+## 6.7 战略结论：LongMemEval 降级为诊断/压缩基准
+
+| 组件 | 处置 | 理由 |
+|---|---|---|
+| **GRACE** | **保留** | 仍是合理的 Layer-1 TCD 引擎，问题不在它 |
+| **MemoryAgentBench** | **保留** | 作为 plug-in 集成 / 评测 harness 很好用 |
+| **LongMemEval** | **降级** | 任务语义主要是 evidence retrieval + 时间记账，不是生成机制中的因果依赖 |
+
+**不要下载 `longmemeval_m`（2.7 GB）。** `T` 不足已经不是第一阻塞点了 ——
+把 `T` 从 48 提到 500，只会让 GRACE 更稳定地学到一张**对该任务无用的图**。
+
+### 主指标应改为 accuracy–compression Pareto
+
+| 横轴 | 纵轴 |
+|---|---|
+| 保留的记忆量（sessions / tokens / 占原始历史比例） | 下游 QA accuracy |
+
+对照：full memory / BM25 top-k / typed retrieval / semantic typed retrieval / causal typed retrieval。
+想看到的是「**同等 accuracy，显著更少 memory**」。evidence recall 与 mask F1 退为诊断量。
+
+### ⚠️ 一个反噬我自己 Task-2 选型的观察
+
+Yujia 最初描述的是 `s_{t-k} → s_t → a_t` 这种**动态过程**：当前状态该依赖哪些过去状态、
+并据此 condition 行动。LongMemEval 是 `{documents} + q → retrieve → a`，**不是同一回事**。
+
+而"agent 行动 → 观测 → 写记忆 → 再行动"的结构，恰恰是 **MemoryArena 有、LongMemEval 没有**的。
+
+我此前把 Task 2 判给 MemoryAgentBench，理由是 `M_t` 可枚举、插入方便 —— 那个理由在工程上仍然成立，
+但本实验提示：**当时优化的可能是错的维度**（可插入性 vs 任务语义是否真的含因果结构）。
+MemoryArena 的接口障碍（`wrap_user_prompt` 只返回拼好的字符串）是真的，但那是工程问题；
+任务语义不对则是研究问题，后者更贵。
+
+**这不意味着放弃因果记忆项目**，而是：**平台工程上选对了，任务语义没选对。**
+
+---
+
 ## 7. 若 Form A 通不过
 
 退路是**放弃 TCD 形式化、只保留 gating**：不定义 `X_t / d / T`，
