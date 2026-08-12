@@ -131,10 +131,23 @@ turn 级 `has_answer` 留作后续更细粒度的 ablation。
 `layer1-method-pairing.md` §5 已指出：这里是 `short T + growing variable set + sample-specific variables`，不是标准 TCD。具体处理：
 
 - **不跨样本共享变量身份。** 每个 question 的 haystack 独立成图 —— "每个样本一张图"，而不是"所有样本共用一张图"。
-- 因此 gate 的参数**不能**按 `(i, j)` 索引（GRACE 原版是这么做的）。必须改成 **content-conditioned gate**：输入 `(query 表示, memory 表示, 位置/时间特征)`，输出一个标量 logit，再走 Hard Concrete。**参数在样本间共享，变量身份不共享。**
+- 因此 gate 的参数**不能**按边索引。必须改成 **content-conditioned gate**：输入 `(query 表示, memory 表示, 位置/时间特征)`，输出一个标量 logit，再走 Hard Concrete。**参数在样本间共享，变量身份不共享。**
 
-> 这是对 GRACE 的**实质改造**，不是直接调用 —— 与 pairing doc §5 的措辞红线一致：
+**这一点已在参考实现层面确认**（`causalts/grace/gated_discovery.py`）：
+
+```python
+self.log_alpha = nn.Parameter(torch.zeros(num_vars, Lp1, num_vars))   # [cause, lag, effect]
+nn.init.constant_(self.log_alpha, -0.5)                               # 初始偏关
+```
+
+gate 是**每条边一个自由标量参数**，形状直接由变量数决定。所以在"变量身份跨样本不一致"的设定里，这套参数化**根本无法迁移** —— 不是不优雅，是维度对不上。
+
+> 因此这是对 GRACE 的**实质改造**，不是直接调用 —— 与 pairing doc §5 的措辞红线一致：
 > *Use GRACE's skeleton-and-gating principle to build a causal-inspired refinement module.*
+
+**一个现成的接入点**：参考实现的 `_NonlinearEncoder` 是"共享 MLP + 每个 `(cause, lag)` 一个可学 embedding（dim 8）"。
+我们要做的替换很自然 —— **把那个按身份索引的可学 embedding，换成该条 memory 的内容 embedding**。
+结构不动，只是 embedding 的来源从"查表"变成"编码内容"。这比"另起炉灶"好讲得多。
 
 ---
 
@@ -144,15 +157,46 @@ turn 级 `has_answer` 留作后续更细粒度的 ablation。
 
 ```
 编码：  复用现有 embedding retriever 的 encoder，不另训
-gate：  α_i = MLP([e_q ; e_i ; e_q ⊙ e_i ; pos_i])  →  Hard Concrete  →  z_i ∈ [0,1]
-损失：  L_task  +  λ · L0
-输出：  M = { i : z_i > 0.5 }
+gate：  log α_i = MLP([e_q ; e_i ; e_q ⊙ e_i ; pos_i])  →  Hard Concrete  →  z_i ∈ [0,1]
+聚合：  ŷ = Σ_i z_i · h_i                       ← 对应 GRACE 的 per-effect gated aggregation
+解码：  (μ, log σ) = MLPDecoder(ŷ)
+损失：  NLL  +  λ · Σ_i P(z_i ≠ 0)
+输出：  M = { i : z_i > threshold }
 ```
 
-沿用 GRACE 的解析 L0：`P(z ≠ 0) = sigmoid(log α − τ log(−γ/ζ))`，以及 **0.5 天然阈值**。
+### 6.1 参考实现的具体形状（`causalts/grace/gated_discovery.py`，已核对）
 
-> GRACE 原文报告 gate 值呈清晰双峰、无需 post-hoc threshold tuning。
-> **这个双峰在 memory 场景是否复现，本身就是一个值得单独报告的结果**（见 §11 第 7 步）。
+可直接照搬的部分：
+
+| 组件 | 参考实现 | 我们 |
+|---|---|---|
+| Hard Concrete 采样 | `u ~ U(ε, 1−ε)`；`s = sigmoid((log u − log(1−u) + log α)/τ)`；`z̄ = s(ζ−γ)+γ`；`z = clamp(z̄, 0, 1)` | 照搬 |
+| 超参 | `τ` = temperature，`γ = −0.1`，`ζ = 1.1`（Louizos et al. 2018 原值） | 照搬 |
+| L0 惩罚 | `P(z≠0) = sigmoid(log_alpha − temperature · log(−γ/ζ))`，求和后乘 `lambda_l0 * _l0_scale` | 照搬 |
+| Decoder | `_MLPDecoder`：每个 effect 一个独立 MLP，输出 `(μ, σ)`，默认 2 层 × 64，SiLU | 我们只有一个 effect（answer），退化成单个 decoder |
+| Encoder | 线性 + 基展开 `[x, x², |x|]`，或 `_NonlinearEncoder`（共享 MLP + per-(cause,lag) embedding，dim 8，hidden 32） | **替换 embedding 来源**，见 §5 |
+
+**不适用于我们的部分**：损失里还有第三项 `lambda_lag_group · Σ max(0, lags_per_pair − max_lags_per_pair)` ——
+这是约束"同一对变量占用的 lag 数"的，session 级设定里没有 lag 维度，**直接去掉**。
+
+### 6.2 ⚠️ 修正："0.5 天然阈值"要打折扣
+
+论文报告 gate 值双峰、0.5 可直接切。但**参考实现的主入口不是单次训练**：
+
+```
+run_stability_selection(df, max_lag, lambda_grid, n_subsamples, stability_threshold, use_ci_skeleton)
+    → GraceResult（binary graph + stability scores）
+run_cdnots_gated(df, max_lag, skeleton, gate_threshold, lambda_cv)
+    → 单次 gated refinement
+StabilitySelector.run() / .get_graph(threshold)
+```
+
+也就是说，实际推荐用法是 **λ 网格 × 子采样的 stability selection**，最终靠 stability score 过阈值 —— 不是一次训练后切 0.5。
+
+对我们的影响两条：
+1. **成本要重估**（见 §10 修正）。
+2. 设计上二选一：**要么照做 stability selection**（更贴原方法、更稳），**要么明确声明我们简化为单次训练 + 0.5**，并把"双峰是否复现"作为这个简化是否成立的检验（§11 第 7 步）。
+   建议先做后者（便宜），若双峰不干净再上 stability selection。
 
 ---
 
@@ -216,8 +260,12 @@ native top-k 的 `S` 对 gold session 的 recall 是多少？
 |---|---|
 | S1 / S2 | 分钟级，纯数据处理 |
 | 缺口 2 / 3 的代码改动 | 小时级 |
-| 主实验 | encoder 前向 + 一个小 MLP，单卡小时级 |
+| 主实验（单次训练版） | encoder 前向 + 一个小 MLP，单卡小时级 |
+| 主实验（stability selection 版） | **× `|λ grid|` × `n_subsamples`** —— 见 §6.2，先别默认走这条 |
 | **LLM calls** | **主实验全程 0**；仅 §7 次指标那一轮需要 |
+
+**许可提醒**：参考实现 `bloomberg/causal-ts` 是 **GPL-3.0-or-later**。照抄或改写其代码会带上 copyleft。
+若只按论文与本文的公式自行实现，则不受影响 —— 鉴于我们本来就要改 gate 参数化（§5），**建议自行实现，只把它当对照读**。
 
 ---
 
@@ -241,10 +289,32 @@ native top-k 的 `S` 对 gold session 的 recall 是多少？
 
 **Q_b** — 若走 (B) 按 session 切 chunk，`chunk_size` 这个超参就失效，与原 benchmark 的 RAG 基线不再严格可比。要不要同时保留 (A) 跑一组可比实验？
 
-**Q_c**（最需要想清楚）— 损失里的 `L_task` 若用下游 answer 的 NLL，就必须跑 LLM，与"主实验不烧 LLM"冲突。
-替代方案是直接用"是否命中 gold session"做监督 —— 但那样 refinement 就退化成一个**有监督的相关性分类器**，
-"causal" 的成分基本消失。
+**Q_c —— 已解决（查阅参考实现后）。**
 
-> 这不是工程细节，是这条路线**是否名副其实**的问题。建议在动手前先定：
-> 是老实承认阶段一只是"causal-inspired 的稀疏选择"，还是要设计一个不依赖 gold 的自监督 `L_task`
-> （例如预测被 mask 掉之后对后续 memory 的重建误差）。前者诚实但贡献弱，后者更贴 causal 但要多一轮设计。
+原先的顾虑是：`L_task` 用下游 answer 的 NLL 就得烧 LLM，用"是否命中 gold session"做监督又会退化成有监督分类器，
+"causal" 的成分消失；当时以为需要另行设计一个自监督目标。
+
+**其实 GRACE 自己的 `L_task` 就是自监督的**，不需要任何外部标签：
+
+```
+Loss = NLL + λ_L0 · Σ P(z ≠ 0) + λ_lag_group · (…)
+NLL  = sq_err / (2σ²) + log σ + 0.5·log(2π)
+target = obs[..., -1]                    ← 当前时刻的 effect 变量值
+```
+
+即：**用 gated 聚合后的 causes 去预测 effect，预测误差就是任务损失。** 没有标签，纯 self-supervised。
+
+搬到 memory 场景的对应写法：
+
+```
+causes  = 候选集 S 里各条 memory 的编码 h_i
+gate    = z_i
+effect  = 该 query 的 answer 表示（或 answer span 的编码）
+L_task  = NLL of  decode( Σ_i z_i · h_i )  →  answer 表示
+```
+
+**既不需要 LLM calls，也不需要 gold session 标签** —— gold 只用在**评测**，不进训练。
+这样"稀疏选择由预测目标驱动"这层与 GRACE 完全同构，路线名副其实的问题随之消失。
+
+> 剩下的唯一设计选择：effect 用 answer 的 embedding，还是用 answer token 的 NLL（后者要跑 LLM）。
+> 建议先用 embedding，把 LLM 完全留到 §7 的次指标那一轮。
