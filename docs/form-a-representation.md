@@ -191,7 +191,106 @@ X_t , U_t , P_t , Y_q , A_q , C_q
 
 ---
 
-## 6. 若 Form A 通不过
+## 6. 真实数据上的手工构造（已完成）
+
+数据：`xiaowu0162/longmemeval-cleaned` → `longmemeval_s_cleaned.json`（277 MB，500 实例）。
+
+### 6.1 数据的真实形状
+
+| 量 | 值 |
+|---|---|
+| 实例数 | 500 |
+| **sessions / instance** | min 38, **中位 48**, mean 47.7, max 62 |
+| **evidence sessions / instance** | min 1, **中位 2**, mean 1.90, max 6 |
+| turns / session | 中位 12, mean 10.3, max 132 |
+| haystack 是否按时间升序 | **500/500 全部升序** → session 下标 ≡ 时间步 ✅ |
+
+题型分布：`multi-session` 133、`temporal-reasoning` 133、`knowledge-update` 78、
+`single-session-user` 70、`single-session-assistant` 56、`single-session-preference` 30；abstention 30。
+
+> **正例极稀疏：1.9 / 47.7 ≈ 4%。** 任何 mask 指标都要在这个先验下读。
+
+### 6.2 三个真实实例的 Form A 构造
+
+**(a) knowledge-update `6a1eabeb`** —— Q: 我的 5K 个人最好成绩是多少？A: 25:50
+- session #19（05/23）："personal best … 27:12"
+- session #39（05/30）："hoping to beat my personal best time of 25:50"
+- Form A（带 provenance）：`X^{pb_5k}` 在 t_q 的值 = 25:50，`P = #39` → **`C_q = {39}`**
+- **gold = {19, 39}**
+
+→ **provenance 精化版本会漏掉 #19，recall 0.5，即便因果模型完全正确。**
+gold 标的是"提到该事实的所有 session"，不是"最小充分集"。
+
+**(b) temporal-reasoning `gpt4_59149c77`** —— Q: 我参观 MoMA 与大都会"古代文明"展相隔几天？A: 7 天
+- 证据 #4（01/08，MoMA）、#27（01/15，Met）
+- 这两件事**之间没有任何因果依赖** —— 是两个独立事件，问题只是对它们的时间戳做减法
+- `An*` 在 slot 实例层面**连不起来**；只有把它们归到同一个 slot **类型**（`museum_visit`）才连得上
+
+**(c) multi-session `0a995998`** —— Q: 我有多少件衣物待取/待退？A: 3
+- 证据 #11（干洗西装外套）、#19（Zara 靴子退换）、#30（靴子待取）
+- 同样是同类型的独立事件聚合，彼此无因果边
+
+### 6.3 ⚠️ 由此得到的两个硬结论
+
+**结论一：能匹配 gold 的 mask 规则是"保留所有写入了 query 所涉 slot **类型** 的 session"。**
+
+三个例子全部如此。而在这三个例子里 **`An*(Y_q) = Y_q`** ——
+也就是说 **`G` 没有提供任何额外信息**。真正干活的是 **slot 类型归一化（extraction）**，不是 slot 之间的因果图。
+
+> 这不推翻 Form A 的 representation，但它把 `G` 的地位降级了。
+> `G` 要挣到位置，必须存在**系统性的、query 未直接点名的 slot 类型间依赖**。
+> 这一点尚未被证实，**应当在承诺 GRACE 之前先测**。
+
+**结论二：mask F1 不是干净的主指标。**
+
+knowledge-update 的 gold 包含**已被覆盖的旧值**所在 session。所以"丢弃过期值"这一行为 ——
+恰恰是因果形式化想要的 —— **会被 mask F1 惩罚，却可能提升下游 QA**。
+至少对 knowledge-update，必须以下游 QA 为准。
+
+### 6.4 BM25 召回：skeleton 假设成立，但空间在精度
+
+一个 30 行的朴素 BM25（无调参、粗停用词），query → session：
+
+| k | recall@k | 完全覆盖 gold 的实例比例 |
+|---|---|---|
+| 1 | 0.551 | 0.292 |
+| 2 | 0.790 | 0.670 |
+| 3 | 0.856 | 0.760 |
+| 5 | 0.912 | 0.832 |
+| **10** | **0.947** | 0.896 |
+| 20 | 0.973 | 0.938 |
+
+按题型：
+
+| 题型 | @1 | @2 | @5 | @10 |
+|---|---|---|---|---|
+| single-session-assistant | 0.982 | 0.982 | 1.000 | 1.000 |
+| single-session-user | 0.929 | 0.943 | 0.986 | 1.000 |
+| knowledge-update | 0.487 | 0.923 | 0.987 | 0.994 |
+| **temporal-reasoning** | 0.429 | 0.726 | 0.868 | 0.927 |
+| **single-session-preference** | 0.400 | 0.633 | 0.833 | 0.900 |
+| **multi-session** | 0.364 | 0.651 | 0.853 | 0.899 |
+
+**读法：**
+
+1. **S2 检验通过** —— 48 选 10 即得 94.7% 召回，"retriever 可充当高召回候选生成器"**经验上成立**。
+2. **但召回空间只剩 5.3%。** 由于 gold 只占 4%，能加的价值几乎全在**精度**：把 10 条压到 ~2 条而不掉召回。
+   → **因果模块必须被定位成精度工具，不是召回工具**（这正好对应 GRACE 里 skeleton 管召回、gating 管精度的分工）。
+3. **两类题已被 BM25 基本解决**（single-session-user / assistant，@1 就 0.93–0.98），不必在它们上花力气。
+4. **真正的难点是 multi-session、preference、temporal-reasoning** —— 它们低 k 失败的原因是
+   **query 没有在字面上点名证据**。这恰恰是**类型化抽取**能直接解决的，
+   而不是因果图能解决的 —— 又一条指向"价值在 extraction"的证据。
+
+### 6.5 修正后的下一步
+
+1. **先测 `G` 值不值**：抽取 slot 类型后，统计 gold session 是否系统性地涉及 query 未点名的 slot 类型。
+   若基本没有，就走 §7 的退路，把叙事定成 gated selection 而非 TCD。
+2. 主指标改为**下游 QA**；mask P/R 只作辅助，且 knowledge-update 单独看。
+3. `T` 的实测中位是 **48**（38–62），确认 §3 结论：要够 GRACE 的 `T ∈ {300…2000}`，**必须换 M**。
+
+---
+
+## 7. 若 Form A 通不过
 
 退路是**放弃 TCD 形式化、只保留 gating**：不定义 `X_t / d / T`，
 直接学一个 content-conditioned Hard Concrete gate over retrieved memories，用 task loss 训。
