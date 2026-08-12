@@ -86,14 +86,20 @@ S  →  causal refinement  →  M ⊆ S
 
 ## 2. GRACE 实际做的是什么
 
+> GRACE: *Gated Refinement for Accurate Causal Edge Discovery in High-Dimensional Time Series*，
+> [arXiv 2606.23880](https://arxiv.org/abs/2606.23880)（2026-06）。以下数字已对原文核实。
+
 GRACE **不是**"给它一大堆变量就端到端发现所有 causal edges"。它是 two-stage：
 
 ```
 skeleton  →  neural refinement
 ```
 
-1. 第一阶段：找一个 **high-recall candidate skeleton** —— 宁可把真 edge 基本都留下，同时夹杂大量 false positives。
-2. 第二阶段：给每条候选 edge 一个 **Hard Concrete gate**（`z_ij^(k) ≈ 0 or 1`），再用 **L0 sparsity** 把错误候选删掉。
+1. 第一阶段：用 high-recall 的 constraint-based 方法产生 candidate skeleton —— 宁可把真 edge 基本都留下，同时夹杂大量 false positives。
+   **原文用的是 CDNOTS 与 PCMCI（partial correlation）为主，DYNOTEARS（score-based）与 RCoT（nonlinear CI test）为辅。**
+2. 第二阶段：给每条候选 edge 一个独立的 **Hard Concrete gate**（reparameterization trick 采样，在 0 与 1 上有正概率质量），配 **解析形式的 L0 正则**（无需 Monte Carlo）：
+   `P(z ≠ 0) = sigmoid(log α − τ log(−γ/ζ))`。
+   gate 值呈清晰双峰，真 edge 集中在 0.5 以上、假 edge 集中在 0.5 以下，**不需要 post-hoc threshold tuning**。
 
 即
 
@@ -101,7 +107,10 @@ skeleton  →  neural refinement
 candidate edges  →  sparse binary edges
 ```
 
-**关键 ablation**：去掉 skeleton 后，在 `d = 50` 时直接把约 **15,000 条**候选边交给 gates，而真实边只有约 **100 条**，结果 `F1 < 0.02`。
+**关键 ablation（Table 9, Appendix G）**：去掉 skeleton 后，全部 `d²(L+1) − d` 条候选边直接交给 gates ——
+在 `d = 50` 时约 **15,000 条候选** vs 约 **100 条真实边**。原文原话：
+
+> "no λ setting can recover signal at this ratio (F1 ≪ 0.02)"
 
 > **skeleton 对 GRACE 不是锦上添花，是核心。**
 
@@ -140,7 +149,12 @@ m_i = 1  (keep memory i)   /   m_i = 0  (drop memory i)
 
 即一个**稳定的离散决策**。Hard Concrete gate 天生趋向 0/1，与 memory mask 高度一致。
 
-反过来，CUTS+ 的问题是：continuous graph scores 的 ranking 可能不错，但 threshold 之后不一定形成干净的 binary graph —— GRACE 的 pair-level evaluation 下，CUTS+ 到 `d = 100` 的 thresholded F1 非常低。
+反过来，CUTS+ 的问题是：continuous graph scores 的 ranking 可能不错，但 threshold 之后不一定形成干净的 binary graph。GRACE 的 pair-level evaluation 下（**Table 6, Appendix E**）：
+
+| `d = 100` | CUTS+ | GRACE |
+|---|---|---|
+| `T = 1000` | **0.055** | 0.834 |
+| `T = 2000` | **0.117** | 0.859 |
 
 对一个最终必须做 keep/drop 的 memory system 来说，GRACE-style gating 比单纯的 continuous score 更有吸引力。
 
@@ -226,6 +240,10 @@ G_t        甚至        G_t = G(u_t, state_t)
 | GRACE | Which edges **exist**? | `A` |
 | UnCLe | Which edges are **active at this time**? | `A_t` |
 
+**UnCLe 的机制（已核对原文）**：一对 **Uncoupler / Recoupler** 网络 —— 实现为参数共享的 TCN autoencoder —— 把输入时间序列解耦成 semantic 表示再重建；**Dependency Matrices** 在 semantic channel 内做自回归预测，其元素即学到的变量间依赖。dynamic causal influence 则通过**对时间做扰动后逐数据点的预测误差**来估计。
+
+值得注意的是：这条"扰动 → 看预测误差变化"的路子，形式上接近 D1 记忆载体那个 `do(m_s := m̃)` 的检验 —— 都是"切断/扰动之后看依赖还在不在"。这个类比未必严格（UnCLe 扰动的是输入序列而非结构方程），但如果成立，可能是 Layer 1 与 Layer 2 之间一个现成的接口。**待验证，勿写进对外 doc。**
+
 于是：MemoryArena 的优势是**动态交互**，UnCLe 的优势是**动态因果图** —— 在科学问题上对得比较准。
 
 ---
@@ -270,14 +288,29 @@ G_t        甚至        G_t = G(u_t, state_t)
 
 ---
 
-## 10. 风险是不对称的
+## 10. 风险是不对称的 —— 但不对称在哪里，需要修正
 
-不能因为"理论上漂亮"就把 MemoryArena + UnCLe 当最终答案。读完 UnCLe 后的实际情况：
+> UnCLe: *Towards Scalable Dynamic Causal Discovery in Non-linear Temporal Systems*，
+> NeurIPS 2025，[arXiv 2511.03168](https://arxiv.org/abs/2511.03168)。以下已对原文核实。
 
-- static graph 有 ground truth 到 `d = 100`；
-- 但**真正 dynamic graph 的验证只有 `d ≤ 8`**；
-- 207 / 325 变量的交通数据**没有 causal ground truth**；
-- 作者自己明确承认**没有 identifiability guarantee**。
+不能因为"理论上漂亮"就把 MemoryArena + UnCLe 当最终答案。UnCLe 的实证覆盖是这样的：
+
+| | 数据集 | 变量数 | 有 causal ground truth？ |
+|---|---|---|---|
+| **static** 因果发现 | Lorenz96 | `p = {20, 20, 100}` | ✅ |
+| | NC8 | 8 | ✅ |
+| | FINANCE | 20, 40 | ✅ |
+| | fMRI | 15 | ✅ |
+| **dynamic** 因果图恢复 | TVSEM（系数每 400 步切换一次） | **2（bivariate）** | ✅ |
+| | ND8 | **8** | ✅ |
+| 真实交通数据 | METR-LA | 207 sensors | ❌ 仅与真实路网地理比对 |
+| | PEMS-BAY | 325 sensors | ❌ 同上 |
+
+即：**static 验到 `d = 100`，但真正 dynamic 的验证只到 `d ≤ 8`。** 唯二的 dynamic ground-truth 数据是一个二元 SEM 和一个 8 变量系统。
+
+限制声明是原文明写的：
+
+> "The primary limitation of our work … is the lack of formal identifiability guarantees. While UnCLe demonstrates strong empirical performance, we do not provide a theoretical proof under which conditions it is guaranteed to recover the true dynamic causal graph."
 
 所以：
 
@@ -288,11 +321,33 @@ MemoryArena + UnCLe  =  概念上匹配最好
 
 反而 MemoryAgentBench + GRACE-style 更容易先拿到结果。
 
-### 10.1 一处需要主动交代的张力（本文补充）
+### 10.1 ⚠️ 一处修正：identifiability 缺口不是 UnCLe 独有的
 
-UnCLe "no identifiability guarantee" 这一条，和本项目的立身之本正面相撞：`causal_memory_formulation.tex` 的 §Positioning 明说，与 memory-agent 文献的区别就在于 **identifiability framing**。把一个自称无 identifiability 保证的方法放在 dynamic 主线上，Yujia 大概率会直接问穿。
+先前的说法是"UnCLe 无 identifiability guarantee，而 GRACE 更稳"，这在 identifiability 这一维上**不成立**。
+核对 GRACE 原文 Appendix B，它同样明确排除了这一点：
 
-建议在 doc 里先手说明：**UnCLe 是 estimator 的选择，identifiability 的论证由项目自身的 Layer 2 结果承担，不由 UnCLe 提供。** 两者是分工，不是同一件事被稀释。
+> "The results provide *qualitative intuition* … but do not constitute identifiability guarantees for the full nonlinear model."
+
+即 **两个候选 estimator 都没有 identifiability 保证**。风险的不对称在别处：
+
+| 维度 | GRACE | UnCLe |
+|---|---|---|
+| identifiability guarantee | ❌ 无（Appendix B 明确排除） | ❌ 无（Limitations 明确排除） |
+| 实证成熟度 | static，验到 `d = 100` | **dynamic 只验到 `d ≤ 8`** |
+| 输出可直接当 mask | ✅ Hard Concrete 双峰，0.5 天然阈值 | ⚠️ 需自行离散化 |
+
+**真正的不对称是"实证成熟度"和"输出形式"，不是 identifiability。**
+
+### 10.2 由此产生的、必须主动交代的张力
+
+`causal_memory_formulation.tex` §Positioning 明说，本项目与 memory-agent 文献的区别就在于 **identifiability framing**。而上表显示：**Layer 1 的两个候选 estimator 都不提供 identifiability。**
+
+这不是选型失误，但必须先手说清楚，否则 Yujia 会直接问穿：
+
+> **Layer 1 的 estimator 是工程选择，不承担 identifiability 论证；identifiability 由项目自身的 Layer 2 结果（D3、Conjecture 1）承担。**
+> 二者是分工，不是同一个主张被稀释。
+
+反过来说，这也提示了一个**正面的机会**：如果 Layer 2 的可辨识性结论能反过来给"什么条件下 mask 可信"提供保证，那就正好补上 GRACE / UnCLe 都缺的那一块 —— 这可能比单纯"把某个 TCD 方法接到 memory 上"更像一个贡献。
 
 ---
 
@@ -304,13 +359,18 @@ UnCLe "no identifiability guarantee" 这一条，和本项目的立身之本正�
 
 > 在 native similarity retrieval 已经产生候选的情况下，加入 temporal / causal structure，能不能进一步产生更好的 memory mask？
 
-**评测路径（关键优势）**：LongMemEval 带 gold evidence 字段 `answer_session_ids`（`longmemeval` 已在 MemoryAgentBench 的数据集清单内），因此可以直接测
+**评测路径**：LongMemEval 带 gold evidence 字段 `answer_session_ids`（甚至有 turn 级 `has_answer`），因此原则上可以直接测
 
 ```
 Mask Precision / Recall / F1
 ```
 
 而不必一开始就烧大量 LLM calls。
+
+> ⚠️ **但这条路径不是免费的。** 核对代码后发现：MemoryAgentBench 的 loader
+> （`utils/eval_data_utils.py`）**没有保留任何 session id**，且 `chunk_text_into_sentences()`
+> 返回的是裸字符串、**provenance 全部丢失**。所以 gold session → gold chunk 的对齐要自己补。
+> 三处具体缺口与补法见 **`stage1-experiment-design.md`**。
 
 **正信号**：`causal mask  >  similarity / recency`。
 
