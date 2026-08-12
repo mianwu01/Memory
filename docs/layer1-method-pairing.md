@@ -200,13 +200,51 @@ Agent acts → gets observation → writes memory → later retrieves memory →
 
 write / read **真正 interleave**。在目前 survey 过的几个平台里，它是唯一具备这种 multi-session Memory–Agent–Environment loop 的。
 
-所以在这里，`u_t` 才真正有意义：
+所以在这里，`u_t` 才真正有意义 —— 而不是简单的 `W W W W R R R R`。
+
+### 6.1 `u_t` 到底能不能读出来（已核对代码，仅 `run_travel.py`）
+
+这是阶段二的前置问题，结论比预想的好，但有两处要修正。
+
+**架构上，write / read 是显式的。** 记忆系统是一个 HTTP 服务，端点就三个：
 
 ```
-u_t ∈ { observe, write, plan, read, act }
+POST /memory/initialize
+POST /memory/add                 ← 写
+POST /memory/wrap_user_prompt    ← 读
 ```
 
-而不是简单的 `W W W W R R R R`。
+`memory/client.py` 的 `MemoryClient` 只有对应的三个方法。**写和读不在 agent 的思维链里，而在 API 边界上** —— 这比"要从自然语言 trace 里猜"好太多。
+
+**修正一：`u_t` 的时机不是 agent 决定的。** `run_travel.py` 每一轮的顺序由 harness 写死：
+
+```
+wrap_user_prompt(query)  →  agent 行动  →  add(action + observation + judgement)
+```
+
+即 `R → A → W` 周期重复。我先前说"写入时刻由 agent 自己决定、`u_t` 内生、只能靠 change-point 估" —— **这是错的**。
+准确的说法是：**时机是外生且规则的，内生的是内容**（agent 决定往 `add` 里塞什么）。
+
+两个后果，方向相反：
+
+- ✅ **A5（regime 可观测）基本免费** —— 只要在 client 上打点即可，不需要 change-point detection。
+- ⚠️ **但 regime 的"丰富度"要打折。** `R A W R A W …` 是周期的，不是我在 §6 开头写的那种自由交错的
+  `{observe, write, plan, read, act}`。**动态性不来自 regime 交错，而来自跨 round / 跨 person 的任务语境变化。**
+  也就是说 `A_t` 依然是个正当问题（"随任务推进，哪些记忆变得重要"），但论据要换成这一条，不能再拿"regime 丰富交错"当理由。
+
+**修正二：这个 trace 目前没有落盘。** `MemoryClient` 的 payload 只有 `user_id`、`memory_system_name`、`question`/`chunk` ——
+**无时间戳、无 session id、无 turn index**。`run_travel.py` 存的是 `generated_plan_{data_idx}.json`
+（`metadata` / `all_results` / `scratchpads`）与 `stats_results/usage_stats.json`；
+**记忆操作只打到 stdout，不持久化**。
+
+→ 阶段二的第一件事是**给 client 加一层记录**（写/读、轮次、时间、内容哈希）。改动很小，但**必须先做**，否则没有可分析的对象。
+
+**A8（无选择）依然全破**：agent 决定往 `add` 里写什么，这本身就是对内容的选择。§7.3 已说明 UnCLe 的 `Δε` 会在这种数据上误报，所以 selection gate 强制前置。
+
+**成本提示**：代码里有 `time.sleep(60)` 用于等 Mem0 建索引 —— 按轮计的 60 秒惩罚，阶段二排期要算进去。
+
+> ⚠️ **核对范围**：以上只读了 `run_travel.py`（四个入口之一，另有 `run_math.py` / `run_search.py` / `run_shopping.py`）。
+> web shopping 是真正的多步环境，每轮内 agent 动作更多，regime 结构可能比 travel 丰富。**这三个尚未核对。**
 
 ---
 
