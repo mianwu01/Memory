@@ -250,7 +250,7 @@ wrap_user_prompt(query)  →  agent 行动  →  add(action + observation + judg
 | `run_travel.py` | 无 | 轮首，每轮一次 | 轮尾，每轮一次 |
 | `run_math.py` | 无（per subtask） | 轮首 | 轮尾 |
 | `run_shopping.py` | **有**，`for turn_idx in range(1, max_rounds+1)` | **整个 episode 只在首轮一次**（`memory_injected` 标志位守住） | `use_step_memory=True` → **内循环每步写**；否则 episode 结束批量写 |
-| `run_search.py` | 逻辑在 env server 内，脚本层不可见 | 脚本层无 | 脚本层无（`memory_url` / `memory_system` 作为配置传给 env server） |
+| `run_search.py` | 有，但在 env system 内（`browsecomp_plus_env.py::run_full`） | 每个 subquery，经 `run_query_with_agent_and_memory(...)` | 每个 subquery 末尾，`self.memory_client.add(memory_entry)` |
 
 ### 6.3 ❗ 修正三：「write / read 真正 interleave」这个说法要收窄
 
@@ -284,12 +284,56 @@ pairing 的逻辑**依然成立**（反复交替 vs 单次转换，确实是不�
 
 ### 6.4 另外三条工程事实
 
-- **`run_search.py` 的记忆操作不在脚本层。** 全部逻辑委托给 env server（脚本只发一次 `run_sequential`），
-  所以 §6.1 说的"给 client 打点"对 search **不适用**，得改到 env server 侧。阶段二要按入口分别处理。
+- **✅ 修正四：打点位置是统一的，search 也覆盖。**
+  上一版说"给 client 打点对 search 不适用，得改到 env server 侧" —— **不对**。
+  `env_server.py` 里完全没有 memory 的引用；真正持有记忆的是 **env system**：
+  `browsecomp_plus_env.py` 里 `self.memory_client = MemoryClient(user_id=str(self.config["task_id"]), ...)`，
+  `run_sequential` → `run_full()`，每个 subquery 读一次写一次。
+  **它用的是同一个 `MemoryClient` 类** —— 所以在 `memory/client.py` 打一处点，**四个入口全覆盖**。
+  阶段二不需要按入口分别处理，这比上一版的判断简单。
 - **shopping 有 `backfill_memory_from_artifacts()`**，resume 时会把过去的步骤补写进记忆。
   这会让朴素按调用序还原的 trace 出现**重放写入**，做时序分析前必须先剔除。
 - **shopping 的落盘比 travel 好**：`eval_{stem}_step_{N}_{timestamp}.json` 逐 episode 存交互记录，
-  另有 `summary.json` / `summary_all.json`。**若阶段二要选一个入口先做，shopping 的可观测性最好，且是唯一有内层多步结构的。**
+  另有 `summary.json` / `summary_all.json`。**若阶段二要选一个入口先做，选 shopping** —— 可观测性最好，
+  且内层多步循环直接暴露在脚本层（search 也有内层循环，但埋在 env system 里，改造面更大）。
+
+### 6.5 Q3 / Q7 跨策略探针的可行性（已核对 `memory/server.py`）
+
+pairing doc §8 提过：MemoryArena 自带多套记忆系统 = 同一环境同一任务下的多个 `π`，
+正好可以做"结构是否只相对 `P_π`"的探针（Q3 / Q7）。**这条现在确认可行。**
+
+实际有 **13 套**（比 README 说的 10 套还多）：
+`mirix`、`long_context`、`letta`、`mem0`、`rag`（bm25 / text-embedding-3-small）、`graphrag`、
+`langchain_graphrag`、`memorag`（含 `MemoRAG/` 子模块）、`reasoningbank`、`amem`、`lightmem`、`zep`。
+
+**接口在服务端强制统一**：
+
+```python
+MEMORY_FACTORIES: Dict[str, Callable[[], object]] = {
+    "mirix": MirixMemorySystem, "long_context": LongContextMemorySystem, ...
+}
+# /memory/add    →  memory_system.add_chunk(req.chunk)
+# /memory/query  →  memory_system.wrap_user_prompt(req.question)
+```
+
+**`add` 与 `query` 两个端点没有任何 per-system 分支** —— 所有系统一视同仁。
+只有 `/memory/initialize` 有构造期特例：
+
+```python
+if name in {"bm25", "text-embedding-3-small"}:
+    memory_system = RAGMemorySystem(retrieval_method=name)
+elif name in {"reasoningbank"}:
+    memory_system = ReasoningBankMemorySystem(user_id=req.user_id)
+else:
+    factory = MEMORY_FACTORIES.get(name); memory_system = factory()
+```
+
+**对我们的意义**：跨策略探针要的正是"只换 `π`、其余全部固定"。
+既然读写路径对所有系统同构、差异只在构造，那么**"同一个 `F̂_t` 在 13 个 `π` 下是否稳定"是一个干净的实验** ——
+而且它**不需要 ground-truth latent，也不需要 identifiability**，因此不受 `memory-vs-agent-memory.md` 那条约束限制。
+
+> 这可能是 MemoryArena 上**最先能做出结果**的东西 —— 比 UnCLe 那条动态图主线更早、更便宜、风险更低。
+> 值得考虑把它从"阶段二的一部分"提前成**独立的一小步**。
 
 ---
 
