@@ -384,6 +384,90 @@ MemoryArena 的接口障碍（`wrap_user_prompt` 只返回拼好的字符串）�
 
 ---
 
+## 6.8 压缩轴：accuracy 上界 vs 保留量（n=479，无需 LLM）
+
+上一节只测了召回轴。这里补压缩轴，用 LongMemEval 的 **turn 级 `has_answer` 标注**做
+**无需 LLM 的 QA accuracy 严格上界**：一个预算下若全部 `has_answer` turn 都被保留，
+则该实例"可答"；否则必错。
+
+| 方法 | 保留 token% | answerable 上界 |
+|---|---|---|
+| **oracle-turn** | **0.2%** | **100.0%** |
+| BM25-turn@5 | 1.0% | 56.2% |
+| recency@1 | 2.1% | 1.7% |
+| **BM25-turn@10** | **2.3%** | **70.4%** |
+| BM25-sess@1 | 2.7% | 32.4% |
+| BM25-turn@20 | 4.9% | 76.6% |
+| **oracle-sess** | **5.1%** | **100.0%** |
+| BM25-sess@2 | 5.4% | 71.0% |
+| BM25-sess@3 | 8.1% | 79.3% |
+| BM25-turn@40 | 10.4% | 82.0% |
+| recency@5 | 10.5% | 6.5% |
+| BM25-sess@5 | 13.1% | 86.0% |
+| recency@10 | 21.3% | 14.2% |
+| BM25-sess@10 | 25.4% | 91.9% |
+| full | 100.0% | 100.0% |
+
+### 三条读数
+
+**1. 压缩轴上确实有大空间 —— 与召回轴相反。**
+答题所需信息只占全部历史的 **0.2% token**（oracle-turn），而 BM25-turn@10 花了 **2.3%** 只拿到 70.4%。
+即**十倍以上的 token 差距 + 约 30pp 的上界差距**摆在那里。§6.6 说召回轴没空间，但**压缩轴有**。
+
+**2. turn 级粒度是激进压缩下最大的单一杠杆。**
+同样约 2.5% 预算：`BM25-turn@10` 70.4% vs `BM25-sess@1` **32.4%** —— 翻一倍还多。
+session 是错的操作粒度；`has_answer` 本来就是 turn 级的。
+（预算放宽到 >10% 后 session 级反超，但那已不是有意思的工作点。）
+
+**3. ⚠️ recency 近乎无用，这是又一条不利于时序结构的证据。**
+`recency@10` 花掉 21.3% token 只换来 **14.2%**，比 `BM25-turn@5` 花 1.0% 换 56.2% 差得远；
+random 更差。**时近性在这个任务里几乎不携带信号。**
+结合 §6.6 的残差分析，LongMemEval 的信号是**语义的**，不是**时序的**。
+
+> **但要说清楚**：这里的空间是"把相关性判得更准"的空间，
+> **是否需要因果结构来填，仍未被证明**。它把问题从"有没有空间"推进到了"什么东西能填这个空间"。
+
+---
+
+## 6.9 MemoryArena 四个环境的状态转移结构（已读源码）
+
+| 环境 | 跨轮持久状态 | 逐步反馈 | 早期动作约束后期 |
+|---|---|---|---|
+| **webshop** (`webshop_env.py`) | `purchased_asins`、`purchased_prices`、`history`、`_current_observation`、`turn_count` | 可选（`need_judge`）；终局 `match_ground_truth` | ✅ 购买累积 + **prefix match** 逻辑 |
+| **travel** (`travel_env.py`) | `history`、`step_count` | ✅ **hint 模式逐步纠错**：`"Feedback for {name}: The following slots need correction:"` | ✅ 可据中间反馈调整后续 |
+| **search** (`browsecomp_plus_env.py`) | `memory_client`、逐 subquery trace | 每 subquery 有 judgement | subquery 链 |
+| **math** (`math_env.py`) | `history`、`tool_trace`、`state.history_len` | ✅ 每步 `return observation, reward, {}` | ✅ 前一 subtask 的 tool 结果进入后续 |
+
+**四个环境全部具备 `s_{t-k} → s_t → a_t`。** travel 的 hint 模式尤其有意思 ——
+它给的是**逐步纠错反馈**，构成真正的"从反馈中学习并改写记忆"的闭环。
+这正是 LongMemEval **完全没有**的结构。
+
+### ✅ 修正：接口障碍被我高估了
+
+此前判断：MemoryArena 的统一接口只返回拼好的 prompt 字符串，`C_t ⊙ M_t` 表达不出来 → 不适合。
+
+**这个论证有个洞：我们不需要去 mask 别人的记忆，我们应该自己**就**是一个记忆系统。**
+
+`memory/server.py` 的扩展点是现成的：
+
+```python
+MEMORY_FACTORIES: Dict[str, Callable[[], object]] = {"mirix": MirixMemorySystem, ...}
+# /memory/add    →  memory_system.add_chunk(req.chunk)     ← 我们自己存，M_t 当然可枚举
+# /memory/query  →  memory_system.wrap_user_prompt(req.question)  ← 在这里施加 mask 再拼 prompt
+```
+
+实现一个类、三个方法（init / `add_chunk` / `wrap_user_prompt`）、注册进 `MEMORY_FACTORIES` —— **就完成了**。
+`M_t` 由我们自己持有，所以可枚举；mask 在 `wrap_user_prompt` 内部施加。
+而且这样我们**天然与其余 13 套记忆系统在同一评测下正面对比**，正是 Yujia 要的"设计独立模块注入现有框架"。
+
+**工程量估计：约一天**（另加打点）。远低于我此前的判断。
+
+> 所以 Task 2 的正确结论应当修正为：
+> **MemoryAgentBench 仍是最省事的 harness，但 MemoryArena 的任务语义才是对的，且接入成本并不高。**
+> 两者并不冲突 —— 前者做压缩诊断，后者做因果结构的正面验证。
+
+---
+
 ## 7. 若 Form A 通不过
 
 退路是**放弃 TCD 形式化、只保留 gating**：不定义 `X_t / d / T`，
