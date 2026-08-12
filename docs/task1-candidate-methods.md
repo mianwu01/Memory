@@ -63,9 +63,13 @@ Graph = torch.einsum("nm,ml->nl", G_prob, torch.sigmoid(GT_prob))   # GT: [n_gro
 | neural / 可微 | ✅ gating 段 Hard Concrete + 解析 L0 |
 | lag-wise 输出 | ✅ |
 
-**换掉 CI skeleton 这一步同时解决两件事**：绕开 Yujia 点名要避开的 CI 检验，并把因果模块的规模压到已验证区间。
-在 Agent Memory 里，天然的高召回候选生成器是**对 `M_t` 的廉价相似度/时近预筛**（如 3000 → top-200）。
-注意该预筛在**我们模块内部**，mask 仍落在 `M_t` 上、仍在既有记忆系统之前 —— Yujia 的架构不变。
+> ⚠️ **「用相似度预筛顶替 skeleton」这一说法已作废**（类型不匹配）：
+> skeleton 是 `S ∈ {0,1}^{d×d×(L+1)}`，即**候选边**；top-200 是**候选记忆项**。二者不是同一个数学对象。
+>
+> **修正后的立场**：v1 **保留原始 CI skeleton**，先得到一个 faithful 的 GRACE 基线。
+> 相似度/时近 top-K 保留，但正名为 **memory candidate prefilter**，不叫 skeleton。
+> 将来若真要换非 CI skeleton，替代物必须同样产出 candidate-edge tensor，
+> 实验对照才写成 `CDNOTS skeleton + GRACE` vs `our candidate-edge generator + GRACE`。
 
 ### baseline —— **CDNOTS+**（同库、同 API、零集成成本）
 
@@ -107,13 +111,15 @@ M_t → TCD → C_t ;   M_t^causal = C_t ⊙ M_t ;   → existing memory system 
 - **MemoryArena**：统一接口只有 `add_chunk` / `wrap_user_prompt`，**后者返回拼好的 prompt 字符串而非记忆列表**；
   13 个异构后端没有统一的"枚举当前记忆集"操作 → `C_t ⊙ M_t` **在其统一接口上表达不出来** ❌
 
-规模也对得上：MemoryAgentBench 的 context 是 273k–3.17M 字符，句子级切分是**数千 chunk**，正是 Yujia 说的 500–5000 区间。
+> ⚠️ **本节原先那句「数千 chunk 正是 500–5000 变量区间」已作废** —— 那是把时间步当成了变量。
+> chunk 是按序喂入的**时间步**（`T`），不是变量（`d`）。
+> 正确的 representation 与 `G → C_t` 映射见 **`form-a-representation.md`**。
 
 **首次跑通路径**：
 
 1. `pip install causalts`
 2. 取一条 LongMemEval 实例的 `all_context_chunks`，定义 session 级变量
-3. 廉价预筛得候选集 → `run_cdnots_gated(df, max_lag, skeleton=<预筛>, …)` → `C_t`
+3. 抽取 `(X_t, U_t, P_t)` → `run_cdnots_gated(df, max_lag, skeleton=<CI skeleton 或候选边生成器>, …)` → `G` → 经 provenance 得 `C_t`
 4. `C_t ⊙ M_t` → 送进既有 RAG 路径 → 用现成 `llm_based_eval/` 比对
 
 **先清一个已核实的路障**：`chunk_text_into_sentences()` 返回裸字符串（下游 `assert isinstance(chunks[0][0], str)`），
