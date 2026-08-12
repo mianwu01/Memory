@@ -240,9 +240,44 @@ G_t        甚至        G_t = G(u_t, state_t)
 | GRACE | Which edges **exist**? | `A` |
 | UnCLe | Which edges are **active at this time**? | `A_t` |
 
-**UnCLe 的机制（已核对原文）**：一对 **Uncoupler / Recoupler** 网络 —— 实现为参数共享的 TCN autoencoder —— 把输入时间序列解耦成 semantic 表示再重建；**Dependency Matrices** 在 semantic channel 内做自回归预测，其元素即学到的变量间依赖。dynamic causal influence 则通过**对时间做扰动后逐数据点的预测误差**来估计。
+### 7.1 UnCLe 的机制（已核对论文 + 实现 `etigerstudio/uncle-causal-discovery`）
 
-值得注意的是：这条"扰动 → 看预测误差变化"的路子，形式上接近 D1 记忆载体那个 `do(m_s := m̃)` 的检验 —— 都是"切断/扰动之后看依赖还在不在"。这个类比未必严格（UnCLe 扰动的是输入序列而非结构方程），但如果成立，可能是 Layer 1 与 Layer 2 之间一个现成的接口。**待验证，勿写进对外 doc。**
+- **Uncoupler / Recoupler**：参数共享的 TCN autoencoder，把每条单变量序列 `x_i` 映到隐序列 `z_i ∈ ℝ^{T×C}` 再重建。
+- **Dependency Matrices**：`Ψ = {Ψ¹,…,Ψ^C}`，每个 `Ψ^c ∈ ℝ^{N×N}`，在各 semantic channel 内做自回归 `ẑ^c_{:,t+1} = σ(Ψ^c ẑ^c_{:,t})`。
+  实现里是 `self.var_mat = nn.Parameter(torch.zeros(c_in, c_in, channels, lag).normal_(0, 0.01))`。
+- **静态图**：对 channel 做 L2 pooling，`Â_Agg = √( (1/C) Σ_c (Ψ^c)² )`；实现即 `var_mat.squeeze(3).norm(dim=2)`。
+- **动态影响**：对变量 `j` 的时间轴做**随机置换**，比较置换前后的预测误差增益
+  `Δε^{i,j}_t = max(0, ε'^{i,j}_t − ε_{i,t})`。
+  实现即 `X_[i,i,:] = X_[i,i, torch.randperm(X_.shape[2])]`，随后 `error_difference = red_error − full_error`，负值截零。
+
+### 7.2 ⚠️ 一处重要修正：`Ψ` 本身是静态的
+
+前文（及 §8、§9 的表述）把 UnCLe 说成"学习一个随时间变化的图 `G_t`"，**这是过度表述**。
+
+准确的说法是：**UnCLe 学的是一个静态的 `Ψ`（按变量身份索引，训练一次），"动态"完全来自推理期的逐点扰动归因。**
+它给出的是每个时刻的 `Δε` 分数矩阵，**不是**一个学到的、由状态生成图的映射。
+
+所以 `G_t = G(u_t, state_t)` 这个写法**不能算作 UnCLe 已经提供的东西** —— 它是我们想要的对象，而 UnCLe 只提供了一个 post-hoc 的时间分辨归因。§9 对照表里"目标结构 = dynamic `G_t`"应读作**我们的目标**，不是 UnCLe 的既有能力。
+
+### 7.3 ❌ 已证伪：扰动 ≠ `do(·)`
+
+先前猜测"UnCLe 的扰动路子形式上接近 D1 的 `do(m_s := m̃)`，可能成为 Layer 1 与 Layer 2 的接口"（当时标注为待验证）。
+核对实现后，**这个类比不成立**，三条理由：
+
+1. **扰动的对象不同。** UnCLe 是对某变量**自身时间轴做随机置换**（保边际分布、毁时序结构）；
+   D1 是把载体在特定时刻 `s` **赋为常数** `m̃`（切断全部入边、固定取值）。两者语义不同。
+2. **作用的层次不同。** UnCLe 扰动的是**已拟合预测器的输入**，量的是那个模型误差的变化 ——
+   这是 model-sensitivity / feature-ablation，回答"我的模型有多依赖 `x_j`"。
+   D1 量的是**真实过程的介入分布** `P^{do(·)}`，回答"世界里这条通路存不存在"。
+3. **最致命的一条：它过不了 confabulation control。**
+   在 §selection 的构造里，`y` 只由 `d` 生成、与 `c` 无任何通路，但经 `S=1` 筛选后 `c ⊥̸ y`。
+   在被选择的population上拟合的模型**必然会用 `c` 去预测 `y`**，于是置换 `c` 会抬高误差 → `Δε > 0` → **UnCLe 断言一条虚假的边**。
+   这正是 Prediction P2 描述的失败模式，而 D1(ii) 就是为拒斥这种情形设计的。
+
+**结论**：UnCLe 的 `Δε` 是关联性的模型归因，不是介入。它不能替代 D1 的介入判据。
+
+**但这个否定结论有用**：它把阶段二的一件事从"可选"变成"必须" ——
+若采用 UnCLe，**selection gate 是强制前置的，不是加分项**，否则在 goal-filtered 的 MemoryArena 语料上必然产生幻觉边。
 
 于是：MemoryArena 的优势是**动态交互**，UnCLe 的优势是**动态因果图** —— 在科学问题上对得比较准。
 
@@ -333,10 +368,31 @@ MemoryArena + UnCLe  =  概念上匹配最好
 | 维度 | GRACE | UnCLe |
 |---|---|---|
 | identifiability guarantee | ❌ 无（Appendix B 明确排除） | ❌ 无（Limitations 明确排除） |
+| selection soundness（D3 iii） | ❌ 不提供 | ❌ 不提供，且 `Δε` **必然在 selection 上误报**（§7.3） |
 | 实证成熟度 | static，验到 `d = 100` | **dynamic 只验到 `d ≤ 8`** |
-| 输出可直接当 mask | ✅ Hard Concrete 双峰，0.5 天然阈值 | ⚠️ 需自行离散化 |
+| 输出可直接当 mask | ✅ Hard Concrete 双峰；但主入口是 stability selection，非单次切 0.5 | ⚠️ `Δε` 是连续分数，需自行离散化 |
+| 参数索引方式 | 按边身份 `[N, L+1, N]` | 按变量身份 `[N, N, C, lag]` |
+| 公开实现 | `bloomberg/causal-ts`，**GPL-3.0-or-later** | `etigerstudio/uncle-causal-discovery`，**无 license 文件** |
+| 代码可复用性 | 库形态，有 docs / tests / CI | 研究代码：模型即 `bin/experimental_utils.py` 里的 `VARP` 类，Python 3.8.10，无包结构 |
 
 **真正的不对称是"实证成熟度"和"输出形式"，不是 identifiability。**
+
+### 10.1.1 一个共同的结构性障碍（两阶段都要处理）
+
+核对两边实现后发现**同一个问题**：
+
+```python
+# GRACE
+self.log_alpha = nn.Parameter(torch.zeros(num_vars, Lp1, num_vars))          # [cause, lag, effect]
+# UnCLe
+self.var_mat   = nn.Parameter(torch.zeros(c_in, c_in, channels, lag)...)     # [var, var, channel, lag]
+```
+
+**两者的核心参数都按变量身份索引，形状由变量数写死。** 而我们的设定里变量身份跨样本不一致
+（conversation A 的 session 17 ≠ B 的 session 17），所以**两个方法都不能直接迁移** —— 不是不优雅，是维度对不上。
+
+两阶段都要做同一件事：**把身份索引的参数摊销成内容条件化的网络**。
+这既是必要改造，也说明"principle 而非 run"的措辞在两个阶段**同样适用**，不只是阶段一。
 
 ### 10.2 由此产生的、必须主动交代的张力
 
