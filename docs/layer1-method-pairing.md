@@ -243,8 +243,53 @@ wrap_user_prompt(query)  →  agent 行动  →  add(action + observation + judg
 
 **成本提示**：代码里有 `time.sleep(60)` 用于等 Mem0 建索引 —— 按轮计的 60 秒惩罚，阶段二排期要算进去。
 
-> ⚠️ **核对范围**：以上只读了 `run_travel.py`（四个入口之一，另有 `run_math.py` / `run_search.py` / `run_shopping.py`）。
-> web shopping 是真正的多步环境，每轮内 agent 动作更多，regime 结构可能比 travel 丰富。**这三个尚未核对。**
+### 6.2 四个入口全部核对后的 regime 结构
+
+| 入口 | 内层多步循环 | read（`wrap_user_prompt`） | write（`add`） |
+|---|---|---|---|
+| `run_travel.py` | 无 | 轮首，每轮一次 | 轮尾，每轮一次 |
+| `run_math.py` | 无（per subtask） | 轮首 | 轮尾 |
+| `run_shopping.py` | **有**，`for turn_idx in range(1, max_rounds+1)` | **整个 episode 只在首轮一次**（`memory_injected` 标志位守住） | `use_step_memory=True` → **内循环每步写**；否则 episode 结束批量写 |
+| `run_search.py` | 逻辑在 env server 内，脚本层不可见 | 脚本层无 | 脚本层无（`memory_url` / `memory_system` 作为配置传给 env server） |
+
+### 6.3 ❗ 修正三：「write / read 真正 interleave」这个说法要收窄
+
+`run_shopping.py` 确实有内层多步循环，写入也确实能进内循环：
+
+```python
+for turn_idx in range(1, args.max_rounds + 1):
+    if memory is not None and not memory_injected:
+        prompt = memory.wrap_user_prompt(prompt_source)   # ← 只此一次
+        memory_injected = True
+    action = agent.act_with_messages(input_messages)
+    result = env_client.step(action, ...)
+    if use_step_memory and memory is not None:
+        for entry in build_memory_entries(...):
+            memory.add(entry)                             # ← 每步可写
+```
+
+但**读只发生一次**，被 `memory_injected` 守住。所以 shopping 的 episode 内 regime 是 `R W W W W …`，
+不是读写交替 —— **在读这一侧，反而比 travel 更不交错**。
+
+**四个入口没有任何一个在 episode 内交替读写。** 准确的表述应当是：
+
+```
+MemoryAgentBench:  W^N R^M               —— 全局只有一次 write→read 转换
+MemoryArena:       (R … W)(R … W)(R … W)  —— 在 round / episode 粒度上反复交替
+```
+
+pairing 的逻辑**依然成立**（反复交替 vs 单次转换，确实是不同的问题形态），
+但"真正 interleave"这个说法太强，应改为**"在 round 粒度上反复交替"**。
+`A_t` 的论据仍按 §6.1 的修正走：**来自跨 round / 跨 person 的任务语境变化，而非 regime 交错**。
+
+### 6.4 另外三条工程事实
+
+- **`run_search.py` 的记忆操作不在脚本层。** 全部逻辑委托给 env server（脚本只发一次 `run_sequential`），
+  所以 §6.1 说的"给 client 打点"对 search **不适用**，得改到 env server 侧。阶段二要按入口分别处理。
+- **shopping 有 `backfill_memory_from_artifacts()`**，resume 时会把过去的步骤补写进记忆。
+  这会让朴素按调用序还原的 trace 出现**重放写入**，做时序分析前必须先剔除。
+- **shopping 的落盘比 travel 好**：`eval_{stem}_step_{N}_{timestamp}.json` 逐 episode 存交互记录，
+  另有 `summary.json` / `summary_all.json`。**若阶段二要选一个入口先做，shopping 的可观测性最好，且是唯一有内层多步结构的。**
 
 ---
 
