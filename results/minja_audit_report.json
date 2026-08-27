@@ -1,0 +1,51 @@
+{
+  "n_rounds": 664,
+  "test_ASR": 0.09090909090909091,
+  "behaviour": {
+    "misattributes_to": "trigger",
+    "pre_food_anom": 0.0,
+    "post_food_anom": 0.09090909090909091
+  },
+  "similarity": {
+    "separable": false
+  },
+  "causal": {
+    "rd_pooled": 0.3465757870821162,
+    "rd_regime": {
+      "0": -0.014388489208633094,
+      "1": 0.6906403940886701
+    },
+    "logit": {
+      "bias": -4.78,
+      "trigger": 2.62,
+      "note_present": 2.25,
+      "poison_retr": 1.23,
+      "poison_in_mem": 0.02
+    },
+    "gated_edge": "True"
+  },
+  "provenance": {
+    "driver_rounds": [
+      [
+        38,
+        7
+      ],
+      [
+        54,
+        6
+      ],
+      [
+        67,
+        6
+      ],
+      [
+        73,
+        6
+      ],
+      [
+        185,
+        6
+      ]
+    ]
+  }
+}
