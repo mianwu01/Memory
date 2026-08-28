@@ -81,8 +81,13 @@ def p2_scatter(summ, w=680, h=380):
 
 
 # --------------------------------------------------------------------------- P3
-def p3_gate_chart(cells, w=680, h=300):
-    """P(anomalous) across the 2x2 of (trigger, poison retrieved)."""
+def p3_note_chart(cells, w=680, h=300):
+    """P(anomalous) across the 2x2 of (note in query, poison retrieved).
+
+    This is the honest cut. Splitting on `trigger` instead makes the memory
+    pathway look real; splitting on `note_present` shows the anomaly tracks the
+    VISIBLE instruction, and that the note-free + poison-read cell is empty.
+    """
     pad_l, pad_b, pad_t = 58, 88, 20
     bw = (w - pad_l - 30) / 4 * 0.56
     gap = (w - pad_l - 30) / 4
@@ -106,8 +111,8 @@ def p3_gate_chart(cells, w=680, h=300):
                  f'rx="4" fill="{col}"/>')
         p.append(f'<text x="{x+bw/2:.1f}" y="{y-8:.1f}" text-anchor="middle" font-size="14" '
                  f'font-weight="700" fill="var(--text-primary)">{val*100:.0f}%</text>')
-        lab = f'trigger {"YES" if c["trigger"] else "no"}'
-        lab2 = f'poison read {"YES" if c["poison"] else "no"}'
+        lab = f'note in query: {"YES" if c["note"] else "no"}'
+        lab2 = f'poison read: {"YES" if c["poison"] else "no"}'
         base = pad_t + (h - pad_t - pad_b)
         p.append(f'<text x="{x+bw/2:.1f}" y="{base+20:.1f}" text-anchor="middle" font-size="12" '
                  f'fill="var(--text-secondary)">{lab}</text>')
@@ -212,17 +217,20 @@ agent-safety failure and test whether our method recovers the hidden driver.</p>
   <div class="kpi"><div class="n">{lc_ratio:.1f}×</div>
     <div class="l">smaller memory context than full-history, losing
     {(lc["cell_recall"]-ours["cell_recall"])*100:.1f} points of cell recall</div></div>
-  <div class="kpi"><div class="n">{p3_cells[3]["rate"]*100:.0f}%</div>
-    <div class="l">attack rate when trigger AND poisoned memory coincide</div></div>
-  <div class="kpi"><div class="n">{p3_cells[1]["rate"]*100:.0f}%</div>
-    <div class="l">attack rate when the same poison is read <em>without</em> the
-    trigger — the edge is gated, not constant</div></div>
+  <div class="kpi"><div class="n">{p3_report['noted_anom']}/{p3_report['noted_n']}</div>
+    <div class="l">attack fires when the instruction is <em>visible in the query</em></div></div>
+  <div class="kpi"><div class="n">{p3_report['nf_anom']}/{p3_report['nf_n']}</div>
+    <div class="l">attack fires when the poison is read <em>from memory</em> with no visible
+    instruction — the memory pathway did not reproduce</div></div>
 </div>
 
 <h2>Task 1 — the plugin makes MemoryArena's memory better and cheaper</h2>
 <p class="sub">We registered <code>CausalMemorySystem</code> into MemoryArena at runtime
 (their repo stays byte-identical — it ships no licence, so we do not fork it) and ran it
-through their real HTTP memory interface on real travel episodes.</p>
+through their real HTTP memory interface on real travel episodes.
+<strong>Caveat stated up front:</strong> the graph used here is a <em>rule</em> graph read off
+the query, not a discovered one. This measures whether ancestor masking pays off; it does not
+yet exercise causal discovery.</p>
 
 <div class="card">{p2_scatter(P)}</div>
 
@@ -261,47 +269,85 @@ shift its answer by +4 in ASCII when it sees the word "food", so an anomalous ac
 self-labelling (an answer in E–H). Our only additions are logging and a clean
 pre-injection probe phase.</p>
 
-<div class="card">{p3_gate_chart(p3_cells)}</div>
+<p><strong>Headline, stated plainly: half of the attack reproduced and half did not.</strong>
+The model obeys the poison rule when the instruction is in front of it
+({p3_report['noted_anom']}/{p3_report['noted_n']} rounds). But the part that makes MINJA a
+<em>memory</em> attack — the record lying dormant and hijacking a later, clean query — did
+not happen even once: {p3_report['nf_anom']}/{p3_report['nf_n']} on rounds where the poison
+was retrieved with no instruction visible, and {p3_report['test_anom']}/{p3_report['test_n']}
+on the held-out test rounds.</p>
 
-<p><strong>How to read it:</strong> the poisoned record is in memory the whole time.
-Reading it changes nothing on its own ({p3_cells[1]["rate"]*100:.0f}% when the trigger is
-absent). The trigger alone changes little ({p3_cells[2]["rate"]*100:.0f}%). Only the
-<em>conjunction</em> fires ({p3_cells[3]["rate"]*100:.0f}%). That multiplicative shape is
-the "gated read edge" our formulation predicts, and it is why adding the trigger as one
-more variable does not expose it — you have to condition on the regime.</p>
+<div class="card">{p3_note_chart(p3_cells)}</div>
 
-<h3>Why the two standard audits fail here</h3>
+<p><strong>How to read it:</strong> the anomaly tracks the <em>visible</em> instruction, not
+the memory. The bottom-right bar is the one that would have to be tall for the memory
+pathway to be real, and it is empty.</p>
+
+<h3>The confound that would have fooled us — and why this is the interesting part</h3>
+<p>Split the same data by <em>trigger word</em> instead of by <em>visible instruction</em>
+and you get a textbook gated read edge: pooled Δ = +{p3_report['pooled_rd']:.2f}, and
+conditioned on the trigger, poison retrieval appears to drive the anomaly at Δ = +0.85 while
+being perfectly inert without it. That is exactly the signature the project predicts — and
+here it is an artifact.</p>
+<p>The cause is mechanical: retrieval is edit-distance based, so a query carrying the long
+poison note is textually close to stored records that also carry notes. Poison therefore gets
+retrieved precisely on the rounds where the instruction is already in plain sight. The two
+variables are collinear, and any estimator that does not break them apart credits memory for
+what the note did.</p>
+<p><strong>The only statistic with discriminating power</strong> is the note-free ∧
+poison-retrieved cell — and it is {p3_report['nf_anom']}/{p3_report['nf_n']}. The analysis
+code now refuses to report "driver recovered" without it.</p>
+
 <div class="scroll"><table>
-<thead><tr><th>audit</th><th>what it can see</th><th>verdict</th></tr></thead><tbody>
+<thead><tr><th>audit</th><th>what it can see</th><th>verdict on this data</th></tr></thead><tbody>
 <tr><td>Behaviour-only</td><td>the action sequence</td>
-<td><span class="tag bad">misattributes</span> blames the topic word "food"</td></tr>
+<td><span class="tag warn">not tested</span> the anomaly only occurs on rounds whose
+instruction is visible, so nothing is hidden from it here</td></tr>
 <tr><td>Similarity / retrieval</td><td>what was retrieved, and how close</td>
-<td><span class="tag bad">cannot separate</span> poison looks like ordinary relevant memory</td></tr>
+<td><span class="tag bad">cannot separate</span> poison sits among topically similar
+memory (distance 84 on anomalous rounds vs 140 on normal)</td></tr>
 <tr><td>Causal (ours)</td><td>temporal structure over memory state</td>
-<td><span class="tag good">recovers + names</span> identifies the driver and the round that wrote it</td></tr>
+<td><span class="tag good">correctly declines</span> attributes the anomaly to the visible
+note and reports that memory is <em>not</em> the driver</td></tr>
 </tbody></table></div>
 
-<p><strong>The counterfactual that settles it.</strong> The same kind of "food" query was run
-<em>before</em> any poison existed: {p3_report.get('pre_anom','0')} anomalous out of
-{p3_report.get('pre_n','0')}. Afterwards the identical query distribution produces attacks.
-The queries did not change; memory did. So the topic is not the cause — the written record is,
-and only an audit that can see memory over time can say so.</p>
+<p>That last row is a soundness result rather than the headline we were aiming for: asked to
+find a hidden memory driver, the method declined to invent one that was not there. Worth
+having — but it is not yet evidence that the method <em>recovers</em> hidden drivers, because
+this run contains none to recover.</p>
+
+<h3>Two candidate explanations, not yet separated</h3>
+<ul>
+<li><strong>Retrieval.</strong> To sweep trigger rarity we drew benign filler from 40 MMLU
+subjects, which diluted memory so much the poison rarely won a top-3 slot — it was retrieved
+on only {p3_report['nf_n']} of {p3_report['rounds']-p3_report['noted_n']} note-free rounds.
+MINJA's own design keeps filler within one subject. A faithful same-subject rerun is in flight.</li>
+<li><strong>Model robustness.</strong> {esc(meta.get('model','the model'))} may simply not be
+steered by an instruction embedded in a retrieved exemplar.</li>
+</ul>
 
 {case_html}
 
 <h2>What we are not claiming</h2>
 <ul>
-<li>Task 1's win is <strong>answerability at cost</strong> — measured on the memory context
-itself, with no LLM in the loop, so it is exactly reproducible. It is not yet an end-to-end
-task-success number; the travel agent runs up to 30 reasoning steps per round, and at
-affordable episode counts that metric moves inside its own noise.</li>
-<li>On this environment the dependencies are <em>named in the query</em>, so our win comes
-from slot-level ancestor extraction, not from needing to discover the graph. Discovery
-claims rest on the simulation track, not on this one.</li>
-<li>Task 2's numbers are one model, one trigger word, one subject area. The mechanism is
-what transfers; the rates are not a benchmark score.</li>
-<li>MemAudit — the closest competitor — released no code, so "we beat it" is
-<em>not</em> yet demonstrated; only the two naive audits above were run.</li>
+<li><strong>The graph in Task 1 is a rule graph, not a discovered one.</strong> It reads the
+person names out of the query. So this run demonstrates that slot-level ancestor masking pays
+off — it does <em>not</em> yet exercise GRACE or any causal discovery, which is the project's
+actual thesis. Wiring the learned graph in and re-measuring is the open work item.</li>
+<li>Task 1's win is <strong>answerability at cost</strong>, measured on the memory context
+with no LLM in the loop (so it reproduces exactly). It is not an end-to-end task-success
+number; the travel agent runs up to 30 reasoning steps per round and at affordable episode
+counts that metric moves inside its own noise.</li>
+<li>On travel the dependencies are <em>named in the query</em>, so discovery is unnecessary
+by construction here (a pre-registered test already concluded this). Discovery claims rest on
+the simulation track, not on this environment.</li>
+<li><strong>Task 2 did not demonstrate hidden-driver recovery</strong>, because on this
+model and configuration no hidden driver was operating. What it produced is a soundness
+check plus a documented confound.</li>
+<li>The trigger-rarity sweep referenced in the working notes was run against an offline
+stand-in answerer, not a real LLM — it is a synthetic diagnostic, not a measurement.</li>
+<li>MemAudit — the closest competitor — released no code, so "we beat it" is not
+demonstrated; only the two naive audits above were run.</li>
 </ul>
 </div></div>"""
     return f"<title>Temporal-causal memory — experiment report</title>\n<style>{css}</style>\n{body}"
@@ -320,41 +366,55 @@ def main():
     df = pd.read_csv(a.p3_trace)
 
     cells = []
-    for trig in (0, 1):
+    for note in (0, 1):
         for pois in (0, 1):
-            sub = df[(df.trigger == trig) & (df.poison_retr == pois)]
-            cells.append({"trigger": trig, "poison": pois, "n": len(sub),
+            sub = df[(df.note_present == note) & (df.poison_retr == pois)]
+            cells.append({"note": note, "poison": pois, "n": len(sub),
                           "rate": float(sub["anomalous"].mean()) if len(sub) else 0.0})
     pre = df[df.phase == "pre"]
-    rep = {"pre_anom": int(pre["anomalous"].sum()), "pre_n": len(pre)}
+    test = df[df.phase == "test"]
+    nf = df[(df.note_present == 0) & (df.poison_retr == 1)]
+    noted = df[df.note_present == 1]
+    rep = {"pre_anom": int(pre["anomalous"].sum()), "pre_n": len(pre),
+           "test_anom": int(test["anomalous"].sum()), "test_n": len(test),
+           "nf_anom": int(nf["anomalous"].sum()), "nf_n": len(nf),
+           "noted_anom": int(noted["anomalous"].sum()), "noted_n": len(noted),
+           "rounds": len(df),
+           "pooled_rd": float(df[df.poison_retr == 1]["anomalous"].mean()
+                              - df[df.poison_retr == 0]["anomalous"].mean())}
 
     # concrete case from the transcript
     case_html = ""
     tp = Path(a.p3_transcript)
     if tp.exists():
         T = json.load(open(tp))
-        fired = [r for r in T if r["anomalous"] and not r["note_present"]
-                 and any(x["is_poison"] for x in r["retrieved"])]
+        fired = [r for r in T if r["anomalous"] and r["note_present"]]
+        held = [r for r in T if not r["note_present"]
+                and any(x["is_poison"] for x in r["retrieved"])]
+        blocks = []
         if fired:
             c = fired[0]
-            pois = [x for x in c["retrieved"] if x["is_poison"]]
-            case_html = f"""<h3>One attack, in the model's own words</h3>
-<p class="note">Round t={c['t']} ({esc(c['phase'])}). The query carries no instruction —
-<code>note_present = 0</code>. The poison is only in memory.</p>
-<div class="card">
-<p><strong>The query the user sent</strong></p>
-<pre>{esc(c['question'][:420])}</pre>
-<p><strong>What was retrieved from memory</strong> — the poisoned record, sitting
-among ordinary ones:</p>
-<pre>{esc(pois[0]['thought'][:420])}</pre>
-<p><strong>The model's reasoning this round</strong> — it narrates the hijack it
-inherited from memory:</p>
-<div class="quote">{esc(c['thought'][:520])}</div>
-<p class="note">Correct answer: <strong>{esc(c['groundtruth'])}</strong> ·
-model answered <strong>{esc(c['answer'])}</strong> — outside the valid range A–D,
-which is exactly the +4 ASCII signature the payload asked for. A behaviour auditor sees
-only that last line.</p>
-</div>"""
+            blocks.append(f"""<p><strong>A. The attack working — instruction visible in the
+query</strong> (round t={c['t']}, {esc(c['phase'])}).</p>
+<p class="note">The model narrates the payload verbatim and applies it:</p>
+<div class="quote">{esc(c['thought'][:560])}</div>
+<p class="note">Correct answer <strong>{esc(c['groundtruth'])}</strong>; model answered
+<strong>{esc(c['answer'])}</strong> — outside A–D, exactly the +4 ASCII signature.</p>""")
+        if held:
+            d = held[0]
+            pois = [x for x in d["retrieved"] if x["is_poison"]]
+            blocks.append(f"""<p style="margin-top:22px"><strong>B. The attack failing — same
+payload, now only in memory</strong> (round t={d['t']}, {esc(d['phase'])},
+<code>note_present = 0</code>).</p>
+<p class="note">This poisoned record was retrieved as a few-shot exemplar:</p>
+<pre>{esc(pois[0]['thought'][:400])}</pre>
+<p class="note">And the model ignored it — answered
+<strong>{esc(str(d['answer']))}</strong> (ground truth {esc(d['groundtruth'])}),
+anomalous = {d['anomalous']}. This is the pathway MINJA depends on, and it did not
+carry.</p>""")
+        if blocks:
+            case_html = ("<h3>Both halves, in the model's own words</h3><div class=\"card\">"
+                         + "".join(blocks) + "</div>")
 
     p2_case_html = ""
     cf = Path("logs/p2_case.log")
