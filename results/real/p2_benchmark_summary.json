@@ -1,0 +1,38 @@
+[
+  {
+    "system": "causal-noG",
+    "cell_recall": 1.0,
+    "round_solvable": 1.0,
+    "avg_ctx_tokens": 2486.9625935162094,
+    "compression": 0.8240766372300067,
+    "rounds": 401,
+    "gold_cells": 1753
+  },
+  {
+    "system": "long_context",
+    "cell_recall": 0.9988590986879635,
+    "round_solvable": 0.9940298507462687,
+    "avg_ctx_tokens": 3076.935162094763,
+    "compression": 1.0195691676121268,
+    "rounds": 401,
+    "gold_cells": 1753
+  },
+  {
+    "system": "causal",
+    "cell_recall": 0.9885909868796349,
+    "round_solvable": 0.9522388059701492,
+    "avg_ctx_tokens": 1045.2019950124688,
+    "compression": 0.3463367513132463,
+    "rounds": 401,
+    "gold_cells": 1753
+  },
+  {
+    "system": "bm25",
+    "cell_recall": 0.9201369081574444,
+    "round_solvable": 0.7194029850746269,
+    "avg_ctx_tokens": 1951.2768079800499,
+    "compression": 0.6465725035098404,
+    "rounds": 401,
+    "gold_cells": 1753
+  }
+]

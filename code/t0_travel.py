@@ -148,14 +148,20 @@ def format_plan(daily_plans, name):
 
 
 def build_chunks(ep):
+    # ensure_ascii=False matches run_travel.py:226-232 / :281-292. It is load-bearing:
+    # with the default escaping, non-ASCII venue names ("和缘浪漫民宿, Billings(Montana)")
+    # are stored as \uXXXX, so any system that keeps chunks verbatim appears to "lose"
+    # them under a literal-substring check while a system that re-renders parsed JSON
+    # appears to keep them. That is an encoding artifact, not a memory-quality effect.
     row = ep["row"]
     chunks = [json.dumps({"name": ep["base_name"], "query": norm(row["base_person"]["query"]),
                           "is_base_person": True,
-                          "final_plan": format_plan(row["base_person"]["daily_plans"], ep["base_name"])})]
+                          "final_plan": format_plan(row["base_person"]["daily_plans"], ep["base_name"])},
+                         ensure_ascii=False)]
     for t, ans in enumerate(row["answers"], start=1):
         name = ep["names"][t]
         chunks.append(json.dumps({"name": name, "query": ep["rounds"][t - 1]["query"],
-                                  "final_plan": format_plan(ans, name)}))
+                                  "final_plan": format_plan(ans, name)}, ensure_ascii=False))
     return chunks  # chunks[k] is written after round k (k=0 base)
 
 

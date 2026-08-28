@@ -82,12 +82,16 @@ class CausalMemorySystem:
         keep_provenance: bool = True,
         max_slots: Optional[int] = None,
         fallback_to_raw: bool = True,
+        ablate_graph: bool = False,
     ):
         self.graph_mode = graph_mode
         self.user_id = user_id
         self.keep_provenance = keep_provenance
         self.max_slots = max_slots
         self.fallback_to_raw = fallback_to_raw
+        # ablation: keep the slot parsing + hold rule but drop graph selection,
+        # so any gain over this arm is attributable to An_G, not to structuring.
+        self.ablate_graph = ablate_graph
 
         # Form A state: (person, day, slot) -> (value, write_round)
         self._cells: Dict[Tuple[str, int, str], Tuple[str, int]] = {}
@@ -161,6 +165,8 @@ class CausalMemorySystem:
         """
         q = query or ""
         ql = q.lower()
+        if self.ablate_graph:
+            return set(self._cells)          # structured slots, no graph selection
         if self.graph_mode == "offline" and self._offline_graph:
             named = [p for p in self._people if p.lower() in ql]
             keep = set()

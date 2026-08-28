@@ -50,6 +50,8 @@ class Args:
         self.n_shots = 3
         self.seed = 42
         self.out = "results/_sweep_tmp.csv"
+        self.verbose = False
+        self.max_tokens = 6000
         self.__dict__.update(kw)
 
 
