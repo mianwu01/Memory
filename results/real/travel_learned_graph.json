@@ -1,0 +1,155 @@
+{
+ "schema": "travel-type-level-slot-graph/v1",
+ "source": "results/real/typegraph_all_centered.json spec=ind (GRACE, indicator encoding)",
+ "slots": [
+  "current_city",
+  "transportation",
+  "breakfast",
+  "attraction",
+  "lunch",
+  "dinner",
+  "accommodation"
+ ],
+ "max_lag": 3,
+ "n_episodes": 270,
+ "slot_ancestors": {
+  "current_city": [],
+  "transportation": [],
+  "breakfast": [
+   "breakfast"
+  ],
+  "attraction": [],
+  "lunch": [
+   "breakfast",
+   "lunch"
+  ],
+  "dinner": [
+   "dinner"
+  ],
+  "accommodation": [
+   "accommodation"
+  ]
+ },
+ "persistent_slots": [
+  "current_city",
+  "transportation",
+  "attraction"
+ ],
+ "edges": [
+  {
+   "cause": "breakfast",
+   "effect": "breakfast",
+   "lag": 1,
+   "weight": 0.6792
+  },
+  {
+   "cause": "breakfast",
+   "effect": "breakfast",
+   "lag": 2,
+   "weight": 0.6571
+  },
+  {
+   "cause": "breakfast",
+   "effect": "breakfast",
+   "lag": 3,
+   "weight": 0.6575
+  },
+  {
+   "cause": "breakfast",
+   "effect": "lunch",
+   "lag": 3,
+   "weight": 0.6043
+  },
+  {
+   "cause": "lunch",
+   "effect": "lunch",
+   "lag": 1,
+   "weight": 0.6576
+  },
+  {
+   "cause": "lunch",
+   "effect": "lunch",
+   "lag": 2,
+   "weight": 0.6509
+  },
+  {
+   "cause": "lunch",
+   "effect": "lunch",
+   "lag": 3,
+   "weight": 0.6656
+  },
+  {
+   "cause": "dinner",
+   "effect": "dinner",
+   "lag": 1,
+   "weight": 0.6539
+  },
+  {
+   "cause": "dinner",
+   "effect": "dinner",
+   "lag": 2,
+   "weight": 0.6479
+  },
+  {
+   "cause": "dinner",
+   "effect": "dinner",
+   "lag": 3,
+   "weight": 0.6521
+  },
+  {
+   "cause": "accommodation",
+   "effect": "accommodation",
+   "lag": 1,
+   "weight": 0.7014
+  },
+  {
+   "cause": "accommodation",
+   "effect": "accommodation",
+   "lag": 2,
+   "weight": 0.6811
+  },
+  {
+   "cause": "accommodation",
+   "effect": "accommodation",
+   "lag": 3,
+   "weight": 0.6628
+  }
+ ],
+ "persistence": {
+  "current_city": {
+   "constant_rate": 1.0,
+   "copy_rate": 1.0,
+   "n_trials": 1350
+  },
+  "transportation": {
+   "constant_rate": 1.0,
+   "copy_rate": 1.0,
+   "n_trials": 810
+  },
+  "breakfast": {
+   "constant_rate": 0.0909,
+   "copy_rate": 0.7065,
+   "n_trials": 1056
+  },
+  "attraction": {
+   "constant_rate": 1.0,
+   "copy_rate": 1.0,
+   "n_trials": 984
+  },
+  "lunch": {
+   "constant_rate": 0.0684,
+   "copy_rate": 0.6918,
+   "n_trials": 936
+  },
+  "dinner": {
+   "constant_rate": 0.0708,
+   "copy_rate": 0.7001,
+   "n_trials": 1116
+  },
+  "accommodation": {
+   "constant_rate": 0.0204,
+   "copy_rate": 0.6125,
+   "n_trials": 1080
+  }
+ }
+}

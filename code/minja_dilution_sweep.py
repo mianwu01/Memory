@@ -52,6 +52,7 @@ class Args:
         self.out = "results/_sweep_tmp.csv"
         self.verbose = False
         self.max_tokens = 6000
+        self.inject_attempts = 3
         self.__dict__.update(kw)
 
 

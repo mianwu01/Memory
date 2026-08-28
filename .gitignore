@@ -8,3 +8,4 @@ __pycache__/
 code/results/
 .env
 results/real/_tpdb/
+.tmp/

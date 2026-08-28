@@ -102,8 +102,18 @@ def main():
     # Isolates "structured slots" from "causal ancestor selection".
     arena_server.MEMORY_FACTORIES["causal-noG"] = lambda: CausalMemorySystem(
         graph_mode="rule", ablate_graph=True)
+    # constraint edges + a HAND-PICKED trip scaffold (see CausalMemorySystem docstring)
+    arena_server.MEMORY_FACTORIES["causal-scaffold"] = lambda: CausalMemorySystem(
+        graph_mode="rule", include_scaffold=True)
+    # milestone M4: the same masking driven by a graph DISCOVERED from data
+    # (code/travel_grace_discovery.py -> results/real/travel_learned_graph.json),
+    # with no hand-authored slot list anywhere.
+    # ARENA is <repo>/benchmarks/MemoryArena, so the repo root is parents[1].
+    learned = str(ARENA.parents[1] / "results" / "real" / "travel_learned_graph.json")
+    arena_server.MEMORY_FACTORIES["causal-learned"] = lambda: CausalMemorySystem(
+        graph_mode="learned", learned_graph_path=learned, use_names=True)
 
-    print(f"registered: causal, causal-noG "
+    print(f"registered: causal, causal-noG, causal-scaffold, causal-learned "
           f"({len(arena_server.MEMORY_FACTORIES)} factories total)", flush=True)
     uvicorn.run(arena_server.app, host=a.host, port=a.port, log_level="warning")
 

@@ -26,7 +26,14 @@ G is pluggable:
               travel's dependencies are named in the query -- see t0-results.md,
               so this is an ORACLE-ish upper bound on retrieval, and the honest
               claim on travel is compression/efficiency, NOT discovery necessity)
-  "offline" : a discovered type-level graph loaded from JSON (milestone M4)
+  "learned" : a type-level slot graph DISCOVERED from data by
+              code/travel_grace_discovery.py (milestone M4). Schema
+              "travel-type-level-slot-graph/v1"; see _load_learned_graph.
+              This mode never reads person names out of the query -- the whole
+              point is to test whether a learned graph can drive the mask
+              WITHOUT the rule graph's query-parsing oracle.
+  "offline" : legacy placeholder schema {person: [slots]}, kept so older configs
+              keep working. Not produced by the discovery pipeline.
 
 CPU-only, no API dependency: importable and testable without a key.
 """
@@ -39,6 +46,10 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 # The 7-slot travel schema, verified at env/env_systems/travel_env.py:11
 SLOTS = ["current_city", "transportation", "breakfast", "attraction",
          "lunch", "dinner", "accommodation"]
+
+# The trip spine: slots any complete itinerary depends on regardless of what the
+# query's constraint sentences happen to mention. See CausalMemorySystem.
+SCAFFOLD_SLOTS = ["current_city", "transportation", "accommodation"]
 
 # Rendering used by run_travel.format_person_plan (run_travel.py:65-78):
 #   "=== {name}'s Plan ===" / "Day {d}:" / "Current City: ..." / "Lunch: ..." etc.
@@ -71,6 +82,32 @@ def parse_plan(text: str) -> Dict[Tuple[int, str], str]:
     return cells
 
 
+def _load_learned_graph(path: str) -> Dict[str, Any]:
+    """Read a discovered type-level slot graph (schema travel-type-level-slot-graph/v1).
+
+    Required keys (written by code/travel_grace_discovery.py --export):
+      slots             the 7-slot schema the graph is over
+      max_lag           L; the learned lag horizon, in ROUNDS
+      slot_ancestors    {effect_slot: [cause slots, transitively]} over lags 1..L
+      persistent_slots  slots whose value is constant across every round of a trial
+      edges             [{cause, effect, lag, weight}]  (kept for auditing/logging)
+    """
+    with open(path) as f:
+        g = json.load(f)
+    if not isinstance(g, dict) or "slot_ancestors" not in g:
+        raise ValueError(
+            f"{path} is not a learned type-level graph: expected a JSON object with "
+            f"'slot_ancestors' (schema travel-type-level-slot-graph/v1)")
+    g.setdefault("slots", list(SLOTS))
+    g.setdefault("max_lag", 3)
+    g.setdefault("persistent_slots", [])
+    unknown = set(g["slot_ancestors"]) - set(SLOTS)
+    if unknown:
+        raise ValueError(f"{path}: slot_ancestors names slots not in the travel "
+                         f"schema: {sorted(unknown)}")
+    return g
+
+
 class CausalMemorySystem:
     """Structured-slot travel memory with causal-ancestor masking at query time."""
 
@@ -83,6 +120,10 @@ class CausalMemorySystem:
         max_slots: Optional[int] = None,
         fallback_to_raw: bool = True,
         ablate_graph: bool = False,
+        include_scaffold: bool = False,
+        learned_graph_path: Optional[str] = None,
+        use_names: bool = False,
+        restrict_days: bool = False,
     ):
         self.graph_mode = graph_mode
         self.user_id = user_id
@@ -92,12 +133,25 @@ class CausalMemorySystem:
         # ablation: keep the slot parsing + hold rule but drop graph selection,
         # so any gain over this arm is attributable to An_G, not to structuring.
         self.ablate_graph = ablate_graph
+        # Trip-scaffold dependency (found by running the real agent end to end):
+        # a traveller must emit a COMPLETE itinerary, so every round depends on the
+        # group's shared city / flight / lodging even when the query's constraint
+        # sentences mention only meals. The name-anchored rule graph encodes the
+        # explicit constraint edges only and drops the scaffold, which starves the
+        # agent -- it burns its whole step budget re-searching flights. This flag
+        # adds the scaffold back. Kept as a SEPARATE mode so the constraint-only
+        # arm stays measurable and the difference is attributable.
+        self.include_scaffold = include_scaffold
+        # learned mode knobs (see _learned_select)
+        self.use_names = use_names
+        self.restrict_days = restrict_days
 
         # Form A state: (person, day, slot) -> (value, write_round)
         self._cells: Dict[Tuple[str, int, str], Tuple[str, int]] = {}
         self._people: List[str] = []              # insertion order == round order
         self._raw_chunks: List[str] = []
         self._offline_graph: Dict[str, List[str]] = {}
+        self._learned: Dict[str, Any] = {}
 
         if graph_mode == "offline":
             if not offline_graph_path:
@@ -107,6 +161,11 @@ class CausalMemorySystem:
             if not isinstance(g, dict):
                 raise ValueError(f"offline graph at {offline_graph_path} must be a JSON object")
             self._offline_graph = g
+        elif graph_mode == "learned":
+            path = learned_graph_path or offline_graph_path
+            if not path:
+                raise ValueError("graph_mode='learned' requires learned_graph_path")
+            self._learned = _load_learned_graph(path)
 
     # --- interface method 1 --------------------------------------------------
     def add_chunk(self, chunk: str) -> Dict[str, Any]:
@@ -167,6 +226,8 @@ class CausalMemorySystem:
         ql = q.lower()
         if self.ablate_graph:
             return set(self._cells)          # structured slots, no graph selection
+        if self.graph_mode == "learned" and self._learned:
+            return self._learned_select(q)
         if self.graph_mode == "offline" and self._offline_graph:
             named = [p for p in self._people if p.lower() in ql]
             keep = set()
@@ -195,9 +256,95 @@ class CausalMemorySystem:
                 cand = narrowed or cand
             keep |= cand
 
+        if self.include_scaffold:
+            keep |= self._scaffold_cells(named)
+
         if self.max_slots is not None and len(keep) > self.max_slots:
             keep = set(sorted(keep, key=lambda k: -self._cells[k][1])[:self.max_slots])
         return keep
+
+    # --- learned-graph selection (milestone M4) -------------------------------
+    @staticmethod
+    def _query_slots_days(ql: str) -> Tuple[Set[str], Set[int]]:
+        """Slots and days the query mentions. NOT the name oracle -- these are the
+        target cells the round is about, which any memory system may read."""
+        slots = {s for s in SLOTS if s.replace("_", " ") in ql or s in ql}
+        days = {int(d) for d in re.findall(r"day\s+(\d+)", ql)}
+        for word, d in (("first", 1), ("second", 2), ("third", 3), ("fourth", 4),
+                        ("fifth", 5), ("sixth", 6), ("seventh", 7)):
+            if f"{word} day" in ql or f"{word}-day" in ql:
+                days.add(d)
+        return slots, days
+
+    def _learned_select(self, query: str) -> Set[Tuple[str, int, str]]:
+        """An_G(Y_t) under the DISCOVERED type-level graph.
+
+        Y_t (the target cells) is the WHOLE 7-slot schema, not just the slots the
+        query's constraint sentences name: the travel agent must emit a complete
+        itinerary every round (env/env_systems/travel_env.py:11 scores all 7 slots),
+        so every slot is a target and its learned ancestors must survive. This is
+        exactly where the hand-written rule graph is under-specified -- it takes
+        Y_t = the named cells only and therefore drops the trip scaffold.
+
+        Three levers, all read off the learned artifact, none hand-set:
+          slot mask   keep slot types in  U_{s in Y} slot_ancestors[s]
+          lag horizon keep the last `max_lag` writers (provenance = write round);
+                      the learned graph has no edge beyond lag L, so older rounds
+                      are non-ancestors
+          persistence for a slot in `persistent_slots` the value is identical in
+                      every round, so ONE retained copy (the earliest writer)
+                      reconstructs all of them -- pure compression, no loss
+        """
+        g = self._learned
+        ql = query.lower()
+        slots_named, days_named = self._query_slots_days(ql)
+
+        keep_slots: Set[str] = set()
+        for s in SLOTS:                                   # every slot is a target
+            keep_slots |= set(g["slot_ancestors"].get(s, []))
+            if s in g["slot_ancestors"]:                  # a slot with no learned
+                keep_slots.add(s)                         # ancestor still needs itself
+        persistent = set(g.get("persistent_slots", [])) & keep_slots
+
+        L = int(g.get("max_lag", 3))
+        cur_round = len(self._raw_chunks)                 # rounds written so far
+        recent = {p for i, p in enumerate(self._people) if i >= cur_round - L}
+        named = {p for p in self._people if p and p.lower() in ql} if self.use_names else set()
+
+        keep: Set[Tuple[str, int, str]] = set()
+        for k in self._cells:
+            person, day, slot = k
+            if slot not in keep_slots or slot in persistent:
+                continue
+            if person not in recent and person not in named:
+                continue
+            if (self.restrict_days and days_named and slots_named
+                    and slot in slots_named and day not in days_named):
+                continue
+            keep.add(k)
+
+        # persistent slots: one copy per (day, slot), from the earliest writer
+        for slot in persistent:
+            first: Dict[int, Tuple[str, int, str]] = {}
+            for k, (_v, rnd) in self._cells.items():
+                if k[2] != slot:
+                    continue
+                cur = first.get(k[1])
+                if cur is None or rnd < self._cells[cur][1]:
+                    first[k[1]] = k
+            keep |= set(first.values())
+        return keep
+
+    def _scaffold_cells(self, named: List[str]) -> Set[Tuple[str, int, str]]:
+        """The shared-trip spine every itinerary depends on.
+
+        Taken from the earliest-written person present (the base person anchors
+        the group's city/flight/lodging), falling back to anyone named.
+        """
+        anchor = self._people[0] if self._people else None
+        sources = [p for p in ([anchor] + list(named)) if p]
+        return {k for k in self._cells
+                if k[0] in sources and k[2] in SCAFFOLD_SLOTS}
 
     def _render(self, keys: Set[Tuple[str, int, str]]) -> str:
         if not keys:
@@ -265,4 +412,30 @@ if __name__ == "__main__":
     assert "step_idx" not in w, "raw scratchpad leaked into context"
     print(w)
     print("\n[stats]", mem.context_stats(q))
+    assert "Boston" not in w, ("this assertion documents the rule graph's known "
+                               "under-specification: current_city is never named in "
+                               "a travel query, so the name-anchored graph drops the "
+                               "trip scaffold. See docs/p2-grace-integration-results.md")
     print("\nOK: sentinel present, ancestors selected, scratchpad masked.")
+
+    # --- learned-graph mode (milestone M4) --------------------------------
+    import os
+    gp = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                      "results", "real", "travel_learned_graph.json")
+    if os.path.exists(gp):
+        lm = CausalMemorySystem(graph_mode="learned", learned_graph_path=gp)
+        for c in mem._raw_chunks:
+            lm.add_chunk(c)
+        wl = lm.wrap_user_prompt(q)
+        assert "</memory_context>" in wl, "sentinel missing"
+        assert "Hotel Alpha" in wl, "learned graph must keep the accommodation ancestor"
+        assert "Boston" in wl, ("learned graph must keep the trip scaffold "
+                                "(current_city) -- that is the whole point of M4")
+        assert "step_idx" not in wl, "raw scratchpad leaked into context"
+        print("\n--- learned mode ---")
+        print(wl)
+        print("\n[stats]", lm.context_stats(q))
+        print("\nOK: learned graph loaded, scaffold retained, scratchpad masked.")
+    else:
+        print(f"\n(skipped learned-mode smoke test: {gp} not built yet; run "
+              f"code/travel_grace_discovery.py --export)")
