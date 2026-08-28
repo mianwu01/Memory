@@ -4,7 +4,8 @@
   "model_name": "deepseek-v4-flash",
   "backend": "openai",
   "api_key": "",
-  "base_url": "https://api.deepseek.com/v1"
+  "base_url": "https://api.deepseek.com/v1",
+  "_api_key_note": "read from $OPENAI_API_KEY; never commit a key here"
  },
  "memory": {
   "use_step_memory": false,
