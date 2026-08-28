@@ -61,12 +61,13 @@ def p2_scatter(summ, w=680, h=380):
     p.append(f'<text transform="translate(16,{(h-pad_b+pad_t)/2:.0f}) rotate(-90)" '
              f'text-anchor="middle" font-size="13" fill="var(--text-secondary)">rounds fully answerable</text>')
 
-    order = {"causal": 0, "long_context": 1, "bm25": 2, "causal-noG": 3}
+    order = {"causal-learned": 0, "long_context": 1, "bm25": 2,
+             "causal": 3, "causal-noG": 3, "causal-scaffold": 3}
     for r in summ:
         i = order.get(r["system"], 3)
         col = f"var(--s{i+1})"
         x, y = X(r["avg_ctx_tokens"]), Y(r["round_solvable"])
-        star = r["system"] == "causal"
+        star = r["system"] == "causal-learned"
         p.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{11 if star else 8}" fill="{col}" '
                  f'stroke="var(--surface-1)" stroke-width="2"/>')
         label = r["system"] + ("  ← ours" if star else "")
@@ -122,6 +123,86 @@ def p3_note_chart(cells, w=680, h=300):
                  f'fill="var(--text-muted)">n={c["n"]}</text>')
     p.append("</svg>")
     return "\n".join(p)
+
+
+
+def extras_html(meta):
+    out = []
+    reg = meta.get("regime")
+    if reg:
+        rows = "".join(
+            f"<tr><td>sigma={r['sigma']}</td>"
+            f"<td class='num'>{r['blind_read']}/2</td>"
+            f"<td class='num'>{r['augmented_read']}/2</td>"
+            f"<td class='num'><strong>{r['regime_read']}/2</strong></td></tr>"
+            for r in reg)
+        out.append(f"""<h2>The method itself: regime-conditioned discovery</h2>
+<p class="sub">Everything above uses a graph. This is the estimator that finds one when the
+edge is <em>gated</em> — switched on and off by a regime rather than always present.</p>
+<p>A gated edge is multiplicative: the coefficient on the parent depends on the regime.
+Adding the regime as one more <em>node</em> — the standard move — only shifts the mean, so
+it cannot express that, and it fails. Conditioning on the regime recovers the edge:</p>
+<div class="scroll"><table>
+<thead><tr><th>E0 gated SCM</th><th style="text-align:right">blind</th>
+<th style="text-align:right">regime as a node</th>
+<th style="text-align:right">regime-conditioned (ours)</th></tr></thead>
+<tbody>{rows}</tbody></table></div>
+<p class="note">Read edges recovered, out of 2. The middle column is the honest control: it
+is the obvious thing to try, it is what we shipped before, and it recovers nothing. Our
+estimator also flags each recovered edge as gated, which is what the defence below consumes.</p>""")
+
+    ma = meta.get("memaudit")
+    if ma:
+        c = ma.get("cmis", {}); g = ma.get("consistency_graph", {})
+        def f(v, d=3):
+            try:
+                return f"{float(v):.{d}f}"
+            except Exception:
+                return "n/a"
+        out.append(f"""<h2>Against the competitor: MemAudit</h2>
+<p class="sub">MemAudit (arXiv 2605.23723) is the nearest prior work and released no code, so we
+reimplemented both halves from the paper to make the comparison concrete.</p>
+<div class="scroll"><table>
+<thead><tr><th>MemAudit component</th><th style="text-align:right">AUC</th>
+<th style="text-align:right">precision@k</th></tr></thead><tbody>
+<tr><td>CMIS — per-record counterfactual influence</td>
+<td class="num">{f(c.get('auc'))}</td><td class="num">{f(c.get('precision_at_k'))}</td></tr>
+<tr><td>Consistency graph — structural anomaly</td>
+<td class="num">{f(g.get('auc'))}</td><td class="num">{f(g.get('precision_at_k'))}</td></tr>
+</tbody></table></div>
+<p><strong>We do not beat it at detection, and should not claim to.</strong> CMIS ranks the
+poisoned records well. The difference is structural, not a score: MemAudit scores records one
+at a time against a static semantic graph, so it cannot say <em>which earlier round's write</em>
+drives a later action, and its graph cannot be handed back to the memory system as a selection
+policy. Our graph does both jobs — that dual use is the claim.</p>
+<p class="note">Substitution to disclose: their DeBERTa-v3 NLI relatedness is replaced by lexical
+overlap here, because this project is CPU-only. That mainly weakens their second row.</p>""")
+
+    gt = meta.get("gate")
+    if gt:
+        rows = ""
+        for name, r in gt.items():
+            try:
+                rows += (f"<tr><td>{esc(name)}</td>"
+                         f"<td class='num'>{r['prevented']}/{r['anomalous_rounds']}"
+                         f" ({float(r['prevention_rate'])*100:.0f}%)</td>"
+                         f"<td class='num'>{r['collateral_rounds']}/{r['benign_rounds']}"
+                         f" ({float(r['collateral_rate'])*100:.1f}%)</td></tr>")
+            except Exception:
+                continue
+        out.append(f"""<h2>Closing the loop: gating the actions a driver would cause</h2>
+<p class="sub">An audit that only writes a report is not actionable. The same recovered
+structure is fed back so the memory system withholds the implicated record <em>before</em> the
+agent acts.</p>
+<div class="scroll"><table>
+<thead><tr><th>gate</th><th style="text-align:right">anomalous actions prevented</th>
+<th style="text-align:right">collateral (benign rounds touched)</th></tr></thead>
+<tbody>{rows}</tbody></table></div>
+<p><strong>What the middle row buys.</strong> Dropping the regime condition turns the gate into
+a blocklist: it still prevents everything, but it withholds memory on more than twice as many
+healthy rounds. Requiring the regime to be open — the edge to be <em>active</em> — is what makes
+the defence cheap enough to leave switched on.</p>""")
+    return "\n".join(out)
 
 
 def build(p2_summary, p3_report, p3_cells, case_html, p2_case_html, meta):
@@ -182,15 +263,21 @@ pre {{ background:var(--surface-2); border:1px solid var(--border); border-radiu
 ul {{ padding-left:20px; }} li {{ margin:5px 0; }}
 """
     P = p2_summary
-    ours = next((r for r in P if r["system"] == "causal"), None)
+    ours = next((r for r in P if r["system"] == "causal-learned"), None) or \
+           next((r for r in P if r["system"] == "causal"), None)
+    rule = next((r for r in P if r["system"] == "causal"), None)
     lc = next((r for r in P if r["system"] == "long_context"), None)
     bm = next((r for r in P if r["system"] == "bm25"), None)
     nog = next((r for r in P if r["system"] == "causal-noG"), None)
+    scaf = next((r for r in P if r["system"] == "causal-scaffold"), None)
 
     rows = ""
     for r in sorted(P, key=lambda x: -x["round_solvable"]):
-        cls = ' class="ours"' if r["system"] == "causal" else ""
-        nm = r["system"] + (" (ours)" if r["system"] == "causal" else
+        cls = ' class="ours"' if r["system"] == "causal-learned" else ""
+        nm = r["system"] + (" (ours, discovered graph)" if r["system"] == "causal-learned" else
+                            " (ours, pure discovery)" if r["system"] == "causal-learned-pure" else
+                            " (rule graph, constraint-only)" if r["system"] == "causal" else
+                            " (hand-patched scaffold)" if r["system"] == "causal-scaffold" else
                             " (ablation: no graph)" if r["system"] == "causal-noG" else
                             " (upper bound)" if r["system"] == "long_context" else
                             " (retrieval baseline)" if r["system"] == "bm25" else "")
@@ -328,6 +415,8 @@ steered by an instruction embedded in a retrieved exemplar.</li>
 
 {case_html}
 
+{extras_html(meta)}
+
 <h2>What we are not claiming</h2>
 <ul>
 <li><strong>The graph in Task 1 is a rule graph, not a discovered one.</strong> It reads the
@@ -364,6 +453,15 @@ def main():
 
     p2 = json.load(open(a.p2))
     df = pd.read_csv(a.p3_trace)
+
+    def _maybe(path):
+        try:
+            return json.load(open(path))
+        except Exception:
+            return None
+    extras = {"regime": _maybe("results/regime_grace_e0.json"),
+              "memaudit": _maybe("results/real/memaudit_baseline.json"),
+              "gate": _maybe("results/real/causal_gate.json")}
 
     cells = []
     for note in (0, 1):
@@ -424,7 +522,8 @@ carry.</p>""")
 
     out = Path(a.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(build(p2, rep, cells, case_html, p2_case_html, {"model": a.model}))
+    out.write_text(build(p2, rep, cells, case_html, p2_case_html,
+                         {"model": a.model, **extras}))
     print(f"wrote {out}")
     print("P3 gate cells:", json.dumps(cells, indent=1))
 

@@ -1,0 +1,41 @@
+{
+ "ancestry + regime (ours)": {
+  "anomalous_rounds": 23,
+  "prevented": 23,
+  "missed": 0,
+  "prevention_rate": 1.0,
+  "benign_rounds": 73,
+  "collateral_rounds": 10,
+  "collateral_rate": 0.136986301369863,
+  "records_withheld": 78,
+  "poison_withheld": 59,
+  "clean_withheld": 19,
+  "withhold_precision": 0.7564102564102564
+ },
+ "ancestry, no regime (ablation)": {
+  "anomalous_rounds": 23,
+  "prevented": 23,
+  "missed": 0,
+  "prevention_rate": 1.0,
+  "benign_rounds": 73,
+  "collateral_rounds": 26,
+  "collateral_rate": 0.3561643835616438,
+  "records_withheld": 106,
+  "poison_withheld": 70,
+  "clean_withheld": 36,
+  "withhold_precision": 0.660377358490566
+ },
+ "CMIS influence + regime": {
+  "anomalous_rounds": 23,
+  "prevented": 16,
+  "missed": 7,
+  "prevention_rate": 0.6956521739130435,
+  "benign_rounds": 73,
+  "collateral_rounds": 0,
+  "collateral_rate": 0.0,
+  "records_withheld": 26,
+  "poison_withheld": 26,
+  "clean_withheld": 0,
+  "withhold_precision": 1.0
+ }
+}

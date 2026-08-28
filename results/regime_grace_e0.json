@@ -1,0 +1,38 @@
+[
+ {
+  "delta": 10,
+  "sigma": 0.0,
+  "blind_read": 0,
+  "augmented_read": 0,
+  "regime_read": 2,
+  "regime_read_gated": 2,
+  "n_regime": {
+   "0": 2280,
+   "1": 120
+  }
+ },
+ {
+  "delta": 10,
+  "sigma": 0.01,
+  "blind_read": 0,
+  "augmented_read": 0,
+  "regime_read": 2,
+  "regime_read_gated": 2,
+  "n_regime": {
+   "0": 2280,
+   "1": 120
+  }
+ },
+ {
+  "delta": 10,
+  "sigma": 0.1,
+  "blind_read": 0,
+  "augmented_read": 0,
+  "regime_read": 2,
+  "regime_read_gated": 2,
+  "n_regime": {
+   "0": 2280,
+   "1": 120
+  }
+ }
+]

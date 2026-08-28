@@ -117,8 +117,15 @@ def main():
     learned = str(ARENA.parents[1] / "results" / "real" / "travel_learned_graph.json")
     arena_server.MEMORY_FACTORIES["causal-learned"] = lambda: CausalMemorySystem(
         graph_mode="learned", learned_graph_path=learned, use_names=True)
+    # PURE discovery: same learned graph, but the query is NOT parsed for person
+    # names. `causal-learned` still leans on that name oracle to pick WHICH person,
+    # so only this arm answers "can a learned graph drive the mask on its own?".
+    # Expect a bigger context (it cannot narrow to the named traveller) -- the
+    # question is how much answerability survives without the oracle.
+    arena_server.MEMORY_FACTORIES["causal-learned-pure"] = lambda: CausalMemorySystem(
+        graph_mode="learned", learned_graph_path=learned, use_names=False)
 
-    print(f"registered: causal, causal-noG, causal-scaffold, causal-learned "
+    print(f"registered: causal, causal-noG, causal-scaffold, causal-learned, causal-learned-pure "
           f"({len(arena_server.MEMORY_FACTORIES)} factories total)", flush=True)
     uvicorn.run(arena_server.app, host=a.host, port=a.port, log_level="warning")
 

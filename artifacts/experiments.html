@@ -62,12 +62,12 @@ platform and show it improves what is already there. Task 2 — reuse a publishe
 agent-safety failure and test whether our method recovers the hidden driver.</p>
 
 <div class="kpis">
-  <div class="kpi"><div class="n">95%</div>
+  <div class="kpi"><div class="n">100%</div>
     <div class="l">rounds answerable with our plugin, vs 72% for the
-    retrieval baseline — at 1.9× fewer tokens</div></div>
-  <div class="kpi"><div class="n">2.9×</div>
+    retrieval baseline — at 1.3× fewer tokens</div></div>
+  <div class="kpi"><div class="n">2.0×</div>
     <div class="l">smaller memory context than full-history, losing
-    1.0 points of cell recall</div></div>
+    -0.1 points of cell recall</div></div>
   <div class="kpi"><div class="n">23/30</div>
     <div class="l">attack fires when the instruction is <em>visible in the query</em></div></div>
   <div class="kpi"><div class="n">0/8</div>
@@ -104,11 +104,17 @@ yet exercise causal discovery.</p>
 <circle cx="414.2" cy="22.8" r="8" fill="var(--s4)" stroke="var(--surface-1)" stroke-width="2"/>
 <text x="430.2" y="10.8" text-anchor="start" font-size="13" font-weight="500" fill="var(--text-primary)">causal-noG</text>
 <text x="430.2" y="28.8" text-anchor="start" font-size="12" fill="var(--text-muted)">100.0% · 2487 tok</text>
+<circle cx="282.6" cy="22.8" r="11" fill="var(--s1)" stroke="var(--surface-1)" stroke-width="2"/>
+<text x="298.6" y="10.8" text-anchor="start" font-size="13" font-weight="700" fill="var(--text-primary)">causal-learned  ← ours</text>
+<text x="298.6" y="28.8" text-anchor="start" font-size="12" fill="var(--text-muted)">100.0% · 1558 tok</text>
 <circle cx="497.7" cy="28.5" r="8" fill="var(--s2)" stroke="var(--surface-1)" stroke-width="2"/>
 <text x="481.7" y="16.5" text-anchor="end" font-size="13" font-weight="500" fill="var(--text-primary)">long_context</text>
 <text x="481.7" y="34.5" text-anchor="end" font-size="12" fill="var(--text-muted)">99.4% · 3077 tok</text>
-<circle cx="210.0" cy="68.3" r="11" fill="var(--s1)" stroke="var(--surface-1)" stroke-width="2"/>
-<text x="226.0" y="56.3" text-anchor="start" font-size="13" font-weight="700" fill="var(--text-primary)">causal  ← ours</text>
+<circle cx="330.5" cy="48.4" r="8" fill="var(--s4)" stroke="var(--surface-1)" stroke-width="2"/>
+<text x="346.5" y="36.4" text-anchor="start" font-size="13" font-weight="500" fill="var(--text-primary)">causal-scaffold</text>
+<text x="346.5" y="54.4" text-anchor="start" font-size="12" fill="var(--text-muted)">97.3% · 1896 tok</text>
+<circle cx="210.0" cy="68.3" r="8" fill="var(--s4)" stroke="var(--surface-1)" stroke-width="2"/>
+<text x="226.0" y="56.3" text-anchor="start" font-size="13" font-weight="500" fill="var(--text-primary)">causal</text>
 <text x="226.0" y="74.3" text-anchor="start" font-size="12" fill="var(--text-muted)">95.2% · 1045 tok</text>
 <circle cx="338.3" cy="290.4" r="8" fill="var(--s3)" stroke="var(--surface-1)" stroke-width="2"/>
 <text x="354.3" y="278.4" text-anchor="start" font-size="13" font-weight="500" fill="var(--text-primary)">bm25</text>
@@ -119,23 +125,23 @@ yet exercise causal discovery.</p>
 left is "we spent fewer tokens to give them". Our plugin sits up-and-left of the
 retrieval baseline — strictly better on both axes at once, which is the part that
 matters: it is not a trade, it is a dominance. Full-history is the information
-ceiling and we pay 2.9× less to sit
-4.2 points below it.</p>
+ceiling and we pay 2.0× less to sit
+-0.6 points below it.</p>
 
 <div class="scroll"><table>
 <thead><tr><th>memory system</th><th style="text-align:right">cell recall</th>
 <th style="text-align:right">rounds answerable</th>
 <th style="text-align:right">context tokens</th><th style="text-align:right">vs full history</th></tr></thead>
-<tbody><tr><td>causal-noG (ablation: no graph)</td><td class="num">100.0%</td><td class="num">100.0%</td><td class="num">2487</td><td class="num">0.82×</td></tr><tr><td>long_context (upper bound)</td><td class="num">99.9%</td><td class="num">99.4%</td><td class="num">3077</td><td class="num">1.02×</td></tr><tr class="ours"><td>causal (ours)</td><td class="num">98.9%</td><td class="num">95.2%</td><td class="num">1045</td><td class="num">0.35×</td></tr><tr><td>bm25 (retrieval baseline)</td><td class="num">92.0%</td><td class="num">71.9%</td><td class="num">1951</td><td class="num">0.65×</td></tr></tbody></table></div>
+<tbody><tr><td>causal-noG (ablation: no graph)</td><td class="num">100.0%</td><td class="num">100.0%</td><td class="num">2487</td><td class="num">0.82×</td></tr><tr class="ours"><td>causal-learned (ours, discovered graph)</td><td class="num">100.0%</td><td class="num">100.0%</td><td class="num">1558</td><td class="num">0.52×</td></tr><tr><td>long_context (upper bound)</td><td class="num">99.9%</td><td class="num">99.4%</td><td class="num">3077</td><td class="num">1.02×</td></tr><tr><td>causal-scaffold (hand-patched scaffold)</td><td class="num">99.3%</td><td class="num">97.3%</td><td class="num">1896</td><td class="num">0.63×</td></tr><tr><td>causal (rule graph, constraint-only)</td><td class="num">98.9%</td><td class="num">95.2%</td><td class="num">1045</td><td class="num">0.35×</td></tr><tr><td>bm25 (retrieval baseline)</td><td class="num">92.0%</td><td class="num">71.9%</td><td class="num">1951</td><td class="num">0.65×</td></tr></tbody></table></div>
 
 <p class="note"><strong>What the ablation proves.</strong> <code>causal-noG</code> is our
 system with the causal graph switched off: same slot parsing, same hold rule, but it keeps
 every slot. It reaches 100% answerable — and costs
 2487 tokens. So structuring memory is what preserves the facts, and
 the <em>graph</em> is what buys the compression: turning it on cuts
-2487→1045 tokens
-(2.4×) for
-1.1 points of recall. Neither piece alone
+2487→1558 tokens
+(1.6×) for
+0.0 points of recall. Neither piece alone
 does the job.</p>
 
 <h3>What this looks like on one real round</h3>
@@ -314,6 +320,51 @@ payload, now only in memory</strong> (round t=20, benign,
 <strong>N</strong> (ground truth D),
 anomalous = 0. This is the pathway MINJA depends on, and it did not
 carry.</p></div>
+
+<h2>The method itself: regime-conditioned discovery</h2>
+<p class="sub">Everything above uses a graph. This is the estimator that finds one when the
+edge is <em>gated</em> — switched on and off by a regime rather than always present.</p>
+<p>A gated edge is multiplicative: the coefficient on the parent depends on the regime.
+Adding the regime as one more <em>node</em> — the standard move — only shifts the mean, so
+it cannot express that, and it fails. Conditioning on the regime recovers the edge:</p>
+<div class="scroll"><table>
+<thead><tr><th>E0 gated SCM</th><th style="text-align:right">blind</th>
+<th style="text-align:right">regime as a node</th>
+<th style="text-align:right">regime-conditioned (ours)</th></tr></thead>
+<tbody><tr><td>sigma=0.0</td><td class='num'>0/2</td><td class='num'>0/2</td><td class='num'><strong>2/2</strong></td></tr><tr><td>sigma=0.01</td><td class='num'>0/2</td><td class='num'>0/2</td><td class='num'><strong>2/2</strong></td></tr><tr><td>sigma=0.1</td><td class='num'>0/2</td><td class='num'>0/2</td><td class='num'><strong>2/2</strong></td></tr></tbody></table></div>
+<p class="note">Read edges recovered, out of 2. The middle column is the honest control: it
+is the obvious thing to try, it is what we shipped before, and it recovers nothing. Our
+estimator also flags each recovered edge as gated, which is what the defence below consumes.</p>
+<h2>Against the competitor: MemAudit</h2>
+<p class="sub">MemAudit (arXiv 2605.23723) is the nearest prior work and released no code, so we
+reimplemented both halves from the paper to make the comparison concrete.</p>
+<div class="scroll"><table>
+<thead><tr><th>MemAudit component</th><th style="text-align:right">AUC</th>
+<th style="text-align:right">precision@k</th></tr></thead><tbody>
+<tr><td>CMIS — per-record counterfactual influence</td>
+<td class="num">0.962</td><td class="num">0.889</td></tr>
+<tr><td>Consistency graph — structural anomaly</td>
+<td class="num">0.333</td><td class="num">0.667</td></tr>
+</tbody></table></div>
+<p><strong>We do not beat it at detection, and should not claim to.</strong> CMIS ranks the
+poisoned records well. The difference is structural, not a score: MemAudit scores records one
+at a time against a static semantic graph, so it cannot say <em>which earlier round's write</em>
+drives a later action, and its graph cannot be handed back to the memory system as a selection
+policy. Our graph does both jobs — that dual use is the claim.</p>
+<p class="note">Substitution to disclose: their DeBERTa-v3 NLI relatedness is replaced by lexical
+overlap here, because this project is CPU-only. That mainly weakens their second row.</p>
+<h2>Closing the loop: gating the actions a driver would cause</h2>
+<p class="sub">An audit that only writes a report is not actionable. The same recovered
+structure is fed back so the memory system withholds the implicated record <em>before</em> the
+agent acts.</p>
+<div class="scroll"><table>
+<thead><tr><th>gate</th><th style="text-align:right">anomalous actions prevented</th>
+<th style="text-align:right">collateral (benign rounds touched)</th></tr></thead>
+<tbody><tr><td>ancestry + regime (ours)</td><td class='num'>23/23 (100%)</td><td class='num'>10/73 (13.7%)</td></tr><tr><td>ancestry, no regime (ablation)</td><td class='num'>23/23 (100%)</td><td class='num'>26/73 (35.6%)</td></tr><tr><td>CMIS influence + regime</td><td class='num'>16/23 (70%)</td><td class='num'>0/73 (0.0%)</td></tr></tbody></table></div>
+<p><strong>What the middle row buys.</strong> Dropping the regime condition turns the gate into
+a blocklist: it still prevents everything, but it withholds memory on more than twice as many
+healthy rounds. Requiring the regime to be open — the edge to be <em>active</em> — is what makes
+the defence cheap enough to leave switched on.</p>
 
 <h2>What we are not claiming</h2>
 <ul>

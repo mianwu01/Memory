@@ -169,6 +169,27 @@ Day 3:  Breakfast / Lunch / Dinner …
 
 **仍待补**:端到端 PS/SPS/SR(`causal-learned` vs `long_context` vs `bm25` 正在跑)。
 
+## 4.7 ✅ 方法本体:regime-conditioned GRACE v1(M0,已实现)
+
+`code/regime_grace.py`。此前 E0 的两条 arm 是 blind 与 **additive** u 增广
+(把 u_t 当成额外**节点**),而门控边是**乘性**的:
+
+    x_j(t) = Σ_i Σ_l [ a_ijl · g_ijl(u_t) ] · x_i(t-l) + ε
+
+把 u_t 当节点只能移动 x_j 的**均值**,无法让 x_i 的**系数**随 regime 变——
+这正是 additive arm 一直失败的原因。新估计量按 regime 分别拟合系数,
+边在**任一** regime 显著即报告,并在系数随 regime 变化时标记为 **GATED**。
+
+E0 结果(每 σ 均如此):
+
+| | blind | u 作为节点(additive) | **regime-conditioned(我方)** |
+|---|---|---|---|
+| read 边恢复 | 0/2 | 0/2 | **2/2,且两条都被标为 GATED** |
+
+注意它**还修好了 v0 的 σ=0.01 失效**(`e0-v0-results.md` R2:regime 回归当时恒漏 m→y),
+本估计量在 σ∈{0, 0.01, 0.1} 全部 2/2。
+这条边的 GATED 标记正是 §P3 gate 闭环消费的输入——**同一张图,审计与防御双用**。
+
 ## 5. 诚实边界
 
 1. travel 的依赖**在 query 里被点名**(T0 已定论),故我方胜点是
