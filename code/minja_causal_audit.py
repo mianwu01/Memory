@@ -32,6 +32,11 @@ CPU-only; the only network use is the LLM call under --backend openai.
 """
 from __future__ import annotations
 
+import os as _os
+# CPU-only by contract. `import torch` (pulled in transitively) probes the driver
+# via NVML even without running a kernel, which a node watchdog can flag as GPU use.
+_os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
+
 import argparse
 import csv
 import json
@@ -295,6 +300,15 @@ def run(args):
     log: List[Dict] = []
     transcript: List[Dict] = []      # full per-round record for case studies
 
+    # Append each round to disk as it completes. The 2026-08-27 run was killed
+    # mid-trajectory and lost 35 rounds of real-LLM data because the CSV was only
+    # written at the end; a partial trace is still analysable, nothing is worth
+    # losing to a kill signal.
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    _fh = open(out, "w", newline="")
+    _writer = None
+
     # Interleaving, faithful to MINJA (QA/main.py:337-339, :348-396): a shuffled
     # 0/1 index array decides whether each slot is benign or injection, and each
     # stream is consumed from its OWN counter -- so injection rounds keep their
@@ -358,6 +372,12 @@ def run(args):
             "answer": ans, "anomalous": anomalous, "correct": correct,
             "thought": str(thought)[:1200]})
 
+        if _writer is None:
+            _writer = csv.DictWriter(_fh, fieldnames=list(log[-1].keys()))
+            _writer.writeheader()
+        _writer.writerow(log[-1])
+        _fh.flush()
+
         if args.verbose:
             print(f"  t={t:4d} {ri['phase']:13s} trig={trigger} poison_retr={poison_retr} "
                   f"ans={ans} anom={anomalous} mem={len(memory)} "
@@ -373,12 +393,7 @@ def run(args):
                            "thought": thought, "answer": ans,
                            "is_poison": bool(is_poison), "src_round": t})
 
-    out = Path(args.out)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    with open(out, "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=list(log[0].keys()))
-        w.writeheader()
-        w.writerows(log)
+    _fh.close()                      # rows were already flushed per round
     tpath = out.with_suffix(".transcript.json")
     with open(tpath, "w") as f:
         json.dump(transcript, f, indent=1, ensure_ascii=False)

@@ -30,6 +30,11 @@ Usage:
 """
 from __future__ import annotations
 
+import os as _os
+# CPU-only by contract. `import torch` (pulled in transitively) probes the driver
+# via NVML even without running a kernel, which a node watchdog can flag as GPU use.
+_os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
+
 import argparse
 import json
 import sys

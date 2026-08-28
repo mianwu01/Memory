@@ -22,6 +22,11 @@ CPU-only, no API. Usage: python3 code/minja_causal_analysis.py --trace results/m
 """
 from __future__ import annotations
 
+import os as _os
+# CPU-only by contract. `import torch` (pulled in transitively) probes the driver
+# via NVML even without running a kernel, which a node watchdog can flag as GPU use.
+_os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
+
 import argparse
 import json
 from collections import defaultdict

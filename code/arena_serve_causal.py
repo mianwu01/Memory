@@ -83,6 +83,11 @@ def main():
     a = ap.parse_args()
 
     os.chdir(ARENA)
+    # MemoryArena's memory_systems package transitively imports torch, and
+    # `import torch` probes the driver via NVML even when it will never run a
+    # kernel -- enough for a node watchdog to flag the process as using a GPU
+    # (this got the 2026-08-27 session killed). Pin it off before that import.
+    os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
     import uvicorn
 
     # server.py eagerly imports ALL 12 memory systems, several of which need
