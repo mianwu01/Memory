@@ -1,0 +1,137 @@
+{
+ "causal-learned-pure-rerun-inherit": {
+  "n_episodes": 5,
+  "episode_ids": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/benchmarks/MemoryArena/results/travel_e2e/causal-learned-pure-rerun-inherit/submission/deepseek-v4-flash_submission.jsonl",
+  "metrics": {
+   "ps": 51.35135135135135,
+   "sps": 83.0079365079365,
+   "sr": 0.0
+  },
+  "usage": {
+   "total_input_tokens": 682390,
+   "total_output_tokens": 390249,
+   "total_cost": 5.608465000000001,
+   "duration_seconds": 2696.06,
+   "duration_minutes": 44.93,
+   "covered_episode_ids": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+   ]
+  },
+  "per_episode": {
+   "1": {
+    "n_persons": 8,
+    "full_pass_persons": 4,
+    "ps": 50.0,
+    "sps": 71.42857142857143,
+    "sr": 0.0
+   },
+   "2": {
+    "n_persons": 7,
+    "full_pass_persons": 4,
+    "ps": 57.142857142857146,
+    "sps": 94.44444444444446,
+    "sr": 0.0
+   },
+   "3": {
+    "n_persons": 8,
+    "full_pass_persons": 4,
+    "ps": 50.0,
+    "sps": 91.66666666666666,
+    "sr": 0.0
+   },
+   "4": {
+    "n_persons": 8,
+    "full_pass_persons": 5,
+    "ps": 62.5,
+    "sps": 90.83333333333333,
+    "sr": 0.0
+   },
+   "5": {
+    "n_persons": 6,
+    "full_pass_persons": 2,
+    "ps": 33.333333333333336,
+    "sps": 66.66666666666667,
+    "sr": 0.0
+   }
+  }
+ },
+ "causal-learned-rerun-inherit": {
+  "n_episodes": 5,
+  "episode_ids": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/benchmarks/MemoryArena/results/travel_e2e/causal-learned-rerun-inherit/submission/deepseek-v4-flash_submission.jsonl",
+  "metrics": {
+   "ps": 72.97297297297297,
+   "sps": 91.36904761904762,
+   "sr": 0.0
+  },
+  "usage": {
+   "total_input_tokens": 673561,
+   "total_output_tokens": 265364,
+   "total_cost": 4.3375425,
+   "duration_seconds": 1834.71,
+   "duration_minutes": 30.58,
+   "covered_episode_ids": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+   ]
+  },
+  "per_episode": {
+   "1": {
+    "n_persons": 8,
+    "full_pass_persons": 6,
+    "ps": 75.0,
+    "sps": 88.0952380952381,
+    "sr": 0.0
+   },
+   "2": {
+    "n_persons": 7,
+    "full_pass_persons": 5,
+    "ps": 71.42857142857143,
+    "sps": 100.0,
+    "sr": 0.0
+   },
+   "3": {
+    "n_persons": 8,
+    "full_pass_persons": 7,
+    "ps": 87.5,
+    "sps": 100.0,
+    "sr": 0.0
+   },
+   "4": {
+    "n_persons": 8,
+    "full_pass_persons": 5,
+    "ps": 62.5,
+    "sps": 89.58333333333334,
+    "sr": 0.0
+   },
+   "5": {
+    "n_persons": 6,
+    "full_pass_persons": 4,
+    "ps": 66.66666666666667,
+    "sps": 79.16666666666667,
+    "sr": 0.0
+   }
+  }
+ },
+ "_paired_comparisons": {}
+}

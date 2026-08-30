@@ -1,0 +1,2 @@
+timestamp,model_name,memory_system,total_groups,PS,SPS,SR
+2026-08-29 21:31:29,deepseek-v4-flash,causal-query-ancestry-inherit-compact-v2,1,28.57,65.77,0.00

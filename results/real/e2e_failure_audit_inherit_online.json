@@ -1,0 +1,932 @@
+{
+ "causal-learned-pure-inherit": {
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/benchmarks/MemoryArena/results/travel_e2e/causal-learned-pure-inherit/submission/deepseek-v4-flash_submission.jsonl",
+  "episode_ids": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "expected_persons": 37,
+  "submitted_persons": 37,
+  "missing_persons": 0,
+  "extra_persons": 0,
+  "full_pass_persons": 30,
+  "ps": 81.08108108108108,
+  "unparseable_or_empty_plans": 0,
+  "invalid_day_sets": 0,
+  "persons_failing_only_query_constraints": 6,
+  "persons_failing_only_nonconstraint_slots": 0,
+  "persons_failing_both": 1,
+  "failed_slot_count_distribution": {
+   "0": 30,
+   "1": 4,
+   "2": 2,
+   "5": 1
+  },
+  "closest_failed_persons": [
+   {
+    "data_idx": 1,
+    "person_idx": 5,
+    "name": "Noah",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 3,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 5,
+    "name": "Marge",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 2,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 5,
+    "name": "Violet",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 1,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 5,
+    "person_idx": 6,
+    "name": "Ethan",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 2,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 7,
+    "name": "Monica",
+    "n_failed_slots": 2,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 1,
+    "failed_slots": [
+     {
+      "day": 1,
+      "slot": "dinner",
+      "query_constraint": false,
+      "query_explicit_target": true
+     },
+     {
+      "day": 3,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   }
+  ],
+  "person_failure_details": [
+   {
+    "data_idx": 1,
+    "person_idx": 1,
+    "name": "Eric",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 1,
+    "person_idx": 2,
+    "name": "Emma",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 1,
+    "person_idx": 3,
+    "name": "Bart",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 1,
+    "person_idx": 4,
+    "name": "Zoey",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 1,
+    "person_idx": 6,
+    "name": "Aurora",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 1,
+    "person_idx": 7,
+    "name": "Emily",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 1,
+    "person_idx": 8,
+    "name": "Mary",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 1,
+    "name": "Hazel",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 2,
+    "name": "Kimberly",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 3,
+    "name": "Emily",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 4,
+    "name": "Victor",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 6,
+    "name": "Heidi",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 7,
+    "name": "Jason",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 1,
+    "name": "Aaron",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 2,
+    "name": "Jasmine",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 3,
+    "name": "Austin",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 4,
+    "name": "Michelle",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 5,
+    "name": "Dylan",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 6,
+    "name": "Jack",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 8,
+    "name": "Joseph",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 1,
+    "name": "Monica",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 2,
+    "name": "Jennifer",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 3,
+    "name": "Adam",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 4,
+    "name": "Mark",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 8,
+    "name": "Mary",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 5,
+    "person_idx": 1,
+    "name": "Allison",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 5,
+    "person_idx": 2,
+    "name": "Zoe",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 5,
+    "person_idx": 3,
+    "name": "Riley",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 5,
+    "person_idx": 4,
+    "name": "Penny",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 5,
+    "person_idx": 5,
+    "name": "Camila",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 1,
+    "person_idx": 5,
+    "name": "Noah",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 3,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 5,
+    "name": "Marge",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 2,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 5,
+    "name": "Violet",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 1,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 5,
+    "person_idx": 6,
+    "name": "Ethan",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 2,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 7,
+    "name": "Monica",
+    "n_failed_slots": 2,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 1,
+    "failed_slots": [
+     {
+      "day": 1,
+      "slot": "dinner",
+      "query_constraint": false,
+      "query_explicit_target": true
+     },
+     {
+      "day": 3,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 7,
+    "name": "Austin",
+    "n_failed_slots": 2,
+    "n_constraint_failures": 2,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 1,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 2,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 6,
+    "name": "Yasmine",
+    "n_failed_slots": 5,
+    "n_constraint_failures": 5,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 1,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 2,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 2,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 2,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 3,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   }
+  ],
+  "failures_by_slot": {
+   "dinner": 5,
+   "accommodation": 5,
+   "lunch": 2,
+   "breakfast": 1
+  },
+  "constrained_failures_by_slot": {
+   "dinner": 4,
+   "accommodation": 5,
+   "lunch": 2,
+   "breakfast": 1
+  },
+  "nonconstraint_failures_by_slot": {
+   "dinner": 1
+  },
+  "explicit_target_failures_by_slot": {
+   "dinner": 5,
+   "accommodation": 5,
+   "lunch": 2,
+   "breakfast": 1
+  },
+  "inherited_slot_failures_by_slot": {},
+  "total_constrained_failures": 12,
+  "total_nonconstraint_failures": 1,
+  "total_explicit_target_failures": 13,
+  "total_inherited_slot_failures": 0
+ },
+ "causal-learned-inherit": {
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/benchmarks/MemoryArena/results/travel_e2e/causal-learned-inherit/submission/deepseek-v4-flash_submission.jsonl",
+  "episode_ids": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "expected_persons": 37,
+  "submitted_persons": 37,
+  "missing_persons": 0,
+  "extra_persons": 0,
+  "full_pass_persons": 37,
+  "ps": 100.0,
+  "unparseable_or_empty_plans": 0,
+  "invalid_day_sets": 0,
+  "persons_failing_only_query_constraints": 0,
+  "persons_failing_only_nonconstraint_slots": 0,
+  "persons_failing_both": 0,
+  "failed_slot_count_distribution": {
+   "0": 37
+  },
+  "closest_failed_persons": [],
+  "person_failure_details": [
+   {
+    "data_idx": 1,
+    "person_idx": 1,
+    "name": "Eric",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 1,
+    "person_idx": 2,
+    "name": "Emma",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 1,
+    "person_idx": 3,
+    "name": "Bart",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 1,
+    "person_idx": 4,
+    "name": "Zoey",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 1,
+    "person_idx": 5,
+    "name": "Noah",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 1,
+    "person_idx": 6,
+    "name": "Aurora",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 1,
+    "person_idx": 7,
+    "name": "Emily",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 1,
+    "person_idx": 8,
+    "name": "Mary",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 1,
+    "name": "Hazel",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 2,
+    "name": "Kimberly",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 3,
+    "name": "Emily",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 4,
+    "name": "Victor",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 5,
+    "name": "Marge",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 6,
+    "name": "Heidi",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 2,
+    "person_idx": 7,
+    "name": "Jason",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 1,
+    "name": "Aaron",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 2,
+    "name": "Jasmine",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 3,
+    "name": "Austin",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 4,
+    "name": "Michelle",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 5,
+    "name": "Dylan",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 6,
+    "name": "Jack",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 7,
+    "name": "Monica",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 3,
+    "person_idx": 8,
+    "name": "Joseph",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 1,
+    "name": "Monica",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 2,
+    "name": "Jennifer",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 3,
+    "name": "Adam",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 4,
+    "name": "Mark",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 5,
+    "name": "Violet",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 6,
+    "name": "Yasmine",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 7,
+    "name": "Austin",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 4,
+    "person_idx": 8,
+    "name": "Mary",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 5,
+    "person_idx": 1,
+    "name": "Allison",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 5,
+    "person_idx": 2,
+    "name": "Zoe",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 5,
+    "person_idx": 3,
+    "name": "Riley",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 5,
+    "person_idx": 4,
+    "name": "Penny",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 5,
+    "person_idx": 5,
+    "name": "Camila",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 5,
+    "person_idx": 6,
+    "name": "Ethan",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   }
+  ],
+  "failures_by_slot": {},
+  "constrained_failures_by_slot": {},
+  "nonconstraint_failures_by_slot": {},
+  "explicit_target_failures_by_slot": {},
+  "inherited_slot_failures_by_slot": {},
+  "total_constrained_failures": 0,
+  "total_nonconstraint_failures": 0,
+  "total_explicit_target_failures": 0,
+  "total_inherited_slot_failures": 0
+ }
+}

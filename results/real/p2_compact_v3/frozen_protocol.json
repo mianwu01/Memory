@@ -1,0 +1,71 @@
+{
+  "schema": "memoryarena-compact-v3-frozen-protocol/v1",
+  "frozen_date": "2026-08-30",
+  "protocol_document": "docs/p2-p3-next-round-preregistration-2026-08-30.md",
+  "protocol_document_sha256": "e1285c2d5e3af783a35b786c0fb4fb9f06f8b3b69b771d65e33ba8d2a8378a4b",
+  "scope": "new LLM-e2e and graph-held-out boundary; not pristine untouched because the target parser was previously audited on all 270 groups",
+  "development_episode_ids": [101, 102, 103],
+  "heldout_episode_ids": [111, 112, 113, 114, 115, 116, 117, 118, 119, 120],
+  "graph_learning": {
+    "n_episodes": 260,
+    "excluded_episode_ids": [111, 112, 113, 114, 115, 116, 117, 118, 119, 120],
+    "spec": "ind",
+    "max_lag": 3,
+    "pc_alpha": 0.05,
+    "gate_threshold": 0.5,
+    "max_epochs": 60,
+    "typegraph": {
+      "path": "results/real/p2_compact_v3/typegraph_holdout_111_120.json",
+      "sha256": "69da556d97db54828cee7252b7851de895e54be98fe83226d09ab93fc669e27e"
+    },
+    "plugin_graph": {
+      "path": "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json",
+      "sha256": "b3dfa066cd0e757655afbc411430645e34f2670d7cf307102b96f09b6d737479",
+      "edges": 13,
+      "persistent_slots": ["current_city", "transportation", "attraction"]
+    }
+  },
+  "arm_order": ["pure", "noG", "bm25", "long_context"],
+  "arms": {
+    "pure": {
+      "arm": "query-ancestry-v3-heldout-111-120",
+      "config": "results/real/p2_compact_v3/configs/travel_query-ancestry-v3-heldout-111-120.json",
+      "config_sha256": "dc20af4c88c58227a5a967fbb96f80900cdb98bd53aeaa27da0501f045037d5d",
+      "output_dir": "results/real/p2_compact_v3/e2e/query-ancestry-v3-heldout-111-120"
+    },
+    "noG": {
+      "arm": "noG-v3-heldout-111-120",
+      "config": "results/real/p2_compact_v3/configs/travel_noG-v3-heldout-111-120.json",
+      "config_sha256": "53488f3fdfcb059a00fcc28de7a48b6ed01bd90dc6fad04a3ab09c2b465f6597",
+      "output_dir": "results/real/p2_compact_v3/e2e/noG-v3-heldout-111-120"
+    },
+    "bm25": {
+      "arm": "bm25-v3-heldout-111-120",
+      "config": "results/real/p2_compact_v3/configs/travel_bm25-v3-heldout-111-120.json",
+      "config_sha256": "a68fe7c3682158720b8a8714e4b19f49571f08da27927195d43ec3db50d0a867",
+      "output_dir": "results/real/p2_compact_v3/e2e/bm25-v3-heldout-111-120"
+    },
+    "long_context": {
+      "arm": "long-context-v3-heldout-111-120",
+      "config": "results/real/p2_compact_v3/configs/travel_long-context-v3-heldout-111-120.json",
+      "config_sha256": "16566a2bcf94ccdfbfd0069fc1c20ca965723106d81ab893bb0a519042030e85",
+      "output_dir": "results/real/p2_compact_v3/e2e/long-context-v3-heldout-111-120"
+    }
+  },
+  "shared_runtime": {
+    "model": "deepseek-v4-flash",
+    "base_url": "https://api.deepseek.com/v1",
+    "decoder": "query-target/base-inheritance-v3",
+    "max_steps": 12,
+    "llm_max_tokens": 32768,
+    "llm_thinking": "default",
+    "env_name": "travel_planner",
+    "judgement_mode": "none"
+  },
+  "primary_acceptance": {
+    "pure_minus_noG_episode_mean_ps_delta_minimum_points": -5.0,
+    "pure_relative_noG_api_input_reduction_minimum_fraction": 0.3,
+    "rule": "both conditions must hold on the complete 10-episode four-arm matrix"
+  },
+  "output_directories_absent_when_frozen": true
+}

@@ -1,0 +1,701 @@
+{
+ "causal-learned-pure-inherit-holdout": {
+  "n_episodes": 10,
+  "episode_ids": [
+   "101",
+   "102",
+   "103",
+   "104",
+   "105",
+   "106",
+   "107",
+   "108",
+   "109",
+   "110"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/benchmarks/MemoryArena/results/travel_e2e/causal-learned-pure-inherit-holdout/submission/deepseek-v4-flash_submission.jsonl",
+  "metrics": {
+   "ps": 91.78082191780823,
+   "sps": 98.18962585034014,
+   "sr": 60.0
+  },
+  "usage": {
+   "total_input_tokens": 858445,
+   "total_output_tokens": 663528,
+   "total_cost": 8.781392499999999,
+   "duration_seconds": 4068.41,
+   "duration_minutes": 67.81,
+   "covered_episode_ids": [
+    "101",
+    "102",
+    "103",
+    "104",
+    "105",
+    "106",
+    "107",
+    "108",
+    "109",
+    "110"
+   ]
+  },
+  "per_episode": {
+   "101": {
+    "n_persons": 7,
+    "full_pass_persons": 6,
+    "ps": 85.71428571428571,
+    "sps": 98.9795918367347,
+    "sr": 0.0
+   },
+   "102": {
+    "n_persons": 7,
+    "full_pass_persons": 7,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "103": {
+    "n_persons": 8,
+    "full_pass_persons": 8,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "104": {
+    "n_persons": 7,
+    "full_pass_persons": 7,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "105": {
+    "n_persons": 6,
+    "full_pass_persons": 5,
+    "ps": 83.33333333333333,
+    "sps": 95.83333333333333,
+    "sr": 0.0
+   },
+   "106": {
+    "n_persons": 8,
+    "full_pass_persons": 8,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "107": {
+    "n_persons": 8,
+    "full_pass_persons": 7,
+    "ps": 87.5,
+    "sps": 97.5,
+    "sr": 0.0
+   },
+   "108": {
+    "n_persons": 8,
+    "full_pass_persons": 5,
+    "ps": 62.5,
+    "sps": 89.58333333333334,
+    "sr": 0.0
+   },
+   "109": {
+    "n_persons": 8,
+    "full_pass_persons": 8,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "110": {
+    "n_persons": 6,
+    "full_pass_persons": 6,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   }
+  }
+ },
+ "causal-noG-inherit-holdout": {
+  "n_episodes": 10,
+  "episode_ids": [
+   "101",
+   "102",
+   "103",
+   "104",
+   "105",
+   "106",
+   "107",
+   "108",
+   "109",
+   "110"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/benchmarks/MemoryArena/results/travel_e2e/causal-noG-inherit-holdout/submission/deepseek-v4-flash_submission.jsonl",
+  "metrics": {
+   "ps": 89.04109589041096,
+   "sps": 97.97420634920634,
+   "sr": 60.0
+  },
+  "usage": {
+   "total_input_tokens": 1006049,
+   "total_output_tokens": 619642,
+   "total_cost": 8.7115425,
+   "duration_seconds": 3848.87,
+   "duration_minutes": 64.15,
+   "covered_episode_ids": [
+    "101",
+    "102",
+    "103",
+    "104",
+    "105",
+    "106",
+    "107",
+    "108",
+    "109",
+    "110"
+   ]
+  },
+  "per_episode": {
+   "101": {
+    "n_persons": 7,
+    "full_pass_persons": 7,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "102": {
+    "n_persons": 7,
+    "full_pass_persons": 7,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "103": {
+    "n_persons": 8,
+    "full_pass_persons": 5,
+    "ps": 62.5,
+    "sps": 96.82539682539681,
+    "sr": 0.0
+   },
+   "104": {
+    "n_persons": 7,
+    "full_pass_persons": 7,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "105": {
+    "n_persons": 6,
+    "full_pass_persons": 6,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "106": {
+    "n_persons": 8,
+    "full_pass_persons": 8,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "107": {
+    "n_persons": 8,
+    "full_pass_persons": 7,
+    "ps": 87.5,
+    "sps": 97.5,
+    "sr": 0.0
+   },
+   "108": {
+    "n_persons": 8,
+    "full_pass_persons": 5,
+    "ps": 62.5,
+    "sps": 89.58333333333334,
+    "sr": 0.0
+   },
+   "109": {
+    "n_persons": 8,
+    "full_pass_persons": 7,
+    "ps": 87.5,
+    "sps": 95.83333333333333,
+    "sr": 0.0
+   },
+   "110": {
+    "n_persons": 6,
+    "full_pass_persons": 6,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   }
+  }
+ },
+ "bm25-inherit-holdout": {
+  "n_episodes": 10,
+  "episode_ids": [
+   "101",
+   "102",
+   "103",
+   "104",
+   "105",
+   "106",
+   "107",
+   "108",
+   "109",
+   "110"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/benchmarks/MemoryArena/results/travel_e2e/bm25-inherit-holdout/submission/deepseek-v4-flash_submission.jsonl",
+  "metrics": {
+   "ps": 75.34246575342466,
+   "sps": 90.24007936507937,
+   "sr": 10.0
+  },
+  "usage": {
+   "total_input_tokens": 1965551,
+   "total_output_tokens": 1131231,
+   "total_cost": 16.2261875,
+   "duration_seconds": 7066.5,
+   "duration_minutes": 117.77,
+   "covered_episode_ids": [
+    "101",
+    "102",
+    "103",
+    "104",
+    "105",
+    "106",
+    "107",
+    "108",
+    "109",
+    "110"
+   ]
+  },
+  "per_episode": {
+   "101": {
+    "n_persons": 7,
+    "full_pass_persons": 5,
+    "ps": 71.42857142857143,
+    "sps": 94.28571428571429,
+    "sr": 0.0
+   },
+   "102": {
+    "n_persons": 7,
+    "full_pass_persons": 7,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "103": {
+    "n_persons": 8,
+    "full_pass_persons": 5,
+    "ps": 62.5,
+    "sps": 85.71428571428571,
+    "sr": 0.0
+   },
+   "104": {
+    "n_persons": 7,
+    "full_pass_persons": 4,
+    "ps": 57.142857142857146,
+    "sps": 91.98412698412697,
+    "sr": 0.0
+   },
+   "105": {
+    "n_persons": 6,
+    "full_pass_persons": 4,
+    "ps": 66.66666666666667,
+    "sps": 80.55555555555556,
+    "sr": 0.0
+   },
+   "106": {
+    "n_persons": 8,
+    "full_pass_persons": 7,
+    "ps": 87.5,
+    "sps": 96.875,
+    "sr": 0.0
+   },
+   "107": {
+    "n_persons": 8,
+    "full_pass_persons": 6,
+    "ps": 75.0,
+    "sps": 90.83333333333333,
+    "sr": 0.0
+   },
+   "108": {
+    "n_persons": 8,
+    "full_pass_persons": 5,
+    "ps": 62.5,
+    "sps": 80.20833333333334,
+    "sr": 0.0
+   },
+   "109": {
+    "n_persons": 8,
+    "full_pass_persons": 7,
+    "ps": 87.5,
+    "sps": 87.5,
+    "sr": 0.0
+   },
+   "110": {
+    "n_persons": 6,
+    "full_pass_persons": 5,
+    "ps": 83.33333333333333,
+    "sps": 94.44444444444446,
+    "sr": 0.0
+   }
+  }
+ },
+ "long-context-inherit-holdout": {
+  "n_episodes": 10,
+  "episode_ids": [
+   "101",
+   "102",
+   "103",
+   "104",
+   "105",
+   "106",
+   "107",
+   "108",
+   "109",
+   "110"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/benchmarks/MemoryArena/results/travel_e2e/long-context-inherit-holdout/submission/deepseek-v4-flash_submission.jsonl",
+  "metrics": {
+   "ps": 86.3013698630137,
+   "sps": 96.25297619047618,
+   "sr": 30.0
+  },
+  "usage": {
+   "total_input_tokens": 3165105,
+   "total_output_tokens": 493654,
+   "total_cost": 12.8493025,
+   "duration_seconds": 3014.27,
+   "duration_minutes": 50.24,
+   "covered_episode_ids": [
+    "101",
+    "102",
+    "103",
+    "104",
+    "105",
+    "106",
+    "107",
+    "108",
+    "109",
+    "110"
+   ]
+  },
+  "per_episode": {
+   "101": {
+    "n_persons": 7,
+    "full_pass_persons": 6,
+    "ps": 85.71428571428571,
+    "sps": 98.21428571428571,
+    "sr": 0.0
+   },
+   "102": {
+    "n_persons": 7,
+    "full_pass_persons": 7,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "103": {
+    "n_persons": 8,
+    "full_pass_persons": 6,
+    "ps": 75.0,
+    "sps": 95.48611111111111,
+    "sr": 0.0
+   },
+   "104": {
+    "n_persons": 7,
+    "full_pass_persons": 6,
+    "ps": 85.71428571428571,
+    "sps": 98.41269841269842,
+    "sr": 0.0
+   },
+   "105": {
+    "n_persons": 6,
+    "full_pass_persons": 5,
+    "ps": 83.33333333333333,
+    "sps": 95.83333333333333,
+    "sr": 0.0
+   },
+   "106": {
+    "n_persons": 8,
+    "full_pass_persons": 8,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "107": {
+    "n_persons": 8,
+    "full_pass_persons": 7,
+    "ps": 87.5,
+    "sps": 97.5,
+    "sr": 0.0
+   },
+   "108": {
+    "n_persons": 8,
+    "full_pass_persons": 5,
+    "ps": 62.5,
+    "sps": 89.58333333333334,
+    "sr": 0.0
+   },
+   "109": {
+    "n_persons": 8,
+    "full_pass_persons": 7,
+    "ps": 87.5,
+    "sps": 87.5,
+    "sr": 0.0
+   },
+   "110": {
+    "n_persons": 6,
+    "full_pass_persons": 6,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   }
+  }
+ },
+ "_paired_comparisons": {
+  "causal-learned-pure-inherit-holdout_minus_causal-noG-inherit-holdout": {
+   "episode_ids": [
+    "101",
+    "102",
+    "103",
+    "104",
+    "105",
+    "106",
+    "107",
+    "108",
+    "109",
+    "110"
+   ],
+   "n_episodes": 10,
+   "metrics": {
+    "ps": {
+     "episode_deltas": {
+      "101": -14.285714285714292,
+      "102": 0.0,
+      "103": 37.5,
+      "104": 0.0,
+      "105": -16.66666666666667,
+      "106": 0.0,
+      "107": 0.0,
+      "108": 0.0,
+      "109": 12.5,
+      "110": 0.0
+     },
+     "mean_delta_points": 1.9047619047619038,
+     "bootstrap_95": [
+      -6.130952380952384,
+      11.904761904761903
+     ],
+     "wins": 2,
+     "ties": 6,
+     "losses": 2
+    },
+    "sps": {
+     "episode_deltas": {
+      "101": -1.0204081632653015,
+      "102": 0.0,
+      "103": 3.1746031746031917,
+      "104": 0.0,
+      "105": -4.166666666666671,
+      "106": 0.0,
+      "107": 0.0,
+      "108": 0.0,
+      "109": 4.166666666666671,
+      "110": 0.0
+     },
+     "mean_delta_points": 0.21541950113378902,
+     "bootstrap_95": [
+      -1.1337868480725604,
+      1.5646258503401385
+     ],
+     "wins": 2,
+     "ties": 6,
+     "losses": 2
+    },
+    "sr": {
+     "episode_deltas": {
+      "101": -100.0,
+      "102": 0.0,
+      "103": 100.0,
+      "104": 0.0,
+      "105": -100.0,
+      "106": 0.0,
+      "107": 0.0,
+      "108": 0.0,
+      "109": 100.0,
+      "110": 0.0
+     },
+     "mean_delta_points": 0.0,
+     "bootstrap_95": [
+      -40.0,
+      40.0
+     ],
+     "wins": 2,
+     "ties": 6,
+     "losses": 2
+    }
+   }
+  },
+  "causal-learned-pure-inherit-holdout_minus_bm25-inherit-holdout": {
+   "episode_ids": [
+    "101",
+    "102",
+    "103",
+    "104",
+    "105",
+    "106",
+    "107",
+    "108",
+    "109",
+    "110"
+   ],
+   "n_episodes": 10,
+   "metrics": {
+    "ps": {
+     "episode_deltas": {
+      "101": 14.285714285714278,
+      "102": 0.0,
+      "103": 37.5,
+      "104": 42.857142857142854,
+      "105": 16.666666666666657,
+      "106": 12.5,
+      "107": 12.5,
+      "108": 0.0,
+      "109": 12.5,
+      "110": 16.66666666666667
+     },
+     "mean_delta_points": 16.547619047619047,
+     "bootstrap_95": [
+      9.166666666666666,
+      25.238095238095237
+     ],
+     "wins": 8,
+     "ties": 2,
+     "losses": 0
+    },
+    "sps": {
+     "episode_deltas": {
+      "101": 4.693877551020407,
+      "102": 0.0,
+      "103": 14.285714285714292,
+      "104": 8.015873015873026,
+      "105": 15.277777777777771,
+      "106": 3.125,
+      "107": 6.666666666666671,
+      "108": 9.375,
+      "109": 12.5,
+      "110": 5.555555555555543
+     },
+     "mean_delta_points": 7.949546485260771,
+     "bootstrap_95": [
+      5.040958049886619,
+      10.839427437641726
+     ],
+     "wins": 9,
+     "ties": 1,
+     "losses": 0
+    },
+    "sr": {
+     "episode_deltas": {
+      "101": 0.0,
+      "102": 0.0,
+      "103": 100.0,
+      "104": 100.0,
+      "105": 0.0,
+      "106": 100.0,
+      "107": 0.0,
+      "108": 0.0,
+      "109": 100.0,
+      "110": 100.0
+     },
+     "mean_delta_points": 50.0,
+     "bootstrap_95": [
+      20.0,
+      80.0
+     ],
+     "wins": 5,
+     "ties": 5,
+     "losses": 0
+    }
+   }
+  },
+  "causal-learned-pure-inherit-holdout_minus_long-context-inherit-holdout": {
+   "episode_ids": [
+    "101",
+    "102",
+    "103",
+    "104",
+    "105",
+    "106",
+    "107",
+    "108",
+    "109",
+    "110"
+   ],
+   "n_episodes": 10,
+   "metrics": {
+    "ps": {
+     "episode_deltas": {
+      "101": 0.0,
+      "102": 0.0,
+      "103": 25.0,
+      "104": 14.285714285714292,
+      "105": 0.0,
+      "106": 0.0,
+      "107": 0.0,
+      "108": 0.0,
+      "109": 12.5,
+      "110": 0.0
+     },
+     "mean_delta_points": 5.178571428571429,
+     "bootstrap_95": [
+      0.0,
+      10.535714285714288
+     ],
+     "wins": 3,
+     "ties": 7,
+     "losses": 0
+    },
+    "sps": {
+     "episode_deltas": {
+      "101": 0.7653061224489903,
+      "102": 0.0,
+      "103": 4.513888888888886,
+      "104": 1.5873015873015817,
+      "105": 0.0,
+      "106": 0.0,
+      "107": 0.0,
+      "108": 0.0,
+      "109": 12.5,
+      "110": 0.0
+     },
+     "mean_delta_points": 1.9366496598639458,
+     "bootstrap_95": [
+      0.15873015873015817,
+      4.595379818594104
+     ],
+     "wins": 4,
+     "ties": 6,
+     "losses": 0
+    },
+    "sr": {
+     "episode_deltas": {
+      "101": 0.0,
+      "102": 0.0,
+      "103": 100.0,
+      "104": 100.0,
+      "105": 0.0,
+      "106": 0.0,
+      "107": 0.0,
+      "108": 0.0,
+      "109": 100.0,
+      "110": 0.0
+     },
+     "mean_delta_points": 30.0,
+     "bootstrap_95": [
+      0.0,
+      60.0
+     ],
+     "wins": 3,
+     "ties": 7,
+     "losses": 0
+    }
+   }
+  }
+ }
+}

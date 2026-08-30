@@ -1,0 +1,11 @@
+[
+  {
+    "system": "causal-learned-pure",
+    "cell_recall": 0.9623502567027952,
+    "round_solvable": 0.844776119402985,
+    "avg_ctx_tokens": 1141.9675810473816,
+    "compression": 0.3784008679779436,
+    "rounds": 401,
+    "gold_cells": 1753
+  }
+]

@@ -1,0 +1,229 @@
+{
+ "causal-learned-pure": {
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/benchmarks/MemoryArena/results/travel_e2e/causal-learned-pure/submission/deepseek-v4-flash_submission.jsonl",
+  "episode_ids": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "expected_persons": 37,
+  "submitted_persons": 37,
+  "missing_persons": 0,
+  "extra_persons": 0,
+  "full_pass_persons": 0,
+  "ps": 0.0,
+  "unparseable_or_empty_plans": 1,
+  "invalid_day_sets": 1,
+  "persons_failing_only_query_constraints": 0,
+  "persons_failing_only_nonconstraint_slots": 27,
+  "persons_failing_both": 10,
+  "failed_slot_count_distribution": {
+   "3": 1,
+   "4": 1,
+   "5": 2,
+   "6": 3,
+   "7": 7,
+   "8": 5,
+   "9": 3,
+   "10": 8,
+   "11": 3,
+   "12": 1,
+   "13": 1,
+   "14": 1,
+   "18": 1
+  },
+  "failures_by_slot": {
+   "breakfast": 72,
+   "lunch": 78,
+   "dinner": 81,
+   "attraction": 56,
+   "accommodation": 23,
+   "transportation": 11
+  },
+  "constrained_failures_by_slot": {
+   "dinner": 9,
+   "accommodation": 5,
+   "lunch": 1
+  },
+  "nonconstraint_failures_by_slot": {
+   "breakfast": 72,
+   "lunch": 77,
+   "dinner": 72,
+   "attraction": 56,
+   "transportation": 11,
+   "accommodation": 18
+  },
+  "total_constrained_failures": 15,
+  "total_nonconstraint_failures": 306
+ },
+ "causal-learned": {
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/benchmarks/MemoryArena/results/travel_e2e/causal-learned/submission/deepseek-v4-flash_submission.jsonl",
+  "episode_ids": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "expected_persons": 37,
+  "submitted_persons": 37,
+  "missing_persons": 0,
+  "extra_persons": 0,
+  "full_pass_persons": 0,
+  "ps": 0.0,
+  "unparseable_or_empty_plans": 0,
+  "invalid_day_sets": 0,
+  "persons_failing_only_query_constraints": 0,
+  "persons_failing_only_nonconstraint_slots": 34,
+  "persons_failing_both": 3,
+  "failed_slot_count_distribution": {
+   "1": 2,
+   "2": 1,
+   "3": 6,
+   "4": 4,
+   "5": 5,
+   "6": 3,
+   "7": 2,
+   "8": 1,
+   "9": 1,
+   "10": 4,
+   "11": 5,
+   "12": 2,
+   "13": 1
+  },
+  "failures_by_slot": {
+   "breakfast": 51,
+   "lunch": 64,
+   "attraction": 48,
+   "dinner": 56,
+   "accommodation": 17,
+   "transportation": 8
+  },
+  "constrained_failures_by_slot": {
+   "accommodation": 2,
+   "dinner": 1
+  },
+  "nonconstraint_failures_by_slot": {
+   "breakfast": 51,
+   "lunch": 64,
+   "attraction": 48,
+   "dinner": 55,
+   "accommodation": 15,
+   "transportation": 8
+  },
+  "total_constrained_failures": 3,
+  "total_nonconstraint_failures": 241
+ },
+ "bm25": {
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/benchmarks/MemoryArena/results/travel_e2e/bm25/submission/deepseek-v4-flash_submission.jsonl",
+  "episode_ids": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "expected_persons": 37,
+  "submitted_persons": 37,
+  "missing_persons": 0,
+  "extra_persons": 0,
+  "full_pass_persons": 4,
+  "ps": 10.81081081081081,
+  "unparseable_or_empty_plans": 0,
+  "invalid_day_sets": 0,
+  "persons_failing_only_query_constraints": 0,
+  "persons_failing_only_nonconstraint_slots": 21,
+  "persons_failing_both": 12,
+  "failed_slot_count_distribution": {
+   "0": 4,
+   "1": 1,
+   "2": 3,
+   "3": 2,
+   "4": 1,
+   "5": 1,
+   "8": 3,
+   "9": 3,
+   "11": 5,
+   "12": 5,
+   "13": 3,
+   "14": 4,
+   "15": 2
+  },
+  "failures_by_slot": {
+   "dinner": 69,
+   "lunch": 71,
+   "breakfast": 60,
+   "accommodation": 31,
+   "attraction": 72,
+   "transportation": 10
+  },
+  "constrained_failures_by_slot": {
+   "accommodation": 9,
+   "dinner": 5,
+   "lunch": 2
+  },
+  "nonconstraint_failures_by_slot": {
+   "dinner": 64,
+   "lunch": 69,
+   "breakfast": 60,
+   "accommodation": 22,
+   "attraction": 72,
+   "transportation": 10
+  },
+  "total_constrained_failures": 16,
+  "total_nonconstraint_failures": 297
+ },
+ "long_context": {
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/benchmarks/MemoryArena/results/travel_e2e/long_context/submission/deepseek-v4-flash_submission.jsonl",
+  "episode_ids": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "expected_persons": 37,
+  "submitted_persons": 37,
+  "missing_persons": 0,
+  "extra_persons": 0,
+  "full_pass_persons": 6,
+  "ps": 16.216216216216218,
+  "unparseable_or_empty_plans": 0,
+  "invalid_day_sets": 0,
+  "persons_failing_only_query_constraints": 0,
+  "persons_failing_only_nonconstraint_slots": 27,
+  "persons_failing_both": 4,
+  "failed_slot_count_distribution": {
+   "0": 6,
+   "1": 9,
+   "2": 7,
+   "3": 1,
+   "4": 6,
+   "6": 2,
+   "7": 1,
+   "9": 5
+  },
+  "failures_by_slot": {
+   "breakfast": 25,
+   "dinner": 30,
+   "lunch": 32,
+   "accommodation": 11,
+   "attraction": 16
+  },
+  "constrained_failures_by_slot": {
+   "dinner": 3,
+   "accommodation": 2
+  },
+  "nonconstraint_failures_by_slot": {
+   "breakfast": 25,
+   "dinner": 27,
+   "lunch": 32,
+   "accommodation": 9,
+   "attraction": 16
+  },
+  "total_constrained_failures": 5,
+  "total_nonconstraint_failures": 109
+ }
+}

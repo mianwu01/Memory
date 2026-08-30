@@ -1,0 +1,207 @@
+{
+ "query-ancestry-v2-final-dev": {
+  "n_episodes": 1,
+  "episode_ids": [
+   "101"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/query-ancestry-v2-final-dev/submission/deepseek-v4-flash_submission.jsonl",
+  "metrics": {
+   "ps": 28.57142857142857,
+   "sps": 65.76530612244899,
+   "sr": 0.0
+  },
+  "usage": {
+   "total_input_tokens": 77139,
+   "total_output_tokens": 88761,
+   "total_cost": 1.0804575,
+   "duration_seconds": 605.58,
+   "duration_minutes": 10.09,
+   "covered_episode_ids": [
+    "101"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/query-ancestry-v2-final-dev/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "101"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "101": "1788009658-168729-fc3518f6:101"
+   },
+   "per_episode": {
+    "101": {
+     "calls": 18,
+     "input_tokens": 77139,
+     "output_tokens": 88761,
+     "cost": 1.0804575,
+     "api_duration_seconds": 603.651620388031,
+     "message_chars": 278084,
+     "tool_schema_chars": 14022,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "persons_covered": [
+      "Brooke",
+      "Charles",
+      "Ethan",
+      "Jacob",
+      "Jennifer",
+      "Karen",
+      "Scarlett"
+     ]
+    }
+   },
+   "calls": 18,
+   "total_input_tokens": 77139,
+   "total_output_tokens": 88761,
+   "total_cost": 1.0804575,
+   "api_duration_seconds": 603.651620388031
+  },
+  "per_episode": {
+   "101": {
+    "n_persons": 7,
+    "full_pass_persons": 2,
+    "ps": 28.571428571428573,
+    "sps": 65.76530612244899,
+    "sr": 0.0
+   }
+  }
+ },
+ "noG-v2-final-dev": {
+  "n_episodes": 1,
+  "episode_ids": [
+   "101"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/noG-v2-final-dev/submission/deepseek-v4-flash_submission.jsonl",
+  "metrics": {
+   "ps": 42.857142857142854,
+   "sps": 66.53061224489797,
+   "sr": 0.0
+  },
+  "usage": {
+   "total_input_tokens": 153685,
+   "total_output_tokens": 94719,
+   "total_cost": 1.3314024999999998,
+   "duration_seconds": 651.94,
+   "duration_minutes": 10.87,
+   "covered_episode_ids": [
+    "101"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/noG-v2-final-dev/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "101"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "101": "1788010303-168452-55d06c4c:101"
+   },
+   "per_episode": {
+    "101": {
+     "calls": 19,
+     "input_tokens": 153685,
+     "output_tokens": 94719,
+     "cost": 1.3314024999999998,
+     "api_duration_seconds": 650.1785621643066,
+     "message_chars": 456511,
+     "tool_schema_chars": 14801,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "persons_covered": [
+      "Brooke",
+      "Charles",
+      "Ethan",
+      "Jacob",
+      "Jennifer",
+      "Karen",
+      "Scarlett"
+     ]
+    }
+   },
+   "calls": 19,
+   "total_input_tokens": 153685,
+   "total_output_tokens": 94719,
+   "total_cost": 1.3314024999999998,
+   "api_duration_seconds": 650.1785621643066
+  },
+  "per_episode": {
+   "101": {
+    "n_persons": 7,
+    "full_pass_persons": 3,
+    "ps": 42.857142857142854,
+    "sps": 66.53061224489797,
+    "sr": 0.0
+   }
+  }
+ },
+ "_paired_comparisons": {
+  "query-ancestry-v2-final-dev_minus_noG-v2-final-dev": {
+   "episode_ids": [
+    "101"
+   ],
+   "n_episodes": 1,
+   "metrics": {
+    "ps": {
+     "episode_deltas": {
+      "101": -14.285714285714281
+     },
+     "mean_delta_points": -14.285714285714281,
+     "bootstrap_95": [
+      -14.285714285714281,
+      -14.285714285714281
+     ],
+     "wins": 0,
+     "ties": 0,
+     "losses": 1
+    },
+    "sps": {
+     "episode_deltas": {
+      "101": -0.7653061224489761
+     },
+     "mean_delta_points": -0.7653061224489761,
+     "bootstrap_95": [
+      -0.7653061224489761,
+      -0.7653061224489761
+     ],
+     "wins": 0,
+     "ties": 0,
+     "losses": 1
+    },
+    "sr": {
+     "episode_deltas": {
+      "101": 0.0
+     },
+     "mean_delta_points": 0.0,
+     "bootstrap_95": [
+      0.0,
+      0.0
+     ],
+     "wins": 0,
+     "ties": 1,
+     "losses": 0
+    }
+   }
+  }
+ }
+}

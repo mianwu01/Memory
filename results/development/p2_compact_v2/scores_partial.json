@@ -1,0 +1,7 @@
+{
+ "compact-v2-dev": {
+  "n_episodes": 3,
+  "error": "no submission JSONL under results/development/p2_compact_v2/e2e/compact-v2-dev/submission"
+ },
+ "_paired_comparisons": {}
+}

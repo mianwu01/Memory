@@ -463,11 +463,14 @@ def slot_ancestors(adj: np.ndarray, var_names) -> Dict[str, List[str]]:
 # 5. main                                                                      #
 # --------------------------------------------------------------------------- #
 
-def load_episodes(n: Optional[int] = None):
+def load_episodes(n: Optional[int] = None, exclude_ids: Optional[List[int]] = None):
     from datasets import load_dataset
     ds = load_dataset("ZexueHe/memoryarena", "group_travel_planner")
     split = "test" if "test" in ds else list(ds.keys())[0]
     raw = [dict(r) for r in ds[split]]
+    excluded = {int(x) for x in (exclude_ids or [])}
+    if excluded:
+        raw = [r for r in raw if int(r["id"]) not in excluded]
     if n:
         raw = raw[:n]
     return [parse_episode(r) for r in raw]
@@ -482,6 +485,10 @@ def main():
     ap.add_argument("--gate_threshold", type=float, default=0.5)
     ap.add_argument("--max_epochs", type=int, default=60)
     ap.add_argument("--episodes", type=int, default=None)
+    ap.add_argument(
+        "--exclude_ids", type=int, nargs="*", default=[],
+        help="episode IDs excluded from discovery and persistence statistics",
+    )
     ap.add_argument("--no_center", action="store_true",
                     help="keep the trial-level common cause (diagnostic only)")
     ap.add_argument("--skip_grace", action="store_true")
@@ -492,8 +499,9 @@ def main():
     ap.add_argument("--export_method", default="grace", choices=["grace", "pcmci_plus"])
     a = ap.parse_args()
 
-    eps = load_episodes(a.episodes)
-    print(f"episodes={len(eps)}  rounds={sum(len(e['rounds']) for e in eps)}")
+    eps = load_episodes(a.episodes, a.exclude_ids)
+    print(f"episodes={len(eps)}  rounds={sum(len(e['rounds']) for e in eps)}  "
+          f"excluded_ids={sorted(set(a.exclude_ids))}")
 
     Gt, lagged, collapsed = type_level_ground_truth(eps, a.max_lag)
     print(f"ground-truth type-level edges (lag 1..{a.max_lag}): {int(Gt.sum())}")
@@ -510,6 +518,7 @@ def main():
               "created": time.strftime("%Y-%m-%d %H:%M:%S"),
               "max_lag": a.max_lag, "slots": SLOTS7,
               "n_episodes": len(eps),
+              "excluded_episode_ids": sorted(set(a.exclude_ids)),
               "persistence": pstats,
               "ground_truth_edges": edge_list(Gt, SLOTS7),
               "ground_truth_collapsed": {f"{k[0]}->{k[1]}": v for k, v in collapsed.items()},
@@ -609,6 +618,7 @@ def main():
             "created": report["created"],
             "slots": SLOTS7,
             "max_lag": a.max_lag,
+            "excluded_episode_ids": sorted(set(a.exclude_ids)),
             "edges": s[meth]["edges"],
             "slot_ancestors": s[meth]["slot_ancestors"],
             "slot_adjacency_any_lag": s[meth]["slot_adjacency_any_lag"],

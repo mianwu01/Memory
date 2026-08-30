@@ -1,0 +1,26 @@
+{
+ "compact-v2-chat-episode101-score": {
+  "n_episodes": 1,
+  "episode_ids": [
+   "101"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/compact-v2-chat-episode101-score/submission/deepseek-chat_submission.jsonl",
+  "metrics": {
+   "ps": 28.57142857142857,
+   "sps": 53.316326530612244,
+   "sr": 0.0
+  },
+  "usage": null,
+  "call_usage": null,
+  "per_episode": {
+   "101": {
+    "n_persons": 7,
+    "full_pass_persons": 2,
+    "ps": 28.571428571428573,
+    "sps": 53.316326530612244,
+    "sr": 0.0
+   }
+  }
+ },
+ "_paired_comparisons": {}
+}

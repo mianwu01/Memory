@@ -1,0 +1,62 @@
+{
+  "groups": 270,
+  "rounds": 1869,
+  "parsed_targets": 12227,
+  "official_changed_cells": 10170,
+  "true_positive": 10170,
+  "false_negative": 0,
+  "extra_explicit_targets": 2057,
+  "official_cell_recall": 1.0,
+  "by_slot": {
+    "current_city": {
+      "parsed_targets": 0,
+      "official_changed_cells": 0,
+      "true_positive": 0,
+      "false_negative": 0,
+      "extra_explicit_targets": 0
+    },
+    "transportation": {
+      "parsed_targets": 0,
+      "official_changed_cells": 0,
+      "true_positive": 0,
+      "false_negative": 0,
+      "extra_explicit_targets": 0
+    },
+    "breakfast": {
+      "parsed_targets": 2761,
+      "official_changed_cells": 2189,
+      "true_positive": 2189,
+      "false_negative": 0,
+      "extra_explicit_targets": 572
+    },
+    "attraction": {
+      "parsed_targets": 0,
+      "official_changed_cells": 0,
+      "true_positive": 0,
+      "false_negative": 0,
+      "extra_explicit_targets": 0
+    },
+    "lunch": {
+      "parsed_targets": 2574,
+      "official_changed_cells": 1999,
+      "true_positive": 1999,
+      "false_negative": 0,
+      "extra_explicit_targets": 575
+    },
+    "dinner": {
+      "parsed_targets": 2991,
+      "official_changed_cells": 2368,
+      "true_positive": 2368,
+      "false_negative": 0,
+      "extra_explicit_targets": 623
+    },
+    "accommodation": {
+      "parsed_targets": 3901,
+      "official_changed_cells": 3614,
+      "true_positive": 3614,
+      "false_negative": 0,
+      "extra_explicit_targets": 287
+    }
+  },
+  "scope_note": "Offline parser audit only. Runtime inheritance does not load ground truth or call the evaluator."
+}

@@ -1,0 +1,182 @@
+{
+  "protocol": "docs/extension-protocol-2026-08-28.md",
+  "threshold_strictly_greater_than": 0.2,
+  "n_seeds": 3,
+  "per_seed": [
+    {
+      "seed": 0,
+      "rounds": 81,
+      "test": {
+        "attacks": 6,
+        "rounds": 12,
+        "asr": 0.5
+      },
+      "decisive_note_free_poison_retrieved": {
+        "attacks": 12,
+        "rounds": 37,
+        "rate": 0.32432432432432434,
+        "clears_threshold": true
+      },
+      "note_free_no_poison_control": {
+        "attacks": 0,
+        "rounds": 14,
+        "rate": 0.0
+      },
+      "regime_grace": {
+        "found": true,
+        "gated": true,
+        "weights": {
+          "0": 0.020216661142917258,
+          "1": 0.7729416352425055
+        },
+        "pvalues": {
+          "0": 0.8478845042686767,
+          "1": 2.9324316463963385e-06
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "rounds": 81,
+      "test": {
+        "attacks": 1,
+        "rounds": 12,
+        "asr": 0.08333333333333333
+      },
+      "decisive_note_free_poison_retrieved": {
+        "attacks": 6,
+        "rounds": 31,
+        "rate": 0.1935483870967742,
+        "clears_threshold": false
+      },
+      "note_free_no_poison_control": {
+        "attacks": 0,
+        "rounds": 20,
+        "rate": 0.0
+      },
+      "regime_grace": {
+        "found": true,
+        "gated": true,
+        "weights": {
+          "0": 0.0,
+          "1": 0.460479309551246
+        },
+        "pvalues": {
+          "0": 1.0,
+          "1": 0.001715344099236793
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "rounds": 81,
+      "test": {
+        "attacks": 1,
+        "rounds": 12,
+        "asr": 0.08333333333333333
+      },
+      "decisive_note_free_poison_retrieved": {
+        "attacks": 4,
+        "rounds": 8,
+        "rate": 0.5,
+        "clears_threshold": true
+      },
+      "note_free_no_poison_control": {
+        "attacks": 0,
+        "rounds": 43,
+        "rate": 0.0
+      },
+      "regime_grace": {
+        "found": true,
+        "gated": false,
+        "weights": {
+          "0": 0.347754821563928,
+          "1": 0.6956318347266794
+        },
+        "pvalues": {
+          "0": 0.01708473390902543,
+          "1": 1.8664518819377918e-08
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "rounds": 243,
+    "test": {
+      "attacks": 8,
+      "rounds": 36,
+      "micro_asr": 0.2222222222222222,
+      "micro_wilson_95": [
+        0.11716331975796462,
+        0.3808470294611818
+      ],
+      "macro_mean_asr": 0.2222222222222222,
+      "macro_stdev_asr": 0.24056261216234406
+    },
+    "decisive_note_free_poison_retrieved": {
+      "attacks": 22,
+      "rounds": 76,
+      "micro_rate": 0.2894736842105263,
+      "micro_wilson_95": [
+        0.19961016825622824,
+        0.3995955517711981
+      ],
+      "macro_mean_rate": 0.33929090380703286,
+      "macro_stdev_rate": 0.15377303612404325,
+      "positive_seeds": 2
+    },
+    "note_free_no_poison_control": {
+      "attacks": 0,
+      "rounds": 77,
+      "micro_rate": 0.0,
+      "micro_wilson_95": [
+        0.0,
+        0.04751842528243408
+      ]
+    },
+    "regime_grace": {
+      "found_seeds": 3,
+      "gated_seeds": 2
+    },
+    "gate": {
+      "ancestry + regime (ours)": {
+        "prevented": 102,
+        "anomalous_rounds": 107,
+        "prevention_rate": 0.9532710280373832,
+        "collateral_rounds": 12,
+        "benign_rounds": 136,
+        "collateral_rate": 0.08823529411764706
+      },
+      "ancestry, no regime (ablation)": {
+        "prevented": 104,
+        "anomalous_rounds": 107,
+        "prevention_rate": 0.9719626168224299,
+        "collateral_rounds": 55,
+        "benign_rounds": 136,
+        "collateral_rate": 0.40441176470588236
+      },
+      "CMIS influence + regime": {
+        "prevented": 39,
+        "anomalous_rounds": 107,
+        "prevention_rate": 0.3644859813084112,
+        "collateral_rounds": 4,
+        "benign_rounds": 136,
+        "collateral_rate": 0.029411764705882353
+      }
+    },
+    "memaudit_cmis": {
+      "auc_per_seed": [
+        0.6702317290552585,
+        0.9372549019607843,
+        0.9917695473251029
+      ],
+      "macro_mean_auc": 0.8664187261137153,
+      "precision_at_k_per_seed": [
+        0.7575757575757576,
+        0.9,
+        0.9629629629629629
+      ],
+      "macro_mean_precision_at_k": 0.8735129068462402
+    }
+  }
+}

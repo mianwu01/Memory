@@ -1,0 +1,53 @@
+{
+ "compact-v2-parserfix-dev": {
+  "n_episodes": 3,
+  "episode_ids": [
+   "101",
+   "102",
+   "103"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/compact-v2-parserfix-dev/submission/deepseek-v4-flash_submission.jsonl",
+  "metrics": {
+   "ps": 9.090909090909092,
+   "sps": 62.224402581545434,
+   "sr": 0.0
+  },
+  "usage": {
+   "total_input_tokens": 319054,
+   "total_output_tokens": 373285,
+   "total_cost": 4.530485,
+   "duration_seconds": 2650.98,
+   "duration_minutes": 44.18,
+   "covered_episode_ids": [
+    "101",
+    "102",
+    "103"
+   ]
+  },
+  "call_usage": null,
+  "per_episode": {
+   "101": {
+    "n_persons": 7,
+    "full_pass_persons": 1,
+    "ps": 14.285714285714286,
+    "sps": 60.76530612244898,
+    "sr": 0.0
+   },
+   "102": {
+    "n_persons": 7,
+    "full_pass_persons": 1,
+    "ps": 14.285714285714286,
+    "sps": 59.26870748299319,
+    "sr": 0.0
+   },
+   "103": {
+    "n_persons": 8,
+    "full_pass_persons": 0,
+    "ps": 0.0,
+    "sps": 66.63919413919413,
+    "sr": 0.0
+   }
+  }
+ },
+ "_paired_comparisons": {}
+}

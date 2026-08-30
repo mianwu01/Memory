@@ -1,0 +1,81 @@
+{
+ "query-ancestry-v2-final-dev": {
+  "n_episodes": 1,
+  "episode_ids": [
+   "101"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/query-ancestry-v2-final-dev/submission/deepseek-v4-flash_submission.jsonl",
+  "metrics": {
+   "ps": 28.57142857142857,
+   "sps": 65.76530612244899,
+   "sr": 0.0
+  },
+  "usage": {
+   "total_input_tokens": 77139,
+   "total_output_tokens": 88761,
+   "total_cost": 1.0804575,
+   "duration_seconds": 605.58,
+   "duration_minutes": 10.09,
+   "covered_episode_ids": [
+    "101"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/query-ancestry-v2-final-dev/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "101"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "101": "1788009658-168729-fc3518f6:101"
+   },
+   "per_episode": {
+    "101": {
+     "calls": 18,
+     "input_tokens": 77139,
+     "output_tokens": 88761,
+     "cost": 1.0804575,
+     "api_duration_seconds": 603.651620388031,
+     "message_chars": 278084,
+     "tool_schema_chars": 14022,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "persons_covered": [
+      "Brooke",
+      "Charles",
+      "Ethan",
+      "Jacob",
+      "Jennifer",
+      "Karen",
+      "Scarlett"
+     ]
+    }
+   },
+   "calls": 18,
+   "total_input_tokens": 77139,
+   "total_output_tokens": 88761,
+   "total_cost": 1.0804575,
+   "api_duration_seconds": 603.651620388031
+  },
+  "per_episode": {
+   "101": {
+    "n_persons": 7,
+    "full_pass_persons": 2,
+    "ps": 28.571428571428573,
+    "sps": 65.76530612244899,
+    "sr": 0.0
+   }
+  }
+ },
+ "_paired_comparisons": {}
+}

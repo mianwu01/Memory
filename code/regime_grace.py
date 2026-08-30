@@ -91,10 +91,26 @@ class RegimeResult:
 # design matrix
 # --------------------------------------------------------------------------- #
 def _lagged_design(X: np.ndarray, target: int, max_lag: int,
-                   valid: np.ndarray) -> Tuple[np.ndarray, np.ndarray, List[Tuple[int, int]]]:
-    """Rows t where `valid[t]`; columns x_i(t-l) for i in vars, l in 1..max_lag."""
+                   valid: np.ndarray,
+                   within_step_order: Optional[Sequence[int]] = None
+                   ) -> Tuple[np.ndarray, np.ndarray, List[Tuple[int, int]]]:
+    """Build an ordered within-step plus lagged design.
+
+    ``within_step_order`` is an instrumentation-derived partial order.  When it
+    is supplied, x_i(t) may predict x_j(t) only if order[i] < order[j].  This is
+    needed for agent traces where retrieval and action share a round index but
+    the runtime tells us unambiguously that retrieval happened first.  Equal
+    ranks never predict one another, and lagged predictors remain unrestricted.
+    Without the order this is the original lag-only estimator.
+    """
     T, n = X.shape
     rows, cols = [], []
+    if within_step_order is not None:
+        if len(within_step_order) != n:
+            raise ValueError("within_step_order must have one rank per variable")
+        for i in range(n):
+            if i != target and within_step_order[i] < within_step_order[target]:
+                cols.append((i, 0))
     for l in range(1, max_lag + 1):
         for i in range(n):
             cols.append((i, l))
@@ -154,7 +170,9 @@ def _bh(pvals: Sequence[float], alpha: float) -> np.ndarray:
 def fit_regime_conditioned(X: np.ndarray, u: np.ndarray, max_lag: int = 1,
                            alpha: float = 0.01, gate_ratio: float = 4.0,
                            var_names: Optional[List[str]] = None,
-                           min_rows: int = 30) -> RegimeResult:
+                           min_rows: int = 30,
+                           within_step_order: Optional[Sequence[int]] = None
+                           ) -> RegimeResult:
     """Fit x_j(t) ~ x_i(t-l) SEPARATELY inside each regime, then compare.
 
     An edge is reported if it clears BH-FDR in at least one regime -- this is the
@@ -181,7 +199,9 @@ def fit_regime_conditioned(X: np.ndarray, u: np.ndarray, max_lag: int = 1,
 
     for j in range(n):
         for r in regimes:
-            D, y, cols = _lagged_design(X, j, max_lag, valid=(u == r))
+            D, y, cols = _lagged_design(
+                X, j, max_lag, valid=(u == r),
+                within_step_order=within_step_order)
             if D.shape[0] < min_rows:
                 continue
             fit = _ridge_with_se(D, y)

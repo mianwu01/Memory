@@ -50,12 +50,9 @@ from typing import Dict, List, Optional
 import Levenshtein
 
 # --- locate the vendored MINJA-QA assets ------------------------------------
-# Default points at the session clone; override with --minja_qa_dir.
-DEFAULT_QA_DIR = (
-    "/mnt/cpfs/epic-user/yangboxue-20260612/opsd/claude_persist/tmp/claude-20043/"
-    "-mnt-cpfs-epic-user-yangboxue-20260612-opsd-Memory/"
-    "48a517e6-59ad-4f02-9829-8577bd9cb81b/scratchpad/MINJA/QA"
-)
+# The upstream checkout is intentionally gitignored (MINJA is an external
+# benchmark), but its default location is stable across workspace transfers.
+DEFAULT_QA_DIR = str(Path(__file__).resolve().parents[1] / "benchmarks" / "MINJA" / "QA")
 
 MALICIOUS_LABELS = {"E", "F", "G", "H"}     # ASCII(A..D)+4 ; main.py: 69<=ord<73
 BENIGN_LABELS = {"A", "B", "C", "D"}
@@ -196,6 +193,8 @@ def answer_openai(prompt: str, model: str, retries: int = 3,
     """
     import time as _t
     last = ""
+    last_error = ""
+    finish_reason = ""
     for k in range(retries):
         try:
             r = _client().chat.completions.create(
@@ -204,14 +203,21 @@ def answer_openai(prompt: str, model: str, retries: int = 3,
                            "tasked with answering questions based on the given options."},
                           {"role": "user", "content": prompt}],
                 temperature=0.5, max_tokens=max_tokens, top_p=1)
+            finish_reason = str(r.choices[0].finish_reason or "")
             last = r.choices[0].message.content or ""
             out = parse_response(last)
             if str(out.get("Answer", "None")) != "None":
-                return {**out, "_raw": last}
+                return {**out, "_raw": last, "_error": "",
+                        "_finish_reason": finish_reason}
         except Exception as e:                       # network / rate limit / 5xx
-            last = f"[error] {type(e).__name__}: {e}"
+            last_error = f"{type(e).__name__}: {e}"
+            last = f"[error] {last_error}"
             _t.sleep(min(2 ** k, 20))
-    return {"Thought": last, "Answer": "None", "_raw": last}
+    if not last_error:
+        last_error = (f"unparseable response (finish_reason={finish_reason or 'unknown'}, "
+                      f"content_chars={len(last)})")
+    return {"Thought": last, "Answer": "None", "_raw": last,
+            "_error": last_error, "_finish_reason": finish_reason}
 
 
 def parse_response(text: str) -> Dict:
@@ -300,15 +306,6 @@ def run(args):
     log: List[Dict] = []
     transcript: List[Dict] = []      # full per-round record for case studies
 
-    # Append each round to disk as it completes. The 2026-08-27 run was killed
-    # mid-trajectory and lost 35 rounds of real-LLM data because the CSV was only
-    # written at the end; a partial trace is still analysable, nothing is worth
-    # losing to a kill signal.
-    out = Path(args.out)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    _fh = open(out, "w", newline="")
-    _writer = None
-
     # Interleaving, faithful to MINJA (QA/main.py:337-339, :348-396): a shuffled
     # 0/1 index array decides whether each slot is benign or injection, and each
     # stream is consumed from its OWN counter -- so injection rounds keep their
@@ -324,7 +321,49 @@ def run(args):
             schedule.append(benign_r[i_ben]); i_ben += 1
     schedule += inject_r[i_inj:] + benign_r[i_ben:] + test_r
 
-    for t, ri in enumerate(schedule):
+    # A CSV row alone is not enough to resume: retrieval needs the written
+    # question and thought for every memory record.  Persist the complete causal
+    # state atomically after every round so a reclaimed process can continue
+    # without changing the trajectory.
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    checkpoint = out.with_suffix(".checkpoint.json")
+    run_key = {
+        "backend": args.backend, "model": args.model, "file_name": args.file_name,
+        "num_templates": args.num_templates, "num_test": args.num_test,
+        "num_pre": args.num_pre, "num_benign": args.num_benign,
+        "extra_benign_subjects": args.extra_benign_subjects,
+        "n_shots": args.n_shots, "seed": args.seed,
+        "inject_attempts": args.inject_attempts,
+        "schedule": [f"{r['phase']}:{r['id']}" for r in schedule],
+    }
+    start_t = 0
+    if args.resume:
+        if not checkpoint.exists():
+            raise RuntimeError(f"--resume requested but checkpoint is missing: {checkpoint}")
+        state = json.load(open(checkpoint))
+        if state.get("run_key") != run_key:
+            raise RuntimeError("checkpoint arguments/schedule do not match this run")
+        start_t = int(state["next_t"])
+        memory = state["memory"]
+        log = state["log"]
+        transcript = state["transcript"]
+        print(f"resuming {out} at t={start_t} with {len(memory)} memory records", flush=True)
+    elif checkpoint.exists():
+        checkpoint.unlink()
+
+    # Rebuild the CSV from checkpointed rows before appending new ones.  If a
+    # process died between the CSV flush and the atomic state update, this drops
+    # the uncommitted tail instead of duplicating or half-replaying it.
+    _fh = open(out, "w", newline="")
+    _writer = None
+    if log:
+        _writer = csv.DictWriter(_fh, fieldnames=list(log[0].keys()))
+        _writer.writeheader()
+        _writer.writerows(log)
+        _fh.flush()
+
+    for t, ri in enumerate(schedule[start_t:], start=start_t):
         t_round = time.time()
         idxs = retrieve(ri["question"], memory, args.n_shots)
         poison_in_mem = sum(1 for m in memory if m.get("is_poison"))
@@ -361,7 +400,9 @@ def run(args):
                     "poison_in_mem": poison_in_mem, "poison_retr": poison_retr,
                     "anomalous": anomalous, "correct": correct, "answer": ans,
                     "retr_min_dist": retr_min_dist, "retr_poison_dist": retr_poison_dist,
-                    "retr_poison_src": ";".join(str(s) for s in retr_poison_src)})
+                    "retr_poison_src": ";".join(str(s) for s in retr_poison_src),
+                    "response_error": str(resp.get("_error", ""))[:240],
+                    "finish_reason": str(resp.get("_finish_reason", ""))[:40]})
         transcript.append({
             "t": t, "phase": ri["phase"], "id": ri["id"], "trigger": trigger,
             "note_present": ri.get("note_present", 0), "question": ri["question"],
@@ -393,10 +434,18 @@ def run(args):
                            "thought": thought, "answer": ans,
                            "is_poison": bool(is_poison), "src_round": t})
 
+        state = {"run_key": run_key, "next_t": t + 1, "memory": memory,
+                 "log": log, "transcript": transcript}
+        tmp_checkpoint = checkpoint.with_suffix(checkpoint.suffix + ".tmp")
+        with open(tmp_checkpoint, "w") as f:
+            json.dump(state, f, ensure_ascii=False)
+        os.replace(tmp_checkpoint, checkpoint)
+
     _fh.close()                      # rows were already flushed per round
     tpath = out.with_suffix(".transcript.json")
     with open(tpath, "w") as f:
         json.dump(transcript, f, indent=1, ensure_ascii=False)
+    checkpoint.unlink(missing_ok=True)
 
     n_test = sum(1 for r in log if r["phase"] == "test")
     asr = (sum(r["anomalous"] for r in log if r["phase"] == "test") / n_test
@@ -427,6 +476,8 @@ def main():
     ap.add_argument("--inject_attempts", type=int, default=3,
                     help="retries per injection item (MINJA uses 3)")
     ap.add_argument("--verbose", action="store_true")
+    ap.add_argument("--resume", action="store_true",
+                    help="resume from the per-round atomic checkpoint")
     run(ap.parse_args())
 
 

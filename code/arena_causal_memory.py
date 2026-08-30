@@ -124,6 +124,9 @@ class CausalMemorySystem:
         learned_graph_path: Optional[str] = None,
         use_names: bool = False,
         restrict_days: bool = False,
+        inherit_unspecified_from_base: bool = False,
+        compact_serialization: bool = False,
+        decoder_base_tag: bool = False,
     ):
         self.graph_mode = graph_mode
         self.user_id = user_id
@@ -145,11 +148,24 @@ class CausalMemorySystem:
         # learned mode knobs (see _learned_select)
         self.use_names = use_names
         self.restrict_days = restrict_days
+        # Query-constrained decoding arm: every non-target plan cell inherits
+        # from the public base itinerary.  Keep the complete base plan available
+        # and tell the agent about the policy; code/arena_e2e_run.py enforces the
+        # same policy on the decoded text without reading gold answers.
+        self.inherit_unspecified_from_base = inherit_unspecified_from_base
+        # v2 inheritance path.  The complete public base is carried in an
+        # explicitly tagged decoder-only section which the e2e wrapper removes
+        # before the LLM call.  The model sees only the compact trip scaffold and
+        # graph-selected ancestor deltas; the deterministic decoder still has the
+        # exact public base.  This is not hidden benchmark gold.
+        self.compact_serialization = compact_serialization
+        self.decoder_base_tag = decoder_base_tag
 
         # Form A state: (person, day, slot) -> (value, write_round)
         self._cells: Dict[Tuple[str, int, str], Tuple[str, int]] = {}
         self._people: List[str] = []              # insertion order == round order
         self._raw_chunks: List[str] = []
+        self._explicit_keys: Dict[str, Set[Tuple[str, int, str]]] = {}
         self._offline_graph: Dict[str, List[str]] = {}
         self._learned: Dict[str, Any] = {}
 
@@ -191,6 +207,30 @@ class CausalMemorySystem:
         for (day, slot), val in cells.items():
             self._cells[(name, day, slot)] = (val, idx)   # overwrite = new write
             # unmatched cells simply hold their previous (value, round)
+        # Under the inheritance decoder, only cells explicitly named by the
+        # traveler's query are genuine writes.  The remaining cells are copies
+        # of the public base and need not be serialized once per traveler.  Keep
+        # the full parsed state above for the legacy/noG arms, and separately
+        # record this query-only delta for the compact graph arm.
+        explicit = set(cells)
+        if self.compact_serialization and isinstance(locals().get("obj"), dict):
+            if obj.get("is_base_person"):
+                explicit = set(cells)
+            else:
+                try:
+                    from arena_e2e_inherit import target_cells_from_query
+                    targets = target_cells_from_query(str(obj.get("query") or ""))
+                    parsed = {(day, slot) for day, slot in cells}
+                    target_keys = {(name, day, slot) for day, slot in targets
+                                   if (day, slot) in parsed}
+                    explicit = {(day, slot) for _person, day, slot in target_keys}
+                    # Fail open if a future query form is not parsed.  This rule
+                    # is query-only and never consults person gold/evaluator.
+                    if not explicit:
+                        explicit = set(cells)
+                except ImportError:
+                    explicit = set(cells)
+        self._explicit_keys[name] = {(name, day, slot) for day, slot in explicit}
         return {"name": name, "cells_parsed": len(cells), "round": idx}
 
     # --- interface method 2 --------------------------------------------------
@@ -198,10 +238,26 @@ class CausalMemorySystem:
         """Serialize only An_G(query) into the memory context."""
         selected = self._ancestors_of(prompt)
         lines = ["<memory_context>"]
-        body = self._render(selected)
+        base_keys = ({key for key in self._cells
+                      if self._people and key[0] == self._people[0]})
+        if self.decoder_base_tag:
+            lines.extend([
+                "<decoder_base_itinerary>",
+                self._render(base_keys) or "None",
+                "</decoder_base_itinerary>",
+                self._render_trip_scaffold(),
+            ])
+        render_keys = selected
+        if self.decoder_base_tag and not self.compact_serialization:
+            # noG keeps every historical traveler, but the base itself is already
+            # present once in the decoder-only tag and as a compact scaffold.
+            render_keys = selected - base_keys
+        body = (self._render_compact(render_keys) if self.compact_serialization
+                else self._render(render_keys))
         if body:
             lines.append(body)
-        elif self.fallback_to_raw and self._raw_chunks:
+        elif (self.fallback_to_raw and self._raw_chunks
+              and not self.compact_serialization and not self.decoder_base_tag):
             # never starve the agent: if selection is empty but memory exists,
             # fall back to the most recent plan rather than emitting "None".
             last = self._people[-1] if self._people else None
@@ -209,6 +265,18 @@ class CausalMemorySystem:
             lines.append(fb or "None")
         else:
             lines.append("None")
+        if self.inherit_unspecified_from_base:
+            policy = (
+                "Solve only query-explicit target cells. A deterministic decoder "
+                "copies every other cell from the public base itinerary."
+                if self.decoder_base_tag else
+                "Treat the first plan above as the base itinerary. Copy every day/slot "
+                "from it exactly unless the current traveler's query explicitly changes "
+                "that day/slot. Use tools to solve only explicitly changed cells; do not "
+                "replace inherited meals, attractions, transportation, or accommodation. "
+                "Always output the complete plan."
+            )
+            lines.extend(["<inheritance_policy>", policy, "</inheritance_policy>"])
         lines.append("</memory_context>")            # load-bearing sentinel
         lines.append(f"User: {prompt}")
         return "\n".join(lines)
@@ -227,6 +295,8 @@ class CausalMemorySystem:
         if self.ablate_graph:
             return set(self._cells)          # structured slots, no graph selection
         if self.graph_mode == "learned" and self._learned:
+            if self.compact_serialization:
+                return self._compact_learned_select(q)
             return self._learned_select(q)
         if self.graph_mode == "offline" and self._offline_graph:
             named = [p for p in self._people if p.lower() in ql]
@@ -261,6 +331,67 @@ class CausalMemorySystem:
 
         if self.max_slots is not None and len(keep) > self.max_slots:
             keep = set(sorted(keep, key=lambda k: -self._cells[k][1])[:self.max_slots])
+        return keep
+
+    def _compact_learned_select(self, query: str) -> Set[Tuple[str, int, str]]:
+        """Select query-relevant delta ancestors for inheritance-v2.
+
+        The old learned selector targets all seven output slots because the
+        legacy agent had to regenerate a complete plan.  Under base inheritance,
+        only query-explicit cells are model targets.  We therefore retain:
+
+        * learned slot ancestors of slots mentioned in the constraint body;
+        * explicit delta writes of travelers referenced by those constraints.
+
+        Preamble group-member lists are removed before resolving references, so
+        "traveling with A, B, C" does not serialize every prior plan.  Everything
+        used here is visible in the current query or learned artifact; no gold or
+        evaluator is available to this method.
+        """
+        q = query or ""
+        body_lines = []
+        for raw in q.splitlines():
+            line = raw.strip()
+            lower = line.lower()
+            if (lower.startswith("i am ") or lower.startswith("i'm traveling with")
+                    or lower.startswith("i'm joining")
+                    or lower.startswith("i'm going on this trip with")):
+                continue
+            body_lines.append(line)
+        body = "\n".join(body_lines)
+        slots_named, _days_named = self._query_slots_days(body.lower())
+        needed_slots = set(slots_named)
+        for slot in list(slots_named):
+            needed_slots |= set(self._learned["slot_ancestors"].get(slot, []))
+        if not needed_slots:
+            needed_slots = set(SLOTS)
+
+        mentioned = {
+            person for person in self._people
+            if person and re.search(rf"\b{re.escape(person)}(?:'s)?\b", body, re.I)
+        }
+        try:
+            from arena_e2e_inherit import reference_cells_from_query
+            references = reference_cells_from_query(q, list(mentioned))
+        except ImportError:
+            references = {}
+        keep: Set[Tuple[str, int, str]] = set()
+        for person in mentioned:
+            source_cells = references.get(person, set())
+            if source_cells:
+                for day, slot in source_cells:
+                    exact = (person, day, slot)
+                    if exact in self._cells:
+                        keep.add(exact)
+                    for ancestor_slot in self._learned["slot_ancestors"].get(slot, []):
+                        ancestor = (person, day, ancestor_slot)
+                        if ancestor in self._cells:
+                            keep.add(ancestor)
+                continue
+            explicit = self._explicit_keys.get(person, set())
+            narrowed = {key for key in explicit if key[2] in needed_slots}
+            keep |= narrowed or explicit
+
         return keep
 
     # --- learned-graph selection (milestone M4) -------------------------------
@@ -333,6 +464,9 @@ class CausalMemorySystem:
                 if cur is None or rnd < self._cells[cur][1]:
                     first[k[1]] = k
             keep |= set(first.values())
+        if self.inherit_unspecified_from_base and self._people:
+            base_person = self._people[0]
+            keep |= {key for key in self._cells if key[0] == base_person}
         return keep
 
     def _scaffold_cells(self, named: List[str]) -> Set[Tuple[str, int, str]]:
@@ -364,6 +498,31 @@ class CausalMemorySystem:
                 label = k[2].replace("_", " ").title()
                 out.append(f"{label}: {val}" + (f"  (round {rnd})" if self.keep_provenance else ""))
         return "\n".join(out)
+
+    def _render_compact(self, keys: Set[Tuple[str, int, str]]) -> str:
+        """One row per selected causal cell; no repeated plan/day scaffold."""
+        if not keys:
+            return ""
+        rows = ["<causal_ancestor_cells>", "traveler | day | slot | value"]
+        order = {person: idx for idx, person in enumerate(self._people)}
+        for person, day, slot in sorted(
+                keys, key=lambda key: (order.get(key[0], 10**9), key[1], key[2])):
+            value, _round = self._cells[(person, day, slot)]
+            rows.append(f"{person} | {day} | {slot} | {value}")
+        rows.append("</causal_ancestor_cells>")
+        return "\n".join(rows)
+
+    def _render_trip_scaffold(self) -> str:
+        """Minimal visible base state needed to locate query target cells."""
+        if not self._people:
+            return "<trip_scaffold>None</trip_scaffold>"
+        base = self._people[0]
+        cities = []
+        for key in sorted((key for key in self._cells
+                           if key[0] == base and key[2] == "current_city"),
+                          key=lambda key: key[1]):
+            cities.append(f"day {key[1]}={self._cells[key][0]}")
+        return "<trip_scaffold>" + "; ".join(cities) + "</trip_scaffold>"
 
     # --- diagnostics (compression axis) --------------------------------------
     def context_stats(self, prompt: str) -> Dict[str, float]:

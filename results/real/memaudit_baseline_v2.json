@@ -1,0 +1,18 @@
+{
+ "cmis": {
+  "auc": 0.6702317290552585,
+  "precision_at_k": 0.7575757575757576,
+  "k": 33,
+  "n_poison": 33,
+  "n_records": 50
+ },
+ "consistency_graph": {
+  "auc": 0.06666666666666667,
+  "precision_at_k": 0.8484848484848485,
+  "k": 33,
+  "n_poison": 33,
+  "n_records": 38
+ },
+ "n_rounds": 81,
+ "substitution": "DeBERTa-v3 NLI replaced by lexical overlap (CPU-only)"
+}

@@ -1,0 +1,32 @@
+{
+  "task_name": "travel_planner",
+  "agent": {
+    "model_name": "deepseek-v4-flash",
+    "backend": "openai",
+    "api_key": "",
+    "base_url": "https://api.deepseek.com/v1",
+    "_api_key_note": "read from $OPENAI_API_KEY; never commit a key here"
+  },
+  "memory": {
+    "use_step_memory": false,
+    "memory_system_name": "causal-query-ancestry-inherit-compact-v2",
+    "server_url": "http://127.0.0.1:8123",
+    "learned_graph_path": "results/real/travel_learned_graph_holdout_101_110.json"
+  },
+  "env": {
+    "env_name": "travel_planner",
+    "env_server_url": "http://127.0.0.1:8001",
+    "env_config": {"judgement_mode": "none"}
+  },
+  "task_specific": {
+    "max_steps": 12,
+    "llm_max_tokens": 32768,
+    "inherit_unspecified_from_base": true,
+    "decoder": "query-target/base-inheritance-v2"
+  },
+  "output": {
+    "output_dir": "../../results/development/p2_compact_v2/e2e/query-ancestry-v2-32k-dev",
+    "log_dir": "../../results/development/p2_compact_v2/logs_32k",
+    "global_csv": "../../results/development/p2_compact_v2/results_query-ancestry-v2-32k-dev.csv"
+  }
+}

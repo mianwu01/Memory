@@ -1,0 +1,502 @@
+{
+  "schema": "travel-type-level-slot-graph/v1",
+  "created": "2026-08-29 13:25:58",
+  "max_lag": 3,
+  "slots": [
+    "current_city",
+    "transportation",
+    "breakfast",
+    "attraction",
+    "lunch",
+    "dinner",
+    "accommodation"
+  ],
+  "n_episodes": 260,
+  "excluded_episode_ids": [
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110
+  ],
+  "persistence": {
+    "current_city": {
+      "constant_rate": 1.0,
+      "copy_rate": 1.0,
+      "n_trials": 1300
+    },
+    "transportation": {
+      "constant_rate": 1.0,
+      "copy_rate": 1.0,
+      "n_trials": 780
+    },
+    "breakfast": {
+      "constant_rate": 0.0905,
+      "copy_rate": 0.7053,
+      "n_trials": 1017
+    },
+    "attraction": {
+      "constant_rate": 1.0,
+      "copy_rate": 1.0,
+      "n_trials": 948
+    },
+    "lunch": {
+      "constant_rate": 0.0697,
+      "copy_rate": 0.6919,
+      "n_trials": 904
+    },
+    "dinner": {
+      "constant_rate": 0.0726,
+      "copy_rate": 0.7008,
+      "n_trials": 1074
+    },
+    "accommodation": {
+      "constant_rate": 0.0212,
+      "copy_rate": 0.613,
+      "n_trials": 1040
+    }
+  },
+  "ground_truth_edges": [
+    {
+      "cause": "breakfast",
+      "effect": "breakfast",
+      "lag": 1
+    },
+    {
+      "cause": "breakfast",
+      "effect": "breakfast",
+      "lag": 2
+    },
+    {
+      "cause": "breakfast",
+      "effect": "breakfast",
+      "lag": 3
+    },
+    {
+      "cause": "breakfast",
+      "effect": "lunch",
+      "lag": 1
+    },
+    {
+      "cause": "breakfast",
+      "effect": "lunch",
+      "lag": 2
+    },
+    {
+      "cause": "breakfast",
+      "effect": "lunch",
+      "lag": 3
+    },
+    {
+      "cause": "breakfast",
+      "effect": "dinner",
+      "lag": 1
+    },
+    {
+      "cause": "breakfast",
+      "effect": "dinner",
+      "lag": 2
+    },
+    {
+      "cause": "breakfast",
+      "effect": "dinner",
+      "lag": 3
+    },
+    {
+      "cause": "lunch",
+      "effect": "breakfast",
+      "lag": 1
+    },
+    {
+      "cause": "lunch",
+      "effect": "breakfast",
+      "lag": 2
+    },
+    {
+      "cause": "lunch",
+      "effect": "breakfast",
+      "lag": 3
+    },
+    {
+      "cause": "lunch",
+      "effect": "lunch",
+      "lag": 1
+    },
+    {
+      "cause": "lunch",
+      "effect": "lunch",
+      "lag": 2
+    },
+    {
+      "cause": "lunch",
+      "effect": "lunch",
+      "lag": 3
+    },
+    {
+      "cause": "lunch",
+      "effect": "dinner",
+      "lag": 1
+    },
+    {
+      "cause": "lunch",
+      "effect": "dinner",
+      "lag": 2
+    },
+    {
+      "cause": "lunch",
+      "effect": "dinner",
+      "lag": 3
+    },
+    {
+      "cause": "dinner",
+      "effect": "breakfast",
+      "lag": 1
+    },
+    {
+      "cause": "dinner",
+      "effect": "breakfast",
+      "lag": 2
+    },
+    {
+      "cause": "dinner",
+      "effect": "breakfast",
+      "lag": 3
+    },
+    {
+      "cause": "dinner",
+      "effect": "lunch",
+      "lag": 1
+    },
+    {
+      "cause": "dinner",
+      "effect": "lunch",
+      "lag": 2
+    },
+    {
+      "cause": "dinner",
+      "effect": "lunch",
+      "lag": 3
+    },
+    {
+      "cause": "dinner",
+      "effect": "dinner",
+      "lag": 1
+    },
+    {
+      "cause": "dinner",
+      "effect": "dinner",
+      "lag": 2
+    },
+    {
+      "cause": "dinner",
+      "effect": "dinner",
+      "lag": 3
+    },
+    {
+      "cause": "accommodation",
+      "effect": "accommodation",
+      "lag": 1
+    },
+    {
+      "cause": "accommodation",
+      "effect": "accommodation",
+      "lag": 2
+    },
+    {
+      "cause": "accommodation",
+      "effect": "accommodation",
+      "lag": 3
+    }
+  ],
+  "ground_truth_collapsed": {
+    "accommodation->accommodation": 2469,
+    "lunch->lunch": 745,
+    "dinner->dinner": 917,
+    "lunch->dinner": 267,
+    "breakfast->breakfast": 823,
+    "dinner->breakfast": 290,
+    "breakfast->lunch": 240,
+    "lunch->breakfast": 232,
+    "breakfast->dinner": 290,
+    "dinner->lunch": 295
+  },
+  "specs": {
+    "ind": {
+      "n_trials": 260,
+      "n_windows": 1276,
+      "degenerate_slots": [
+        "current_city",
+        "transportation",
+        "attraction"
+      ],
+      "center_by_trial": true,
+      "pcmci_plus": {
+        "edges": [
+          {
+            "cause": "breakfast",
+            "effect": "breakfast",
+            "lag": 1
+          },
+          {
+            "cause": "breakfast",
+            "effect": "breakfast",
+            "lag": 2
+          },
+          {
+            "cause": "breakfast",
+            "effect": "breakfast",
+            "lag": 3
+          },
+          {
+            "cause": "breakfast",
+            "effect": "lunch",
+            "lag": 3
+          },
+          {
+            "cause": "lunch",
+            "effect": "lunch",
+            "lag": 1
+          },
+          {
+            "cause": "lunch",
+            "effect": "lunch",
+            "lag": 2
+          },
+          {
+            "cause": "lunch",
+            "effect": "lunch",
+            "lag": 3
+          },
+          {
+            "cause": "dinner",
+            "effect": "dinner",
+            "lag": 1
+          },
+          {
+            "cause": "dinner",
+            "effect": "dinner",
+            "lag": 2
+          },
+          {
+            "cause": "dinner",
+            "effect": "dinner",
+            "lag": 3
+          },
+          {
+            "cause": "accommodation",
+            "effect": "accommodation",
+            "lag": 1
+          },
+          {
+            "cause": "accommodation",
+            "effect": "accommodation",
+            "lag": 2
+          },
+          {
+            "cause": "accommodation",
+            "effect": "accommodation",
+            "lag": 3
+          }
+        ],
+        "eval": {
+          "TP": 13,
+          "FP": 0,
+          "FN": 17,
+          "P": 1.0,
+          "R": 0.433,
+          "F1": 0.605
+        },
+        "runtime_s": 0.7,
+        "slot_adjacency_any_lag": {
+          "current_city": [],
+          "transportation": [],
+          "breakfast": [
+            "breakfast"
+          ],
+          "attraction": [],
+          "lunch": [
+            "breakfast",
+            "lunch"
+          ],
+          "dinner": [
+            "dinner"
+          ],
+          "accommodation": [
+            "accommodation"
+          ]
+        },
+        "slot_ancestors": {
+          "current_city": [],
+          "transportation": [],
+          "breakfast": [
+            "breakfast"
+          ],
+          "attraction": [],
+          "lunch": [
+            "breakfast",
+            "lunch"
+          ],
+          "dinner": [
+            "dinner"
+          ],
+          "accommodation": [
+            "accommodation"
+          ]
+        }
+      },
+      "grace": {
+        "edges": [
+          {
+            "cause": "breakfast",
+            "effect": "breakfast",
+            "lag": 1,
+            "weight": 0.6488
+          },
+          {
+            "cause": "breakfast",
+            "effect": "breakfast",
+            "lag": 2,
+            "weight": 0.6503
+          },
+          {
+            "cause": "breakfast",
+            "effect": "breakfast",
+            "lag": 3,
+            "weight": 0.6448
+          },
+          {
+            "cause": "breakfast",
+            "effect": "lunch",
+            "lag": 3,
+            "weight": 0.6385
+          },
+          {
+            "cause": "lunch",
+            "effect": "lunch",
+            "lag": 1,
+            "weight": 0.6397
+          },
+          {
+            "cause": "lunch",
+            "effect": "lunch",
+            "lag": 2,
+            "weight": 0.6368
+          },
+          {
+            "cause": "lunch",
+            "effect": "lunch",
+            "lag": 3,
+            "weight": 0.6478
+          },
+          {
+            "cause": "dinner",
+            "effect": "dinner",
+            "lag": 1,
+            "weight": 0.6426
+          },
+          {
+            "cause": "dinner",
+            "effect": "dinner",
+            "lag": 2,
+            "weight": 0.6437
+          },
+          {
+            "cause": "dinner",
+            "effect": "dinner",
+            "lag": 3,
+            "weight": 0.6386
+          },
+          {
+            "cause": "accommodation",
+            "effect": "accommodation",
+            "lag": 1,
+            "weight": 0.6452
+          },
+          {
+            "cause": "accommodation",
+            "effect": "accommodation",
+            "lag": 2,
+            "weight": 0.6516
+          },
+          {
+            "cause": "accommodation",
+            "effect": "accommodation",
+            "lag": 3,
+            "weight": 0.6546
+          }
+        ],
+        "eval": {
+          "TP": 13,
+          "FP": 0,
+          "FN": 17,
+          "P": 1.0,
+          "R": 0.433,
+          "F1": 0.605
+        },
+        "runtime_s": 13.2,
+        "skeleton_source": "pcmci_plus",
+        "gate_threshold": 0.5,
+        "pooling": "per-trial unfold, windows concatenated; NLL is a mean over windows so the loss sums across episodes with no cross-trial lag term",
+        "slot_adjacency_any_lag": {
+          "current_city": [],
+          "transportation": [],
+          "breakfast": [
+            "breakfast"
+          ],
+          "attraction": [],
+          "lunch": [
+            "breakfast",
+            "lunch"
+          ],
+          "dinner": [
+            "dinner"
+          ],
+          "accommodation": [
+            "accommodation"
+          ]
+        },
+        "slot_ancestors": {
+          "current_city": [],
+          "transportation": [],
+          "breakfast": [
+            "breakfast"
+          ],
+          "attraction": [],
+          "lunch": [
+            "breakfast",
+            "lunch"
+          ],
+          "dinner": [
+            "dinner"
+          ],
+          "accommodation": [
+            "accommodation"
+          ]
+        }
+      },
+      "slot_ancestors": {
+        "current_city": [],
+        "transportation": [],
+        "breakfast": [
+          "breakfast"
+        ],
+        "attraction": [],
+        "lunch": [
+          "breakfast",
+          "lunch"
+        ],
+        "dinner": [
+          "dinner"
+        ],
+        "accommodation": [
+          "accommodation"
+        ]
+      }
+    }
+  }
+}

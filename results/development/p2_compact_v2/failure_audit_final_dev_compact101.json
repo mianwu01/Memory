@@ -1,0 +1,522 @@
+{
+ "query-ancestry-v2-final-dev": {
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/query-ancestry-v2-final-dev/submission/deepseek-v4-flash_submission.jsonl",
+  "episode_ids": [
+   101
+  ],
+  "expected_persons": 7,
+  "submitted_persons": 7,
+  "missing_persons": 0,
+  "extra_persons": 0,
+  "full_pass_persons": 2,
+  "ps": 28.571428571428573,
+  "unparseable_or_empty_plans": 0,
+  "invalid_day_sets": 7,
+  "persons_failing_only_query_constraints": 4,
+  "persons_failing_only_nonconstraint_slots": 0,
+  "persons_failing_both": 1,
+  "failed_slot_count_distribution": {
+   "0": 2,
+   "1": 1,
+   "2": 2,
+   "10": 1,
+   "14": 1
+  },
+  "closest_failed_persons": [
+   {
+    "data_idx": 101,
+    "person_idx": 1,
+    "name": "Karen",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 7,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 2,
+    "name": "Jennifer",
+    "n_failed_slots": 2,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 1,
+    "failed_slots": [
+     {
+      "day": 3,
+      "slot": "breakfast",
+      "query_constraint": false,
+      "query_explicit_target": true
+     },
+     {
+      "day": 7,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 6,
+    "name": "Charles",
+    "n_failed_slots": 2,
+    "n_constraint_failures": 2,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 2,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 3,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 7,
+    "name": "Scarlett",
+    "n_failed_slots": 10,
+    "n_constraint_failures": 10,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 3,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 4,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 4,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 5,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 5,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 6,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 6,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 6,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 7,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 7,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 4,
+    "name": "Ethan",
+    "n_failed_slots": 14,
+    "n_constraint_failures": 14,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 1,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 2,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 2,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 2,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 3,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 3,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 3,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 4,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 5,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 5,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 5,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 6,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 6,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 7,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   }
+  ],
+  "person_failure_details": [
+   {
+    "data_idx": 101,
+    "person_idx": 3,
+    "name": "Brooke",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 5,
+    "name": "Jacob",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 1,
+    "name": "Karen",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 7,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 2,
+    "name": "Jennifer",
+    "n_failed_slots": 2,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 1,
+    "failed_slots": [
+     {
+      "day": 3,
+      "slot": "breakfast",
+      "query_constraint": false,
+      "query_explicit_target": true
+     },
+     {
+      "day": 7,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 6,
+    "name": "Charles",
+    "n_failed_slots": 2,
+    "n_constraint_failures": 2,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 2,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 3,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 7,
+    "name": "Scarlett",
+    "n_failed_slots": 10,
+    "n_constraint_failures": 10,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 3,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 4,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 4,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 5,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 5,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 6,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 6,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 6,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 7,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 7,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 4,
+    "name": "Ethan",
+    "n_failed_slots": 14,
+    "n_constraint_failures": 14,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 1,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 2,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 2,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 2,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 3,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 3,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 3,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 4,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 5,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 5,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 5,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 6,
+      "slot": "dinner",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 6,
+      "slot": "accommodation",
+      "query_constraint": true,
+      "query_explicit_target": true
+     },
+     {
+      "day": 7,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   }
+  ],
+  "failures_by_slot": {
+   "lunch": 8,
+   "breakfast": 7,
+   "accommodation": 7,
+   "dinner": 7
+  },
+  "constrained_failures_by_slot": {
+   "lunch": 8,
+   "breakfast": 6,
+   "accommodation": 7,
+   "dinner": 7
+  },
+  "nonconstraint_failures_by_slot": {
+   "breakfast": 1
+  },
+  "explicit_target_failures_by_slot": {
+   "lunch": 8,
+   "breakfast": 7,
+   "accommodation": 7,
+   "dinner": 7
+  },
+  "inherited_slot_failures_by_slot": {},
+  "total_constrained_failures": 28,
+  "total_nonconstraint_failures": 1,
+  "total_explicit_target_failures": 29,
+  "total_inherited_slot_failures": 0
+ }
+}

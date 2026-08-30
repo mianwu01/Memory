@@ -1,0 +1,84 @@
+{
+ "query-ancestry-v2-thinking-off-dev": {
+  "n_episodes": 1,
+  "episode_ids": [
+   "101"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/query-ancestry-v2-thinking-off-dev/submission/deepseek-v4-flash_submission.jsonl",
+  "metrics": {
+   "ps": 0.0,
+   "sps": 37.244897959183675,
+   "sr": 0.0
+  },
+  "usage": {
+   "total_input_tokens": 81690,
+   "total_output_tokens": 90612,
+   "total_cost": 1.1103450000000001,
+   "duration_seconds": 537.02,
+   "duration_minutes": 8.95,
+   "covered_episode_ids": [
+    "101"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/query-ancestry-v2-thinking-off-dev/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "101"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "101": "1788024918-2119-eb5fe2df:101"
+   },
+   "per_episode": {
+    "101": {
+     "calls": 21,
+     "input_tokens": 81690,
+     "output_tokens": 90612,
+     "cost": 1.1103450000000001,
+     "api_duration_seconds": 535.1965906620026,
+     "message_chars": 343922,
+     "tool_schema_chars": 16359,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "persons_covered": [
+      "Brooke",
+      "Charles",
+      "Ethan",
+      "Jacob",
+      "Jennifer",
+      "Karen",
+      "Scarlett"
+     ],
+     "thinking_modes": [
+      "disabled"
+     ]
+    }
+   },
+   "calls": 21,
+   "total_input_tokens": 81690,
+   "total_output_tokens": 90612,
+   "total_cost": 1.1103450000000001,
+   "api_duration_seconds": 535.1965906620026
+  },
+  "per_episode": {
+   "101": {
+    "n_persons": 7,
+    "full_pass_persons": 0,
+    "ps": 0.0,
+    "sps": 37.244897959183675,
+    "sr": 0.0
+   }
+  }
+ },
+ "_paired_comparisons": {}
+}

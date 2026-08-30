@@ -1,0 +1,277 @@
+{
+ "query-ancestry-v2-32k-dev": {
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/query-ancestry-v2-32k-dev/submission/deepseek-v4-flash_submission.jsonl",
+  "episode_ids": [
+   101
+  ],
+  "expected_persons": 7,
+  "submitted_persons": 7,
+  "missing_persons": 0,
+  "extra_persons": 0,
+  "full_pass_persons": 5,
+  "ps": 71.42857142857143,
+  "unparseable_or_empty_plans": 0,
+  "invalid_day_sets": 7,
+  "persons_failing_only_query_constraints": 2,
+  "persons_failing_only_nonconstraint_slots": 0,
+  "persons_failing_both": 0,
+  "failed_slot_count_distribution": {
+   "0": 5,
+   "1": 2
+  },
+  "closest_failed_persons": [
+   {
+    "data_idx": 101,
+    "person_idx": 1,
+    "name": "Karen",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 7,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 4,
+    "name": "Ethan",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 7,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   }
+  ],
+  "person_failure_details": [
+   {
+    "data_idx": 101,
+    "person_idx": 2,
+    "name": "Jennifer",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 3,
+    "name": "Brooke",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 5,
+    "name": "Jacob",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 6,
+    "name": "Charles",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 7,
+    "name": "Scarlett",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 1,
+    "name": "Karen",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 7,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 4,
+    "name": "Ethan",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 7,
+      "slot": "lunch",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   }
+  ],
+  "failures_by_slot": {
+   "lunch": 2
+  },
+  "constrained_failures_by_slot": {
+   "lunch": 2
+  },
+  "nonconstraint_failures_by_slot": {},
+  "explicit_target_failures_by_slot": {
+   "lunch": 2
+  },
+  "inherited_slot_failures_by_slot": {},
+  "total_constrained_failures": 2,
+  "total_nonconstraint_failures": 0,
+  "total_explicit_target_failures": 2,
+  "total_inherited_slot_failures": 0
+ },
+ "noG-v2-32k-dev": {
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/noG-v2-32k-dev/submission/deepseek-v4-flash_submission.jsonl",
+  "episode_ids": [
+   101
+  ],
+  "expected_persons": 7,
+  "submitted_persons": 7,
+  "missing_persons": 0,
+  "extra_persons": 0,
+  "full_pass_persons": 6,
+  "ps": 85.71428571428571,
+  "unparseable_or_empty_plans": 0,
+  "invalid_day_sets": 7,
+  "persons_failing_only_query_constraints": 1,
+  "persons_failing_only_nonconstraint_slots": 0,
+  "persons_failing_both": 0,
+  "failed_slot_count_distribution": {
+   "0": 6,
+   "1": 1
+  },
+  "closest_failed_persons": [
+   {
+    "data_idx": 101,
+    "person_idx": 1,
+    "name": "Karen",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 5,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   }
+  ],
+  "person_failure_details": [
+   {
+    "data_idx": 101,
+    "person_idx": 2,
+    "name": "Jennifer",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 3,
+    "name": "Brooke",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 4,
+    "name": "Ethan",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 5,
+    "name": "Jacob",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 6,
+    "name": "Charles",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 7,
+    "name": "Scarlett",
+    "n_failed_slots": 0,
+    "n_constraint_failures": 0,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": []
+   },
+   {
+    "data_idx": 101,
+    "person_idx": 1,
+    "name": "Karen",
+    "n_failed_slots": 1,
+    "n_constraint_failures": 1,
+    "n_nonconstraint_failures": 0,
+    "failed_slots": [
+     {
+      "day": 5,
+      "slot": "breakfast",
+      "query_constraint": true,
+      "query_explicit_target": true
+     }
+    ]
+   }
+  ],
+  "failures_by_slot": {
+   "breakfast": 1
+  },
+  "constrained_failures_by_slot": {
+   "breakfast": 1
+  },
+  "nonconstraint_failures_by_slot": {},
+  "explicit_target_failures_by_slot": {
+   "breakfast": 1
+  },
+  "inherited_slot_failures_by_slot": {},
+  "total_constrained_failures": 1,
+  "total_nonconstraint_failures": 0,
+  "total_explicit_target_failures": 1,
+  "total_inherited_slot_failures": 0
+ }
+}

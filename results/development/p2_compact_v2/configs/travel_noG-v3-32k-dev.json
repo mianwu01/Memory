@@ -1,0 +1,32 @@
+{
+  "task_name": "travel_planner",
+  "agent": {
+    "model_name": "deepseek-v4-flash",
+    "backend": "openai",
+    "api_key": "",
+    "base_url": "https://api.deepseek.com/v1",
+    "_api_key_note": "read from $OPENAI_API_KEY; never commit a key here"
+  },
+  "memory": {
+    "use_step_memory": false,
+    "memory_system_name": "causal-noG-inherit-v2",
+    "server_url": "http://127.0.0.1:8123"
+  },
+  "env": {
+    "env_name": "travel_planner",
+    "env_server_url": "http://127.0.0.1:8001",
+    "env_config": {"judgement_mode": "none"}
+  },
+  "task_specific": {
+    "max_steps": 12,
+    "llm_max_tokens": 32768,
+    "llm_thinking": "default",
+    "inherit_unspecified_from_base": true,
+    "decoder": "query-target/base-inheritance-v3"
+  },
+  "output": {
+    "output_dir": "../../results/development/p2_compact_v2/e2e/noG-v3-32k-dev",
+    "log_dir": "../../results/development/p2_compact_v2/logs_v3_32k",
+    "global_csv": "../../results/development/p2_compact_v2/results_noG-v3-32k-dev.csv"
+  }
+}

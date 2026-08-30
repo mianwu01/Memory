@@ -1,0 +1,393 @@
+{
+ "query-ancestry-v3-32k-dev": {
+  "n_episodes": 3,
+  "episode_ids": [
+   "101",
+   "102",
+   "103"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/query-ancestry-v3-32k-dev/submission/deepseek-v4-flash_submission.jsonl",
+  "metrics": {
+   "ps": 100.0,
+   "sps": 100.0,
+   "sr": 100.0
+  },
+  "usage": {
+   "total_input_tokens": 119525,
+   "total_output_tokens": 61985,
+   "total_cost": 0.9186625,
+   "duration_seconds": 398.18,
+   "duration_minutes": 6.64,
+   "covered_episode_ids": [
+    "101",
+    "102",
+    "103"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/query-ancestry-v3-32k-dev/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "101",
+    "102",
+    "103"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "101": "1788025652-108027-50fdaa37:101",
+    "102": "1788026419-191954-74fde53f:102",
+    "103": "1788026419-191954-74fde53f:103"
+   },
+   "per_episode": {
+    "101": {
+     "calls": 14,
+     "input_tokens": 54758,
+     "output_tokens": 43058,
+     "cost": 0.567475,
+     "api_duration_seconds": 261.62346720695496,
+     "message_chars": 190322,
+     "tool_schema_chars": 10906,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "persons_covered": [
+      "Brooke",
+      "Charles",
+      "Ethan",
+      "Jacob",
+      "Jennifer",
+      "Karen",
+      "Scarlett"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-v4-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 7,
+      "stop": 7
+     }
+    },
+    "102": {
+     "calls": 15,
+     "input_tokens": 56080,
+     "output_tokens": 26179,
+     "cost": 0.40199,
+     "api_duration_seconds": 172.48375368118286,
+     "message_chars": 195695,
+     "tool_schema_chars": 10873,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "persons_covered": [
+      "Angela",
+      "Colin",
+      "David",
+      "Dexter",
+      "Erin",
+      "Jackson",
+      "Penny"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-v4-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 7
+     }
+    },
+    "103": {
+     "calls": 16,
+     "input_tokens": 63445,
+     "output_tokens": 35806,
+     "cost": 0.5166725000000001,
+     "api_duration_seconds": 223.94804859161377,
+     "message_chars": 224945,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Avery",
+      "Brooke",
+      "Ellie",
+      "Jacob",
+      "Miles",
+      "Ryan",
+      "Walter",
+      "Wendy"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-v4-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    }
+   },
+   "calls": 45,
+   "total_input_tokens": 174283,
+   "total_output_tokens": 105043,
+   "total_cost": 1.4861375000000001,
+   "api_duration_seconds": 658.0552694797516,
+   "thinking_modes": [
+    "default"
+   ],
+   "returned_models": [
+    "deepseek-v4-flash"
+   ],
+   "repair_calls": 0,
+   "finish_reasons": {
+    "tool_calls": 23,
+    "stop": 22
+   }
+  },
+  "per_episode": {
+   "101": {
+    "n_persons": 7,
+    "full_pass_persons": 7,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "102": {
+    "n_persons": 7,
+    "full_pass_persons": 7,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "103": {
+    "n_persons": 8,
+    "full_pass_persons": 8,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   }
+  }
+ },
+ "noG-v3-32k-dev": {
+  "n_episodes": 2,
+  "episode_ids": [
+   "101",
+   "102"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/noG-v3-32k-dev/submission/deepseek-v4-flash_submission.jsonl",
+  "metrics": {
+   "ps": 85.71428571428571,
+   "sps": 97.9591836734694,
+   "sr": 0.0
+  },
+  "usage": {
+   "total_input_tokens": 86808,
+   "total_output_tokens": 55714,
+   "total_cost": 0.77416,
+   "duration_seconds": 363.48,
+   "duration_minutes": 6.06,
+   "covered_episode_ids": [
+    "101",
+    "102"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_compact_v2/e2e/noG-v3-32k-dev/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "101",
+    "102"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "101": "1788025955-157642-811d1acd:101",
+    "102": "1788026857-191923-ab623ad2:102"
+   },
+   "per_episode": {
+    "101": {
+     "calls": 14,
+     "input_tokens": 86808,
+     "output_tokens": 55714,
+     "cost": 0.77416,
+     "api_duration_seconds": 361.73092222213745,
+     "message_chars": 286882,
+     "tool_schema_chars": 10906,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "persons_covered": [
+      "Brooke",
+      "Charles",
+      "Ethan",
+      "Jacob",
+      "Jennifer",
+      "Karen",
+      "Scarlett"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-v4-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 7,
+      "stop": 7
+     }
+    },
+    "102": {
+     "calls": 14,
+     "input_tokens": 81770,
+     "output_tokens": 28206,
+     "cost": 0.48648499999999995,
+     "api_duration_seconds": 177.09726881980896,
+     "message_chars": 300468,
+     "tool_schema_chars": 10094,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "persons_covered": [
+      "Angela",
+      "Colin",
+      "David",
+      "Dexter",
+      "Erin",
+      "Jackson",
+      "Penny"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-v4-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 7,
+      "stop": 7
+     }
+    }
+   },
+   "calls": 28,
+   "total_input_tokens": 168578,
+   "total_output_tokens": 83920,
+   "total_cost": 1.2606449999999998,
+   "api_duration_seconds": 538.8281910419464,
+   "thinking_modes": [
+    "default"
+   ],
+   "returned_models": [
+    "deepseek-v4-flash"
+   ],
+   "repair_calls": 0,
+   "finish_reasons": {
+    "tool_calls": 14,
+    "stop": 14
+   }
+  },
+  "per_episode": {
+   "101": {
+    "n_persons": 7,
+    "full_pass_persons": 6,
+    "ps": 85.71428571428571,
+    "sps": 97.9591836734694,
+    "sr": 0.0
+   }
+  }
+ },
+ "_paired_comparisons": {
+  "query-ancestry-v3-32k-dev_minus_noG-v3-32k-dev": {
+   "episode_ids": [
+    "101"
+   ],
+   "n_episodes": 1,
+   "metrics": {
+    "ps": {
+     "episode_deltas": {
+      "101": 14.285714285714292
+     },
+     "mean_delta_points": 14.285714285714292,
+     "bootstrap_95": [
+      14.285714285714292,
+      14.285714285714292
+     ],
+     "wins": 1,
+     "ties": 0,
+     "losses": 0
+    },
+    "sps": {
+     "episode_deltas": {
+      "101": 2.040816326530603
+     },
+     "mean_delta_points": 2.040816326530603,
+     "bootstrap_95": [
+      2.040816326530603,
+      2.040816326530603
+     ],
+     "wins": 1,
+     "ties": 0,
+     "losses": 0
+    },
+    "sr": {
+     "episode_deltas": {
+      "101": 100.0
+     },
+     "mean_delta_points": 100.0,
+     "bootstrap_95": [
+      100.0,
+      100.0
+     ],
+     "wins": 1,
+     "ties": 0,
+     "losses": 0
+    }
+   }
+  }
+ }
+}

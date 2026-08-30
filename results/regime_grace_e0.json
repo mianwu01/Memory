@@ -7,8 +7,8 @@
   "regime_read": 2,
   "regime_read_gated": 2,
   "n_regime": {
-   "0": 2280,
-   "1": 120
+   "0": 2850,
+   "1": 150
   }
  },
  {
@@ -19,8 +19,8 @@
   "regime_read": 2,
   "regime_read_gated": 2,
   "n_regime": {
-   "0": 2280,
-   "1": 120
+   "0": 2850,
+   "1": 150
   }
  },
  {
@@ -31,8 +31,8 @@
   "regime_read": 2,
   "regime_read_gated": 2,
   "n_regime": {
-   "0": 2280,
-   "1": 120
+   "0": 2850,
+   "1": 150
   }
  }
 ]
