@@ -371,5 +371,5 @@ this environment (no network path to the StrategyQA dev split or the DPR encoder
 | v3 preregistration and results | `docs/hidden-mechanism-v3-preregistration.md`, `docs/hidden-mechanism-v3-results.md` |
 | v3 dev results and gates | `results/development/hm3/` |
 | v3 test, fresh-seed and API results | `results/real/hm3/`, `results/real/hm3/round2/` |
-| deck and figures | `slides/8-30_huaman_edit.pptx`, `slides/figs_0830/`; P2 block as revised on 9/3: `slides/fig_p2rev_0903.py`, `slides/revise_p2_0903.py` (earlier P2 slides: `slides/fig_p2v3_0903.py`, `slides/add_p2_human_0903.py`) |
+| deck and figures | `slides/8-30_huaman_edit.pptx`, `slides/figs_0830/`; P2 block as revised on 9/3: `slides/fig_p2rev_0903.py`, `slides/revise_p2_0903.py`, presenter script `docs/p2-presenter-script-2026-09-03.md` (earlier P2 slides: `slides/fig_p2v3_0903.py`, `slides/add_p2_human_0903.py`) |
 | credential handling | `code/run_with_local_deepseek.py` (key read into the child environment only) |
