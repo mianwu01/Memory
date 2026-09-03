@@ -386,3 +386,26 @@ selection/serialization 是否泛化，并设计能拆开两部分贡献的 abla
 discovery 不读取 oracle-derived `poison_retr`。P3-B 若继续则需提高实际 deletion exposure、
 避开两个 seed 的 0-ASR floor，并进一步减少独立调用噪声。不得补抽有利 seed/ID、增加
 结果导向的 replicate，或回写任一冻结负结果。
+
+## 8. P2 Hidden Mechanism v3（2026-09-03）
+
+v1/v2 只证明了 structured memory / compression 有用（lookup baseline 的 sufficient-mask
+rate 全为 1.0）。v3 把 P2 改成 `learned hidden mechanism → causal memory maintenance →
+executable downstream repair`：query 只暴露 source，输出是非幂等 transaction，primary
+metric 是 Executable Exact Success（事务全部合法 ∧ post-state ∧ receipt 与 oracle 一致）。
+预注册（重建版，原文件在本仓库不存在）：`docs/hidden-mechanism-v3-preregistration.md`；
+结果：`docs/hidden-mechanism-v3-results.md`；代码 `code/hm3/`。
+
+| 项目 | 状态 | 证据 |
+|---|---|---|
+| 四个 DGP 可辨识、非幂等端点成立 | 已支持 | oracle 与 runtime-history oracle 在 dev/test 全部 1.000；oracle plan 加一次原值写回 180/180 端点失败 |
+| 零 API gate | Travel / Search / Formal 通过；Shopping C4 失败 | `results/development/hm3/gate.json`：Shopping 的 source+regime 0.567、kNN 0.511 > 0.50 |
+| learned graph 高于 lookup / kNN / superset / flat / gnn | 已支持（dev 与 test） | test EES：graph 0.856 / 0.828 / 0.994 / 0.789（travel / shopping / search / formal），gnn_est 0.667 / 0.728 / 0.522 / 0.272，lookup 与 superset ≤ 0.23（Shopping 的 source_regime 0.628 除外） |
+| causal graph 相对 relational program learner 的独占优势 | 不支持为一般结论 | Search 两者打平（0.994 / 0.989），Formal dev 上 program 更高（0.939 vs 0.750）、test 上 program 不稳定（0.450 ± 0.334）；Travel 与 Shopping graph 更高 |
+| 真实 API selection × serialization（Travel、Search，deepseek-v4-flash，400 cells，$6.59） | Search 主判断 PASS，Travel FAIL | Search：graph/compact 0.650 vs full/verbose 0.500，input −73.0%；Travel：0.250 vs 0.500，input −72.1%，损失是 compact × graph 的交互项（graph/verbose 0.450、full/compact 0.500）；LLM 最好 cell 远低于 learned graph 的 0.856 / 0.994；`results/real/hm3/llm_summary.json` |
+
+可写：可组合关系结构加上从历史读出的 regime 才能完成可执行修复；conservative superset
+与 lookup 在非幂等端点上真实失败；Search 上 graph selection 加 compact 序列化让 LLM 以 27%
+的 input 达到更高 EES。不能写：learned causal structure 对四任务正确性必不可少；LLM runtime
+已经能利用学到的结构（Travel 的 graph/compact 低于 full/verbose）。下一步：Shopping 加密隐藏决策后重新过 gate（v3.1）；把 Formal 上 program 的 seed
+不稳定性查清楚；把 API 主判断纳入 Yujia 的下一轮决策。
