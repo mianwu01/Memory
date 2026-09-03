@@ -411,6 +411,10 @@ Round 2（预注册 §9/§10，fresh seeds 20–22 与 prompt v2）：graph 0.88
 两轮配对 bootstrap 合并后六个区间全部跨 0，selection 的 EES 效应在 n=20/cell 下不可分辨，稳定的只有
 68–80% 的 input 减少。
 
+API round 3/4（预注册 §11/§12，每 cell 63–69 episodes，prompt v2，$18.4）：graph selection 加 witness 闭包相对
+full/verbose，Travel 0.444 vs 0.635（配对 −0.190 [−0.333, −0.048]），Search 0.493 vs 0.597（−0.104 [−0.254, +0.045]），
+input −70–74%；闭包修复 Travel 一半差距（+0.234 [+0.094, +0.359]）；−0.10 边界下的非劣性未达到。四轮 P2 API 合计 $32.1。
+
 追加（post-hoc）：正则化的 `program_reg` 在 test 上 Shopping 0.828（与 graph 打平）、Formal 0.933
 （高于 graph 0.789）、Travel 0.656（低于 graph 0.856）；Shopping v3.1 让 kNN 降到 0.383 但 source+regime
 仍 0.533，C4 未过；thinking-enabled Travel 重跑不可行（reasoning 耗尽 8192 tokens，无答案）。

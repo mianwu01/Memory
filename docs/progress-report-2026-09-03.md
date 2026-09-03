@@ -260,6 +260,26 @@ thinking-mode probe exhausted its 8,192-token completion budget with no visible 
 cells and was stopped. Sources: `results/real/hm3/llm_summary.json`,
 `results/real/hm3/round2/llm_summary.json`, `results/real/hm3/round2/paired_bootstrap.json`.
 
+### 4.9 API rounds 3 and 4 (80 episodes per main cell; witness closure)
+
+Round 3 re-ran the four main cells with prompt v2 on 80 episodes per cell and hit its
+pre-declared $12 cap at 527 cells (63–69 per cell). Round 4 (pre-registered, $6.41) added
+a closed graph selection: the graph's reads plus the objects its witness records name and
+their neighbours, because in 33 of 38 failing Travel episodes the witness records named
+objects absent from the selected state. Paired against round 3's full/verbose cells:
+
+| task | cell | EES | full/verbose | paired difference | input |
+|---|---|---:|---:|---:|---:|
+| Travel | graph / compact (round 3) | 0.219 | 0.635 | −0.413 [−0.540, −0.286] | −80.0% |
+| Travel | graph_closed / compact (round 4) | 0.444 | 0.635 | −0.190 [−0.333, −0.048] | −73.8% |
+| Search | graph / compact (round 3) | 0.493 | 0.597 | −0.104 [−0.254, +0.045] | −59.4% |
+| Search | graph_closed / compact (round 4) | 0.493 | 0.597 | −0.104 [−0.254, +0.045] | −69.5% |
+
+The closure recovered half of Travel's gap (+0.234 [+0.094, +0.359] over the open
+selection). At this sample size the verdict is stable: graph selection cuts input by
+70–74% at an exact-success cost of 0.10–0.19 on deepseek-v4-flash; non-inferiority at the
+−0.10 margin is not met. Total P2 API spend across four rounds: $32.1.
+
 ## 5. Requirement 2 — trustworthiness (from the 8/30 record and the deck)
 
 **The object.** A poisoned memory record is written during a normal-looking interaction, stays
@@ -297,7 +317,7 @@ to prevent.
 | The v3 benchmark isolates hidden structure on an executable endpoint | supported | C3 pairs differ 0.77–1.00; C6 180/180; oracles 1.0; killers ≤ 0.46 (Shopping v3.2) |
 | Learned relational structure with history-parsed regimes completes repair | supported | graph 0.72–1.00 and program_reg 0.67–0.99 on fresh seeds; black boxes 0.26–0.75 |
 | The causal-graph form is necessary in all four tasks | unsupported | program learner ties on Shopping and Search, leads on Formal; graph leads on Travel only |
-| Graph selection cuts LLM input at indistinguishable exact success | supported for tokens only | −68–80% input; paired EES intervals cross zero in both rounds |
+| Graph selection cuts LLM input at indistinguishable exact success | tokens supported; EES cost measured | −70–74% input at an EES cost of 0.10–0.19 (n≈64, rounds 3–4); non-inferiority at −0.10 not met |
 | The LLM runtime exploits the learned structure | unsupported | best cell 0.70 against 0.99 deterministic on the same episodes |
 | Hidden read edge and write ancestry are recoverable on a real attack | supported with boundaries | MINJA 3/3 seeds; AgentPoison 1/2 → 2/2; oracle-tagged channel |
 | Online mitigation from the recovered graph | not supported | P3-B FAIL on both carriers (1/3 seed blocks) |
@@ -326,5 +346,5 @@ to prevent.
 | v3 preregistration and results | `docs/hidden-mechanism-v3-preregistration.md`, `docs/hidden-mechanism-v3-results.md` |
 | v3 dev results and gates | `results/development/hm3/` |
 | v3 test, fresh-seed and API results | `results/real/hm3/`, `results/real/hm3/round2/` |
-| deck and figures | `slides/8-30_huaman_edit.pptx`, `slides/figs_0830/`, `slides/fig_p2v3_0903.py`, `slides/add_p2_human_0903.py` |
+| deck and figures | `slides/8-30_huaman_edit.pptx`, `slides/figs_0830/`; P2 block as revised on 9/3: `slides/fig_p2rev_0903.py`, `slides/revise_p2_0903.py` (earlier P2 slides: `slides/fig_p2v3_0903.py`, `slides/add_p2_human_0903.py`) |
 | credential handling | `code/run_with_local_deepseek.py` (key read into the child environment only) |

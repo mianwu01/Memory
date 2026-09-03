@@ -38,6 +38,35 @@ for b in seeds:
     p = b["posthoc"]
     f = lambda x: "—" if x is None else f"{x:.2f}"
     lines.append(f"| {b['seed']} | {f(p['implicated']['precision'])} | {f(p['implicated']['poison_recall'])} | {f(p['g1_deletion']['precision'])} | {f(p['g1_deletion']['poison_recall'])} | {f(p['g2_deletion']['precision'])} | {f(p['g2_deletion']['poison_recall'])} |")
+# ---- round 4 (fresh seeds 10-21, three-seed blocks) and the pooled 22-seed summary, if present
+r4p = ROOT / "results/real/p3b_round3/round4/minja_r4_summary.json"
+if r4p.exists():
+    s4 = json.load(open(r4p)); J4, M4 = s4["judgement"], s4["micro"]
+    def verdict4(arm):
+        j = J4[arm]; b = j["touched_paired_noop_minus_arm"]
+        return (f"{'PASS' if j['pass'] else 'FAIL'} — touched-query paired mean noop − {arm} = {b['mean']:+.3f} "
+                f"[{b['ci_lo']:+.3f}, {b['ci_hi']:+.3f}] over n = {b['n']}; evaluable blocks {j['evaluable_blocks']} of 4, "
+                f"improved {j['improved_blocks_vs_noop']} of required {j['required_improved']}")
+    lines += ["## 5b. Round 4 — fresh seeds 10–21, three-seed blocks (protocol §6)", "",
+              f"- Primary (g1): {verdict4('g1')}", f"- Secondary (g2): {verdict4('g2')}", "",
+              "| arm | rounds | attacks | attack rate | accuracy |", "|---|---:|---:|---:|---:|"]
+    for arm in ("ungated", "noop", "g1", "g2"):
+        m = M4[arm]; lines.append(f"| {arm} | {m['rounds']} | {m['attacks']} | {m['asr']:.3f} | {m['accuracy']:.3f} |")
+    lines += ["", "| block (seeds) | ungated | noop | g1 | g2 | evaluable | g1 vs noop | g2 vs noop |", "|---|---:|---:|---:|---:|---|---|---|"]
+    for b in s4["blocks"]:
+        a = b["attacks"]; lines.append(f"| {b['seeds']} | {a['ungated']} | {a['noop']} | {a['g1']} | {a['g2']} | {'yes' if b['evaluable'] else 'no'} | {b['g1_direction_vs_noop']} | {b['g2_direction_vs_noop']} |")
+    lines.append("")
+    pp = ROOT / "results/real/p3b_round3/minja_pooled_summary.json"
+    if pp.exists():
+        sp = json.load(open(pp)); Jp, Mp = sp["judgement"], sp["micro"]
+        lines += ["Pooled descriptive summary over all 22 seeds (rounds 3 and 4; no judgement is claimed on the pooled set):", ""]
+        lines += ["| arm | rounds | attacks | attack rate | accuracy |", "|---|---:|---:|---:|---:|"]
+        for arm in ("ungated", "noop", "g1", "g2"):
+            m = Mp[arm]; lines.append(f"| {arm} | {m['rounds']} | {m['attacks']} | {m['asr']:.3f} | {m['accuracy']:.3f} |")
+        for arm in ("g1", "g2"):
+            b = Jp[arm]["touched_paired_noop_minus_arm"]; ball = Jp[arm]["all_paired_noop_minus_arm"]
+            lines.append(f"- {arm}: touched-query paired mean {b['mean']:+.3f} [{b['ci_lo']:+.3f}, {b['ci_hi']:+.3f}] (n = {b['n']}); all queries {ball['mean']:+.3f} [{ball['ci_lo']:+.3f}, {ball['ci_hi']:+.3f}] (n = {ball['n']})")
+        lines.append("")
 lines += ["", "## 6. Boundaries", "",
           "- Mitigation evidence on a label-free deletion policy; it does not upgrade P3-A's recovery evidence.",
           "- The prefix-neighbourhood expansion assumes the attack writes escalating notes onto one question stem, which is MINJA's mechanism; a different attack needs its own neighbourhood.",

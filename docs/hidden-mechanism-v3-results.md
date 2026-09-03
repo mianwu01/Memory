@@ -14,7 +14,7 @@ oracle 在 dev 与 test 全部 1.000；对 unaffected 对象的一次原值写�
 上与 graph 打平（1.000 / 1.000），在 Formal dev 上高于 graph（0.939 vs 0.750），在
 Travel 与 Shopping 低于 graph。因此 v3 目前支持的结论是：**可组合的关系结构加上从
 历史读出的 regime 才能完成可执行修复；causal graph 形式在 Travel / Shopping 有优势，
-在 Search / Formal 没有独占优势（fresh seeds 20–22 上 graph 0.883 / 0.800 / 1.000 / 0.717，program_reg 0.667 / 0.828 / 0.994 / 0.889，§7.2）。** Shopping v3.2 通过全部 gate（§7.3）。真实 API 两轮各 400 cells（§5、§7）：预注册的点估计主判断两轮给出相反结果，配对 bootstrap 合并后所有区间跨 0，selection 效应在 n=20/cell 下不可分辨；稳定的是 graph/compact 少 68–80% input，以及 LLM 远低于确定性 learned graph。round 1 细节：Search 的主判断 PASS（graph/compact 0.650 vs full/verbose 0.500，input −73.0%），Travel FAIL（0.250 vs 0.500，input −72.1%），且 LLM 在两个任务上都远低于确定性 learned graph（0.856 / 0.994），见 §5。
+在 Search / Formal 没有独占优势（fresh seeds 20–22 上 graph 0.883 / 0.800 / 1.000 / 0.717，program_reg 0.667 / 0.828 / 0.994 / 0.889，§7.2）。** Shopping v3.2 通过全部 gate（§7.3）。真实 API 四轮（§5、§7.1、§7.5、§7.6）：n=20/cell 的两轮点估计判断互相矛盾；n≈64/cell 的 round 3/4 给出稳定结论——graph selection（含 witness 闭包）把 input 减少 70–74%，EES 低 0.10–0.19（Travel −0.190 [−0.333, −0.048]，Search −0.104 [−0.254, +0.045]），非劣性（−0.10）未达到；LLM 最好的 cell 远低于确定性 learned graph。round 1 细节：Search 的主判断 PASS（graph/compact 0.650 vs full/verbose 0.500，input −73.0%），Travel FAIL（0.250 vs 0.500，input −72.1%），且 LLM 在两个任务上都远低于确定性 learned graph（0.856 / 0.994），见 §5。
 
 ## 2. 生成器与 gate
 
@@ -222,8 +222,8 @@ program 0.806、gnn_est 0.706、rh_oracle 1.000。
    （0.828 / 0.828）、Search 打平、Formal 更高（0.933 vs 0.789），只有 Travel 仍低于 graph
    （0.656 vs 0.856）。causal graph 的传播形式只在 Travel 这种多跳数值链上有独占优势。
 
-4. 真实 API 上 graph/compact 相对 full/verbose 稳定减少 68–80% input tokens；两轮 EES 差的
-   合并区间 Travel [−0.325, +0.075]、Search [−0.200, +0.175]，非劣性与损害都没有被建立。
+4. 真实 API 上 graph selection 相对 full/verbose 稳定减少 70–80% input tokens；n≈64 时 EES 低
+   0.10–0.19（Travel [−0.333, −0.048]，Search [−0.254, +0.045]），witness 闭包修复了 Travel 一半的差距。
 5. Shopping v3.2（初始状态与 hidden policy 解耦）通过全部 gate；fresh seeds 上 killers
    ≤ 0.456，graph 0.756，program_reg 0.778。
 
@@ -232,8 +232,8 @@ program 0.806、gnn_est 0.706、rh_oracle 1.000。
    dev 与 test 出现。
 4. “LLM runtime 已经能利用学到的结构”：两轮 LLM 最好的 cell 是 0.650 / 0.700，同一 seed 上
    learned graph 是 0.856 / 0.994；prompt 版本造成的移动与 selection 造成的移动同量级。
-5. “graph/compact 的 selection 在 EES 上非劣于 full/verbose”：round 1 与 round 2 的点估计
-   判断相反，合并区间跨 0；只能写 input 减少，不能写 EES 非劣。
+5. “graph selection 在 EES 上非劣于 full/verbose”：n≈64 的 round 3/4 明确否定了 −0.10 边界下的
+   非劣性；能写的是 input 减少与可量化的 EES 代价。
 2. Shopping 的 gate 未通过 C4，其 test 数字只作 deterministic replication 报告。
 3. 关系型学习器的特征在 dev 上修订过四轮（预注册 §3 已披露）；test 与 API 在修订之后
    才运行，但 dev 数字不是 pristine。
@@ -439,3 +439,27 @@ state 的对象（其他链的 flight / transfer / dinner / bundle）。graph �
 selection 的闭包缺陷：确定性 executor 总能看到完整 S0，所以 graph 在同一 episode 上仍是
 0.856。Round 4（预注册 §12）把 selection 改为 graph reads ∪ 记录 referent ∪ 其 1-hop 邻居
 （Travel compact prompt 从 2.5k 字符升到 3.4k，full/compact 为 6.1k），结果见 §7.6。
+
+### 7.6 API round 4：graph selection 加 witness 闭包（预注册 §12；配对对象为 round 3 的 full/verbose）
+
+| 域 | cell | EES | full/verbose | 配对差 [95% CI] | W/T/L | n | input 减少 | 点估计规则 |
+|---|---|---:|---:|---:|---|---:|---:|---|
+| travel | graph_closed/compact | 0.444 | 0.635 | -0.190 [-0.333, -0.048] | 6/39/18 | 63 | 73.8% | FAIL |
+| travel | graph_closed/verbose | 0.317 | 0.635 | -0.317 [-0.461, -0.159] | 5/33/25 | 63 | 53.4% | FAIL |
+| travel | closure effect: graph_closed/compact − graph/compact | — | — | +0.234 [+0.094, +0.359] | 19/41/4 | 64 | — | — |
+| search | graph_closed/compact | 0.493 | 0.597 | -0.104 [-0.254, +0.045] | 10/40/17 | 67 | 69.5% | FAIL |
+| search | graph_closed/verbose | 0.448 | 0.597 | -0.149 [-0.284, -0.015] | 7/43/17 | 67 | 31.6% | FAIL |
+| search | closure effect: graph_closed/compact − graph/compact | — | — | +0.000 [-0.145, +0.145] | 13/43/13 | 69 | — | — |
+
+Round 4 合计 320 cells，input 1,043,767 / output 511,613 tokens，估计费用 $6.413，0 次基础设施失败。
+
+读法：闭包修复了 Travel 上一半的差距（graph_closed/compact 相对 graph/compact +0.234
+[+0.094, +0.359]），但 graph_closed/compact 仍低于 full/verbose 0.190 [0.048, 0.333]；Search 的闭包
+没有作用（0.000），graph_closed/compact 低 0.104 [−0.045, +0.254]，点估计恰好越过 −0.10 的边界。
+graph_closed/verbose 在两个域都比 compact 差（Travel 0.317、Search 0.448），这一轮 serialization
+的方向与 round 2 的 Travel 观察一致：给这个 runtime 更长的 JSON 反而更差。
+
+在 n≈64、prompt v2、deepseek-v4-flash 上可以稳定写的结论：graph selection 把 input 减少 70–74%，
+代价是 EES 低 0.10–0.19；非劣性（−0.10）没有达到。差距的一半来自 selection 闭包（可修），剩下的
+一半是 runtime 对最小证据集的利用能力。四轮 P2 API 合计 $32.1；更强的 runtime 或“graph 选择 +
+同 key 全部 witness segment”的 selection 是下一轮的候选，本轮不再追加。
