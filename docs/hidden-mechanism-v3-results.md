@@ -259,7 +259,7 @@ program 0.806、gnn_est 0.706、rh_oracle 1.000。
 
 主判断 (graph, compact) 相对 (full, verbose)：EES 差 +0.000，input tokens 减少 79.9% → **PASS**。
 
-selection 隔离：EES -0.250，input 减少 70.7%。 
+selection 隔离：EES -0.250，input 减少 70.7%。
 serialization 隔离：EES +0.050，input 减少 69.3%。
 
 | cell | round 1 EES | round 2 EES |
@@ -292,7 +292,7 @@ serialization 隔离：EES +0.050，input 减少 69.3%。
 
 主判断 (graph, compact) 相对 (full, verbose)：EES 差 -0.200，input tokens 减少 60.1% → **FAIL**。
 
-selection 隔离：EES -0.100，input 减少 56.2%。 
+selection 隔离：EES -0.100，input 减少 56.2%。
 serialization 隔离：EES +0.050，input 减少 66.3%。
 
 | cell | round 1 EES | round 2 EES |
