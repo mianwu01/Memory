@@ -236,3 +236,31 @@ round 2 是 prompt 的第二个版本，属于 runtime 侧的改动；不覆盖 
 - 判断不变：C7 的比较对象换成 `graph_pooled` 时也要报告；graph 与 program 的关系按
   \|差\| ≤ 0.05 记 tie。round 1（seeds 10–12）与 round 2（seeds 20–22）并列报告，不覆盖。
 - 真实 API 仍只做 Travel 与 Search（§9）；shopping32 不进入 API。
+
+## 11. API round 3 — power for the selection judgement（2026-09-03，输出前冻结）
+
+两轮 API 的配对区间都跨 0，每 cell 20 个 episode 只能分辨 ±0.25。Round 3 只为主判断补
+样本：Travel 与 Search 各取 test seed 10 的 episode 0–79（前 20 个与 round 1/2 相同，
+其后 60 个是新的），只跑主判断与两个隔离所需的四个 cell：(graph, compact)、
+(full, verbose)、(graph, verbose)、(full, compact)，prompt v2，模型与参数不变。
+每 cell 80 个 episode，共 640 calls。判断与 §9 相同（点估计规则）并报告配对 bootstrap
+95% 区间；区间宽度预期收到 ±0.12。round 3 的 20 个重叠 episode 用新的调用重新评分，
+不复用 round 2 的输出。预算上限 $12。输出目录 `results/real/hm3/round3/`。
+
+## 12. API round 4 — graph selection with witness closure（2026-09-03，输出前冻结）
+
+Round 3（§11，预算上限 $12 在 527/640 cells 时到达，每 cell 63–69 个 episode）给出
+Travel graph/compact 0.219 对 full/verbose 0.635，配对 −0.413 [−0.540, −0.286]；Search
+0.493 对 0.597，−0.104 [−0.254, +0.045]。失败 episode 的审计：Travel 38 个失败的
+late episode 里 33 个的 witness 记录指向未被选入 state 的对象（其他链的 flight /
+transfer / dinner / bundle），模型看得到 “T58 pickup 860→1045” 却看不到 T58 的
+provider，无法把 witness 落到 policy 的 key 上。graph 的 required-read recall 为 1.00，
+说明这是 LLM 侧 selection 的闭包缺陷，与确定性 executor 无关（executor 总能看到完整
+S0，graph 在同一 episode 上 0.856）。
+
+Round 4 只改 selection：`graph_closed` = graph 的 reads ∪ 所选 history 记录的
+referent 对象 ∪ 这些 referent 的 1-hop 邻居。cells：(graph_closed, compact) 与
+(graph_closed, verbose)，Travel 与 Search 各 80 个 episode（与 round 3 相同），prompt
+v2，模型参数不变；配对对象是 round 3 已经评分的 (full, verbose) 同一 episode。判断与
+§9 相同（EES 差 ≥ −0.10 且 input 减少 ≥ 30%），并报告配对 95% 区间。预算上限 $8，
+每 shard $2；到达上限时按已完成 episode 报告。输出目录 `results/real/hm3/round4/`。

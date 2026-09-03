@@ -396,3 +396,46 @@ Shopping v3.2 test（seeds 20/21/22）：
   ≤ 0.25，说明模型没有靠先验猜出结构。
 - 要把 selection 效应做成 confirmatory，需要每 cell ≥ 80 个 episode（把 ±0.25 收到
   ±0.12）或换更强的 runtime；两者都是下一轮的决定。两轮合计 800 cells，$12.90。
+
+### 7.5 API round 3：主判断的功效补样（预注册 §11；每 cell 80 episodes，prompt v2）
+
+| 域 | cell | n | EES | input tokens |
+|---|---|---:|---:|---:|
+| travel | graph/compact | 64 | 0.219 | 125,735 |
+| travel | full/verbose | 63 | 0.635 | 627,177 |
+| travel | graph/verbose | 63 | 0.238 | 180,892 |
+| travel | full/compact | 63 | 0.492 | 259,518 |
+| search | graph/compact | 69 | 0.493 | 172,230 |
+| search | full/verbose | 67 | 0.597 | 423,982 |
+| search | graph/verbose | 69 | 0.522 | 199,869 |
+| search | full/compact | 69 | 0.493 | 202,900 |
+
+| 域 | 比较 | mean | 95% CI | W/T/L | n |
+|---|---|---:|---:|---|---:|
+| travel | graph/compact − full/verbose | -0.413 | [-0.540, -0.286] | 1/35/27 | 63 |
+| travel | graph/verbose − full/verbose | -0.397 | [-0.540, -0.254] | 3/32/28 | 63 |
+| travel | full/compact − full/verbose | -0.143 | [-0.302, +0.016] | 9/36/18 | 63 |
+| search | graph/compact − full/verbose | -0.104 | [-0.254, +0.045] | 10/40/17 | 67 |
+| search | graph/verbose − full/verbose | -0.075 | [-0.239, +0.090] | 13/36/18 | 67 |
+| search | full/compact − full/verbose | -0.104 | [-0.269, +0.045] | 10/40/17 | 67 |
+
+Travel 主判断（点估计规则）：EES 差 -0.416，input 减少 80.0% → **FAIL**；配对 95% 区间 [-0.540, -0.286]（n = 63）。
+
+Search 主判断（点估计规则）：EES 差 -0.104，input 减少 59.4% → **FAIL**；配对 95% 区间 [-0.254, +0.045]（n = 67）。
+
+Round 3 合计 527 cells，input 2,192,303 / output 969,038 tokens，估计费用 $12.024。 不完整的 cell（基础设施失败）见各 shard ledger 的 `infrastructure_failure` 记录。
+
+读法（round 3）：预算上限 $12 在 527/640 cells 时到达，每 cell 63–69 个 episode，配对分析只用
+两个 cell 都有输出的 episode。与 round 2 共享的前 20 个 episode 上，Travel graph/compact 的
+逐 episode 结果只有 10/20 一致（temperature 0 下 deepseek-v4-flash 仍不确定），所以 20 个
+episode 的 cell 均值本身就在 ±0.2 内漂移。n≈64 时结论稳定：Travel graph/compact 明显低于
+full/verbose（−0.413 [−0.540, −0.286]），selection 单独隔离 −0.397，serialization 单独隔离
+−0.143 [−0.302, +0.016]；Search −0.104 [−0.254, +0.045]。
+
+失败审计定位了原因：Travel 38 个失败的 late episode 中 33 个的 witness 记录指向未被选入
+state 的对象（其他链的 flight / transfer / dinner / bundle）。graph 的 required-read recall
+是 1.00，即 witness 记录本身都在；缺的是记录 referent 的对象字段（例如 “T58 pickup
+860→1045” 旁边没有 T58 的 provider），模型无法把 witness 落到 policy 的 key 上。这是 LLM 侧
+selection 的闭包缺陷：确定性 executor 总能看到完整 S0，所以 graph 在同一 episode 上仍是
+0.856。Round 4（预注册 §12）把 selection 改为 graph reads ∪ 记录 referent ∪ 其 1-hop 邻居
+（Travel compact prompt 从 2.5k 字符升到 3.4k，full/compact 为 6.1k），结果见 §7.6。

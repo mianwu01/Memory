@@ -152,6 +152,20 @@ class Selector:
         if mode == "graph":
             out = self.graph.predict(domain, ep)
             return {"objects": sorted(set(out["reads"]["objects"]) | {src}), "records": out["reads"]["records"]}
+        if mode == "graph_closed":
+            # round 4: the graph's reads plus the referents of every selected history record
+            # and their 1-hop neighbours, so that a witness such as "T58 pickup 860->1045"
+            # arrives together with T58's provider and its flight; without them the model
+            # cannot key the policy the witness reveals
+            out = self.graph.predict(domain, ep)
+            objs = set(out["reads"]["objects"]) | {src}
+            recs = set(out["reads"]["records"])
+            referents = {r["object_id"] for r in ep.H if r["rid"] in recs and r["object_id"] in ep.S0.objects}
+            closure = set(referents)
+            for oid in referents:
+                for targets in ep.S0.get(oid).links.values():
+                    closure.update(t for t in targets if t in ep.S0.objects)
+            return {"objects": sorted(objs | closure), "records": sorted(recs)}
         if mode == "program":
             out = self.program.predict(domain, ep)
             objs = {src} | {it["object_id"] for it in out["plan"]}
@@ -218,9 +232,17 @@ class Client:
     def chat(self, messages: List[dict], max_tokens: int = 4096) -> dict:
         t0 = time.time()
         extra = {"thinking": {"type": "enabled"}} if self.thinking else None
-        resp = self.client.chat.completions.create(model=self.model, messages=messages, temperature=0,
-                                                   max_tokens=max_tokens * (2 if self.thinking else 1),
-                                                   extra_body=extra)
+        resp = None
+        for attempt in range(12):
+            try:
+                resp = self.client.chat.completions.create(model=self.model, messages=messages, temperature=0,
+                                                           max_tokens=max_tokens * (2 if self.thinking else 1),
+                                                           extra_body=extra)
+                break
+            except Exception as exc:  # transient network / proxy / rate-limit errors: back off and retry
+                if attempt == 11:
+                    raise
+                time.sleep(min(120, 5 * 2 ** attempt))
         dt = time.time() - t0
         u = resp.usage
         cached = int(getattr(u, "prompt_cache_hit_tokens", 0) or 0)
@@ -301,7 +323,14 @@ def run(domains: List[str], seed: int, n_eval: int, selections: List[str], seria
                             f.write(json.dumps(rec) + "\n")
                         continue
                     attempts = []
-                    r = client.chat(messages)
+                    try:
+                        r = client.chat(messages)
+                    except Exception as exc:
+                        rec = {"event": "infrastructure_failure", "cell": cell, "error": f"{type(exc).__name__}: {str(exc)[:200]}"}
+                        with open(ledger_path, "a") as f:
+                            f.write(json.dumps(rec) + "\n")
+                        print(f"{cell:48s} INFRASTRUCTURE FAILURE {type(exc).__name__}", flush=True)
+                        continue
                     attempts.append(r)
                     txns = parse_transactions(r["text"])
                     repair = False
