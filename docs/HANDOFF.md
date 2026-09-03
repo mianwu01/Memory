@@ -404,6 +404,13 @@ metric 是 Executable Exact Success（事务全部合法 ∧ post-state ∧ rece
 | causal graph 相对 relational program learner 的独占优势 | 不支持为一般结论 | Search 两者打平（0.994 / 0.989），Formal dev 上 program 更高（0.939 vs 0.750）、test 上 program 不稳定（0.450 ± 0.334）；Travel 与 Shopping graph 更高 |
 | 真实 API selection × serialization（Travel、Search，deepseek-v4-flash，400 cells，$6.59） | Search 主判断 PASS，Travel FAIL | Search：graph/compact 0.650 vs full/verbose 0.500，input −73.0%；Travel：0.250 vs 0.500，input −72.1%，损失是 compact × graph 的交互项（graph/verbose 0.450、full/compact 0.500）；LLM 最好 cell 远低于 learned graph 的 0.856 / 0.994；`results/real/hm3/llm_summary.json` |
 
+Round 2（预注册 §9/§10，fresh seeds 20–22 与 prompt v2）：graph 0.883 / 0.800 / 1.000 / 0.717，graph_pooled
+0.867 / 0.839 / 0.989 / 0.733，program_reg 0.667 / 0.828 / 0.994 / 0.889；Shopping v3.2 通过全部 gate
+（source+regime 0.461、kNN 0.239），fresh seeds 上 graph 0.756 / program_reg 0.778。API round 2（prompt v2，
+400 cells，$6.31）：Travel graph/compact 0.600 = full/verbose 0.600（input −79.9%），Search 0.450 vs 0.650；
+两轮配对 bootstrap 合并后六个区间全部跨 0，selection 的 EES 效应在 n=20/cell 下不可分辨，稳定的只有
+68–80% 的 input 减少。
+
 追加（post-hoc）：正则化的 `program_reg` 在 test 上 Shopping 0.828（与 graph 打平）、Formal 0.933
 （高于 graph 0.789）、Travel 0.656（低于 graph 0.856）；Shopping v3.1 让 kNN 降到 0.383 但 source+regime
 仍 0.533，C4 未过；thinking-enabled Travel 重跑不可行（reasoning 耗尽 8192 tokens，无答案）。
@@ -411,5 +418,5 @@ metric 是 Executable Exact Success（事务全部合法 ∧ post-state ∧ rece
 可写：可组合关系结构加上从历史读出的 regime 才能完成可执行修复；conservative superset
 与 lookup 在非幂等端点上真实失败；Search 上 graph selection 加 compact 序列化让 LLM 以 27%
 的 input 达到更高 EES。不能写：learned causal structure 对四任务正确性必不可少；LLM runtime
-已经能利用学到的结构（Travel 的 graph/compact 低于 full/verbose）。下一步：Shopping 加密隐藏决策后重新过 gate（v3.1）；把 Formal 上 program 的 seed
-不稳定性查清楚；把 API 主判断纳入 Yujia 的下一轮决策。
+已经能利用学到的结构（Travel 的 graph/compact 低于 full/verbose）。下一步：API 的 selection 效应需要每 cell ≥ 80 episodes 或更强的 runtime 才能做成 confirmatory；
+Formal 上 graph 相对 program 的差距（0.72 vs 0.89）是方法侧的公开问题；两者都交给 Yujia 决定。

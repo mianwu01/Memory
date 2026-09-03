@@ -200,3 +200,39 @@ MemoryArena 上保持效果并减少输入；compact SelectionPlan 能驱动 val
   0.533），没有 test split。
 - Travel thinking-enabled 重跑：2 cells 后中止（reasoning 占满 8192 completion tokens，
   无可见答案），$0.334，不计入 §5。
+
+## 9. API round 2（2026-09-03，在 round 1 评分之后、round 2 输出之前冻结）
+
+Round 1 的 Travel 失败集中在四类：写到已被环境自动更新的 transfer（stale revision）、漏掉
+bundle rebook、transfer pickup 算错 buffer、对未变对象的 collateral 写。这些都是“没有先把
+实体的 policy 从历史里读出来再传播”的错误。Round 2 只改 system prompt：在原有输出格式
+之上加一个固定方法（STEP A policy ledger：逐实体引用历史记录 id 并写出 policy 与数字；
+STEP B 按依赖顺序用新上游值重算并标 stale / automatic / unchanged；STEP C 检查
+expected_revision、已取消对象、空 payload）。model、temperature、max_tokens、episode、
+selection × serialization cells、selector、retry policy 全部与 round 1 相同。
+
+在冻结前用 Travel graph/compact 的 4 个 test cell（episode 1/3/7/12）探针了 v2 prompt：
+4/4 EES，$0.058；这 4 个 cell 的探针结果不计入 round 2 正式输出（正式输出重新调用）。
+
+判断与 round 1 相同：主判断 (graph, compact) 相对 (full, verbose) EES 差 ≥ −0.10 且
+input 减少 ≥ 30%；selection 与 serialization 各自隔离。Round 1 与 round 2 并列报告，
+round 2 是 prompt 的第二个版本，属于 runtime 侧的改动；不覆盖 round 1。
+输出目录 `results/real/hm3/round2/`。
+
+## 10. Round 2 deterministic（2026-09-03，在 fresh test seeds 评分之前冻结）
+
+- **Shopping v3.2（`shopping32`）**：v3.1 的密度设计之上，初始状态与 hidden policy 解耦：
+  promotion 初始 active 随机、accessory 初始随机预订；商店只在某条被要求类别的 line 变化时
+  重新评估该 promotion 的 eligibility，只在 base 变化时检查 accessory 的兼容性。history
+  parser 不再从 S0 一致性推断 strictness，只用商店真正重新评估过的 segment。gate（dev
+  seeds 0/1/2）全部通过：C4 source+regime 0.461、kNN 0.239；C7 graph 0.806 高于全部黑盒；
+  C8 program 0.789（tie）。v3 的 Shopping 结果保留，v3.2 是修复 C4 的正式版本。
+- **fresh test seeds 20/21/22（train 120/121/122）**，四个 v3 任务加 shopping32，全部方法：
+  round 1 的 13 个方法加上两个在 round 1 test 之后加入的方法——`program_reg`（正则化
+  program learner）与 `graph_pooled`（所有 template 共享一个正则化 gradient-boosted gate，
+  template 身份作 one-hot，传播与 reads 与 `graph` 相同）。两者在 dev 上的选择依据：
+  `program_reg` 修复 Formal 的拟合失败；`graph_pooled` 在 dev seed 0 上 Formal 0.883 /
+  Shopping 0.883 / Travel 0.833 / Search 0.983（`graph` 为 0.800 / 0.733 / 0.833 / 1.000）。
+- 判断不变：C7 的比较对象换成 `graph_pooled` 时也要报告；graph 与 program 的关系按
+  \|差\| ≤ 0.05 记 tie。round 1（seeds 10–12）与 round 2（seeds 20–22）并列报告，不覆盖。
+- 真实 API 仍只做 Travel 与 Search（§9）；shopping32 不进入 API。

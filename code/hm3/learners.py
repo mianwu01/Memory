@@ -459,12 +459,15 @@ class LearnedGraph(Learner):
     name = "graph"
     MAX_TEMPLATE_HOPS = 3
 
-    def __init__(self, min_support: int = 2, max_depth: int = 5, superset: bool = False):
+    def __init__(self, min_support: int = 2, max_depth: int = 5, superset: bool = False, pooled: bool = False):
         self.min_support = min_support
         self.max_depth = max_depth
         self.superset = superset
+        self.pooled = pooled
         if superset:
             self.name = "superset"
+        elif pooled:
+            self.name = "graph_pooled"
 
     def _feat(self, domain, p: Obj, p_new: dict, c: Obj, state: State, est: dict, pkind: str,
               wc: float = -1.0) -> List[float]:
@@ -552,6 +555,25 @@ class LearnedGraph(Learner):
                         data[key].append(
                             (self._feat(domain, ep.S0.get(a), new_fields[a], ep.S0.get(c), ep.S0, est, pk, wc), "none"))
         self.models = {}
+        if self.pooled:
+            # one regularised gradient-boosted gate shared by every template: the template
+            # identity enters as a one-hot block, so rare templates borrow statistical
+            # strength from common ones while propagation stays edge-wise
+            from sklearn.ensemble import HistGradientBoostingClassifier
+            self.template_index = {k: i for i, k in enumerate(sorted(data, key=str))}
+            # per-template feature layouts differ in length (they depend on the parent and
+            # child types); pad to a common width, the template one-hot disambiguates
+            self.pooled_width = max(len(feat) for rows in data.values() for feat, _ in rows)
+            Xp, yp = [], []
+            for key, rows in data.items():
+                onehot = [1.0 if i == self.template_index[key] else 0.0 for i in range(len(self.template_index))]
+                for feat, lab in rows:
+                    Xp.append(list(feat) + [0.0] * (self.pooled_width - len(feat)) + onehot)
+                    yp.append(lab)
+            self.pooled_model = HistGradientBoostingClassifier(max_iter=150, learning_rate=0.05, min_samples_leaf=10,
+                                                               l2_regularization=1.0, max_leaf_nodes=15, random_state=0)
+            self.pooled_model.fit(np.array(Xp), np.array(yp))
+            self.pooled_allowed = {k: {lab for _f, lab in rows} for k, rows in data.items()}
         for key, rows in data.items():
             X = np.array([r[0] for r in rows])
             y = np.array([r[1] for r in rows])
@@ -565,6 +587,15 @@ class LearnedGraph(Learner):
     def _predict_label(self, key, feat) -> str:
         if self.superset:
             return self.majority[key]
+        if self.pooled:
+            onehot = [1.0 if i == self.template_index[key] else 0.0 for i in range(len(self.template_index))]
+            row = list(feat) + [0.0] * (self.pooled_width - len(feat)) + onehot
+            proba = self.pooled_model.predict_proba(np.array([row[:self.pooled_width + len(onehot)]]))[0]
+            best, best_p = "none", -1.0
+            for lab, pr in zip(self.pooled_model.classes_, proba):
+                if lab in self.pooled_allowed[key] and pr > best_p:
+                    best, best_p = lab, pr
+            return best
         kind, model = self.models[key]
         if kind == "const":
             return model
@@ -767,5 +798,6 @@ def make_learners(seed: int = 0) -> List[Learner]:
         ExactKV(), SourceUnion(), SourceRegimeTable(), TransitionKNN(),
         FlatBlackBox(False), FlatBlackBox(True), EquivariantGNN(False, seed=seed), EquivariantGNN(True, seed=seed),
         LearnedGraph(superset=True), ProgramLearner(3), ProgramLearner(3, regularised=True), LearnedGraph(),
+        LearnedGraph(pooled=True),
         RuntimeHistoryOracle(), Oracle(),
     ]

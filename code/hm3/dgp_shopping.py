@@ -39,13 +39,20 @@ class ShoppingDomain(Domain):
     PARAM_NAMES = ["compat", "strict_promo", "auto_promo", "enforce_budget"]
     OPS = {"replace_line": 15, "remove_line": 10, "apply_promo": 5, "drop_promo": 5}
 
-    def __init__(self, dense: bool = False):
+    def __init__(self, dense: bool = False, decoupled: bool = False):
+        # v3.2 ("shopping32"): dense plus an initial state that is independent of the
+        # hidden policies: promotions start active or inactive at random and accessories
+        # are booked at random; the store only re-evaluates eligibility and compatibility
+        # when a required line changes, so S0 carries no witness of the hidden rules
+        self.decoupled = decoupled
         # v3.1 ("shopping31"): every base carries all of its accessory categories, two or
         # three promotions are in play, the budget slack is tight, and the intervention
         # sampler prefers variants that break an attribute match, a promotion brand or the
         # budget, so that an episode carries several hidden decisions at once
-        self.dense = dense
-        if dense:
+        self.dense = dense or decoupled
+        if decoupled:
+            self.NAME = "shopping32"
+        elif dense:
             self.NAME = "shopping31"
 
     def relation_names(self):
@@ -99,7 +106,7 @@ class ShoppingDomain(Domain):
                 pair = f"{cat}|{acc_cat}"
                 attr = PAIR_ATTR[pair]
                 pool = catalog[acc_cat]
-                if params["compat"][pair]:
+                if params["compat"][pair] and not self.decoupled:
                     match = [x for x in pool if x["attrs"][attr] == v["attrs"][attr]]
                     if not match:
                         continue
@@ -134,7 +141,10 @@ class ShoppingDomain(Domain):
             params["strict_promo"][pid] = int(rng.random() < 0.5)
         tr = Tracker(params)
         for pid in cart.linked("promos"):
-            state.get(pid).fields["active"] = int(self._eligible(state, pid, tr))
+            if self.decoupled:
+                state.get(pid).fields["active"] = int(rng.random() < 0.5)
+            else:
+                state.get(pid).fields["active"] = int(self._eligible(state, pid, tr))
         total = self._total(state)
         cart.fields["total"] = total
         cart.fields["budget"] = total + (rng.choice([0, 10, 20, 30, 40, 60]) if self.dense
@@ -253,9 +263,13 @@ class ShoppingDomain(Domain):
         tr.read(cart.id)
         promo_changes: Dict[str, int] = {}
 
+        changed_cats = {base.fields["category"]} | {scratch.get(a).fields["category"] for a in touched}
+
         def reevaluate_promos():
             for pid in cart.linked("promos"):
                 promo = scratch.get(pid)
+                if self.decoupled and not (set(promo.fields["requires"]) & changed_cats):
+                    continue
                 tr.read(pid)
                 elig = int(self._eligible(scratch, pid, tr))
                 if elig != promo.fields["active"]:
@@ -276,6 +290,7 @@ class ShoppingDomain(Domain):
                 victim = max(victims, key=lambda l: (l.fields["priority"], l.fields["price"], l.id))
                 victim.status = "removed"
                 touched[victim.id] = "remove"
+                changed_cats.add(victim.fields["category"])
                 reevaluate_promos()
         effects: List[Effect] = []
         for lid, what in touched.items():
@@ -398,8 +413,15 @@ class ShoppingDomain(Domain):
                 if obj.type == "line" and rec["op"] == "remove_line":
                     est["enforce_budget"]["global"] = 1
                     note("enforce_budget", "global", seg[0]["rid"], rec["rid"])
-            # promo strictness from the post-segment state; budget from the post-segment total
+            # promo strictness from the post-segment state (v3): the store keeps promotions
+            # consistent with eligibility; in the decoupled world only promotions the store
+            # re-evaluated in this segment (a required category changed) are witnesses
             for pid in cart.linked("promos"):
+                if self.decoupled:
+                    seg_cats = {S0.get(r["object_id"]).fields["category"] for r in seg
+                                if r["object_id"] in S0.objects and S0.get(r["object_id"]).type == "line"}
+                    if not (set(S0.get(pid).fields["requires"]) & seg_cats):
+                        continue
                 pol = self._strictness_from(after, pid)
                 if pol is not None:
                     est["strict_promo"][pid] = pol
@@ -409,7 +431,7 @@ class ShoppingDomain(Domain):
                 est["enforce_budget"]["global"] = 0
                 note("enforce_budget", "global", seg[0]["rid"])
         for pid in cart.linked("promos"):
-            if pid not in est["strict_promo"]:
+            if pid not in est["strict_promo"] and not self.decoupled:
                 pol = self._strictness_from(S0, pid)
                 if pol is not None:
                     est["strict_promo"][pid] = pol

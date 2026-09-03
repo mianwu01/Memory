@@ -53,6 +53,21 @@ composite, and whether the store updates base-claim verdicts itself (automatic) 
 (evidence_effect records show counted/weight/reason for past publications). Composite claims are always your job.""",
 }
 
+SYSTEM_V2_SUFFIX = """
+Method (follow it literally):
+STEP A - POLICY LEDGER. For every entity whose policy matters here (each provider, hotel, restaurant, vendor, source
+class, store rule that the linked objects refer to), quote the history record ids that reveal its policy and state the
+policy with its number, e.g. "P82: transfer moved by txn (h19), so manual, buffer = 1325-1305 = 20". If the history has
+no record for an entity, say "no evidence" and treat the object as unchanged.
+STEP B - PROPAGATE. Starting at the intervention source, recompute each linked object in dependency order with the
+visible rules and the ledger from step A, using the NEW upstream values. Write the arithmetic. Mark each object stale
+(needs a transaction), automatic (the environment updates it; never write to it; its revision is +1 when your
+transactions run, which only matters if a later object depends on it) or unchanged (the recomputed value equals the
+current value; do not write it).
+STEP C - CHECK. Every transaction quotes expected_revision = the object's current rev shown in the state. Objects
+that are cancelled cannot be shifted. Empty-payload ops (cancel, rebook) carry {} as payload.
+Then the fenced json block."""
+
 SYSTEM = """You maintain a transactional memory. An intervention has just been applied to one object. Decide which OTHER
 objects are now stale and emit the minimal set of repair transactions that brings the memory to the correct post-state.
 Rules:
@@ -224,6 +239,9 @@ class Client:
 
 # --------------------------------------------------------------------- runner
 
+PROMPT_VERSION = "v1"
+
+
 def build_messages(domain, ep: Episode, sel: dict, ser: str) -> List[dict]:
     user = (f"DOMAIN: {domain.NAME}\n{OP_CARDS[domain.NAME]}\n\n"
             f"### HISTORY (earlier interventions and what followed; {ser} form)\n"
@@ -232,7 +250,8 @@ def build_messages(domain, ep: Episode, sel: dict, ser: str) -> List[dict]:
             f"{serialize_state(domain, ep.S0, sel['objects'], ser)}\n\n"
             f"### INTERVENTION (already applied to {ep.I['object_id']})\n{ep.query}\n{json.dumps(ep.I)}\n\n"
             "Return the JSON array of repair transactions.")
-    return [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}]
+    system = SYSTEM + (SYSTEM_V2_SUFFIX if PROMPT_VERSION == "v2" else "")
+    return [{"role": "system", "content": system}, {"role": "user", "content": user}]
 
 
 def run(domains: List[str], seed: int, n_eval: int, selections: List[str], serializations: List[str],
@@ -255,6 +274,7 @@ def run(domains: List[str], seed: int, n_eval: int, selections: List[str], seria
                 "serializations": serializations, "model": model, "n_train": n_train,
                 "train_seed_offset": train_seed_offset, "budget_usd": budget_usd,
                 "retry_policy": "one format-only repair; semantic failures terminal", "thinking": thinking,
+                "prompt_version": PROMPT_VERSION,
                 "cost_rates_usd_per_million": COST_RATES_USD_PER_MILLION}
     json.dump(protocol, open(out_dir / "llm_protocol.json", "w"), indent=1)
     for dname in domains:
@@ -368,7 +388,9 @@ if __name__ == "__main__":
     ap.add_argument("--ep_end", type=int, default=None)
     ap.add_argument("--resume_from", nargs="*", default=None)
     ap.add_argument("--thinking", action="store_true")
+    ap.add_argument("--prompt", default="v1", choices=["v1", "v2"])
     a = ap.parse_args()
+    PROMPT_VERSION = a.prompt
     if a.summarize:
         print(json.dumps(summarize(Path(a.out_dir))["total"]))
     else:

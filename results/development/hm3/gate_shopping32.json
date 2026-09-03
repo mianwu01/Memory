@@ -1,0 +1,327 @@
+{
+ "thresholds": {
+  "C3": "direct flip changes gold >= 0.8; regenerated pairs differ >= 0.5",
+  "C4": "each killer EES <= 0.50",
+  "C5": "oracle = rh_oracle = 1.0",
+  "C6": "100% of extra-write plans fail",
+  "C7": ">= 2/3 seeds and mean",
+  "C8": "program learner present; tie if |graph - program| <= 0.05"
+ },
+ "domains": {
+  "shopping32": {
+   "checks": {
+    "C2_split_separation": {
+     "pass": true,
+     "per_seed": [
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      },
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      },
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      }
+     ]
+    },
+    "C3_history_load_bearing": {
+     "pass": true,
+     "per_seed": [
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 0.9393939393939394,
+       "n_direct": 33,
+       "first_param_flip_changes_gold": 0.9393939393939394,
+       "pairs_with_different_gold": 0.9333333333333333,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 0,
+       "same_summary_pairs_with_different_gold": 0.0,
+       "examples": [
+        {
+         "query": "Line L18 (phone) is now SKU PH-5.",
+         "flipped": "compat[phone|case]",
+         "gold_A": [
+          [
+           "replace_line",
+           "L45",
+           "{\"sku\": \"CA-1\"}"
+          ]
+         ],
+         "gold_B": [],
+         "same_summary": false
+        },
+        {
+         "query": "Line L87 (phone) is now SKU PH-1.",
+         "flipped": "compat[phone|case]",
+         "gold_A": [
+          [
+           "replace_line",
+           "L44",
+           "{\"sku\": \"CA-5\"}"
+          ]
+         ],
+         "gold_B": [],
+         "same_summary": false
+        },
+        {
+         "query": "Line L47 (laptop) is now SKU LA-4.",
+         "flipped": "compat[laptop|charger]",
+         "gold_A": [
+          [
+           "replace_line",
+           "L36",
+           "{\"sku\": \"BA-2\"}"
+          ],
+          [
+           "replace_line",
+           "L72",
+           "{\"sku\": \"CH-2\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "replace_line",
+           "L36",
+           "{\"sku\": \"BA-2\"}"
+          ]
+         ],
+         "same_summary": false
+        }
+       ]
+      },
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 1.0,
+       "n_direct": 32,
+       "first_param_flip_changes_gold": 0.84375,
+       "pairs_with_different_gold": 1.0,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 0,
+       "same_summary_pairs_with_different_gold": 0.0,
+       "examples": [
+        {
+         "query": "Line L22 (printer) is now SKU PR-1.",
+         "flipped": "enforce_budget[global]",
+         "gold_A": [
+          [
+           "drop_promo",
+           "PR88",
+           "{}"
+          ],
+          [
+           "remove_line",
+           "L26",
+           "{}"
+          ],
+          [
+           "remove_line",
+           "L70",
+           "{}"
+          ]
+         ],
+         "gold_B": [],
+         "same_summary": false
+        },
+        {
+         "query": "Line L42 (phone) is now SKU PH-4.",
+         "flipped": "enforce_budget[global]",
+         "gold_A": [
+          [
+           "remove_line",
+           "L98",
+           "{}"
+          ]
+         ],
+         "gold_B": [],
+         "same_summary": false
+        },
+        {
+         "query": "Line L48 (phone) is now SKU PH-4.",
+         "flipped": "compat[phone|case]",
+         "gold_A": [
+          [
+           "replace_line",
+           "L64",
+           "{\"sku\": \"CA-3\"}"
+          ]
+         ],
+         "gold_B": [],
+         "same_summary": false
+        }
+       ]
+      },
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 0.9411764705882353,
+       "n_direct": 34,
+       "first_param_flip_changes_gold": 0.8235294117647058,
+       "pairs_with_different_gold": 0.9666666666666667,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 0,
+       "same_summary_pairs_with_different_gold": 0.0,
+       "examples": [
+        {
+         "query": "Line L50 (camera) is now SKU CA-1.",
+         "flipped": "enforce_budget[global]",
+         "gold_A": [
+          [
+           "remove_line",
+           "L26",
+           "{}"
+          ],
+          [
+           "remove_line",
+           "L41",
+           "{}"
+          ],
+          [
+           "remove_line",
+           "L53",
+           "{}"
+          ],
+          [
+           "remove_line",
+           "L71",
+           "{}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "replace_line",
+           "L41",
+           "{\"sku\": \"BA-4\"}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Line L98 (camera) is now SKU CA-1.",
+         "flipped": "compat[camera|lens]",
+         "gold_A": [
+          [
+           "replace_line",
+           "L76",
+           "{\"sku\": \"BA-1\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "replace_line",
+           "L76",
+           "{\"sku\": \"BA-1\"}"
+          ],
+          [
+           "replace_line",
+           "L81",
+           "{\"sku\": \"LE-6\"}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Line L32 (laptop) is now SKU LA-5.",
+         "flipped": "compat[laptop|charger]",
+         "gold_A": [
+          [
+           "apply_promo",
+           "PR99",
+           "{}"
+          ],
+          [
+           "replace_line",
+           "L20",
+           "{\"sku\": \"BA-1\"}"
+          ],
+          [
+           "replace_line",
+           "L76",
+           "{\"sku\": \"CH-1\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "apply_promo",
+           "PR99",
+           "{}"
+          ],
+          [
+           "replace_line",
+           "L20",
+           "{\"sku\": \"BA-1\"}"
+          ]
+         ],
+         "same_summary": false
+        }
+       ]
+      }
+     ]
+    },
+    "C1_query_leak": {
+     "pass": true,
+     "n": 180,
+     "leaks": []
+    },
+    "C6_nonidempotent": {
+     "pass": true,
+     "n": 180,
+     "endpoint_failed": 180
+    },
+    "C4_killers_fail": {
+     "pass": true,
+     "ees": {
+      "exact_kv": 0.016666666666666666,
+      "source_union": 0.0,
+      "source_regime": 0.4611111111111111,
+      "knn": 0.2388888888888889,
+      "superset": 0.0
+     }
+    },
+    "C5_identifiable": {
+     "pass": true,
+     "oracle": 1.0,
+     "rh_oracle": 1.0
+    },
+    "C7_graph_beats_blackbox": {
+     "pass": true,
+     "seed_wins": {
+      "flat": 3,
+      "flat_est": 3,
+      "gnn": 3,
+      "gnn_est": 3
+     },
+     "n_seeds": 3,
+     "graph_mean": 0.8055555555555557,
+     "blackbox_mean": {
+      "flat": 0.25000000000000006,
+      "flat_est": 0.2388888888888889,
+      "gnn": 0.7444444444444445,
+      "gnn_est": 0.6888888888888888
+     }
+    },
+    "C8_program_ran": {
+     "pass": true,
+     "graph": 0.8055555555555557,
+     "program": 0.7888888888888889,
+     "tie": true,
+     "program_better": false
+    }
+   },
+   "api_allowed": true
+  }
+ }
+}

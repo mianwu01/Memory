@@ -14,7 +14,7 @@ oracle 在 dev 与 test 全部 1.000；对 unaffected 对象的一次原值写�
 上与 graph 打平（1.000 / 1.000），在 Formal dev 上高于 graph（0.939 vs 0.750），在
 Travel 与 Shopping 低于 graph。因此 v3 目前支持的结论是：**可组合的关系结构加上从
 历史读出的 regime 才能完成可执行修复；causal graph 形式在 Travel / Shopping 有优势，
-在 Search / Formal 没有独占优势。** 真实 API（deepseek-v4-flash，Travel 与 Search 各 200 cells）：Search 的主判断 PASS（graph/compact 0.650 vs full/verbose 0.500，input −73.0%），Travel FAIL（0.250 vs 0.500，input −72.1%），且 LLM 在两个任务上都远低于确定性 learned graph（0.856 / 0.994），见 §5。
+在 Search / Formal 没有独占优势（fresh seeds 20–22 上 graph 0.883 / 0.800 / 1.000 / 0.717，program_reg 0.667 / 0.828 / 0.994 / 0.889，§7.2）。** Shopping v3.2 通过全部 gate（§7.3）。真实 API 两轮各 400 cells（§5、§7）：预注册的点估计主判断两轮给出相反结果，配对 bootstrap 合并后所有区间跨 0，selection 效应在 n=20/cell 下不可分辨；稳定的是 graph/compact 少 68–80% input，以及 LLM 远低于确定性 learned graph。round 1 细节：Search 的主判断 PASS（graph/compact 0.650 vs full/verbose 0.500，input −73.0%），Travel FAIL（0.250 vs 0.500，input −72.1%），且 LLM 在两个任务上都远低于确定性 learned graph（0.856 / 0.994），见 §5。
 
 ## 2. 生成器与 gate
 
@@ -222,14 +222,177 @@ program 0.806、gnn_est 0.706、rh_oracle 1.000。
    （0.828 / 0.828）、Search 打平、Formal 更高（0.933 vs 0.789），只有 Travel 仍低于 graph
    （0.656 vs 0.856）。causal graph 的传播形式只在 Travel 这种多跳数值链上有独占优势。
 
-4. 真实 API 上 selection 只在 Search 通过主判断；Travel 的 graph/compact 组合低于
-   full/verbose 0.25 点，损失来自 compact 与 graph selection 的交互，两者单独都不掉分。
+4. 真实 API 上 graph/compact 相对 full/verbose 稳定减少 68–80% input tokens；两轮 EES 差的
+   合并区间 Travel [−0.325, +0.075]、Search [−0.200, +0.175]，非劣性与损害都没有被建立。
+5. Shopping v3.2（初始状态与 hidden policy 解耦）通过全部 gate；fresh seeds 上 killers
+   ≤ 0.456，graph 0.756，program_reg 0.778。
 
 不能写：
 1. “learned causal structure 对四任务正确性必不可少”：Search 与 Formal 的反例已经在
    dev 与 test 出现。
-4. “LLM runtime 已经能利用学到的结构”：LLM 最好的 cell 是 0.500 / 0.650，同一 seed 上
-   learned graph 是 0.856 / 0.994。
+4. “LLM runtime 已经能利用学到的结构”：两轮 LLM 最好的 cell 是 0.650 / 0.700，同一 seed 上
+   learned graph 是 0.856 / 0.994；prompt 版本造成的移动与 selection 造成的移动同量级。
+5. “graph/compact 的 selection 在 EES 上非劣于 full/verbose”：round 1 与 round 2 的点估计
+   判断相反，合并区间跨 0；只能写 input 减少，不能写 EES 非劣。
 2. Shopping 的 gate 未通过 C4，其 test 数字只作 deterministic replication 报告。
 3. 关系型学习器的特征在 dev 上修订过四轮（预注册 §3 已披露）；test 与 API 在修订之后
    才运行，但 dev 数字不是 pristine。
+
+## 7. Round 2（2026-09-03，预注册 §9；prompt v2、fresh test seeds、Shopping v3.2）
+
+### 7.1 API round 2：prompt v2（policy ledger → propagate → check），同一 episode 与 cells
+
+#### travel
+
+| selection / serialization | n | ees | exact_action_set | affected_f1 | collateral_txns | value_accuracy | input_tokens | output_tokens | cost | parse_ok |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| exact / compact | 20 | 0.000 | 0.000 | 0.050 | 0.000 | 0.050 | 26440 | 9642 | 0.111 | 1.000 |
+| exact / verbose | 20 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 23996 | 8867 | 0.108 | 1.000 |
+| full / compact | 20 | 0.650 | 0.600 | 0.873 | 0.300 | 0.833 | 66471 | 42177 | 0.517 | 1.000 |
+| full / verbose | 20 | 0.600 | 0.550 | 0.690 | 0.150 | 0.700 | 216541 | 52493 | 0.850 | 1.000 |
+| graph / compact | 20 | 0.600 | 0.600 | 0.883 | 0.300 | 0.700 | 43592 | 27993 | 0.308 | 1.000 |
+| graph / verbose | 20 | 0.350 | 0.300 | 0.705 | 0.150 | 0.508 | 63509 | 27184 | 0.345 | 1.000 |
+| program / compact | 20 | 0.250 | 0.250 | 0.507 | 0.150 | 0.300 | 25448 | 14600 | 0.157 | 1.000 |
+| program / verbose | 20 | 0.250 | 0.200 | 0.552 | 0.250 | 0.300 | 39185 | 12451 | 0.146 | 1.000 |
+| source / compact | 20 | 0.250 | 0.250 | 0.425 | 0.200 | 0.350 | 25215 | 15346 | 0.175 | 1.000 |
+| source / verbose | 20 | 0.100 | 0.100 | 0.333 | 0.150 | 0.175 | 44691 | 14943 | 0.207 | 1.000 |
+
+主判断 (graph, compact) 相对 (full, verbose)：EES 差 +0.000，input tokens 减少 79.9% → **PASS**。
+
+selection 隔离：EES -0.250，input 减少 70.7%。 
+serialization 隔离：EES +0.050，input 减少 69.3%。
+
+| cell | round 1 EES | round 2 EES |
+|---|---:|---:|
+| exact/compact | 0.050 | 0.000 |
+| exact/verbose | 0.000 | 0.000 |
+| full/compact | 0.500 | 0.650 |
+| full/verbose | 0.500 | 0.600 |
+| graph/compact | 0.250 | 0.600 |
+| graph/verbose | 0.450 | 0.350 |
+| program/compact | 0.200 | 0.250 |
+| program/verbose | 0.300 | 0.250 |
+| source/compact | 0.250 | 0.250 |
+| source/verbose | 0.450 | 0.100 |
+
+#### search
+
+| selection / serialization | n | ees | exact_action_set | affected_f1 | collateral_txns | value_accuracy | input_tokens | output_tokens | cost | parse_ok |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| exact / compact | 20 | 0.200 | 0.200 | 0.417 | 0.050 | 0.400 | 24873 | 21586 | 0.230 | 1.000 |
+| exact / verbose | 20 | 0.250 | 0.250 | 0.283 | 0.000 | 0.300 | 22325 | 6912 | 0.089 | 1.000 |
+| full / compact | 20 | 0.700 | 0.700 | 0.823 | 0.450 | 0.875 | 40099 | 29625 | 0.362 | 1.000 |
+| full / verbose | 20 | 0.650 | 0.650 | 0.743 | 0.300 | 0.775 | 118956 | 39658 | 0.602 | 1.000 |
+| graph / compact | 20 | 0.450 | 0.450 | 0.500 | 0.000 | 0.450 | 47410 | 35484 | 0.390 | 1.000 |
+| graph / verbose | 20 | 0.550 | 0.550 | 0.600 | 0.000 | 0.550 | 52162 | 21109 | 0.288 | 1.000 |
+| program / compact | 20 | 0.450 | 0.450 | 0.500 | 0.000 | 0.450 | 50807 | 33990 | 0.369 | 1.000 |
+| program / verbose | 20 | 0.500 | 0.500 | 0.600 | 0.000 | 0.500 | 51980 | 25243 | 0.314 | 1.000 |
+| source / compact | 20 | 0.350 | 0.350 | 0.350 | 0.000 | 0.350 | 53041 | 45251 | 0.479 | 1.000 |
+| source / verbose | 20 | 0.400 | 0.400 | 0.467 | 0.000 | 0.500 | 36501 | 21964 | 0.261 | 1.000 |
+
+主判断 (graph, compact) 相对 (full, verbose)：EES 差 -0.200，input tokens 减少 60.1% → **FAIL**。
+
+selection 隔离：EES -0.100，input 减少 56.2%。 
+serialization 隔离：EES +0.050，input 减少 66.3%。
+
+| cell | round 1 EES | round 2 EES |
+|---|---:|---:|
+| exact/compact | 0.200 | 0.200 |
+| exact/verbose | 0.250 | 0.250 |
+| full/compact | 0.500 | 0.700 |
+| full/verbose | 0.500 | 0.650 |
+| graph/compact | 0.650 | 0.450 |
+| graph/verbose | 0.500 | 0.550 |
+| program/compact | 0.500 | 0.450 |
+| program/verbose | 0.400 | 0.500 |
+| source/compact | 0.450 | 0.350 |
+| source/verbose | 0.250 | 0.400 |
+
+Round 2 合计 400 cells，input 1,073,242 / output 506,518 tokens，估计费用 $6.309。
+
+### 7.2 Deterministic replication，fresh test seeds 20/21/22（train 120/121/122），全部方法
+
+`graph_pooled`（所有 template 共享一个正则化 gradient-boosted gate，template 身份作 one-hot，传播不变）与 `program_reg` 在这一轮是预先加入的方法，其余与 round 1 相同。
+
+| method | formal | search | shopping | shopping32 | travel |
+|---|---:|---:|---:|---:|---:|
+| exact_kv | 0.033 ± 0.024 | 0.106 ± 0.048 | 0.039 ± 0.021 | 0.028 ± 0.021 | 0.000 ± 0.000 |
+| source_union | 0.000 ± 0.000 | 0.117 ± 0.014 | 0.000 ± 0.000 | 0.000 ± 0.000 | 0.000 ± 0.000 |
+| source_regime | 0.017 ± 0.024 | 0.172 ± 0.034 | 0.583 ± 0.059 | 0.456 ± 0.016 | 0.061 ± 0.034 |
+| knn | 0.072 ± 0.048 | 0.411 ± 0.031 | 0.461 ± 0.044 | 0.261 ± 0.034 | 0.300 ± 0.027 |
+| flat | 0.094 ± 0.021 | 0.067 ± 0.014 | 0.189 ± 0.097 | 0.339 ± 0.044 | 0.006 ± 0.008 |
+| flat_est | 0.144 ± 0.064 | 0.072 ± 0.008 | 0.211 ± 0.149 | 0.233 ± 0.138 | 0.006 ± 0.008 |
+| gnn | 0.222 ± 0.061 | 0.367 ± 0.036 | 0.717 ± 0.049 | 0.700 ± 0.068 | 0.406 ± 0.031 |
+| gnn_est | 0.256 ± 0.031 | 0.461 ± 0.083 | 0.750 ± 0.036 | 0.711 ± 0.055 | 0.744 ± 0.068 |
+| superset | 0.067 ± 0.014 | 0.278 ± 0.021 | 0.000 ± 0.000 | 0.000 ± 0.000 | 0.011 ± 0.008 |
+| program | 0.939 ± 0.042 | 0.994 ± 0.008 | 0.322 ± 0.227 | 0.750 ± 0.047 | 0.744 ± 0.042 |
+| program_reg | 0.889 ± 0.057 | 0.994 ± 0.008 | 0.828 ± 0.031 | 0.778 ± 0.070 | 0.667 ± 0.059 |
+| graph | 0.717 ± 0.082 | 1.000 ± 0.000 | 0.800 ± 0.049 | 0.756 ± 0.048 | 0.883 ± 0.024 |
+| graph_pooled | 0.733 ± 0.059 | 0.989 ± 0.016 | 0.839 ± 0.016 | 0.728 ± 0.070 | 0.867 ± 0.047 |
+| rh_oracle | 1.000 ± 0.000 | 1.000 ± 0.000 | 1.000 ± 0.000 | 1.000 ± 0.000 | 1.000 ± 0.000 |
+| oracle | 1.000 ± 0.000 | 1.000 ± 0.000 | 1.000 ± 0.000 | 1.000 ± 0.000 | 1.000 ± 0.000 |
+
+### 7.3 Shopping v3.2：初始状态与 hidden policy 解耦
+
+| check | shopping32 |
+|---|---|
+| C2_split_separation | PASS |
+| C3_history_load_bearing | PASS |
+| C1_query_leak | PASS |
+| C6_nonidempotent | PASS |
+| C4_killers_fail | PASS |
+| C5_identifiable | PASS |
+| C7_graph_beats_blackbox | PASS |
+| C8_program_ran | PASS |
+| **api_allowed** | yes |
+
+C4：{'exact_kv': 0.017, 'source_union': 0.0, 'source_regime': 0.461, 'knn': 0.239, 'superset': 0.0}；C7：graph 0.806，black boxes {'flat': 0.25, 'flat_est': 0.239, 'gnn': 0.744, 'gnn_est': 0.689}；C8：program 0.789。
+
+Shopping v3.2 test（seeds 20/21/22）：
+
+| method | shopping32 |
+|---|---:|
+| exact_kv | 0.028 ± 0.021 |
+| source_union | 0.000 ± 0.000 |
+| source_regime | 0.456 ± 0.016 |
+| knn | 0.261 ± 0.034 |
+| flat | 0.339 ± 0.044 |
+| flat_est | 0.233 ± 0.138 |
+| gnn | 0.700 ± 0.068 |
+| gnn_est | 0.711 ± 0.055 |
+| superset | 0.000 ± 0.000 |
+| program | 0.750 ± 0.047 |
+| program_reg | 0.778 ± 0.070 |
+| graph | 0.756 ± 0.048 |
+| graph_pooled | 0.728 ± 0.070 |
+| rh_oracle | 1.000 ± 0.000 |
+| oracle | 1.000 ± 0.000 |
+
+### 7.4 读法：两轮 API 合起来说明了什么
+
+配对 bootstrap（每 episode 的 EES 差，4000 次重抽，`results/real/hm3/round2/paired_bootstrap.json`）：
+
+| 域 | 比较 | round 1 | round 2 | 两轮合并（n=40） |
+|---|---|---:|---:|---:|
+| Travel | graph/compact − full/verbose | −0.250 [−0.500, 0.000] | 0.000 [−0.300, +0.300] | −0.125 [−0.325, +0.075] |
+| Travel | graph/verbose − full/verbose | −0.050 [−0.300, +0.200] | −0.250 [−0.500, 0.000] | −0.150 [−0.325, +0.025] |
+| Travel | full/compact − full/verbose | 0.000 [−0.200, +0.200] | +0.050 [−0.200, +0.300] | +0.025 [−0.150, +0.175] |
+| Search | graph/compact − full/verbose | +0.150 [−0.150, +0.450] | −0.200 [−0.400, 0.000] | −0.025 [−0.200, +0.175] |
+| Search | graph/verbose − full/verbose | 0.000 [−0.350, +0.350] | −0.100 [−0.350, +0.150] | −0.050 [−0.250, +0.150] |
+| Search | full/compact − full/verbose | 0.000 [−0.250, +0.250] | +0.050 [−0.250, +0.350] | +0.025 [−0.175, +0.225] |
+
+- 预注册的点估计规则在两轮里给出相反的判断：round 1 Search PASS / Travel FAIL，round 2
+  Travel PASS（0.000，input −79.9%）/ Search FAIL（−0.200）。每 cell 20 个 episode 时，
+  一个 episode 就是 0.05，任何 cell 间的差在 ±0.25 以内都落在噪声里；两轮合并后所有六个
+  区间都跨 0。诚实的结论是：**在这个样本量下，selection 与 serialization 对 EES 的影响
+  都没有被分辨出来，非劣性没有被建立，损害也没有被建立。** 可以稳定写的是 input tokens：
+  graph/compact 相对 full/verbose 在四个 (域, 轮) 组合里都减少 68–80%。
+- prompt v2 把 full/verbose 从 0.500 提到 0.600（Travel）与 0.650（Search），把 Travel
+  graph/compact 从 0.250 提到 0.600；也把 Search graph/compact 从 0.650 拉回 0.450，Travel
+  graph/verbose 从 0.450 拉到 0.350。改 prompt 造成的 cell 间移动与 selection 造成的移动
+  是同一量级，这本身就是“runtime 是瓶颈”的又一个证据。
+- LLM 两轮最好的 cell 是 0.650 / 0.700（Travel full/compact、Search full/compact），同一
+  test seed 上确定性 learned graph 为 0.856 / 0.994。四个 exact 选择的 cell 在两轮里都
+  ≤ 0.25，说明模型没有靠先验猜出结构。
+- 要把 selection 效应做成 confirmatory，需要每 cell ≥ 80 个 episode（把 ±0.25 收到
+  ±0.12）或换更强的 runtime；两者都是下一轮的决定。两轮合计 800 cells，$12.90。

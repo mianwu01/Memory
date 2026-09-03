@@ -8,7 +8,7 @@ from pathlib import Path
 from .run_det import summarize
 
 ORDER = ["exact_kv", "source_union", "source_regime", "knn", "flat", "flat_est", "gnn", "gnn_est", "superset",
-         "program", "program_reg", "graph", "rh_oracle", "oracle"]
+         "program", "program_reg", "graph", "graph_pooled", "rh_oracle", "oracle"]
 
 
 def det_table(results: dict, metric: str = "ees") -> str:
