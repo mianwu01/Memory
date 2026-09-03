@@ -424,3 +424,23 @@ input −70–74%；闭包修复 Travel 一半差距（+0.234 [+0.094, +0.359]�
 的 input 达到更高 EES。不能写：learned causal structure 对四任务正确性必不可少；LLM runtime
 已经能利用学到的结构（Travel 的 graph/compact 低于 full/verbose）。下一步：API 的 selection 效应需要每 cell ≥ 80 episodes 或更强的 runtime 才能做成 confirmatory；
 Formal 上 graph 相对 program 的差距（0.72 vs 0.89）是方法侧的公开问题；两者都交给 Yujia 决定。
+
+## 9. P3-B round 3（2026-09-03，MINJA，冻结协议 `docs/p3b-round3-protocol-2026-09-03.md`）
+
+round 2 的失败被 power audit 定位在 calibration exposure（约一半记忆从未被打分）与独立调用噪声。
+round 3 保留 label-free driver，加入 prefix 邻域扩展（g1）、trigger-regime 隔离（g2）、同一冻结记忆
+上的 no-op 对照臂、先删记忆再检索的语义，10 个 seed × 12 held-out rounds × 4 臂。
+
+| 臂 | attacks / 120 | accuracy |
+|---|---:|---:|
+| ungated | 4 | 0.85 |
+| noop | 9 | 0.82 |
+| g1（implicated + 同题干扩展） | 4 | 0.85 |
+| g2（g1 + 未经 vetted 的记录在 trigger 查询下隔离） | 0 | 0.89 |
+
+配对（noop − arm，touched queries）：g1 +0.097 [−0.032, +0.226]（n=31）；g2 +0.125 [+0.047, +0.219]
+（n=64），全部查询 +0.075 [+0.033, +0.125]。冻结判断：g1 primary 未过；g2 primary 通过但 consistency
+不可评估（本轮 base attack rate 3–8%，没有 12-round block 达到 ≥2 ungated attacks）→ 两臂均 **FAIL**（保留）。
+round 4（协议 §6，seeds 10–21，三 seed 一个 block，gate-free 臂合计 ≥3 attacks 才可评估）已冻结并在跑。
+AgentPoison round 3 在本环境不可行（无网络取 dev split 与 DPR encoder）。
+结果：`results/real/p3b_round3/`，`docs/p3b-round3-results-2026-09-03.md`。

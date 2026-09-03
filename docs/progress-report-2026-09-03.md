@@ -307,6 +307,31 @@ MINJA and from 3/72 to 0/72 on AgentPoison (no-op 4/72), but only 1/3 seed block
 each carrier, so the frozen ≥ 2/3 rule failed; on AgentPoison two of three blocks had no attacks
 to prevent.
 
+### 5.1 Online mitigation, round 3 (MINJA, 2026-09-03)
+
+The power audit of round 2 located the failure in calibration exposure (about half the
+memory never scored, so unscored poison records survived every threshold) and in
+independent-call noise. Round 3 (frozen protocol `docs/p3b-round3-protocol-2026-09-03.md`)
+keeps the label-free driver and adds a prefix neighbourhood that pulls in records written
+on the same question stem (g1), a trigger-regime quarantine of unvetted records (g2), a
+no-op arm from the same frozen memory as the noise control, and memory-level deletion
+before retrieval; ten seeds, 12 held-out rounds each, four arms.
+
+| arm | attacks / 120 rounds | accuracy | paired effect vs no-op on touched queries |
+|---|---:|---:|---|
+| ungated | 4 | 0.85 | — |
+| no-op | 9 | 0.82 | — |
+| g1 | 4 | 0.85 | +0.097 [−0.032, +0.226], n = 31 |
+| g2 | 0 | 0.89 | +0.125 [+0.047, +0.219], n = 64 |
+
+Frozen judgement: FAIL for both arms. g2's pooled effect is positive with an interval
+excluding zero (also over all queries, +0.075 [+0.033, +0.125]) and it removes every attack
+at the best accuracy, but the base attack rate this round is 3–8%, so no 12-round block
+reaches the evaluability floor and the consistency clause cannot be evaluated. Round 4
+(seeds 10–21, three-seed blocks, both gate-free arms counting toward evaluability) was
+frozen after that interim observation and is running. AgentPoison round 3 is blocked in
+this environment (no network path to the StrategyQA dev split or the DPR encoder).
+
 ## 6. Claim ledger
 
 | claim | status | evidence |
@@ -320,7 +345,7 @@ to prevent.
 | Graph selection cuts LLM input at indistinguishable exact success | tokens supported; EES cost measured | −70–74% input at an EES cost of 0.10–0.19 (n≈64, rounds 3–4); non-inferiority at −0.10 not met |
 | The LLM runtime exploits the learned structure | unsupported | best cell 0.70 against 0.99 deterministic on the same episodes |
 | Hidden read edge and write ancestry are recoverable on a real attack | supported with boundaries | MINJA 3/3 seeds; AgentPoison 1/2 → 2/2; oracle-tagged channel |
-| Online mitigation from the recovered graph | not supported | P3-B FAIL on both carriers (1/3 seed blocks) |
+| Online mitigation from the recovered graph | not supported as frozen; round-3 g2 effect positive, blocks unevaluable | rounds 2 and 3 FAIL; g2 0/120 attacks, +0.125 [+0.047, +0.219] vs no-op; round 4 running |
 
 ## 7. Decisions open for the meeting
 
