@@ -193,16 +193,19 @@ def parse_transactions(text: str) -> Optional[List[dict]]:
 
 
 class Client:
-    def __init__(self, model: str):
+    def __init__(self, model: str, thinking: bool = False):
         from openai import OpenAI
         self.client = OpenAI(api_key=os.environ["OPENAI_API_KEY"],
                              base_url=os.environ.get("OPENAI_BASE_URL", DEEPSEEK_BASE_URL))
         self.model = model
+        self.thinking = thinking
 
     def chat(self, messages: List[dict], max_tokens: int = 4096) -> dict:
         t0 = time.time()
+        extra = {"thinking": {"type": "enabled"}} if self.thinking else None
         resp = self.client.chat.completions.create(model=self.model, messages=messages, temperature=0,
-                                                   max_tokens=max_tokens)
+                                                   max_tokens=max_tokens * (2 if self.thinking else 1),
+                                                   extra_body=extra)
         dt = time.time() - t0
         u = resp.usage
         cached = int(getattr(u, "prompt_cache_hit_tokens", 0) or 0)
@@ -235,7 +238,7 @@ def build_messages(domain, ep: Episode, sel: dict, ser: str) -> List[dict]:
 def run(domains: List[str], seed: int, n_eval: int, selections: List[str], serializations: List[str],
         model: str, out_dir: Path, budget_usd: float, n_train: int = 200, train_seed_offset: int = 100,
         dry_run: bool = False, ep_start: int = 0, ep_end: Optional[int] = None,
-        resume_from: Optional[List[str]] = None):
+        resume_from: Optional[List[str]] = None, thinking: bool = False):
     out_dir.mkdir(parents=True, exist_ok=True)
     ledger_path = out_dir / "llm_ledger.jsonl"
     done = set()
@@ -247,11 +250,11 @@ def run(domains: List[str], seed: int, n_eval: int, selections: List[str], seria
                 if rec.get("event") == "cell" and not rec.get("dry_run"):
                     done.add(rec["cell"])
                     spent += rec["cost"]
-    client = None if dry_run else Client(model)
+    client = None if dry_run else Client(model, thinking=thinking)
     protocol = {"domains": domains, "seed": seed, "n_eval": n_eval, "selections": selections,
                 "serializations": serializations, "model": model, "n_train": n_train,
                 "train_seed_offset": train_seed_offset, "budget_usd": budget_usd,
-                "retry_policy": "one format-only repair; semantic failures terminal",
+                "retry_policy": "one format-only repair; semantic failures terminal", "thinking": thinking,
                 "cost_rates_usd_per_million": COST_RATES_USD_PER_MILLION}
     json.dump(protocol, open(out_dir / "llm_protocol.json", "w"), indent=1)
     for dname in domains:
@@ -364,9 +367,11 @@ if __name__ == "__main__":
     ap.add_argument("--ep_start", type=int, default=0)
     ap.add_argument("--ep_end", type=int, default=None)
     ap.add_argument("--resume_from", nargs="*", default=None)
+    ap.add_argument("--thinking", action="store_true")
     a = ap.parse_args()
     if a.summarize:
         print(json.dumps(summarize(Path(a.out_dir))["total"]))
     else:
         run(a.domains, a.seed, a.n_eval, a.selections, a.serializations, a.model, Path(a.out_dir), a.budget_usd,
-            dry_run=a.dry_run, ep_start=a.ep_start, ep_end=a.ep_end, resume_from=a.resume_from)
+            dry_run=a.dry_run, ep_start=a.ep_start, ep_end=a.ep_end, resume_from=a.resume_from,
+            thinking=a.thinking)

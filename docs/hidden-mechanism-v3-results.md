@@ -173,6 +173,43 @@ train seed 110 上拟合 selector；ledger 在 `results/real/hm3/llm_ledger.json
   142 个 `[]`，花费 $0.452 后中止并改为“先逐对象分析、再给 fenced json”，ledger 保留在
   `results/real/hm3/llm_ledger_v1_empty_replies.jsonl.bak`，不计入正式结果。
 
+## 5.1 Follow-up（2026-09-03，test 与 API 之后，全部为 post-hoc）
+
+**Formal 上 program learner 的 seed 不稳定性是拟合失败。** test 三个 train seed 的
+program EES 为 0.150 / 0.283 / 0.917（seed 110 / 111 / 112），dev 三个 seed 为 0.983 /
+0.917 / 0.917。用 train seed 110 拟合的默认 HistGradientBoosting（max_iter 200、
+lr 0.08、min_samples_leaf 4）在**自己的训练 episode** 上只有 9/40 全对，训练集里出现了
+两个各只有 2 个样本的稀有标签；换成更强正则的配置（max_iter 150、lr 0.05、
+min_samples_leaf 10、L2 1.0、max_leaf_nodes 15）后训练 40/40、test 52/60。这个配置作为
+`program_reg` 加入并在 dev 与 test 全部重跑（数字见下表）；`program` 的原始数字保留为
+confirmatory 结果，`program_reg` 是 post-hoc 变体。
+
+| method（dev / test EES） | travel | shopping | search | formal |
+|---|---:|---:|---:|---:|
+| program | 0.689 / 0.667 | 0.406 / 0.494 | 1.000 / 0.989 | 0.939 / 0.450 |
+| program_reg | 0.678 / 0.656 | 0.867 / 0.828 | 1.000 / 0.989 | 0.894 / 0.933 |
+| graph | 0.872 / 0.856 | 0.794 / 0.828 | 1.000 / 0.994 | 0.750 / 0.789 |
+
+**Travel 的 thinking-enabled 重跑不可行（2 cells，$0.334 后中止）。** 在
+`deepseek-v4-flash` 上启用 `thinking` 后，graph/compact 的前两个 cell 都在 8192 completion
+tokens 内没有产出任何可见答案（finish=length，reasoning 占满预算），format repair 再耗
+8192 tokens 仍为空；每 cell $0.167。按此推算 40 cells 约 $6.7 且大概率全部无效，因此
+没有继续。Travel 交互项损失的解释仍停留在 §5 的推理瓶颈；是否用更大的 completion 预算或
+另一个模型重跑，留给 Yujia 决定。ledger 在 `results/real/hm3/exploratory_thinking/`。
+
+**Shopping v3.1（`shopping31`，dev only）。** 让每个 base 携带全部 accessory 类别、2–3 个
+promotion（brand 取自它要求的某条 line，使 strict 规则当前可满足）、预算 slack 收紧到
+0–60、干预采样只取“扰动最多”的变体。dev 上 |A| 分布从 v3 的 1:51/60 变为 1:41 · 2:18 ·
+3:1。gate（dev seeds 0/1/2）：C1/C2/C3/C5/C6/C7 通过，C4 仍失败：kNN 从 0.511 降到
+0.383，但 source+regime table 仍为 0.533。
+剩下的泄露来自可见状态自身的一致性：S0 里 promo 的 active 状态与 hidden strictness 一致、
+accessory 与 base 在初始状态下已按 hidden compat 匹配，所以按 (category, role, priority,
+status) 做的细 key 表能复制一半 episode。v3.1 的 dev EES：graph 0.800、
+program 0.806、gnn_est 0.706、rh_oracle 1.000。
+要通过 C4 需要 v3.2：初始状态不再与 hidden policy 一致（例如 promo 初始状态随机、accessory
+初始不一定兼容），这改变了“状态总是合法”的假设，留待下一轮决定；v3.1 没有跑 test split。
+结果：`results/development/hm3/det_dev_shopping31.json`、`gate_shopping31.json`。
+
 ## 6. 现在能写与不能写的结论
 
 能写：
@@ -180,8 +217,10 @@ train seed 110 上拟合 selector；ledger 在 `results/real/hm3/llm_ledger.json
    oracle 与只看历史的 oracle 都能完成，即任务可辨识且 history 是 load-bearing。
 2. 学到的关系结构（graph 或 program）加上从历史解析的 regime 在 dev 与 test 上都远高于
    黑盒与 lookup 基线。
-3. 在 Search 与 Formal 上，逐对象的 relational program learner 与 graph 打平或更好；
-   causal graph 的传播形式不具备独占优势。在 Travel 与 Shopping 上 graph 更高。
+3. 逐对象的 relational program learner 与 graph 的关系：confirmatory 的 `program` 在 Search 打平、
+   Formal dev 更高、Travel 与 Shopping 更低；post-hoc 正则化后的 `program_reg` 在 test 上 Shopping 打平
+   （0.828 / 0.828）、Search 打平、Formal 更高（0.933 vs 0.789），只有 Travel 仍低于 graph
+   （0.656 vs 0.856）。causal graph 的传播形式只在 Travel 这种多跳数值链上有独占优势。
 
 4. 真实 API 上 selection 只在 Search 通过主判断；Travel 的 graph/compact 组合低于
    full/verbose 0.25 点，损失来自 compact 与 graph selection 的交互，两者单独都不掉分。

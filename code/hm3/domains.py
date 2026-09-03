@@ -7,6 +7,9 @@ def get_domain(name: str):
     if name == "shopping":
         from .dgp_shopping import ShoppingDomain
         return ShoppingDomain()
+    if name == "shopping31":
+        from .dgp_shopping import ShoppingDomain
+        return ShoppingDomain(dense=True)
     if name == "search":
         from .dgp_search import SearchDomain
         return SearchDomain()

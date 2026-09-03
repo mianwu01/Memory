@@ -188,3 +188,15 @@ dev run 之前完成。
 gate 与 test 之前，P2 的可写结论仍然是：structured / dependency-aware memory 在
 MemoryArena 上保持效果并减少输入；compact SelectionPlan 能驱动 value update。
 “learned causal structure 对四任务正确性必不可少”要等 v3 的 test 与 API 结果。
+
+
+## 8. Test 之后的追加（2026-09-03，全部 post-hoc，不改变 §5 的判断）
+
+- `program_reg`：program learner 的正则化配置（max_iter 150、lr 0.05、min_samples_leaf 10、
+  L2 1.0、max_leaf_nodes 15），因为默认配置在 Formal 的 train seed 110 上连自己的训练
+  episode 都只拟合 9/40。在 test 已经评分之后加入并在 dev/test 全部重跑；`program` 的
+  原始数字保持为 confirmatory。
+- `shopping31`：Shopping 的加密隐藏决策变体，只跑了 dev 与 gate（C4 仍失败：source+regime
+  0.533），没有 test split。
+- Travel thinking-enabled 重跑：2 cells 后中止（reasoning 占满 8192 completion tokens，
+  无可见答案），$0.334，不计入 §5。

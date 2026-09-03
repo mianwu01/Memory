@@ -39,6 +39,15 @@ class ShoppingDomain(Domain):
     PARAM_NAMES = ["compat", "strict_promo", "auto_promo", "enforce_budget"]
     OPS = {"replace_line": 15, "remove_line": 10, "apply_promo": 5, "drop_promo": 5}
 
+    def __init__(self, dense: bool = False):
+        # v3.1 ("shopping31"): every base carries all of its accessory categories, two or
+        # three promotions are in play, the budget slack is tight, and the intervention
+        # sampler prefers variants that break an attribute match, a promotion brand or the
+        # budget, so that an episode carries several hidden decisions at once
+        self.dense = dense
+        if dense:
+            self.NAME = "shopping31"
+
     def relation_names(self):
         return ["accessories", "base", "cart", "lines", "promos"]
 
@@ -84,7 +93,9 @@ class ShoppingDomain(Domain):
                        {"cart": [cart_id], "accessories": [], "base": []})
             state.add(line)
             cart.links["lines"].append(lid)
-            for acc_cat in rng.sample(ACCESSORIES[cat], rng.choice([1, len(ACCESSORIES[cat])])):
+            acc_cats = list(ACCESSORIES[cat]) if self.dense else \
+                rng.sample(ACCESSORIES[cat], rng.choice([1, len(ACCESSORIES[cat])]))
+            for acc_cat in acc_cats:
                 pair = f"{cat}|{acc_cat}"
                 attr = PAIR_ATTR[pair]
                 pool = catalog[acc_cat]
@@ -104,10 +115,18 @@ class ShoppingDomain(Domain):
                 line.links["accessories"].append(aid)
                 cart.links["lines"].append(aid)
         cats_in_cart = sorted({state.get(l).fields["category"] for l in cart.linked("lines")})
-        for _ in range(rng.choice([1, 2])):
+        for _ in range(rng.choice([2, 3]) if self.dense else rng.choice([1, 2])):
             pid = fresh("PR")
             req = rng.sample(cats_in_cart, min(len(cats_in_cart), 2))
-            promo = Obj(pid, "promo", {"requires": req, "brand": rng.choice(ATTR_VALUES["brand"]),
+            brand = rng.choice(ATTR_VALUES["brand"])
+            if self.dense:
+                # the promotion's brand is the brand of a line it requires, so it is
+                # currently satisfiable and any brand change on that line can break it
+                lines_req = [state.get(l) for l in cart.linked("lines")
+                             if state.get(l).fields["category"] in req]
+                if lines_req:
+                    brand = rng.choice(lines_req).fields["attrs"].get("brand", brand)
+            promo = Obj(pid, "promo", {"requires": req, "brand": brand,
                                        "discount": rng.choice([30, 50, 80, 120]), "active": 0},
                         {"cart": [cart_id]})
             state.add(promo)
@@ -118,7 +137,8 @@ class ShoppingDomain(Domain):
             state.get(pid).fields["active"] = int(self._eligible(state, pid, tr))
         total = self._total(state)
         cart.fields["total"] = total
-        cart.fields["budget"] = total + rng.choice([0, 20, 40, 60, 100, 150, 250])
+        cart.fields["budget"] = total + (rng.choice([0, 10, 20, 30, 40, 60]) if self.dense
+                                         else rng.choice([0, 20, 40, 60, 100, 150, 250]))
         return params, state
 
     # ---------------------------------------------------------- helpers
@@ -180,6 +200,20 @@ class ShoppingDomain(Domain):
             options = diff or options
         if pick_expensive:
             options = sorted(options, key=lambda v: -v["price"])[:2]
+        if self.dense and target_param is None:
+            # prefer variants that disturb something: a linked accessory attribute, a
+            # promotion brand, or the budget
+            accs = [state.get(a) for a in base.linked("accessories") if state.get(a).status == "active"]
+            def disturbance(v):
+                score = 0
+                for acc in accs:
+                    attr = PAIR_ATTR[f"{cat}|{acc.fields['category']}"]
+                    score += v["attrs"].get(attr) != base.fields["attrs"].get(attr)
+                score += v["attrs"].get("brand") != base.fields["attrs"].get("brand")
+                score += v["price"] > base.fields["price"]
+                return score
+            best = max(disturbance(v) for v in options)
+            options = [v for v in options if disturbance(v) == best] or options
         v = rng.choice(options)
         return {"op": "replace_line", "object_id": base.id, "payload": {"sku": v["sku"]}}
 

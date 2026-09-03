@@ -650,9 +650,10 @@ class ProgramLearner(Learner):
     neighbour context; run twice so that neighbour values reflect the first
     pass's executed plan (iterative closure)."""
 
-    def __init__(self, iterations: int = 3):
+    def __init__(self, iterations: int = 3, regularised: bool = False):
         self.iterations = iterations
-        self.name = "program" if iterations > 1 else "program_1pass"
+        self.regularised = regularised
+        self.name = ("program_reg" if regularised else "program") if iterations > 1 else "program_1pass"
 
     def _row(self, domain, ep, c: Obj, paths, est, ctx_state: State, src_new: dict):
         v = self.vocab
@@ -722,8 +723,15 @@ class ProgramLearner(Learner):
                 # the test-time passes converge towards it
                 X.append(self._row(domain, ep, c, paths, est, ep.S1, src_new))
                 y.append(label_of(ep, c.id))
-        self.clf = HistGradientBoostingClassifier(max_iter=200, learning_rate=0.08, min_samples_leaf=4,
-                                                  random_state=0)
+        if self.regularised:
+            # post-hoc variant (added after the test split had been scored): the default
+            # configuration failed to fit its own training episodes on one Formal train
+            # seed; smaller trees, a lower learning rate and L2 make the fit stable
+            self.clf = HistGradientBoostingClassifier(max_iter=150, learning_rate=0.05, min_samples_leaf=10,
+                                                      l2_regularization=1.0, max_leaf_nodes=15, random_state=0)
+        else:
+            self.clf = HistGradientBoostingClassifier(max_iter=200, learning_rate=0.08, min_samples_leaf=4,
+                                                      random_state=0)
         self.clf.fit(np.array(X), np.array(y))
 
     def predict(self, domain, ep):
@@ -758,6 +766,6 @@ def make_learners(seed: int = 0) -> List[Learner]:
     return [
         ExactKV(), SourceUnion(), SourceRegimeTable(), TransitionKNN(),
         FlatBlackBox(False), FlatBlackBox(True), EquivariantGNN(False, seed=seed), EquivariantGNN(True, seed=seed),
-        LearnedGraph(superset=True), ProgramLearner(3), LearnedGraph(),
+        LearnedGraph(superset=True), ProgramLearner(3), ProgramLearner(3, regularised=True), LearnedGraph(),
         RuntimeHistoryOracle(), Oracle(),
     ]

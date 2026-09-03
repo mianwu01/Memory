@@ -404,6 +404,10 @@ metric 是 Executable Exact Success（事务全部合法 ∧ post-state ∧ rece
 | causal graph 相对 relational program learner 的独占优势 | 不支持为一般结论 | Search 两者打平（0.994 / 0.989），Formal dev 上 program 更高（0.939 vs 0.750）、test 上 program 不稳定（0.450 ± 0.334）；Travel 与 Shopping graph 更高 |
 | 真实 API selection × serialization（Travel、Search，deepseek-v4-flash，400 cells，$6.59） | Search 主判断 PASS，Travel FAIL | Search：graph/compact 0.650 vs full/verbose 0.500，input −73.0%；Travel：0.250 vs 0.500，input −72.1%，损失是 compact × graph 的交互项（graph/verbose 0.450、full/compact 0.500）；LLM 最好 cell 远低于 learned graph 的 0.856 / 0.994；`results/real/hm3/llm_summary.json` |
 
+追加（post-hoc）：正则化的 `program_reg` 在 test 上 Shopping 0.828（与 graph 打平）、Formal 0.933
+（高于 graph 0.789）、Travel 0.656（低于 graph 0.856）；Shopping v3.1 让 kNN 降到 0.383 但 source+regime
+仍 0.533，C4 未过；thinking-enabled Travel 重跑不可行（reasoning 耗尽 8192 tokens，无答案）。
+
 可写：可组合关系结构加上从历史读出的 regime 才能完成可执行修复；conservative superset
 与 lookup 在非幂等端点上真实失败；Search 上 graph selection 加 compact 序列化让 LLM 以 27%
 的 input 达到更高 EES。不能写：learned causal structure 对四任务正确性必不可少；LLM runtime

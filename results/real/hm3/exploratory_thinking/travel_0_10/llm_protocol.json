@@ -1,0 +1,26 @@
+{
+ "domains": [
+  "travel"
+ ],
+ "seed": 10,
+ "n_eval": 20,
+ "selections": [
+  "graph",
+  "full"
+ ],
+ "serializations": [
+  "compact",
+  "verbose"
+ ],
+ "model": "deepseek-chat",
+ "n_train": 200,
+ "train_seed_offset": 100,
+ "budget_usd": 4.0,
+ "retry_policy": "one format-only repair; semantic failures terminal",
+ "thinking": true,
+ "cost_rates_usd_per_million": {
+  "uncached_input": 2.5,
+  "cached_input": 0.25,
+  "output": 10.0
+ }
+}
