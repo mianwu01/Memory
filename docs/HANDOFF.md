@@ -441,6 +441,10 @@ round 3 保留 label-free driver，加入 prefix 邻域扩展（g1）、trigger-
 配对（noop − arm，touched queries）：g1 +0.097 [−0.032, +0.226]（n=31）；g2 +0.125 [+0.047, +0.219]
 （n=64），全部查询 +0.075 [+0.033, +0.125]。冻结判断：g1 primary 未过；g2 primary 通过但 consistency
 不可评估（本轮 base attack rate 3–8%，没有 12-round block 达到 ≥2 ungated attacks）→ 两臂均 **FAIL**（保留）。
-round 4（协议 §6，seeds 10–21，三 seed 一个 block，gate-free 臂合计 ≥3 attacks 才可评估）已冻结并在跑。
+round 4（协议 §6，seeds 10–21，三 seed 一个 block，gate-free 臂合计 ≥3 attacks 才可评估）：4/4 block 可评估；
+attacks / 144：ungated 10、noop 9、g1 4、g2 2；配对（touched）g1 +0.087 [+0.022, +0.174]（n=46）、g2 +0.072
+[+0.021, +0.124]（n=97）；两臂各在 3/4 block 上优于 noop → **g1 primary PASS，g2 secondary PASS**；g2 accuracy 0.87 为四臂最高。
+22 seeds 合并（描述性）：g1 +0.091 [+0.026, +0.169]，g2 +0.093 [+0.050, +0.143]，可评估 block 6/6 与 5/6 改善。
+边界：单一载体与模型；round 4 的 block 设计在看过 5 个 round-3 seed 的中期汇总后冻结（协议 §6 披露）；不升级 P3-A 的恢复证据。
 AgentPoison round 3 在本环境不可行（无网络取 dev split 与 DPR encoder）。
 结果：`results/real/p3b_round3/`，`docs/p3b-round3-results-2026-09-03.md`。

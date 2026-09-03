@@ -29,8 +29,9 @@ trustworthy by recovering a hidden driver. Both lines now have frozen, replicate
 - **Trustworthiness (P3).** On MINJA the hidden poison-retrieved → anomalous dependency is
   recovered in 3/3 seeds and traced back to the write round; on AgentPoison-StrategyQA the
   label-free driver recovers 1/2 poisoned records directly and 2/2 after a pre-frozen cluster
-  expansion. Online mitigation (P3-B) failed its frozen rule on both carriers and is kept as a
-  negative result.
+  expansion. Online mitigation (P3-B) failed its frozen rule in rounds 2 and 3; round 4 on MINJA
+  (exposure gap closed by same-stem expansion, three-seed blocks) passes for both deletion
+  policies against a no-op control, at no loss of accuracy.
 
 ## 1. The two requirements and the constraints before them
 
@@ -324,13 +325,19 @@ before retrieval; ten seeds, 12 held-out rounds each, four arms.
 | g1 | 4 | 0.85 | +0.097 [−0.032, +0.226], n = 31 |
 | g2 | 0 | 0.89 | +0.125 [+0.047, +0.219], n = 64 |
 
-Frozen judgement: FAIL for both arms. g2's pooled effect is positive with an interval
-excluding zero (also over all queries, +0.075 [+0.033, +0.125]) and it removes every attack
-at the best accuracy, but the base attack rate this round is 3–8%, so no 12-round block
-reaches the evaluability floor and the consistency clause cannot be evaluated. Round 4
-(seeds 10–21, three-seed blocks, both gate-free arms counting toward evaluability) was
-frozen after that interim observation and is running. AgentPoison round 3 is blocked in
-this environment (no network path to the StrategyQA dev split or the DPR encoder).
+Frozen judgement for round 3: FAIL for both arms. g2's pooled effect is positive with an
+interval excluding zero and it removes every attack at the best accuracy, but the base
+attack rate this round is 3–8%, so no 12-round block reaches the evaluability floor.
+
+**Round 4 (fresh seeds 10–21, four three-seed blocks, frozen after that interim
+observation): PASS for both arms.** Attacks per 144 rounds: ungated 10, no-op 9, g1 4, g2 2;
+accuracy 0.83 / 0.80 / 0.85 / 0.87. Paired effect against no-op on touched queries: g1
++0.087 [+0.022, +0.174] (n = 46), g2 +0.072 [+0.021, +0.124] (n = 97); all four blocks
+evaluable and 3 of 4 improve under each policy. Pooled over 22 seeds (descriptive): g1
++0.091 [+0.026, +0.169], g2 +0.093 [+0.050, +0.143]. The effect is small in absolute terms
+because the attack is rare against this model; relative to the no-op control the gate
+removes about half (g1) to four fifths (g2) of the attacks. AgentPoison round 3 is blocked
+in this environment (no network path to the StrategyQA dev split or the DPR encoder).
 
 ## 6. Claim ledger
 
@@ -345,7 +352,7 @@ this environment (no network path to the StrategyQA dev split or the DPR encoder
 | Graph selection cuts LLM input at indistinguishable exact success | tokens supported; EES cost measured | −70–74% input at an EES cost of 0.10–0.19 (n≈64, rounds 3–4); non-inferiority at −0.10 not met |
 | The LLM runtime exploits the learned structure | unsupported | best cell 0.70 against 0.99 deterministic on the same episodes |
 | Hidden read edge and write ancestry are recoverable on a real attack | supported with boundaries | MINJA 3/3 seeds; AgentPoison 1/2 → 2/2; oracle-tagged channel |
-| Online mitigation from the recovered graph | not supported as frozen; round-3 g2 effect positive, blocks unevaluable | rounds 2 and 3 FAIL; g2 0/120 attacks, +0.125 [+0.047, +0.219] vs no-op; round 4 running |
+| Online mitigation from the recovered graph | supported on MINJA (round 4 PASS, one carrier and model) | round 4: g1 +0.087 [+0.022, +0.174], g2 +0.072 [+0.021, +0.124] vs no-op, 3/4 blocks each; rounds 2–3 FAIL kept |
 
 ## 7. Decisions open for the meeting
 
@@ -371,5 +378,5 @@ this environment (no network path to the StrategyQA dev split or the DPR encoder
 | v3 preregistration and results | `docs/hidden-mechanism-v3-preregistration.md`, `docs/hidden-mechanism-v3-results.md` |
 | v3 dev results and gates | `results/development/hm3/` |
 | v3 test, fresh-seed and API results | `results/real/hm3/`, `results/real/hm3/round2/` |
-| deck and figures | `slides/8-30_huaman_edit.pptx`, `slides/figs_0830/`; P2 block as revised on 9/3: `slides/fig_p2rev_0903.py`, `slides/revise_p2_0903.py`, presenter script `docs/p2-presenter-script-2026-09-03.md` (earlier P2 slides: `slides/fig_p2v3_0903.py`, `slides/add_p2_human_0903.py`) |
+| deck and figures | `slides/8-30_huaman_edit.pptx`, `slides/figs_0830/`; P2 block as revised on 9/3: `slides/fig_p2rev_0903.py`, `slides/revise_p2_0903.py`, presenter script `docs/presenter-script-2026-09-03.md` (earlier P2 slides: `slides/fig_p2v3_0903.py`, `slides/add_p2_human_0903.py`) |
 | credential handling | `code/run_with_local_deepseek.py` (key read into the child environment only) |
