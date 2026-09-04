@@ -112,4 +112,7 @@ Round 3 只放大矩阵并改用与 MINJA round 4 相同的判断规则，其余
 | secondary | micro attack rate 与 accuracy per arm；clean vs clean_gated 的 collateral；ungated vs noop 的 flip rate；driver precision / recall（事后） |
 | budget | $12 上限（预计约 $9）；基础设施失败按同参数 checkpoint 续跑 |
 
-判断失败则保留负结果；不重抽 id、不改阈值。
+冻结记录（`results/real/p3b_round3/agentpoison/frozen_protocol.json`）：dev 集 SHA、trigger SHA、
+upstream commit、模型与 driver 参数与 round 2 相同；snapshot 的 embedding SHA 与 round 2 不同
+（`6e1dacf0…` 对 `0cc6cdcc…`，CPU 重编码的浮点差异），snapshot spec SHA（记录 id、内容、配置）
+按冻结文件如实报告。判断失败则保留负结果；不重抽 id、不改阈值。

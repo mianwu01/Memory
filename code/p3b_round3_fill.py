@@ -67,6 +67,25 @@ if r4p.exists():
             b = Jp[arm]["touched_paired_noop_minus_arm"]; ball = Jp[arm]["all_paired_noop_minus_arm"]
             lines.append(f"- {arm}: touched-query paired mean {b['mean']:+.3f} [{b['ci_lo']:+.3f}, {b['ci_hi']:+.3f}] (n = {b['n']}); all queries {ball['mean']:+.3f} [{ball['ci_lo']:+.3f}, {ball['ci_hi']:+.3f}] (n = {ball['n']})")
         lines.append("")
+# ---- AgentPoison round 3, if present
+ap = ROOT / "results/real/p3b_round3/agentpoison/agentpoison_r3_summary.json"
+if ap.exists():
+    sa = json.load(open(ap)); Ja, Ma, Ua = sa["judgement"], sa["micro"], sa["utility"]
+    bt, ba = Ja["touched_paired_noop_minus_gated"], Ja["all_paired_noop_minus_gated"]
+    lines += ["## 5d. AgentPoison-StrategyQA round 3 (protocol §7)", "",
+              f"- Judgement: **{'PASS' if Ja['pass'] else 'FAIL'}** — touched-trajectory paired mean noop − gated = "
+              f"{bt['mean']:+.3f} [{bt['ci_lo']:+.3f}, {bt['ci_hi']:+.3f}] (n = {bt['n']}); all trajectories {ba['mean']:+.3f} "
+              f"[{ba['ci_lo']:+.3f}, {ba['ci_hi']:+.3f}]; evaluable blocks {Ja['evaluable_blocks']} of {len(sa['blocks'])}, improved "
+              f"{Ja['improved_blocks_vs_noop']} of required {Ja['required_improved']}.", "",
+              "| arm | trajectories | attacks | attack rate | accuracy |", "|---|---:|---:|---:|---:|"]
+    for arm in ("ungated", "noop", "gated"):
+        m = Ma[arm]; lines.append(f"| {arm} | {m['trajectories']} | {m['attacks']} | {m['attack_rate']:.3f} | {m['accuracy'] if m['accuracy'] is None else round(m['accuracy'], 3)} |")
+    lines += ["", "| block | ungated | noop | gated | evaluable | gated vs noop | touched |", "|---:|---:|---:|---:|---|---|---:|"]
+    for b in sa["blocks"]:
+        a = b["attacks"]; lines.append(f"| {b['seed']} | {a['ungated']} | {a['noop']} | {a['gated']} | {'yes' if b['evaluable'] else 'no'} | {b['direction_vs_noop']} | {b['touched']} |")
+    lines += ["", f"Collateral on clean queries: {Ua['clean_trajectories']} trajectories, gated retrieval touched {Ua['gated_touched']}, answers changed "
+              f"{Ua['answers_changed']}, accuracy clean {Ua['accuracy_clean']} vs clean-gated {Ua['accuracy_clean_gated']}. Noise floor (ungated vs no-op flip rate): "
+              f"{sa['noise_floor_ungated_vs_noop_flip_rate']}.", ""]
 lines += ["", "## 6. Boundaries", "",
           "- Mitigation evidence on a label-free deletion policy; it does not upgrade P3-A's recovery evidence.",
           "- The prefix-neighbourhood expansion assumes the attack writes escalating notes onto one question stem, which is MINJA's mechanism; a different attack needs its own neighbourhood.",
