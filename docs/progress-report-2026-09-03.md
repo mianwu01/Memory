@@ -364,11 +364,30 @@ in this environment (no network path to the StrategyQA dev split or the DPR enco
    or a stronger runtime, or report the token reduction alone?
 4. **Formal gap.** Treat graph 0.72 vs program 0.89 as a method problem to solve before
    submission or as a finding to report?
-5. **P3-B.** Keep the FAILs and stop, or run the drafted round 3?
+5. **P3-B.** Round 4 passed on MINJA with its boundaries stated (rounds 2 and 3 stay FAIL in the
+   record). Does mitigation enter the paper as a supported-with-boundaries result, and is an
+   AgentPoison round worth running once the network allows?
 6. **Scale simulation.** Run d = 50 → 5,000 with MLP mechanisms as the next simulation round?
 7. **Venue.** ICLR 2027: abstracts Sep 18, papers Sep 25, 2026 (AOE).
 
-## 8. Reproduction map (P2 and formulation)
+## 8. Deck map (`slides/8-30_huaman_edit.pptx`, 21 slides)
+
+| slides | content | report section |
+|---|---|---|
+| 1–4 | title, the object, the formulation, how the graph is recovered | §2 |
+| 5 | E0: conditioning on write / hold / read reveals gated dependencies | §3 |
+| 6–11 | effectiveness: MemoryArena as module, the frozen PASS, the audit, the v3 task, the fresh-seed result | §4.1–4.7 |
+| 12 | setting table (deterministic replication and LLM runtime) | §4.5, §4.8 |
+| 13–15 | trustworthiness: the poisoning object, the two agents, recovery results | §5 |
+| 16–17 | online mitigation: the no-op-controlled test and the round-3/4 result | §5.1 |
+| 18 | setting table (MINJA-QA and AgentPoison) | §5 |
+| 19 | appendix: the LLM runtime, selection × serialization | §4.8–4.9 |
+| 20 | appendix: the witness-closure diagnosis | §4.9 |
+| 21 | appendix: claim ledger and decisions | §6–7 |
+
+Speaking draft: `docs/presenter-script-2026-09-03.md`.
+
+## 9. Reproduction map (P2, formulation and P3-B)
 
 | what | where |
 |---|---|
@@ -380,3 +399,4 @@ in this environment (no network path to the StrategyQA dev split or the DPR enco
 | v3 test, fresh-seed and API results | `results/real/hm3/`, `results/real/hm3/round2/` |
 | deck and figures | `slides/8-30_huaman_edit.pptx`, `slides/figs_0830/`; P2 block as revised on 9/3: `slides/fig_p2rev_0903.py`, `slides/revise_p2_0903.py`, presenter script `docs/presenter-script-2026-09-03.md` (earlier P2 slides: `slides/fig_p2v3_0903.py`, `slides/add_p2_human_0903.py`) |
 | credential handling | `code/run_with_local_deepseek.py` (key read into the child environment only) |
+| P3-B rounds 3–4 | `code/minja_online_gate_r3.py`, `code/minja_online_gate_r3_summary.py`, `docs/p3b-round3-protocol-2026-09-03.md`, `docs/p3b-round3-results-2026-09-03.md`, `results/real/p3b_round3/` |
