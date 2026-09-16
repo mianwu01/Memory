@@ -1,0 +1,19 @@
+{
+  "complete": false,
+  "arm": "ours",
+  "id": 101,
+  "counts": {
+    "actor_contract": 1,
+    "init": 1,
+    "write": 5,
+    "retrieve": 5,
+    "llm": 9,
+    "actor_generation_failure": 1,
+    "api_error": 1,
+    "invalid": 1
+  },
+  "error_type": "PermissionDeniedError",
+  "failures": [
+    "API request did not produce a complete response"
+  ]
+}

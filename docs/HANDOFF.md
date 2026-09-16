@@ -1,6 +1,102 @@
-# Handoff — causal-memory final experiment state (2026-08-30)
+# Handoff — causal-memory experiment state (updated 2026-09-15)
+
+> **当前续跑入口（2026-09-15，优先于下方历史记录）：** `faithful_memory_aiaaa_v2` 已因余额不足停止，没有在后台继续运行。
+> 最新逐项快照：[readiness.json](../results/development/faithful_memory_aiaaa_v2/readiness.json)；5/16 个开发门槛通过，正式 0/100。
+> aiaaa 的生成探针返回 403 `INSUFFICIENT_BALANCE`，TokenRhythm 返回 402 同一错误；不是实现验收全部完成。
+> 三个 online 机制小例、noGcompact/query_only 的 ID101 已完成；其余 8 个 Travel 和 3 个完整 LoCoMo 验证待恢复。
+> 默认仍为 aiaaa / deepseek-v4-flash-0731；memory 使用 `reasoning_effort=none`，A-Mem 保留作者 1000 上限；actor 原版。
+> 检索配置 Mem0 200 / LightMem 60 / A-Mem 10，详见登记文件。不要恢复 v1 的 16000 A-Mem 校准配置。
+> 已记录修复新增 ¥44.03236976，累计 ¥320.51447876；未知用量/价格未对账。失败记录全部保留。
+> 需要账户恢复后先小额验证，再事前登记技术恢复目录；不能直接重启旧 supervisor、覆盖失败或重复调用已完成门槛。
+> suite 已增加遇到失败停止启动新案例的保护；在途任务允许结束，避免丢失实际响应与费用。
+> [当前交付与 outline](yujia-progress-2026-09-15.md)；正式结果、对应新对比 demo/PDF 仍未完成。
+> [已导出离线审阅包](../results/development/yujia_offline_update_2026_09_15/README.md)：进展、中文 outline、重编译 LaTeX 和历史示例副本；中文字体已嵌入。
+
+
+> **当前任务：** 用户已授权全部修复并重新运行有效比较。v5 只保留为历史探索性结果，不能继续作为主表。
+> 新环境 `.tmp/memory-faithful-venv`，新代码 `code/faithful_memory*.py`，
+> 开发产物 `results/development/faithful_memory_v1`、`v2`、`v3`；原生 LoCoMo 全历史检查 `faithful_memory_native_v1`。见 [修复与验收记录](faithful-memory-remediation-2026-09-15.md)。
+
+> **旧 v5 状态的 2026-09-15 验收补充：** 上游来源、冻结哈希和十臂运行完成已核实，方法忠实度与研究要求仅部分满足。
+> Mem0 缺失依赖使关键词检索关闭；A-Mem 当前为作者 SDK 普通 search 路径，论文复现另有仓库；
+> LightMem 是关闭预压缩/主题分段、每轮全量 consolidation 的适配配置。十臂共用本地 v3 decoder。
+> 下方“完成”只指既定配置的执行，不能当作研究验收全部通过。详见
+> [来源与方法验收审查](baseline-fidelity-audit-2026-09-15.md)。原结果和冻结生成代码保留。
+
+<!-- recent-memory-completion:start -->
+> **历史探索性配对评估（已降级）：** 十臂均完成 IDs 111/112/113，官方评分与用量完整性检查通过。
+> [结果表与逐 episode 比较](../results/real/p2_recent_baselines_tokenrhythm_v5_completed/results.md)；表中完整结果的用量估算 ¥25.3557。
+> 新中转探针及全部开发/评估合计估算 ¥46.4821，
+> 加旧账单 ¥230 后为 ¥276.4821。缺失用量与 aiaaa 未知费用未计入；不是对账总额。
+> 这是三个复用 holdout episodes 的描述性配对复验；不证明 causal necessity 或真实 latent identifiability。
+> summary 使用按预先记录的技术恢复规则完成的补跑，其余九臂保留原结果；原始批次的断流失败及费用另行保留。
+<!-- recent-memory-completion:end -->
+
+**旧 v5 对照（不进入新主表）：** Ours 与同格式 noGcompact 的逐 episode PS/SPS/SR 全部持平，官方 person-PS 都为 90.91%（20/22）。输入从 245,599 降至 123,701 tokens，减少 49.63%；总费用估算为 ¥0.8067 / ¥0.7713，Ours 高 4.59%。这支持输入压缩的观察；相对这一对照，本轮未显示准确率或货币成本优势。
+
+> 旧协议为 `p2_recent_baselines_tokenrhythm_v5`：流式汇总、共享请求节流和有限 HTTP 重试。
+> 开发验证采用 v2/v3 已通过的方法与 v5 LightMem；正式十臂共同冻结并完成。
+> 启动任何实验前先检查 [续跑状态](../results/real/p2_recent_baselines_tokenrhythm_v5/recovery_state.json)，避免重复调用。
+> [aiaaa 备用接口](aiaaa-relay-2026-09-14.md) 4 次短请求已通过，单价待核对。
+
+> **2026-09-14 最新中转：** 已验证并激活 TokenRhythm `https://tokenrhythm.studio/v1`
+> + `deepseek-flash`。16/16 生成探针通过（含工具回传）；估算 ¥0.114。公开标价输入 2、
+> 输出 8、缓存命中 0.04 元/M tokens。旧 bboluo 用户确认已花 230 元单独保留。
+> 初始 267–277 元预测未覆盖传输修复和完整长推理；使用
+> [累计费用与开发校准](../results/development/tokenrhythm_cumulative_budget_2026_09_14.json) 更新规划。
+> 约 300 元不是硬上限；旧 5,000 元按次报价已被新路由预算替代。aiaaa 单价仍未知。
+> 详见 [测试、单价与预算](tokenrhythm-switch-2026-09-14.md)。凭据只在 ignored 0600 本地文件。
+
+> **9/04 会议主线：** 不扩展 simulation；变量口径、三页具体 slide 与段落/句子 outline 已完成。
+> 三套 native baseline 已适配，当前 family 为 `p2_recent_baselines_tokenrhythm_v5`。
+> 开发验证来源不拼成排名，正式十臂比较须全部完成再报告。
+> 完整交付见 [执行报告](yujia-meeting-delivery-2026-09-14.md)。旧
+> `p2_recent_baselines_v0_debug` / `v1` 保留，不能把初版 A-Mem（evolution schema 失败）
+> 的单例 100% 当有效成绩。不要用 upstream 静态 cost 作为新中转金额，需汇总 actor/memory usage。
+> 先检查开发，再 freeze evaluation；111–113 是旧 holdout IDs 的描述性配对复验。
+> 不推进 synthetic v3，不发消息给 Yujia；四个上游源码保持不动。
+
+后续交互命令使用用户指定的 `tts-sft/.venv/grpo-pilot`（Python 3.10.16）；它与已运行
+实验的 transformers 版本不同且缺少 native memory 依赖。本轮实验继续固定使用
+`.tmp/memory-baselines-venv/bin/python`，不要为了切换交互环境重启或混用冻结依赖。
+
+> **2026-08-31 superseding audit:** 本页保留 P2/P3 冻结实验的完整证据，但不再单独代表
+> 项目的最新总体 claim。四个 redesigned task 的 train-only/novel-split/六臂 T1 已完成：
+> learned 四项均胜 matched generic retrieval，却与四项强 domain solver 的 1.0 task
+> success 全部持平，所以 causal-necessity 判据为 **0/4**。Simulation v2 observed
+> linear/MLP 五 seed 通过，latent identification 不支持；P3-A auditing 仍为有边界支持，
+> P3-B actionable mitigation 仍失败。最新 machine-readable 裁决、精确定义和 8-15
+> 遗留状态见 [`yujia-story-audit-2026-08-31.md`](yujia-story-audit-2026-08-31.md) 与
+> `results/development/yujia_story_audit.json`。下表中“学得图优于手工图”只指原 Travel
+> answerability/context-compression 比较，不能解释为相对 task-specific domain solver 的
+> causal necessity 证据。
+
+> **2026-08-31 real-API addendum:** 本地 `deepseek_apikey.md` 已用于真实调用。四任务
+> six-arm v1 已产生 288/288 results、309 ledger events，integrity/full-scope 均完整，费用
+> `$6.607622`；284 rows 可评分，4 个 full-state rows 为未评分工程/合同缺失，因此 summary
+> 正确 fail-closed 为 `experiment_complete=false`。learned arm 的 valid-only endpoint 四项
+> 都为 1.0，但不能升级为 causal necessity：v1 `domain_solver` 只是 potential reachability，
+> Travel/Shopping/Formal 仍有 structured shortcut，且旧重试策略把 node-set semantic
+> contract mismatch 与工程格式错误混在一起。权威结果说明为
+> [`causal-api-six-arm-v1-results.md`](causal-api-six-arm-v1-results.md)；原 artifacts 不回填、
+> 不 gold-repair。
+
+> **Anti-shortcut addendum:** `killer_lookup_dev_audit.json` 在四个现有 task 上都触发
+> sufficient-mask stop rule。随后独立构造的 hidden-routing v2 也没有被硬写成正结果：公平
+> train-enabled codebook program 与 learner exact tie，history 暴露 100% potential-edge
+> skeleton，四个 domain 的 normalized fingerprint 相同，artifact verdict 为 `PARTIAL`、
+> `all_domains_pass=false`。因此没有启动下一轮 API。四个真正不同的 transactional v3 DGP、
+> sample/variable、baseline 与 endpoint 已预注册在
+> [`hidden-mechanism-v3-preregistration.md`](hidden-mechanism-v3-preregistration.md)，下一外部
+> 依赖是 Yujia double-check，而不是 API key。
 
 这是当前工作区的权威状态页。早期逐轮过程保留在 `docs/session-status-2026-08-27.md`，但其中的 P3 负结果和 “e2e 0 episodes” 已被本页的新实测取代。
+
+## 旧修复过程的定位
+
+v1 的 16000-token A-Mem 调整、stream recovery 与旧 supervisor 均已停止；它们是失败的开发过程，
+不再是续跑入口。完整历史记录见 [修复记录](faithful-memory-remediation-2026-09-15.md)。
+当前状态与恢复前提以上方 v2 快照为准，后面的 P1/P2/P3 内容保留历史科学证据。
 
 ## 1. 一句话结论
 
@@ -10,6 +106,8 @@
 
 | 主张 | 状态 | 证据 |
 |---|---|---|
+| 四任务 SelectionPlan + 真实 API decoder 可执行 | 支持，但仅为条件性执行证据 | 288-case scope、284 semantic-scored；learned valid endpoint 4/4 为 1.0，详见 `results/causal_benchmarks/api_six_arm_test_v1_summary.json` |
+| 四任务真实 API v1 证明 learned causal necessity | **不支持** | 弱 domain reachability、三任务 shortcut、4 missing 与 semantic-contract retry 边界，见结果说明 |
 | Regime-conditioned discovery 恢复标准方法漏掉的 gated read edge | 已支持 | `results/regime_grace_e0.json`：σ∈{0,0.01,0.1} 均为 ours 2/2，blind/additive 0/2 |
 | 学得图优于手工图做记忆选择 | 已支持 | `results/real/p2_benchmark_v2_summary.json`：learned 1.000/1.000 @1558，hand scaffold 0.993/0.973 @1896 |
 | 不使用 query 人名 oracle 时仍优于检索 baseline | 已支持 | `results/real/p2_benchmark_pure_summary.json`：pure 0.962/0.845 @1142；BM25 0.920/0.719 @1951 |

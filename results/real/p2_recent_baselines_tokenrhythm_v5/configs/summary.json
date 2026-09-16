@@ -1,0 +1,37 @@
+{
+  "task_name": "travel_planner",
+  "agent": {
+    "model_name": "deepseek-flash",
+    "backend": "openai",
+    "api_key": "",
+    "base_url": "https://tokenrhythm.studio/v1",
+    "_api_key_note": "read from $OPENAI_API_KEY; never commit a key here"
+  },
+  "memory": {
+    "use_step_memory": false,
+    "memory_system_name": "recent-summary",
+    "server_url": "http://127.0.0.1:8123",
+    "learned_graph_path": "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json",
+    "local_arm": "summary"
+  },
+  "env": {
+    "env_name": "travel_planner",
+    "env_server_url": "http://127.0.0.1:8931",
+    "env_config": {
+      "judgement_mode": "none"
+    }
+  },
+  "task_specific": {
+    "max_steps": 12,
+    "llm_max_tokens": 32768,
+    "llm_thinking": "default",
+    "inherit_unspecified_from_base": true,
+    "decoder": "query-target/base-inheritance-v3",
+    "llm_transport": "stream_accumulate"
+  },
+  "output": {
+    "output_dir": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5/e2e/summary",
+    "log_dir": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5/logs/summary",
+    "global_csv": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5/results_summary.csv"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "source": "https://tokenrhythm.studio/models",
+  "retrieved_at": "2026-09-14",
+  "model": {
+    "id": "deepseek-flash",
+    "name": "deepseek-flash",
+    "type": "chat",
+    "status": "testing",
+    "contextWindow": 1000000,
+    "maxOutputTokens": 384000,
+    "capabilities": {
+      "openai": true,
+      "anthropic": true,
+      "stream": true,
+      "tools": true,
+      "reasoning": true,
+      "cacheRead": true,
+      "embeddings": false,
+      "vision": true,
+      "audio": false,
+      "video": false,
+      "file": false,
+      "imageEditing": false,
+      "responses": false
+    },
+    "protocolCapabilities": {
+      "openai": {
+        "available": true,
+        "stream": true,
+        "tools": true,
+        "reasoning": true,
+        "cacheRead": true,
+        "embeddings": false,
+        "vision": true
+      },
+      "anthropic": {
+        "available": true,
+        "stream": true,
+        "tools": true,
+        "reasoning": true,
+        "cacheRead": true,
+        "embeddings": false,
+        "vision": true
+      },
+      "responses": {
+        "available": false,
+        "modes": [],
+        "stream": false,
+        "tools": false,
+        "background": false,
+        "compact": false,
+        "webSearch": false,
+        "mcp": false,
+        "codeInterpreter": false,
+        "imageGeneration": false,
+        "fileSearch": false,
+        "cancel": false
+      }
+    },
+    "modalities": [
+      "text",
+      "image"
+    ],
+    "effectiveAvailable": true,
+    "providerBrands": [
+      {
+        "provider": "deepseek",
+        "providerBrandName": "DeepSeek"
+      }
+    ],
+    "provider": "deepseek",
+    "providerDisplayName": "DeepSeek",
+    "supportsStream": true,
+    "supportsTools": true,
+    "reasoningMode": "optional",
+    "reasoningDefault": "provider",
+    "reasoningSupportedEfforts": [],
+    "reasoningSupportsMaxTokens": false,
+    "supportsReasoning": true,
+    "supportsVision": true,
+    "supportsImageEditing": false,
+    "supportsEmbeddings": false,
+    "supportsResponses": false,
+    "abilities": [
+      "chat",
+      "stream",
+      "tools",
+      "vision",
+      "anthropic"
+    ],
+    "inputPrice": "2.00000000",
+    "outputPrice": "8.00000000",
+    "cacheReadPrice": "0.04000000",
+    "discountInputPrice": null,
+    "discountOutputPrice": null,
+    "discountCacheReadPrice": null,
+    "hasDiscount": false,
+    "effectiveInputPrice": "2.00000000",
+    "effectiveOutputPrice": "8.00000000",
+    "effectiveCacheReadPrice": "0.04000000",
+    "billingMode": "per_1m_tokens",
+    "pricePerImage": null,
+    "billingUnit": 1000000,
+    "currency": "CNY",
+    "price": "按量计费",
+    "latency": "低",
+    "context": "1000K"
+  },
+  "billing_interpretation": "Public CNY prices per 1M tokens, not a reconciled account invoice."
+}

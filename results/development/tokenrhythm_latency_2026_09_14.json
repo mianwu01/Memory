@@ -1,0 +1,264 @@
+{
+  "schema": "tokenrhythm-route-probe/v1",
+  "endpoint": "https://tokenrhythm.studio/v1",
+  "model_requested": "deepseek-flash",
+  "profiles": {
+    "fixed_output_no_thinking": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Follow the output format exactly. Do not explain."
+        },
+        {
+          "role": "user",
+          "content": "Return a JSON object with one key numbers whose value is the array of integers from 1 to 60 inclusive. No markdown."
+        }
+      ],
+      "max_tokens": 512,
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "structured_default_thinking": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Apply the stated rules. Return only a JSON object with the requested final state, without markdown."
+        },
+        {
+          "role": "user",
+          "content": "Initial itinerary: flight arrival 9; transfer duration 2; attraction starts 12, duration 2, flexible=true; dinner fixed start 17; hotel checkin deadline 22. Intervention: flight arrival changes to 13. Rules: transfer end=arrival+transfer duration. Attraction needs one hour after transfer; if original start is too early, move attraction start to transfer end+1. Attraction end=start+duration. Dinner readiness=max(transfer end,attraction end); dinner status=missed if readiness>17, otherwise scheduled. Checkin hour=dinner readiness+1; checkin status=late if checkin hour>22, otherwise on_time. Return exactly the keys transfer_end, attraction_start, attraction_end, dinner_status, checkin_hour, checkin_status."
+        }
+      ],
+      "max_tokens": 2048
+    }
+  },
+  "method": {
+    "repeats": 3,
+    "concurrency": 1,
+    "retries": 0,
+    "stream": true,
+    "temperature": 0
+  },
+  "limitations": "Historical comparison only; requested model alias differs from old route.",
+  "requests": [
+    {
+      "profile": "fixed_output_no_thinking",
+      "replicate": 0,
+      "prompt_sha256": "b910bdb1f769f5920721943eb70873a063a5fedc7686b7b65150954c017ddff9",
+      "http_status": 200,
+      "model_returned": "deepseek-flash",
+      "first_token_seconds": 1.865006422623992,
+      "first_answer_seconds": 1.8650076370686293,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 123,
+        "prompt_tokens": 42,
+        "total_tokens": 165,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "stream_done": true,
+      "answer": "{\"numbers\":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60]}",
+      "answer_correct": true,
+      "success": true,
+      "total_seconds": 2.063874311745167
+    },
+    {
+      "profile": "fixed_output_no_thinking",
+      "replicate": 1,
+      "prompt_sha256": "b910bdb1f769f5920721943eb70873a063a5fedc7686b7b65150954c017ddff9",
+      "http_status": 200,
+      "model_returned": "deepseek-flash",
+      "first_token_seconds": 1.3959211185574532,
+      "first_answer_seconds": 1.3959224671125412,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 123,
+        "prompt_tokens": 42,
+        "total_tokens": 165,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "stream_done": true,
+      "answer": "{\"numbers\":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60]}",
+      "answer_correct": true,
+      "success": true,
+      "total_seconds": 2.714693535119295
+    },
+    {
+      "profile": "fixed_output_no_thinking",
+      "replicate": 2,
+      "prompt_sha256": "b910bdb1f769f5920721943eb70873a063a5fedc7686b7b65150954c017ddff9",
+      "http_status": 200,
+      "model_returned": "deepseek-flash",
+      "first_token_seconds": 1.3797136256471276,
+      "first_answer_seconds": 1.379714767448604,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 123,
+        "prompt_tokens": 42,
+        "total_tokens": 165,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "stream_done": true,
+      "answer": "{\"numbers\":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60]}",
+      "answer_correct": true,
+      "success": true,
+      "total_seconds": 1.9664142252877355
+    },
+    {
+      "profile": "structured_default_thinking",
+      "replicate": 0,
+      "prompt_sha256": "5446d4df1498d2b00da4954f1b621aec2ea883d9bd62f7b956df7fe792cc59e8",
+      "http_status": 200,
+      "model_returned": "deepseek-flash",
+      "first_token_seconds": 1.5202430505305529,
+      "first_answer_seconds": 2.592326826415956,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 310,
+        "prompt_tokens": 214,
+        "total_tokens": 524,
+        "completion_tokens_details": {
+          "reasoning_tokens": 270
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "stream_done": true,
+      "answer": "{\"transfer_end\":15,\"attraction_start\":16,\"attraction_end\":18,\"dinner_status\":\"missed\",\"checkin_hour\":19,\"checkin_status\":\"on_time\"}",
+      "answer_correct": true,
+      "success": true,
+      "total_seconds": 2.7337797731161118
+    },
+    {
+      "profile": "structured_default_thinking",
+      "replicate": 1,
+      "prompt_sha256": "5446d4df1498d2b00da4954f1b621aec2ea883d9bd62f7b956df7fe792cc59e8",
+      "http_status": 200,
+      "model_returned": "deepseek-flash",
+      "first_token_seconds": 1.020988317206502,
+      "first_answer_seconds": 2.2046797601506114,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 351,
+        "prompt_tokens": 214,
+        "total_tokens": 565,
+        "completion_tokens_details": {
+          "reasoning_tokens": 311
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "stream_done": true,
+      "answer": "{\"transfer_end\":15,\"attraction_start\":16,\"attraction_end\":18,\"dinner_status\":\"missed\",\"checkin_hour\":19,\"checkin_status\":\"on_time\"}",
+      "answer_correct": true,
+      "success": true,
+      "total_seconds": 2.3351986398920417
+    },
+    {
+      "profile": "structured_default_thinking",
+      "replicate": 2,
+      "prompt_sha256": "5446d4df1498d2b00da4954f1b621aec2ea883d9bd62f7b956df7fe792cc59e8",
+      "http_status": 200,
+      "model_returned": "deepseek-flash",
+      "first_token_seconds": 1.3970702234655619,
+      "first_answer_seconds": 2.931823408231139,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 363,
+        "prompt_tokens": 214,
+        "total_tokens": 577,
+        "completion_tokens_details": {
+          "reasoning_tokens": 323
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "stream_done": true,
+      "answer": "{\"transfer_end\":15,\"attraction_start\":16,\"attraction_end\":18,\"dinner_status\":\"missed\",\"checkin_hour\":19,\"checkin_status\":\"on_time\"}",
+      "answer_correct": true,
+      "success": true,
+      "total_seconds": 3.0674763657152653
+    },
+    {
+      "profile": "sdk_tool_roundtrip",
+      "step": 0,
+      "model_returned": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 298,
+        "total_tokens": 333,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 298
+      },
+      "finish_reason": "tool_calls",
+      "success": true,
+      "total_seconds": 1.4943728595972061
+    },
+    {
+      "profile": "sdk_tool_roundtrip",
+      "step": 1,
+      "model_returned": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 114,
+        "total_tokens": 127,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 114
+      },
+      "finish_reason": "stop",
+      "answer": "{\"city\": \"Shanghai\", \"country\": \"China\"}",
+      "success": true,
+      "total_seconds": 0.9235389335080981
+    }
+  ],
+  "summary": {
+    "fixed_output_no_thinking": {
+      "attempts": 3,
+      "successes": 3,
+      "median_first_token_seconds": 1.3959211185574532,
+      "median_first_answer_seconds": 1.3959224671125412,
+      "median_total_seconds": 2.063874311745167
+    },
+    "structured_default_thinking": {
+      "attempts": 3,
+      "successes": 3,
+      "median_first_token_seconds": 1.3970702234655619,
+      "median_first_answer_seconds": 2.592326826415956,
+      "median_total_seconds": 2.7337797731161118
+    },
+    "sdk_tool_roundtrip": {
+      "attempts": 2,
+      "successes": 2,
+      "median_total_seconds": 1.2089558965526521
+    }
+  }
+}

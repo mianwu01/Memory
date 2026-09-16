@@ -1,0 +1,12 @@
+{
+  "passed": false,
+  "arm": "mem0",
+  "offline": true,
+  "error_type": "ValueError",
+  "failures": [],
+  "counts": {
+    "init": 1,
+    "mechanism": 4,
+    "retrieve": 1
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "source_hashes": {
+    "code/faithful_arena_run.py": "ab64d0eb887b0d8ecb3e6d9d582eebc3f2dcd4ff7b0e754d1875db3d9c397c9d",
+    "code/faithful_memory.py": "b6dd196ef3c07b7c001c0a1db9fb13b40cf6bcb1f2629815a9cd88bb5fa0ff85",
+    "code/faithful_transport.py": "4d4f4360a59988bac5b65ae65bba1f9d6f9f8d1678556910c808b87c492c4e10",
+    "code/arena_causal_memory.py": "b3d1b439e2877483e6adb8ce0d90ffba2426bf6e3407ad0c40fcbfe61d43d5a3",
+    "code/arena_e2e_inherit.py": "a853863067dd12a7efa91d366adc11f9f064b93e010b626c277d20763246026f",
+    "code/relay_chat_transport.py": "0b10f10cb29b0f15f1354dee1f58665ea350150df6bfcaa564d4de9e9cb2d11e"
+  },
+  "model": "deepseek-v4-flash-0731",
+  "endpoint": "https://aiaaa.cc/v1",
+  "actor_thinking": "default",
+  "actor_length_policy": "native_passthrough"
+}

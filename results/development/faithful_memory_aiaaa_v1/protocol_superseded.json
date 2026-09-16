@@ -1,0 +1,16 @@
+{
+  "registered_at": 1789441165.0949135,
+  "accepted_as_main_result": false,
+  "terminated_pids": [
+    1848602,
+    1856515,
+    1893565,
+    1931979,
+    1954517,
+    1954568,
+    1954570,
+    1957359
+  ],
+  "reason": "API mode probe reproduced that thinking=disabled is ignored for hard prompts; reasoning_effort=none correctly disables reasoning. Stop this development configuration before further calls; new v2 uses correct mode and author A-Mem default 1000. No formal evaluation started.",
+  "billing": "In-flight interrupted requests may have unreported charges; recorded successful usage retained."
+}

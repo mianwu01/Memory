@@ -47,7 +47,7 @@ SYSTEM_PROMPT = (
     "or Finish[...]. Never emit a Thought without its Action and never emit an "
     "Observation."
 )
-DEEPSEEK_BASE_URL = "https://api.deepseek.com/v1"
+DEEPSEEK_BASE_URL = "https://bboluo.com/v1"
 COST_RATES_USD_PER_MILLION = {
     "uncached_input": 2.5,
     "cached_input": 0.25,
@@ -821,8 +821,8 @@ def run(args) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--backend", choices=["sim", "openai"], default="sim")
-    parser.add_argument("--model", default="deepseek-v4-flash")
-    parser.add_argument("--base-url", default=DEEPSEEK_BASE_URL)
+    parser.add_argument("--model", default=os.getenv("OPENAI_MODEL", "deepseek-v4-flash"))
+    parser.add_argument("--base-url", default=os.getenv("OPENAI_BASE_URL", DEEPSEEK_BASE_URL))
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument(
         "--strategyqa-dev",

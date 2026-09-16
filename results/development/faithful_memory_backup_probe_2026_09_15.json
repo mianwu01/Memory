@@ -1,0 +1,41 @@
+{
+  "endpoint": "https://aiaaa.cc/v1",
+  "requested_model": "deepseek-v4-flash-0731",
+  "started_at": 1789438585.2980871,
+  "status_code": 200,
+  "seconds": 2.539765378460288,
+  "response": {
+    "id": "02178943858633891b94d62e219899eaebadcce7b395a23187e26",
+    "created": 1789438587,
+    "model": "deepseek-v4-flash-0731",
+    "object": "chat.completion",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "READY",
+          "role": "assistant",
+          "provider_specific_fields": {
+            "refusal": null
+          }
+        },
+        "provider_specific_fields": {}
+      }
+    ],
+    "usage": {
+      "completion_tokens": 2,
+      "prompt_tokens": 10,
+      "total_tokens": 12,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost_cny": "0.00004800",
+    "billing_pending": false,
+    "trace_id": "trace_1671e091-4f7e-40a8-9474-f2f1d0d828d5"
+  }
+}

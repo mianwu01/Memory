@@ -1,0 +1,1 @@
+{"schema": "faithful-memory/v1", "arm": "lightmem", "episode": "offline", "instance": "fc3e75d1f2394782a488af19dc48ceee", "phase": "init", "round": 0, "time": 1789433576.0158412, "event": "init", "backend_module": "lightmem.memory.lightmem", "backend_class": "LightMemory", "retrieval_k": null}

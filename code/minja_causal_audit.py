@@ -177,7 +177,7 @@ def _client():
     if _CLIENT is None:
         from openai import OpenAI
         _CLIENT = OpenAI(api_key=os.environ["OPENAI_API_KEY"],
-                         base_url=os.getenv("OPENAI_BASE_URL") or None,
+                         base_url=os.getenv("OPENAI_BASE_URL") or "https://bboluo.com/v1",
                          timeout=90.0, max_retries=0)
     return _CLIENT
 
@@ -460,7 +460,7 @@ def run(args):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--backend", choices=["sim", "openai"], default="sim")
-    ap.add_argument("--model", default="gpt-4o")
+    ap.add_argument("--model", default=os.getenv("OPENAI_MODEL", "gpt-4o"))
     ap.add_argument("--minja_qa_dir", default=DEFAULT_QA_DIR)
     ap.add_argument("--file_name", default="high_school_chemistry_test")
     ap.add_argument("--num_templates", type=int, default=8)

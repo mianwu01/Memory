@@ -1,0 +1,79 @@
+{
+  "schema": "causal-memory-t0-audit/v1",
+  "task": "dynamic_travel",
+  "event_counts": {
+    "attraction_closure": 100,
+    "dinner_closure": 100,
+    "flight_delay": 100,
+    "hotel_deadline_change": 100,
+    "independent_profile_update": 100
+  },
+  "event_breakdown": {
+    "attraction_closure": {
+      "episodes": 100,
+      "affected_nodes_min": 3,
+      "affected_nodes_mean": 3.0,
+      "affected_nodes_max": 3,
+      "exact_kv_affected_recall": 0.3333333333333329
+    },
+    "dinner_closure": {
+      "episodes": 100,
+      "affected_nodes_min": 3,
+      "affected_nodes_mean": 3.0,
+      "affected_nodes_max": 3,
+      "exact_kv_affected_recall": 0.3333333333333329
+    },
+    "flight_delay": {
+      "episodes": 100,
+      "affected_nodes_min": 4,
+      "affected_nodes_mean": 5.97,
+      "affected_nodes_max": 7,
+      "exact_kv_affected_recall": 0.17380952380952372
+    },
+    "hotel_deadline_change": {
+      "episodes": 100,
+      "affected_nodes_min": 2,
+      "affected_nodes_mean": 2.0,
+      "affected_nodes_max": 2,
+      "exact_kv_affected_recall": 0.5
+    },
+    "independent_profile_update": {
+      "episodes": 100,
+      "affected_nodes_min": 1,
+      "affected_nodes_mean": 1.0,
+      "affected_nodes_max": 1,
+      "exact_kv_affected_recall": 1.0
+    }
+  },
+  "propagation_fraction": 0.8,
+  "downstream_query_leakage": {
+    "leaked": 0,
+    "downstream_changed_nodes": 997,
+    "rate": 0.0
+  },
+  "exact_kv": {
+    "episodes": 500,
+    "propagation_required_episodes": 400,
+    "affected_precision": 1.0,
+    "affected_recall": 0.46809523809523895,
+    "affected_state_accuracy": 0.46809523809523895,
+    "full_state_accuracy": 0.8950526315789491,
+    "episode_success_rate": 0.2
+  },
+  "oracle": {
+    "episodes": 500,
+    "propagation_required_episodes": 400,
+    "affected_precision": 1.0,
+    "affected_recall": 1.0,
+    "affected_state_accuracy": 1.0,
+    "full_state_accuracy": 1.0,
+    "episode_success_rate": 1.0
+  },
+  "admission": {
+    "propagation_fraction_at_least_half": true,
+    "exact_kv_affected_recall_below_95_percent": true,
+    "oracle_affected_state_accuracy_is_one": true,
+    "no_downstream_query_leakage": true,
+    "pass": true
+  }
+}

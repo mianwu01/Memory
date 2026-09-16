@@ -1,0 +1,178 @@
+{
+  "schema": "causal-api-decoder-summary/v1",
+  "protocol_case_manifest_sha256": "0ddd22df0a07186462c06fd017789a3475a95c77e099d9333fcab50bd709228e",
+  "model_requested": "deepseek-v4-flash",
+  "base_url": "https://api.deepseek.com/v1",
+  "matrix": {
+    "causal_formal": {
+      "full_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 14002,
+        "cached_input_tokens": 13056,
+        "output_tokens": 6381,
+        "estimated_cost_usd": 0.06943900000000001,
+        "api_duration_seconds": 63.618425369262695,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      },
+      "oracle_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 11293,
+        "cached_input_tokens": 10368,
+        "output_tokens": 4692,
+        "estimated_cost_usd": 0.05182450000000001,
+        "api_duration_seconds": 47.597095012664795,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      }
+    },
+    "dynamic_search": {
+      "full_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 66978,
+        "cached_input_tokens": 66048,
+        "output_tokens": 9606,
+        "estimated_cost_usd": 0.11489700000000001,
+        "api_duration_seconds": 94.03169012069702,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      },
+      "oracle_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 20752,
+        "cached_input_tokens": 19712,
+        "output_tokens": 8890,
+        "estimated_cost_usd": 0.096428,
+        "api_duration_seconds": 90.93205118179321,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      }
+    },
+    "dynamic_shopping": {
+      "full_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 33386,
+        "cached_input_tokens": 32256,
+        "output_tokens": 16230,
+        "estimated_cost_usd": 0.173189,
+        "api_duration_seconds": 152.23320031166077,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      },
+      "oracle_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 24494,
+        "cached_input_tokens": 23808,
+        "output_tokens": 28555,
+        "estimated_cost_usd": 0.29321699999999995,
+        "api_duration_seconds": 262.4393939971924,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      }
+    },
+    "dynamic_travel": {
+      "full_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 17813,
+        "cached_input_tokens": 16896,
+        "output_tokens": 7372,
+        "estimated_cost_usd": 0.0802365,
+        "api_duration_seconds": 73.2964539527893,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      },
+      "oracle_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 12036,
+        "cached_input_tokens": 10880,
+        "output_tokens": 5255,
+        "estimated_cost_usd": 0.05816,
+        "api_duration_seconds": 59.02163481712341,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      }
+    }
+  },
+  "manifest_audit": {
+    "complete": true,
+    "calls_expected": 96,
+    "calls_received_unique": 96,
+    "missing_request_ids": [],
+    "unexpected_request_ids": [],
+    "duplicate_request_ids": [],
+    "mismatched_request_ids": []
+  },
+  "integrity_audit": {
+    "complete": true,
+    "protocol_cases": 96,
+    "results": 96,
+    "ledger_events": 97,
+    "missing_ledger_request_ids": [],
+    "errors": [],
+    "ledger_total_estimated_cost_usd": 0.937391,
+    "scoring_source": "raw_response reparsed; state metrics recomputed against evaluator gold"
+  },
+  "full_gate_scope_audit": {
+    "complete": true,
+    "required": "4 task families x 2 context arms x 12 dev episodes = 96 calls",
+    "protocol_phase": "dev_decoder_gate",
+    "observed_expected_calls": 96
+  },
+  "task_decoder_gate_pass": {
+    "causal_formal": true,
+    "dynamic_search": true,
+    "dynamic_shopping": true,
+    "dynamic_travel": true
+  },
+  "all_task_decoder_gates_pass": true,
+  "failure_accounting": "API/unresolved-format failures are excluded from semantic accuracy and mark the block incomplete through semantic_coverage; they are not converted to wrong state values. Lossless syntax recovery never changes model values.",
+  "claim_boundary": "This is a real-API value decoder conditioned on a runtime-oracle write mask and runtime-oracle execution context/active-ancestor closure. It is not end-to-end learned causal discovery or impact selection evidence."
+}

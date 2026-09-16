@@ -1,0 +1,35 @@
+{
+  "scope": "native task conformance, not scored performance",
+  "registered_at": 1789438792.2051969,
+  "dataset_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+  "conversation_index": 1,
+  "sample_id": "conv-30",
+  "all_conversation_turn_counts": [
+    419,
+    369,
+    663,
+    629,
+    680,
+    675,
+    689,
+    681,
+    509,
+    568
+  ],
+  "history_turns": 369,
+  "selection": "shortest complete history; original order tiebreak",
+  "question_indices": [
+    3,
+    0,
+    2
+  ],
+  "qa_selection": "first question in each author-supported category",
+  "full_history": true,
+  "score_selection": false,
+  "seed": 20260915,
+  "model": "deepseek-v4-flash-0731",
+  "endpoint": "https://aiaaa.cc/v1",
+  "memory_thinking": "disabled",
+  "qa_thinking": "disabled",
+  "source_sha256": "6e2037d64e295144bacfeb58bb9e497fa1141726be1af314253bcede0e19f29b"
+}

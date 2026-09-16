@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "arm": "mem0",
+  "offline": true,
+  "scope": "development mechanism validation, not benchmark results",
+  "counts": {
+    "init": 1,
+    "mechanism": 4,
+    "retrieve": 1
+  },
+  "retrieved_text": "Nora leads the Orion satellite review project. The review was originally scheduled for Monday in Oslo. Its access phrase is cobalt-lantern. Elias is the safety reviewer.",
+  "failures": []
+}

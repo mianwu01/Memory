@@ -1,0 +1,432 @@
+{
+  "schema": "faithful-memory-readiness/v1",
+  "as_of": "2026-09-15T03:29:36.427989+00:00",
+  "family": "faithful_memory_aiaaa_v2",
+  "status": "blocked_account_balance",
+  "interpretation": "saved development reports verified against event counters; not full acceptance, scores, or a scientific success verdict",
+  "passed_gates": 5,
+  "required_gates": 16,
+  "gates": [
+    {
+      "arm": "ours",
+      "kind": "Travel ID101",
+      "report_passed": false,
+      "source": "results/development/faithful_memory_aiaaa_v2/travel/ours_101/status.json",
+      "sha256": "8c9c116303ad3ef1fd25d91c2ffb5848748621efb357c76ea45851f9c7909e61",
+      "events_sha256": "6e833002b9681d5311ffcf0d5f8c43b5074e8542a8530528b469667e0221d2e9",
+      "counts": {
+        "actor_contract": 1,
+        "init": 1,
+        "write": 5,
+        "retrieve": 5,
+        "llm": 9,
+        "actor_generation_failure": 1,
+        "api_error": 1,
+        "invalid": 1
+      },
+      "api_errors": [
+        {
+          "status_code": 403,
+          "phase": "actor",
+          "round": 5,
+          "time": 1789442123.9317775
+        }
+      ]
+    },
+    {
+      "arm": "noGcompact",
+      "kind": "Travel ID101",
+      "report_passed": true,
+      "source": "results/development/faithful_memory_aiaaa_v2/travel/noGcompact_101/status.json",
+      "sha256": "7c6c51beddf0ca9f1f1d1e8589fb2f96adf369de08e4bb3b29154922d389a76e",
+      "events_sha256": "b6bbb6d5a5b6d4e547cb2994f07e340fb624aaab6804cfd4bdb5e01acbfce308",
+      "counts": {
+        "actor_contract": 1,
+        "init": 1,
+        "write": 8,
+        "retrieve": 7,
+        "llm": 15
+      },
+      "api_errors": []
+    },
+    {
+      "arm": "query_only",
+      "kind": "Travel ID101",
+      "report_passed": true,
+      "source": "results/development/faithful_memory_aiaaa_v2/travel/query_only_101/status.json",
+      "sha256": "037a1e985c4d53b64523c3c581c263c6f069d5e50d7e5d49cef75e3ab6e81ee1",
+      "events_sha256": "de6f222c4a1fdb5fe6c103e4a618d72f6c85b5f7dc10d213aaa1cec3d9c0480b",
+      "counts": {
+        "actor_contract": 1,
+        "init": 1,
+        "write": 8,
+        "retrieve": 7,
+        "llm": 17
+      },
+      "api_errors": []
+    },
+    {
+      "arm": "bm25",
+      "kind": "Travel ID101",
+      "report_passed": false,
+      "source": "results/development/faithful_memory_aiaaa_v2/travel/bm25_101/status.json",
+      "sha256": "b7c776eb94a530e92915c4a7033b2c4955423c73ecd53026f6122dffdb2ad502",
+      "events_sha256": "4496089f0ccda2a09ab9f1d4c7a9972f3c8c9885ed6f054d031ab8483ff74d9e",
+      "counts": {
+        "actor_contract": 1,
+        "init": 1,
+        "write": 4,
+        "retrieve": 4,
+        "llm": 8,
+        "api_error": 1,
+        "invalid": 1
+      },
+      "api_errors": [
+        {
+          "status_code": 403,
+          "phase": "actor",
+          "round": 4,
+          "time": 1789442114.2755992
+        }
+      ]
+    },
+    {
+      "arm": "full",
+      "kind": "Travel ID101",
+      "report_passed": false,
+      "source": "results/development/faithful_memory_aiaaa_v2/travel/full_101/status.json",
+      "sha256": "7151b403e56f056bd9abbc453590f8ad4ee1e6d3a635a87f17189c27a9d1b72b",
+      "events_sha256": "5d2d52162ca2a4b7f52c5068ccbb33ba52b821b9a0f9bfdbdd4c76075a2cc78f",
+      "counts": {
+        "actor_contract": 1,
+        "init": 1,
+        "write": 1,
+        "retrieve": 1,
+        "api_error": 1,
+        "invalid": 1
+      },
+      "api_errors": [
+        {
+          "status_code": 403,
+          "phase": "actor",
+          "round": 1,
+          "time": 1789442135.286352
+        }
+      ]
+    },
+    {
+      "arm": "dense",
+      "kind": "Travel ID101",
+      "report_passed": false,
+      "source": "results/development/faithful_memory_aiaaa_v2/travel/dense_101/status.json",
+      "sha256": "a504b6ea1e663fcf45aea86118001cdf51417c13c6beca48a604ff1d43bea460",
+      "events_sha256": "50dc95081736ea8f47edae2f7998110a5e59928896829c594e12e9000b151ca7",
+      "counts": {
+        "actor_contract": 1,
+        "init": 1,
+        "write": 1,
+        "retrieve": 1,
+        "api_error": 1,
+        "invalid": 1
+      },
+      "api_errors": [
+        {
+          "status_code": 403,
+          "phase": "actor",
+          "round": 1,
+          "time": 1789442236.809494
+        }
+      ]
+    },
+    {
+      "arm": "summary",
+      "kind": "Travel ID101",
+      "report_passed": false,
+      "source": "results/development/faithful_memory_aiaaa_v2/travel/summary_101/status.json",
+      "sha256": "a0d53fea9382474b7c07bf0f4a1005ea804ecfd6572bbe9cfedb9bd8b80d4664",
+      "events_sha256": "6a7438e8e0cb20a9cc47a42be5874e361e3b6d0e8f55bfa79c652d40b9a84dea",
+      "counts": {
+        "actor_contract": 1,
+        "init": 1,
+        "api_error": 1,
+        "invalid": 1
+      },
+      "api_errors": [
+        {
+          "status_code": 403,
+          "phase": "memory_write",
+          "round": 0,
+          "time": 1789442155.628019
+        }
+      ]
+    },
+    {
+      "arm": "mem0",
+      "kind": "Travel ID101",
+      "report_passed": false,
+      "source": "results/development/faithful_memory_aiaaa_v2/travel/mem0_101/status.json",
+      "sha256": "56990ddadcdbc7b4823c6b50cf4345ec589a6e4324832e05801de1f2f8477fa6",
+      "events_sha256": "f74f023dcc75db94ff07fa4ac4285eef21c24d1fa0e68f21cb945ecb9b3f3b5d",
+      "counts": {
+        "actor_contract": 1,
+        "init": 1,
+        "mechanism": 1,
+        "api_error": 1,
+        "invalid": 2
+      },
+      "api_errors": [
+        {
+          "status_code": 403,
+          "phase": "memory_write",
+          "round": 0,
+          "time": 1789442275.699318
+        }
+      ]
+    },
+    {
+      "arm": "amem",
+      "kind": "Travel ID101",
+      "report_passed": false,
+      "source": "results/development/faithful_memory_aiaaa_v2/travel/amem_101/status.json",
+      "sha256": "0a3619f7b79b401788ed2ba61d719019f628e73908f851db33c1b43ae6afb789",
+      "events_sha256": "8c4ed7686412aaca534889b1d0e5365f7ffa23c58aafb7dfa7be3497a7e5c047",
+      "counts": {
+        "actor_contract": 1,
+        "init": 1,
+        "api_error": 1,
+        "invalid": 5,
+        "mechanism": 4
+      },
+      "api_errors": [
+        {
+          "status_code": 403,
+          "phase": "memory_write",
+          "round": 0,
+          "time": 1789442273.4898138
+        }
+      ]
+    },
+    {
+      "arm": "lightmem",
+      "kind": "Travel ID101",
+      "report_passed": false,
+      "source": "results/development/faithful_memory_aiaaa_v2/travel/lightmem_101/status.json",
+      "sha256": "875fbf9114a938431ab183e6a903c1a8007d0a09918f0e7889f82bdef8f9f27c",
+      "events_sha256": "5a670b9f414913bc1e9e832b5cd57d83829938dda4bbc6efa9b843b88929ba04",
+      "counts": {
+        "actor_contract": 1,
+        "init": 1,
+        "mechanism": 3,
+        "api_error": 1,
+        "invalid": 2
+      },
+      "api_errors": [
+        {
+          "status_code": 403,
+          "phase": "memory_write",
+          "round": 0,
+          "time": 1789442283.0885978
+        }
+      ]
+    },
+    {
+      "arm": "mem0",
+      "kind": "online",
+      "report_passed": true,
+      "source": "results/development/faithful_memory_aiaaa_v2/validation/mem0_online/validation.json",
+      "sha256": "413df019e093e923a8c8dbe61ca043a30677e56c6299e2d30f95787a8cc8906a",
+      "events_sha256": "5ae1208f9c2c2456da4b9738d2b19289fa1adf9b64e618b8d1d8d97e654dfee8",
+      "counts": {
+        "init": 1,
+        "mechanism": 6,
+        "llm": 3,
+        "write": 3,
+        "retrieve": 1
+      },
+      "api_errors": []
+    },
+    {
+      "arm": "mem0",
+      "kind": "native LoCoMo",
+      "report_passed": false,
+      "source": "results/development/faithful_memory_aiaaa_v2/native/mem0/validation.json",
+      "sha256": "8bf3d5b6522fe2c1edfa6b7a85b2c6f92b4369125288ac0e3c22f2e97b5e50c9",
+      "events_sha256": "d46c183b94a325481b8326444dc0950f0256b243a774cb1408e03002b6483f61",
+      "counts": {
+        "init": 1,
+        "mechanism": 103,
+        "llm": 102,
+        "write": 102,
+        "api_error": 1,
+        "invalid": 2
+      },
+      "api_errors": [
+        {
+          "status_code": 403,
+          "phase": "memory_write",
+          "round": 102,
+          "time": 1789442119.2476213
+        }
+      ],
+      "history_turns_completed": 102,
+      "history_turns_required": 369,
+      "questions_completed": 0,
+      "questions_required": 3
+    },
+    {
+      "arm": "amem",
+      "kind": "online",
+      "report_passed": true,
+      "source": "results/development/faithful_memory_aiaaa_v2/validation/amem_online/validation.json",
+      "sha256": "4ac2cfd75176143fa3d09a73a8b5b436659b955493b92d5c9db716ab39ac9445",
+      "events_sha256": "935c129538996490ad63c188d5426ae364e83456e44940fed8558fca64753c69",
+      "counts": {
+        "init": 1,
+        "llm": 9,
+        "mechanism": 5,
+        "write": 3,
+        "retrieve": 1
+      },
+      "api_errors": []
+    },
+    {
+      "arm": "amem",
+      "kind": "native LoCoMo",
+      "report_passed": false,
+      "source": "results/development/faithful_memory_aiaaa_v2/native/amem/validation.json",
+      "sha256": "fcf4bfc9e03e0d1d2ff92bac86d3a248a08d89fe2031ac3040d999a8de12eae3",
+      "events_sha256": "601ec67f87c5c0393f18eb355d7f90aace0c349b43b52b050a0b86fd19aa2b7e",
+      "counts": {
+        "init": 1,
+        "llm": 104,
+        "mechanism": 35,
+        "write": 31,
+        "api_error": 1,
+        "invalid": 5
+      },
+      "api_errors": [
+        {
+          "status_code": 403,
+          "phase": "memory_write",
+          "round": 31,
+          "time": 1789442112.098609
+        }
+      ],
+      "history_turns_completed": 31,
+      "history_turns_required": 369,
+      "questions_completed": 0,
+      "questions_required": 4
+    },
+    {
+      "arm": "lightmem",
+      "kind": "online",
+      "report_passed": true,
+      "source": "results/development/faithful_memory_aiaaa_v2/validation/lightmem_online/validation.json",
+      "sha256": "0a64f84e22c96cdd47865c58bd133dd0bd797ab8bc323bb224ca6b15e3903256",
+      "events_sha256": "7fe6ac3e8dcb2eeee585bb983f7ae1a10a0a5cf956f77db9f3be623a6f966c09",
+      "counts": {
+        "init": 1,
+        "mechanism": 10,
+        "write": 3,
+        "llm": 6,
+        "consolidate": 1,
+        "retrieve": 1
+      },
+      "api_errors": []
+    },
+    {
+      "arm": "lightmem",
+      "kind": "native LoCoMo",
+      "report_passed": false,
+      "source": "results/development/faithful_memory_aiaaa_v2/native/lightmem/validation.json",
+      "sha256": "d4b40d9cff2b78a30f7a841c412071f84cd389a8b0b6c43f51481e453c24c7cc",
+      "events_sha256": "e268d560d80ecd35d5ee09249a417b92a82e0aa592cf399474bb025765616ddd",
+      "counts": {
+        "init": 1,
+        "mechanism": 419,
+        "write": 369,
+        "llm": 29,
+        "api_error": 1,
+        "invalid": 10
+      },
+      "api_errors": [
+        {
+          "status_code": 403,
+          "phase": "memory_consolidate",
+          "round": 369,
+          "time": 1789442116.2903724
+        }
+      ],
+      "history_turns_completed": 369,
+      "history_turns_required": 369,
+      "questions_completed": 0,
+      "questions_required": 3
+    }
+  ],
+  "upstream": [
+    {
+      "repository": "MemoryArena",
+      "commit": "6cd9de14b71915e39ac742a20dc33785e14b6aab",
+      "clean": true
+    },
+    {
+      "repository": "mem0",
+      "commit": "c7ee362aff94a369af70f13f2b4f853f6793ff4c",
+      "clean": true
+    },
+    {
+      "repository": "mem0-memory-benchmarks",
+      "commit": "4b61c5d31b9c668a12b4f5e78064248a02c82d2b",
+      "clean": true
+    },
+    {
+      "repository": "AgenticMemory-paper",
+      "commit": "0c8039f28fdcc08189a23c07a3437d9d2482f9c2",
+      "clean": true
+    },
+    {
+      "repository": "LightMem",
+      "commit": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+      "clean": true
+    }
+  ],
+  "access_diagnostics": [
+    {
+      "endpoint": "https://aiaaa.cc/v1",
+      "status": 403,
+      "response": {
+        "code": "INSUFFICIENT_BALANCE",
+        "message": "Insufficient account balance"
+      },
+      "source": "results/development/faithful_memory_aiaaa_v2/access_diagnostic.json",
+      "sha256": "4b704577937ebb44a9034ffea626072a2ba799815babeab192a52cb50de951d8",
+      "time": 1789442514.8334117
+    },
+    {
+      "endpoint": "https://tokenrhythm.studio/v1",
+      "status": 402,
+      "response": {
+        "code": "INSUFFICIENT_BALANCE",
+        "message": "余额不足",
+        "traceId": "trace_54e7a5cb-9fc6-4018-8486-7f9f1c6332a8"
+      },
+      "source": "results/development/faithful_memory_aiaaa_v2/backup_generation_access_diagnostic.json",
+      "sha256": "ef473be41fd8a289f899530fbfb20f26ead63608c6554feb1c6bb86beeab3b72",
+      "time": 1789442629.9051788
+    }
+  ],
+  "formal_frozen": false,
+  "formal_cases_started": 0,
+  "formal_cases_planned": 100,
+  "new_comparison_available": false,
+  "usage": {
+    "as_of": 1789442773.059829,
+    "remediation_recorded_cny": 44.03236976,
+    "previous_recorded_cny": 276.482109,
+    "cumulative_recorded_cny": 320.51447876,
+    "unknown_usage_errors": 28,
+    "unknown_billing_attempts": 74,
+    "unpriced_calls": 45,
+    "invoice_verified": false
+  }
+}

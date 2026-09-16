@@ -1,0 +1,22 @@
+[
+  {
+    "arm": "noGcompact",
+    "exit_code": 0,
+    "wall_seconds": 242.55664235912263
+  },
+  {
+    "arm": "mem0",
+    "exit_code": 0,
+    "wall_seconds": 1779.1049042316154
+  },
+  {
+    "arm": "amem",
+    "exit_code": 0,
+    "wall_seconds": 359.98051788657904
+  },
+  {
+    "arm": "lightmem",
+    "exit_code": 1,
+    "wall_seconds": 486.42883652821183
+  }
+]

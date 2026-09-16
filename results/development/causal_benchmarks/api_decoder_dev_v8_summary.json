@@ -1,0 +1,172 @@
+{
+  "schema": "causal-api-decoder-summary/v1",
+  "protocol_case_manifest_sha256": "0ddd22df0a07186462c06fd017789a3475a95c77e099d9333fcab50bd709228e",
+  "model_requested": "deepseek-v4-flash",
+  "base_url": "https://api.deepseek.com/v1",
+  "matrix": {
+    "causal_formal": {
+      "full_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 14002,
+        "cached_input_tokens": 13056,
+        "output_tokens": 5951,
+        "estimated_cost_usd": 0.065139,
+        "api_duration_seconds": 56.27628231048584,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      },
+      "oracle_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 11293,
+        "cached_input_tokens": 10368,
+        "output_tokens": 4298,
+        "estimated_cost_usd": 0.047884499999999997,
+        "api_duration_seconds": 42.13859176635742,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      }
+    },
+    "dynamic_search": {
+      "full_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 66978,
+        "cached_input_tokens": 66048,
+        "output_tokens": 9587,
+        "estimated_cost_usd": 0.11470699999999999,
+        "api_duration_seconds": 95.32402443885803,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      },
+      "oracle_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 18863,
+        "cached_input_tokens": 17920,
+        "output_tokens": 8031,
+        "estimated_cost_usd": 0.08714749999999999,
+        "api_duration_seconds": 78.21955299377441,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      }
+    },
+    "dynamic_shopping": {
+      "full_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 33386,
+        "cached_input_tokens": 32256,
+        "output_tokens": 17235,
+        "estimated_cost_usd": 0.183239,
+        "api_duration_seconds": 149.5838372707367,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      },
+      "oracle_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 24494,
+        "cached_input_tokens": 23808,
+        "output_tokens": 29118,
+        "estimated_cost_usd": 0.2988469999999999,
+        "api_duration_seconds": 251.0541832447052,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      }
+    },
+    "dynamic_travel": {
+      "full_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 17813,
+        "cached_input_tokens": 16896,
+        "output_tokens": 6012,
+        "estimated_cost_usd": 0.0666365,
+        "api_duration_seconds": 60.04122877120972,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      },
+      "oracle_context": {
+        "calls_expected": 12,
+        "calls_received": 12,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 12036,
+        "cached_input_tokens": 10880,
+        "output_tokens": 7557,
+        "estimated_cost_usd": 0.08117999999999999,
+        "api_duration_seconds": 72.98029947280884,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      }
+    }
+  },
+  "manifest_audit": {
+    "complete": true,
+    "calls_expected": 96,
+    "calls_received_unique": 96,
+    "missing_request_ids": [],
+    "unexpected_request_ids": [],
+    "duplicate_request_ids": [],
+    "mismatched_request_ids": []
+  },
+  "integrity_audit": {
+    "complete": true,
+    "protocol_cases": 96,
+    "results": 96,
+    "ledger_events": 96,
+    "missing_ledger_request_ids": [],
+    "errors": [],
+    "ledger_total_estimated_cost_usd": 0.9447805000000001,
+    "scoring_source": "raw_response reparsed; state metrics recomputed against evaluator gold"
+  },
+  "task_decoder_gate_pass": {
+    "causal_formal": true,
+    "dynamic_search": true,
+    "dynamic_shopping": true,
+    "dynamic_travel": true
+  },
+  "all_task_decoder_gates_pass": true,
+  "failure_accounting": "API/unresolved-format failures are excluded from semantic accuracy and mark the block incomplete through semantic_coverage; they are not converted to wrong state values. Lossless syntax recovery never changes model values.",
+  "claim_boundary": "This is a real-API value decoder conditioned on a runtime-oracle write mask. It is not end-to-end learned causal discovery or impact selection evidence."
+}

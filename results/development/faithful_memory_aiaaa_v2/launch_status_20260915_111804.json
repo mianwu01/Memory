@@ -1,0 +1,62 @@
+[
+  {
+    "arm": "ours",
+    "id": 101,
+    "exit_code": 1,
+    "seconds": 845.3552244501188
+  },
+  {
+    "arm": "noGcompact",
+    "id": 101,
+    "exit_code": 0,
+    "seconds": 861.8485304582864
+  },
+  {
+    "arm": "query_only",
+    "id": 101,
+    "exit_code": 0,
+    "seconds": 872.7602371387184
+  },
+  {
+    "arm": "bm25",
+    "id": 101,
+    "exit_code": 1,
+    "seconds": 835.7869516536593
+  },
+  {
+    "arm": "full",
+    "id": 101,
+    "exit_code": 1,
+    "seconds": 20.93681183643639
+  },
+  {
+    "arm": "dense",
+    "id": 101,
+    "exit_code": 1,
+    "seconds": 113.28567431122065
+  },
+  {
+    "arm": "summary",
+    "id": 101,
+    "exit_code": 1,
+    "seconds": 20.221770421601832
+  },
+  {
+    "arm": "mem0",
+    "id": 101,
+    "exit_code": 1,
+    "seconds": 136.00953792128712
+  },
+  {
+    "arm": "amem",
+    "id": 101,
+    "exit_code": 1,
+    "seconds": 126.07238927856088
+  },
+  {
+    "arm": "lightmem",
+    "id": 101,
+    "exit_code": 1,
+    "seconds": 128.52147417329252
+  }
+]

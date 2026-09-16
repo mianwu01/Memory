@@ -1,0 +1,134 @@
+% Paragraph goals and sentence sub-goals; intentionally not polished prose.
+\section*{Current paper outline after the September 4 meeting}
+\label{sec:sept-outline}
+\noindent\textbf{Scope.} Study practical memory selection and observable memory
+auditing, building on existing discovery methods. Retain simulation as background.
+Do not claim identification of hidden intentions or a true real-world latent SCM.
+
+\noindent\textbf{Execution status, September 15.} The faithful comparison is not
+complete. Three online mechanism checks and two Travel development cases passed;
+both authorized metered relays currently report insufficient balance. Full-history
+LoCoMo validation is incomplete and the 100 formal cases have not started.
+P10--P13 describe experiment goals, not completed new results.
+
+\paragraph{P1: Motivate memory quality.}
+S1: Agents depend on earlier records. S2: Full histories cost context, while
+retrieval and summaries can lose dependencies or propagate errors.
+S3: A correct visible answer can coexist with a risky retrieved record.
+
+\paragraph{P2: State the empirical question.}
+S1: Connect writes, reads and query targets. S2: Ask whether an estimated temporal
+structure helps select context and trace observable risks. S3: Test utility under
+a shared model and the original benchmark actor without assuming real-world identifiability.
+
+\paragraph{P3: Match contributions to evidence.}
+S1: Present the traceable memory pipeline. S2: Compare task utility and total memory
+cost against recent native baselines. S3: Provide a concrete risk case.
+S4: Keep negative mitigation results and identification limits visible.
+
+\paragraph{P4: Define variables across regions or regimes.}
+S1: Each environment has its own schema. S2: Travel shares seven slot types, while
+traveler/day/record counts vary. S3: Regime-specific edges do not change column
+semantics. S4: The transcript's region/regime wording remains uncertain.
+
+\paragraph{P5: Define samples and allowed information.}
+S1: A traveler round is time; an episode is a trial. S2: The frozen graph uses query
+constraint indicators and within-trial lag windows. S3: Online memory contains the
+public base and actor writebacks. S4: Held-out gold is reserved for evaluation.
+
+\paragraph{P6: Separate evaluation questions.}
+S1: P2 measures downstream utility and cost. S2: P3-A traces candidate historical
+drivers. S3: P3-B tests intervention and retained task utility.
+S4: None directly measures an unobserved psychological intention.
+
+\paragraph{P7: Use existing discovery as a component.}
+S1: Specify observed inputs and lag-graph outputs. S2: Cite assumptions and existing
+simulation results. S3: Interpret real-data outputs as candidate dependencies.
+
+\paragraph{P8: Explain the memory operation.}
+S1: Parse query target cells. S2: Combine estimated type edges with explicit instance
+references. S3: Retrieve source values through write provenance.
+S4: Expose the full public base as memory; the original actor emits a full plan.
+No local inheritance decoder supplies answer cells.
+
+\paragraph{P9: Explain auditing and labels.}
+S1: Trace observable write/read/action paths. S2: Separate oracle-tagged MINJA
+illustrations from label-free AgentPoison calibration. S3: Freeze driver and gate
+rules. S4: Distinguish attribution from effective mitigation.
+
+\paragraph{P10: Introduce recognizable baselines.}
+S1: Describe MemoryArena's multi-round task. S2: Include full context, BM25, dense
+retrieval and rolling autoregressive summaries. S3: Add Mem0 OSS, the authors'
+AgenticMemory paper-repository robust agent and the complete LightMem core pipeline.
+S4: Validate full-history LoCoMo task interfaces separately; do not equate task
+conformance with published-score or managed-product replication.
+
+\paragraph{P11: Fix comparison and accounting.}
+S1: The current development uses aiaaa deepseek-v4-flash-0731 and the original actor, tools and full-plan
+output. S2: Develop on 101; freeze 111--120 only after implementation gates pass.
+These historical holdout IDs are reused.
+S3: Report official PS/SPS/SR and episode-level values. S4: Count memory-writing,
+updating and actor tokens and time; estimates are not relay invoices.
+S5: Use task-evaluation retrieval sizes 200/60/10 for Mem0/LightMem/A-Mem,
+preserve A-Mem's native 1000-token output cap, and disable memory reasoning with
+the verified relay parameter. Do not pool results from different relay models.
+
+\paragraph{P12: Interpret P2 results after completion.}
+S1: Fill the new paired table from artifacts. S2: Explain quality/cost tradeoffs even
+when a baseline wins. S3: Keep the historical ten-episode result separate.
+S4: The old noG comparison also changes representation; the new noGcompact holds
+format fixed and disables selection. The query-only control preserves explicit
+references but removes learned type edges. S5: Reused episodes and one API
+realization cannot establish a stable ranking or general noninferiority.
+
+\paragraph{P13: Show one concrete memory slide.}
+S1: Show a real query and required cells. S2: Distinguish estimated type edges,
+parsed references and selected records. S3: Compare actual contexts and answers
+with rolling summaries and a native baseline. S4: Do not invent a correction if
+all methods succeed or the proposed method fails.
+
+\paragraph{P14: Show dormant risk without mind-reading.}
+S1: MINJA round 15 writes record fixed\_1\_3 containing an answer-shift rule.
+S2: Round 16 retrieves it but answers correctly. S3: Round 19 has no attack note,
+retrieves it alongside other records and returns H instead of D.
+S4: Explain the estimated gated edge and oracle labels; this is not a matched
+single-record counterfactual.
+
+\paragraph{P15: Preserve the full audit outcome.}
+S1: Report cross-seed attribution evidence. S2: Explain label-free selection of
+AgentPoison record 9251 and cluster expansion to 9252. S3: Show removal without
+recovered task correctness. S4: Retain both failed online mitigation protocols.
+
+\paragraph{P16: Position related work.}
+S1: Compare extraction/update systems. S2: Compare RAG and summaries.
+S3: Build on causal discovery rather than repeating its simulation story.
+S4: Distinguish source auditing from robust online defense.
+
+\paragraph{P17: State actionable limitations.}
+S1: Disclose explicit query references and the visible public base; remove the
+local domain decoder from the new comparison.
+S2: Discuss variable choice, confounding and finite trials. S3: Restrict cross-task
+claims. S4: Disclose reused holdouts, one API realization and relay differences.
+S5: Conclude only supported findings; leave generalization and mitigation open.
+
+\noindent\textbf{Figures and tables.} Prioritize a concrete memory-selection slide
+and dormant-risk slide; then a setting table, paired baseline task/cost table and
+separate attribution/mitigation table. Existing simulations and full traces belong
+in the appendix. The Chinese companion gives the same paragraph/sentence goals.
+
+\noindent\textbf{Historical exploratory result, September 14.} The ten-arm paired table on three
+reused holdout episodes is complete. Nine arms use the original frozen v5 outputs;
+the interrupted rolling-summary arm uses the first complete technical rerun under
+identical source code and settings, with all attempts retained for cost accounting.
+Ours and same-format noGcompact tie on every episode's PS/SPS/SR. Ours uses 49.63\%
+fewer input tokens, but its usage-based total cost is 4.59\% higher because of
+additional output. This supports an observed input reduction, not extra accuracy,
+monetary savings or causal necessity. The Travel slide remains a matched-history
+read replay; the MINJA risk slide uses stored observable trace events.
+
+\noindent\textbf{Remediation, September 15 (in progress).} The historical v5
+comparison does not meet the complete-implementation requirement and is excluded
+from the new main table. Core mechanism tests passed for Mem0 OSS, paper A-Mem
+and LightMem. Native-task and original-actor validation are in progress; new
+paired results remain pending. Preserve actor token-limit failures unchanged and
+report all failed/development usage.

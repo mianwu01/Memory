@@ -1,0 +1,740 @@
+{
+  "schema": "memoryarena-recent-audit/v1",
+  "family": "results/development/p2_recent_baselines_tokenrhythm_v1",
+  "phase": "development",
+  "episode_ids": [
+    101
+  ],
+  "model": "deepseek-flash",
+  "endpoint": "https://tokenrhythm.studio/v1",
+  "currency": "CNY",
+  "pricing_source": "https://tokenrhythm.studio/models",
+  "rates_per_million": {
+    "uncached_input": 2,
+    "cached_input": 0.04,
+    "output": 8
+  },
+  "invoice_verified": false,
+  "arms": {
+    "ours": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        101
+      ],
+      "actor": {
+        "responses_with_usage": 14,
+        "input_tokens": 52412,
+        "output_tokens": 48619,
+        "cached_input_tokens": 23167,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.44836867999999996,
+        "api_seconds": 312.372709274292,
+        "median_api_seconds": 8.610552310943604,
+        "max_api_seconds": 174.06648802757263
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 7,
+        "stop": 7
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 14,
+            "input_tokens": 52412,
+            "output_tokens": 48619,
+            "cached_input_tokens": 23167,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.44836867999999996,
+            "api_seconds": 312.372709274292,
+            "median_api_seconds": 8.610552310943604,
+            "max_api_seconds": 174.06648802757263
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 8,
+          "reads": 7,
+          "instances": [
+            "dd4e888e72bd4f478543a370489d265d"
+          ],
+          "attempts": [
+            "1789346397-2192865-406fcd7b:101"
+          ]
+        }
+      }
+    },
+    "noG": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        101
+      ],
+      "actor": {
+        "responses_with_usage": 14,
+        "input_tokens": 91321,
+        "output_tokens": 62987,
+        "cached_input_tokens": 58112,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.57263848,
+        "api_seconds": 376.13045144081116,
+        "median_api_seconds": 17.13062858581543,
+        "max_api_seconds": 173.39917850494385
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 7,
+        "stop": 7
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 14,
+            "input_tokens": 91321,
+            "output_tokens": 62987,
+            "cached_input_tokens": 58112,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.57263848,
+            "api_seconds": 376.13045144081116,
+            "median_api_seconds": 17.13062858581543,
+            "max_api_seconds": 173.39917850494385
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 8,
+          "reads": 7,
+          "instances": [
+            "743cfef96d874c85b5cfd1b5be0e3e83"
+          ],
+          "attempts": [
+            "1789346397-2192868-95e27a50:101"
+          ]
+        }
+      }
+    },
+    "noGcompact": {
+      "complete": false,
+      "issues": [
+        "incomplete_or_unexpected_episode_set",
+        "memory_round_coverage:101",
+        "actor_round_coverage:101"
+      ],
+      "completed_ids": [],
+      "actor": {
+        "responses_with_usage": 7,
+        "input_tokens": 39735,
+        "output_tokens": 16387,
+        "cached_input_tokens": 20736,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.16992343999999998,
+        "api_seconds": 66.54762768745422,
+        "median_api_seconds": 6.4142091274261475,
+        "max_api_seconds": 19.940994262695312
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 4,
+        "stop": 3
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 7,
+            "input_tokens": 39735,
+            "output_tokens": 16387,
+            "cached_input_tokens": 20736,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.16992343999999998,
+            "api_seconds": 66.54762768745422,
+            "median_api_seconds": 6.4142091274261475,
+            "max_api_seconds": 19.940994262695312
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 4,
+          "reads": 4,
+          "instances": [
+            "c38b0a9aa5ab4cee90b26cba90c11ca9"
+          ],
+          "attempts": [
+            "1789346397-2192866-2890ec81:101"
+          ]
+        }
+      }
+    },
+    "bm25": {
+      "complete": false,
+      "issues": [
+        "incomplete_or_unexpected_episode_set",
+        "memory_round_coverage:101",
+        "actor_round_coverage:101"
+      ],
+      "completed_ids": [],
+      "actor": {
+        "responses_with_usage": 7,
+        "input_tokens": 57605,
+        "output_tokens": 38025,
+        "cached_input_tokens": 29440,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.3617076,
+        "api_seconds": 152.70782208442688,
+        "median_api_seconds": 17.65817165374756,
+        "max_api_seconds": 55.77123284339905
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 4,
+        "stop": 3
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 7,
+            "input_tokens": 57605,
+            "output_tokens": 38025,
+            "cached_input_tokens": 29440,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.3617076,
+            "api_seconds": 152.70782208442688,
+            "median_api_seconds": 17.65817165374756,
+            "max_api_seconds": 55.77123284339905
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 4,
+          "reads": 4,
+          "instances": [
+            "46ef0ffeede94f6caebe5c0f872f8a1d"
+          ],
+          "attempts": [
+            "1789346397-2192863-1f24f458:101"
+          ]
+        }
+      }
+    },
+    "full": {
+      "complete": false,
+      "issues": [
+        "incomplete_or_unexpected_episode_set",
+        "memory_round_coverage:101",
+        "actor_round_coverage:101"
+      ],
+      "completed_ids": [],
+      "actor": {
+        "responses_with_usage": 6,
+        "input_tokens": 67875,
+        "output_tokens": 21260,
+        "cached_input_tokens": 43648,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.22027992,
+        "api_seconds": 83.33842253684998,
+        "median_api_seconds": 13.003251791000366,
+        "max_api_seconds": 25.224124431610107
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 3,
+        "stop": 3
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 6,
+            "input_tokens": 67875,
+            "output_tokens": 21260,
+            "cached_input_tokens": 43648,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.22027992,
+            "api_seconds": 83.33842253684998,
+            "median_api_seconds": 13.003251791000366,
+            "max_api_seconds": 25.224124431610107
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 4,
+          "reads": 4,
+          "instances": [
+            "1d5a773daab2437c8ef188d76305c6a5"
+          ],
+          "attempts": [
+            "1789346673-2210239-02106af3:101"
+          ]
+        }
+      }
+    },
+    "dense": {
+      "complete": false,
+      "issues": [
+        "incomplete_or_unexpected_episode_set",
+        "memory_round_coverage:101",
+        "actor_round_coverage:101"
+      ],
+      "completed_ids": [],
+      "actor": {
+        "responses_with_usage": 4,
+        "input_tokens": 31562,
+        "output_tokens": 16000,
+        "cached_input_tokens": 18944,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.15399376,
+        "api_seconds": 62.33535981178284,
+        "median_api_seconds": 14.364216685295105,
+        "max_api_seconds": 27.64537501335144
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 2,
+        "stop": 2
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 4,
+            "input_tokens": 31562,
+            "output_tokens": 16000,
+            "cached_input_tokens": 18944,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.15399376,
+            "api_seconds": 62.33535981178284,
+            "median_api_seconds": 14.364216685295105,
+            "max_api_seconds": 27.64537501335144
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 3,
+          "reads": 2,
+          "instances": [
+            "d66d5ba633b646359b2ee59bd9bb68ac"
+          ],
+          "attempts": [
+            "1789346743-2214817-6d3f9fd4:101"
+          ]
+        }
+      }
+    },
+    "summary": {
+      "complete": false,
+      "issues": [
+        "incomplete_or_unexpected_episode_set",
+        "memory_round_coverage:101",
+        "actor_round_coverage:101"
+      ],
+      "completed_ids": [],
+      "actor": {
+        "responses_with_usage": 4,
+        "input_tokens": 21077,
+        "output_tokens": 14166,
+        "cached_input_tokens": 10240,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.1354116,
+        "api_seconds": 57.82871198654175,
+        "median_api_seconds": 10.773136377334595,
+        "max_api_seconds": 30.094875812530518
+      },
+      "memory": {
+        "responses_with_usage": 2,
+        "input_tokens": 7023,
+        "output_tokens": 3283,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.04031,
+        "api_seconds": 12.740183011628687,
+        "median_api_seconds": 6.370091505814344,
+        "max_api_seconds": 8.7126246066764
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 2,
+        "stop": 2
+      },
+      "memory_finish_reasons": {
+        "stop": 2
+      },
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 4,
+            "input_tokens": 21077,
+            "output_tokens": 14166,
+            "cached_input_tokens": 10240,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.1354116,
+            "api_seconds": 57.82871198654175,
+            "median_api_seconds": 10.773136377334595,
+            "max_api_seconds": 30.094875812530518
+          },
+          "memory": {
+            "responses_with_usage": 2,
+            "input_tokens": 7023,
+            "output_tokens": 3283,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.04031,
+            "api_seconds": 12.740183011628687,
+            "median_api_seconds": 6.370091505814344,
+            "max_api_seconds": 8.7126246066764
+          },
+          "writes": 2,
+          "reads": 2,
+          "instances": [
+            "c6bf38e9749a411c879586eb62d3ef9c"
+          ],
+          "attempts": [
+            "1789346760-2215809-f27fea84:101"
+          ]
+        }
+      }
+    },
+    "mem0": {
+      "complete": false,
+      "issues": [
+        "incomplete_or_unexpected_episode_set",
+        "memory_round_coverage:101",
+        "instance_or_attempt_coverage:101",
+        "actor_round_coverage:101"
+      ],
+      "completed_ids": [],
+      "actor": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [],
+      "actor_finish_reasons": {},
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 0,
+          "reads": 0,
+          "instances": [],
+          "attempts": []
+        }
+      }
+    },
+    "amem": {
+      "complete": false,
+      "issues": [
+        "incomplete_or_unexpected_episode_set",
+        "memory_round_coverage:101",
+        "instance_or_attempt_coverage:101",
+        "actor_round_coverage:101"
+      ],
+      "completed_ids": [],
+      "actor": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [],
+      "actor_finish_reasons": {},
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 0,
+          "reads": 0,
+          "instances": [],
+          "attempts": []
+        }
+      }
+    },
+    "lightmem": {
+      "complete": false,
+      "issues": [
+        "incomplete_or_unexpected_episode_set",
+        "memory_round_coverage:101",
+        "instance_or_attempt_coverage:101",
+        "actor_round_coverage:101"
+      ],
+      "completed_ids": [],
+      "actor": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [],
+      "actor_finish_reasons": {},
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 0,
+          "reads": 0,
+          "instances": [],
+          "attempts": []
+        }
+      }
+    }
+  },
+  "paired_scope_complete": false,
+  "limitations": [
+    "Usage-based estimate, not reconciled billing; interrupted/retried requests may lack usage.",
+    "Scores are descriptive paired replication on reused historical holdout IDs."
+  ],
+  "estimated_cny_all_logged_responses": 2.10263348
+}

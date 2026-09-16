@@ -1,0 +1,40 @@
+{
+  "a444990e-503a-4a54-b703-f882354825cd": {
+    "content": "NEIGHBOR_SENTINEL",
+    "id": "a444990e-503a-4a54-b703-f882354825cd",
+    "keywords": [
+      "sentinel"
+    ],
+    "links": [],
+    "importance_score": 1.0,
+    "retrieval_count": 0,
+    "timestamp": "202609150850",
+    "last_accessed": "202609150850",
+    "context": "neighbor",
+    "evolution_history": [],
+    "category": "Uncategorized",
+    "tags": [
+      "test"
+    ]
+  },
+  "66d8abd5-03ee-49b1-8222-e90fe62c0ef7": {
+    "content": "QUERY_TARGET",
+    "id": "66d8abd5-03ee-49b1-8222-e90fe62c0ef7",
+    "keywords": [
+      "query"
+    ],
+    "links": [
+      0
+    ],
+    "importance_score": 1.0,
+    "retrieval_count": 0,
+    "timestamp": "202609150850",
+    "last_accessed": "202609150850",
+    "context": "target",
+    "evolution_history": [],
+    "category": "Uncategorized",
+    "tags": [
+      "test"
+    ]
+  }
+}

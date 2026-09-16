@@ -1,0 +1,883 @@
+{
+  "schema": "memoryarena-recent-results/v1",
+  "family": "p2_recent_baselines_tokenrhythm_v5_completed",
+  "episode_ids": [
+    111,
+    112,
+    113
+  ],
+  "complete": true,
+  "rows": [
+    {
+      "arm": "ours",
+      "official_metrics": {
+        "ps": 90.9090909090909,
+        "sps": 98.57142857142858,
+        "sr": 66.66666666666666
+      },
+      "ps_episode_mean": 91.66666666666667,
+      "sps_episode_mean": 98.57142857142857,
+      "sr_episode_mean": 66.66666666666667,
+      "actor_calls": 45,
+      "actor_length_responses": 0,
+      "memory_calls": 0,
+      "actor_estimated_cny": 0.8066605600000001,
+      "memory_estimated_cny": 0.0,
+      "input_tokens": 123701,
+      "output_tokens": 83643,
+      "cached_input_tokens": 56064,
+      "estimated_cny": 0.8066605600000001
+    },
+    {
+      "arm": "noG",
+      "official_metrics": {
+        "ps": 86.36363636363636,
+        "sps": 98.05059523809524,
+        "sr": 66.66666666666666
+      },
+      "ps_episode_mean": 87.5,
+      "sps_episode_mean": 98.05059523809524,
+      "sr_episode_mean": 66.66666666666667,
+      "actor_calls": 45,
+      "actor_length_responses": 0,
+      "memory_calls": 0,
+      "actor_estimated_cny": 1.24101696,
+      "memory_estimated_cny": 0.0,
+      "input_tokens": 220048,
+      "output_tokens": 134078,
+      "cached_input_tokens": 138624,
+      "estimated_cny": 1.24101696
+    },
+    {
+      "arm": "noGcompact",
+      "official_metrics": {
+        "ps": 90.9090909090909,
+        "sps": 98.57142857142858,
+        "sr": 66.66666666666666
+      },
+      "ps_episode_mean": 91.66666666666667,
+      "sps_episode_mean": 98.57142857142857,
+      "sr_episode_mean": 66.66666666666667,
+      "actor_calls": 44,
+      "actor_length_responses": 0,
+      "memory_calls": 0,
+      "actor_estimated_cny": 0.7712741600000004,
+      "memory_estimated_cny": 0.0,
+      "input_tokens": 245599,
+      "output_tokens": 73206,
+      "cached_input_tokens": 155904,
+      "estimated_cny": 0.7712741600000004
+    },
+    {
+      "arm": "bm25",
+      "official_metrics": {
+        "ps": 77.27272727272727,
+        "sps": 92.88690476190476,
+        "sr": 33.33333333333333
+      },
+      "ps_episode_mean": 79.16666666666667,
+      "sps_episode_mean": 92.88690476190476,
+      "sr_episode_mean": 33.333333333333336,
+      "actor_calls": 41,
+      "actor_length_responses": 1,
+      "memory_calls": 0,
+      "actor_estimated_cny": 2.6270270399999993,
+      "memory_estimated_cny": 0.0,
+      "input_tokens": 386714,
+      "output_tokens": 291033,
+      "cached_input_tokens": 242176,
+      "estimated_cny": 2.6270270399999993
+    },
+    {
+      "arm": "full",
+      "official_metrics": {
+        "ps": 86.36363636363636,
+        "sps": 96.48809523809524,
+        "sr": 66.66666666666666
+      },
+      "ps_episode_mean": 87.5,
+      "sps_episode_mean": 96.48809523809524,
+      "sr_episode_mean": 66.66666666666667,
+      "actor_calls": 43,
+      "actor_length_responses": 0,
+      "memory_calls": 0,
+      "actor_estimated_cny": 1.1692505599999998,
+      "memory_estimated_cny": 0.0,
+      "input_tokens": 715484,
+      "output_tokens": 100973,
+      "cached_input_tokens": 545664,
+      "estimated_cny": 1.1692505599999998
+    },
+    {
+      "arm": "dense",
+      "official_metrics": {
+        "ps": 72.72727272727273,
+        "sps": 93.74503968253968,
+        "sr": 33.33333333333333
+      },
+      "ps_episode_mean": 75.0,
+      "sps_episode_mean": 93.74503968253968,
+      "sr_episode_mean": 33.333333333333336,
+      "actor_calls": 43,
+      "actor_length_responses": 1,
+      "memory_calls": 0,
+      "actor_estimated_cny": 2.7451114400000014,
+      "memory_estimated_cny": 0.0,
+      "input_tokens": 580573,
+      "output_tokens": 294804,
+      "cached_input_tokens": 395136,
+      "estimated_cny": 2.7451114400000014
+    },
+    {
+      "arm": "summary",
+      "official_metrics": {
+        "ps": 86.36363636363636,
+        "sps": 96.48809523809524,
+        "sr": 66.66666666666666
+      },
+      "ps_episode_mean": 87.5,
+      "sps_episode_mean": 96.48809523809524,
+      "sr_episode_mean": 66.66666666666667,
+      "actor_calls": 44,
+      "actor_length_responses": 0,
+      "memory_calls": 30,
+      "actor_estimated_cny": 1.1014595999999999,
+      "memory_estimated_cny": 0.98379768,
+      "input_tokens": 376344,
+      "output_tokens": 193823,
+      "cached_input_tokens": 111232,
+      "estimated_cny": 2.08525728
+    },
+    {
+      "arm": "mem0",
+      "official_metrics": {
+        "ps": 54.54545454545454,
+        "sps": 84.15544332210997,
+        "sr": 0.0
+      },
+      "ps_episode_mean": 51.388888888888886,
+      "sps_episode_mean": 84.15544332210999,
+      "sr_episode_mean": 0.0,
+      "actor_calls": 51,
+      "actor_length_responses": 8,
+      "memory_calls": 25,
+      "actor_estimated_cny": 4.28884496,
+      "memory_estimated_cny": 0.36211984,
+      "input_tokens": 533532,
+      "output_tokens": 527642,
+      "cached_input_tokens": 325120,
+      "estimated_cny": 4.6509648
+    },
+    {
+      "arm": "amem",
+      "official_metrics": {
+        "ps": 81.81818181818183,
+        "sps": 95.98304473304472,
+        "sr": 33.33333333333333
+      },
+      "ps_episode_mean": 81.94444444444444,
+      "sps_episode_mean": 95.98304473304474,
+      "sr_episode_mean": 33.333333333333336,
+      "actor_calls": 40,
+      "actor_length_responses": 0,
+      "memory_calls": 47,
+      "actor_estimated_cny": 1.4698606400000003,
+      "memory_estimated_cny": 1.0086867199999998,
+      "input_tokens": 1045978,
+      "output_tokens": 142498,
+      "cached_input_tokens": 384384,
+      "estimated_cny": 2.4785473600000003
+    },
+    {
+      "arm": "lightmem",
+      "official_metrics": {
+        "ps": 36.36363636363637,
+        "sps": 67.730930335097,
+        "sr": 0.0
+      },
+      "ps_episode_mean": 36.111111111111114,
+      "sps_episode_mean": 67.730930335097,
+      "sr_episode_mean": 0.0,
+      "actor_calls": 50,
+      "actor_length_responses": 9,
+      "memory_calls": 1305,
+      "actor_estimated_cny": 5.623190720000002,
+      "memory_estimated_cny": 1.1574232799999995,
+      "input_tokens": 1217965,
+      "output_tokens": 733818,
+      "cached_input_tokens": 778500,
+      "estimated_cny": 6.780614000000002
+    }
+  ],
+  "paired_comparisons": {
+    "ours_minus_noG": {
+      "episode_ids": [
+        "111",
+        "112",
+        "113"
+      ],
+      "n_episodes": 3,
+      "metrics": {
+        "ps": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 12.5,
+            "113": 0.0
+          },
+          "mean_delta_points": 4.166666666666667,
+          "bootstrap_95": [
+            0.0,
+            12.5
+          ],
+          "wins": 1,
+          "ties": 2,
+          "losses": 0
+        },
+        "sps": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 1.5625,
+            "113": 0.0
+          },
+          "mean_delta_points": 0.5208333333333334,
+          "bootstrap_95": [
+            0.0,
+            1.5625
+          ],
+          "wins": 1,
+          "ties": 2,
+          "losses": 0
+        },
+        "sr": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 0.0,
+            "113": 0.0
+          },
+          "mean_delta_points": 0.0,
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "wins": 0,
+          "ties": 3,
+          "losses": 0
+        }
+      }
+    },
+    "ours_minus_noGcompact": {
+      "episode_ids": [
+        "111",
+        "112",
+        "113"
+      ],
+      "n_episodes": 3,
+      "metrics": {
+        "ps": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 0.0,
+            "113": 0.0
+          },
+          "mean_delta_points": 0.0,
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "wins": 0,
+          "ties": 3,
+          "losses": 0
+        },
+        "sps": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 0.0,
+            "113": 0.0
+          },
+          "mean_delta_points": 0.0,
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "wins": 0,
+          "ties": 3,
+          "losses": 0
+        },
+        "sr": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 0.0,
+            "113": 0.0
+          },
+          "mean_delta_points": 0.0,
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "wins": 0,
+          "ties": 3,
+          "losses": 0
+        }
+      }
+    },
+    "ours_minus_bm25": {
+      "episode_ids": [
+        "111",
+        "112",
+        "113"
+      ],
+      "n_episodes": 3,
+      "metrics": {
+        "ps": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 25.0,
+            "113": 12.5
+          },
+          "mean_delta_points": 12.5,
+          "bootstrap_95": [
+            0.0,
+            25.0
+          ],
+          "wins": 2,
+          "ties": 1,
+          "losses": 0
+        },
+        "sps": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 13.92857142857143,
+            "113": 3.125
+          },
+          "mean_delta_points": 5.68452380952381,
+          "bootstrap_95": [
+            0.0,
+            13.92857142857143
+          ],
+          "wins": 2,
+          "ties": 1,
+          "losses": 0
+        },
+        "sr": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 0.0,
+            "113": 100.0
+          },
+          "mean_delta_points": 33.333333333333336,
+          "bootstrap_95": [
+            0.0,
+            100.0
+          ],
+          "wins": 1,
+          "ties": 2,
+          "losses": 0
+        }
+      }
+    },
+    "ours_minus_full": {
+      "episode_ids": [
+        "111",
+        "112",
+        "113"
+      ],
+      "n_episodes": 3,
+      "metrics": {
+        "ps": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 12.5,
+            "113": 0.0
+          },
+          "mean_delta_points": 4.166666666666667,
+          "bootstrap_95": [
+            0.0,
+            12.5
+          ],
+          "wins": 1,
+          "ties": 2,
+          "losses": 0
+        },
+        "sps": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 6.25,
+            "113": 0.0
+          },
+          "mean_delta_points": 2.0833333333333335,
+          "bootstrap_95": [
+            0.0,
+            6.25
+          ],
+          "wins": 1,
+          "ties": 2,
+          "losses": 0
+        },
+        "sr": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 0.0,
+            "113": 0.0
+          },
+          "mean_delta_points": 0.0,
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "wins": 0,
+          "ties": 3,
+          "losses": 0
+        }
+      }
+    },
+    "ours_minus_dense": {
+      "episode_ids": [
+        "111",
+        "112",
+        "113"
+      ],
+      "n_episodes": 3,
+      "metrics": {
+        "ps": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 37.5,
+            "113": 12.5
+          },
+          "mean_delta_points": 16.666666666666668,
+          "bootstrap_95": [
+            0.0,
+            37.5
+          ],
+          "wins": 2,
+          "ties": 1,
+          "losses": 0
+        },
+        "sps": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 10.3125,
+            "113": 4.166666666666657
+          },
+          "mean_delta_points": 4.826388888888886,
+          "bootstrap_95": [
+            0.0,
+            10.3125
+          ],
+          "wins": 2,
+          "ties": 1,
+          "losses": 0
+        },
+        "sr": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 0.0,
+            "113": 100.0
+          },
+          "mean_delta_points": 33.333333333333336,
+          "bootstrap_95": [
+            0.0,
+            100.0
+          ],
+          "wins": 1,
+          "ties": 2,
+          "losses": 0
+        }
+      }
+    },
+    "ours_minus_summary": {
+      "episode_ids": [
+        "111",
+        "112",
+        "113"
+      ],
+      "n_episodes": 3,
+      "metrics": {
+        "ps": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 12.5,
+            "113": 0.0
+          },
+          "mean_delta_points": 4.166666666666667,
+          "bootstrap_95": [
+            0.0,
+            12.5
+          ],
+          "wins": 1,
+          "ties": 2,
+          "losses": 0
+        },
+        "sps": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 6.25,
+            "113": 0.0
+          },
+          "mean_delta_points": 2.0833333333333335,
+          "bootstrap_95": [
+            0.0,
+            6.25
+          ],
+          "wins": 1,
+          "ties": 2,
+          "losses": 0
+        },
+        "sr": {
+          "episode_deltas": {
+            "111": 0.0,
+            "112": 0.0,
+            "113": 0.0
+          },
+          "mean_delta_points": 0.0,
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "wins": 0,
+          "ties": 3,
+          "losses": 0
+        }
+      }
+    },
+    "ours_minus_mem0": {
+      "episode_ids": [
+        "111",
+        "112",
+        "113"
+      ],
+      "n_episodes": 3,
+      "metrics": {
+        "ps": {
+          "episode_deltas": {
+            "111": 83.33333333333333,
+            "112": 25.0,
+            "113": 12.5
+          },
+          "mean_delta_points": 40.27777777777778,
+          "bootstrap_95": [
+            12.5,
+            83.33333333333333
+          ],
+          "wins": 3,
+          "ties": 0,
+          "losses": 0
+        },
+        "sps": {
+          "episode_deltas": {
+            "111": 14.081289081289086,
+            "112": 25.0,
+            "113": 4.166666666666657
+          },
+          "mean_delta_points": 14.415985249318581,
+          "bootstrap_95": [
+            4.166666666666657,
+            25.0
+          ],
+          "wins": 3,
+          "ties": 0,
+          "losses": 0
+        },
+        "sr": {
+          "episode_deltas": {
+            "111": 100.0,
+            "112": 0.0,
+            "113": 100.0
+          },
+          "mean_delta_points": 66.66666666666667,
+          "bootstrap_95": [
+            0.0,
+            100.0
+          ],
+          "wins": 2,
+          "ties": 1,
+          "losses": 0
+        }
+      }
+    },
+    "ours_minus_amem": {
+      "episode_ids": [
+        "111",
+        "112",
+        "113"
+      ],
+      "n_episodes": 3,
+      "metrics": {
+        "ps": {
+          "episode_deltas": {
+            "111": 16.66666666666667,
+            "112": 12.5,
+            "113": 0.0
+          },
+          "mean_delta_points": 9.722222222222223,
+          "bootstrap_95": [
+            0.0,
+            16.66666666666667
+          ],
+          "wins": 2,
+          "ties": 1,
+          "losses": 0
+        },
+        "sps": {
+          "episode_deltas": {
+            "111": 1.5151515151515156,
+            "112": 6.25,
+            "113": 0.0
+          },
+          "mean_delta_points": 2.5883838383838387,
+          "bootstrap_95": [
+            0.0,
+            6.25
+          ],
+          "wins": 2,
+          "ties": 1,
+          "losses": 0
+        },
+        "sr": {
+          "episode_deltas": {
+            "111": 100.0,
+            "112": 0.0,
+            "113": 0.0
+          },
+          "mean_delta_points": 33.333333333333336,
+          "bootstrap_95": [
+            0.0,
+            100.0
+          ],
+          "wins": 1,
+          "ties": 2,
+          "losses": 0
+        }
+      }
+    },
+    "ours_minus_lightmem": {
+      "episode_ids": [
+        "111",
+        "112",
+        "113"
+      ],
+      "n_episodes": 3,
+      "metrics": {
+        "ps": {
+          "episode_deltas": {
+            "111": 66.66666666666666,
+            "112": 62.5,
+            "113": 37.5
+          },
+          "mean_delta_points": 55.55555555555555,
+          "bootstrap_95": [
+            37.5,
+            66.66666666666666
+          ],
+          "wins": 3,
+          "ties": 0,
+          "losses": 0
+        },
+        "sps": {
+          "episode_deltas": {
+            "111": 35.18518518518519,
+            "112": 43.794642857142854,
+            "113": 13.541666666666657
+          },
+          "mean_delta_points": 30.84049823633157,
+          "bootstrap_95": [
+            13.541666666666657,
+            43.794642857142854
+          ],
+          "wins": 3,
+          "ties": 0,
+          "losses": 0
+        },
+        "sr": {
+          "episode_deltas": {
+            "111": 100.0,
+            "112": 0.0,
+            "113": 100.0
+          },
+          "mean_delta_points": 66.66666666666667,
+          "bootstrap_95": [
+            0.0,
+            100.0
+          ],
+          "wins": 2,
+          "ties": 1,
+          "losses": 0
+        }
+      }
+    }
+  },
+  "model": "deepseek-flash",
+  "endpoint": "https://tokenrhythm.studio/v1",
+  "interpretation": "Three reused historical holdout episodes, one retained complete realization per arm/episode; descriptive paired replication with any technical rerun separately disclosed.",
+  "new_causal_necessity_proven": false,
+  "real_identifiability_proven": false,
+  "currency": "CNY",
+  "invoice_verified": false,
+  "estimated_evaluation_cny": 25.35572416,
+  "original_batch_complete": false,
+  "post_freeze_technical_recovery": true,
+  "result_provenance": {
+    "schema": "memoryarena-paired-recovery-view/v1",
+    "state": "complete",
+    "original_family": "p2_recent_baselines_tokenrhythm_v5",
+    "original_batch_complete": false,
+    "post_freeze_technical_recovery": true,
+    "billing_aggregation": "derived_view_excluded",
+    "amendment": "results/real/p2_recent_baselines_tokenrhythm_v5/recovery_amendment.json",
+    "amendment_sha256": "c8b2506fa8750944ba89c1924243e796f9618d9c3e05a3bdcc479fc4cfc64d4a",
+    "original_protocol_sha256": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1",
+    "arm_sources": {
+      "ours": {
+        "family": "results/real/p2_recent_baselines_tokenrhythm_v5",
+        "protocol_sha256": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1",
+        "config_sha256": "61a7693d13fd6f6a4c276716c059d2c51926d4d94b388c587d65c318b3c570c0",
+        "e2e_artifact_sha256": {
+          "generated_plan_111.json": "98b62638e73ece088bf5a97adc0e16d41652898cf2247bafad1ddd8045368d24",
+          "generated_plan_112.json": "31c4800c35fb8e1223b0e057568a932d3a2fa011466a6c6861ec3603fb7abc87",
+          "generated_plan_113.json": "d0107ce60a074a8b8c343c6d067c338e3b5fb39e83b84e49a1cbea9f3b083023",
+          "llm_call_usage.jsonl": "611dfd76255e47bb72301b71567e4452f96cf1fca854a6ac29eadf9b086acc17",
+          "memory_events.jsonl": "e49ac26865f32af88883ab855ae958def87ecafee905bda3d061addf4c8f3180",
+          "stats_results/usage_stats.json": "c4633e65c672fed631b928b771e339f086a7789482961aa6d9550c2aff7f26bd",
+          "submission/deepseek-flash_submission.jsonl": "98e9c2c2df95cf03aebf898f6fe7b1d7c3c78b23b82031daa5edf057b6131f66"
+        }
+      },
+      "noG": {
+        "family": "results/real/p2_recent_baselines_tokenrhythm_v5",
+        "protocol_sha256": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1",
+        "config_sha256": "3c34b1fd3a70a6a2f58c0feb07033f35b95a3d2c7f427852a4ad6799face8369",
+        "e2e_artifact_sha256": {
+          "generated_plan_111.json": "01268cc77d98b5fa54719086485572cdcc925245e45547ad1c434c0a4e5bbbc9",
+          "generated_plan_112.json": "51f7beb0010841b4f667f7814320846bf447fea0510d3fc04738c1146b71f0b0",
+          "generated_plan_113.json": "d0ee066c99dba71620653e351d1e1561b30b905d16b3df7a16d6f81962d0bdcb",
+          "llm_call_usage.jsonl": "28eea2f7936b667fd1bf23cd66ec542d4d4bb67f29c64492d969f28771365b1b",
+          "memory_events.jsonl": "2b36a25127dd34098ee80d4eb2f1eda761de57d89d9edd1e3529c706bd588854",
+          "stats_results/usage_stats.json": "ee95e60445bfebbe42a8d0d4ff08b6ffbc0a18ad3797bbdedb9577aa62c4702e",
+          "submission/deepseek-flash_submission.jsonl": "386dadb4517bbdd1c4ed2618d9c12137f931c18df8dd98c264b20f494f954eeb"
+        }
+      },
+      "noGcompact": {
+        "family": "results/real/p2_recent_baselines_tokenrhythm_v5",
+        "protocol_sha256": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1",
+        "config_sha256": "00483fdde890066af35eb41bdae9942127bf6c54696146ecffde13e08effc5dc",
+        "e2e_artifact_sha256": {
+          "generated_plan_111.json": "ea4ad3f2b429e5fecf462a7034aaf5f474d08a753fe71591e67afb465d450d84",
+          "generated_plan_112.json": "37a83cf305f6c03ae467539e840710cc538deafc54a291b9e3b2c1d3b57d0e6e",
+          "generated_plan_113.json": "bf1d480f3b0c87fe6dd08cb2503e2c005cdef84c19e3ed944d4446f9e10e7071",
+          "llm_call_usage.jsonl": "b6c34ff8bd8d986f637f1de1bb870595d44c1bb9ca3c4d71123701c1d85c7416",
+          "memory_events.jsonl": "67a66c96f437a13e9b37630846dc5a759d7e1039e1bfa42f86a25c7a205a7df4",
+          "stats_results/usage_stats.json": "68ef1e6e981538d0439d1c1e70eb308539097649356812d6684af5cadf2a33f9",
+          "submission/deepseek-flash_submission.jsonl": "0d26d3af05c8d817dec7bfbae9b80338903632931b63ffffb0c405fcd895e198"
+        }
+      },
+      "bm25": {
+        "family": "results/real/p2_recent_baselines_tokenrhythm_v5",
+        "protocol_sha256": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1",
+        "config_sha256": "c309dba99f3e48142b5e3cd33859c1bcbb0d45bdc01e4d789d701233e3146a16",
+        "e2e_artifact_sha256": {
+          "generated_plan_111.json": "6acbe7b8810317ca1adea74410cc808a35921d00f632eea2cede84847504ea34",
+          "generated_plan_112.json": "74726bd07475b6ce0f4d03c754f2bbc0c6d464ca4a569eb377d91b72ea8139cf",
+          "generated_plan_113.json": "7e7ed4ca994d2f8834a8cb9e563d5b55d3e7b5f28cc6ff84ccafaff13137f0d7",
+          "llm_call_usage.jsonl": "0f1f38973f0190ced43843d377ad0be81c3d02ad7e5ba3aaf066e487a40e84aa",
+          "memory_events.jsonl": "45a3cacd8503431717785522d734c1321d760e6b3b14c29689c48a16e1fbff6e",
+          "stats_results/usage_stats.json": "ff656931b46795c89004d9b5c4e6187fba8f10c79a1ebf78d035336deb12c4b7",
+          "submission/deepseek-flash_submission.jsonl": "cac2d0417ef06fd99a9b97ef47a6e411a863c9cc42b8451513e869245c2e795d"
+        }
+      },
+      "full": {
+        "family": "results/real/p2_recent_baselines_tokenrhythm_v5",
+        "protocol_sha256": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1",
+        "config_sha256": "12d0ee5b7ae0881478e3f84bbe43a7466191a1092541e4700184f01f33410367",
+        "e2e_artifact_sha256": {
+          "generated_plan_111.json": "51c675453229cfa4bdc1e5c37c0c447060aad42566bd53b825beabf66d4d79a0",
+          "generated_plan_112.json": "acf82bbee66857d4aa6a65aa4d2c359e24a5020d36c258e6de1485a5cc4e4b5f",
+          "generated_plan_113.json": "0cd406dbb9344f282eed686a4302ae6920e5506d0cc50cb1b50b16a25cf17b36",
+          "llm_call_usage.jsonl": "de765b5ebf102b9d3df4e67055448d69cb704be5759612c55796b25cec749db0",
+          "memory_events.jsonl": "5c5bca72053e23352c22bb2413ac9ab9ffb238a3173fa8fc5c014fbf82e31863",
+          "stats_results/usage_stats.json": "4772d45e5462200b1225160dbecb54f9d77dcb13fe600d24802a5a3cbe8caac1",
+          "submission/deepseek-flash_submission.jsonl": "7a5d098d2a45fc148e335398ba0487e0d25a73f1d076f3f9d9c694e24fe8ec44"
+        }
+      },
+      "dense": {
+        "family": "results/real/p2_recent_baselines_tokenrhythm_v5",
+        "protocol_sha256": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1",
+        "config_sha256": "2e714c2d750189dfb6fba5039d3ff8f4b4797b10bac1b011037ad777e8e4d9f2",
+        "e2e_artifact_sha256": {
+          "generated_plan_111.json": "376d14071564eafd9c0620ec12d87c4ec6c8b9fcd56a655ce80910cc5fd6f2a1",
+          "generated_plan_112.json": "590d1f163565ab9aa950841086b41964f1ff26a41b3a6067b8344ffb5edfdc1b",
+          "generated_plan_113.json": "9f06c1d27c89dfa5ae77f9ded38dbb97cda3ef5a9ca0dad1ac8d9ff5bfa73c89",
+          "llm_call_usage.jsonl": "17a30ba6704dc06ded2e8cbd997ecba722df1ddd3c928ea41f9f39559747144f",
+          "memory_events.jsonl": "defd0deca82df6f8b6be6d1f21e85d51819cd5bf93b370ad9ed71e307f32b184",
+          "stats_results/usage_stats.json": "3b55d6485de4164672d05213137fed44a381eff4ec9732827b163d8ad54dc843",
+          "submission/deepseek-flash_submission.jsonl": "36f64c6bbabb6cb4b9481f42d722b72b4ee6a193d29ebc496d581965a3cd725f"
+        }
+      },
+      "summary": {
+        "family": "results/real/p2_recent_baselines_tokenrhythm_v5_summary_recovery_1",
+        "protocol_sha256": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1",
+        "config_sha256": "8579c70d91b17ca387f200c8b432004abf5e36fe0990bd4f84ca29f9c824fb1a",
+        "e2e_artifact_sha256": {
+          "generated_plan_111.json": "32789d9fd43a857722ab489412d0dd37b7c4016ee89b3e0fc1f9b7094d8da5e8",
+          "generated_plan_112.json": "29e982298ee96a8807c1719be6699ee8dd94074cf1ffdea8d7ba314f2ad44964",
+          "generated_plan_113.json": "69b0185b04defc7b8b8a46192ca6d11b5f48d53bf0a1b0d5494a4989200a58c8",
+          "llm_call_usage.jsonl": "a7ec5747662360dfbeed77dd69173017a4a44078bc207ad7f3e64e52e5c57125",
+          "memory_events.jsonl": "4af29e68af221138f0058bf477042341ae0bf6e77b9ed4386ccc907a1a88f444",
+          "stats_results/usage_stats.json": "c3cc08b13001c569d4432efee7ac1032fc319a3d4789ba2c9a9ce7d98a03c633",
+          "submission/deepseek-flash_submission.jsonl": "d1793d17b227501c6a33c46d0c0c750582f1b6cf849fc10851e87f2b1ab385fe"
+        }
+      },
+      "mem0": {
+        "family": "results/real/p2_recent_baselines_tokenrhythm_v5",
+        "protocol_sha256": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1",
+        "config_sha256": "6f55f320709c50cd0cc2c15f2575a7b7e3dccfbd0ac04bbe74cd2580a2ae4251",
+        "e2e_artifact_sha256": {
+          "generated_plan_111.json": "1da6618943f0119f3c9346503d1f84b37e24581c5c6a553561b618066bd39ebd",
+          "generated_plan_112.json": "14ea78831ab9560dfe70b85b00994425e621bb3a6c327c7ba95054913d220720",
+          "generated_plan_113.json": "4062ac7f7581fb73b1a48a15c137de3b5fcc36fb61d4509b14a2814656b2d88f",
+          "llm_call_usage.jsonl": "74e2bedcffc505abf8369b72ace0bfa637b61c55d5c1b0e06c542fe556b8abb7",
+          "memory_events.jsonl": "dc6eff63e18e02b38bbde3d97da4b96104e08818e04a52708b615b00cdc43d53",
+          "stats_results/usage_stats.json": "b171cc04a5f192bef12b0f765c933fdabe0cea3570ecf32a015b1da44e799136",
+          "submission/deepseek-flash_submission.jsonl": "14c8eb85bfd40a336812950cb8288662c3546090e8bc3882fec02d9c3dbeaa75"
+        }
+      },
+      "amem": {
+        "family": "results/real/p2_recent_baselines_tokenrhythm_v5",
+        "protocol_sha256": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1",
+        "config_sha256": "2237dd52db643eae613a52cb321b8175fa5c2922107f7dd2fcfb6f9c6d7f6db9",
+        "e2e_artifact_sha256": {
+          "generated_plan_111.json": "6e3dc5ac520329f5f7d416f3ea28ff15c7fa2b00e5c37ea0bd4718048d7df03e",
+          "generated_plan_112.json": "ad0531a5fbf11a7de35bc8a5ed7fa679ce4ea36485510f1b2ac120890c73758b",
+          "generated_plan_113.json": "34f9de96c95f9b191dbc7314cf50387677d107d9cbfabed85765bb3b3fc057c1",
+          "llm_call_usage.jsonl": "387067eaa5c30d0f66527794b9b52d9fdb756ae15ffcfaf5cc67bb99212842e2",
+          "memory_events.jsonl": "7d069e0e4a9203b54a10dc33f7bebd4f63dacee9115e595a630a0e25fede2164",
+          "stats_results/usage_stats.json": "045285c7ebc5998f66b1aa55a935af97414b07acb507aff17669485c5e675625",
+          "submission/deepseek-flash_submission.jsonl": "bdad423cdaa977fccdaab467ffdc0e8a49cd9d29cbf2583048954968c055edc3"
+        }
+      },
+      "lightmem": {
+        "family": "results/real/p2_recent_baselines_tokenrhythm_v5",
+        "protocol_sha256": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1",
+        "config_sha256": "983f884561e0f1cb6222698574bf1e6a3caaedcc5ee49d2d602e1b9c9b9a01ef",
+        "e2e_artifact_sha256": {
+          "generated_plan_111.json": "6e0d47b5e111921338cf6bc6801eadb1c201b61d90a2c134a70dc082f1be65a5",
+          "generated_plan_112.json": "751d8b5e754f81cf1112a04aae0fd41fe2f230f1dae859ad60816d0a12ca310d",
+          "generated_plan_113.json": "6c4be914e9490ab7c3216d3fe380e126f336b6f6a59fda6507c801d22d157604",
+          "llm_call_usage.jsonl": "27a6161f12a416ae4d18d51d6fda2e84d165441e51e3f4bc2acb3f3fbdd5ce4e",
+          "memory_events.jsonl": "646ddb70bb64dfb96ad09aaf5b44b70175e2b951f382eca76c3bb18c8899ce7b",
+          "stats_results/usage_stats.json": "f690f4937c74eb2109a7b4de24ea2eee1e0b688336b5cb1d1b17a69428746a0d",
+          "submission/deepseek-flash_submission.jsonl": "a1960c658e6919fa8f79fcd0880912aa642bcfbcca93d1b98960042f23e233b0"
+        }
+      }
+    }
+  },
+  "ours_vs_same_format_control": {
+    "input_tokens_reduction_percent": 49.63293824486256,
+    "estimated_cny_change_percent": 4.588044282463666,
+    "all_episode_ps_sps_sr_tied": true
+  },
+  "analysis_source_hashes": {
+    "arena_recent_results.py": "c2daffbf66bad774cd9f39775fb3925ef0c5d888a8d6d1c2542f425ecf7c2617",
+    "arena_recent_report.py": "8d42d4efff6dbc76fb48a41aef0208c61c652e135919521d179ed2ddacb284e1",
+    "arena_e2e_score.py": "69e92e1c9286fcb5b5b3adc25abfd36c19ae4015de8a20700a3f95695336f9da"
+  },
+  "protocol_sha256": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1"
+}

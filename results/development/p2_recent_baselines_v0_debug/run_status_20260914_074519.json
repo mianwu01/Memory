@@ -1,0 +1,22 @@
+[
+  {
+    "arm": "mem0",
+    "exit_code": 1,
+    "wall_seconds": 42.8757164562121
+  },
+  {
+    "arm": "amem",
+    "exit_code": 0,
+    "wall_seconds": 421.24505951907486
+  },
+  {
+    "arm": "lightmem",
+    "exit_code": 1,
+    "wall_seconds": 60.21733827795833
+  },
+  {
+    "arm": "summary",
+    "exit_code": 1,
+    "wall_seconds": 281.67996049206704
+  }
+]

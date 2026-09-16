@@ -1,0 +1,12 @@
+{
+  "time": 1789436316.2372217,
+  "evaluation_started": false,
+  "reason": "Strict abort on original actor length selected away model failures; native actor must receive its bounded response unchanged. Memory truncation remains invalid.",
+  "generation_change": "Runtime.validate_completion only; prompts, tools, cap, memory unchanged",
+  "sources": {
+    "code/faithful_memory.py": "e7039e5a9fa2776c208b47912efb5e6bbe51595e91a7903026fa1e3bab2a97dd",
+    "code/test_faithful_memory.py": "7df45fc14034dbdd20ea2824efd2c6e362098d089c646219b8a274ea3660c158"
+  },
+  "existing_runs": "Already loaded processes retain old strict validation. Successful traces without length are behaviorally equivalent. Failed ours retained; one new development run with native length handling.",
+  "new_ours_output": "results/development/faithful_memory_v3/travel/ours_101"
+}

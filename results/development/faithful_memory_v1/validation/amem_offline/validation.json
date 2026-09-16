@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "arm": "amem",
+  "offline": true,
+  "scope": "development mechanism validation, not benchmark results",
+  "counts": {
+    "init": 1,
+    "mechanism": 1
+  },
+  "retrieved_text": "talk start time:202609150850memory content: QUERY_TARGETmemory context: targetmemory keywords: ['query']memory tags: ['test']\ntalk start time:202609150850memory content: NEIGHBOR_SENTINELmemory context: neighbormemory keywords: ['sentinel']memory tags: ['test']\n",
+  "failures": []
+}

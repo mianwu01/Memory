@@ -1,0 +1,30 @@
+{
+  "schema": "yujia-setting-audit/v1",
+  "graph_source": {
+    "path": "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json",
+    "sha256": "b3dfa066cd0e757655afbc411430645e34f2670d7cf307102b96f09b6d737479"
+  },
+  "graph_metadata": "grace on spec=ind, max_lag=3, 260 episodes, 260 trials, 1283 windows, center_by_trial=True",
+  "variable_schema": [
+    "current_city",
+    "transportation",
+    "breakfast",
+    "attraction",
+    "lunch",
+    "dinner",
+    "accommodation"
+  ],
+  "n_variables": 7,
+  "n_estimated_edges": 13,
+  "trial": "episode for spec=ind; (episode,day) only for alternative cell_price/cell_id",
+  "values": "query constraint activation by slot, not test gold values",
+  "evaluation_ids": [
+    111,
+    112,
+    113
+  ],
+  "excluded_from_graph": true,
+  "holdout_reused_from_historical_experiments": true,
+  "cross_trial_windows_allowed": false,
+  "identifiability_established_on_real_data": false
+}

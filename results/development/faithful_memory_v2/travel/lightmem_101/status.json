@@ -1,0 +1,20 @@
+{
+  "complete": false,
+  "arm": "lightmem",
+  "id": 101,
+  "counts": {
+    "actor_contract": 1,
+    "init": 1,
+    "mechanism": 3,
+    "llm": 9,
+    "write": 1,
+    "consolidate": 1,
+    "retrieve": 1,
+    "api_error": 1,
+    "invalid": 1
+  },
+  "error_type": "APIStatusError",
+  "failures": [
+    "API request did not produce a complete response"
+  ]
+}

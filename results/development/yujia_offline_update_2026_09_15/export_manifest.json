@@ -1,0 +1,42 @@
+{
+  "purpose": "offline review documents; no new experimental results",
+  "documents": [
+    {
+      "source": "docs/yujia-paper-outline-2026-09-04.md",
+      "source_sha256": "2ebf3393dd566d924ea5d26a2bd8b535ef4ff4fde7a72eab9fda1fbecc1430c5",
+      "pdf": "outline_zh.pdf",
+      "pdf_sha256": "a7b9df4bb8dffc66a197788bfa65aa93d4f5477c58c0cdcec2fc5cf15aafe116",
+      "browser_errors": [],
+      "links_checked": true
+    },
+    {
+      "source": "docs/yujia-progress-2026-09-15.md",
+      "source_sha256": "e5c337b9ed1895cf8d2ed357e2ee5992e5511ae564759d5c8ae45c2939929a47",
+      "pdf": "progress.pdf",
+      "pdf_sha256": "ca4c09aa42531133f8118b8bb1eed2ea42bf99fc4941bbe6e1ae0041cd26f125",
+      "browser_errors": [],
+      "links_checked": true
+    }
+  ],
+  "font": {
+    "source": "https://github.com/notofonts/noto-cjk/blob/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf",
+    "source_sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+    "subset_sha256": "22efb606e46bbe3a863e6822e7e0b216b92687ed1b816688d0f84b6ff8ff826e",
+    "license": "FONT-LICENSE.txt"
+  },
+  "historical_illustration": {
+    "source": "results/real/yujia_meeting_2026_09_04/slides.html",
+    "source_sha256": "f9c38996df9394880fdecf17f327a7319532ef0229cbf3695d2c982b44c5bb96",
+    "evidence_sha256": "62600d57175efdb092d4bf38dc97e2943ca6b6b94049e29a0b0ab05acb9dab2f",
+    "scope": "unchanged historical read-side and risk evidence; no new model outcomes"
+  },
+  "latex": {
+    "sources": {
+      "causal_memory_formulation.tex": "2f6e8f6f011c15292c4041b82e3f6372514b5763193e9f8fbc7f9f1337ec0a44",
+      "yujia_outline_2026_09_04.tex": "4299e52d3e41eae5cc351a77d87c5ff27cc62c26f751252da2505ecbe11d3b47"
+    },
+    "pdf_sha256": "a06b84fc4667a601e1cd2c78c480eed65a0258128f761ccd7ee144a02b814675",
+    "compiler": "Tectonic; cached resources only",
+    "pages": 13
+  }
+}

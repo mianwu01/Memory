@@ -1,0 +1,30 @@
+[
+  {
+    "name": "outline_zh",
+    "pages": 3,
+    "text_characters": 4497,
+    "required_content_present": true,
+    "pdf_sha256": "a7b9df4bb8dffc66a197788bfa65aa93d4f5477c58c0cdcec2fc5cf15aafe116"
+  },
+  {
+    "name": "progress",
+    "pages": 3,
+    "text_characters": 3200,
+    "required_content_present": true,
+    "pdf_sha256": "ca4c09aa42531133f8118b8bb1eed2ea42bf99fc4941bbe6e1ae0041cd26f125"
+  },
+  {
+    "name": "causal_memory_formulation",
+    "pages": 13,
+    "text_characters": 42171,
+    "required_content_present": true,
+    "pdf_sha256": "a06b84fc4667a601e1cd2c78c480eed65a0258128f761ccd7ee144a02b814675"
+  },
+  {
+    "name": "illustrative_slides",
+    "pages": 3,
+    "text_characters": 5169,
+    "required_content_present": true,
+    "pdf_sha256": "6548c05ad0b7e207104056658ccb74cce28bba72911e1c4db16b1d0a66ea279b"
+  }
+]

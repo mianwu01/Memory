@@ -1,0 +1,29 @@
+{
+  "task_name": "travel_planner",
+  "agent": {
+    "model_name": "deepseek-flash",
+    "backend": "openai",
+    "api_key": "<OPENAI_API_KEY>",
+    "base_url": "https://tokenrhythm.studio/v1"
+  },
+  "memory": {
+    "use_step_memory": false,
+    "memory_system_name": "faithful-mem0",
+    "server_url": "http://0.0.0.0:8000"
+  },
+  "env": {
+    "env_name": "travel_planner",
+    "env_server_url": "http://127.0.0.1:8941",
+    "env_config": {
+      "judgement_mode": "none"
+    }
+  },
+  "task_specific": {
+    "max_steps": 30
+  },
+  "output": {
+    "output_dir": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/faithful_memory_v2/travel/mem0_101/plans",
+    "log_dir": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/faithful_memory_v2/travel/mem0_101/actor_logs",
+    "global_csv": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/faithful_memory_v2/travel/mem0_101/results.csv"
+  }
+}

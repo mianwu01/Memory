@@ -1,0 +1,2 @@
+timestamp,model_name,memory_system,total_groups,PS,SPS,SR
+2026-09-15 09:37:01,deepseek-flash,faithful-noGcompact,1,100.00,100.00,100.00

@@ -1,0 +1,15 @@
+{
+  "registered_at": 1789440474.001819,
+  "evaluation_started": false,
+  "old_sources": {
+    "code/faithful_memory.py": "86eb40a8748dc2fadc223e7e07a27726ca69872b3fb787405d70f399b9e0e6b0",
+    "code/faithful_transport.py": "22bb91eb94a20defb3252738e4c54a616c3f93f6897eb58b26e666285c3b14ca"
+  },
+  "policy": "Retry only explicit upstream_stream_read_error after opened stream, at most 2 additional identical requests; wait 15/30 seconds. Other existing pre-header retry policy unchanged. No length/semantic/quality retries. Unknown billing retained.",
+  "completed_development_compatibility": "Existing complete traces without API errors are unchanged by a branch that is only entered after an explicit opened-stream error. A-Mem 1000->16000 compatibility still excludes old-budget A-Mem.",
+  "development_recovery": "At most one new episode attempt for each development arm interrupted by upstream_stream_read_error. Never selected on scores. Preserve all original attempts.",
+  "new_sources": {
+    "code/faithful_memory.py": "b6dd196ef3c07b7c001c0a1db9fb13b40cf6bcb1f2629815a9cd88bb5fa0ff85",
+    "code/faithful_transport.py": "4d4f4360a59988bac5b65ae65bba1f9d6f9f8d1678556910c808b87c492c4e10"
+  }
+}

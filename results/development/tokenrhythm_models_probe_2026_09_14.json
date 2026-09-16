@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://tokenrhythm.studio/v1/models",
+    "status": 200,
+    "seconds": 0.823,
+    "models": [
+      "glm-5.1",
+      "minimax-m2.7",
+      "kimi-k2.6",
+      "mimo-v2.5-pro",
+      "qwen3.7-max",
+      "kimi-k2.7-code",
+      "glm-5.2",
+      "qwen3.8-max",
+      "deepseek-v4-flash-0731",
+      "seed-2.1-turbo",
+      "seed-2.1-pro",
+      "deepseek-v4-pro-0813",
+      "glm-5.3",
+      "qwen3.7-flash",
+      "qwen3.8-27b",
+      "longcat-2.0",
+      "glm-5.3-flash",
+      "qwen3.8-flash",
+      "deepseek-flash"
+    ],
+    "error": null
+  },
+  {
+    "url": "https://tokenrhythm.studio",
+    "status": 200,
+    "seconds": 0.632,
+    "content_type": "text/html; charset=utf-8"
+  }
+]

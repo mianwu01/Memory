@@ -1,0 +1,6 @@
+{
+  "stage": "stopped_for_review",
+  "time": "2026-09-14T10:42:51+0800",
+  "error_type": "RuntimeError",
+  "detail": "Development gate lightmem: [\"incomplete_or_unexpected_episode_set\", \"api_or_metadata_errors\", \"memory_round_coverage:101\"]"
+}

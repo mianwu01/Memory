@@ -1,0 +1,2912 @@
+{
+  "schema": "yujia-simulation-v2/v1",
+  "cpu_only": true,
+  "episodes_per_seed": 240,
+  "delta": 10,
+  "families": {
+    "linear_observed": [
+      {
+        "seed": 0,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.002953698349111243,
+                "m": 0.9859415940240476,
+                "y": 0.0,
+                "d1": 0.011104707626841178,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.002258721413833861,
+                "m": 0.9833403757103951,
+                "y": 0.0,
+                "d1": 0.006766009001482227,
+                "d2": 0.001729389669863083,
+                "p1": 0.0028309426037161317,
+                "p2": 0.0030745616007096057
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "c",
+                "m",
+                "p2",
+                "y"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.21923507785118973,
+                "m": 0.16383741783819927,
+                "y": 0.4442833590564668,
+                "d1": 0.023333787990829687,
+                "d2": 0.042529060807734095,
+                "p1": 0.0,
+                "p2": 0.10678129645558035
+              },
+              "precision": 0.25,
+              "recall": 0.5,
+              "f1": 0.3333333333333333
+            }
+          },
+          "overall_observable": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1": 0.4
+          },
+          "read_proxy_false_positives": [
+            "p2"
+          ],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9971191554023261,
+                "m": 0.0,
+                "y": 0.0002926351787603075,
+                "d1": 0.00036555017380522376,
+                "d2": 0.0007903603272262744,
+                "p1": 0.0010220043763549532,
+                "p2": 0.00041029454152722883
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.9999118813168177,
+                "y": 1.4325290043433228e-05,
+                "d1": 3.335918777545288e-05,
+                "d2": 1.4692230387242386e-05,
+                "p1": 0.0,
+                "p2": 2.5741974976049798e-05
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0001995100814029639,
+                "m": 0.8201466352361243,
+                "y": 0.0008112569559815125,
+                "d1": 0.17703762804683704,
+                "d2": 0.001804969679654275,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      },
+      {
+        "seed": 1,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.005787371360389593,
+                "m": 0.9899292697978564,
+                "y": 0.0,
+                "d1": 0.0011564641818052363,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0031268946599487795
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.9992184483893067,
+                "y": 0.0,
+                "d1": 0.0007815516106933089,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "d1",
+                "d2"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.012851303555815688,
+                "m": 0.0,
+                "y": 0.0,
+                "d1": 0.7837159157564749,
+                "d2": 0.20343278068770942,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5
+            }
+          },
+          "overall_observable": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9985546098218929,
+                "m": 0.0007706049458675306,
+                "y": 0.00031082434249057406,
+                "d1": 0.0,
+                "d2": 0.0,
+                "p1": 0.00014116961997174326,
+                "p2": 0.0002227912697770624
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 2.255170157775049e-06,
+                "m": 0.9999800666079189,
+                "y": 0.0,
+                "d1": 1.0653597650231472e-05,
+                "d2": 7.0246242730210165e-06,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0007900775661637074,
+                "m": 0.8486795737528691,
+                "y": 0.0004938359970120988,
+                "d1": 0.1500365126839551,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      },
+      {
+        "seed": 2,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.011279935715508817,
+                "m": 0.9792489173607221,
+                "y": 0.0008413209005239182,
+                "d1": 0.006728976142897794,
+                "d2": 0.0011183761446100855,
+                "p1": 0.0,
+                "p2": 0.0007824737357374177
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.009990749441917142,
+                "m": 0.9820271434074368,
+                "y": 0.0011424113151438228,
+                "d1": 0.0012444007585381814,
+                "d2": 0.0,
+                "p1": 0.002427300968988637,
+                "p2": 0.0031679941079752996
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "d1",
+                "d2",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.5357418944853953,
+                "y": 0.0,
+                "d1": 0.15780259356241622,
+                "d2": 0.25146330057178756,
+                "p1": 0.006830504863643586,
+                "p2": 0.04816170651675736
+              },
+              "precision": 0.6666666666666666,
+              "recall": 1.0,
+              "f1": 0.8
+            }
+          },
+          "overall_observable": {
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.6666666666666665
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9971920088279272,
+                "m": 0.0002474341613399066,
+                "y": 0.00011127911058431237,
+                "d1": 0.0005592209442892161,
+                "d2": 0.0003999456125875936,
+                "p1": 0.00040917234165202776,
+                "p2": 0.0010809390016197529
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 6.925108031756278e-06,
+                "m": 0.9999243276687556,
+                "y": 1.8383531681685731e-06,
+                "d1": 8.271403850460971e-06,
+                "d2": 0.0,
+                "p1": 2.7678244145078826e-05,
+                "p2": 3.0959222049059755e-05
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0007703096781686992,
+                "m": 0.8947407361970147,
+                "y": 0.0004876338262841328,
+                "d1": 0.10348268440581077,
+                "d2": 0.0005186358927216972,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      },
+      {
+        "seed": 3,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.0021092573782531786,
+                "m": 0.9913984201556937,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 0.0044509801140792124,
+                "p1": 0.00048423561227248246,
+                "p2": 0.0015571067397015896
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.004692622029774612,
+                "m": 0.9932657601135427,
+                "y": 0.0,
+                "d1": 0.0010332777635451167,
+                "d2": 0.0006989370912979491,
+                "p1": 0.0,
+                "p2": 0.0003094030018398053
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "c",
+                "d1",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.34500335974547525,
+                "m": 0.5820033590635646,
+                "y": 0.0,
+                "d1": 0.07299328119096019,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 0.6666666666666666,
+              "recall": 1.0,
+              "f1": 0.8
+            }
+          },
+          "overall_observable": {
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.6666666666666665
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9991990685792348,
+                "m": 0.0,
+                "y": 0.0005410167555661087,
+                "d1": 0.00025991466519917643,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 5.0883908754388184e-06,
+                "m": 0.9999873846929513,
+                "y": 3.063422161361249e-06,
+                "d1": 0.0,
+                "d2": 4.401912906747352e-07,
+                "p1": 0.0,
+                "p2": 4.023302721243942e-06
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.8706592129722514,
+                "y": 0.0,
+                "d1": 0.1284630057159921,
+                "d2": 0.0005055430544617324,
+                "p1": 9.687661690951846e-07,
+                "p2": 0.0003712694911255688
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      },
+      {
+        "seed": 4,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.01119893838561608,
+                "m": 0.9857342804508554,
+                "y": 0.0,
+                "d1": 0.0017948995955088714,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0012718815680197472
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.007338412806308594,
+                "m": 0.9907588552320712,
+                "y": 0.0006970886548338193,
+                "d1": 0.0,
+                "d2": 0.0012056433067863055,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "d1",
+                "d2",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.04314763546475792,
+                "m": 0.5984443130864776,
+                "y": 0.0,
+                "d1": 0.25381434303926237,
+                "d2": 0.10459370840950209,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 0.6666666666666666,
+              "recall": 1.0,
+              "f1": 0.8
+            }
+          },
+          "overall_observable": {
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.6666666666666665
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9994980853210949,
+                "m": 0.00022260445458577654,
+                "y": 3.869564973645305e-05,
+                "d1": 0.00010096026867305861,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.00013965430591011266
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 9.097064210629567e-07,
+                "m": 0.9999837170528354,
+                "y": 0.0,
+                "d1": 1.1439420852127561e-05,
+                "d2": 3.4007811924375567e-07,
+                "p1": 3.5937417722604676e-06,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0003077712669398061,
+                "m": 0.8980462277802578,
+                "y": 0.0,
+                "d1": 0.10138698709886566,
+                "d2": 0.0001211876359889725,
+                "p1": 5.4144441389405686e-05,
+                "p2": 8.368177655819645e-05
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      }
+    ],
+    "mlp_observed": [
+      {
+        "seed": 0,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.9875329507071547,
+                "y": 0.0,
+                "d1": 0.0072224692070175355,
+                "d2": 0.0,
+                "p1": 0.0025574257100672323,
+                "p2": 0.00268715437576041
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.0030223263918082574,
+                "m": 0.955176644802626,
+                "y": 0.002455664141717285,
+                "d1": 0.0029268973882229815,
+                "d2": 0.013657910233413815,
+                "p1": 0.016551207223411805,
+                "p2": 0.006209349818799987
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "c",
+                "p1",
+                "p2",
+                "y"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.28756859940623364,
+                "m": 0.0013285272428963824,
+                "y": 0.3737041092126919,
+                "d1": 0.0,
+                "d2": 0.04945197076914709,
+                "p1": 0.1970746473107115,
+                "p2": 0.09087214605831946
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "overall_observable": {
+            "precision": 0.16666666666666666,
+            "recall": 0.25,
+            "f1": 0.2
+          },
+          "read_proxy_false_positives": [
+            "p1",
+            "p2"
+          ],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9981714109093375,
+                "m": 0.00030077792518394775,
+                "y": 0.0004137209463859179,
+                "d1": 0.0,
+                "d2": 0.0005781651822276922,
+                "p1": 0.0003931178555445078,
+                "p2": 0.00014280718132038002
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 5.488520174786342e-07,
+                "m": 0.9999948184513701,
+                "y": 0.0,
+                "d1": 6.458162979475856e-07,
+                "d2": 2.744680845150153e-06,
+                "p1": 0.0,
+                "p2": 1.2421994693565346e-06
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.6499255192198686,
+                "y": 0.000378074024616409,
+                "d1": 0.34887518073798873,
+                "d2": 0.0004992154775714818,
+                "p1": 0.00014207211725365246,
+                "p2": 0.00017993842270107988
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      },
+      {
+        "seed": 1,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.9927695528211302,
+                "y": 0.00048347176396766107,
+                "d1": 0.0003525774333365345,
+                "d2": 0.00025448566456739844,
+                "p1": 0.001082023374758017,
+                "p2": 0.005057888942240192
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.9976463339433536,
+                "y": 0.00022604618397740095,
+                "d1": 0.0,
+                "d2": 0.0021276198726691096,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "d1",
+                "d2",
+                "y"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.013613528847911203,
+                "m": 0.0,
+                "y": 0.1327893827964701,
+                "d1": 0.6194923953989047,
+                "d2": 0.23410469295671404,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 0.3333333333333333,
+              "recall": 0.5,
+              "f1": 0.4
+            }
+          },
+          "overall_observable": {
+            "precision": 0.4,
+            "recall": 0.5,
+            "f1": 0.4444444444444445
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9999290583642323,
+                "m": 7.094163576771229e-05,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 6.513269005016498e-07,
+                "m": 0.9999890154678329,
+                "y": 1.7475749049815469e-06,
+                "d1": 1.7580212617166645e-06,
+                "d2": 5.325015014963393e-06,
+                "p1": 1.5025940850093428e-06,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.00022322254324749974,
+                "m": 0.7180142131208165,
+                "y": 5.3523911248613156e-05,
+                "d1": 0.28011838780681986,
+                "d2": 0.00041442842684852966,
+                "p1": 0.0008091384484100881,
+                "p2": 0.00036708574260886054
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      },
+      {
+        "seed": 2,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.007660713978927093,
+                "m": 0.9884037851399613,
+                "y": 0.0008977266146031027,
+                "d1": 0.0,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.00303777426650849
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.02311594537384097,
+                "m": 0.967228939611566,
+                "y": 0.004848086269380729,
+                "d1": 0.0035226170278419063,
+                "d2": 0.0012844117173704077,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "d1",
+                "d2",
+                "m",
+                "p2"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.5616243452764975,
+                "y": 0.026021453561185286,
+                "d1": 0.07658037781944015,
+                "d2": 0.1716282000353945,
+                "p1": 0.0,
+                "p2": 0.16414562330748256
+              },
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            }
+          },
+          "overall_observable": {
+            "precision": 0.5,
+            "recall": 0.75,
+            "f1": 0.6
+          },
+          "read_proxy_false_positives": [
+            "p2"
+          ],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9996462464663868,
+                "m": 2.7825571676513367e-05,
+                "y": 0.0,
+                "d1": 1.5086491271742189e-05,
+                "d2": 0.00012173090105351804,
+                "p1": 9.235022773756362e-05,
+                "p2": 9.676034187355329e-05
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.9999954732189632,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 2.6321228394191573e-07,
+                "p1": 2.8689044454371297e-06,
+                "p2": 1.3946643073574998e-06
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.6741902148795104,
+                "y": 0.0012019975308308908,
+                "d1": 0.32377254125201815,
+                "d2": 0.0008149618432966518,
+                "p1": 0.0,
+                "p2": 2.0284494343902436e-05
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      },
+      {
+        "seed": 3,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.0006472520399285882,
+                "m": 0.9978496817525109,
+                "y": 0.0015030662075606563,
+                "d1": 0.0,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.008545667578719827,
+                "m": 0.9902107074829697,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 0.0012436249383104316,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "c",
+                "d1",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.14311906730709487,
+                "m": 0.5206273166024461,
+                "y": 0.0,
+                "d1": 0.3362536160904591,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 0.6666666666666666,
+              "recall": 1.0,
+              "f1": 0.8
+            }
+          },
+          "overall_observable": {
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.6666666666666665
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9992866665727753,
+                "m": 0.0,
+                "y": 0.0006844136761664592,
+                "d1": 0.0,
+                "d2": 2.8919751058144522e-05,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 2.1777977433689765e-06,
+                "m": 0.9999965830252079,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 1.2391770488634454e-06
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.7516290138194237,
+                "y": 0.0,
+                "d1": 0.2480035823409457,
+                "d2": 0.0,
+                "p1": 4.296708743801085e-05,
+                "p2": 0.000324436752192551
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      },
+      {
+        "seed": 4,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.023914759773135265,
+                "m": 0.9725883190823447,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0034969211445201277
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.003390127723908175,
+                "m": 0.9929648746352054,
+                "y": 0.0024560604136052,
+                "d1": 0.0,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.001188937227281236
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "c",
+                "d1",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.4549675595078463,
+                "m": 0.2014637162901352,
+                "y": 0.0,
+                "d1": 0.3435687242020185,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 0.6666666666666666,
+              "recall": 1.0,
+              "f1": 0.8
+            }
+          },
+          "overall_observable": {
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.6666666666666665
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9997864204001142,
+                "m": 1.7438763205481694e-05,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 0.00019614083668013842,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.9999932736464366,
+                "y": 2.628142996661355e-06,
+                "d1": 0.0,
+                "d2": 1.6462314759354187e-06,
+                "p1": 2.012543139149554e-06,
+                "p2": 4.3943595165000774e-07
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0004001497550391431,
+                "m": 0.7446759717011846,
+                "y": 0.0,
+                "d1": 0.2549238785437763,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      }
+    ],
+    "mlp_latent": [
+      {
+        "seed": 0,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.9909380483700118,
+                "y": 0.0,
+                "d1": 0.007158289495961759,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0019036621340263568
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.004969386182160277,
+                "m": 0.9508111408679728,
+                "y": 0.003459367620626273,
+                "d1": 0.003353341774569578,
+                "d2": 0.013814009182147582,
+                "p1": 0.01576289244138292,
+                "p2": 0.007829861931140847
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "c",
+                "p1",
+                "p2",
+                "y"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.23871241035025711,
+                "m": 0.0,
+                "y": 0.25117480054977837,
+                "d1": 0.0,
+                "d2": 0.018286157359886212,
+                "p1": 0.1706607134093206,
+                "p2": 0.32116591833075764
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "overall_observable": {
+            "precision": 0.16666666666666666,
+            "recall": 0.25,
+            "f1": 0.2
+          },
+          "read_proxy_false_positives": [
+            "p1",
+            "p2"
+          ],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9981714109093375,
+                "m": 0.00030077792518394775,
+                "y": 0.0004137209463859179,
+                "d1": 0.0,
+                "d2": 0.0005781651822276922,
+                "p1": 0.0003931178555445078,
+                "p2": 0.00014280718132038002
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 5.488520174786342e-07,
+                "m": 0.9999948184513701,
+                "y": 0.0,
+                "d1": 6.458162979475856e-07,
+                "d2": 2.744680845150153e-06,
+                "p1": 0.0,
+                "p2": 1.2421994693565346e-06
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m",
+                "p1",
+                "p2"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.4133933303527129,
+                "y": 0.0014628340274759736,
+                "d1": 0.1505370245093422,
+                "d2": 0.006456212413843081,
+                "p1": 0.18469512817487002,
+                "p2": 0.24345547052175587
+              },
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            }
+          },
+          "overall_observable": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          "read_proxy_false_positives": [
+            "p1",
+            "p2"
+          ],
+          "latent_incident_edges_scored": false
+        },
+        "grouped_proxy_fallback": {
+          "pooled": false,
+          "grouped_proxy": true,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9978761293208006,
+                "m": 0.00024370319928886024,
+                "y": 0.0006558994917506457,
+                "d1": 0.0004743463013702824,
+                "d2": 0.0007499216867895415,
+                "h_group": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.999997158375309,
+                "y": 1.1419318040142005e-06,
+                "d1": 1.6899829769979156e-06,
+                "d2": 9.709910126240535e-09,
+                "h_group": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "h_group",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "h_group",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0006872161762739009,
+                "m": 0.36367657140477255,
+                "y": 0.0,
+                "d1": 0.10294470534201103,
+                "d2": 0.0,
+                "h_group": 0.5326915070769426
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      },
+      {
+        "seed": 1,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.001955104604361459,
+                "m": 0.9932628412554309,
+                "y": 0.0011914591791315264,
+                "d1": 0.0,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0035905949610763634
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.996061597614495,
+                "y": 0.0012173371568057116,
+                "d1": 0.0,
+                "d2": 0.0027210652286993094,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "d1",
+                "d2",
+                "y"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.018742253938056272,
+                "m": 0.0,
+                "y": 0.3992791530202953,
+                "d1": 0.3631552876323103,
+                "d2": 0.2188233054093381,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 0.3333333333333333,
+              "recall": 0.5,
+              "f1": 0.4
+            }
+          },
+          "overall_observable": {
+            "precision": 0.4,
+            "recall": 0.5,
+            "f1": 0.4444444444444445
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9999290583642323,
+                "m": 7.094163576771229e-05,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 6.513269005016498e-07,
+                "m": 0.9999890154678329,
+                "y": 1.7475749049815469e-06,
+                "d1": 1.7580212617166645e-06,
+                "d2": 5.325015014963393e-06,
+                "p1": 1.5025940850093428e-06,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m",
+                "p1",
+                "p2"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0003149759717904069,
+                "m": 0.4192880263141466,
+                "y": 0.0,
+                "d1": 0.1367891733380435,
+                "d2": 0.0023595653109736384,
+                "p1": 0.21820572105535918,
+                "p2": 0.2230425380096867
+              },
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            }
+          },
+          "overall_observable": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          "read_proxy_false_positives": [
+            "p1",
+            "p2"
+          ],
+          "latent_incident_edges_scored": false
+        },
+        "grouped_proxy_fallback": {
+          "pooled": false,
+          "grouped_proxy": true,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9995033919063329,
+                "m": 6.130933751311374e-05,
+                "y": 0.00029366025444705463,
+                "d1": 0.0,
+                "d2": 0.00014163850170695078,
+                "h_group": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 1.0,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 0.0,
+                "h_group": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "h_group",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "h_group",
+                "m"
+              ],
+              "scores": {
+                "c": 0.00028234605905064946,
+                "m": 0.3384434938345112,
+                "y": 0.0007281882310553254,
+                "d1": 0.16178750139010073,
+                "d2": 0.0004299359213800628,
+                "h_group": 0.4983285345639021
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      },
+      {
+        "seed": 2,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.009929517828821649,
+                "m": 0.9844570987754864,
+                "y": 0.0023071917742380882,
+                "d1": 0.0,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0033061916214540024
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.022560549804200566,
+                "m": 0.9702578835515272,
+                "y": 0.0009921919854123608,
+                "d1": 0.00276270440545261,
+                "d2": 0.003426670253407239,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "d1",
+                "d2",
+                "m",
+                "p1",
+                "p2",
+                "y"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.3302019939327139,
+                "y": 0.13292628532242112,
+                "d1": 0.07677813929177153,
+                "d2": 0.09170482796729737,
+                "p1": 0.1498752393922864,
+                "p2": 0.21851351409350972
+              },
+              "precision": 0.3333333333333333,
+              "recall": 1.0,
+              "f1": 0.5
+            }
+          },
+          "overall_observable": {
+            "precision": 0.375,
+            "recall": 0.75,
+            "f1": 0.5
+          },
+          "read_proxy_false_positives": [
+            "p1",
+            "p2"
+          ],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9996462464663868,
+                "m": 2.7825571676513367e-05,
+                "y": 0.0,
+                "d1": 1.5086491271742189e-05,
+                "d2": 0.00012173090105351804,
+                "p1": 9.235022773756362e-05,
+                "p2": 9.676034187355329e-05
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.9999954732189632,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 2.6321228394191573e-07,
+                "p1": 2.8689044454371297e-06,
+                "p2": 1.3946643073574998e-06
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m",
+                "p1",
+                "p2"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0003815325614219883,
+                "m": 0.3930829427442331,
+                "y": 0.0011170326883380016,
+                "d1": 0.14918436488765577,
+                "d2": 0.0,
+                "p1": 0.26474213653531664,
+                "p2": 0.19149199058303454
+              },
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            }
+          },
+          "overall_observable": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          "read_proxy_false_positives": [
+            "p1",
+            "p2"
+          ],
+          "latent_incident_edges_scored": false
+        },
+        "grouped_proxy_fallback": {
+          "pooled": false,
+          "grouped_proxy": true,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 1.0,
+                "m": 0.0,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 0.0,
+                "h_group": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.999998013757935,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 1.9862420650148173e-06,
+                "h_group": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "h_group",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "h_group",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.34739384520161914,
+                "y": 0.0,
+                "d1": 0.10604372148441621,
+                "d2": 0.002029077434344712,
+                "h_group": 0.5445333558796199
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      },
+      {
+        "seed": 3,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 1.0,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.008447813112510314,
+                "m": 0.9902152068345805,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 3.505966116345902e-05,
+                "p1": 0.0,
+                "p2": 0.0013019203917457635
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "c",
+                "d1",
+                "m",
+                "p1",
+                "p2"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.1858423896249661,
+                "m": 0.30965709066080643,
+                "y": 0.0,
+                "d1": 0.12869361674489832,
+                "d2": 0.0010356884687930277,
+                "p1": 0.2982841139458271,
+                "p2": 0.07648710055470902
+              },
+              "precision": 0.4,
+              "recall": 1.0,
+              "f1": 0.5714285714285715
+            }
+          },
+          "overall_observable": {
+            "precision": 0.42857142857142855,
+            "recall": 0.75,
+            "f1": 0.5454545454545454
+          },
+          "read_proxy_false_positives": [
+            "p1",
+            "p2"
+          ],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9992866665727753,
+                "m": 0.0,
+                "y": 0.0006844136761664592,
+                "d1": 0.0,
+                "d2": 2.8919751058144522e-05,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 2.1777977433689765e-06,
+                "m": 0.9999965830252079,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 0.0,
+                "p1": 0.0,
+                "p2": 1.2391770488634454e-06
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m",
+                "p1",
+                "p2"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.42303713710846774,
+                "y": 0.00018722929155889022,
+                "d1": 0.08784731215448029,
+                "d2": 0.0019934832210420778,
+                "p1": 0.1984991965439887,
+                "p2": 0.2884356416804623
+              },
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            }
+          },
+          "overall_observable": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          "read_proxy_false_positives": [
+            "p1",
+            "p2"
+          ],
+          "latent_incident_edges_scored": false
+        },
+        "grouped_proxy_fallback": {
+          "pooled": false,
+          "grouped_proxy": true,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9997229817893982,
+                "m": 3.757089912310381e-05,
+                "y": 0.0,
+                "d1": 2.880044127448802e-05,
+                "d2": 0.0002106468702040858,
+                "h_group": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.999997011820464,
+                "y": 0.0,
+                "d1": 1.5337004262921324e-06,
+                "d2": 0.0,
+                "h_group": 1.454479109745969e-06
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "h_group",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "h_group",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.34877813673619057,
+                "y": 0.0,
+                "d1": 0.11542310861127561,
+                "d2": 0.0005370179556913648,
+                "h_group": 0.5352617366968425
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      },
+      {
+        "seed": 4,
+        "pooled": {
+          "pooled": true,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.02181597575529451,
+                "m": 0.9732874143245742,
+                "y": 8.681792330849515e-05,
+                "d1": 0.0,
+                "d2": 0.0,
+                "p1": 0.0006347849396657515,
+                "p2": 0.004175007057157152
+              },
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "hold": {
+              "rows": 4320,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.004589339976300761,
+                "m": 0.9942875941074539,
+                "y": 0.0009493216801262648,
+                "d1": 0.0,
+                "d2": 0.00017374423611921238,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 4320,
+              "parents": [
+                "d1",
+                "d2",
+                "m",
+                "p1",
+                "p2"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.38354733789343953,
+                "y": 0.0,
+                "d1": 0.11807669338911095,
+                "d2": 0.15429916452823791,
+                "p1": 0.19784793108690513,
+                "p2": 0.14622887310230645
+              },
+              "precision": 0.4,
+              "recall": 1.0,
+              "f1": 0.5714285714285715
+            }
+          },
+          "overall_observable": {
+            "precision": 0.42857142857142855,
+            "recall": 0.75,
+            "f1": 0.5454545454545454
+          },
+          "read_proxy_false_positives": [
+            "p1",
+            "p2"
+          ],
+          "latent_incident_edges_scored": false
+        },
+        "regime_conditioned": {
+          "pooled": false,
+          "grouped_proxy": false,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9997864204001142,
+                "m": 1.7438763205481694e-05,
+                "y": 0.0,
+                "d1": 0.0,
+                "d2": 0.00019614083668013842,
+                "p1": 0.0,
+                "p2": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.9999932736464366,
+                "y": 2.628142996661355e-06,
+                "d1": 0.0,
+                "d2": 1.6462314759354187e-06,
+                "p1": 2.012543139149554e-06,
+                "p2": 4.3943595165000774e-07
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "m",
+                "p1",
+                "p2"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0005027082032108424,
+                "m": 0.38295975603683685,
+                "y": 0.0,
+                "d1": 0.09302163172690094,
+                "d2": 0.0,
+                "p1": 0.3466438551162303,
+                "p2": 0.176872048916821
+              },
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            }
+          },
+          "overall_observable": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          "read_proxy_false_positives": [
+            "p1",
+            "p2"
+          ],
+          "latent_incident_edges_scored": false
+        },
+        "grouped_proxy_fallback": {
+          "pooled": false,
+          "grouped_proxy": true,
+          "mechanisms": {
+            "write": {
+              "rows": 240,
+              "parents": [
+                "c"
+              ],
+              "expected_observable_parents": [
+                "c"
+              ],
+              "scores": {
+                "c": 0.9989467644617215,
+                "m": 2.0919218561818482e-05,
+                "y": 0.0,
+                "d1": 0.00014493126194676655,
+                "d2": 0.000682945518300755,
+                "h_group": 0.0002044395394691344
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "hold": {
+              "rows": 2160,
+              "parents": [
+                "m"
+              ],
+              "expected_observable_parents": [
+                "m"
+              ],
+              "scores": {
+                "c": 1.0511680269506586e-06,
+                "m": 0.9999963623909887,
+                "y": 2.586440984490517e-06,
+                "d1": 0.0,
+                "d2": 0.0,
+                "h_group": 0.0
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "read": {
+              "rows": 240,
+              "parents": [
+                "d1",
+                "h_group",
+                "m"
+              ],
+              "expected_observable_parents": [
+                "d1",
+                "h_group",
+                "m"
+              ],
+              "scores": {
+                "c": 0.0,
+                "m": 0.36344796611936964,
+                "y": 0.0,
+                "d1": 0.06709039245994108,
+                "d2": 0.0023821621277733762,
+                "h_group": 0.5670794792929159
+              },
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "overall_observable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "read_proxy_false_positives": [],
+          "latent_incident_edges_scored": false
+        }
+      }
+    ]
+  },
+  "summary": {
+    "linear_observed": {
+      "pooled": {
+        "overall_f1_mean": 0.5799999999999998,
+        "overall_f1_std": 0.1107549848389076,
+        "read_f1_mean": 0.6466666666666667,
+        "read_f1_std": 0.19504985117770393,
+        "seeds": 5
+      },
+      "regime_conditioned": {
+        "overall_f1_mean": 1.0,
+        "overall_f1_std": 0.0,
+        "read_f1_mean": 1.0,
+        "read_f1_std": 0.0,
+        "seeds": 5
+      }
+    },
+    "mlp_observed": {
+      "pooled": {
+        "overall_f1_mean": 0.5155555555555555,
+        "overall_f1_std": 0.17744413135713,
+        "read_f1_mean": 0.5333333333333334,
+        "read_f1_std": 0.3040467800264368,
+        "seeds": 5
+      },
+      "regime_conditioned": {
+        "overall_f1_mean": 1.0,
+        "overall_f1_std": 0.0,
+        "read_f1_mean": 1.0,
+        "read_f1_std": 0.0,
+        "seeds": 5
+      }
+    },
+    "mlp_latent": {
+      "pooled": {
+        "overall_f1_mean": 0.44707070707070706,
+        "overall_f1_std": 0.12900472929941026,
+        "read_f1_mean": 0.40857142857142864,
+        "read_f1_std": 0.21373261953445766,
+        "seeds": 5
+      },
+      "regime_conditioned": {
+        "overall_f1_mean": 0.8,
+        "overall_f1_std": 0.0,
+        "read_f1_mean": 0.6666666666666666,
+        "read_f1_std": 0.0,
+        "seeds": 5
+      },
+      "grouped_proxy_fallback": {
+        "overall_f1_mean": 1.0,
+        "overall_f1_std": 0.0,
+        "read_f1_mean": 1.0,
+        "read_f1_std": 0.0,
+        "seeds": 5
+      }
+    }
+  },
+  "gold_scope": "All observed structural parents and the hidden h parent are generator-owned. Directed edges incident to unobserved h are not scored as recoverable by the observed-only estimator; the grouped arm is explicitly a measured-proxy fallback.",
+  "claim_boundary": "This validates nonlinear regime-conditioned structure recovery under known DGPs. It does not establish latent-variable identification or agent-memory utility."
+}

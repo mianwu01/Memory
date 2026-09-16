@@ -1,0 +1,16 @@
+{
+  "passed": false,
+  "error_type": "InvalidExecution",
+  "failures": [
+    "Truncated memory completion",
+    "Upstream reported a processing error or fallback"
+  ],
+  "counts": {
+    "init": 1,
+    "llm": 59,
+    "mechanism": 18,
+    "write": 17,
+    "invalid": 2
+  },
+  "history_turns": 17
+}

@@ -1,0 +1,237 @@
+{
+  "schema": "causal-memory-t1-selection/v1",
+  "task": "dynamic_travel",
+  "train_episodes": 350,
+  "test_episodes": 100,
+  "learner": {
+    "kind": "train-only interventional impact graph",
+    "observed_transitions": 350,
+    "graph": [
+      {
+        "source": "attraction.available",
+        "target": "attraction.end_hour",
+        "kind": "observed_interventional_impact"
+      },
+      {
+        "source": "attraction.available",
+        "target": "attraction.status",
+        "kind": "observed_interventional_impact"
+      },
+      {
+        "source": "dinner.available",
+        "target": "dinner.end_hour",
+        "kind": "observed_interventional_impact"
+      },
+      {
+        "source": "dinner.available",
+        "target": "dinner.status",
+        "kind": "observed_interventional_impact"
+      },
+      {
+        "source": "flight.arrival_hour",
+        "target": "attraction.end_hour",
+        "kind": "observed_interventional_impact"
+      },
+      {
+        "source": "flight.arrival_hour",
+        "target": "attraction.status",
+        "kind": "observed_interventional_impact"
+      },
+      {
+        "source": "flight.arrival_hour",
+        "target": "dinner.end_hour",
+        "kind": "observed_interventional_impact"
+      },
+      {
+        "source": "flight.arrival_hour",
+        "target": "dinner.status",
+        "kind": "observed_interventional_impact"
+      },
+      {
+        "source": "flight.arrival_hour",
+        "target": "hotel.checkin_status",
+        "kind": "observed_interventional_impact"
+      },
+      {
+        "source": "flight.arrival_hour",
+        "target": "transfer.end_hour",
+        "kind": "observed_interventional_impact"
+      },
+      {
+        "source": "hotel.deadline",
+        "target": "hotel.checkin_status",
+        "kind": "observed_interventional_impact"
+      }
+    ],
+    "forbidden_inputs": [
+      "gold.graph",
+      "gold.affected_nodes",
+      "test post_state"
+    ]
+  },
+  "generalization": {
+    "train_test_entity_overlap": 0,
+    "held_out_numeric_values": {
+      "flight.arrival_hour": [
+        22,
+        23
+      ],
+      "hotel.deadline": [
+        15
+      ]
+    },
+    "held_out_regime_signatures": [
+      [
+        false,
+        false,
+        false
+      ]
+    ],
+    "test_template": "paraphrased"
+  },
+  "value_decoder_boundary": "All selection arms share the deterministic SCM value decoder, which writes only predicted impact cells. Task success isolates selection sufficiency; it is not an end-to-end language or equation-learning result.",
+  "arms": {
+    "exact_kv": {
+      "episodes": 100,
+      "propagation_required_episodes": 80,
+      "affected_precision": 1.0,
+      "affected_recall": 0.46380952380952395,
+      "affected_state_accuracy": 0.46380952380952395,
+      "full_state_accuracy": 0.8884210526315782,
+      "task_success_rate": 0.2,
+      "negative_control_specificity": 1.0,
+      "serialization": {
+        "compact": {
+          "avg_selected_cells": 1.0,
+          "avg_context_chars": 27.45,
+          "avg_token_proxy": 7.47
+        },
+        "verbose": {
+          "avg_selected_cells": 1.0,
+          "avg_context_chars": 74.45,
+          "avg_token_proxy": 18.78
+        }
+      }
+    },
+    "domain_solver": {
+      "episodes": 100,
+      "propagation_required_episodes": 80,
+      "affected_precision": 1.0,
+      "affected_recall": 1.0,
+      "affected_state_accuracy": 1.0,
+      "full_state_accuracy": 1.0,
+      "task_success_rate": 1.0,
+      "negative_control_specificity": 1.0,
+      "serialization": {
+        "compact": {
+          "avg_selected_cells": 3.12,
+          "avg_context_chars": 85.01,
+          "avg_token_proxy": 21.63
+        },
+        "verbose": {
+          "avg_selected_cells": 3.12,
+          "avg_context_chars": 235.89,
+          "avg_token_proxy": 59.31
+        }
+      }
+    },
+    "matched_lexical": {
+      "episodes": 100,
+      "propagation_required_episodes": 80,
+      "affected_precision": 0.6857142857142859,
+      "affected_recall": 0.6914285714285715,
+      "affected_state_accuracy": 0.6914285714285715,
+      "full_state_accuracy": 0.9305263157894729,
+      "task_success_rate": 0.4,
+      "negative_control_specificity": 1.0,
+      "serialization": {
+        "compact": {
+          "avg_selected_cells": 3.2,
+          "avg_context_chars": 87.01,
+          "avg_token_proxy": 22.27
+        },
+        "verbose": {
+          "avg_selected_cells": 3.2,
+          "avg_context_chars": 241.81,
+          "avg_token_proxy": 60.8
+        }
+      }
+    },
+    "learned_graph": {
+      "episodes": 100,
+      "propagation_required_episodes": 80,
+      "affected_precision": 0.9885714285714287,
+      "affected_recall": 1.0,
+      "affected_state_accuracy": 1.0,
+      "full_state_accuracy": 1.0,
+      "task_success_rate": 1.0,
+      "negative_control_specificity": 1.0,
+      "serialization": {
+        "compact": {
+          "avg_selected_cells": 3.2,
+          "avg_context_chars": 87.65,
+          "avg_token_proxy": 22.27
+        },
+        "verbose": {
+          "avg_selected_cells": 3.2,
+          "avg_context_chars": 242.45,
+          "avg_token_proxy": 60.98
+        }
+      }
+    },
+    "oracle_graph": {
+      "episodes": 100,
+      "propagation_required_episodes": 80,
+      "affected_precision": 1.0,
+      "affected_recall": 1.0,
+      "affected_state_accuracy": 1.0,
+      "full_state_accuracy": 1.0,
+      "task_success_rate": 1.0,
+      "negative_control_specificity": 1.0,
+      "serialization": {
+        "compact": {
+          "avg_selected_cells": 3.12,
+          "avg_context_chars": 85.01,
+          "avg_token_proxy": 21.63
+        },
+        "verbose": {
+          "avg_selected_cells": 3.12,
+          "avg_context_chars": 235.89,
+          "avg_token_proxy": 59.31
+        }
+      }
+    },
+    "full_state": {
+      "episodes": 100,
+      "propagation_required_episodes": 80,
+      "affected_precision": 0.16421052631578925,
+      "affected_recall": 1.0,
+      "affected_state_accuracy": 1.0,
+      "full_state_accuracy": 1.0,
+      "task_success_rate": 1.0,
+      "negative_control_specificity": 0.0,
+      "serialization": {
+        "compact": {
+          "avg_selected_cells": 19.0,
+          "avg_context_chars": 489.14,
+          "avg_token_proxy": 122.69
+        },
+        "verbose": {
+          "avg_selected_cells": 19.0,
+          "avg_context_chars": 1418.14,
+          "avg_token_proxy": 354.89
+        }
+      }
+    }
+  },
+  "admission": {
+    "train_test_runtime_isolated": true,
+    "unseen_entities": true,
+    "unseen_numeric_intervention_values": true,
+    "held_out_regime_combination": true,
+    "learned_beats_matched_retrieval_at_budget": true,
+    "learned_preserves_negative_controls": true,
+    "learned_pareto_dominates_domain_solver": false,
+    "causal_learning_claim_pass": false
+  }
+}

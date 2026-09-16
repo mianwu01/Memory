@@ -1,0 +1,622 @@
+{
+  "schema": "causal-memory-redesign-suite/v1",
+  "episode_schema": "causal-memory-benchmark/v1",
+  "episodes_per_task": 120,
+  "seed": 17,
+  "all_schema_valid": true,
+  "all_admission_pass": true,
+  "tasks": {
+    "dynamic_travel": {
+      "module": "causal_benchmarks.dynamic_travel",
+      "episodes": 120,
+      "schema_valid": true,
+      "admission_pass": true,
+      "headline": {
+        "propagation_required_fraction": 0.8,
+        "query_downstream_leakage": 0.0,
+        "exact_key_affected_recall": 0.4694444444444448,
+        "exact_key_affected_state_accuracy": 0.4694444444444448,
+        "exact_key_task_success": 0.2,
+        "oracle_affected_recall": 1.0,
+        "oracle_affected_state_accuracy": 1.0
+      },
+      "audit": {
+        "schema": "causal-memory-t0-audit/v1",
+        "task": "dynamic_travel",
+        "event_counts": {
+          "attraction_closure": 24,
+          "dinner_closure": 24,
+          "flight_delay": 24,
+          "hotel_deadline_change": 24,
+          "independent_profile_update": 24
+        },
+        "event_breakdown": {
+          "attraction_closure": {
+            "episodes": 24,
+            "affected_nodes_min": 3,
+            "affected_nodes_mean": 3.0,
+            "affected_nodes_max": 3,
+            "exact_kv_affected_recall": 0.3333333333333332
+          },
+          "dinner_closure": {
+            "episodes": 24,
+            "affected_nodes_min": 3,
+            "affected_nodes_mean": 3.0,
+            "affected_nodes_max": 3,
+            "exact_kv_affected_recall": 0.3333333333333332
+          },
+          "flight_delay": {
+            "episodes": 24,
+            "affected_nodes_min": 4,
+            "affected_nodes_mean": 5.791666666666667,
+            "affected_nodes_max": 7,
+            "exact_kv_affected_recall": 0.18055555555555555
+          },
+          "hotel_deadline_change": {
+            "episodes": 24,
+            "affected_nodes_min": 2,
+            "affected_nodes_mean": 2.0,
+            "affected_nodes_max": 2,
+            "exact_kv_affected_recall": 0.5
+          },
+          "independent_profile_update": {
+            "episodes": 24,
+            "affected_nodes_min": 1,
+            "affected_nodes_mean": 1.0,
+            "affected_nodes_max": 1,
+            "exact_kv_affected_recall": 1.0
+          }
+        },
+        "propagation_fraction": 0.8,
+        "downstream_query_leakage": {
+          "leaked": 0,
+          "downstream_changed_nodes": 235,
+          "rate": 0.0
+        },
+        "exact_kv": {
+          "episodes": 120,
+          "propagation_required_episodes": 96,
+          "affected_precision": 1.0,
+          "affected_recall": 0.4694444444444448,
+          "affected_state_accuracy": 0.4694444444444448,
+          "full_state_accuracy": 0.8969298245614025,
+          "episode_success_rate": 0.2
+        },
+        "oracle": {
+          "episodes": 120,
+          "propagation_required_episodes": 96,
+          "affected_precision": 1.0,
+          "affected_recall": 1.0,
+          "affected_state_accuracy": 1.0,
+          "full_state_accuracy": 1.0,
+          "episode_success_rate": 1.0
+        },
+        "admission": {
+          "propagation_fraction_at_least_half": true,
+          "exact_kv_affected_recall_below_95_percent": true,
+          "oracle_affected_state_accuracy_is_one": true,
+          "no_downstream_query_leakage": true,
+          "pass": true
+        }
+      }
+    },
+    "dynamic_shopping": {
+      "module": "causal_benchmarks.dynamic_shopping",
+      "episodes": 120,
+      "schema_valid": true,
+      "admission_pass": true,
+      "headline": {
+        "propagation_required_fraction": 1.0,
+        "query_downstream_leakage": 0.0,
+        "exact_key_affected_recall": 0.16137896825396822,
+        "exact_key_affected_state_accuracy": 0.16137896825396822,
+        "exact_key_task_success": 0.0,
+        "oracle_affected_recall": 1.0,
+        "oracle_affected_state_accuracy": 1.0
+      },
+      "audit": {
+        "benchmark": "dynamic_shopping",
+        "episodes": 120,
+        "exact_key": {
+          "episodes": 120,
+          "propagation_required_episodes": 120,
+          "affected_precision": 1.0,
+          "affected_recall": 0.16137896825396822,
+          "affected_state_accuracy": 0.16137896825396822,
+          "full_state_accuracy": 0.8643719806763279,
+          "episode_success_rate": 0.0
+        },
+        "oracle_propagation": {
+          "episodes": 120,
+          "propagation_required_episodes": 120,
+          "affected_precision": 1.0,
+          "affected_recall": 1.0,
+          "affected_state_accuracy": 1.0,
+          "full_state_accuracy": 1.0,
+          "episode_success_rate": 1.0
+        },
+        "diagnostics": {
+          "hidden_downstream_rate": 1.0,
+          "multi_hop_rate": 1.0,
+          "negative_control_preservation_rate": 1.0,
+          "regime_pair_available": true,
+          "regime_contrast_pass": true
+        },
+        "t0_pass": true,
+        "admission": {
+          "C1_no_query_time_downstream_oracle": true,
+          "C2_repeated_regime_mechanism": true,
+          "C3_interventional_gold_valid": true,
+          "C4_exact_key_leaves_headroom": true,
+          "negative_controls_preserved": true,
+          "regime_contrast_pass": true,
+          "pass": true
+        }
+      }
+    },
+    "dynamic_search": {
+      "module": "causal_benchmarks.dynamic_search",
+      "episodes": 120,
+      "schema_valid": true,
+      "admission_pass": true,
+      "headline": {
+        "propagation_required_fraction": 0.6666666666666666,
+        "query_downstream_leakage": 0.0,
+        "exact_key_affected_recall": 0.5,
+        "exact_key_affected_state_accuracy": 0.5,
+        "exact_key_task_success": 0.3333333333333333,
+        "oracle_affected_recall": 1.0,
+        "oracle_affected_state_accuracy": 1.0
+      },
+      "audit": {
+        "task": "dynamic_search",
+        "episodes": 120,
+        "scenario_counts": {
+          "pivotal_retraction": 20,
+          "entity_version_correction": 20,
+          "source_trust_demotion": 20,
+          "source_trust_promotion": 20,
+          "low_trust_update_negative": 20,
+          "citation_mirror_retraction_negative": 20
+        },
+        "diagnostics": {
+          "propagation_required_fraction": 0.6666666666666666,
+          "negative_control_fraction": 0.3333333333333333,
+          "query_downstream_id_leakage": 0.0
+        },
+        "baselines": {
+          "query_only": {
+            "episodes": 120,
+            "propagation_required_episodes": 80,
+            "affected_precision": 1.0,
+            "affected_recall": 0.5,
+            "affected_state_accuracy": 0.5,
+            "full_state_accuracy": 0.9545454545454558,
+            "required_read_precision": 1.0,
+            "required_read_recall": 0.22727272727272715,
+            "final_answer_accuracy": 0.3333333333333333,
+            "final_brief_accuracy": 0.3333333333333333,
+            "propagation_episode_answer_accuracy": 0.0,
+            "negative_control_specificity": 1.0
+          },
+          "exact_key": {
+            "episodes": 120,
+            "propagation_required_episodes": 80,
+            "affected_precision": 1.0,
+            "affected_recall": 0.5,
+            "affected_state_accuracy": 0.5,
+            "full_state_accuracy": 0.9545454545454558,
+            "required_read_precision": 1.0,
+            "required_read_recall": 0.22727272727272715,
+            "final_answer_accuracy": 0.3333333333333333,
+            "final_brief_accuracy": 0.3333333333333333,
+            "propagation_episode_answer_accuracy": 0.0,
+            "negative_control_specificity": 1.0
+          },
+          "oracle_propagation": {
+            "episodes": 120,
+            "propagation_required_episodes": 80,
+            "affected_precision": 1.0,
+            "affected_recall": 1.0,
+            "affected_state_accuracy": 1.0,
+            "full_state_accuracy": 1.0,
+            "required_read_precision": 1.0,
+            "required_read_recall": 1.0,
+            "final_answer_accuracy": 1.0,
+            "final_brief_accuracy": 1.0,
+            "propagation_episode_answer_accuracy": 1.0,
+            "negative_control_specificity": 1.0
+          }
+        },
+        "admission": {
+          "C1_no_query_time_oracle": true,
+          "C2_repeated_regime_mechanism": true,
+          "C3_interventional_gold_valid": true,
+          "C4_exact_key_leaves_headroom": true,
+          "gated_negative_controls_pass": true,
+          "pass": true
+        },
+        "boundary": "The emitted SCM and do-style updates test intervention propagation. Merely recovering or traversing the citation links tests provenance/dataflow memory; it is not by itself evidence of causal discovery.",
+        "t1": {
+          "status": "complete",
+          "train_episodes": 84,
+          "test_episodes": 12,
+          "test_scenario_counts": {
+            "pivotal_retraction": 2,
+            "entity_version_correction": 2,
+            "source_trust_demotion": 2,
+            "source_trust_promotion": 2,
+            "low_trust_update_negative": 2,
+            "citation_mirror_retraction_negative": 2
+          },
+          "runtime_isolation": {
+            "fit_views_have_no_gold": true,
+            "train_views_have_observed_transition": true,
+            "test_views_have_no_gold_or_outcome": true
+          },
+          "novel_test": {
+            "node_id_overlap": 0,
+            "entity_overlap": [],
+            "query_template_overlap": [],
+            "train_trust_transitions": [
+              "high->low",
+              "low->high"
+            ],
+            "test_trust_transitions": [
+              "high->medium",
+              "medium->high"
+            ],
+            "heldout_trust_transitions": [
+              "high->medium",
+              "medium->high"
+            ],
+            "train_entity_versions": [
+              2
+            ],
+            "test_entity_versions": [
+              2,
+              3
+            ],
+            "heldout_entity_versions": [
+              3
+            ],
+            "pass": true
+          },
+          "learner": {
+            "training_examples": 84,
+            "typed_edges": [
+              [
+                "answer",
+                "brief"
+              ],
+              [
+                "claim",
+                "answer"
+              ],
+              [
+                "document",
+                "claim"
+              ],
+              [
+                "source",
+                "claim"
+              ]
+            ],
+            "positive_document_trust": [
+              "high"
+            ],
+            "blocked_document_trust": [
+              "high",
+              "low"
+            ],
+            "learned_independence_gate": true,
+            "source_propagation_rate": 1.0
+          },
+          "effects": {
+            "exact_kv": {
+              "episodes": 12,
+              "propagation_required_episodes": 8,
+              "affected_precision": 1.0,
+              "affected_recall": 0.5,
+              "affected_state_accuracy": 0.5,
+              "full_state_accuracy": 0.9545454545454545,
+              "required_read_precision": 1.0,
+              "required_read_recall": 0.2272727272727272,
+              "final_answer_accuracy": 0.3333333333333333,
+              "final_brief_accuracy": 0.3333333333333333,
+              "propagation_episode_answer_accuracy": 0.0,
+              "negative_control_specificity": 1.0,
+              "selected_cells_mean": 1.0
+            },
+            "provenance_domain": {
+              "episodes": 12,
+              "propagation_required_episodes": 8,
+              "affected_precision": 1.0,
+              "affected_recall": 1.0,
+              "affected_state_accuracy": 1.0,
+              "full_state_accuracy": 1.0,
+              "required_read_precision": 1.0,
+              "required_read_recall": 1.0,
+              "final_answer_accuracy": 1.0,
+              "final_brief_accuracy": 1.0,
+              "propagation_episode_answer_accuracy": 1.0,
+              "negative_control_specificity": 1.0,
+              "selected_cells_mean": 8.0
+            },
+            "matched_lexical_structured": {
+              "episodes": 12,
+              "propagation_required_episodes": 8,
+              "affected_precision": 1.0,
+              "affected_recall": 0.5,
+              "affected_state_accuracy": 0.5,
+              "full_state_accuracy": 0.9545454545454545,
+              "required_read_precision": 0.8030303030303031,
+              "required_read_recall": 0.8030303030303031,
+              "final_answer_accuracy": 0.3333333333333333,
+              "final_brief_accuracy": 0.3333333333333333,
+              "propagation_episode_answer_accuracy": 0.0,
+              "negative_control_specificity": 1.0,
+              "selected_cells_mean": 8.0
+            },
+            "learned_graph": {
+              "episodes": 12,
+              "propagation_required_episodes": 8,
+              "affected_precision": 1.0,
+              "affected_recall": 1.0,
+              "affected_state_accuracy": 1.0,
+              "full_state_accuracy": 1.0,
+              "required_read_precision": 1.0,
+              "required_read_recall": 1.0,
+              "final_answer_accuracy": 1.0,
+              "final_brief_accuracy": 1.0,
+              "propagation_episode_answer_accuracy": 1.0,
+              "negative_control_specificity": 1.0,
+              "selected_cells_mean": 8.0
+            },
+            "oracle_graph": {
+              "episodes": 12,
+              "propagation_required_episodes": 8,
+              "affected_precision": 1.0,
+              "affected_recall": 1.0,
+              "affected_state_accuracy": 1.0,
+              "full_state_accuracy": 1.0,
+              "required_read_precision": 1.0,
+              "required_read_recall": 1.0,
+              "final_answer_accuracy": 1.0,
+              "final_brief_accuracy": 1.0,
+              "propagation_episode_answer_accuracy": 1.0,
+              "negative_control_specificity": 1.0,
+              "selected_cells_mean": 8.0
+            },
+            "full_history": {
+              "episodes": 12,
+              "propagation_required_episodes": 8,
+              "affected_precision": 1.0,
+              "affected_recall": 1.0,
+              "affected_state_accuracy": 1.0,
+              "full_state_accuracy": 1.0,
+              "required_read_precision": 0.1818181818181818,
+              "required_read_recall": 1.0,
+              "final_answer_accuracy": 1.0,
+              "final_brief_accuracy": 1.0,
+              "propagation_episode_answer_accuracy": 1.0,
+              "negative_control_specificity": 1.0,
+              "selected_cells_mean": 44.0
+            }
+          },
+          "selection_x_serialization": [
+            {
+              "arm": "exact_kv",
+              "serialization": "verbose",
+              "selected_cells_mean": 1.0,
+              "serialization_chars_mean": 649.1666666666666,
+              "char_token_proxy_mean": 162.29166666666666,
+              "affected_precision": 1.0,
+              "affected_recall": 0.5,
+              "final_answer_accuracy": 0.3333333333333333,
+              "final_brief_accuracy": 0.3333333333333333,
+              "negative_control_specificity": 1.0
+            },
+            {
+              "arm": "exact_kv",
+              "serialization": "compact",
+              "selected_cells_mean": 1.0,
+              "serialization_chars_mean": 244.0,
+              "char_token_proxy_mean": 61.0,
+              "affected_precision": 1.0,
+              "affected_recall": 0.5,
+              "final_answer_accuracy": 0.3333333333333333,
+              "final_brief_accuracy": 0.3333333333333333,
+              "negative_control_specificity": 1.0
+            },
+            {
+              "arm": "provenance_domain",
+              "serialization": "verbose",
+              "selected_cells_mean": 8.0,
+              "serialization_chars_mean": 3507.1666666666665,
+              "char_token_proxy_mean": 876.7916666666666,
+              "affected_precision": 1.0,
+              "affected_recall": 1.0,
+              "final_answer_accuracy": 1.0,
+              "final_brief_accuracy": 1.0,
+              "negative_control_specificity": 1.0
+            },
+            {
+              "arm": "provenance_domain",
+              "serialization": "compact",
+              "selected_cells_mean": 8.0,
+              "serialization_chars_mean": 1262.3333333333333,
+              "char_token_proxy_mean": 315.5833333333333,
+              "affected_precision": 1.0,
+              "affected_recall": 1.0,
+              "final_answer_accuracy": 1.0,
+              "final_brief_accuracy": 1.0,
+              "negative_control_specificity": 1.0
+            },
+            {
+              "arm": "matched_lexical_structured",
+              "serialization": "verbose",
+              "selected_cells_mean": 8.0,
+              "serialization_chars_mean": 1836.6666666666667,
+              "char_token_proxy_mean": 459.1666666666667,
+              "affected_precision": 1.0,
+              "affected_recall": 0.5,
+              "final_answer_accuracy": 0.3333333333333333,
+              "final_brief_accuracy": 0.3333333333333333,
+              "negative_control_specificity": 1.0
+            },
+            {
+              "arm": "matched_lexical_structured",
+              "serialization": "compact",
+              "selected_cells_mean": 8.0,
+              "serialization_chars_mean": 1082.5,
+              "char_token_proxy_mean": 270.625,
+              "affected_precision": 1.0,
+              "affected_recall": 0.5,
+              "final_answer_accuracy": 0.3333333333333333,
+              "final_brief_accuracy": 0.3333333333333333,
+              "negative_control_specificity": 1.0
+            },
+            {
+              "arm": "learned_graph",
+              "serialization": "verbose",
+              "selected_cells_mean": 8.0,
+              "serialization_chars_mean": 3507.1666666666665,
+              "char_token_proxy_mean": 876.7916666666666,
+              "affected_precision": 1.0,
+              "affected_recall": 1.0,
+              "final_answer_accuracy": 1.0,
+              "final_brief_accuracy": 1.0,
+              "negative_control_specificity": 1.0
+            },
+            {
+              "arm": "learned_graph",
+              "serialization": "compact",
+              "selected_cells_mean": 8.0,
+              "serialization_chars_mean": 1262.3333333333333,
+              "char_token_proxy_mean": 315.5833333333333,
+              "affected_precision": 1.0,
+              "affected_recall": 1.0,
+              "final_answer_accuracy": 1.0,
+              "final_brief_accuracy": 1.0,
+              "negative_control_specificity": 1.0
+            },
+            {
+              "arm": "oracle_graph",
+              "serialization": "verbose",
+              "selected_cells_mean": 8.0,
+              "serialization_chars_mean": 3776.3333333333335,
+              "char_token_proxy_mean": 944.0833333333334,
+              "affected_precision": 1.0,
+              "affected_recall": 1.0,
+              "final_answer_accuracy": 1.0,
+              "final_brief_accuracy": 1.0,
+              "negative_control_specificity": 1.0
+            },
+            {
+              "arm": "oracle_graph",
+              "serialization": "compact",
+              "selected_cells_mean": 8.0,
+              "serialization_chars_mean": 1262.3333333333333,
+              "char_token_proxy_mean": 315.5833333333333,
+              "affected_precision": 1.0,
+              "affected_recall": 1.0,
+              "final_answer_accuracy": 1.0,
+              "final_brief_accuracy": 1.0,
+              "negative_control_specificity": 1.0
+            },
+            {
+              "arm": "full_history",
+              "serialization": "verbose",
+              "selected_cells_mean": 44.0,
+              "serialization_chars_mean": 18021.5,
+              "char_token_proxy_mean": 4505.375,
+              "affected_precision": 1.0,
+              "affected_recall": 1.0,
+              "final_answer_accuracy": 1.0,
+              "final_brief_accuracy": 1.0,
+              "negative_control_specificity": 1.0
+            },
+            {
+              "arm": "full_history",
+              "serialization": "compact",
+              "selected_cells_mean": 44.0,
+              "serialization_chars_mean": 6517.333333333333,
+              "char_token_proxy_mean": 1629.3333333333333,
+              "affected_precision": 1.0,
+              "affected_recall": 1.0,
+              "final_answer_accuracy": 1.0,
+              "final_brief_accuracy": 1.0,
+              "negative_control_specificity": 1.0
+            }
+          ],
+          "admission": {
+            "six_arms_present": true,
+            "runtime_gold_isolation_pass": true,
+            "novel_split_pass": true,
+            "learned_beats_matched_lexical": true,
+            "learned_beats_strong_provenance": false,
+            "supports_causal_learning_claim": false
+          },
+          "decoder_boundary": "All six arms share a deterministic domain value decoder. Endpoint accuracy therefore measures whether selection supplied sufficient state; it is not an end-to-end learned causal-equation result.",
+          "efficiency_boundary": "Character/token proxies measure the selected decoder payload only. Index construction and selector scans over runtime history are not counted as model input and must be timed separately in an end-to-end experiment.",
+          "claim_boundary": "Citation traversal is the provenance/dataflow baseline. A learned selector supports causal-learning only if it beats provenance_domain at matched read budget; tying it supports dependency memory, not causal discovery."
+        }
+      }
+    },
+    "causal_formal": {
+      "module": "causal_benchmarks.causal_formal",
+      "episodes": 120,
+      "schema_valid": true,
+      "admission_pass": true,
+      "headline": {
+        "propagation_required_fraction": 0.8333333333333334,
+        "query_downstream_leakage": 0.0,
+        "exact_key_affected_recall": 0.39444444444444465,
+        "exact_key_affected_state_accuracy": 0.39444444444444465,
+        "exact_key_task_success": 0.16666666666666666,
+        "oracle_affected_recall": 1.0,
+        "oracle_affected_state_accuracy": 1.0
+      },
+      "audit": {
+        "episodes": 120,
+        "families": {
+          "causal_formal_math": 60,
+          "causal_formal_phys": 60
+        },
+        "propagation_required": 100,
+        "propagation_required_rate": 0.8333333333333334,
+        "inactive_gate_negative_controls": 20,
+        "downstream_query_leakage": {
+          "leaked": 0,
+          "episode_ids": []
+        },
+        "exact_key": {
+          "affected_precision": 1.0,
+          "affected_recall": 0.39444444444444465,
+          "affected_state_accuracy": 0.39444444444444465,
+          "full_state_accuracy": 0.7890442890442887,
+          "affected_result_recall": 0.0,
+          "episode_success": 0.16666666666666666
+        },
+        "oracle_propagation": {
+          "affected_precision": 1.0,
+          "affected_recall": 1.0,
+          "affected_state_accuracy": 1.0,
+          "full_state_accuracy": 1.0,
+          "affected_result_recall": 1.0,
+          "episode_success": 1.0
+        },
+        "headroom": {
+          "affected_recall": 0.6055555555555554,
+          "affected_result_recall": 1.0,
+          "episode_success": 0.8333333333333334
+        },
+        "admission": {
+          "pass": true,
+          "rule": "propagation_required_rate >= 0.5; exact-key episode success and affected-result recall < 0.95; zero downstream query leakage"
+        }
+      }
+    }
+  }
+}

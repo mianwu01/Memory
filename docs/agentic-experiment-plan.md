@@ -1,11 +1,49 @@
 # Agentic 实验计划:三部分,LLM-agent 系统,CPU-only(2026-08-27)
 
+> **9/04 会议取代下方的 baseline 极简安排：** 新增主流/近期 native memory baseline，
+> 同时写 outline、做具体 demo、澄清变量/识别边界；已有 simulation 冻结。当前执行入口为
+> [9/04 交付报告](yujia-meeting-delivery-2026-09-14.md)。下方保留历史协议，不再将 synthetic
+> v3 或理论签字当成已授权 memory 比较的前置条件。
+
 > 承 `meeting-minutes-2026-08-21.md`。定调:论文主干 = 用时序因果结构做记忆;
 > 两分支 = 效果/效率、可信性;实验三部分 = 仿真 / 效率 / 可信性;
 > **后两部分各 1–2 个代表性设置,baseline 极简,coverage > depth**。
 > 会后两条硬约束:**(H1) 载体必须是 LLM-agentic 系统**(非游戏/网格);
-> **(H2) CPU-only**——本机无本地推理,一切 agent 运行走 LLM API(env 目前**无任何 key**,
-> 见 §四,是唯一硬阻塞)。
+> **(H2) CPU-only**——本机无本地推理,一切 agent 运行走 LLM API。这里“env 无任何
+> key”是 2026-08-27 的历史状态；2026-08-31 已确认仓库根目录本地
+> `deepseek_apikey.md` 可由不回显 key 的 wrapper 使用，并完成真实 API 实验。文件不得提交，
+> 也不得把 key 写入 protocol/result/ledger。
+
+> **2026-08-31 superseding status note（不改写下方 2026-08-27 历史预注册）**
+>
+> 下方 §0–§6 保留的是当时的计划、载体判断和里程碑，不能按当前状态阅读。其后实际完成了：
+>
+> - 原 MemoryArena Travel 被重新审计为 query-explicit structured lookup；P2 结果只保留为
+>   structured-memory compression/agent harness 证据，不承担 causal necessity 主张。
+> - 在隔离层新增 Dynamic Travel、Dynamic Shopping、Dynamic Search、Causal Formal；统一
+>   480-episode T0 通过后，又完成 train-only、novel-split、六臂 T1。四项 learned selector
+>   均胜 matched generic retrieval、均达到 1.0 task success，但四项强 domain baseline 也均为
+>   1.0：`tasks_beating_domain_solver=[]`、`tasks_supporting_causal_learning_claim=[]`。
+>   因而 causal necessity 为 **0/4，不通过**；不能用 compact-context 效率覆盖这个裁决。
+> - P1 simulation v2 已完成 linear observed、MLP observed、MLP latent-confounded 三 family，
+>   240 episodes/seed、5 seeds、`delta=10`。前两类 regime-conditioned overall/read F1 均为
+>   1.0；latent observed-only 为 0.8/0.667，显式 grouped measured-proxy fallback 为 1.0。
+>   这不等于 latent identification，也不等于 agent-memory utility。
+> - P3 后续完成 hidden-driver auditing 与 held-out online mitigation；当前裁决以 README、
+>   `HANDOFF.md` 和冻结结果文档为准，不以本计划中“待跑/阻塞”的措辞为准。
+> - 真实 API decoder dev v9 gate 为 96/96；随后 four-task six-arm v1 完成 288 request
+>   rows / 309 ledger events / `$6.607622`。只有 284 rows 可评分，4 个 full-state rows 作为
+>   missing 保留，故 `experiment_complete=false`。该轮支持 SelectionPlan+decoder 的可执行
+>   与 compact-context 效率，不改变 0/4 causal-necessity 裁决。详见
+>   `causal-api-six-arm-v1-results.md`。
+> - dev-only killer audit 随后证明四项现有 task 都有 100% sufficient 的 lookup superset；
+>   hidden-routing v2 的公平 program 与 learner tie，且四域同构，故 fail-closed 为 PARTIAL，
+>   没有调用第二轮 API。下一版 executable/non-idempotent 四领域 formulation 见
+>   `hidden-mechanism-v3-preregistration.md`，需先由 Yujia double-check。
+>
+> 因此，下方 M1–M4 不再是当前待执行清单。若继续追求 causal-learning 正结果，必须重新设计
+> 一个强 domain/provenance/program baseline 无法直接恢复 routing 的任务，而不是继续调这
+> 四个原型或把 shared deterministic value decoder 的 endpoint 当作端到端胜利。
 
 ---
 
@@ -111,7 +149,7 @@ MINJA 或驾驶域作为更强主张的第二设置。
 
 | 阻塞 | 现状 | 解 |
 |---|---|---|
-| **LLM API key** | env 无任何 key(仅 `CLAUDE_CODE_EXECPATH`);MemoryArena 支持 ANTHROPIC / OpenAI / Gemini / OpenRouter | **必须先配一个**——P2/P3 全部依赖;建议 ANTHROPIC 或 OpenRouter(源码路径最全) |
+| **LLM API key** | **已解除**：本地 `deepseek_apikey.md` 已通过 wrapper 用于 DeepSeek；key 未写入 artifacts | 保持本地、不得提交或回显；复现走 `code/run_with_local_deepseek.py` |
 | GPU 禁用 (H2) | 本机有卡但一律不用 | `causalts` 强制 `device="cpu"` + `CUDA_VISIBLE_DEVICES=""`(已知坑);记忆系统里若有本地 embedding,改走 API embedding 或 BM25 |
 | 部分记忆系统需外部服务 | letta/zep/mem0 可能起服务或额外 key | 首轮 baseline 只用 `long_context` + `rag`,避开重依赖 |
 

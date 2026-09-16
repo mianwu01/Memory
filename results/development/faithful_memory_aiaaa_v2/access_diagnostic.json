@@ -1,0 +1,21 @@
+{
+  "time": 1789442514.8334117,
+  "endpoint": "https://aiaaa.cc/v1",
+  "model": "deepseek-v4-flash-0731",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/models",
+      "status": 403,
+      "seconds": 0.3308560848236084,
+      "body": "{\"code\":\"INSUFFICIENT_BALANCE\",\"message\":\"Insufficient account balance\"}"
+    },
+    {
+      "method": "POST",
+      "path": "/chat/completions",
+      "status": 403,
+      "seconds": 0.23465871810913086,
+      "body": "{\"code\":\"INSUFFICIENT_BALANCE\",\"message\":\"Insufficient account balance\"}"
+    }
+  ]
+}

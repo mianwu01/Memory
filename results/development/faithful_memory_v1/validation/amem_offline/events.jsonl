@@ -1,0 +1,2 @@
+{"schema": "faithful-memory/v1", "arm": "amem", "episode": "mechanism-development", "instance": "bcf23045eb174d859aa0b34c2daf57ea", "phase": "init", "round": 0, "time": 1789433441.9808474, "event": "init", "backend_module": "memory_layer_robust", "backend_class": "RobustAgenticMemorySystem", "retrieval_k": null}
+{"schema": "faithful-memory/v1", "arm": "amem", "episode": "mechanism-development", "instance": "bcf23045eb174d859aa0b34c2daf57ea", "phase": "init", "round": 0, "time": 1789433441.9877727, "event": "mechanism", "mechanism": "amem_find_related_memories_raw"}

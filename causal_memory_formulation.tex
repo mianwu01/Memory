@@ -1,7 +1,7 @@
 % ============================================================
 % Causal Memory: Formulation Document v0.1
 % Prepared for step-by-step verification with Yujia Zheng.
-% Compile with pdfLaTeX. Single self-contained file for Overleaf.
+% Compile with pdfLaTeX; include yujia_outline_2026_09_04.tex in Overleaf.
 % ============================================================
 \documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
@@ -37,6 +37,17 @@
 
 \begin{document}
 \maketitle
+
+\noindent\textbf{September 4 meeting update (added September 14, 2026).}
+The current empirical scope and paragraph/sentence outline appear below. The
+July formulation that follows is retained as a historical theory draft, including
+its conjectures and proposed sign-off workflow; it is not a statement that latent
+identifiability or real-world causal recovery has been established. The current
+work prioritizes memory comparisons and observable auditing, with existing
+simulation as background and failed online mitigation results retained.
+\input{yujia_outline_2026_09_04.tex}
+\clearpage
+\section*{Historical July formulation (for reference)}
 
 \begin{abstract}
 \noindent This document writes down my understanding of the causal-memory direction so that every step can be checked before any experiment runs. The thesis: memory should be defined as time-delayed dependency structure within the true data-generating process, and a memory system is \emph{trustworthy} exactly when its stored values and its write/read structure correspond, up to allowed indeterminacies, to that process. The program has two layers, following our meeting: Layer~1 uses temporal causal discovery over observed variables to build causal masks for memorization and planning; Layer~2 uses temporal causal representation learning to guarantee that what is memorized corresponds to the true latent process. The primary contribution is correctness of what is memorized; trustworthiness-derived reliability and efficiency are byproducts. Every load-bearing statement below is numbered (A for assumptions, D for definitions, P for predictions, Q for questions), so each can be marked correct, wrong, or needs-rewrite. Section~\ref{sec:exp} pre-registers the first experiments, which run only after this document is signed off.

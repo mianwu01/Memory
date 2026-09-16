@@ -1,0 +1,18 @@
+{
+  "complete": false,
+  "arm": "bm25",
+  "id": 101,
+  "counts": {
+    "actor_contract": 1,
+    "init": 1,
+    "write": 6,
+    "retrieve": 6,
+    "llm": 12,
+    "api_error": 1,
+    "invalid": 1
+  },
+  "error_type": "APIError",
+  "failures": [
+    "API request did not produce a complete response"
+  ]
+}

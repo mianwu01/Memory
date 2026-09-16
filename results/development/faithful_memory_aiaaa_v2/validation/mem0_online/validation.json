@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "arm": "mem0",
+  "offline": false,
+  "scope": "development mechanism validation, not benchmark results",
+  "counts": {
+    "init": 1,
+    "mechanism": 6,
+    "llm": 3,
+    "write": 3,
+    "retrieve": 1
+  },
+  "retrieved_text": "Nora leads the Orion satellite review project, which was originally scheduled for Monday in Oslo, with access phrase cobalt-lantern and safety reviewer Elias.\nElias completed and approved the Orion safety checklist, allowing Nora to hold the Orion review on Tuesday in Oslo with access phrase cobalt-lantern.\nNora's Orion satellite review meeting was rescheduled from Monday to Tuesday, still in Oslo, with access phrase cobalt-lantern and safety reviewer Elias who must approve the safety checklist before the review.",
+  "failures": []
+}

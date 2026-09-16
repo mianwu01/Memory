@@ -1,0 +1,14 @@
+{
+  "started_at": 1789438982.4954703,
+  "model": "deepseek-v4-flash-0731",
+  "endpoint": "https://aiaaa.cc/v1",
+  "evaluation_family": "faithful_memory_aiaaa_v1",
+  "policy": "all gates; one formal attempt per case; no automatic recovery",
+  "phase": "validation_failed",
+  "updated_at": 1789439208.035126,
+  "complete": 3,
+  "required": 16,
+  "failures": [
+    "results/development/faithful_memory_aiaaa_v1/native/amem/validation.json"
+  ]
+}

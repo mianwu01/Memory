@@ -1,0 +1,18 @@
+{
+  "started_at": 1789441309.105481,
+  "model": "deepseek-v4-flash-0731",
+  "endpoint": "https://aiaaa.cc/v1",
+  "evaluation_family": "faithful_memory_aiaaa_v2",
+  "policy": "all gates; one formal attempt per case; no automatic recovery",
+  "phase": "validation_failed",
+  "updated_at": 1789442124.4262786,
+  "complete": 3,
+  "required": 16,
+  "failures": [
+    "results/development/faithful_memory_aiaaa_v2/travel/ours_101/status.json",
+    "results/development/faithful_memory_aiaaa_v2/travel/bm25_101/status.json",
+    "results/development/faithful_memory_aiaaa_v2/native/mem0/validation.json",
+    "results/development/faithful_memory_aiaaa_v2/native/amem/validation.json",
+    "results/development/faithful_memory_aiaaa_v2/native/lightmem/validation.json"
+  ]
+}

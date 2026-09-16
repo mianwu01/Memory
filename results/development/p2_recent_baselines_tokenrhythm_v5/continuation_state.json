@@ -1,0 +1,6 @@
+{
+  "stage": "stopped_for_review",
+  "time": "2026-09-14T15:55:41+0800",
+  "error_type": "CalledProcessError",
+  "detail": "Command '['/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/.tmp/memory-baselines-venv/bin/python', 'code/arena_recent_suite.py', '--phase', 'evaluation', '--family', 'p2_recent_baselines_tokenrhythm_v5', '--workers', '4', '--env-port', '8931']' returned non-zero exit status 1."
+}

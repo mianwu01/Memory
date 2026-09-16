@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "arm": "amem",
+  "offline": false,
+  "error_type": "AssertionError",
+  "failures": [],
+  "counts": {
+    "init": 1,
+    "llm": 8,
+    "mechanism": 5,
+    "write": 3,
+    "retrieve": 1
+  },
+  "diagnostic": "No actual links established on connected development records"
+}

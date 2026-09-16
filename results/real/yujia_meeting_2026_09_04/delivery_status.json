@@ -1,0 +1,186 @@
+{
+  "schema": "yujia-meeting-delivery/v1",
+  "meeting_date": "2026-09-04",
+  "execution_date": "2026-09-14",
+  "status": "complete_descriptive_paired_evaluation",
+  "deliverables": {
+    "setting": "complete",
+    "simulation": "frozen",
+    "native_baseline_adapters": "all_ten_development_interfaces_validated",
+    "full_paired_baseline_evaluation": "complete",
+    "demo_slides": "complete",
+    "paragraph_sentence_outline": "complete"
+  },
+  "offline_tests": {
+    "existing": 88,
+    "new": 4,
+    "all_passed": true,
+    "recent_transport_wrapper_memory_report": 19
+  },
+  "claims": {
+    "causal_necessity_proven": false,
+    "real_latent_identifiability_proven": false,
+    "online_mitigation_protocols": "both FAIL retained",
+    "new_baseline_ranking_available": true,
+    "new_baseline_interpretation": "Three reused historical holdout episodes, one retained complete realization per arm/episode; descriptive paired replication with any technical rerun separately disclosed."
+  },
+  "usage_recorded": {
+    "scope": "selected complete paired results; all attempts billed separately in cumulative budget",
+    "actor_calls": 446,
+    "memory_llm_calls": 1407,
+    "input_tokens": 5445938,
+    "output_tokens": 2575518,
+    "invoice_verified": false
+  },
+  "verification": {
+    "syntax_files_passed": 5,
+    "upstream_checkouts_clean": [
+      "MemoryArena",
+      "mem0",
+      "A-mem",
+      "LightMem"
+    ],
+    "git_diff_check": "pass",
+    "slides_pdf_pages": 3,
+    "slides_size_points": [
+      960,
+      540
+    ],
+    "source_key_scan_matches": 0,
+    "setting_recomputed": {
+      "trials": 260,
+      "windows": 1283,
+      "variables": 7
+    },
+    "latex": {
+      "engine": "Tectonic 0.17.0",
+      "status": "compiled",
+      "pages": 13,
+      "outline_P1_P17_present": true,
+      "execution_note_present": true,
+      "warnings": "layout warnings in retained historical theory paragraphs",
+      "updated_for_tokenrhythm": true,
+      "completed_evaluation_and_cost_tradeoff_present": true
+    },
+    "completed_view_source_hash_checks": 140,
+    "independent_decimal_ledger_cost_cny": "46.36732476",
+    "billable_ledger_responses_excluding_probes": 3691
+  },
+  "billing_user_update": {
+    "price_per_billed_call": 2,
+    "currency_assumption": "CNY",
+    "spent_user_report": 230,
+    "equivalent_billed_calls": 115,
+    "usage_responses_logged": 98,
+    "budget_report": "docs/recent-memory-flat-call-budget.md",
+    "endpoint": "https://bboluo.com/v1"
+  },
+  "previous_blocker": {
+    "endpoint": "https://bboluo.com/v1",
+    "status_code": 401,
+    "message": "Invalid token",
+    "independent_probe_routes": [
+      "/models",
+      "/chat/completions"
+    ],
+    "probe_artifact": "results/development/p2_recent_baselines_v1/relay_auth_probe.json"
+  },
+  "active_route": {
+    "endpoint": "https://tokenrhythm.studio/v1",
+    "model": "deepseek-flash",
+    "family": "p2_recent_baselines_tokenrhythm_v5",
+    "probe_successes": 16,
+    "report": "docs/tokenrhythm-switch-2026-09-14.md",
+    "transport": "stream_accumulate_with_shared_pacing_and_pre_stream_http_connection_timeout_retries",
+    "nonstream_development_504_report": "results/development/p2_recent_baselines_tokenrhythm_v1/interruption.json"
+  },
+  "current_usage_budget": "results/development/tokenrhythm_cumulative_budget_2026_09_14.json",
+  "additional_authorized_route": {
+    "endpoint": "https://aiaaa.cc/v1",
+    "tested_model": "deepseek-v4-flash-0731",
+    "probe_successes": 4,
+    "pricing_verified": false,
+    "report": "docs/aiaaa-relay-2026-09-14.md"
+  },
+  "development_validation_sources": {
+    "noGcompact": "p2_recent_baselines_tokenrhythm_v2",
+    "mem0": "p2_recent_baselines_tokenrhythm_v2",
+    "amem": "p2_recent_baselines_tokenrhythm_v2",
+    "ours": "p2_recent_baselines_tokenrhythm_v3",
+    "noG": "p2_recent_baselines_tokenrhythm_v3",
+    "bm25": "p2_recent_baselines_tokenrhythm_v3",
+    "full": "p2_recent_baselines_tokenrhythm_v3",
+    "dense": "p2_recent_baselines_tokenrhythm_v3",
+    "summary": "p2_recent_baselines_tokenrhythm_v3",
+    "lightmem": "p2_recent_baselines_tokenrhythm_v5"
+  },
+  "development_interpretation": "Interface validation across transport-repair iterations, not a pooled development ranking. Evaluation must be one common frozen v5 protocol.",
+  "execution_environment": {
+    "interactive": "tts-sft/.venv/grpo-pilot",
+    "interactive_python": "3.10.16",
+    "frozen_baseline_python": ".tmp/memory-baselines-venv/bin/python",
+    "cpu_only": true,
+    "running_experiments_restarted_for_environment_switch": false
+  },
+  "offline_finalizer": "code/arena_recent_delivery.py",
+  "finalization_state": "results/real/p2_recent_baselines_tokenrhythm_v5/recovery_state.json",
+  "latest_interruption": {
+    "family": "p2_recent_baselines_tokenrhythm_v5",
+    "reason": "RemoteProtocolError after stream opened, summary episode111 round5",
+    "complete_arms": 9,
+    "missing_arm": "summary",
+    "record": "results/real/p2_recent_baselines_tokenrhythm_v5/recovery_amendment.json"
+  },
+  "pipeline_entrypoint": "code/arena_recent_pipeline.py",
+  "active_execution_state": "results/real/p2_recent_baselines_tokenrhythm_v5/recovery_state.json",
+  "completed_evaluation": {
+    "family": "p2_recent_baselines_tokenrhythm_v5_completed",
+    "episode_ids": [
+      111,
+      112,
+      113
+    ],
+    "arms": 10,
+    "report": "results/real/p2_recent_baselines_tokenrhythm_v5_completed/results.md",
+    "estimated_cny": 25.35572416,
+    "invoice_verified": false,
+    "protocol_sha256": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1",
+    "actor_calls": 446,
+    "memory_calls": 1407,
+    "paired_scope_complete": true,
+    "post_freeze_technical_recovery": true,
+    "original_batch_complete": false,
+    "ours_vs_same_format_control": {
+      "input_tokens_reduction_percent": 49.63293824486256,
+      "estimated_cny_change_percent": 4.588044282463666,
+      "all_episode_ps_sps_sr_tied": true
+    }
+  },
+  "current_cost_snapshot": {
+    "snapshot_time": "2026-09-14T19:56:00+08:00",
+    "old_bboluo_spend_user_report": 230,
+    "tokenrhythm_total_logged_estimated_cny": 46.482108999999994,
+    "old_spend_plus_logged_estimate_cny": 276.482109,
+    "aiaaa_unpriced_probe_usage": {
+      "responses_with_usage": 4,
+      "input_tokens": 824,
+      "output_tokens": 539,
+      "estimated_cny": null
+    }
+  },
+  "historical_bboluo_usage_recorded": {
+    "actor_calls": 53,
+    "memory_llm_calls": 45,
+    "input_tokens": 670837,
+    "output_tokens": 247515,
+    "invoice_verified": false
+  },
+  "reviewed_at": "2026-09-14T20:03:22+08:00",
+  "final_artifact_sha256": {
+    "docs/yujia-meeting-delivery-2026-09-14.md": "228e08fc940200b245edb16dcb8a56fa55074d963e10fdf14b9f1dea3fd1c10b",
+    "docs/yujia-paper-outline-2026-09-04.md": "69583debb17f62d02742afa2dc8971d71d8ea9e89cd8fee194b68cf7d5c60fde",
+    "yujia_outline_2026_09_04.tex": "d653f3cf21246251d0cb80b453eed0f0cd08ce2349cbbe5c1bf84090c2053375",
+    "results/real/yujia_meeting_2026_09_04/causal_memory_formulation.pdf": "53e11ceaf69d6c1bff68bf93e01101c38394a7aa8daf94df78e61463d15fbe4a",
+    "results/real/p2_recent_baselines_tokenrhythm_v5_completed/paired_results.json": "e52af6e6344e9b86c2bd82e448b0aa631d046964cce572037bfbab1853e4ed0b"
+  }
+}

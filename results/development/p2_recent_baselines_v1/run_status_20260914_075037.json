@@ -1,0 +1,37 @@
+[
+  {
+    "arm": "mem0",
+    "exit_code": 1,
+    "wall_seconds": 260.3112186715007
+  },
+  {
+    "arm": "amem",
+    "exit_code": 1,
+    "wall_seconds": 179.0819682655856
+  },
+  {
+    "arm": "lightmem",
+    "exit_code": 1,
+    "wall_seconds": 179.91213361360133
+  },
+  {
+    "arm": "summary",
+    "exit_code": 1,
+    "wall_seconds": 178.76473198924214
+  },
+  {
+    "arm": "ours",
+    "exit_code": 1,
+    "wall_seconds": 173.45610347762704
+  },
+  {
+    "arm": "noGcompact",
+    "exit_code": 1,
+    "wall_seconds": 172.73733898997307
+  },
+  {
+    "arm": "dense",
+    "exit_code": 1,
+    "wall_seconds": 249.12617760710418
+  }
+]

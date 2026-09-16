@@ -1,0 +1,21 @@
+{
+  "registered_at": 1789439457.7465765,
+  "evaluation_started": false,
+  "old_source_sha256": "1a21d2df64ad367a18abf8111d0f60bc8d73dbf35a42c53f8de0e2e6d474afd7",
+  "change": "A-Mem author OpenAI max_tokens=1000 -> configured memory cap 16000, matching Mem0 and LightMem. Prompts, response parsers, memory algorithms, retrieval settings and actor unchanged.",
+  "reason": "Native LoCoMo call exhausted 1000 output tokens entirely as provider-reported reasoning despite requested thinking disabled. Preserve original failure; no repair.",
+  "compatible_unchanged_arms": [
+    "ours",
+    "noGcompact",
+    "query_only",
+    "bm25",
+    "full",
+    "dense",
+    "summary",
+    "mem0",
+    "lightmem"
+  ],
+  "new_native_output": "native_amem_budget16k",
+  "new_online_output": "validation/amem_online_budget16k",
+  "new_source_sha256": "86eb40a8748dc2fadc223e7e07a27726ca69872b3fb787405d70f399b9e0e6b0"
+}

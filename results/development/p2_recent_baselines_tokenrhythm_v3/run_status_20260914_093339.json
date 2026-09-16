@@ -1,0 +1,37 @@
+[
+  {
+    "arm": "lightmem",
+    "exit_code": 1,
+    "wall_seconds": 849.0322149889544
+  },
+  {
+    "arm": "ours",
+    "exit_code": 0,
+    "wall_seconds": 283.9869938706979
+  },
+  {
+    "arm": "noG",
+    "exit_code": 0,
+    "wall_seconds": 306.91704000532627
+  },
+  {
+    "arm": "bm25",
+    "exit_code": 0,
+    "wall_seconds": 1246.8050054069608
+  },
+  {
+    "arm": "full",
+    "exit_code": 0,
+    "wall_seconds": 276.45373499952257
+  },
+  {
+    "arm": "dense",
+    "exit_code": 0,
+    "wall_seconds": 1013.1774735404179
+  },
+  {
+    "arm": "summary",
+    "exit_code": 0,
+    "wall_seconds": 417.2196716032922
+  }
+]

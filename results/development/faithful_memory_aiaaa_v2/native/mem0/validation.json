@@ -1,0 +1,17 @@
+{
+  "passed": false,
+  "error_type": "InvalidExecution",
+  "failures": [
+    "API request did not produce a complete response",
+    "Upstream reported a processing error or fallback"
+  ],
+  "counts": {
+    "init": 1,
+    "mechanism": 103,
+    "llm": 102,
+    "write": 102,
+    "api_error": 1,
+    "invalid": 2
+  },
+  "history_turns": 102
+}

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "arm": "lightmem",
+  "offline": false,
+  "scope": "development mechanism validation, not benchmark results",
+  "counts": {
+    "init": 1,
+    "mechanism": 9,
+    "write": 3,
+    "llm": 5,
+    "consolidate": 1,
+    "retrieve": 1
+  },
+  "retrieved_text": "2026-09-15T12:02:00.000 Tue Nora is associated with the Orion review in Oslo.\n2026-09-15T12:00:00.000 Tue Nora leads the Orion satellite review project.\n2026-09-15T12:00:00.000 Tue The Orion satellite review project review is scheduled for Monday in Oslo.\n2026-09-15T12:01:00.000 Tue The Orion satellite review meeting was moved from Monday to Tuesday in Oslo.\n2026-09-15T12:02:00.000 Tue The access phrase for the Orion satellite review project is 'cobalt - lantern'.\n2026-09-15T12:00:00.000 Tue The access phrase for the Orion satellite review project is 'cobalt - lantern'.\n2026-09-15T12:01:00.000 Tue The access phrase for the Orion satellite review project is 'cobalt - lantern'.\n2026-09-15T12:00:00.000 Tue Elias is the safety reviewer for the Orion satellite review project.\n2026-09-15T12:01:00.000 Tue Elias will approve the safety checklist review for the Orion satellite review project.\n2026-09-15T12:02:00.000 Tue Elias approved the Orion safety checklist.",
+  "failures": []
+}

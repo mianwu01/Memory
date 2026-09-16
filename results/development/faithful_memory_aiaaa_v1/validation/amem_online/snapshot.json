@@ -1,0 +1,91 @@
+{
+  "4acb1846-c645-4476-9a17-367904123d71": {
+    "content": "Nora leads the Orion satellite review project. The review was originally scheduled for Monday in Oslo. Its access phrase is cobalt-lantern. Elias is the safety reviewer.",
+    "id": "4acb1846-c645-4476-9a17-367904123d71",
+    "keywords": [
+      "satellite review",
+      "access phrase",
+      "cobalt-lantern",
+      "safety reviewer",
+      "project lead",
+      "Oslo",
+      "Monday"
+    ],
+    "links": [],
+    "importance_score": 1.0,
+    "retrieval_count": 0,
+    "timestamp": "2026-09-15 12:00:00",
+    "last_accessed": "202609151018",
+    "context": "An update informs Nora that her Orion satellite review meeting is moved to Tuesday in Oslo, with Elias having approved the safety checklist, and the access phrase remains cobalt-lantern.",
+    "evolution_history": [],
+    "category": "Uncategorized",
+    "tags": [
+      "satellite review",
+      "safety checklist",
+      "meeting rescheduling",
+      "Oslo",
+      "approval",
+      "access phrase"
+    ]
+  },
+  "71cdd611-065b-4809-8c4b-66c16248e1c5": {
+    "content": "Update for Nora's Orion satellite review: the meeting has moved from Monday to Tuesday, still in Oslo. Elias must approve the safety checklist before the review. The access phrase remains cobalt-lantern.",
+    "id": "71cdd611-065b-4809-8c4b-66c16248e1c5",
+    "keywords": [
+      "satellite review",
+      "safety checklist",
+      "meeting rescheduling",
+      "Oslo",
+      "approval",
+      "access phrase"
+    ],
+    "links": [],
+    "importance_score": 1.0,
+    "retrieval_count": 0,
+    "timestamp": "2026-09-15 12:01:00",
+    "last_accessed": "202609151018",
+    "context": "Nora manages the Orion satellite review project, originally set for Monday but now moved to Tuesday in Oslo, with the access phrase cobalt-lantern and Elias as the safety reviewer who has approved the safety checklist, enabling the review to proceed.",
+    "evolution_history": [],
+    "category": "Uncategorized",
+    "tags": [
+      "project management",
+      "aerospace",
+      "security protocol",
+      "schedule update",
+      "approval"
+    ]
+  },
+  "f68da88f-80c4-4368-84e4-e9e4f6e93089": {
+    "content": "Elias completed the Orion safety checklist and approved it. Nora can now hold the Orion review on Tuesday in Oslo using access phrase cobalt-lantern.",
+    "id": "f68da88f-80c4-4368-84e4-e9e4f6e93089",
+    "keywords": [
+      "safety checklist",
+      "approval",
+      "review",
+      "access phrase",
+      "Orion"
+    ],
+    "links": [
+      0,
+      1
+    ],
+    "importance_score": 1.0,
+    "retrieval_count": 0,
+    "timestamp": "2026-09-15 12:02:00",
+    "last_accessed": "202609151018",
+    "context": "Elias approves the Orion safety checklist, enabling Nora to conduct the Orion review in Oslo on Tuesday using the access phrase cobalt-lantern.",
+    "evolution_history": [],
+    "category": "Uncategorized",
+    "tags": [
+      "safety checklist",
+      "approval",
+      "review",
+      "access phrase",
+      "Orion",
+      "meeting logistics",
+      "aerospace",
+      "security protocol",
+      "project management"
+    ]
+  }
+}

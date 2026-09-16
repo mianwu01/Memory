@@ -1,0 +1,46 @@
+{
+  "schema": "causal-api-decoder-summary/v1",
+  "protocol_case_manifest_sha256": "4bcca08931cc5194e63aa754064118720146e546b5d05ef3b858068c009838ab",
+  "model_requested": "deepseek-v4-flash",
+  "base_url": "https://api.deepseek.com/v1",
+  "matrix": {
+    "dynamic_shopping": {
+      "full_context": {
+        "calls": 4,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 10476,
+        "cached_input_tokens": 10112,
+        "output_tokens": 11837,
+        "estimated_cost_usd": 0.121808,
+        "api_duration_seconds": 107.23497986793518,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      },
+      "oracle_context": {
+        "calls": 4,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 0.875,
+        "episode_success_valid_only": 0.75,
+        "input_tokens": 9685,
+        "cached_input_tokens": 9344,
+        "output_tokens": 26184,
+        "estimated_cost_usd": 0.2650285,
+        "api_duration_seconds": 234.75109958648682,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      }
+    }
+  },
+  "task_decoder_gate_pass": {
+    "dynamic_shopping": false
+  },
+  "all_task_decoder_gates_pass": false,
+  "failure_accounting": "API/unresolved-format failures are excluded from semantic accuracy and mark the block incomplete through semantic_coverage; they are not converted to wrong state values. Lossless syntax recovery never changes model values.",
+  "claim_boundary": "This is a real-API value decoder conditioned on a runtime-oracle write mask. It is not end-to-end learned causal discovery or impact selection evidence."
+}

@@ -1,0 +1,20 @@
+{
+  "passed": false,
+  "error_type": "InvalidExecution",
+  "failures": [
+    "API request did not produce a complete response",
+    "A-Mem metadata heuristic fallback",
+    "A-Mem metadata heuristic fallback",
+    "A-Mem metadata heuristic fallback",
+    "Upstream reported a processing error or fallback"
+  ],
+  "counts": {
+    "init": 1,
+    "llm": 104,
+    "mechanism": 35,
+    "write": 31,
+    "api_error": 1,
+    "invalid": 5
+  },
+  "history_turns": 31
+}

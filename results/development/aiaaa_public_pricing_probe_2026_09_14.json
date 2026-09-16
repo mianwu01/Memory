@@ -1,0 +1,23 @@
+{
+  "authenticated": false,
+  "requests": [
+    {
+      "path": "/api/pricing",
+      "status": 404,
+      "final_url": "https://aiaaa.cc/api/pricing",
+      "content_type": "text/plain",
+      "seconds": 1.070540544576943,
+      "sha256": "99eb12f2ab3c4866a353e098ffa3cb7a967e617c49b98480394ec5d8ea92b094",
+      "body_excerpt": "404 page not found"
+    },
+    {
+      "path": "/api/status",
+      "status": 404,
+      "final_url": "https://aiaaa.cc/api/status",
+      "content_type": "text/plain",
+      "seconds": 0.5278364978730679,
+      "sha256": "99eb12f2ab3c4866a353e098ffa3cb7a967e617c49b98480394ec5d8ea92b094",
+      "body_excerpt": "404 page not found"
+    }
+  ]
+}

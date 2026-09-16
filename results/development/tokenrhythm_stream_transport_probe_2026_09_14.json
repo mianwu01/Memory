@@ -1,0 +1,103 @@
+{
+  "schema": "tokenrhythm-route-probe/v1",
+  "endpoint": "https://tokenrhythm.studio/v1",
+  "model_requested": "deepseek-flash",
+  "profiles": {
+    "fixed_output_no_thinking": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Follow the output format exactly. Do not explain."
+        },
+        {
+          "role": "user",
+          "content": "Return a JSON object with one key numbers whose value is the array of integers from 1 to 60 inclusive. No markdown."
+        }
+      ],
+      "max_tokens": 512,
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "structured_default_thinking": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Apply the stated rules. Return only a JSON object with the requested final state, without markdown."
+        },
+        {
+          "role": "user",
+          "content": "Initial itinerary: flight arrival 9; transfer duration 2; attraction starts 12, duration 2, flexible=true; dinner fixed start 17; hotel checkin deadline 22. Intervention: flight arrival changes to 13. Rules: transfer end=arrival+transfer duration. Attraction needs one hour after transfer; if original start is too early, move attraction start to transfer end+1. Attraction end=start+duration. Dinner readiness=max(transfer end,attraction end); dinner status=missed if readiness>17, otherwise scheduled. Checkin hour=dinner readiness+1; checkin status=late if checkin hour>22, otherwise on_time. Return exactly the keys transfer_end, attraction_start, attraction_end, dinner_status, checkin_hour, checkin_status."
+        }
+      ],
+      "max_tokens": 2048
+    }
+  },
+  "method": {
+    "repeats": 3,
+    "concurrency": 1,
+    "retries": 0,
+    "stream": true,
+    "temperature": 0
+  },
+  "limitations": "Historical comparison only; requested model alias differs from old route.",
+  "requests": [
+    {
+      "profile": "sdk_tool_roundtrip",
+      "step": 0,
+      "model_returned": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 298,
+        "total_tokens": 333,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 128
+        }
+      },
+      "finish_reason": "tool_calls",
+      "success": true,
+      "total_seconds": 1.4623831119388342
+    },
+    {
+      "profile": "sdk_tool_roundtrip",
+      "step": 1,
+      "model_returned": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 114,
+        "total_tokens": 127,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "answer": "{\"city\": \"Shanghai\", \"country\": \"China\"}",
+      "success": true,
+      "total_seconds": 1.2621376542374492
+    }
+  ],
+  "summary": {
+    "fixed_output_no_thinking": {
+      "attempts": 0,
+      "successes": 0
+    },
+    "structured_default_thinking": {
+      "attempts": 0,
+      "successes": 0
+    },
+    "sdk_tool_roundtrip": {
+      "attempts": 2,
+      "successes": 2,
+      "median_total_seconds": 1.3622603830881417
+    }
+  }
+}

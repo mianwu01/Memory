@@ -1,0 +1,14 @@
+[
+  {
+    "route": "/models",
+    "http_status": 401,
+    "elapsed": 0.7420639861375093,
+    "error": "Invalid token"
+  },
+  {
+    "route": "/chat/completions",
+    "http_status": 401,
+    "elapsed": 0.760571701452136,
+    "error": "Invalid token"
+  }
+]

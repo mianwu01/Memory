@@ -1,0 +1,1821 @@
+{
+  "schema": "memoryarena-recent-audit/v1",
+  "family": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed",
+  "phase": "evaluation",
+  "episode_ids": [
+    111,
+    112,
+    113
+  ],
+  "model": "deepseek-flash",
+  "endpoint": "https://tokenrhythm.studio/v1",
+  "currency": "CNY",
+  "pricing_source": "https://tokenrhythm.studio/models",
+  "rates_per_million": {
+    "uncached_input": 2,
+    "cached_input": 0.04,
+    "output": 8
+  },
+  "invoice_verified": false,
+  "arms": {
+    "ours": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        111,
+        112,
+        113
+      ],
+      "actor": {
+        "responses_with_usage": 45,
+        "input_tokens": 123701,
+        "output_tokens": 83643,
+        "cached_input_tokens": 56064,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.8066605600000001,
+        "api_seconds": 663.750853061676,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 45,
+        "transport_failures_without_usage": 0,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 0.7906820000000001,
+        "median_api_seconds": 9.769515991210938,
+        "max_api_seconds": 62.41806364059448
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "transport_failures_without_usage": 0,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 23,
+        "stop": 22
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "111": {
+          "actor": {
+            "responses_with_usage": 13,
+            "input_tokens": 36332,
+            "output_tokens": 32135,
+            "cached_input_tokens": 19072,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.29236288,
+            "api_seconds": 219.6483244895935,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 13,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.29236288,
+            "median_api_seconds": 9.722839593887329,
+            "max_api_seconds": 62.41806364059448
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 7,
+          "reads": 6,
+          "instances": [
+            "4b9a6a78a0154d868ab21a94738a9f91"
+          ],
+          "attempts": [
+            "1789361626-2906734-f9262bb7:111"
+          ]
+        },
+        "112": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 44340,
+            "output_tokens": 34002,
+            "cached_input_tokens": 19200,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.323064,
+            "api_seconds": 240.709974527359,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.323064,
+            "median_api_seconds": 12.383740425109863,
+            "max_api_seconds": 59.42585873603821
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "dc5b0007402441f4890272e1021cf80e"
+          ],
+          "attempts": [
+            "1789361626-2906734-f9262bb7:112"
+          ]
+        },
+        "113": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 43029,
+            "output_tokens": 17506,
+            "cached_input_tokens": 17792,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.19123368000000004,
+            "api_seconds": 203.3925540447235,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.17525512000000004,
+            "median_api_seconds": 9.758912682533264,
+            "max_api_seconds": 40.09229397773743
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "02a975471238483fb84edf6fe785af38"
+          ],
+          "attempts": [
+            "1789361626-2906734-f9262bb7:113"
+          ]
+        }
+      }
+    },
+    "noG": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        111,
+        112,
+        113
+      ],
+      "actor": {
+        "responses_with_usage": 45,
+        "input_tokens": 220048,
+        "output_tokens": 134078,
+        "cached_input_tokens": 138624,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 1.24101696,
+        "api_seconds": 849.6792390346527,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 45,
+        "transport_failures_without_usage": 1,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 1.1100332799999997,
+        "median_api_seconds": 12.851644515991211,
+        "max_api_seconds": 122.4157235622406
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "transport_failures_without_usage": 0,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 23,
+        "stop": 22
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "111": {
+          "actor": {
+            "responses_with_usage": 12,
+            "input_tokens": 51439,
+            "output_tokens": 40170,
+            "cached_input_tokens": 31744,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.3620197600000001,
+            "api_seconds": 207.56915283203125,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 12,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.35487016,
+            "median_api_seconds": 10.67163372039795,
+            "max_api_seconds": 64.02706003189087
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 7,
+          "reads": 6,
+          "instances": [
+            "c84baa180be3460b9830f9d6b1c98b68"
+          ],
+          "attempts": [
+            "1789361626-2906736-a76b734c:111"
+          ]
+        },
+        "112": {
+          "actor": {
+            "responses_with_usage": 17,
+            "input_tokens": 89857,
+            "output_tokens": 68401,
+            "cached_input_tokens": 59648,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.61001192,
+            "api_seconds": 449.9152801036835,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 17,
+            "transport_failures_without_usage": 1,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.5863298399999999,
+            "median_api_seconds": 16.13799500465393,
+            "max_api_seconds": 122.4157235622406
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "dbc32837652a4f40a92e9991be8d9fdc"
+          ],
+          "attempts": [
+            "1789361626-2906736-a76b734c:112"
+          ]
+        },
+        "113": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 78752,
+            "output_tokens": 25507,
+            "cached_input_tokens": 47232,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.26898528,
+            "api_seconds": 192.194806098938,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.16883328,
+            "median_api_seconds": 9.623537540435791,
+            "max_api_seconds": 31.096647024154663
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "a733cd5e179b432f9b22896b1cf68178"
+          ],
+          "attempts": [
+            "1789361626-2906736-a76b734c:113"
+          ]
+        }
+      }
+    },
+    "noGcompact": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        111,
+        112,
+        113
+      ],
+      "actor": {
+        "responses_with_usage": 44,
+        "input_tokens": 245599,
+        "output_tokens": 73206,
+        "cached_input_tokens": 155904,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.7712741600000004,
+        "api_seconds": 558.4129099845886,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 44,
+        "transport_failures_without_usage": 0,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 0.7484170400000003,
+        "median_api_seconds": 10.980905532836914,
+        "max_api_seconds": 42.085827589035034
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "transport_failures_without_usage": 0,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 22,
+        "stop": 22
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "111": {
+          "actor": {
+            "responses_with_usage": 12,
+            "input_tokens": 60070,
+            "output_tokens": 22277,
+            "cached_input_tokens": 38784,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.22233935999999999,
+            "api_seconds": 156.04186248779297,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 12,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.22233935999999999,
+            "median_api_seconds": 11.979920625686646,
+            "max_api_seconds": 26.09271550178528
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 7,
+          "reads": 6,
+          "instances": [
+            "df7e124b90e74400a56722b1daa35058"
+          ],
+          "attempts": [
+            "1789361626-2906735-f8193a0d:111"
+          ]
+        },
+        "112": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 95589,
+            "output_tokens": 34415,
+            "cached_input_tokens": 61696,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.34557384,
+            "api_seconds": 218.40606546401978,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.34557384,
+            "median_api_seconds": 10.896369338035583,
+            "max_api_seconds": 42.085827589035034
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "a4a92736c25049da8d16e80f3f72acfa"
+          ],
+          "attempts": [
+            "1789361626-2906735-f8193a0d:112"
+          ]
+        },
+        "113": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 89940,
+            "output_tokens": 16514,
+            "cached_input_tokens": 55424,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.20336096,
+            "api_seconds": 183.96498203277588,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.18050384,
+            "median_api_seconds": 10.745242953300476,
+            "max_api_seconds": 21.55758261680603
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "5f37ad2cd886417da0e0569c1a3ae45e"
+          ],
+          "attempts": [
+            "1789361626-2906735-f8193a0d:113"
+          ]
+        }
+      }
+    },
+    "bm25": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        111,
+        112,
+        113
+      ],
+      "actor": {
+        "responses_with_usage": 41,
+        "input_tokens": 386714,
+        "output_tokens": 291033,
+        "cached_input_tokens": 242176,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 2.6270270399999993,
+        "api_seconds": 1443.883953332901,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 41,
+        "transport_failures_without_usage": 1,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 2.3245208,
+        "median_api_seconds": 19.36761212348938,
+        "max_api_seconds": 147.07427144050598
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "transport_failures_without_usage": 0,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 18,
+        "stop": 22,
+        "length": 1
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "111": {
+          "actor": {
+            "responses_with_usage": 10,
+            "input_tokens": 67894,
+            "output_tokens": 93380,
+            "cached_input_tokens": 34688,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.81483952,
+            "api_seconds": 452.0104920864105,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 10,
+            "transport_failures_without_usage": 1,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.66708,
+            "median_api_seconds": 25.767454028129578,
+            "max_api_seconds": 147.07427144050598
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 7,
+          "reads": 6,
+          "instances": [
+            "b920b1b8b62a4c2993cef59a7b12426b"
+          ],
+          "attempts": [
+            "1789361626-2906733-30baf770:111"
+          ]
+        },
+        "112": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 191244,
+            "output_tokens": 149850,
+            "cached_input_tokens": 131200,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 1.3241360000000002,
+            "api_seconds": 741.9547860622406,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 1.16938928,
+            "median_api_seconds": 38.53976500034332,
+            "max_api_seconds": 127.31686329841614
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "e469304b386747359eabc75519d4b328"
+          ],
+          "attempts": [
+            "1789361626-2906733-30baf770:112"
+          ]
+        },
+        "113": {
+          "actor": {
+            "responses_with_usage": 15,
+            "input_tokens": 127576,
+            "output_tokens": 47803,
+            "cached_input_tokens": 76288,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.48805151999999996,
+            "api_seconds": 249.91867518424988,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 15,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.48805151999999996,
+            "median_api_seconds": 12.712725400924683,
+            "max_api_seconds": 48.860766887664795
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "075f3d56c97d4394b5e8e835a5bf57da"
+          ],
+          "attempts": [
+            "1789361626-2906733-30baf770:113"
+          ]
+        }
+      }
+    },
+    "full": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        111,
+        112,
+        113
+      ],
+      "actor": {
+        "responses_with_usage": 43,
+        "input_tokens": 715484,
+        "output_tokens": 100973,
+        "cached_input_tokens": 545664,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 1.1692505599999998,
+        "api_seconds": 810.28639793396,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 43,
+        "transport_failures_without_usage": 0,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 1.0821172,
+        "median_api_seconds": 12.728098630905151,
+        "max_api_seconds": 59.7600531578064
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "transport_failures_without_usage": 0,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 21,
+        "stop": 22
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "111": {
+          "actor": {
+            "responses_with_usage": 11,
+            "input_tokens": 135212,
+            "output_tokens": 33534,
+            "cached_input_tokens": 106112,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.33071648,
+            "api_seconds": 201.7251627445221,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 11,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.3307164799999999,
+            "median_api_seconds": 11.744934558868408,
+            "max_api_seconds": 47.61984896659851
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 7,
+          "reads": 6,
+          "instances": [
+            "730c90e3d6e547faa00fbcbef24ea813"
+          ],
+          "attempts": [
+            "1789362217-2925364-3994b705:111"
+          ]
+        },
+        "112": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 297956,
+            "output_tokens": 46108,
+            "cached_input_tokens": 232192,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.5096796800000001,
+            "api_seconds": 429.5862226486206,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.4225463200000001,
+            "median_api_seconds": 22.433180451393127,
+            "max_api_seconds": 59.7600531578064
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "ced5e158c2864ecaa5ddac6317e56800"
+          ],
+          "attempts": [
+            "1789362217-2925364-3994b705:112"
+          ]
+        },
+        "113": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 282316,
+            "output_tokens": 21331,
+            "cached_input_tokens": 207360,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.3288544,
+            "api_seconds": 178.97501254081726,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.3288544,
+            "median_api_seconds": 10.289375185966492,
+            "max_api_seconds": 35.319945096969604
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "647f2f330f7c43688d3e39491fa9b1a6"
+          ],
+          "attempts": [
+            "1789362217-2925364-3994b705:113"
+          ]
+        }
+      }
+    },
+    "dense": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        111,
+        112,
+        113
+      ],
+      "actor": {
+        "responses_with_usage": 43,
+        "input_tokens": 580573,
+        "output_tokens": 294804,
+        "cached_input_tokens": 395136,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 2.7451114400000014,
+        "api_seconds": 1452.9418094158173,
+        "explicit_rate_limit_rejections": 1,
+        "provider_cost_responses": 43,
+        "transport_failures_without_usage": 1,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 2.551741680000002,
+        "median_api_seconds": 21.16327476501465,
+        "max_api_seconds": 139.7576813697815
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "transport_failures_without_usage": 0,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 20,
+        "stop": 22,
+        "length": 1
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "111": {
+          "actor": {
+            "responses_with_usage": 11,
+            "input_tokens": 128237,
+            "output_tokens": 65934,
+            "cached_input_tokens": 83840,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.6196195999999999,
+            "api_seconds": 366.15225410461426,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 11,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.46017128,
+            "median_api_seconds": 22.008063316345215,
+            "max_api_seconds": 123.98879480361938
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 7,
+          "reads": 6,
+          "instances": [
+            "57b9623b87d847bf92662c7a377ddbdb"
+          ],
+          "attempts": [
+            "1789362321-2928828-2c2ccd70:111"
+          ]
+        },
+        "112": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 247031,
+            "output_tokens": 172338,
+            "cached_input_tokens": 174336,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 1.5310674400000002,
+            "api_seconds": 779.2489967346191,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 1.5310674400000002,
+            "median_api_seconds": 39.796361804008484,
+            "max_api_seconds": 139.7576813697815
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "2996468ccd5b400e92f47ee483b475ba"
+          ],
+          "attempts": [
+            "1789362321-2928828-2c2ccd70:112"
+          ]
+        },
+        "113": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 205305,
+            "output_tokens": 56532,
+            "cached_input_tokens": 136960,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.5944244000000001,
+            "api_seconds": 307.54055857658386,
+            "explicit_rate_limit_rejections": 1,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 1,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.5605029600000001,
+            "median_api_seconds": 14.375763773918152,
+            "max_api_seconds": 70.53587794303894
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "4d367ec9d85245e6841168e93c5c03db"
+          ],
+          "attempts": [
+            "1789362321-2928828-2c2ccd70:113"
+          ]
+        }
+      }
+    },
+    "summary": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        111,
+        112,
+        113
+      ],
+      "actor": {
+        "responses_with_usage": 44,
+        "input_tokens": 218021,
+        "output_tokens": 109206,
+        "cached_input_tokens": 106240,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 1.1014595999999999,
+        "api_seconds": 610.6257288455963,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 44,
+        "transport_failures_without_usage": 0,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 1.1014595999999999,
+        "median_api_seconds": 9.512869000434875,
+        "max_api_seconds": 102.63530015945435
+      },
+      "memory": {
+        "responses_with_usage": 30,
+        "input_tokens": 158323,
+        "output_tokens": 84617,
+        "cached_input_tokens": 4992,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.98379768,
+        "api_seconds": 364.3604964967817,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 30,
+        "transport_failures_without_usage": 0,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 0.98379768,
+        "median_api_seconds": 11.355341665446758,
+        "max_api_seconds": 31.072109966538846
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 22,
+        "stop": 22
+      },
+      "memory_finish_reasons": {
+        "stop": 30
+      },
+      "per_episode": {
+        "111": {
+          "actor": {
+            "responses_with_usage": 12,
+            "input_tokens": 54786,
+            "output_tokens": 29369,
+            "cached_input_tokens": 30848,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.28406192,
+            "api_seconds": 185.29686498641968,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 12,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.28406192,
+            "median_api_seconds": 12.706442475318909,
+            "max_api_seconds": 47.865917682647705
+          },
+          "memory": {
+            "responses_with_usage": 8,
+            "input_tokens": 38099,
+            "output_tokens": 19230,
+            "cached_input_tokens": 4992,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.22025368,
+            "api_seconds": 87.54349797219038,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 8,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.22025368,
+            "median_api_seconds": 10.550287398509681,
+            "max_api_seconds": 17.685488347895443
+          },
+          "writes": 7,
+          "reads": 6,
+          "instances": [
+            "6b37846c88884ecf9b7e31623054b6ba"
+          ],
+          "attempts": [
+            "1789385557-3749530-079dca53:111"
+          ]
+        },
+        "112": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 85210,
+            "output_tokens": 58366,
+            "cached_input_tokens": 40064,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.55882256,
+            "api_seconds": 315.5339629650116,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.5588225599999999,
+            "median_api_seconds": 10.425329089164734,
+            "max_api_seconds": 102.63530015945435
+          },
+          "memory": {
+            "responses_with_usage": 12,
+            "input_tokens": 66461,
+            "output_tokens": 39815,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.4514419999999999,
+            "api_seconds": 174.77637111395597,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 12,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.4514419999999999,
+            "median_api_seconds": 12.867552295327187,
+            "max_api_seconds": 31.072109966538846
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "b99d62bee8e14a6b8d5fa7a5d488d382"
+          ],
+          "attempts": [
+            "1789385557-3749530-079dca53:112"
+          ]
+        },
+        "113": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 78025,
+            "output_tokens": 21471,
+            "cached_input_tokens": 35328,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.25857512000000005,
+            "api_seconds": 109.79490089416504,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.25857512,
+            "median_api_seconds": 5.900561094284058,
+            "max_api_seconds": 14.128441095352173
+          },
+          "memory": {
+            "responses_with_usage": 10,
+            "input_tokens": 53763,
+            "output_tokens": 25572,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.312102,
+            "api_seconds": 102.04062741063535,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 10,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.312102,
+            "median_api_seconds": 10.480458436533809,
+            "max_api_seconds": 16.185381683520973
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "92a076b5fd0f45e0a95fdd0c35afdc7e"
+          ],
+          "attempts": [
+            "1789385557-3749530-079dca53:113"
+          ]
+        }
+      }
+    },
+    "mem0": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        111,
+        112,
+        113
+      ],
+      "actor": {
+        "responses_with_usage": 51,
+        "input_tokens": 234714,
+        "output_tokens": 509038,
+        "cached_input_tokens": 129024,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 4.28884496,
+        "api_seconds": 2372.476198196411,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 51,
+        "transport_failures_without_usage": 0,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 4.175175679999999,
+        "median_api_seconds": 22.01498055458069,
+        "max_api_seconds": 152.78385734558105
+      },
+      "memory": {
+        "responses_with_usage": 25,
+        "input_tokens": 298818,
+        "output_tokens": 18604,
+        "cached_input_tokens": 196096,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.36211984,
+        "api_seconds": 212.37543573137373,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 25,
+        "transport_failures_without_usage": 0,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 0.34360376,
+        "median_api_seconds": 5.918048403225839,
+        "max_api_seconds": 39.09452584851533
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 23,
+        "stop": 20,
+        "length": 8
+      },
+      "memory_finish_reasons": {
+        "stop": 25
+      },
+      "per_episode": {
+        "111": {
+          "actor": {
+            "responses_with_usage": 17,
+            "input_tokens": 86988,
+            "output_tokens": 246249,
+            "cached_input_tokens": 47488,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 2.0508915200000004,
+            "api_seconds": 1115.569843530655,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 17,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 2.01247392,
+            "median_api_seconds": 59.13943791389465,
+            "max_api_seconds": 145.5788962841034
+          },
+          "memory": {
+            "responses_with_usage": 7,
+            "input_tokens": 82275,
+            "output_tokens": 5523,
+            "cached_input_tokens": 54528,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.10185912000000001,
+            "api_seconds": 43.073685424402356,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 7,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.10185912,
+            "median_api_seconds": 5.880209789611399,
+            "max_api_seconds": 10.754049561917782
+          },
+          "writes": 7,
+          "reads": 6,
+          "instances": [
+            "98ed8ac29caa4843855b25818850337f"
+          ],
+          "attempts": [
+            "1789362844-2942321-0a2637f7:111"
+          ]
+        },
+        "112": {
+          "actor": {
+            "responses_with_usage": 18,
+            "input_tokens": 81988,
+            "output_tokens": 191237,
+            "cached_input_tokens": 46208,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 1.6033043200000001,
+            "api_seconds": 897.3853776454926,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 18,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 1.5280526400000003,
+            "median_api_seconds": 23.34884011745453,
+            "max_api_seconds": 152.78385734558105
+          },
+          "memory": {
+            "responses_with_usage": 9,
+            "input_tokens": 108302,
+            "output_tokens": 6581,
+            "cached_input_tokens": 70784,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.13051536000000002,
+            "api_seconds": 114.27760503906757,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 9,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.11199928,
+            "median_api_seconds": 6.550492298789322,
+            "max_api_seconds": 39.09452584851533
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "2c360fde7a0345689043fb33190f93a9"
+          ],
+          "attempts": [
+            "1789362844-2942321-0a2637f7:112"
+          ]
+        },
+        "113": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 65738,
+            "output_tokens": 71552,
+            "cached_input_tokens": 35328,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.63464912,
+            "api_seconds": 359.5209770202637,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.63464912,
+            "median_api_seconds": 11.990535736083984,
+            "max_api_seconds": 106.93111109733582
+          },
+          "memory": {
+            "responses_with_usage": 9,
+            "input_tokens": 108241,
+            "output_tokens": 6500,
+            "cached_input_tokens": 70784,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.12974536,
+            "api_seconds": 55.024145267903805,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 9,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.12974536,
+            "median_api_seconds": 5.320266442373395,
+            "max_api_seconds": 10.87822457589209
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "50eb8489e6c44c289966e56fc06433cd"
+          ],
+          "attempts": [
+            "1789362844-2942321-0a2637f7:113"
+          ]
+        }
+      }
+    },
+    "amem": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        111,
+        112,
+        113
+      ],
+      "actor": {
+        "responses_with_usage": 40,
+        "input_tokens": 622794,
+        "output_tokens": 122020,
+        "cached_input_tokens": 383616,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 1.4698606400000003,
+        "api_seconds": 651.3883955478668,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 40,
+        "transport_failures_without_usage": 0,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 1.3863399200000004,
+        "median_api_seconds": 10.723506331443787,
+        "max_api_seconds": 93.51554656028748
+      },
+      "memory": {
+        "responses_with_usage": 47,
+        "input_tokens": 423184,
+        "output_tokens": 20478,
+        "cached_input_tokens": 768,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 1.0086867199999998,
+        "api_seconds": 302.53518058080226,
+        "explicit_rate_limit_rejections": 2,
+        "provider_cost_responses": 47,
+        "transport_failures_without_usage": 2,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 0.9442367199999997,
+        "median_api_seconds": 5.929794196039438,
+        "max_api_seconds": 33.514761234633625
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 18,
+        "stop": 22
+      },
+      "memory_finish_reasons": {
+        "stop": 47
+      },
+      "per_episode": {
+        "111": {
+          "actor": {
+            "responses_with_usage": 10,
+            "input_tokens": 122580,
+            "output_tokens": 37308,
+            "cached_input_tokens": 76544,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.39359776,
+            "api_seconds": 186.61063742637634,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 10,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.39359776,
+            "median_api_seconds": 14.960200786590576,
+            "max_api_seconds": 56.35513520240784
+          },
+          "memory": {
+            "responses_with_usage": 13,
+            "input_tokens": 89626,
+            "output_tokens": 5345,
+            "cached_input_tokens": 128,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.22176112,
+            "api_seconds": 77.19712982606143,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 13,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.20878712,
+            "median_api_seconds": 5.983386166393757,
+            "max_api_seconds": 10.455464927479625
+          },
+          "writes": 7,
+          "reads": 6,
+          "instances": [
+            "6a5e86fa26e744bc89afc25bb1c114cd"
+          ],
+          "attempts": [
+            "1789363061-2948538-62b676a5:111"
+          ]
+        },
+        "112": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 292842,
+            "output_tokens": 58430,
+            "cached_input_tokens": 183936,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.69260944,
+            "api_seconds": 309.5294282436371,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.6823397600000001,
+            "median_api_seconds": 9.603359460830688,
+            "max_api_seconds": 93.51554656028748
+          },
+          "memory": {
+            "responses_with_usage": 17,
+            "input_tokens": 175322,
+            "output_tokens": 8092,
+            "cached_input_tokens": 128,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.41512911999999996,
+            "api_seconds": 84.0251750452444,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 17,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.41512911999999996,
+            "median_api_seconds": 4.049757878296077,
+            "max_api_seconds": 9.783329755067825
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "52aad4460dc1455598e04abe18dda8a4"
+          ],
+          "attempts": [
+            "1789363061-2948538-62b676a5:112"
+          ]
+        },
+        "113": {
+          "actor": {
+            "responses_with_usage": 14,
+            "input_tokens": 207372,
+            "output_tokens": 26282,
+            "cached_input_tokens": 123136,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.38365343999999996,
+            "api_seconds": 155.2483298778534,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 14,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.31040239999999997,
+            "median_api_seconds": 9.454657912254333,
+            "max_api_seconds": 27.108986854553223
+          },
+          "memory": {
+            "responses_with_usage": 17,
+            "input_tokens": 158236,
+            "output_tokens": 7041,
+            "cached_input_tokens": 512,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.37179648000000004,
+            "api_seconds": 141.31287570949644,
+            "explicit_rate_limit_rejections": 2,
+            "provider_cost_responses": 17,
+            "transport_failures_without_usage": 2,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.32032048,
+            "median_api_seconds": 5.966469315811992,
+            "max_api_seconds": 33.514761234633625
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "64f39d93e8ef4153987494059d080983"
+          ],
+          "attempts": [
+            "1789363061-2948538-62b676a5:113"
+          ]
+        }
+      }
+    },
+    "lightmem": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        111,
+        112,
+        113
+      ],
+      "actor": {
+        "responses_with_usage": 50,
+        "input_tokens": 202580,
+        "output_tokens": 680666,
+        "cached_input_tokens": 115968,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 5.623190720000002,
+        "api_seconds": 3225.479043006897,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 50,
+        "transport_failures_without_usage": 1,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 5.450493040000002,
+        "median_api_seconds": 27.895225882530212,
+        "max_api_seconds": 155.17779564857483
+      },
+      "memory": {
+        "responses_with_usage": 1305,
+        "input_tokens": 1015385,
+        "output_tokens": 53152,
+        "cached_input_tokens": 662532,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 1.1574232799999995,
+        "api_seconds": 5316.825794922188,
+        "explicit_rate_limit_rejections": 5,
+        "provider_cost_responses": 1305,
+        "transport_failures_without_usage": 11,
+        "pre_stream_connection_failures": 0,
+        "provider_reported_cny": 1.1294779600000004,
+        "median_api_seconds": 2.857965610921383,
+        "max_api_seconds": 47.462747966870666
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 22,
+        "stop": 19,
+        "length": 9
+      },
+      "memory_finish_reasons": {
+        "stop": 1305
+      },
+      "per_episode": {
+        "111": {
+          "actor": {
+            "responses_with_usage": 13,
+            "input_tokens": 56362,
+            "output_tokens": 194014,
+            "cached_input_tokens": 34816,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 1.59659664,
+            "api_seconds": 917.0427761077881,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 13,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 1.4238989599999998,
+            "median_api_seconds": 30.591760873794556,
+            "max_api_seconds": 148.93175554275513
+          },
+          "memory": {
+            "responses_with_usage": 338,
+            "input_tokens": 252581,
+            "output_tokens": 12764,
+            "cached_input_tokens": 166369,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.2811907599999997,
+            "api_seconds": 1573.803469646722,
+            "explicit_rate_limit_rejections": 3,
+            "provider_cost_responses": 338,
+            "transport_failures_without_usage": 5,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.2733517599999997,
+            "median_api_seconds": 3.175765685737133,
+            "max_api_seconds": 25.347870538011193
+          },
+          "writes": 7,
+          "reads": 6,
+          "instances": [
+            "33f52c8e2d3144c789299ae248bc3cd2"
+          ],
+          "attempts": [
+            "1789363104-2950239-03e30687:111"
+          ]
+        },
+        "112": {
+          "actor": {
+            "responses_with_usage": 21,
+            "input_tokens": 88414,
+            "output_tokens": 371013,
+            "cached_input_tokens": 50944,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 3.0450817599999995,
+            "api_seconds": 1768.618439912796,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 21,
+            "transport_failures_without_usage": 1,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 3.0450817599999995,
+            "median_api_seconds": 73.83882427215576,
+            "max_api_seconds": 155.17779564857483
+          },
+          "memory": {
+            "responses_with_usage": 476,
+            "input_tokens": 380317,
+            "output_tokens": 20396,
+            "cached_input_tokens": 247125,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.43943700000000047,
+            "api_seconds": 1827.5190330641344,
+            "explicit_rate_limit_rejections": 1,
+            "provider_cost_responses": 476,
+            "transport_failures_without_usage": 3,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.4193306800000001,
+            "median_api_seconds": 2.8654135446995497,
+            "max_api_seconds": 33.964615443721414
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "904b23d34f3b4894b93928bbced5062b"
+          ],
+          "attempts": [
+            "1789363104-2950239-03e30687:112"
+          ]
+        },
+        "113": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 57804,
+            "output_tokens": 115639,
+            "cached_input_tokens": 30208,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.9815123199999999,
+            "api_seconds": 539.8178269863129,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 16,
+            "transport_failures_without_usage": 0,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.9815123199999999,
+            "median_api_seconds": 13.058777928352356,
+            "max_api_seconds": 118.51069378852844
+          },
+          "memory": {
+            "responses_with_usage": 491,
+            "input_tokens": 382487,
+            "output_tokens": 19992,
+            "cached_input_tokens": 249038,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.43679551999999955,
+            "api_seconds": 1915.5032922113314,
+            "explicit_rate_limit_rejections": 1,
+            "provider_cost_responses": 491,
+            "transport_failures_without_usage": 3,
+            "pre_stream_connection_failures": 0,
+            "provider_reported_cny": 0.43679551999999955,
+            "median_api_seconds": 2.7294289730489254,
+            "max_api_seconds": 47.462747966870666
+          },
+          "writes": 9,
+          "reads": 8,
+          "instances": [
+            "4fe7a4be04fe41288058baea89476e0b"
+          ],
+          "attempts": [
+            "1789363104-2950239-03e30687:113"
+          ]
+        }
+      }
+    }
+  },
+  "paired_scope_complete": true,
+  "limitations": [
+    "Usage-based estimate, not reconciled billing; interrupted/retried requests may lack usage.",
+    "Scores are descriptive paired replication on reused historical holdout IDs."
+  ],
+  "latency_basis": "Client-observed duration, including configured rate-scheduler and retry waits",
+  "estimated_cny_all_logged_responses": 25.355724159999998
+}

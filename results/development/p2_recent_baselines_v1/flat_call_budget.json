@@ -1,0 +1,99 @@
+{
+  "schema": "memoryarena-flat-call-budget/v1",
+  "source": "User reports 2 yuan per billed call and 230 yuan spent through the 401 interruption",
+  "scope": {
+    "development_episode_ids": [
+      101
+    ],
+    "evaluation_episode_ids": [
+      111,
+      112,
+      113
+    ],
+    "arms": 10,
+    "development_actor_rounds": 7,
+    "evaluation_actor_rounds": [
+      6,
+      8,
+      8
+    ]
+  },
+  "billing": {
+    "unit_price": 2,
+    "currency": "CNY (interpreted from conversation)",
+    "actual_spent_user_report": 230,
+    "equivalent_billed_calls": 115,
+    "usage_responses_in_local_ledger": 98,
+    "unreconciled_call_difference": 17,
+    "note": "Do not infer which failed/retried/unlogged requests were billed from this difference."
+  },
+  "scenarios": [
+    {
+      "scenario": "lower",
+      "assumptions": {
+        "actor_calls_per_round": 2,
+        "summary_calls_per_write": 1,
+        "lightmem_update_schedule": "9 update calls per actor round"
+      },
+      "development": {
+        "actor": 140,
+        "summary": 8,
+        "mem0": 8,
+        "amem": 15,
+        "lightmem": 71,
+        "calls": 242,
+        "amount": 484
+      },
+      "evaluation": {
+        "actor": 440,
+        "summary": 25,
+        "mem0": 25,
+        "amem": 47,
+        "lightmem": 223,
+        "calls": 760,
+        "amount": 1520
+      },
+      "remaining_calls": 1002,
+      "remaining_amount": 2004,
+      "already_billed": 230,
+      "total_before_reserve": 2234,
+      "reserve_calls": 201,
+      "total_with_20pct_reserve": 2636
+    },
+    {
+      "scenario": "higher",
+      "assumptions": {
+        "actor_calls_per_round": 2,
+        "summary_calls_per_write": 2,
+        "lightmem_update_schedule": "9*r update calls at round r (growth scenario, not an upper bound)"
+      },
+      "development": {
+        "actor": 140,
+        "summary": 16,
+        "mem0": 8,
+        "amem": 15,
+        "lightmem": 260,
+        "calls": 439,
+        "amount": 878
+      },
+      "evaluation": {
+        "actor": 440,
+        "summary": 50,
+        "mem0": 25,
+        "amem": 47,
+        "lightmem": 862,
+        "calls": 1424,
+        "amount": 2848
+      },
+      "remaining_calls": 1863,
+      "remaining_amount": 3726,
+      "already_billed": 230,
+      "total_before_reserve": 3956,
+      "reserve_calls": 373,
+      "total_with_20pct_reserve": 4702
+    }
+  ],
+  "recommended_total_planning_budget": 5000,
+  "remaining_of_recommended_total": 4770,
+  "limitation": "Scenario estimate, not a spending cap or statistical confidence interval; LightMem update-call growth is not fully observed. No new API requests were made for this estimate."
+}

@@ -1,0 +1,12 @@
+{
+  "checked_at": 1789440103.2514412,
+  "canonical_source": "sentence-transformers/all-MiniLM-L6-v2",
+  "canonical_weights": "/home/hadoop-aipnlp/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/model.safetensors",
+  "local_source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/.tmp/models/all-MiniLM-L6-v2",
+  "same_embedding_shape": true,
+  "max_absolute_difference": 0.0,
+  "canonical_max_seq_length": 256,
+  "local_max_seq_length": 256,
+  "same_outputs_at_1e-6": true,
+  "actual_commit": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+}

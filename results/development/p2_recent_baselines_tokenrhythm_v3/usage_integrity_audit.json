@@ -1,0 +1,859 @@
+{
+  "schema": "memoryarena-recent-audit/v1",
+  "family": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/development/p2_recent_baselines_tokenrhythm_v3",
+  "phase": "development",
+  "episode_ids": [
+    101
+  ],
+  "model": "deepseek-flash",
+  "endpoint": "https://tokenrhythm.studio/v1",
+  "currency": "CNY",
+  "pricing_source": "https://tokenrhythm.studio/models",
+  "rates_per_million": {
+    "uncached_input": 2,
+    "cached_input": 0.04,
+    "output": 8
+  },
+  "invoice_verified": false,
+  "arms": {
+    "ours": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        101
+      ],
+      "actor": {
+        "responses_with_usage": 14,
+        "input_tokens": 53042,
+        "output_tokens": 56082,
+        "cached_input_tokens": 27389,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.50105756,
+        "api_seconds": 242.76989674568176,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 14,
+        "provider_reported_cny": 0.50105756,
+        "median_api_seconds": 11.189672589302063,
+        "max_api_seconds": 86.68687987327576
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 7,
+        "stop": 7
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 14,
+            "input_tokens": 53042,
+            "output_tokens": 56082,
+            "cached_input_tokens": 27389,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.50105756,
+            "api_seconds": 242.76989674568176,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 14,
+            "provider_reported_cny": 0.50105756,
+            "median_api_seconds": 11.189672589302063,
+            "max_api_seconds": 86.68687987327576
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 8,
+          "reads": 7,
+          "instances": [
+            "9056b9747305409993806e44f017d72d"
+          ],
+          "attempts": [
+            "1789348032-2290457-413b6576:101"
+          ]
+        }
+      }
+    },
+    "noG": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        101
+      ],
+      "actor": {
+        "responses_with_usage": 15,
+        "input_tokens": 102198,
+        "output_tokens": 58355,
+        "cached_input_tokens": 72064,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.52999056,
+        "api_seconds": 271.5580732822418,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 15,
+        "provider_reported_cny": 0.52999056,
+        "median_api_seconds": 12.178978681564331,
+        "max_api_seconds": 79.01061654090881
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 8,
+        "stop": 7
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 15,
+            "input_tokens": 102198,
+            "output_tokens": 58355,
+            "cached_input_tokens": 72064,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.52999056,
+            "api_seconds": 271.5580732822418,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 15,
+            "provider_reported_cny": 0.52999056,
+            "median_api_seconds": 12.178978681564331,
+            "max_api_seconds": 79.01061654090881
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 8,
+          "reads": 7,
+          "instances": [
+            "d59f09ea77564538aa07d5f748cc0c12"
+          ],
+          "attempts": [
+            "1789348032-2290454-b72ab818:101"
+          ]
+        }
+      }
+    },
+    "noGcompact": {
+      "complete": false,
+      "issues": [
+        "incomplete_or_unexpected_episode_set",
+        "memory_round_coverage:101",
+        "instance_or_attempt_coverage:101",
+        "actor_round_coverage:101"
+      ],
+      "completed_ids": [],
+      "actor": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [],
+      "actor_finish_reasons": {},
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 0,
+          "reads": 0,
+          "instances": [],
+          "attempts": []
+        }
+      }
+    },
+    "bm25": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        101
+      ],
+      "actor": {
+        "responses_with_usage": 16,
+        "input_tokens": 208343,
+        "output_tokens": 263925,
+        "cached_input_tokens": 141824,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 2.25011096,
+        "api_seconds": 1209.3542425632477,
+        "explicit_rate_limit_rejections": 2,
+        "provider_cost_responses": 16,
+        "provider_reported_cny": 2.25011096,
+        "median_api_seconds": 61.70724976062775,
+        "max_api_seconds": 151.48160862922668
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 7,
+        "stop": 5,
+        "length": 4
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 16,
+            "input_tokens": 208343,
+            "output_tokens": 263925,
+            "cached_input_tokens": 141824,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 2.25011096,
+            "api_seconds": 1209.3542425632477,
+            "explicit_rate_limit_rejections": 2,
+            "provider_cost_responses": 16,
+            "provider_reported_cny": 2.25011096,
+            "median_api_seconds": 61.70724976062775,
+            "max_api_seconds": 151.48160862922668
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 8,
+          "reads": 7,
+          "instances": [
+            "cf997fca24ec40cd960c39bb0f86ce52"
+          ],
+          "attempts": [
+            "1789348315-2307832-a01731d2:101"
+          ]
+        }
+      }
+    },
+    "full": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        101
+      ],
+      "actor": {
+        "responses_with_usage": 13,
+        "input_tokens": 245992,
+        "output_tokens": 57180,
+        "cached_input_tokens": 194560,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.5680864,
+        "api_seconds": 243.19446682929993,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 13,
+        "provider_reported_cny": 0.5680864,
+        "median_api_seconds": 17.58574628829956,
+        "max_api_seconds": 44.17602062225342
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 6,
+        "stop": 7
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 13,
+            "input_tokens": 245992,
+            "output_tokens": 57180,
+            "cached_input_tokens": 194560,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.5680864,
+            "api_seconds": 243.19446682929993,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 13,
+            "provider_reported_cny": 0.5680864,
+            "median_api_seconds": 17.58574628829956,
+            "max_api_seconds": 44.17602062225342
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 8,
+          "reads": 7,
+          "instances": [
+            "93792e3e6d57470e85dc99b656a7ae79"
+          ],
+          "attempts": [
+            "1789348338-2308770-7e0c466e:101"
+          ]
+        }
+      }
+    },
+    "dense": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        101
+      ],
+      "actor": {
+        "responses_with_usage": 14,
+        "input_tokens": 191528,
+        "output_tokens": 209722,
+        "cached_input_tokens": 127104,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 1.8117081600000002,
+        "api_seconds": 911.2289273738861,
+        "explicit_rate_limit_rejections": 1,
+        "provider_cost_responses": 14,
+        "provider_reported_cny": 1.8117081600000002,
+        "median_api_seconds": 40.61085057258606,
+        "max_api_seconds": 155.34142589569092
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 5,
+        "stop": 5,
+        "length": 4
+      },
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 14,
+            "input_tokens": 191528,
+            "output_tokens": 209722,
+            "cached_input_tokens": 127104,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 1.8117081600000002,
+            "api_seconds": 911.2289273738861,
+            "explicit_rate_limit_rejections": 1,
+            "provider_cost_responses": 14,
+            "provider_reported_cny": 1.8117081600000002,
+            "median_api_seconds": 40.61085057258606,
+            "max_api_seconds": 155.34142589569092
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 8,
+          "reads": 7,
+          "instances": [
+            "dab8e320113047bc9a7dd5ca71a5eae9"
+          ],
+          "attempts": [
+            "1789348614-2321295-e528125c:101"
+          ]
+        }
+      }
+    },
+    "summary": {
+      "complete": true,
+      "issues": [],
+      "completed_ids": [
+        101
+      ],
+      "actor": {
+        "responses_with_usage": 14,
+        "input_tokens": 87566,
+        "output_tokens": 50218,
+        "cached_input_tokens": 41856,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.49483823999999993,
+        "api_seconds": 248.88570713996887,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 14,
+        "provider_reported_cny": 0.49483823999999993,
+        "median_api_seconds": 13.813609004020691,
+        "max_api_seconds": 56.91814851760864
+      },
+      "memory": {
+        "responses_with_usage": 10,
+        "input_tokens": 68486,
+        "output_tokens": 33249,
+        "cached_input_tokens": 3328,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.39644112,
+        "api_seconds": 142.19812849443406,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 10,
+        "provider_reported_cny": 0.39644112,
+        "median_api_seconds": 14.987243804614991,
+        "max_api_seconds": 24.00383250322193
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 7,
+        "stop": 7
+      },
+      "memory_finish_reasons": {
+        "stop": 10
+      },
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 14,
+            "input_tokens": 87566,
+            "output_tokens": 50218,
+            "cached_input_tokens": 41856,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.49483823999999993,
+            "api_seconds": 248.88570713996887,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 14,
+            "provider_reported_cny": 0.49483823999999993,
+            "median_api_seconds": 13.813609004020691,
+            "max_api_seconds": 56.91814851760864
+          },
+          "memory": {
+            "responses_with_usage": 10,
+            "input_tokens": 68486,
+            "output_tokens": 33249,
+            "cached_input_tokens": 3328,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.39644112,
+            "api_seconds": 142.19812849443406,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 10,
+            "provider_reported_cny": 0.39644112,
+            "median_api_seconds": 14.987243804614991,
+            "max_api_seconds": 24.00383250322193
+          },
+          "writes": 8,
+          "reads": 7,
+          "instances": [
+            "2de8d9a37a6a49ac8a349bef48a38205"
+          ],
+          "attempts": [
+            "1789348875-2337291-db010682:101"
+          ]
+        }
+      }
+    },
+    "mem0": {
+      "complete": false,
+      "issues": [
+        "incomplete_or_unexpected_episode_set",
+        "memory_round_coverage:101",
+        "instance_or_attempt_coverage:101",
+        "actor_round_coverage:101"
+      ],
+      "completed_ids": [],
+      "actor": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [],
+      "actor_finish_reasons": {},
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 0,
+          "reads": 0,
+          "instances": [],
+          "attempts": []
+        }
+      }
+    },
+    "amem": {
+      "complete": false,
+      "issues": [
+        "incomplete_or_unexpected_episode_set",
+        "memory_round_coverage:101",
+        "instance_or_attempt_coverage:101",
+        "actor_round_coverage:101"
+      ],
+      "completed_ids": [],
+      "actor": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "memory": {
+        "responses_with_usage": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.0,
+        "api_seconds": 0,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 0,
+        "provider_reported_cny": 0.0,
+        "median_api_seconds": null,
+        "max_api_seconds": null
+      },
+      "recorded_api_errors": 0,
+      "returned_models": [],
+      "actor_finish_reasons": {},
+      "memory_finish_reasons": {},
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "memory": {
+            "responses_with_usage": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.0,
+            "api_seconds": 0,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 0,
+            "provider_reported_cny": 0.0,
+            "median_api_seconds": null,
+            "max_api_seconds": null
+          },
+          "writes": 0,
+          "reads": 0,
+          "instances": [],
+          "attempts": []
+        }
+      }
+    },
+    "lightmem": {
+      "complete": false,
+      "issues": [
+        "incomplete_or_unexpected_episode_set",
+        "api_or_metadata_errors",
+        "memory_round_coverage:101",
+        "actor_round_coverage:101"
+      ],
+      "completed_ids": [],
+      "actor": {
+        "responses_with_usage": 5,
+        "input_tokens": 23759,
+        "output_tokens": 74394,
+        "cached_input_tokens": 11392,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.62034168,
+        "api_seconds": 327.74009013175964,
+        "explicit_rate_limit_rejections": 0,
+        "provider_cost_responses": 5,
+        "provider_reported_cny": 0.62034168,
+        "median_api_seconds": 23.463517665863037,
+        "max_api_seconds": 146.28342175483704
+      },
+      "memory": {
+        "responses_with_usage": 72,
+        "input_tokens": 59656,
+        "output_tokens": 5856,
+        "cached_input_tokens": 31360,
+        "cache_usage_unspecified": 0,
+        "estimated_cny": 0.10469439999999995,
+        "api_seconds": 243.732194326818,
+        "explicit_rate_limit_rejections": 1,
+        "provider_cost_responses": 72,
+        "provider_reported_cny": 0.10401503999999996,
+        "median_api_seconds": 2.268517643213272,
+        "max_api_seconds": 18.42792391963303
+      },
+      "recorded_api_errors": 1,
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "actor_finish_reasons": {
+        "tool_calls": 2,
+        "stop": 1,
+        "length": 2
+      },
+      "memory_finish_reasons": {
+        "stop": 72
+      },
+      "per_episode": {
+        "101": {
+          "actor": {
+            "responses_with_usage": 5,
+            "input_tokens": 23759,
+            "output_tokens": 74394,
+            "cached_input_tokens": 11392,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.62034168,
+            "api_seconds": 327.74009013175964,
+            "explicit_rate_limit_rejections": 0,
+            "provider_cost_responses": 5,
+            "provider_reported_cny": 0.62034168,
+            "median_api_seconds": 23.463517665863037,
+            "max_api_seconds": 146.28342175483704
+          },
+          "memory": {
+            "responses_with_usage": 72,
+            "input_tokens": 59656,
+            "output_tokens": 5856,
+            "cached_input_tokens": 31360,
+            "cache_usage_unspecified": 0,
+            "estimated_cny": 0.10469439999999995,
+            "api_seconds": 243.732194326818,
+            "explicit_rate_limit_rejections": 1,
+            "provider_cost_responses": 72,
+            "provider_reported_cny": 0.10401503999999996,
+            "median_api_seconds": 2.268517643213272,
+            "max_api_seconds": 18.42792391963303
+          },
+          "writes": 2,
+          "reads": 2,
+          "instances": [
+            "d5629208108c4052b5fcc77c0e63a484"
+          ],
+          "attempts": [
+            "1789348032-2290459-e04ce255:101"
+          ]
+        }
+      }
+    }
+  },
+  "paired_scope_complete": false,
+  "limitations": [
+    "Usage-based estimate, not reconciled billing; interrupted/retried requests may lack usage.",
+    "Scores are descriptive paired replication on reused historical holdout IDs."
+  ],
+  "latency_basis": "Client-observed duration, including configured rate-scheduler and retry waits",
+  "estimated_cny_all_logged_responses": 7.277269080000001
+}

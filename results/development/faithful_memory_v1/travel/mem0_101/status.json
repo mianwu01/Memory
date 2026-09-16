@@ -1,0 +1,18 @@
+{
+  "complete": false,
+  "arm": "mem0",
+  "id": 101,
+  "counts": {
+    "actor_contract": 1,
+    "init": 1,
+    "mechanism": 16,
+    "llm": 21,
+    "write": 4,
+    "retrieve": 4,
+    "invalid": 1
+  },
+  "error_type": "InvalidExecution",
+  "failures": [
+    "Missing usage/choice or truncated completion"
+  ]
+}

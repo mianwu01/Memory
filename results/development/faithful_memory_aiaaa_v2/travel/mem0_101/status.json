@@ -1,0 +1,17 @@
+{
+  "complete": false,
+  "arm": "mem0",
+  "id": 101,
+  "counts": {
+    "actor_contract": 1,
+    "init": 1,
+    "mechanism": 1,
+    "api_error": 1,
+    "invalid": 2
+  },
+  "error_type": "InvalidExecution",
+  "failures": [
+    "API request did not produce a complete response",
+    "Upstream reported a processing error or fallback"
+  ]
+}

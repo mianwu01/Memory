@@ -1,0 +1,143 @@
+{
+  "schema": "tokenrhythm-usage-budget/v1",
+  "pricing_source": "https://tokenrhythm.studio/models",
+  "rates_cny_per_million": {
+    "uncached_input": 2,
+    "cached_input": 0.04,
+    "output": 8
+  },
+  "probe": {
+    "generation_calls": 16,
+    "successes": 16,
+    "input_tokens": 18047,
+    "output_tokens": 9730,
+    "cached_input_tokens": 128,
+    "estimated_cny": 0.11368311999999998
+  },
+  "comparison_with_previous_relay": {
+    "old_endpoint": "https://bboluo.com/v1",
+    "old_requested_model": "deepseek-v4-flash",
+    "new_requested_model": "deepseek-flash",
+    "old_median_seconds": 5.981078004930168,
+    "new_median_seconds": 5.7253812830895185,
+    "old_total_seconds": 52.87545074895024,
+    "new_total_seconds": 44.30804867576808,
+    "new_faster_pairs": 5,
+    "prompt_hashes_match": true
+  },
+  "observed_previous_development_means": {
+    "actor": {
+      "observations": 53,
+      "mean_input_tokens": 6735.415094339623,
+      "mean_output_tokens": 3714.603773584906,
+      "mean_cost_cny_no_cache": 0.043187660377358494
+    },
+    "summary": {
+      "observations": 8,
+      "mean_input_tokens": 7568.5,
+      "mean_output_tokens": 4268.125,
+      "mean_cost_cny_no_cache": 0.049282
+    },
+    "mem0": {
+      "observations": 6,
+      "mean_input_tokens": 11126.666666666666,
+      "mean_output_tokens": 755.1666666666666,
+      "mean_cost_cny_no_cache": 0.028294666666666666
+    },
+    "amem": {
+      "observations": 18,
+      "mean_input_tokens": 9233.444444444445,
+      "mean_output_tokens": 295.1666666666667,
+      "mean_cost_cny_no_cache": 0.020828222222222224
+    },
+    "lightmem": {
+      "observations": 13,
+      "mean_input_tokens": 1565.3846153846155,
+      "mean_output_tokens": 511.6923076923077,
+      "mean_cost_cny_no_cache": 0.007224307692307692
+    }
+  },
+  "scope": {
+    "development_episode_ids": [
+      101
+    ],
+    "evaluation_episode_ids": [
+      111,
+      112,
+      113
+    ],
+    "arms": 10,
+    "development_actor_rounds": 7,
+    "evaluation_actor_rounds": [
+      6,
+      8,
+      8
+    ]
+  },
+  "scenarios": [
+    {
+      "scenario": "lower",
+      "development": {
+        "calls": 242,
+        "estimated_cny": 7.492234965650702,
+        "by_component_cny": {
+          "actor": 6.046272452830189,
+          "summary": 0.394256,
+          "mem0": 0.22635733333333333,
+          "amem": 0.31242333333333333,
+          "lightmem": 0.5129258461538462
+        }
+      },
+      "evaluation": {
+        "calls": 760,
+        "estimated_cny": 23.53193429253346,
+        "by_component_cny": {
+          "actor": 19.002570566037736,
+          "summary": 1.23205,
+          "mem0": 0.7073666666666667,
+          "amem": 0.9789264444444445,
+          "lightmem": 1.6110206153846154
+        }
+      },
+      "future_experiments_cny": 31.024169258184163,
+      "future_with_20pct_reserve_cny": 37.229003109820994,
+      "whole_round_with_230_sunk_plus_probes_and_future_reserve_cny": 267.34268622982097
+    },
+    {
+      "scenario": "higher",
+      "development": {
+        "calls": 439,
+        "estimated_cny": 9.251885119496857,
+        "by_component_cny": {
+          "actor": 6.046272452830189,
+          "summary": 0.788512,
+          "mem0": 0.22635733333333333,
+          "amem": 0.31242333333333333,
+          "lightmem": 1.87832
+        }
+      },
+      "evaluation": {
+        "calls": 1424,
+        "estimated_cny": 29.380316907918072,
+        "by_component_cny": {
+          "actor": 19.002570566037736,
+          "summary": 2.4641,
+          "mem0": 0.7073666666666667,
+          "amem": 0.9789264444444445,
+          "lightmem": 6.22735323076923
+        }
+      },
+      "future_experiments_cny": 38.63220202741493,
+      "future_with_20pct_reserve_cny": 46.35864243289791,
+      "whole_round_with_230_sunk_plus_probes_and_future_reserve_cny": 276.4723255528979
+    }
+  ],
+  "method": "Apply old phase/component call scenarios to observed component mean tokens. Assume no cache discount for future experiments.",
+  "limitations": [
+    "Not a reconciled invoice. Public price may differ from account-specific billing.",
+    "Historical interrupted development, not a complete representative run; some calls were malformed or truncated.",
+    "Model alias changed; output length, retries and memory size may change.",
+    "LightMem call growth scenarios are not hard upper bounds."
+  ],
+  "already_billed_bboluo_cny_user_report": 230
+}

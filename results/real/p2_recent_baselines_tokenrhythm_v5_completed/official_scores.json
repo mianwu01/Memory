@@ -1,0 +1,2509 @@
+{
+ "ours": {
+  "n_episodes": 3,
+  "episode_ids": [
+   "111",
+   "112",
+   "113"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/ours/submission/deepseek-flash_submission.jsonl",
+  "metrics": {
+   "ps": 90.9090909090909,
+   "sps": 98.57142857142858,
+   "sr": 66.66666666666666
+  },
+  "usage": {
+   "total_input_tokens": 123701,
+   "total_output_tokens": 83643,
+   "total_cost": 1.1456825,
+   "duration_seconds": 667.56,
+   "duration_minutes": 11.13,
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/ours/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "111": "1789361626-2906734-f9262bb7:111",
+    "112": "1789361626-2906734-f9262bb7:112",
+    "113": "1789361626-2906734-f9262bb7:113"
+   },
+   "per_episode": {
+    "111": {
+     "calls": 13,
+     "input_tokens": 36332,
+     "output_tokens": 32135,
+     "cost": 0.41218,
+     "api_duration_seconds": 219.6483244895935,
+     "message_chars": 130341,
+     "tool_schema_chars": 10127,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "persons_covered": [
+      "Cynthia",
+      "Joey",
+      "Michael",
+      "Penny",
+      "Sofia",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 7,
+      "stop": 6
+     }
+    },
+    "112": {
+     "calls": 16,
+     "input_tokens": 44340,
+     "output_tokens": 34002,
+     "cost": 0.45087,
+     "api_duration_seconds": 240.709974527359,
+     "message_chars": 160540,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Benjamin",
+      "Jeffrey",
+      "Joseph",
+      "Monica",
+      "Paul",
+      "Wendy",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    },
+    "113": {
+     "calls": 16,
+     "input_tokens": 43029,
+     "output_tokens": 17506,
+     "cost": 0.28263249999999995,
+     "api_duration_seconds": 203.3925540447235,
+     "message_chars": 157630,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Chelsea",
+      "Emma",
+      "Ethan",
+      "Jacob",
+      "Kenneth",
+      "Maria",
+      "Monica"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    }
+   },
+   "calls": 45,
+   "total_input_tokens": 123701,
+   "total_output_tokens": 83643,
+   "total_cost": 1.1456825,
+   "api_duration_seconds": 663.750853061676,
+   "thinking_modes": [
+    "default"
+   ],
+   "returned_models": [
+    "deepseek-flash"
+   ],
+   "repair_calls": 0,
+   "finish_reasons": {
+    "tool_calls": 23,
+    "stop": 22
+   }
+  },
+  "per_episode": {
+   "111": {
+    "n_persons": 6,
+    "full_pass_persons": 6,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "112": {
+    "n_persons": 8,
+    "full_pass_persons": 6,
+    "ps": 75.0,
+    "sps": 95.71428571428571,
+    "sr": 0.0
+   },
+   "113": {
+    "n_persons": 8,
+    "full_pass_persons": 8,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   }
+  }
+ },
+ "noG": {
+  "n_episodes": 3,
+  "episode_ids": [
+   "111",
+   "112",
+   "113"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/noG/submission/deepseek-flash_submission.jsonl",
+  "metrics": {
+   "ps": 86.36363636363636,
+   "sps": 98.05059523809524,
+   "sr": 66.66666666666666
+  },
+  "usage": {
+   "total_input_tokens": 220048,
+   "total_output_tokens": 134078,
+   "total_cost": 1.8909,
+   "duration_seconds": 852.98,
+   "duration_minutes": 14.22,
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/noG/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "111": "1789361626-2906736-a76b734c:111",
+    "112": "1789361626-2906736-a76b734c:112",
+    "113": "1789361626-2906736-a76b734c:113"
+   },
+   "per_episode": {
+    "111": {
+     "calls": 12,
+     "input_tokens": 51439,
+     "output_tokens": 40170,
+     "cost": 0.5302975,
+     "api_duration_seconds": 207.56915283203125,
+     "message_chars": 179477,
+     "tool_schema_chars": 9348,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "persons_covered": [
+      "Cynthia",
+      "Joey",
+      "Michael",
+      "Penny",
+      "Sofia",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 6,
+      "stop": 6
+     }
+    },
+    "112": {
+     "calls": 17,
+     "input_tokens": 89857,
+     "output_tokens": 68401,
+     "cost": 0.9086525,
+     "api_duration_seconds": 449.9152801036835,
+     "message_chars": 299358,
+     "tool_schema_chars": 12431,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Benjamin",
+      "Jeffrey",
+      "Joseph",
+      "Monica",
+      "Paul",
+      "Wendy",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 9,
+      "stop": 8
+     }
+    },
+    "113": {
+     "calls": 16,
+     "input_tokens": 78752,
+     "output_tokens": 25507,
+     "cost": 0.4519500000000001,
+     "api_duration_seconds": 192.194806098938,
+     "message_chars": 248323,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Chelsea",
+      "Emma",
+      "Ethan",
+      "Jacob",
+      "Kenneth",
+      "Maria",
+      "Monica"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    }
+   },
+   "calls": 45,
+   "total_input_tokens": 220048,
+   "total_output_tokens": 134078,
+   "total_cost": 1.8909,
+   "api_duration_seconds": 849.6792390346527,
+   "thinking_modes": [
+    "default"
+   ],
+   "returned_models": [
+    "deepseek-flash"
+   ],
+   "repair_calls": 0,
+   "finish_reasons": {
+    "tool_calls": 23,
+    "stop": 22
+   }
+  },
+  "per_episode": {
+   "111": {
+    "n_persons": 6,
+    "full_pass_persons": 6,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "112": {
+    "n_persons": 8,
+    "full_pass_persons": 5,
+    "ps": 62.5,
+    "sps": 94.15178571428571,
+    "sr": 0.0
+   },
+   "113": {
+    "n_persons": 8,
+    "full_pass_persons": 8,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   }
+  }
+ },
+ "noGcompact": {
+  "n_episodes": 3,
+  "episode_ids": [
+   "111",
+   "112",
+   "113"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/noGcompact/submission/deepseek-flash_submission.jsonl",
+  "metrics": {
+   "ps": 90.9090909090909,
+   "sps": 98.57142857142858,
+   "sr": 66.66666666666666
+  },
+  "usage": {
+   "total_input_tokens": 245599,
+   "total_output_tokens": 73206,
+   "total_cost": 1.3460575,
+   "duration_seconds": 562.19,
+   "duration_minutes": 9.37,
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/noGcompact/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "111": "1789361626-2906735-f8193a0d:111",
+    "112": "1789361626-2906735-f8193a0d:112",
+    "113": "1789361626-2906735-f8193a0d:113"
+   },
+   "per_episode": {
+    "111": {
+     "calls": 12,
+     "input_tokens": 60070,
+     "output_tokens": 22277,
+     "cost": 0.372945,
+     "api_duration_seconds": 156.04186248779297,
+     "message_chars": 222553,
+     "tool_schema_chars": 9348,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "persons_covered": [
+      "Cynthia",
+      "Joey",
+      "Michael",
+      "Penny",
+      "Sofia",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 6,
+      "stop": 6
+     }
+    },
+    "112": {
+     "calls": 16,
+     "input_tokens": 95589,
+     "output_tokens": 34415,
+     "cost": 0.5831224999999999,
+     "api_duration_seconds": 218.40606546401978,
+     "message_chars": 333186,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Benjamin",
+      "Jeffrey",
+      "Joseph",
+      "Monica",
+      "Paul",
+      "Wendy",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    },
+    "113": {
+     "calls": 16,
+     "input_tokens": 89940,
+     "output_tokens": 16514,
+     "cost": 0.38998999999999995,
+     "api_duration_seconds": 183.96498203277588,
+     "message_chars": 299821,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Chelsea",
+      "Emma",
+      "Ethan",
+      "Jacob",
+      "Kenneth",
+      "Maria",
+      "Monica"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    }
+   },
+   "calls": 44,
+   "total_input_tokens": 245599,
+   "total_output_tokens": 73206,
+   "total_cost": 1.3460574999999997,
+   "api_duration_seconds": 558.4129099845886,
+   "thinking_modes": [
+    "default"
+   ],
+   "returned_models": [
+    "deepseek-flash"
+   ],
+   "repair_calls": 0,
+   "finish_reasons": {
+    "tool_calls": 22,
+    "stop": 22
+   }
+  },
+  "per_episode": {
+   "111": {
+    "n_persons": 6,
+    "full_pass_persons": 6,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "112": {
+    "n_persons": 8,
+    "full_pass_persons": 6,
+    "ps": 75.0,
+    "sps": 95.71428571428571,
+    "sr": 0.0
+   },
+   "113": {
+    "n_persons": 8,
+    "full_pass_persons": 8,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   }
+  }
+ },
+ "bm25": {
+  "n_episodes": 3,
+  "episode_ids": [
+   "111",
+   "112",
+   "113"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/bm25/submission/deepseek-flash_submission.jsonl",
+  "metrics": {
+   "ps": 77.27272727272727,
+   "sps": 92.88690476190476,
+   "sr": 33.33333333333333
+  },
+  "usage": {
+   "total_input_tokens": 386714,
+   "total_output_tokens": 291033,
+   "total_cost": 3.877115,
+   "duration_seconds": 1447.53,
+   "duration_minutes": 24.13,
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/bm25/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "111": "1789361626-2906733-30baf770:111",
+    "112": "1789361626-2906733-30baf770:112",
+    "113": "1789361626-2906733-30baf770:113"
+   },
+   "per_episode": {
+    "111": {
+     "calls": 10,
+     "input_tokens": 67894,
+     "output_tokens": 93380,
+     "cost": 1.1035350000000002,
+     "api_duration_seconds": 452.0104920864105,
+     "message_chars": 248618,
+     "tool_schema_chars": 7790,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "persons_covered": [
+      "Cynthia",
+      "Joey",
+      "Michael",
+      "Penny",
+      "Sofia",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 1,
+     "finish_reasons": {
+      "tool_calls": 3,
+      "stop": 6,
+      "length": 1
+     }
+    },
+    "112": {
+     "calls": 16,
+     "input_tokens": 191244,
+     "output_tokens": 149850,
+     "cost": 1.9766099999999998,
+     "api_duration_seconds": 741.9547860622406,
+     "message_chars": 551081,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Benjamin",
+      "Jeffrey",
+      "Joseph",
+      "Monica",
+      "Paul",
+      "Wendy",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    },
+    "113": {
+     "calls": 15,
+     "input_tokens": 127576,
+     "output_tokens": 47803,
+     "cost": 0.79697,
+     "api_duration_seconds": 249.91867518424988,
+     "message_chars": 407371,
+     "tool_schema_chars": 10873,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Chelsea",
+      "Emma",
+      "Ethan",
+      "Jacob",
+      "Kenneth",
+      "Maria",
+      "Monica"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 7,
+      "stop": 8
+     }
+    }
+   },
+   "calls": 41,
+   "total_input_tokens": 386714,
+   "total_output_tokens": 291033,
+   "total_cost": 3.877115,
+   "api_duration_seconds": 1443.883953332901,
+   "thinking_modes": [
+    "default"
+   ],
+   "returned_models": [
+    "deepseek-flash"
+   ],
+   "repair_calls": 1,
+   "finish_reasons": {
+    "tool_calls": 18,
+    "stop": 22,
+    "length": 1
+   }
+  },
+  "per_episode": {
+   "111": {
+    "n_persons": 6,
+    "full_pass_persons": 6,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "112": {
+    "n_persons": 8,
+    "full_pass_persons": 4,
+    "ps": 50.0,
+    "sps": 81.78571428571428,
+    "sr": 0.0
+   },
+   "113": {
+    "n_persons": 8,
+    "full_pass_persons": 7,
+    "ps": 87.5,
+    "sps": 96.875,
+    "sr": 0.0
+   }
+  }
+ },
+ "full": {
+  "n_episodes": 3,
+  "episode_ids": [
+   "111",
+   "112",
+   "113"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/full/submission/deepseek-flash_submission.jsonl",
+  "metrics": {
+   "ps": 86.36363636363636,
+   "sps": 96.48809523809524,
+   "sr": 66.66666666666666
+  },
+  "usage": {
+   "total_input_tokens": 715484,
+   "total_output_tokens": 100973,
+   "total_cost": 2.7984400000000003,
+   "duration_seconds": 813.96,
+   "duration_minutes": 13.57,
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/full/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "111": "1789362217-2925364-3994b705:111",
+    "112": "1789362217-2925364-3994b705:112",
+    "113": "1789362217-2925364-3994b705:113"
+   },
+   "per_episode": {
+    "111": {
+     "calls": 11,
+     "input_tokens": 135212,
+     "output_tokens": 33534,
+     "cost": 0.67337,
+     "api_duration_seconds": 201.7251627445221,
+     "message_chars": 505038,
+     "tool_schema_chars": 8569,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "persons_covered": [
+      "Cynthia",
+      "Joey",
+      "Michael",
+      "Penny",
+      "Sofia",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 5,
+      "stop": 6
+     }
+    },
+    "112": {
+     "calls": 16,
+     "input_tokens": 297956,
+     "output_tokens": 46108,
+     "cost": 1.20597,
+     "api_duration_seconds": 429.5862226486206,
+     "message_chars": 1131867,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Benjamin",
+      "Jeffrey",
+      "Joseph",
+      "Monica",
+      "Paul",
+      "Wendy",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    },
+    "113": {
+     "calls": 16,
+     "input_tokens": 282316,
+     "output_tokens": 21331,
+     "cost": 0.9191000000000003,
+     "api_duration_seconds": 178.97501254081726,
+     "message_chars": 1135522,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Chelsea",
+      "Emma",
+      "Ethan",
+      "Jacob",
+      "Kenneth",
+      "Maria",
+      "Monica"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    }
+   },
+   "calls": 43,
+   "total_input_tokens": 715484,
+   "total_output_tokens": 100973,
+   "total_cost": 2.7984400000000003,
+   "api_duration_seconds": 810.28639793396,
+   "thinking_modes": [
+    "default"
+   ],
+   "returned_models": [
+    "deepseek-flash"
+   ],
+   "repair_calls": 0,
+   "finish_reasons": {
+    "tool_calls": 21,
+    "stop": 22
+   }
+  },
+  "per_episode": {
+   "111": {
+    "n_persons": 6,
+    "full_pass_persons": 6,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "112": {
+    "n_persons": 8,
+    "full_pass_persons": 5,
+    "ps": 62.5,
+    "sps": 89.46428571428571,
+    "sr": 0.0
+   },
+   "113": {
+    "n_persons": 8,
+    "full_pass_persons": 8,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   }
+  }
+ },
+ "dense": {
+  "n_episodes": 3,
+  "episode_ids": [
+   "111",
+   "112",
+   "113"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/dense/submission/deepseek-flash_submission.jsonl",
+  "metrics": {
+   "ps": 72.72727272727273,
+   "sps": 93.74503968253968,
+   "sr": 33.33333333333333
+  },
+  "usage": {
+   "total_input_tokens": 580573,
+   "total_output_tokens": 294804,
+   "total_cost": 4.3994725,
+   "duration_seconds": 1564.41,
+   "duration_minutes": 26.07,
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/dense/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "111": "1789362321-2928828-2c2ccd70:111",
+    "112": "1789362321-2928828-2c2ccd70:112",
+    "113": "1789362321-2928828-2c2ccd70:113"
+   },
+   "per_episode": {
+    "111": {
+     "calls": 11,
+     "input_tokens": 128237,
+     "output_tokens": 65934,
+     "cost": 0.9799325,
+     "api_duration_seconds": 366.15225410461426,
+     "message_chars": 437243,
+     "tool_schema_chars": 8569,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "persons_covered": [
+      "Cynthia",
+      "Joey",
+      "Michael",
+      "Penny",
+      "Sofia",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 5,
+      "stop": 6
+     }
+    },
+    "112": {
+     "calls": 16,
+     "input_tokens": 247031,
+     "output_tokens": 172338,
+     "cost": 2.3409575,
+     "api_duration_seconds": 779.2489967346191,
+     "message_chars": 721195,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Benjamin",
+      "Jeffrey",
+      "Joseph",
+      "Monica",
+      "Paul",
+      "Wendy",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 1,
+     "finish_reasons": {
+      "tool_calls": 7,
+      "stop": 8,
+      "length": 1
+     }
+    },
+    "113": {
+     "calls": 16,
+     "input_tokens": 205305,
+     "output_tokens": 56532,
+     "cost": 1.0785825,
+     "api_duration_seconds": 307.54055857658386,
+     "message_chars": 701857,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Chelsea",
+      "Emma",
+      "Ethan",
+      "Jacob",
+      "Kenneth",
+      "Maria",
+      "Monica"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    }
+   },
+   "calls": 43,
+   "total_input_tokens": 580573,
+   "total_output_tokens": 294804,
+   "total_cost": 4.3994725,
+   "api_duration_seconds": 1452.9418094158173,
+   "thinking_modes": [
+    "default"
+   ],
+   "returned_models": [
+    "deepseek-flash"
+   ],
+   "repair_calls": 1,
+   "finish_reasons": {
+    "tool_calls": 20,
+    "stop": 22,
+    "length": 1
+   }
+  },
+  "per_episode": {
+   "111": {
+    "n_persons": 6,
+    "full_pass_persons": 6,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "112": {
+    "n_persons": 8,
+    "full_pass_persons": 3,
+    "ps": 37.5,
+    "sps": 85.40178571428571,
+    "sr": 0.0
+   },
+   "113": {
+    "n_persons": 8,
+    "full_pass_persons": 7,
+    "ps": 87.5,
+    "sps": 95.83333333333334,
+    "sr": 0.0
+   }
+  }
+ },
+ "summary": {
+  "n_episodes": 3,
+  "episode_ids": [
+   "111",
+   "112",
+   "113"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/summary/submission/deepseek-flash_submission.jsonl",
+  "metrics": {
+   "ps": 86.36363636363636,
+   "sps": 96.48809523809524,
+   "sr": 66.66666666666666
+  },
+  "usage": {
+   "total_input_tokens": 218021,
+   "total_output_tokens": 109206,
+   "total_cost": 1.6371125,
+   "duration_seconds": 980.65,
+   "duration_minutes": 16.34,
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/summary/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "111": "1789385557-3749530-079dca53:111",
+    "112": "1789385557-3749530-079dca53:112",
+    "113": "1789385557-3749530-079dca53:113"
+   },
+   "per_episode": {
+    "111": {
+     "calls": 12,
+     "input_tokens": 54786,
+     "output_tokens": 29369,
+     "cost": 0.430655,
+     "api_duration_seconds": 185.29686498641968,
+     "message_chars": 203325,
+     "tool_schema_chars": 9348,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "persons_covered": [
+      "Cynthia",
+      "Joey",
+      "Michael",
+      "Penny",
+      "Sofia",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 6,
+      "stop": 6
+     }
+    },
+    "112": {
+     "calls": 16,
+     "input_tokens": 85210,
+     "output_tokens": 58366,
+     "cost": 0.7966849999999999,
+     "api_duration_seconds": 315.5339629650116,
+     "message_chars": 297308,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Benjamin",
+      "Jeffrey",
+      "Joseph",
+      "Monica",
+      "Paul",
+      "Wendy",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    },
+    "113": {
+     "calls": 16,
+     "input_tokens": 78025,
+     "output_tokens": 21471,
+     "cost": 0.4097725000000001,
+     "api_duration_seconds": 109.79490089416504,
+     "message_chars": 266728,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Chelsea",
+      "Emma",
+      "Ethan",
+      "Jacob",
+      "Kenneth",
+      "Maria",
+      "Monica"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    }
+   },
+   "calls": 44,
+   "total_input_tokens": 218021,
+   "total_output_tokens": 109206,
+   "total_cost": 1.6371125,
+   "api_duration_seconds": 610.6257288455963,
+   "thinking_modes": [
+    "default"
+   ],
+   "returned_models": [
+    "deepseek-flash"
+   ],
+   "repair_calls": 0,
+   "finish_reasons": {
+    "tool_calls": 22,
+    "stop": 22
+   }
+  },
+  "per_episode": {
+   "111": {
+    "n_persons": 6,
+    "full_pass_persons": 6,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   },
+   "112": {
+    "n_persons": 8,
+    "full_pass_persons": 5,
+    "ps": 62.5,
+    "sps": 89.46428571428571,
+    "sr": 0.0
+   },
+   "113": {
+    "n_persons": 8,
+    "full_pass_persons": 8,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   }
+  }
+ },
+ "mem0": {
+  "n_episodes": 3,
+  "episode_ids": [
+   "111",
+   "112",
+   "113"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/mem0/submission/deepseek-flash_submission.jsonl",
+  "metrics": {
+   "ps": 54.54545454545454,
+   "sps": 84.15544332210997,
+   "sr": 0.0
+  },
+  "usage": {
+   "total_input_tokens": 234714,
+   "total_output_tokens": 509038,
+   "total_cost": 5.677165,
+   "duration_seconds": 2741.22,
+   "duration_minutes": 45.69,
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/mem0/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "111": "1789362844-2942321-0a2637f7:111",
+    "112": "1789362844-2942321-0a2637f7:112",
+    "113": "1789362844-2942321-0a2637f7:113"
+   },
+   "per_episode": {
+    "111": {
+     "calls": 17,
+     "input_tokens": 86988,
+     "output_tokens": 246249,
+     "cost": 2.67996,
+     "api_duration_seconds": 1115.569843530655,
+     "message_chars": 247371,
+     "tool_schema_chars": 13243,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "persons_covered": [
+      "Cynthia",
+      "Joey",
+      "Michael",
+      "Penny",
+      "Sofia",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 4,
+     "finish_reasons": {
+      "tool_calls": 7,
+      "stop": 6,
+      "length": 4
+     }
+    },
+    "112": {
+     "calls": 18,
+     "input_tokens": 81988,
+     "output_tokens": 191237,
+     "cost": 2.11734,
+     "api_duration_seconds": 897.3853776454926,
+     "message_chars": 240474,
+     "tool_schema_chars": 13210,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Benjamin",
+      "Jeffrey",
+      "Joseph",
+      "Monica",
+      "Paul",
+      "Wendy",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 2,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 6,
+      "length": 4
+     }
+    },
+    "113": {
+     "calls": 16,
+     "input_tokens": 65738,
+     "output_tokens": 71552,
+     "cost": 0.8798649999999997,
+     "api_duration_seconds": 359.5209770202637,
+     "message_chars": 197002,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Chelsea",
+      "Emma",
+      "Ethan",
+      "Jacob",
+      "Kenneth",
+      "Maria",
+      "Monica"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    }
+   },
+   "calls": 51,
+   "total_input_tokens": 234714,
+   "total_output_tokens": 509038,
+   "total_cost": 5.677165,
+   "api_duration_seconds": 2372.476198196411,
+   "thinking_modes": [
+    "default"
+   ],
+   "returned_models": [
+    "deepseek-flash"
+   ],
+   "repair_calls": 6,
+   "finish_reasons": {
+    "tool_calls": 23,
+    "stop": 20,
+    "length": 8
+   }
+  },
+  "per_episode": {
+   "111": {
+    "n_persons": 6,
+    "full_pass_persons": 1,
+    "ps": 16.666666666666668,
+    "sps": 85.91871091871091,
+    "sr": 0.0
+   },
+   "112": {
+    "n_persons": 8,
+    "full_pass_persons": 4,
+    "ps": 50.0,
+    "sps": 70.71428571428571,
+    "sr": 0.0
+   },
+   "113": {
+    "n_persons": 8,
+    "full_pass_persons": 7,
+    "ps": 87.5,
+    "sps": 95.83333333333334,
+    "sr": 0.0
+   }
+  }
+ },
+ "amem": {
+  "n_episodes": 3,
+  "episode_ids": [
+   "111",
+   "112",
+   "113"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/amem/submission/deepseek-flash_submission.jsonl",
+  "metrics": {
+   "ps": 81.81818181818183,
+   "sps": 95.98304473304472,
+   "sr": 33.33333333333333
+  },
+  "usage": {
+   "total_input_tokens": 622794,
+   "total_output_tokens": 122020,
+   "total_cost": 2.777185,
+   "duration_seconds": 1082.25,
+   "duration_minutes": 18.04,
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/amem/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "111": "1789363061-2948538-62b676a5:111",
+    "112": "1789363061-2948538-62b676a5:112",
+    "113": "1789363061-2948538-62b676a5:113"
+   },
+   "per_episode": {
+    "111": {
+     "calls": 10,
+     "input_tokens": 122580,
+     "output_tokens": 37308,
+     "cost": 0.67953,
+     "api_duration_seconds": 186.61063742637634,
+     "message_chars": 418402,
+     "tool_schema_chars": 7790,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "persons_covered": [
+      "Cynthia",
+      "Joey",
+      "Michael",
+      "Penny",
+      "Sofia",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 4,
+      "stop": 6
+     }
+    },
+    "112": {
+     "calls": 16,
+     "input_tokens": 292842,
+     "output_tokens": 58430,
+     "cost": 1.3164050000000003,
+     "api_duration_seconds": 309.5294282436371,
+     "message_chars": 1075100,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Benjamin",
+      "Jeffrey",
+      "Joseph",
+      "Monica",
+      "Paul",
+      "Wendy",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    },
+    "113": {
+     "calls": 14,
+     "input_tokens": 207372,
+     "output_tokens": 26282,
+     "cost": 0.7812499999999996,
+     "api_duration_seconds": 155.2483298778534,
+     "message_chars": 828007,
+     "tool_schema_chars": 10094,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Chelsea",
+      "Emma",
+      "Ethan",
+      "Jacob",
+      "Kenneth",
+      "Maria",
+      "Monica"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 6,
+      "stop": 8
+     }
+    }
+   },
+   "calls": 40,
+   "total_input_tokens": 622794,
+   "total_output_tokens": 122020,
+   "total_cost": 2.777185,
+   "api_duration_seconds": 651.3883955478668,
+   "thinking_modes": [
+    "default"
+   ],
+   "returned_models": [
+    "deepseek-flash"
+   ],
+   "repair_calls": 0,
+   "finish_reasons": {
+    "tool_calls": 18,
+    "stop": 22
+   }
+  },
+  "per_episode": {
+   "111": {
+    "n_persons": 6,
+    "full_pass_persons": 5,
+    "ps": 83.33333333333333,
+    "sps": 98.48484848484848,
+    "sr": 0.0
+   },
+   "112": {
+    "n_persons": 8,
+    "full_pass_persons": 5,
+    "ps": 62.5,
+    "sps": 89.46428571428571,
+    "sr": 0.0
+   },
+   "113": {
+    "n_persons": 8,
+    "full_pass_persons": 8,
+    "ps": 100.0,
+    "sps": 100.0,
+    "sr": 100.0
+   }
+  }
+ },
+ "lightmem": {
+  "n_episodes": 3,
+  "episode_ids": [
+   "111",
+   "112",
+   "113"
+  ],
+  "submission": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/lightmem/submission/deepseek-flash_submission.jsonl",
+  "metrics": {
+   "ps": 36.36363636363637,
+   "sps": 67.730930335097,
+   "sr": 0.0
+  },
+  "usage": {
+   "total_input_tokens": 202580,
+   "total_output_tokens": 680666,
+   "total_cost": 7.31311,
+   "duration_seconds": 9413.01,
+   "duration_minutes": 156.88,
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ]
+  },
+  "call_usage": {
+   "schema": "memoryarena-llm-call-usage-summary/v1",
+   "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/p2_recent_baselines_tokenrhythm_v5_completed/e2e/lightmem/llm_call_usage.jsonl",
+   "aggregation": "latest append-only attempt for each completed episode",
+   "covered_episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "missing_completed_episode_ids": [],
+   "malformed_ledger_lines": 0,
+   "selected_attempts": {
+    "111": "1789363104-2950239-03e30687:111",
+    "112": "1789363104-2950239-03e30687:112",
+    "113": "1789363104-2950239-03e30687:113"
+   },
+   "per_episode": {
+    "111": {
+     "calls": 13,
+     "input_tokens": 56362,
+     "output_tokens": 194014,
+     "cost": 2.081045,
+     "api_duration_seconds": 917.0427761077881,
+     "message_chars": 137680,
+     "tool_schema_chars": 10127,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "persons_covered": [
+      "Cynthia",
+      "Joey",
+      "Michael",
+      "Penny",
+      "Sofia",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 1,
+     "finish_reasons": {
+      "tool_calls": 6,
+      "stop": 5,
+      "length": 2
+     }
+    },
+    "112": {
+     "calls": 21,
+     "input_tokens": 88414,
+     "output_tokens": 371013,
+     "cost": 3.9311649999999987,
+     "api_duration_seconds": 1768.618439912796,
+     "message_chars": 242445,
+     "tool_schema_chars": 15141,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Benjamin",
+      "Jeffrey",
+      "Joseph",
+      "Monica",
+      "Paul",
+      "Wendy",
+      "Willow"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 5,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 6,
+      "length": 7
+     }
+    },
+    "113": {
+     "calls": 16,
+     "input_tokens": 57804,
+     "output_tokens": 115639,
+     "cost": 1.3009000000000013,
+     "api_duration_seconds": 539.8178269863129,
+     "message_chars": 168313,
+     "tool_schema_chars": 11652,
+     "rounds_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "persons_covered": [
+      "Audrey",
+      "Chelsea",
+      "Emma",
+      "Ethan",
+      "Jacob",
+      "Kenneth",
+      "Maria",
+      "Monica"
+     ],
+     "thinking_modes": [
+      "default"
+     ],
+     "returned_models": [
+      "deepseek-flash"
+     ],
+     "repair_calls": 0,
+     "finish_reasons": {
+      "tool_calls": 8,
+      "stop": 8
+     }
+    }
+   },
+   "calls": 50,
+   "total_input_tokens": 202580,
+   "total_output_tokens": 680666,
+   "total_cost": 7.31311,
+   "api_duration_seconds": 3225.479043006897,
+   "thinking_modes": [
+    "default"
+   ],
+   "returned_models": [
+    "deepseek-flash"
+   ],
+   "repair_calls": 6,
+   "finish_reasons": {
+    "tool_calls": 22,
+    "stop": 19,
+    "length": 9
+   }
+  },
+  "per_episode": {
+   "111": {
+    "n_persons": 6,
+    "full_pass_persons": 2,
+    "ps": 33.333333333333336,
+    "sps": 64.81481481481481,
+    "sr": 0.0
+   },
+   "112": {
+    "n_persons": 8,
+    "full_pass_persons": 1,
+    "ps": 12.5,
+    "sps": 51.919642857142854,
+    "sr": 0.0
+   },
+   "113": {
+    "n_persons": 8,
+    "full_pass_persons": 5,
+    "ps": 62.5,
+    "sps": 86.45833333333334,
+    "sr": 0.0
+   }
+  }
+ },
+ "_paired_comparisons": {
+  "ours_minus_noG": {
+   "episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "n_episodes": 3,
+   "metrics": {
+    "ps": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 12.5,
+      "113": 0.0
+     },
+     "mean_delta_points": 4.166666666666667,
+     "bootstrap_95": [
+      0.0,
+      12.5
+     ],
+     "wins": 1,
+     "ties": 2,
+     "losses": 0
+    },
+    "sps": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 1.5625,
+      "113": 0.0
+     },
+     "mean_delta_points": 0.5208333333333334,
+     "bootstrap_95": [
+      0.0,
+      1.5625
+     ],
+     "wins": 1,
+     "ties": 2,
+     "losses": 0
+    },
+    "sr": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 0.0,
+      "113": 0.0
+     },
+     "mean_delta_points": 0.0,
+     "bootstrap_95": [
+      0.0,
+      0.0
+     ],
+     "wins": 0,
+     "ties": 3,
+     "losses": 0
+    }
+   }
+  },
+  "ours_minus_noGcompact": {
+   "episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "n_episodes": 3,
+   "metrics": {
+    "ps": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 0.0,
+      "113": 0.0
+     },
+     "mean_delta_points": 0.0,
+     "bootstrap_95": [
+      0.0,
+      0.0
+     ],
+     "wins": 0,
+     "ties": 3,
+     "losses": 0
+    },
+    "sps": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 0.0,
+      "113": 0.0
+     },
+     "mean_delta_points": 0.0,
+     "bootstrap_95": [
+      0.0,
+      0.0
+     ],
+     "wins": 0,
+     "ties": 3,
+     "losses": 0
+    },
+    "sr": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 0.0,
+      "113": 0.0
+     },
+     "mean_delta_points": 0.0,
+     "bootstrap_95": [
+      0.0,
+      0.0
+     ],
+     "wins": 0,
+     "ties": 3,
+     "losses": 0
+    }
+   }
+  },
+  "ours_minus_bm25": {
+   "episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "n_episodes": 3,
+   "metrics": {
+    "ps": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 25.0,
+      "113": 12.5
+     },
+     "mean_delta_points": 12.5,
+     "bootstrap_95": [
+      0.0,
+      25.0
+     ],
+     "wins": 2,
+     "ties": 1,
+     "losses": 0
+    },
+    "sps": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 13.92857142857143,
+      "113": 3.125
+     },
+     "mean_delta_points": 5.68452380952381,
+     "bootstrap_95": [
+      0.0,
+      13.92857142857143
+     ],
+     "wins": 2,
+     "ties": 1,
+     "losses": 0
+    },
+    "sr": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 0.0,
+      "113": 100.0
+     },
+     "mean_delta_points": 33.333333333333336,
+     "bootstrap_95": [
+      0.0,
+      100.0
+     ],
+     "wins": 1,
+     "ties": 2,
+     "losses": 0
+    }
+   }
+  },
+  "ours_minus_full": {
+   "episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "n_episodes": 3,
+   "metrics": {
+    "ps": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 12.5,
+      "113": 0.0
+     },
+     "mean_delta_points": 4.166666666666667,
+     "bootstrap_95": [
+      0.0,
+      12.5
+     ],
+     "wins": 1,
+     "ties": 2,
+     "losses": 0
+    },
+    "sps": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 6.25,
+      "113": 0.0
+     },
+     "mean_delta_points": 2.0833333333333335,
+     "bootstrap_95": [
+      0.0,
+      6.25
+     ],
+     "wins": 1,
+     "ties": 2,
+     "losses": 0
+    },
+    "sr": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 0.0,
+      "113": 0.0
+     },
+     "mean_delta_points": 0.0,
+     "bootstrap_95": [
+      0.0,
+      0.0
+     ],
+     "wins": 0,
+     "ties": 3,
+     "losses": 0
+    }
+   }
+  },
+  "ours_minus_dense": {
+   "episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "n_episodes": 3,
+   "metrics": {
+    "ps": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 37.5,
+      "113": 12.5
+     },
+     "mean_delta_points": 16.666666666666668,
+     "bootstrap_95": [
+      0.0,
+      37.5
+     ],
+     "wins": 2,
+     "ties": 1,
+     "losses": 0
+    },
+    "sps": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 10.3125,
+      "113": 4.166666666666657
+     },
+     "mean_delta_points": 4.826388888888886,
+     "bootstrap_95": [
+      0.0,
+      10.3125
+     ],
+     "wins": 2,
+     "ties": 1,
+     "losses": 0
+    },
+    "sr": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 0.0,
+      "113": 100.0
+     },
+     "mean_delta_points": 33.333333333333336,
+     "bootstrap_95": [
+      0.0,
+      100.0
+     ],
+     "wins": 1,
+     "ties": 2,
+     "losses": 0
+    }
+   }
+  },
+  "ours_minus_summary": {
+   "episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "n_episodes": 3,
+   "metrics": {
+    "ps": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 12.5,
+      "113": 0.0
+     },
+     "mean_delta_points": 4.166666666666667,
+     "bootstrap_95": [
+      0.0,
+      12.5
+     ],
+     "wins": 1,
+     "ties": 2,
+     "losses": 0
+    },
+    "sps": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 6.25,
+      "113": 0.0
+     },
+     "mean_delta_points": 2.0833333333333335,
+     "bootstrap_95": [
+      0.0,
+      6.25
+     ],
+     "wins": 1,
+     "ties": 2,
+     "losses": 0
+    },
+    "sr": {
+     "episode_deltas": {
+      "111": 0.0,
+      "112": 0.0,
+      "113": 0.0
+     },
+     "mean_delta_points": 0.0,
+     "bootstrap_95": [
+      0.0,
+      0.0
+     ],
+     "wins": 0,
+     "ties": 3,
+     "losses": 0
+    }
+   }
+  },
+  "ours_minus_mem0": {
+   "episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "n_episodes": 3,
+   "metrics": {
+    "ps": {
+     "episode_deltas": {
+      "111": 83.33333333333333,
+      "112": 25.0,
+      "113": 12.5
+     },
+     "mean_delta_points": 40.27777777777778,
+     "bootstrap_95": [
+      12.5,
+      83.33333333333333
+     ],
+     "wins": 3,
+     "ties": 0,
+     "losses": 0
+    },
+    "sps": {
+     "episode_deltas": {
+      "111": 14.081289081289086,
+      "112": 25.0,
+      "113": 4.166666666666657
+     },
+     "mean_delta_points": 14.415985249318581,
+     "bootstrap_95": [
+      4.166666666666657,
+      25.0
+     ],
+     "wins": 3,
+     "ties": 0,
+     "losses": 0
+    },
+    "sr": {
+     "episode_deltas": {
+      "111": 100.0,
+      "112": 0.0,
+      "113": 100.0
+     },
+     "mean_delta_points": 66.66666666666667,
+     "bootstrap_95": [
+      0.0,
+      100.0
+     ],
+     "wins": 2,
+     "ties": 1,
+     "losses": 0
+    }
+   }
+  },
+  "ours_minus_amem": {
+   "episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "n_episodes": 3,
+   "metrics": {
+    "ps": {
+     "episode_deltas": {
+      "111": 16.66666666666667,
+      "112": 12.5,
+      "113": 0.0
+     },
+     "mean_delta_points": 9.722222222222223,
+     "bootstrap_95": [
+      0.0,
+      16.66666666666667
+     ],
+     "wins": 2,
+     "ties": 1,
+     "losses": 0
+    },
+    "sps": {
+     "episode_deltas": {
+      "111": 1.5151515151515156,
+      "112": 6.25,
+      "113": 0.0
+     },
+     "mean_delta_points": 2.5883838383838387,
+     "bootstrap_95": [
+      0.0,
+      6.25
+     ],
+     "wins": 2,
+     "ties": 1,
+     "losses": 0
+    },
+    "sr": {
+     "episode_deltas": {
+      "111": 100.0,
+      "112": 0.0,
+      "113": 0.0
+     },
+     "mean_delta_points": 33.333333333333336,
+     "bootstrap_95": [
+      0.0,
+      100.0
+     ],
+     "wins": 1,
+     "ties": 2,
+     "losses": 0
+    }
+   }
+  },
+  "ours_minus_lightmem": {
+   "episode_ids": [
+    "111",
+    "112",
+    "113"
+   ],
+   "n_episodes": 3,
+   "metrics": {
+    "ps": {
+     "episode_deltas": {
+      "111": 66.66666666666666,
+      "112": 62.5,
+      "113": 37.5
+     },
+     "mean_delta_points": 55.55555555555555,
+     "bootstrap_95": [
+      37.5,
+      66.66666666666666
+     ],
+     "wins": 3,
+     "ties": 0,
+     "losses": 0
+    },
+    "sps": {
+     "episode_deltas": {
+      "111": 35.18518518518519,
+      "112": 43.794642857142854,
+      "113": 13.541666666666657
+     },
+     "mean_delta_points": 30.84049823633157,
+     "bootstrap_95": [
+      13.541666666666657,
+      43.794642857142854
+     ],
+     "wins": 3,
+     "ties": 0,
+     "losses": 0
+    },
+    "sr": {
+     "episode_deltas": {
+      "111": 100.0,
+      "112": 0.0,
+      "113": 100.0
+     },
+     "mean_delta_points": 66.66666666666667,
+     "bootstrap_95": [
+      0.0,
+      100.0
+     ],
+     "wins": 2,
+     "ties": 1,
+     "losses": 0
+    }
+   }
+  }
+ }
+}

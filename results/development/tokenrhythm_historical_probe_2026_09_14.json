@@ -1,0 +1,337 @@
+{
+  "schema": "deepseek-historical-route-probe/v1",
+  "historical_source": "results/development/causal_benchmarks/api_decoder_dev_v9_results.jsonl",
+  "selection": "first development episode per task, both context arms; chosen before new calls",
+  "model": "deepseek-flash",
+  "base_url": "https://tokenrhythm.studio/v1",
+  "prompt_hashes_match": true,
+  "parameters": {
+    "temperature": 0,
+    "max_tokens": 32768,
+    "stream": false,
+    "response_format": "json_object",
+    "retries": 0,
+    "concurrency": 1,
+    "seed": "same as historical request"
+  },
+  "limitation": "Historical comparison, not concurrent A/B; requested model alias changed and backend identity is unverified; load, cache and output lengths can differ.",
+  "requests": [
+    {
+      "request_id": "dynamic_travel:dynamic-travel-00035:oracle_context",
+      "prompt_sha256": "87c01cbb98cae4390b202b44c9b8713fa28dcb502b8dc7b7a940b54080f366b6",
+      "old_api_duration_seconds": 8.45550274848938,
+      "old_api_attempts": 1,
+      "old_usage": {
+        "model_requested": "deepseek-v4-flash",
+        "model_returned": "deepseek-v4-flash",
+        "input_tokens": 1132,
+        "cached_input_tokens": 1024,
+        "output_tokens": 857,
+        "estimated_cost_usd": 0.009096,
+        "response_attempts": 1
+      },
+      "new_api_duration_seconds": 6.363503826782107,
+      "model_returned": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 1088,
+        "prompt_tokens": 1081,
+        "total_tokens": 2169,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 985,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1081
+      },
+      "finish_reason": "stop",
+      "raw_response": "{\"schema_version\":\"causal-api-decoder/v1\",\"episode_id\":\"dynamic-travel-00035\",\"updates\":[{\"node\":\"attraction.end_hour\",\"value\":null},{\"node\":\"attraction.status\",\"value\":\"cancelled\"},{\"node\":\"dinner.end_hour\",\"value\":null},{\"node\":\"dinner.status\",\"value\":\"cancelled\"},{\"node\":\"flight.arrival_hour\",\"value\":21},{\"node\":\"transfer.end_hour\",\"value\":23}]}",
+      "semantic_contract_valid": true,
+      "success": true
+    },
+    {
+      "request_id": "dynamic_travel:dynamic-travel-00035:full_context",
+      "prompt_sha256": "4d68a9150aa44a06317031da6eedd485500ded8294ea10542f1786b2571fc002",
+      "old_api_duration_seconds": 4.953062057495117,
+      "old_api_attempts": 1,
+      "old_usage": {
+        "model_requested": "deepseek-v4-flash",
+        "model_returned": "deepseek-v4-flash",
+        "input_tokens": 1502,
+        "cached_input_tokens": 1408,
+        "output_tokens": 496,
+        "estimated_cost_usd": 0.005547,
+        "response_attempts": 1
+      },
+      "new_api_duration_seconds": 7.347719795070589,
+      "model_returned": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 1476,
+        "prompt_tokens": 1451,
+        "total_tokens": 2927,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1373,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 128
+        },
+        "prompt_cache_hit_tokens": 128,
+        "prompt_cache_miss_tokens": 1323
+      },
+      "finish_reason": "stop",
+      "raw_response": "{\"schema_version\":\"causal-api-decoder/v1\",\"episode_id\":\"dynamic-travel-00035\",\"updates\":[{\"node\":\"attraction.end_hour\",\"value\":null},{\"node\":\"attraction.status\",\"value\":\"cancelled\"},{\"node\":\"dinner.end_hour\",\"value\":null},{\"node\":\"dinner.status\",\"value\":\"cancelled\"},{\"node\":\"flight.arrival_hour\",\"value\":21},{\"node\":\"transfer.end_hour\",\"value\":23}]}",
+      "semantic_contract_valid": true,
+      "success": true
+    },
+    {
+      "request_id": "dynamic_shopping:dynamic-shopping-s0018-e00075:oracle_context",
+      "prompt_sha256": "9e7fb7f67db582fdea681f23bcd8e451e48eade7d3c7690d26357e7391bb0ee9",
+      "old_api_duration_seconds": 15.419849872589111,
+      "old_api_attempts": 1,
+      "old_usage": {
+        "model_requested": "deepseek-v4-flash",
+        "model_returned": "deepseek-v4-flash",
+        "input_tokens": 2250,
+        "cached_input_tokens": 2176,
+        "output_tokens": 1586,
+        "estimated_cost_usd": 0.016589,
+        "response_attempts": 1
+      },
+      "new_api_duration_seconds": 7.661384631879628,
+      "model_returned": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 1566,
+        "prompt_tokens": 2199,
+        "total_tokens": 3765,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1448,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 2199
+      },
+      "finish_reason": "stop",
+      "raw_response": "{\"schema_version\":\"causal-api-decoder/v1\",\"episode_id\":\"dynamic-shopping-s0018-e00075\",\"updates\":[{\"node\":\"availability.gpu_compact\",\"value\":false},{\"node\":\"cart.gpu\",\"value\":\"gpu_performance\"},{\"node\":\"price.gpu\",\"value\":380.0},{\"node\":\"ledger.subtotal_before_monitor\",\"value\":1010.0},{\"node\":\"ledger.total_spend\",\"value\":1260.0},{\"node\":\"ledger.remaining_budget\",\"value\":240.0}]}",
+      "semantic_contract_valid": true,
+      "success": true
+    },
+    {
+      "request_id": "dynamic_shopping:dynamic-shopping-s0018-e00075:full_context",
+      "prompt_sha256": "fcf086d167ff67d93f21b36bce23f1a7128cc0e9b2b11eb82314e6c17c81efd5",
+      "old_api_duration_seconds": 11.206428050994873,
+      "old_api_attempts": 1,
+      "old_usage": {
+        "model_requested": "deepseek-v4-flash",
+        "model_returned": "deepseek-v4-flash",
+        "input_tokens": 2783,
+        "cached_input_tokens": 2688,
+        "output_tokens": 1145,
+        "estimated_cost_usd": 0.0123595,
+        "response_attempts": 1
+      },
+      "new_api_duration_seconds": 6.903024110943079,
+      "model_returned": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 1434,
+        "prompt_tokens": 2732,
+        "total_tokens": 4166,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1316,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 2732
+      },
+      "finish_reason": "stop",
+      "raw_response": "{\"schema_version\":\"causal-api-decoder/v1\",\"episode_id\":\"dynamic-shopping-s0018-e00075\",\"updates\":[{\"node\":\"availability.gpu_compact\",\"value\":false},{\"node\":\"cart.gpu\",\"value\":\"gpu_performance\"},{\"node\":\"ledger.remaining_budget\",\"value\":240.0},{\"node\":\"ledger.subtotal_before_monitor\",\"value\":1010.0},{\"node\":\"ledger.total_spend\",\"value\":1260.0},{\"node\":\"price.gpu\",\"value\":380.0}]}",
+      "semantic_contract_valid": true,
+      "success": true
+    },
+    {
+      "request_id": "dynamic_search:dynamic-search-s19-e00042:oracle_context",
+      "prompt_sha256": "55faad9ed90c11bed8b50b0cef32fd13fd38b00810e3d6afb084379c4015ebb8",
+      "old_api_duration_seconds": 8.239518404006958,
+      "old_api_attempts": 1,
+      "old_usage": {
+        "model_requested": "deepseek-v4-flash",
+        "model_returned": "deepseek-v4-flash",
+        "input_tokens": 1933,
+        "cached_input_tokens": 1920,
+        "output_tokens": 897,
+        "estimated_cost_usd": 0.0094825,
+        "response_attempts": 1
+      },
+      "new_api_duration_seconds": 5.08725873939693,
+      "model_returned": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 865,
+        "prompt_tokens": 1882,
+        "total_tokens": 2747,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 725,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1882
+      },
+      "finish_reason": "stop",
+      "raw_response": "{\"schema_version\":\"causal-api-decoder/v1\",\"episode_id\":\"dynamic-search-s19-e00042\",\"updates\":[{\"node\":\"answer:A0000426281\",\"value\":{\"kind\":\"answer\",\"value\":\"NO\"}},{\"node\":\"brief:B0000428913\",\"value\":{\"kind\":\"brief\",\"value\":\"publish-correction\"}},{\"node\":\"claim:C0000423124\",\"value\":{\"kind\":\"claim\",\"value\":\"disproved\"}},{\"node\":\"document:D0000426061\",\"value\":{\"active\":true,\"independent\":true,\"kind\":\"document\",\"source_node\":\"source:S0000425384\",\"stance\":\"refute\",\"version\":2}}]}",
+      "semantic_contract_valid": true,
+      "success": true
+    },
+    {
+      "request_id": "dynamic_search:dynamic-search-s19-e00042:full_context",
+      "prompt_sha256": "4b0d5dbc4cdbfbe30585f417faf60d9868484a06d7c043098bf72f6c326ba08e",
+      "old_api_duration_seconds": 6.621079921722412,
+      "old_api_attempts": 1,
+      "old_usage": {
+        "model_requested": "deepseek-v4-flash",
+        "model_returned": "deepseek-v4-flash",
+        "input_tokens": 5606,
+        "cached_input_tokens": 5504,
+        "output_tokens": 800,
+        "estimated_cost_usd": 0.009631,
+        "response_attempts": 1
+      },
+      "new_api_duration_seconds": 4.640043819323182,
+      "model_returned": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 743,
+        "prompt_tokens": 5555,
+        "total_tokens": 6298,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 603,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 5555
+      },
+      "finish_reason": "stop",
+      "raw_response": "{\"schema_version\":\"causal-api-decoder/v1\",\"episode_id\":\"dynamic-search-s19-e00042\",\"updates\":[{\"node\":\"answer:A0000426281\",\"value\":{\"kind\":\"answer\",\"value\":\"NO\"}},{\"node\":\"brief:B0000428913\",\"value\":{\"kind\":\"brief\",\"value\":\"publish-correction\"}},{\"node\":\"claim:C0000423124\",\"value\":{\"kind\":\"claim\",\"value\":\"disproved\"}},{\"node\":\"document:D0000426061\",\"value\":{\"active\":true,\"independent\":true,\"kind\":\"document\",\"source_node\":\"source:S0000425384\",\"stance\":\"refute\",\"version\":2}}]}",
+      "semantic_contract_valid": true,
+      "success": true
+    },
+    {
+      "request_id": "causal_formal:causal_formal_math-20-00042:oracle_context",
+      "prompt_sha256": "7e453d1e527ade2040fbf1c7072cbcb248a2be058149ab498532d7268f34aba0",
+      "old_api_duration_seconds": 4.419896364212036,
+      "old_api_attempts": 1,
+      "old_usage": {
+        "model_requested": "deepseek-v4-flash",
+        "model_returned": "deepseek-v4-flash",
+        "input_tokens": 980,
+        "cached_input_tokens": 896,
+        "output_tokens": 505,
+        "estimated_cost_usd": 0.005484,
+        "response_attempts": 1
+      },
+      "new_api_duration_seconds": 2.745511847548187,
+      "model_returned": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 423,
+        "prompt_tokens": 929,
+        "total_tokens": 1352,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 324,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 929
+      },
+      "finish_reason": "stop",
+      "raw_response": "{\"schema_version\":\"causal-api-decoder/v1\",\"episode_id\":\"causal_formal_math-20-00042\",\"updates\":[{\"node\":\"parameter.base\",\"value\":18},{\"node\":\"lemma.term_2\",\"value\":28},{\"node\":\"lemma.term_3\",\"value\":38},{\"node\":\"theorem.core\",\"value\":76},{\"node\":\"lemma.active_branch\",\"value\":84},{\"node\":\"theorem.final\",\"value\":66}]}",
+      "semantic_contract_valid": true,
+      "success": true
+    },
+    {
+      "request_id": "causal_formal:causal_formal_math-20-00042:full_context",
+      "prompt_sha256": "c31e0fc5bff9fc4849376cac67f9420484090bbaac7fa697c47cb34e5253b3b3",
+      "old_api_duration_seconds": 5.795851469039917,
+      "old_api_attempts": 1,
+      "old_usage": {
+        "model_requested": "deepseek-v4-flash",
+        "model_returned": "deepseek-v4-flash",
+        "input_tokens": 1089,
+        "cached_input_tokens": 1024,
+        "output_tokens": 532,
+        "estimated_cost_usd": 0.0057385,
+        "response_attempts": 1
+      },
+      "new_api_duration_seconds": 3.559601904824376,
+      "model_returned": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 694,
+        "prompt_tokens": 1038,
+        "total_tokens": 1732,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 595,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1038
+      },
+      "finish_reason": "stop",
+      "raw_response": "{\"schema_version\":\"causal-api-decoder/v1\",\"episode_id\":\"causal_formal_math-20-00042\",\"updates\":[{\"node\":\"lemma.active_branch\",\"value\":84},{\"node\":\"lemma.term_2\",\"value\":28},{\"node\":\"lemma.term_3\",\"value\":38},{\"node\":\"parameter.base\",\"value\":18},{\"node\":\"theorem.core\",\"value\":76},{\"node\":\"theorem.final\",\"value\":66}]}",
+      "semantic_contract_valid": true,
+      "success": true
+    }
+  ],
+  "summary": {
+    "attempts": 8,
+    "successes": 8,
+    "old_median_seconds": 7.430299162864685,
+    "new_median_seconds": 5.7253812830895185,
+    "old_total_seconds": 65.1111888885498,
+    "new_total_seconds": 44.30804867576808,
+    "old_total_input_tokens": 17275,
+    "new_total_input_tokens": 16867,
+    "old_total_output_tokens": 6818,
+    "new_total_output_tokens": 8289,
+    "faster_pairs": 7
+  }
+}

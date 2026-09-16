@@ -1,0 +1,211 @@
+{
+  "schema": "causal-killer-lookup-dev-audit/v1",
+  "purpose": "Offline admission audit for source-union/query-signature shortcuts; not a seventh API arm and not test performance.",
+  "episodes_generated_per_task": 120,
+  "base_seed": 17,
+  "task_seed_rule": "task_seed = base_seed + fixed TASKS seed_offset",
+  "scored_split": "dev_only",
+  "stop_rule": "A baseline blocks hidden-dependency necessity when its dev propagation_sufficient_mask_rate is at least 0.95.",
+  "tasks": {
+    "dynamic_travel": {
+      "module": "causal_benchmarks.dynamic_travel",
+      "generator_binding": {
+        "episodes_requested": 120,
+        "base_seed": 17,
+        "seed_offset": 0,
+        "task_seed": 17,
+        "train_episodes": 90,
+        "dev_episodes": 10,
+        "test_episodes_not_scored": 20,
+        "train_episode_ids_sha256": "ebd52e4213dd330c69227907a7bd78fa0b1c3d60f698a7777cd8c30abb2e36e5",
+        "dev_episode_ids_sha256": "eecdda481b8b1e477c1f67742587c72b25ff81102d6cd9fbd496c1503f87546a"
+      },
+      "evaluation_split": "dev_only",
+      "admission_schema": "causal-offline-lookup-admission/v1",
+      "prediction_boundary": "Masks use train observed deltas plus the current query semantic parse only; dev gold is read after prediction solely by this scorer.",
+      "headline": {
+        "source_union": {
+          "lookup_coverage": 1.0,
+          "affected_precision": 0.9857142857142858,
+          "affected_recall": 1.0,
+          "affected_f1": 0.9923076923076923,
+          "affected_exact_match": 0.9,
+          "sufficient_mask_rate": 1.0,
+          "propagation_exact_match": 0.875,
+          "propagation_sufficient_mask_rate": 1.0,
+          "unaffected_specificity": 0.9923076923076923,
+          "mean_write_nodes": 3.2,
+          "mean_write_fraction": 0.16842105263157897,
+          "query_only_stop_rule_triggered": true
+        },
+        "query_signature": {
+          "lookup_coverage": 1.0,
+          "affected_precision": 0.9857142857142858,
+          "affected_recall": 1.0,
+          "affected_f1": 0.9923076923076923,
+          "affected_exact_match": 0.9,
+          "sufficient_mask_rate": 1.0,
+          "propagation_exact_match": 0.875,
+          "propagation_sufficient_mask_rate": 1.0,
+          "unaffected_specificity": 0.9923076923076923,
+          "mean_write_nodes": 3.2,
+          "mean_write_fraction": 0.16842105263157897,
+          "query_only_stop_rule_triggered": true
+        }
+      },
+      "hidden_dependency_admission_pass": false
+    },
+    "dynamic_shopping": {
+      "module": "causal_benchmarks.dynamic_shopping",
+      "generator_binding": {
+        "episodes_requested": 120,
+        "base_seed": 17,
+        "seed_offset": 1,
+        "task_seed": 18,
+        "train_episodes": 60,
+        "dev_episodes": 24,
+        "test_episodes_not_scored": 36,
+        "train_episode_ids_sha256": "97103adeab66ef8a7e6b5da877aa4cde2a7103089663085e3499a72d0942ebc1",
+        "dev_episode_ids_sha256": "6325a936a04fbcaf1e48f9eea98dc1612e28b7ad3e6efbda0205f077069ff9b2"
+      },
+      "evaluation_split": "dev_only",
+      "admission_schema": "causal-offline-lookup-admission/v1",
+      "prediction_boundary": "Masks use train observed deltas plus the current query semantic parse only; dev gold is read after prediction solely by this scorer.",
+      "headline": {
+        "source_union": {
+          "lookup_coverage": 1.0,
+          "affected_precision": 0.9027777777777778,
+          "affected_recall": 1.0,
+          "affected_f1": 0.9428571428571431,
+          "affected_exact_match": 0.6666666666666666,
+          "sufficient_mask_rate": 1.0,
+          "propagation_exact_match": 0.6666666666666666,
+          "propagation_sufficient_mask_rate": 1.0,
+          "unaffected_specificity": 0.9833229101521784,
+          "mean_write_nodes": 7.5,
+          "mean_write_fraction": 0.16666666666666663,
+          "query_only_stop_rule_triggered": true
+        },
+        "query_signature": {
+          "lookup_coverage": 1.0,
+          "affected_precision": 0.9027777777777778,
+          "affected_recall": 1.0,
+          "affected_f1": 0.9428571428571431,
+          "affected_exact_match": 0.6666666666666666,
+          "sufficient_mask_rate": 1.0,
+          "propagation_exact_match": 0.6666666666666666,
+          "propagation_sufficient_mask_rate": 1.0,
+          "unaffected_specificity": 0.9833229101521784,
+          "mean_write_nodes": 7.5,
+          "mean_write_fraction": 0.16666666666666663,
+          "query_only_stop_rule_triggered": true
+        }
+      },
+      "hidden_dependency_admission_pass": false
+    },
+    "dynamic_search": {
+      "module": "causal_benchmarks.dynamic_search",
+      "generator_binding": {
+        "episodes_requested": 120,
+        "base_seed": 17,
+        "seed_offset": 2,
+        "task_seed": 19,
+        "train_episodes": 84,
+        "dev_episodes": 24,
+        "test_episodes_not_scored": 12,
+        "train_episode_ids_sha256": "39bef0d42631f54d9f5a0227e89bade4ac0b12782298d67fb92b62b19030cf51",
+        "dev_episode_ids_sha256": "0501b4d927c19e2a5b00870605d3e1e64ce2beba439f293a22c9889f3e0f9b67"
+      },
+      "evaluation_split": "dev_only",
+      "admission_schema": "causal-offline-lookup-admission/v1",
+      "prediction_boundary": "Masks use train observed deltas plus the current query semantic parse only; dev gold is read after prediction solely by this scorer.",
+      "headline": {
+        "source_union": {
+          "lookup_coverage": 1.0,
+          "affected_precision": 0.2307692307692307,
+          "affected_recall": 1.0,
+          "affected_f1": 0.3613445378151261,
+          "affected_exact_match": 0.0,
+          "sufficient_mask_rate": 1.0,
+          "propagation_exact_match": 0.0,
+          "propagation_sufficient_mask_rate": 1.0,
+          "unaffected_specificity": 0.7569767441860465,
+          "mean_write_nodes": 13.0,
+          "mean_write_fraction": 0.29545454545454564,
+          "query_only_stop_rule_triggered": true
+        },
+        "query_signature": {
+          "lookup_coverage": 1.0,
+          "affected_precision": 0.3846153846153845,
+          "affected_recall": 1.0,
+          "affected_f1": 0.504201680672269,
+          "affected_exact_match": 0.16666666666666666,
+          "sufficient_mask_rate": 1.0,
+          "propagation_exact_match": 0.0,
+          "propagation_sufficient_mask_rate": 1.0,
+          "unaffected_specificity": 0.8034883720930233,
+          "mean_write_nodes": 11.0,
+          "mean_write_fraction": 0.25000000000000006,
+          "query_only_stop_rule_triggered": true
+        }
+      },
+      "hidden_dependency_admission_pass": false
+    },
+    "causal_formal": {
+      "module": "causal_benchmarks.causal_formal",
+      "generator_binding": {
+        "episodes_requested": 120,
+        "base_seed": 17,
+        "seed_offset": 3,
+        "task_seed": 20,
+        "train_episodes": 84,
+        "dev_episodes": 12,
+        "test_episodes_not_scored": 24,
+        "train_episode_ids_sha256": "1773618ac8d85feb0d6f0ade9e3425f153e883cc4a531da6fe2667cb03c30a35",
+        "dev_episode_ids_sha256": "d1dec6c561a753997af56e53f43f9263d1355d22392bee75e9b0b0e06d5dae89"
+      },
+      "evaluation_split": "dev_only",
+      "admission_schema": "causal-offline-lookup-admission/v1",
+      "prediction_boundary": "Masks use train observed deltas plus the current query semantic parse only; dev gold is read after prediction solely by this scorer.",
+      "headline": {
+        "source_union": {
+          "lookup_coverage": 1.0,
+          "affected_precision": 0.888888888888889,
+          "affected_recall": 1.0,
+          "affected_f1": 0.9166666666666666,
+          "affected_exact_match": 0.8333333333333334,
+          "sufficient_mask_rate": 1.0,
+          "propagation_exact_match": 1.0,
+          "propagation_sufficient_mask_rate": 1.0,
+          "unaffected_specificity": 0.9694444444444446,
+          "mean_write_nodes": 3.8333333333333335,
+          "mean_write_fraction": 0.3228438228438228,
+          "query_only_stop_rule_triggered": true
+        },
+        "query_signature": {
+          "lookup_coverage": 1.0,
+          "affected_precision": 1.0,
+          "affected_recall": 1.0,
+          "affected_f1": 1.0,
+          "affected_exact_match": 1.0,
+          "sufficient_mask_rate": 1.0,
+          "propagation_exact_match": 1.0,
+          "propagation_sufficient_mask_rate": 1.0,
+          "unaffected_specificity": 1.0,
+          "mean_write_nodes": 3.5,
+          "mean_write_fraction": 0.2948717948717948,
+          "query_only_stop_rule_triggered": true
+        }
+      },
+      "hidden_dependency_admission_pass": false
+    }
+  },
+  "tasks_triggering_stop_rule": [
+    "dynamic_travel",
+    "dynamic_shopping",
+    "dynamic_search",
+    "causal_formal"
+  ],
+  "overall_stop_rule_triggered": true,
+  "hidden_dependency_suite_admission_pass": false
+}

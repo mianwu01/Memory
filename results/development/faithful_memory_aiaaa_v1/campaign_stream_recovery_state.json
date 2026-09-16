@@ -1,0 +1,9 @@
+{
+  "started_at": 1789440672.6908977,
+  "model": "deepseek-v4-flash-0731",
+  "endpoint": "https://aiaaa.cc/v1",
+  "evaluation_family": "faithful_memory_aiaaa_v1",
+  "policy": "all gates; one formal attempt per case; no automatic recovery",
+  "phase": "awaiting_registered_development_recovery",
+  "updated_at": 1789441123.7651343
+}

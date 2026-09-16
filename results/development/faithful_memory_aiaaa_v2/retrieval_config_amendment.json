@@ -1,0 +1,24 @@
+{
+  "registered_at": 1789441748.5490263,
+  "evaluation_started": false,
+  "old_source_sha256": "c964c99263489625fede758eb4580901ce3bfd058e4f45336d1042e51939717a",
+  "settings": {
+    "mem0": 200,
+    "lightmem": 60,
+    "amem": 10
+  },
+  "rationale": "Use author memory-task evaluation retrieval settings (Mem0 memory-benchmarks top200, LightMem LoCoMo combined60, A-Mem paper default10), rather than smaller library API defaults20/10. No scoring or per-episode tuning.",
+  "unchanged_generation_arms": [
+    "ours",
+    "noGcompact",
+    "query_only",
+    "bm25",
+    "full",
+    "dense",
+    "summary",
+    "amem"
+  ],
+  "native_task_effect": "Native LoCoMo validation already explicitly uses200/60; no changes to ingestion or its ranking.",
+  "small_online_evidence": "Previously validated smaller-k retrieval was successful on three records. Full native task validates the registered larger k; writes and core mechanisms unchanged.",
+  "new_source_sha256": "1b82b90b00ece6176ea571e6f5633950cfd83937797fdce6fa0b99ca5625f0d0"
+}

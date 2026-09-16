@@ -1,0 +1,57 @@
+{
+  "schema": "causal-api-decoder-summary/v1",
+  "protocol_case_manifest_sha256": "45cc47c98fcf07f097fc4384b079d72c4a1e389d5a50f8fafe0e7ee66914faa3",
+  "model_requested": "deepseek-v4-flash",
+  "base_url": "https://api.deepseek.com/v1",
+  "matrix": {
+    "dynamic_shopping": {
+      "full_context": {
+        "calls_expected": 4,
+        "calls_received": 4,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 0.875,
+        "episode_success_valid_only": 0.75,
+        "input_tokens": 10921,
+        "cached_input_tokens": 2560,
+        "output_tokens": 14133,
+        "estimated_cost_usd": 0.1628725,
+        "api_duration_seconds": 129.88461208343506,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      },
+      "oracle_context": {
+        "calls_expected": 4,
+        "calls_received": 4,
+        "semantic_coverage": 1.0,
+        "raw_json_validity": 1.0,
+        "losslessly_recovered_responses": 0,
+        "write_value_accuracy_valid_only": 1.0,
+        "episode_success_valid_only": 1.0,
+        "input_tokens": 8605,
+        "cached_input_tokens": 1024,
+        "output_tokens": 12654,
+        "estimated_cost_usd": 0.1457485,
+        "api_duration_seconds": 110.76375460624695,
+        "unresolved_parse_failures": 0,
+        "api_failures": 0
+      }
+    }
+  },
+  "manifest_audit": {
+    "complete": true,
+    "calls_expected": 8,
+    "calls_received_unique": 8,
+    "missing_request_ids": [],
+    "unexpected_request_ids": [],
+    "duplicate_request_ids": [],
+    "mismatched_request_ids": []
+  },
+  "task_decoder_gate_pass": {
+    "dynamic_shopping": false
+  },
+  "all_task_decoder_gates_pass": false,
+  "failure_accounting": "API/unresolved-format failures are excluded from semantic accuracy and mark the block incomplete through semantic_coverage; they are not converted to wrong state values. Lossless syntax recovery never changes model values.",
+  "claim_boundary": "This is a real-API value decoder conditioned on a runtime-oracle write mask. It is not end-to-end learned causal discovery or impact selection evidence."
+}

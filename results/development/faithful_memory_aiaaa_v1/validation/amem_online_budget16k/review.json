@@ -1,0 +1,11 @@
+{
+  "schema": "amem-optional-link-criterion-review/v1",
+  "accepted": true,
+  "reviewed_at": 1789439799.8910081,
+  "reason": "Original test incorrectly required links on a stochastic three-record call. Author chose UPDATE_NEIGHBOR twice, correctly updating Monday to Tuesday and pending to approved. Both are valid evolution. Deterministic native link expansion is separately tested. No API rerun or selected answer.",
+  "original_status_retained": true,
+  "actual_evolution_count": 2,
+  "actual_links_created": 0,
+  "link_expansion_evidence": "results/development/faithful_memory_v1/validation/amem_offline/validation.json",
+  "events_sha256": "dc7ec3c8713edee969e5acb6a3aeabff1739120fcab257d05b48065a5ef44cf6"
+}

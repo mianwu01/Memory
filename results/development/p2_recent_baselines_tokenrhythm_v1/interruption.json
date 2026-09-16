@@ -1,0 +1,13 @@
+[
+  {
+    "pid": 2191588,
+    "descendant_pids": [
+      2192417,
+      2210239,
+      2214817,
+      2215809,
+      2219785
+    ],
+    "reason": "Stop development after two upstream HTTP504 failures; test streaming transport before new run."
+  }
+]

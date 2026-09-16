@@ -1,0 +1,11 @@
+# Add to a venv with the project's existing CPU-disabled torch/transformers stack.
+# Native Mem0 is installed from the pinned checkout with --no-deps (see docs).
+sentence-transformers==5.1.1
+chromadb==1.5.9
+qdrant-client==1.15.1
+posthog==7.53.0
+sqlalchemy==2.0.52
+ollama==0.6.0
+nltk==3.10.3
+openai==2.14.0
+jsonschema==4.25.1

@@ -1,0 +1,14 @@
+{
+  "time": 1789442629.9051788,
+  "endpoint": "https://tokenrhythm.studio/v1",
+  "model": "deepseek-flash",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/chat/completions",
+      "status": 402,
+      "seconds": 0.9059052467346191,
+      "body": "{\"code\":\"INSUFFICIENT_BALANCE\",\"message\":\"余额不足\",\"traceId\":\"trace_54e7a5cb-9fc6-4018-8486-7f9f1c6332a8\"}"
+    }
+  ]
+}

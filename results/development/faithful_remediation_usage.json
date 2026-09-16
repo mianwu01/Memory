@@ -1,0 +1,1980 @@
+{
+  "as_of": 1789442773.059829,
+  "rates_cny_per_million": {
+    "uncached_input": 2.0,
+    "cached_input": 0.04,
+    "output": 8.0
+  },
+  "invoice_verified": false,
+  "scope": "all faithful_memory event logs, including rejected/failed/development attempts",
+  "attempts": [
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/native/amem/events.jsonl",
+      "arm": "amem",
+      "episode": "conv-30",
+      "calls": 59,
+      "input_tokens": 45303,
+      "cached_input_tokens": 0,
+      "output_tokens": 8314,
+      "estimated_cny": 0.197598,
+      "provider_reported_cny": 0.19759800000000002,
+      "reasoning_tokens": 1000,
+      "nonthinking_requested_but_reasoning_observed_calls": 1,
+      "transport_attempts": 59,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 1,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 1,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 59,
+          "input_tokens": 45303,
+          "output_tokens": 8314,
+          "estimated_cny": 0.19759800000000002
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/native/lightmem/events.jsonl",
+      "arm": "lightmem",
+      "episode": "conv-30",
+      "calls": 8,
+      "input_tokens": 20195,
+      "cached_input_tokens": 0,
+      "output_tokens": 23634,
+      "estimated_cny": 0.122382,
+      "provider_reported_cny": 0.12238199999999999,
+      "reasoning_tokens": 16000,
+      "nonthinking_requested_but_reasoning_observed_calls": 1,
+      "transport_attempts": 8,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 1,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 1,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 8,
+          "input_tokens": 20195,
+          "output_tokens": 23634,
+          "estimated_cny": 0.12238199999999999
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/native/mem0/events.jsonl",
+      "arm": "mem0",
+      "episode": "conv-30",
+      "calls": 252,
+      "input_tokens": 2201458,
+      "cached_input_tokens": 1758656,
+      "output_tokens": 17619,
+      "estimated_cny": 1.3934084,
+      "provider_reported_cny": 1.3934084000000002,
+      "reasoning_tokens": 10984,
+      "nonthinking_requested_but_reasoning_observed_calls": 9,
+      "transport_attempts": 254,
+      "unknown_billing_attempts": 2,
+      "unpriced_calls": 9,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 252,
+          "input_tokens": 2201458,
+          "output_tokens": 17619,
+          "estimated_cny": 1.3934084000000002
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/native_amem_budget16k/events.jsonl",
+      "arm": "amem",
+      "episode": "conv-30",
+      "calls": 189,
+      "input_tokens": 194792,
+      "cached_input_tokens": 0,
+      "output_tokens": 56190,
+      "estimated_cny": 0.854385,
+      "provider_reported_cny": 0.854385,
+      "reasoning_tokens": 20751,
+      "nonthinking_requested_but_reasoning_observed_calls": 10,
+      "transport_attempts": 191,
+      "unknown_billing_attempts": 2,
+      "unpriced_calls": 10,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 189,
+          "input_tokens": 194792,
+          "output_tokens": 56190,
+          "estimated_cny": 0.854385
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/travel/amem_101/events.jsonl",
+      "arm": "amem",
+      "episode": 101,
+      "calls": 37,
+      "input_tokens": 1117796,
+      "cached_input_tokens": 242688,
+      "output_tokens": 77919,
+      "estimated_cny": 3.3508638,
+      "provider_reported_cny": 3.3508638,
+      "reasoning_tokens": 67171,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 38,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 27,
+          "input_tokens": 559962,
+          "output_tokens": 3537,
+          "estimated_cny": 1.711719
+        },
+        "actor": {
+          "calls": 10,
+          "input_tokens": 557834,
+          "output_tokens": 74382,
+          "estimated_cny": 1.6391448
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/travel/bm25_101/events.jsonl",
+      "arm": "bm25",
+      "episode": 101,
+      "calls": 12,
+      "input_tokens": 200121,
+      "cached_input_tokens": 61440,
+      "output_tokens": 223465,
+      "estimated_cny": 2.433372,
+      "provider_reported_cny": 2.433372,
+      "reasoning_tokens": 216771,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 13,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 12,
+          "input_tokens": 200121,
+          "output_tokens": 223465,
+          "estimated_cny": 2.433372
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/travel/dense_101/events.jsonl",
+      "arm": "dense",
+      "episode": 101,
+      "calls": 10,
+      "input_tokens": 122129,
+      "cached_input_tokens": 35584,
+      "output_tokens": 94216,
+      "estimated_cny": 0.7627126,
+      "provider_reported_cny": 0.7627126000000001,
+      "reasoning_tokens": 90329,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 11,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 2,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 1,
+      "phases": {
+        "actor": {
+          "calls": 10,
+          "input_tokens": 122129,
+          "output_tokens": 94216,
+          "estimated_cny": 0.7627126000000001
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/travel/full_101/events.jsonl",
+      "arm": "full",
+      "episode": 101,
+      "calls": 11,
+      "input_tokens": 394847,
+      "cached_input_tokens": 225280,
+      "output_tokens": 87827,
+      "estimated_cny": 1.321672,
+      "provider_reported_cny": 1.321672,
+      "reasoning_tokens": 79886,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 12,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 11,
+          "input_tokens": 394847,
+          "output_tokens": 87827,
+          "estimated_cny": 1.321672
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/travel/lightmem_101/events.jsonl",
+      "arm": "lightmem",
+      "episode": 101,
+      "calls": 14,
+      "input_tokens": 229044,
+      "cached_input_tokens": 162816,
+      "output_tokens": 50998,
+      "estimated_cny": 0.6739476,
+      "provider_reported_cny": 0.6739476000000001,
+      "reasoning_tokens": 45209,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 15,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 2,
+          "input_tokens": 2175,
+          "output_tokens": 913,
+          "estimated_cny": 0.014742
+        },
+        "actor": {
+          "calls": 12,
+          "input_tokens": 226869,
+          "output_tokens": 50085,
+          "estimated_cny": 0.6592056000000001
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/travel/mem0_101/events.jsonl",
+      "arm": "mem0",
+      "episode": 101,
+      "calls": 6,
+      "input_tokens": 52547,
+      "cached_input_tokens": 26176,
+      "output_tokens": 41779,
+      "estimated_cny": 0.0884874,
+      "provider_reported_cny": 0.0884874,
+      "reasoning_tokens": 39720,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 7,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 3,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 1,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 2,
+          "input_tokens": 26753,
+          "output_tokens": 871,
+          "estimated_cny": 0.0480084
+        },
+        "actor": {
+          "calls": 4,
+          "input_tokens": 25794,
+          "output_tokens": 40908,
+          "estimated_cny": 0.040479
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/travel/noGcompact_101/events.jsonl",
+      "arm": "noGcompact",
+      "episode": 101,
+      "calls": 15,
+      "input_tokens": 180506,
+      "cached_input_tokens": 79616,
+      "output_tokens": 120713,
+      "estimated_cny": 1.3970486,
+      "provider_reported_cny": 1.3970486,
+      "reasoning_tokens": 110646,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 15,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 15,
+          "input_tokens": 180506,
+          "output_tokens": 120713,
+          "estimated_cny": 1.3970486
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/travel/ours_101/events.jsonl",
+      "arm": "ours",
+      "episode": 101,
+      "calls": 17,
+      "input_tokens": 177166,
+      "cached_input_tokens": 64512,
+      "output_tokens": 121934,
+      "estimated_cny": 1.4418192,
+      "provider_reported_cny": 1.4418191999999999,
+      "reasoning_tokens": 112344,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 17,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 17,
+          "input_tokens": 177166,
+          "output_tokens": 121934,
+          "estimated_cny": 1.4418191999999999
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/travel/query_only_101/events.jsonl",
+      "arm": "query_only",
+      "episode": 101,
+      "calls": 20,
+      "input_tokens": 228332,
+      "cached_input_tokens": 89472,
+      "output_tokens": 126399,
+      "estimated_cny": 1.4492962,
+      "provider_reported_cny": 1.4492961999999998,
+      "reasoning_tokens": 116101,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 20,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 4,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 20,
+          "input_tokens": 228332,
+          "output_tokens": 126399,
+          "estimated_cny": 1.4492961999999998
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/travel/summary_101/events.jsonl",
+      "arm": "summary",
+      "episode": 101,
+      "calls": 12,
+      "input_tokens": 126611,
+      "cached_input_tokens": 21760,
+      "output_tokens": 80614,
+      "estimated_cny": 1.042255,
+      "provider_reported_cny": 1.042255,
+      "reasoning_tokens": 68114,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 13,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 4,
+          "input_tokens": 39843,
+          "output_tokens": 7556,
+          "estimated_cny": 0.187533
+        },
+        "actor": {
+          "calls": 8,
+          "input_tokens": 86768,
+          "output_tokens": 73058,
+          "estimated_cny": 0.8547220000000001
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/travel_recovery/bm25_101/events.jsonl",
+      "arm": "bm25",
+      "episode": 101,
+      "calls": 3,
+      "input_tokens": 33027,
+      "cached_input_tokens": 14336,
+      "output_tokens": 25752,
+      "estimated_cny": 0.2892746,
+      "provider_reported_cny": 0.2892746,
+      "reasoning_tokens": 24232,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 3,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 3,
+          "input_tokens": 33027,
+          "output_tokens": 25752,
+          "estimated_cny": 0.2892746
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/travel_recovery/full_101/events.jsonl",
+      "arm": "full",
+      "episode": 101,
+      "calls": 4,
+      "input_tokens": 48056,
+      "cached_input_tokens": 24576,
+      "output_tokens": 12639,
+      "estimated_cny": 0.1866486,
+      "provider_reported_cny": 0.1866486,
+      "reasoning_tokens": 11083,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 4,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 4,
+          "input_tokens": 48056,
+          "output_tokens": 12639,
+          "estimated_cny": 0.1866486
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/validation/amem_online/events.jsonl",
+      "arm": "amem",
+      "episode": "mechanism-development",
+      "calls": 9,
+      "input_tokens": 3048,
+      "cached_input_tokens": 0,
+      "output_tokens": 620,
+      "estimated_cny": 0.014724,
+      "provider_reported_cny": 0.014723999999999998,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 9,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 9,
+          "input_tokens": 3048,
+          "output_tokens": 620,
+          "estimated_cny": 0.014723999999999998
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/validation/amem_online_budget16k/events.jsonl",
+      "arm": "amem",
+      "episode": "mechanism-development",
+      "calls": 8,
+      "input_tokens": 2657,
+      "cached_input_tokens": 0,
+      "output_tokens": 615,
+      "estimated_cny": 0.013506,
+      "provider_reported_cny": 0.013506,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 8,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 8,
+          "input_tokens": 2657,
+          "output_tokens": 615,
+          "estimated_cny": 0.013506
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/validation/lightmem_online/events.jsonl",
+      "arm": "lightmem",
+      "episode": "mechanism-development",
+      "calls": 6,
+      "input_tokens": 4459,
+      "cached_input_tokens": 0,
+      "output_tokens": 363,
+      "estimated_cny": 0.016644,
+      "provider_reported_cny": 0.016644,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 6,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 6,
+          "input_tokens": 4459,
+          "output_tokens": 363,
+          "estimated_cny": 0.016644
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v1/validation/mem0_online/events.jsonl",
+      "arm": "mem0",
+      "episode": "mechanism-development",
+      "calls": 3,
+      "input_tokens": 24145,
+      "cached_input_tokens": 19968,
+      "output_tokens": 201,
+      "estimated_cny": 0.0163368,
+      "provider_reported_cny": 0.016336800000000002,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 3,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 3,
+          "input_tokens": 24145,
+          "output_tokens": 201,
+          "estimated_cny": 0.016336800000000002
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/native/amem/events.jsonl",
+      "arm": "amem",
+      "episode": "conv-30",
+      "calls": 104,
+      "input_tokens": 80127,
+      "cached_input_tokens": 0,
+      "output_tokens": 11959,
+      "estimated_cny": 0.321783,
+      "provider_reported_cny": 0.3217829999999999,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 105,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 6,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 104,
+          "input_tokens": 80127,
+          "output_tokens": 11959,
+          "estimated_cny": 0.3217829999999999
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/native/lightmem/events.jsonl",
+      "arm": "lightmem",
+      "episode": "conv-30",
+      "calls": 29,
+      "input_tokens": 50189,
+      "cached_input_tokens": 16576,
+      "output_tokens": 16762,
+      "estimated_cny": 0.2204426,
+      "provider_reported_cny": 0.22044259999999996,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 30,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 3,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 29,
+          "input_tokens": 50189,
+          "output_tokens": 16762,
+          "estimated_cny": 0.22044259999999996
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/native/mem0/events.jsonl",
+      "arm": "mem0",
+      "episode": "conv-30",
+      "calls": 102,
+      "input_tokens": 888257,
+      "cached_input_tokens": 791552,
+      "output_tokens": 3073,
+      "estimated_cny": 0.3144752,
+      "provider_reported_cny": 0.31447520000000007,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 103,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 3,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 102,
+          "input_tokens": 888257,
+          "output_tokens": 3073,
+          "estimated_cny": 0.31447520000000007
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel/amem_101/events.jsonl",
+      "arm": "amem",
+      "episode": 101,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel/bm25_101/events.jsonl",
+      "arm": "bm25",
+      "episode": 101,
+      "calls": 8,
+      "input_tokens": 113736,
+      "cached_input_tokens": 47872,
+      "output_tokens": 115969,
+      "estimated_cny": 1.2461002,
+      "provider_reported_cny": 1.2461001999999999,
+      "reasoning_tokens": 112023,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 9,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 8,
+          "input_tokens": 113736,
+          "output_tokens": 115969,
+          "estimated_cny": 1.2461001999999999
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel/dense_101/events.jsonl",
+      "arm": "dense",
+      "episode": 101,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel/full_101/events.jsonl",
+      "arm": "full",
+      "episode": 101,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel/lightmem_101/events.jsonl",
+      "arm": "lightmem",
+      "episode": 101,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel/mem0_101/events.jsonl",
+      "arm": "mem0",
+      "episode": 101,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel/noGcompact_101/events.jsonl",
+      "arm": "noGcompact",
+      "episode": 101,
+      "calls": 15,
+      "input_tokens": 171231,
+      "cached_input_tokens": 79872,
+      "output_tokens": 119565,
+      "estimated_cny": 1.3581492,
+      "provider_reported_cny": 1.3581492,
+      "reasoning_tokens": 109474,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 15,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 15,
+          "input_tokens": 171231,
+          "output_tokens": 119565,
+          "estimated_cny": 1.3581492
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel/ours_101/events.jsonl",
+      "arm": "ours",
+      "episode": 101,
+      "calls": 9,
+      "input_tokens": 66049,
+      "cached_input_tokens": 24768,
+      "output_tokens": 96312,
+      "estimated_cny": 0.5368298,
+      "provider_reported_cny": 0.5368298,
+      "reasoning_tokens": 91912,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 10,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 3,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 1,
+      "phases": {
+        "actor": {
+          "calls": 9,
+          "input_tokens": 66049,
+          "output_tokens": 96312,
+          "estimated_cny": 0.5368298
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel/query_only_101/events.jsonl",
+      "arm": "query_only",
+      "episode": 101,
+      "calls": 17,
+      "input_tokens": 183072,
+      "cached_input_tokens": 58112,
+      "output_tokens": 119525,
+      "estimated_cny": 1.4564162,
+      "provider_reported_cny": 1.4564162,
+      "reasoning_tokens": 110071,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 17,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 17,
+          "input_tokens": 183072,
+          "output_tokens": 119525,
+          "estimated_cny": 1.4564162
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel/summary_101/events.jsonl",
+      "arm": "summary",
+      "episode": 101,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/validation/amem_online/events.jsonl",
+      "arm": "amem",
+      "episode": "mechanism-development",
+      "calls": 9,
+      "input_tokens": 3137,
+      "cached_input_tokens": 0,
+      "output_tokens": 628,
+      "estimated_cny": 0.015063,
+      "provider_reported_cny": 0.015063,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 9,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 9,
+          "input_tokens": 3137,
+          "output_tokens": 628,
+          "estimated_cny": 0.015063
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/validation/lightmem_online/events.jsonl",
+      "arm": "lightmem",
+      "episode": "mechanism-development",
+      "calls": 6,
+      "input_tokens": 4461,
+      "cached_input_tokens": 0,
+      "output_tokens": 365,
+      "estimated_cny": 0.016668,
+      "provider_reported_cny": 0.016668000000000002,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 6,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 6,
+          "input_tokens": 4461,
+          "output_tokens": 365,
+          "estimated_cny": 0.016668000000000002
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/validation/mem0_online/events.jsonl",
+      "arm": "mem0",
+      "episode": "mechanism-development",
+      "calls": 3,
+      "input_tokens": 24136,
+      "cached_input_tokens": 18432,
+      "output_tokens": 189,
+      "estimated_cny": 0.0206562,
+      "provider_reported_cny": 0.0206562,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 3,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 3,
+          "input_tokens": 24136,
+          "output_tokens": 189,
+          "estimated_cny": 0.0206562
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_native_v1/amem/events.jsonl",
+      "arm": "amem",
+      "episode": "conv-30",
+      "calls": 97,
+      "input_tokens": 73943,
+      "cached_input_tokens": 0,
+      "output_tokens": 11276,
+      "estimated_cny": 0.238094,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 108,
+      "unknown_billing_attempts": 11,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 97,
+          "input_tokens": 73943,
+          "output_tokens": 11276,
+          "estimated_cny": 0.238094
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_native_v1/lightmem/events.jsonl",
+      "arm": "lightmem",
+      "episode": "conv-30",
+      "calls": 3,
+      "input_tokens": 7271,
+      "cached_input_tokens": 2560,
+      "output_tokens": 3459,
+      "estimated_cny": 0.0371964,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 6,
+      "unknown_billing_attempts": 3,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 3,
+          "input_tokens": 7271,
+          "output_tokens": 3459,
+          "estimated_cny": 0.0371964
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_native_v1/mem0/events.jsonl",
+      "arm": "mem0",
+      "episode": "conv-30",
+      "calls": 53,
+      "input_tokens": 450750,
+      "cached_input_tokens": 402560,
+      "output_tokens": 2938,
+      "estimated_cny": 0.1359864,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 63,
+      "unknown_billing_attempts": 10,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 53,
+          "input_tokens": 450750,
+          "output_tokens": 2938,
+          "estimated_cny": 0.1359864
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v1/actor_default_probe/events.jsonl",
+      "arm": "ours",
+      "episode": "development replay",
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/development/faithful_memory_v1/actor_default_probe_2/events.jsonl",
+      "arm": "ours",
+      "episode": "development replay",
+      "calls": 1,
+      "input_tokens": 10492,
+      "cached_input_tokens": 0,
+      "output_tokens": 10408,
+      "estimated_cny": 0.104248,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 10109,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 0,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 1,
+          "input_tokens": 10492,
+          "output_tokens": 10408,
+          "estimated_cny": 0.104248
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v1/travel/amem_101/events.jsonl",
+      "arm": "amem",
+      "episode": 101,
+      "calls": 20,
+      "input_tokens": 495114,
+      "cached_input_tokens": 64768,
+      "output_tokens": 7224,
+      "estimated_cny": 0.92107472,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 22,
+      "unknown_billing_attempts": 2,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 13,
+          "input_tokens": 272584,
+          "output_tokens": 1602,
+          "estimated_cny": 0.5569804800000001
+        },
+        "actor": {
+          "calls": 7,
+          "input_tokens": 222530,
+          "output_tokens": 5622,
+          "estimated_cny": 0.36409424
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v1/travel/full_101/events.jsonl",
+      "arm": "full",
+      "episode": 101,
+      "calls": 16,
+      "input_tokens": 669948,
+      "cached_input_tokens": 525056,
+      "output_tokens": 13974,
+      "estimated_cny": 0.42257824,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 16,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 16,
+          "input_tokens": 669948,
+          "output_tokens": 13974,
+          "estimated_cny": 0.42257824
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v1/travel/lightmem_101/events.jsonl",
+      "arm": "lightmem",
+      "episode": 101,
+      "calls": 214,
+      "input_tokens": 2949379,
+      "cached_input_tokens": 2852096,
+      "output_tokens": 72800,
+      "estimated_cny": 0.89104984,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 215,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 8,
+          "input_tokens": 7968,
+          "output_tokens": 4059,
+          "estimated_cny": 0.04188512
+        },
+        "actor": {
+          "calls": 206,
+          "input_tokens": 2941411,
+          "output_tokens": 68741,
+          "estimated_cny": 0.84916472
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v1/travel/mem0_101/events.jsonl",
+      "arm": "mem0",
+      "episode": 101,
+      "calls": 21,
+      "input_tokens": 268443,
+      "cached_input_tokens": 155520,
+      "output_tokens": 55889,
+      "estimated_cny": 0.6791788,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 22,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 1,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 4,
+          "input_tokens": 105247,
+          "output_tokens": 4026,
+          "estimated_cny": 0.179982
+        },
+        "actor": {
+          "calls": 17,
+          "input_tokens": 163196,
+          "output_tokens": 51863,
+          "estimated_cny": 0.4991968000000001
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v1/travel/noGcompact_101/events.jsonl",
+      "arm": "noGcompact",
+      "episode": 101,
+      "calls": 17,
+      "input_tokens": 164384,
+      "cached_input_tokens": 99840,
+      "output_tokens": 21546,
+      "estimated_cny": 0.3054496,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 19,
+      "unknown_billing_attempts": 2,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 17,
+          "input_tokens": 164384,
+          "output_tokens": 21546,
+          "estimated_cny": 0.30544960000000004
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v1/travel/ours_101/events.jsonl",
+      "arm": "ours",
+      "episode": 101,
+      "calls": 25,
+      "input_tokens": 211821,
+      "cached_input_tokens": 157568,
+      "output_tokens": 62585,
+      "estimated_cny": 0.61548872,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 27,
+      "unknown_billing_attempts": 2,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 1,
+      "phases": {
+        "actor": {
+          "calls": 25,
+          "input_tokens": 211821,
+          "output_tokens": 62585,
+          "estimated_cny": 0.6154887199999999
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v1/travel/query_only_101/events.jsonl",
+      "arm": "query_only",
+      "episode": 101,
+      "calls": 30,
+      "input_tokens": 253040,
+      "cached_input_tokens": 198784,
+      "output_tokens": 27413,
+      "estimated_cny": 0.33576736,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 33,
+      "unknown_billing_attempts": 3,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 30,
+          "input_tokens": 253040,
+          "output_tokens": 27413,
+          "estimated_cny": 0.33576735999999996
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v1/validation/amem_offline/events.jsonl",
+      "arm": "amem",
+      "episode": "mechanism-development",
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 0,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/development/faithful_memory_v1/validation/amem_online/events.jsonl",
+      "arm": "amem",
+      "episode": "mechanism-development",
+      "calls": 9,
+      "input_tokens": 3421,
+      "cached_input_tokens": 0,
+      "output_tokens": 667,
+      "estimated_cny": 0.012178,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 9,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 9,
+          "input_tokens": 3421,
+          "output_tokens": 667,
+          "estimated_cny": 0.012178000000000001
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v1/validation/amem_online_2/events.jsonl",
+      "arm": "amem",
+      "episode": "mechanism-development",
+      "calls": 10,
+      "input_tokens": 3445,
+      "cached_input_tokens": 0,
+      "output_tokens": 631,
+      "estimated_cny": 0.011938,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 10,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 10,
+          "input_tokens": 3445,
+          "output_tokens": 631,
+          "estimated_cny": 0.011937999999999999
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v1/validation/lightmem_compressor_debug/events.jsonl",
+      "arm": "lightmem",
+      "episode": "offline",
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 0,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/development/faithful_memory_v1/validation/lightmem_offline/events.jsonl",
+      "arm": "lightmem",
+      "episode": "mechanism-development",
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 0,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/development/faithful_memory_v1/validation/lightmem_offline_2/events.jsonl",
+      "arm": "lightmem",
+      "episode": "mechanism-development",
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 0,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/development/faithful_memory_v1/validation/lightmem_online/events.jsonl",
+      "arm": "lightmem",
+      "episode": "mechanism-development",
+      "calls": 5,
+      "input_tokens": 3282,
+      "cached_input_tokens": 2048,
+      "output_tokens": 362,
+      "estimated_cny": 0.00544592,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 5,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 5,
+          "input_tokens": 3282,
+          "output_tokens": 362,
+          "estimated_cny": 0.00544592
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v1/validation/mem0_offline/events.jsonl",
+      "arm": "mem0",
+      "episode": "mechanism-development",
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 0,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/development/faithful_memory_v1/validation/mem0_offline_2/events.jsonl",
+      "arm": "mem0",
+      "episode": "mechanism-development",
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 0,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/development/faithful_memory_v1/validation/mem0_online/events.jsonl",
+      "arm": "mem0",
+      "episode": "mechanism-development",
+      "calls": 3,
+      "input_tokens": 23936,
+      "cached_input_tokens": 22912,
+      "output_tokens": 284,
+      "estimated_cny": 0.00523648,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 3,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 3,
+          "input_tokens": 23936,
+          "output_tokens": 284,
+          "estimated_cny": 0.00523648
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v2/travel/amem_101/events.jsonl",
+      "arm": "amem",
+      "episode": 101,
+      "calls": 51,
+      "input_tokens": 2552045,
+      "cached_input_tokens": 800256,
+      "output_tokens": 101564,
+      "estimated_cny": 4.34810024,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 85145,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 51,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 36,
+          "input_tokens": 1031322,
+          "output_tokens": 6542,
+          "estimated_cny": 2.10594832
+        },
+        "actor": {
+          "calls": 15,
+          "input_tokens": 1520723,
+          "output_tokens": 95022,
+          "estimated_cny": 2.24215192
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v2/travel/bm25_101/events.jsonl",
+      "arm": "bm25",
+      "episode": 101,
+      "calls": 22,
+      "input_tokens": 367553,
+      "cached_input_tokens": 264576,
+      "output_tokens": 187679,
+      "estimated_cny": 1.71796904,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 176702,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 22,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 22,
+          "input_tokens": 367553,
+          "output_tokens": 187679,
+          "estimated_cny": 1.7179690400000003
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v2/travel/dense_101/events.jsonl",
+      "arm": "dense",
+      "episode": 101,
+      "calls": 14,
+      "input_tokens": 351192,
+      "cached_input_tokens": 302080,
+      "output_tokens": 137027,
+      "estimated_cny": 1.2065232,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 130511,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 16,
+      "unknown_billing_attempts": 2,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 14,
+          "input_tokens": 351192,
+          "output_tokens": 137027,
+          "estimated_cny": 1.2065232000000001
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v2/travel/full_101/events.jsonl",
+      "arm": "full",
+      "episode": 101,
+      "calls": 14,
+      "input_tokens": 642085,
+      "cached_input_tokens": 517120,
+      "output_tokens": 106364,
+      "estimated_cny": 1.1215268,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 96963,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 14,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 14,
+          "input_tokens": 642085,
+          "output_tokens": 106364,
+          "estimated_cny": 1.1215267999999998
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v2/travel/lightmem_101/events.jsonl",
+      "arm": "lightmem",
+      "episode": 101,
+      "calls": 9,
+      "input_tokens": 301982,
+      "cached_input_tokens": 284416,
+      "output_tokens": 74053,
+      "estimated_cny": 0.63893264,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 70142,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 14,
+      "unknown_billing_attempts": 5,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 1,
+          "input_tokens": 1031,
+          "output_tokens": 1179,
+          "estimated_cny": 0.00973784
+        },
+        "actor": {
+          "calls": 8,
+          "input_tokens": 300951,
+          "output_tokens": 72874,
+          "estimated_cny": 0.6291947999999999
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v2/travel/mem0_101/events.jsonl",
+      "arm": "mem0",
+      "episode": 101,
+      "calls": 31,
+      "input_tokens": 1025407,
+      "cached_input_tokens": 788864,
+      "output_tokens": 160635,
+      "estimated_cny": 1.78972056,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 146402,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 37,
+      "unknown_billing_attempts": 6,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 1,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 4,
+          "input_tokens": 131836,
+          "output_tokens": 3424,
+          "estimated_cny": 0.22809311999999998
+        },
+        "actor": {
+          "calls": 27,
+          "input_tokens": 893571,
+          "output_tokens": 157211,
+          "estimated_cny": 1.5616274400000003
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v2/travel/noGcompact_101/events.jsonl",
+      "arm": "noGcompact",
+      "episode": 101,
+      "calls": 15,
+      "input_tokens": 158219,
+      "cached_input_tokens": 96768,
+      "output_tokens": 95085,
+      "estimated_cny": 0.88745272,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 86687,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 15,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 15,
+          "input_tokens": 158219,
+          "output_tokens": 95085,
+          "estimated_cny": 0.8874527199999999
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v2/travel/ours_101/events.jsonl",
+      "arm": "ours",
+      "episode": 101,
+      "calls": 9,
+      "input_tokens": 76395,
+      "cached_input_tokens": 45952,
+      "output_tokens": 75675,
+      "estimated_cny": 0.66812408,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 71160,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 9,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 1,
+      "phases": {
+        "actor": {
+          "calls": 9,
+          "input_tokens": 76395,
+          "output_tokens": 75675,
+          "estimated_cny": 0.6681240799999999
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v2/travel/query_only_101/events.jsonl",
+      "arm": "query_only",
+      "episode": 101,
+      "calls": 17,
+      "input_tokens": 155951,
+      "cached_input_tokens": 105856,
+      "output_tokens": 115262,
+      "estimated_cny": 1.02652024,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 106328,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 17,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 17,
+          "input_tokens": 155951,
+          "output_tokens": 115262,
+          "estimated_cny": 1.02652024
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v2/travel/summary_101/events.jsonl",
+      "arm": "summary",
+      "episode": 101,
+      "calls": 29,
+      "input_tokens": 515411,
+      "cached_input_tokens": 299136,
+      "output_tokens": 223171,
+      "estimated_cny": 2.22988344,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 164391,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 31,
+      "unknown_billing_attempts": 2,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 8,
+          "input_tokens": 117123,
+          "output_tokens": 49150,
+          "estimated_cny": 0.627446
+        },
+        "actor": {
+          "calls": 21,
+          "input_tokens": 398288,
+          "output_tokens": 174021,
+          "estimated_cny": 1.6024374399999999
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_v3/travel/ours_101/events.jsonl",
+      "arm": "ours",
+      "episode": 101,
+      "calls": 19,
+      "input_tokens": 216496,
+      "cached_input_tokens": 163328,
+      "output_tokens": 123853,
+      "estimated_cny": 1.10369312,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 114134,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 20,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "actor": {
+          "calls": 19,
+          "input_tokens": 216496,
+          "output_tokens": 123853,
+          "estimated_cny": 1.1036931200000002
+        }
+      }
+    }
+  ],
+  "separate_probes": [
+    {
+      "path": "results/development/faithful_memory_backup_probe_2026_09_15.json",
+      "row": 0,
+      "provider_reported_cny": 4.8e-05,
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 10,
+        "total_tokens": 12,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_protocol_probe_2026_09_15.json",
+      "row": 0,
+      "provider_reported_cny": null,
+      "usage": {
+        "prompt_tokens": 2303,
+        "prompt_tokens_details": {
+          "cached_read_tokens": 2240,
+          "cached_tokens": 2240
+        },
+        "completion_tokens": 256,
+        "completion_tokens_details": {
+          "reasoning_tokens": 256
+        },
+        "total_tokens": 2559
+      },
+      "status_code": 200,
+      "billing_unknown": true
+    },
+    {
+      "path": "results/development/faithful_memory_protocol_probe_2026_09_15.json",
+      "row": 1,
+      "provider_reported_cny": null,
+      "usage": {
+        "prompt_tokens": 2303,
+        "prompt_tokens_details": {
+          "cached_read_tokens": 2240,
+          "cached_tokens": 2240
+        },
+        "completion_tokens": 256,
+        "completion_tokens_details": {
+          "reasoning_tokens": 256
+        },
+        "total_tokens": 2559
+      },
+      "status_code": 200,
+      "billing_unknown": true
+    },
+    {
+      "path": "results/development/faithful_memory_protocol_probe_2026_09_15.json",
+      "row": 2,
+      "provider_reported_cny": null,
+      "usage": {
+        "prompt_tokens": 2279,
+        "completion_tokens": 256,
+        "completion_tokens_details": {},
+        "total_tokens": 2535
+      },
+      "status_code": 200,
+      "billing_unknown": true
+    },
+    {
+      "path": "results/development/faithful_memory_protocol_probe_2026_09_15.json",
+      "row": 3,
+      "provider_reported_cny": null,
+      "usage": {
+        "prompt_tokens": 2279,
+        "prompt_tokens_details": {
+          "cached_read_tokens": 2240,
+          "cached_tokens": 2240
+        },
+        "completion_tokens": 256,
+        "completion_tokens_details": {},
+        "total_tokens": 2535
+      },
+      "status_code": 200,
+      "billing_unknown": true
+    },
+    {
+      "path": "results/development/faithful_memory_protocol_probe_2026_09_15.json",
+      "row": 4,
+      "provider_reported_cny": null,
+      "usage": {
+        "prompt_tokens": 2303,
+        "prompt_tokens_details": {
+          "cached_read_tokens": 2240,
+          "cached_tokens": 2240
+        },
+        "completion_tokens": 256,
+        "completion_tokens_details": {
+          "reasoning_tokens": 256
+        },
+        "total_tokens": 2559
+      },
+      "status_code": 200,
+      "billing_unknown": true
+    },
+    {
+      "path": "results/development/faithful_memory_protocol_probe_2026_09_15.json",
+      "row": 5,
+      "provider_reported_cny": null,
+      "usage": {
+        "prompt_tokens": 2303,
+        "prompt_tokens_details": {
+          "cached_read_tokens": 2240,
+          "cached_tokens": 2240
+        },
+        "completion_tokens": 256,
+        "completion_tokens_details": {
+          "reasoning_tokens": 256
+        },
+        "total_tokens": 2559
+      },
+      "status_code": 200,
+      "billing_unknown": true
+    },
+    {
+      "path": "results/development/faithful_memory_protocol_probe_2026_09_15.json",
+      "row": 6,
+      "provider_reported_cny": null,
+      "usage": {
+        "prompt_tokens": 2303,
+        "completion_tokens": 256,
+        "completion_tokens_details": {
+          "reasoning_tokens": 256
+        },
+        "total_tokens": 2559
+      },
+      "status_code": 200,
+      "billing_unknown": true
+    },
+    {
+      "path": "results/development/faithful_memory_protocol_probe_2026_09_15.json",
+      "row": 7,
+      "provider_reported_cny": null,
+      "usage": {
+        "prompt_tokens": 2303,
+        "prompt_tokens_details": {
+          "cached_read_tokens": 2240,
+          "cached_tokens": 2240
+        },
+        "completion_tokens": 256,
+        "completion_tokens_details": {
+          "reasoning_tokens": 256
+        },
+        "total_tokens": 2559
+      },
+      "status_code": 200,
+      "billing_unknown": true
+    },
+    {
+      "path": "results/development/faithful_memory_protocol_probe_2026_09_15.json",
+      "row": 8,
+      "provider_reported_cny": null,
+      "usage": null,
+      "status_code": null,
+      "billing_unknown": true
+    },
+    {
+      "path": "results/development/faithful_memory_protocol_probe_2026_09_15.json",
+      "row": 9,
+      "provider_reported_cny": null,
+      "usage": null,
+      "status_code": null,
+      "billing_unknown": true
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/access_diagnostic.json",
+      "row": 1,
+      "provider_reported_cny": null,
+      "usage": null,
+      "status_code": 403,
+      "billing_unknown": true
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/backup_generation_access_diagnostic.json",
+      "row": 0,
+      "provider_reported_cny": null,
+      "usage": null,
+      "status_code": 402,
+      "billing_unknown": true
+    }
+  ],
+  "remediation_recorded_cny": 44.03236976,
+  "previous_recorded_cny": 276.482109,
+  "cumulative_recorded_cny": 320.51447876,
+  "unknown_usage_errors": 28,
+  "unknown_billing_attempts": 74,
+  "unpriced_calls": 45,
+  "limitations": "Provider cost_cny with billing_pending=false takes precedence; TokenRhythm fallback uses advertised rates. Unpriced calls are counted, not assigned another provider's rate. Diagnostic probes outside event logs are listed separately."
+}

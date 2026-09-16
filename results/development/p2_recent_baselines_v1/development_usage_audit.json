@@ -1,0 +1,116 @@
+{
+  "p2_recent_baselines_v0_debug": {
+    "amem": {
+      "actor_calls": 11,
+      "actor_input_tokens": 148242,
+      "actor_output_tokens": 68834,
+      "memory_llm_calls": 15,
+      "memory_input_tokens": 146490,
+      "memory_output_tokens": 4772,
+      "completed_writes": 8,
+      "complete_episode_files": 1
+    },
+    "lightmem": {
+      "actor_calls": 2,
+      "actor_input_tokens": 6648,
+      "actor_output_tokens": 2885,
+      "memory_llm_calls": 2,
+      "memory_input_tokens": 7166,
+      "memory_output_tokens": 3133,
+      "completed_writes": 2,
+      "complete_episode_files": 0
+    },
+    "mem0": {
+      "actor_calls": 5,
+      "actor_input_tokens": 16534,
+      "actor_output_tokens": 20002,
+      "memory_llm_calls": 4,
+      "memory_input_tokens": 44867,
+      "memory_output_tokens": 3173,
+      "completed_writes": 4,
+      "complete_episode_files": 0
+    },
+    "summary": {
+      "actor_calls": 12,
+      "actor_input_tokens": 87809,
+      "actor_output_tokens": 33989,
+      "memory_llm_calls": 7,
+      "memory_input_tokens": 59470,
+      "memory_output_tokens": 33178,
+      "completed_writes": 6,
+      "complete_episode_files": 0
+    }
+  },
+  "p2_recent_baselines_v1": {
+    "amem": {
+      "actor_calls": 2,
+      "actor_input_tokens": 8049,
+      "actor_output_tokens": 2499,
+      "memory_llm_calls": 3,
+      "memory_input_tokens": 19712,
+      "memory_output_tokens": 541,
+      "completed_writes": 2,
+      "complete_episode_files": 0
+    },
+    "dense": {
+      "actor_calls": 3,
+      "actor_input_tokens": 15248,
+      "actor_output_tokens": 10757,
+      "memory_llm_calls": 0,
+      "memory_input_tokens": 0,
+      "memory_output_tokens": 0,
+      "completed_writes": 2,
+      "complete_episode_files": 0
+    },
+    "lightmem": {
+      "actor_calls": 2,
+      "actor_input_tokens": 6602,
+      "actor_output_tokens": 3338,
+      "memory_llm_calls": 11,
+      "memory_input_tokens": 13184,
+      "memory_output_tokens": 3519,
+      "completed_writes": 2,
+      "complete_episode_files": 0
+    },
+    "mem0": {
+      "actor_calls": 4,
+      "actor_input_tokens": 14997,
+      "actor_output_tokens": 32150,
+      "memory_llm_calls": 2,
+      "memory_input_tokens": 21893,
+      "memory_output_tokens": 1358,
+      "completed_writes": 2,
+      "complete_episode_files": 0
+    },
+    "noGcompact": {
+      "actor_calls": 7,
+      "actor_input_tokens": 37189,
+      "actor_output_tokens": 14992,
+      "memory_llm_calls": 0,
+      "memory_input_tokens": 0,
+      "memory_output_tokens": 0,
+      "completed_writes": 4,
+      "complete_episode_files": 0
+    },
+    "ours": {
+      "actor_calls": 3,
+      "actor_input_tokens": 7847,
+      "actor_output_tokens": 3739,
+      "memory_llm_calls": 0,
+      "memory_input_tokens": 0,
+      "memory_output_tokens": 0,
+      "completed_writes": 2,
+      "complete_episode_files": 0
+    },
+    "summary": {
+      "actor_calls": 2,
+      "actor_input_tokens": 7812,
+      "actor_output_tokens": 3689,
+      "memory_llm_calls": 1,
+      "memory_input_tokens": 1078,
+      "memory_output_tokens": 967,
+      "completed_writes": 1,
+      "complete_episode_files": 0
+    }
+  }
+}

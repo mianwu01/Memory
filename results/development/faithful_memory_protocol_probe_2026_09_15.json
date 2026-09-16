@@ -1,0 +1,394 @@
+{
+  "purpose": "API mode compliance only, intentionally small 256-token cap; no accuracy scoring",
+  "source_request": "results/development/faithful_memory_aiaaa_v1/native/lightmem/events.jsonl",
+  "rows": [
+    {
+      "name": "disabled",
+      "model": "deepseek-v4-flash-0731",
+      "extra": {
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "repeat": 0,
+      "status_code": 200,
+      "response": {
+        "id": "chatcmpl-b080821e",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "length",
+            "message": {
+              "role": "assistant",
+              "reasoning": "We need answer as Personal Information Extractor. Need process conversation. Need output JSON with data list. Need extract all facts about speakers. We need follow instructions. Need process every message in order. Need include source_id. Need likely source_id format? In examples source_id just number. Here messages have \"0.Jon\" etc. We need use source_id maybe \"0\", \"1\", etc. Need include facts. Need integrate image descriptions into facts. Need be exhaustive. Need preserve details. Need infer implied info. Need handle timestamps. Need note relative times. We need parse.\n\nWe have two topics. Topic 18 messages 0-3. Topic 19 messages 4-17. Speakers Jon and Gina. Need extract facts about them. We need process each message. Some messages are just support/thanks, but may contain facts: Jon always there for Gina? Gina thanks support means a lot, keep pursuing goals hope you do too. Jon won't quit dreams, words motivate me, bye. Gina bye, got this Believe keep pushing Take care. These are attitudes, intentions. Need extract.\n\nTopic 19: Jon turning love of dance into business, sunk tons time into studio lately, look at students already killing it, learning with them. Image",
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.text",
+                  "text": "We need answer as Personal Information Extractor. Need process conversation. Need output JSON with data list. Need extract all facts about speakers. We need follow instructions. Need process every message in order. Need include source_id. Need likely source_id format? In examples source_id just number. Here messages have \"0.Jon\" etc. We need use source_id maybe \"0\", \"1\", etc. Need include facts. Need integrate image descriptions into facts. Need be exhaustive. Need preserve details. Need infer implied info. Need handle timestamps. Need note relative times. We need parse.\n\nWe have two topics. Topic 18 messages 0-3. Topic 19 messages 4-17. Speakers Jon and Gina. Need extract facts about them. We need process each message. Some messages are just support/thanks, but may contain facts: Jon always there for Gina? Gina thanks support means a lot, keep pursuing goals hope you do too. Jon won't quit dreams, words motivate me, bye. Gina bye, got this Believe keep pushing Take care. These are attitudes, intentions. Need extract.\n\nTopic 19: Jon turning love of dance into business, sunk tons time into studio lately, look at students already killing it, learning with them. Image"
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1789440881,
+        "model": "deepseek-v4-flash-0731",
+        "object": "chat.completion",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2303,
+          "prompt_tokens_details": {
+            "cached_read_tokens": 2240,
+            "cached_tokens": 2240
+          },
+          "completion_tokens": 256,
+          "completion_tokens_details": {
+            "reasoning_tokens": 256
+          },
+          "total_tokens": 2559
+        }
+      },
+      "seconds": 4.158671537414193
+    },
+    {
+      "name": "disabled",
+      "model": "deepseek-v4-flash-0731",
+      "extra": {
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "repeat": 1,
+      "status_code": 200,
+      "response": {
+        "id": "chatcmpl-f8e990a7",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "length",
+            "message": {
+              "role": "assistant",
+              "reasoning": "We need answer as Personal Information Extractor. Need process conversation. Need output JSON with data list. Need extract facts about speakers. We need follow instructions. Need process every message in order. Need include source_id, fact. Need integrate image descriptions into facts. Need preserve details. Need infer implied info. Need handle timestamps. We need be exhaustive. Let's parse.\n\nWe have Topic 18 and Topic 19. Messages source_id 0-17. Speakers Jon and Gina. Need extract all facts/info about speakers. We need process each message. We need decide factual info. Many are supportive statements, opinions, emotions, past events, current states, future intentions. Need extract.\n\nLet's list messages:\n\nTopic 18:\n[2023-04-03T13:26:00.000, Mon] 0.Jon: Sure always there for you! image description photo of street on sidewalk? \"photo of street on sidewalk? Actually: \"photo of street on sidewalk? Let's read: \"image description photo of street on sidewalk? The text: \"image description photo of street on sidewalk? Wait: \"image description photo of street on sidewalk? It says: \"image description photo of street on sidewalk? Actually: \"image description photo",
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.text",
+                  "text": "We need answer as Personal Information Extractor. Need process conversation. Need output JSON with data list. Need extract facts about speakers. We need follow instructions. Need process every message in order. Need include source_id, fact. Need integrate image descriptions into facts. Need preserve details. Need infer implied info. Need handle timestamps. We need be exhaustive. Let's parse.\n\nWe have Topic 18 and Topic 19. Messages source_id 0-17. Speakers Jon and Gina. Need extract all facts/info about speakers. We need process each message. We need decide factual info. Many are supportive statements, opinions, emotions, past events, current states, future intentions. Need extract.\n\nLet's list messages:\n\nTopic 18:\n[2023-04-03T13:26:00.000, Mon] 0.Jon: Sure always there for you! image description photo of street on sidewalk? \"photo of street on sidewalk? Actually: \"photo of street on sidewalk? Let's read: \"image description photo of street on sidewalk? The text: \"image description photo of street on sidewalk? Wait: \"image description photo of street on sidewalk? It says: \"image description photo of street on sidewalk? Actually: \"image description photo"
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1789440884,
+        "model": "deepseek-v4-flash-0731",
+        "object": "chat.completion",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2303,
+          "prompt_tokens_details": {
+            "cached_read_tokens": 2240,
+            "cached_tokens": 2240
+          },
+          "completion_tokens": 256,
+          "completion_tokens_details": {
+            "reasoning_tokens": 256
+          },
+          "total_tokens": 2559
+        }
+      },
+      "seconds": 3.4854477429762483
+    },
+    {
+      "name": "none",
+      "model": "deepseek-v4-flash-0731",
+      "extra": {
+        "thinking": {
+          "type": "disabled"
+        },
+        "reasoning_effort": "none"
+      },
+      "repeat": 0,
+      "status_code": 200,
+      "response": {
+        "id": "chatcmpl-fac27be1",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "length",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"data\": [\n    {\n      \"source_id\": 0,\n      \"fact\": \"Jon is always there for Gina, as shown in a photo of a street with a sidewalk and a building.\"\n    },\n    {\n      \"source_id\": 1,\n      \"fact\": \"Gina appreciates Jon's support and hopes he continues pursuing his goals.\"\n    },\n    {\n      \"source_id\": 2,\n      \"fact\": \"Jon says he won't quit his dreams and that Gina's words motivate him.\"\n    },\n    {\n      \"source_id\": 3,\n      \"fact\": \"Gina tells Jon to keep pushing and to take care.\"\n    },\n    {\n      \"source_id\": 4,\n      \"fact\": \"Jon is turning his love of dance into a business and has sunk tons of time into a studio lately.\"\n    },\n    {\n      \"source_id\": 4,\n      \"fact\": \"Jon says his students are already killing it and he is learning with them, as shown in a photo of a group of dancers on a stage with a red background.\"\n    },\n    {\n      \"source_id\": 5,\n      \"fact\": \"Gina says Jon's dance studio looks awesome, as"
+            }
+          }
+        ],
+        "created": 1789440882,
+        "model": "deepseek-v4-flash-0731",
+        "object": "chat.completion",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2279,
+          "completion_tokens": 256,
+          "completion_tokens_details": {},
+          "total_tokens": 2535
+        }
+      },
+      "seconds": 3.201945894397795
+    },
+    {
+      "name": "none",
+      "model": "deepseek-v4-flash-0731",
+      "extra": {
+        "thinking": {
+          "type": "disabled"
+        },
+        "reasoning_effort": "none"
+      },
+      "repeat": 1,
+      "status_code": 200,
+      "response": {
+        "id": "chatcmpl-502a08ea",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "length",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"data\": [\n    {\n      \"source_id\": 0,\n      \"fact\": \"Jon is always there for Gina, as shown in a photo of a street with a sidewalk and a building.\"\n    },\n    {\n      \"source_id\": 1,\n      \"fact\": \"Gina appreciates Jon's support and hopes he keeps pursuing his goals.\"\n    },\n    {\n      \"source_id\": 2,\n      \"fact\": \"Jon says he won't quit his dreams and that Gina's words motivate him.\"\n    },\n    {\n      \"source_id\": 3,\n      \"fact\": \"Gina tells Jon to keep pushing and to take care.\"\n    },\n    {\n      \"source_id\": 4,\n      \"fact\": \"Jon is turning his love of dance into a business and has sunk tons of time into a studio lately.\"\n    },\n    {\n      \"source_id\": 4,\n      \"fact\": \"Jon says his students are already killing it and that he is learning with them, as shown in a photo of a group of dancers on a stage with a red background.\"\n    },\n    {\n      \"source_id\": 5,\n      \"fact\": \"Gina praises Jon for taking his passion and making"
+            }
+          }
+        ],
+        "created": 1789440886,
+        "model": "deepseek-v4-flash-0731",
+        "object": "chat.completion",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2279,
+          "prompt_tokens_details": {
+            "cached_read_tokens": 2240,
+            "cached_tokens": 2240
+          },
+          "completion_tokens": 256,
+          "completion_tokens_details": {},
+          "total_tokens": 2535
+        }
+      },
+      "seconds": 3.375041438266635
+    },
+    {
+      "name": "enable_false",
+      "model": "deepseek-v4-flash-0731",
+      "extra": {
+        "thinking": {
+          "type": "disabled"
+        },
+        "enable_thinking": false
+      },
+      "repeat": 0,
+      "status_code": 200,
+      "response": {
+        "id": "chatcmpl-6e96e129",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "length",
+            "message": {
+              "role": "assistant",
+              "reasoning": "We need answer as Personal Information Extractor. Need process conversation. Need output JSON with data list. Need extract all facts about speakers. We need follow instructions. Need process every message in order. Need include source_id, fact. Need integrate image descriptions into facts. Need preserve details. Need infer implied info. Need handle timestamps. We need be exhaustive. Let's parse.\n\nWe have Topic 18 and Topic 19. Messages source_id 0-17. Speakers Jon and Gina. Need extract facts about speakers. We need process each message. We need decide factual info. Many are supportive statements, opinions, emotions, past events, current states, future intentions. Need extract all meaningful info. Need include image descriptions appended to relevant facts. Need not create separate facts solely for image content, but can append visual details to facts. Need include timestamps for relative times. For ongoing/timeless no time annotation. For past events with relative time, preserve relative time and reference message timestamp. Here timestamps: 2023-04-03 and 2023-04-09. Need note.\n\nLet's go message by message.\n\nTopic 18:\n0. Jon: \"Sure always there for you! image description photo of street on sidewalk? Actually: photo",
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.text",
+                  "text": "We need answer as Personal Information Extractor. Need process conversation. Need output JSON with data list. Need extract all facts about speakers. We need follow instructions. Need process every message in order. Need include source_id, fact. Need integrate image descriptions into facts. Need preserve details. Need infer implied info. Need handle timestamps. We need be exhaustive. Let's parse.\n\nWe have Topic 18 and Topic 19. Messages source_id 0-17. Speakers Jon and Gina. Need extract facts about speakers. We need process each message. We need decide factual info. Many are supportive statements, opinions, emotions, past events, current states, future intentions. Need extract all meaningful info. Need include image descriptions appended to relevant facts. Need not create separate facts solely for image content, but can append visual details to facts. Need include timestamps for relative times. For ongoing/timeless no time annotation. For past events with relative time, preserve relative time and reference message timestamp. Here timestamps: 2023-04-03 and 2023-04-09. Need note.\n\nLet's go message by message.\n\nTopic 18:\n0. Jon: \"Sure always there for you! image description photo of street on sidewalk? Actually: photo"
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1789440888,
+        "model": "deepseek-v4-flash-0731",
+        "object": "chat.completion",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2303,
+          "prompt_tokens_details": {
+            "cached_read_tokens": 2240,
+            "cached_tokens": 2240
+          },
+          "completion_tokens": 256,
+          "completion_tokens_details": {
+            "reasoning_tokens": 256
+          },
+          "total_tokens": 2559
+        }
+      },
+      "seconds": 3.085951722227037
+    },
+    {
+      "name": "enable_false",
+      "model": "deepseek-v4-flash-0731",
+      "extra": {
+        "thinking": {
+          "type": "disabled"
+        },
+        "enable_thinking": false
+      },
+      "repeat": 1,
+      "status_code": 200,
+      "response": {
+        "id": "chatcmpl-383d4545",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "length",
+            "message": {
+              "role": "assistant",
+              "reasoning": "We need answer as Personal Information Extractor. Need process conversation. Need output JSON with data list. Need extract all facts about speakers. We need follow instructions. Need process messages in ascending source_id order. There are two topics. Need extract facts from each message. Need include source_id. Need preserve details, integrate image descriptions. Need infer implied info. Need be exhaustive. Need not skip trivial. Need handle timestamps. Need note source_id format? In examples source_id just number. Here messages have \"0.Jon\" etc. We should use source_id as number? The prompt says key \"source_id\": \"<source_id>\". In examples source_id: 0. We'll use numeric? It says string? Example uses number. We'll use number. Need include facts for each message if contains info. Some messages are just thanks/support, but may contain facts about attitudes, goals, etc. Need extract all meaningful info. Need be careful.\n\nLet's parse.\n\nTopic 18:\n[2023-04-03T13:26:00.000, Mon] 0.Jon: Sure always there for you! image description photo of street on sidewalk? \"photo of street on sidewalk? Actually: \"photo of street on sidewalk? Let",
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.text",
+                  "text": "We need answer as Personal Information Extractor. Need process conversation. Need output JSON with data list. Need extract all facts about speakers. We need follow instructions. Need process messages in ascending source_id order. There are two topics. Need extract facts from each message. Need include source_id. Need preserve details, integrate image descriptions. Need infer implied info. Need be exhaustive. Need not skip trivial. Need handle timestamps. Need note source_id format? In examples source_id just number. Here messages have \"0.Jon\" etc. We should use source_id as number? The prompt says key \"source_id\": \"<source_id>\". In examples source_id: 0. We'll use numeric? It says string? Example uses number. We'll use number. Need include facts for each message if contains info. Some messages are just thanks/support, but may contain facts about attitudes, goals, etc. Need extract all meaningful info. Need be careful.\n\nLet's parse.\n\nTopic 18:\n[2023-04-03T13:26:00.000, Mon] 0.Jon: Sure always there for you! image description photo of street on sidewalk? \"photo of street on sidewalk? Actually: \"photo of street on sidewalk? Let"
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1789440890,
+        "model": "deepseek-v4-flash-0731",
+        "object": "chat.completion",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2303,
+          "prompt_tokens_details": {
+            "cached_read_tokens": 2240,
+            "cached_tokens": 2240
+          },
+          "completion_tokens": 256,
+          "completion_tokens_details": {
+            "reasoning_tokens": 256
+          },
+          "total_tokens": 2559
+        }
+      },
+      "seconds": 2.9706422528252006
+    },
+    {
+      "name": "minimal",
+      "model": "deepseek-v4-flash-0731",
+      "extra": {
+        "thinking": {
+          "type": "disabled"
+        },
+        "reasoning_effort": "minimal"
+      },
+      "repeat": 0,
+      "status_code": 200,
+      "response": {
+        "id": "chatcmpl-1a18bf78",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "length",
+            "message": {
+              "role": "assistant",
+              "reasoning": "We need answer extract facts. Need process messages in order. Need output JSON with data list. Need be exhaustive. We have conversation topics 18 and 19. Need extract all facts about speakers. Need include source_id? The examples use source_id numeric. Here messages have source ids 0-17. Need include facts. Need integrate image descriptions into facts. Need preserve details. Need infer. Need handle timestamps. Need maybe source_id as string? Use numeric.\n\nWe need parse each message. Speakers Jon and Gina. Need extract facts about them. We need be careful: messages are informal, typos. Need rephrase standalone. Include all specific entities, details, image descriptions. For each message, decide factual info. Some are just support, but can extract attitudes/plans. Need not skip trivial. Need include image descriptions appended to relevant facts. Need maybe multiple facts per message.\n\nLet's go through.\n\nTopic 18:\n[2023-04-03T13:26:00.000, Mon] 0.Jon: \"Sure always there for you! image description photo of street on sidewalk? Actually: photo of street on sidewalk? \"photo of street on sidewalk? Let's read: \"image description photo of street on sidewalk?",
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.text",
+                  "text": "We need answer extract facts. Need process messages in order. Need output JSON with data list. Need be exhaustive. We have conversation topics 18 and 19. Need extract all facts about speakers. Need include source_id? The examples use source_id numeric. Here messages have source ids 0-17. Need include facts. Need integrate image descriptions into facts. Need preserve details. Need infer. Need handle timestamps. Need maybe source_id as string? Use numeric.\n\nWe need parse each message. Speakers Jon and Gina. Need extract facts about them. We need be careful: messages are informal, typos. Need rephrase standalone. Include all specific entities, details, image descriptions. For each message, decide factual info. Some are just support, but can extract attitudes/plans. Need not skip trivial. Need include image descriptions appended to relevant facts. Need maybe multiple facts per message.\n\nLet's go through.\n\nTopic 18:\n[2023-04-03T13:26:00.000, Mon] 0.Jon: \"Sure always there for you! image description photo of street on sidewalk? Actually: photo of street on sidewalk? \"photo of street on sidewalk? Let's read: \"image description photo of street on sidewalk?"
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1789440893,
+        "model": "deepseek-v4-flash-0731",
+        "object": "chat.completion",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2303,
+          "completion_tokens": 256,
+          "completion_tokens_details": {
+            "reasoning_tokens": 256
+          },
+          "total_tokens": 2559
+        }
+      },
+      "seconds": 3.194468551315367
+    },
+    {
+      "name": "minimal",
+      "model": "deepseek-v4-flash-0731",
+      "extra": {
+        "thinking": {
+          "type": "disabled"
+        },
+        "reasoning_effort": "minimal"
+      },
+      "repeat": 1,
+      "status_code": 200,
+      "response": {
+        "id": "chatcmpl-79a81deb",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "length",
+            "message": {
+              "role": "assistant",
+              "reasoning": "We need answer as Personal Information Extractor. Need process conversation, extract facts. Need output JSON with data list. Need be exhaustive. Need follow instructions. We need parse topics. Need include source_id? The examples use source_id as message index? They use \"source_id\": 0 etc. In prompt, messages have \"0.Jon\" etc. So source_id likely numeric index. Need output each fact with source_id. Need process every message. Need include all specific details, image descriptions integrated. Need not create separate facts solely for image content, but append visual details to relevant facts. Need infer implied info. Need preserve names, locations, etc. Need timestamps. Need handle relative times. Here timestamps given. Need extract facts about Jon and Gina. Let's parse.\n\nTopic 18:\n[2023-04-03T13:26:00.000, Mon] 0.Jon: Sure always there for you! image description photo of street on sidewalk? \"photo of street on sidewalk? building\" Actually: \"image description photo of street on sidewalk? building\" Let's read: \"image description photo of street on sidewalk? building\" It says: \"image description photo of street on sidewalk? building\" Wait exact: \"image",
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.text",
+                  "text": "We need answer as Personal Information Extractor. Need process conversation, extract facts. Need output JSON with data list. Need be exhaustive. Need follow instructions. We need parse topics. Need include source_id? The examples use source_id as message index? They use \"source_id\": 0 etc. In prompt, messages have \"0.Jon\" etc. So source_id likely numeric index. Need output each fact with source_id. Need process every message. Need include all specific details, image descriptions integrated. Need not create separate facts solely for image content, but append visual details to relevant facts. Need infer implied info. Need preserve names, locations, etc. Need timestamps. Need handle relative times. Here timestamps given. Need extract facts about Jon and Gina. Let's parse.\n\nTopic 18:\n[2023-04-03T13:26:00.000, Mon] 0.Jon: Sure always there for you! image description photo of street on sidewalk? \"photo of street on sidewalk? building\" Actually: \"image description photo of street on sidewalk? building\" Let's read: \"image description photo of street on sidewalk? building\" It says: \"image description photo of street on sidewalk? building\" Wait exact: \"image"
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1789440895,
+        "model": "deepseek-v4-flash-0731",
+        "object": "chat.completion",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2303,
+          "prompt_tokens_details": {
+            "cached_read_tokens": 2240,
+            "cached_tokens": 2240
+          },
+          "completion_tokens": 256,
+          "completion_tokens_details": {
+            "reasoning_tokens": 256
+          },
+          "total_tokens": 2559
+        }
+      },
+      "seconds": 3.0394993061199784
+    },
+    {
+      "name": "v4_1_disabled",
+      "model": "deepseek-v4.1-flash",
+      "extra": {
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "repeat": 0,
+      "error_type": "ReadTimeout",
+      "seconds": 60.42245091032237
+    },
+    {
+      "name": "v4_1_disabled",
+      "model": "deepseek-v4.1-flash",
+      "extra": {
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "repeat": 1,
+      "error_type": "ReadTimeout",
+      "seconds": 60.27815923281014
+    }
+  ]
+}

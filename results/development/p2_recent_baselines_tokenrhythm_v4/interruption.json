@@ -1,0 +1,13 @@
+{
+  "cause": "APITimeoutError before response headers in final LightMem memory write",
+  "round": 7,
+  "actor_rounds_complete": 7,
+  "actor_usage_responses": 17,
+  "memory_usage_responses": 749,
+  "final_memory_write_complete": false,
+  "evaluation_started": false,
+  "old_transport_read_timeout_seconds": 60,
+  "pre_stream_timeout_retried": false,
+  "billing_of_timeout": "unknown: no usage response",
+  "next_action": "New v5 transport: longer read timeout and bounded pre-stream timeout/connection retries; retain valid v2/v3 interface gates."
+}

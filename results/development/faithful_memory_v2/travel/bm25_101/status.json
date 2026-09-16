@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "arm": "bm25",
+  "id": 101,
+  "counts": {
+    "actor_contract": 1,
+    "init": 1,
+    "write": 8,
+    "retrieve": 7,
+    "llm": 22
+  },
+  "scope": "original MemoryArena actor; full plan; no custom decoder"
+}

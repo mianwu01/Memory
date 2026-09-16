@@ -1,0 +1,14 @@
+{
+  "complete": true,
+  "arm": "amem",
+  "id": 101,
+  "counts": {
+    "actor_contract": 1,
+    "init": 1,
+    "llm": 51,
+    "mechanism": 22,
+    "write": 8,
+    "retrieve": 7
+  },
+  "scope": "original MemoryArena actor; full plan; no custom decoder"
+}

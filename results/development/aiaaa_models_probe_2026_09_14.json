@@ -1,0 +1,21 @@
+[
+  {
+    "url": "https://aiaaa.cc/v1/models",
+    "status": 200,
+    "seconds": 0.814,
+    "content_type": "application/json; charset=utf-8",
+    "models": [
+      "deepseek-v4-flash-0731",
+      "deepseek-v4-pro-0813",
+      "deepseek-v4-flash-vision-exp",
+      "deepseek-v4.1-flash"
+    ],
+    "error": null
+  },
+  {
+    "url": "https://aiaaa.cc/",
+    "status": 302,
+    "seconds": 0.67,
+    "content_type": "text/html"
+  }
+]

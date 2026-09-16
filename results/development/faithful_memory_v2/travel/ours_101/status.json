@@ -1,0 +1,17 @@
+{
+  "complete": false,
+  "arm": "ours",
+  "id": 101,
+  "counts": {
+    "actor_contract": 1,
+    "init": 1,
+    "write": 4,
+    "retrieve": 4,
+    "llm": 9,
+    "invalid": 1
+  },
+  "error_type": "InvalidExecution",
+  "failures": [
+    "Missing usage/choice or truncated completion"
+  ]
+}

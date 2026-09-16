@@ -1,0 +1,348 @@
+{
+  "schema": "memoryarena-development-validation/v1",
+  "all_ten_interfaces_validated": true,
+  "scope": "Interface validation across transport repairs; no pooled development ranking.",
+  "cohorts": {
+    "ours": {
+      "family": "results/development/p2_recent_baselines_tokenrhythm_v3",
+      "episode_ids": [
+        101
+      ],
+      "protocol_sha256": "baedf8e559a9037c2261aff4545193fd3b37a4e7ce2b36fcda0d4586a30aa0e2",
+      "config_sha256": "d69330f441c1344023acf036096bfcf8dfd11a299e31b35de6694ea2be942a1d",
+      "source_hashes": {
+        "code/arena_recent_memory.py": "2785335cc7f4d0295ffcd2aa91d50813c78a21af83d5f367dd41d37aa087cd87",
+        "code/arena_e2e_run.py": "015c3388677ac0ca3112333f386611c48faf461d1420221b7a02042b43673913",
+        "code/arena_e2e_inherit.py": "a853863067dd12a7efa91d366adc11f9f064b93e010b626c277d20763246026f",
+        "code/arena_causal_memory.py": "b3d1b439e2877483e6adb8ce0d90ffba2426bf6e3407ad0c40fcbfe61d43d5a3",
+        "code/arena_recent_suite.py": "216d19ac42b63778bd4bc3d1db203c89d8b6e2af8743e57aae978c07fe6a85e7",
+        "code/run_with_local_deepseek.py": "91c02477e20b1ce4bfab780e0b98d7ae3f659e3e15794b1c463be5252b729f61",
+        "code/relay_chat_transport.py": "a24131744de75926a02c8ca0a11b274f8999b038490ddbcb9396e32f6bfb60d4",
+        "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json": "b3dfa066cd0e757655afbc411430645e34f2670d7cf307102b96f09b6d737479",
+        "upstream_commit:mem0": "c7ee362aff94a369af70f13f2b4f853f6793ff4c",
+        "upstream_commit:A-mem": "ceffb860f0712bbae97b184d440df62bc910ca8d",
+        "upstream_commit:LightMem": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+        "upstream_commit:MemoryArena": "6cd9de14b71915e39ac742a20dc33785e14b6aab",
+        "embedding:model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+        "embedding:config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+        "embedding:tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+      },
+      "task_specific": {
+        "max_steps": 12,
+        "llm_max_tokens": 32768,
+        "llm_thinking": "default",
+        "inherit_unspecified_from_base": true,
+        "decoder": "query-target/base-inheritance-v3",
+        "llm_transport": "stream_accumulate"
+      },
+      "complete": true
+    },
+    "noG": {
+      "family": "results/development/p2_recent_baselines_tokenrhythm_v3",
+      "episode_ids": [
+        101
+      ],
+      "protocol_sha256": "baedf8e559a9037c2261aff4545193fd3b37a4e7ce2b36fcda0d4586a30aa0e2",
+      "config_sha256": "ec21cd89677887e3891962cd55d140e5bf932a9f8302dc8940bb75c7c0d2be6b",
+      "source_hashes": {
+        "code/arena_recent_memory.py": "2785335cc7f4d0295ffcd2aa91d50813c78a21af83d5f367dd41d37aa087cd87",
+        "code/arena_e2e_run.py": "015c3388677ac0ca3112333f386611c48faf461d1420221b7a02042b43673913",
+        "code/arena_e2e_inherit.py": "a853863067dd12a7efa91d366adc11f9f064b93e010b626c277d20763246026f",
+        "code/arena_causal_memory.py": "b3d1b439e2877483e6adb8ce0d90ffba2426bf6e3407ad0c40fcbfe61d43d5a3",
+        "code/arena_recent_suite.py": "216d19ac42b63778bd4bc3d1db203c89d8b6e2af8743e57aae978c07fe6a85e7",
+        "code/run_with_local_deepseek.py": "91c02477e20b1ce4bfab780e0b98d7ae3f659e3e15794b1c463be5252b729f61",
+        "code/relay_chat_transport.py": "a24131744de75926a02c8ca0a11b274f8999b038490ddbcb9396e32f6bfb60d4",
+        "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json": "b3dfa066cd0e757655afbc411430645e34f2670d7cf307102b96f09b6d737479",
+        "upstream_commit:mem0": "c7ee362aff94a369af70f13f2b4f853f6793ff4c",
+        "upstream_commit:A-mem": "ceffb860f0712bbae97b184d440df62bc910ca8d",
+        "upstream_commit:LightMem": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+        "upstream_commit:MemoryArena": "6cd9de14b71915e39ac742a20dc33785e14b6aab",
+        "embedding:model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+        "embedding:config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+        "embedding:tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+      },
+      "task_specific": {
+        "max_steps": 12,
+        "llm_max_tokens": 32768,
+        "llm_thinking": "default",
+        "inherit_unspecified_from_base": true,
+        "decoder": "query-target/base-inheritance-v3",
+        "llm_transport": "stream_accumulate"
+      },
+      "complete": true
+    },
+    "noGcompact": {
+      "family": "results/development/p2_recent_baselines_tokenrhythm_v2",
+      "episode_ids": [
+        101
+      ],
+      "protocol_sha256": "fd4e39dc5efcec17f4253a86b9578114e1625e5c3b28d7e648d18ae9bedff6f9",
+      "config_sha256": "4efaf9c7adab5d4b791e09ec5d2b9b2a1dcd1fc05a7f6f768f6a0b3d758014ab",
+      "source_hashes": {
+        "code/arena_recent_memory.py": "7716df21ab4c3230e52bcb866b431983dae563424461b9779e1e92ed80c61ec1",
+        "code/arena_e2e_run.py": "a499398eb84d3944d27103bfc9c4a1feba1788ff97143b01a7bffa8efd0895da",
+        "code/arena_e2e_inherit.py": "a853863067dd12a7efa91d366adc11f9f064b93e010b626c277d20763246026f",
+        "code/arena_causal_memory.py": "b3d1b439e2877483e6adb8ce0d90ffba2426bf6e3407ad0c40fcbfe61d43d5a3",
+        "code/arena_recent_suite.py": "2c1ab43e8c9940efeb25bdaef7db61559f726baa667071e55ec5546bb557e370",
+        "code/run_with_local_deepseek.py": "91c02477e20b1ce4bfab780e0b98d7ae3f659e3e15794b1c463be5252b729f61",
+        "code/relay_chat_transport.py": "a1fa327682f4b653d9a45989bf6a7625b0253250573eab66ef6c338502f2654d",
+        "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json": "b3dfa066cd0e757655afbc411430645e34f2670d7cf307102b96f09b6d737479",
+        "upstream_commit:mem0": "c7ee362aff94a369af70f13f2b4f853f6793ff4c",
+        "upstream_commit:A-mem": "ceffb860f0712bbae97b184d440df62bc910ca8d",
+        "upstream_commit:LightMem": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+        "upstream_commit:MemoryArena": "6cd9de14b71915e39ac742a20dc33785e14b6aab",
+        "embedding:model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+        "embedding:config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+        "embedding:tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+      },
+      "task_specific": {
+        "max_steps": 12,
+        "llm_max_tokens": 32768,
+        "llm_thinking": "default",
+        "inherit_unspecified_from_base": true,
+        "decoder": "query-target/base-inheritance-v3",
+        "llm_transport": "stream_accumulate"
+      },
+      "complete": true
+    },
+    "bm25": {
+      "family": "results/development/p2_recent_baselines_tokenrhythm_v3",
+      "episode_ids": [
+        101
+      ],
+      "protocol_sha256": "baedf8e559a9037c2261aff4545193fd3b37a4e7ce2b36fcda0d4586a30aa0e2",
+      "config_sha256": "d84f8b5a7c15d1dada23e7c19f5efc584af4ce7bcb5bc5f43925ab754fc567ae",
+      "source_hashes": {
+        "code/arena_recent_memory.py": "2785335cc7f4d0295ffcd2aa91d50813c78a21af83d5f367dd41d37aa087cd87",
+        "code/arena_e2e_run.py": "015c3388677ac0ca3112333f386611c48faf461d1420221b7a02042b43673913",
+        "code/arena_e2e_inherit.py": "a853863067dd12a7efa91d366adc11f9f064b93e010b626c277d20763246026f",
+        "code/arena_causal_memory.py": "b3d1b439e2877483e6adb8ce0d90ffba2426bf6e3407ad0c40fcbfe61d43d5a3",
+        "code/arena_recent_suite.py": "216d19ac42b63778bd4bc3d1db203c89d8b6e2af8743e57aae978c07fe6a85e7",
+        "code/run_with_local_deepseek.py": "91c02477e20b1ce4bfab780e0b98d7ae3f659e3e15794b1c463be5252b729f61",
+        "code/relay_chat_transport.py": "a24131744de75926a02c8ca0a11b274f8999b038490ddbcb9396e32f6bfb60d4",
+        "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json": "b3dfa066cd0e757655afbc411430645e34f2670d7cf307102b96f09b6d737479",
+        "upstream_commit:mem0": "c7ee362aff94a369af70f13f2b4f853f6793ff4c",
+        "upstream_commit:A-mem": "ceffb860f0712bbae97b184d440df62bc910ca8d",
+        "upstream_commit:LightMem": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+        "upstream_commit:MemoryArena": "6cd9de14b71915e39ac742a20dc33785e14b6aab",
+        "embedding:model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+        "embedding:config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+        "embedding:tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+      },
+      "task_specific": {
+        "max_steps": 12,
+        "llm_max_tokens": 32768,
+        "llm_thinking": "default",
+        "inherit_unspecified_from_base": true,
+        "decoder": "query-target/base-inheritance-v3",
+        "llm_transport": "stream_accumulate"
+      },
+      "complete": true
+    },
+    "full": {
+      "family": "results/development/p2_recent_baselines_tokenrhythm_v3",
+      "episode_ids": [
+        101
+      ],
+      "protocol_sha256": "baedf8e559a9037c2261aff4545193fd3b37a4e7ce2b36fcda0d4586a30aa0e2",
+      "config_sha256": "170fe4e5372b75d3fcbe69cd5b398787d2ebd85c8553ef615917a368f7e8019c",
+      "source_hashes": {
+        "code/arena_recent_memory.py": "2785335cc7f4d0295ffcd2aa91d50813c78a21af83d5f367dd41d37aa087cd87",
+        "code/arena_e2e_run.py": "015c3388677ac0ca3112333f386611c48faf461d1420221b7a02042b43673913",
+        "code/arena_e2e_inherit.py": "a853863067dd12a7efa91d366adc11f9f064b93e010b626c277d20763246026f",
+        "code/arena_causal_memory.py": "b3d1b439e2877483e6adb8ce0d90ffba2426bf6e3407ad0c40fcbfe61d43d5a3",
+        "code/arena_recent_suite.py": "216d19ac42b63778bd4bc3d1db203c89d8b6e2af8743e57aae978c07fe6a85e7",
+        "code/run_with_local_deepseek.py": "91c02477e20b1ce4bfab780e0b98d7ae3f659e3e15794b1c463be5252b729f61",
+        "code/relay_chat_transport.py": "a24131744de75926a02c8ca0a11b274f8999b038490ddbcb9396e32f6bfb60d4",
+        "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json": "b3dfa066cd0e757655afbc411430645e34f2670d7cf307102b96f09b6d737479",
+        "upstream_commit:mem0": "c7ee362aff94a369af70f13f2b4f853f6793ff4c",
+        "upstream_commit:A-mem": "ceffb860f0712bbae97b184d440df62bc910ca8d",
+        "upstream_commit:LightMem": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+        "upstream_commit:MemoryArena": "6cd9de14b71915e39ac742a20dc33785e14b6aab",
+        "embedding:model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+        "embedding:config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+        "embedding:tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+      },
+      "task_specific": {
+        "max_steps": 12,
+        "llm_max_tokens": 32768,
+        "llm_thinking": "default",
+        "inherit_unspecified_from_base": true,
+        "decoder": "query-target/base-inheritance-v3",
+        "llm_transport": "stream_accumulate"
+      },
+      "complete": true
+    },
+    "dense": {
+      "family": "results/development/p2_recent_baselines_tokenrhythm_v3",
+      "episode_ids": [
+        101
+      ],
+      "protocol_sha256": "baedf8e559a9037c2261aff4545193fd3b37a4e7ce2b36fcda0d4586a30aa0e2",
+      "config_sha256": "4748ea461d9890a6488d91716ec8fe8ab6644e02d94ce620ec0035d46f234840",
+      "source_hashes": {
+        "code/arena_recent_memory.py": "2785335cc7f4d0295ffcd2aa91d50813c78a21af83d5f367dd41d37aa087cd87",
+        "code/arena_e2e_run.py": "015c3388677ac0ca3112333f386611c48faf461d1420221b7a02042b43673913",
+        "code/arena_e2e_inherit.py": "a853863067dd12a7efa91d366adc11f9f064b93e010b626c277d20763246026f",
+        "code/arena_causal_memory.py": "b3d1b439e2877483e6adb8ce0d90ffba2426bf6e3407ad0c40fcbfe61d43d5a3",
+        "code/arena_recent_suite.py": "216d19ac42b63778bd4bc3d1db203c89d8b6e2af8743e57aae978c07fe6a85e7",
+        "code/run_with_local_deepseek.py": "91c02477e20b1ce4bfab780e0b98d7ae3f659e3e15794b1c463be5252b729f61",
+        "code/relay_chat_transport.py": "a24131744de75926a02c8ca0a11b274f8999b038490ddbcb9396e32f6bfb60d4",
+        "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json": "b3dfa066cd0e757655afbc411430645e34f2670d7cf307102b96f09b6d737479",
+        "upstream_commit:mem0": "c7ee362aff94a369af70f13f2b4f853f6793ff4c",
+        "upstream_commit:A-mem": "ceffb860f0712bbae97b184d440df62bc910ca8d",
+        "upstream_commit:LightMem": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+        "upstream_commit:MemoryArena": "6cd9de14b71915e39ac742a20dc33785e14b6aab",
+        "embedding:model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+        "embedding:config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+        "embedding:tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+      },
+      "task_specific": {
+        "max_steps": 12,
+        "llm_max_tokens": 32768,
+        "llm_thinking": "default",
+        "inherit_unspecified_from_base": true,
+        "decoder": "query-target/base-inheritance-v3",
+        "llm_transport": "stream_accumulate"
+      },
+      "complete": true
+    },
+    "summary": {
+      "family": "results/development/p2_recent_baselines_tokenrhythm_v3",
+      "episode_ids": [
+        101
+      ],
+      "protocol_sha256": "baedf8e559a9037c2261aff4545193fd3b37a4e7ce2b36fcda0d4586a30aa0e2",
+      "config_sha256": "79aa27399a3a315856e6c84379d5ff1b75a66c41c959619a9093c3af33bec2dc",
+      "source_hashes": {
+        "code/arena_recent_memory.py": "2785335cc7f4d0295ffcd2aa91d50813c78a21af83d5f367dd41d37aa087cd87",
+        "code/arena_e2e_run.py": "015c3388677ac0ca3112333f386611c48faf461d1420221b7a02042b43673913",
+        "code/arena_e2e_inherit.py": "a853863067dd12a7efa91d366adc11f9f064b93e010b626c277d20763246026f",
+        "code/arena_causal_memory.py": "b3d1b439e2877483e6adb8ce0d90ffba2426bf6e3407ad0c40fcbfe61d43d5a3",
+        "code/arena_recent_suite.py": "216d19ac42b63778bd4bc3d1db203c89d8b6e2af8743e57aae978c07fe6a85e7",
+        "code/run_with_local_deepseek.py": "91c02477e20b1ce4bfab780e0b98d7ae3f659e3e15794b1c463be5252b729f61",
+        "code/relay_chat_transport.py": "a24131744de75926a02c8ca0a11b274f8999b038490ddbcb9396e32f6bfb60d4",
+        "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json": "b3dfa066cd0e757655afbc411430645e34f2670d7cf307102b96f09b6d737479",
+        "upstream_commit:mem0": "c7ee362aff94a369af70f13f2b4f853f6793ff4c",
+        "upstream_commit:A-mem": "ceffb860f0712bbae97b184d440df62bc910ca8d",
+        "upstream_commit:LightMem": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+        "upstream_commit:MemoryArena": "6cd9de14b71915e39ac742a20dc33785e14b6aab",
+        "embedding:model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+        "embedding:config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+        "embedding:tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+      },
+      "task_specific": {
+        "max_steps": 12,
+        "llm_max_tokens": 32768,
+        "llm_thinking": "default",
+        "inherit_unspecified_from_base": true,
+        "decoder": "query-target/base-inheritance-v3",
+        "llm_transport": "stream_accumulate"
+      },
+      "complete": true
+    },
+    "mem0": {
+      "family": "results/development/p2_recent_baselines_tokenrhythm_v2",
+      "episode_ids": [
+        101
+      ],
+      "protocol_sha256": "fd4e39dc5efcec17f4253a86b9578114e1625e5c3b28d7e648d18ae9bedff6f9",
+      "config_sha256": "0bfeca7b8b35d6992d49908817ad0e1573b05e83083e9f390837d44c5d960900",
+      "source_hashes": {
+        "code/arena_recent_memory.py": "7716df21ab4c3230e52bcb866b431983dae563424461b9779e1e92ed80c61ec1",
+        "code/arena_e2e_run.py": "a499398eb84d3944d27103bfc9c4a1feba1788ff97143b01a7bffa8efd0895da",
+        "code/arena_e2e_inherit.py": "a853863067dd12a7efa91d366adc11f9f064b93e010b626c277d20763246026f",
+        "code/arena_causal_memory.py": "b3d1b439e2877483e6adb8ce0d90ffba2426bf6e3407ad0c40fcbfe61d43d5a3",
+        "code/arena_recent_suite.py": "2c1ab43e8c9940efeb25bdaef7db61559f726baa667071e55ec5546bb557e370",
+        "code/run_with_local_deepseek.py": "91c02477e20b1ce4bfab780e0b98d7ae3f659e3e15794b1c463be5252b729f61",
+        "code/relay_chat_transport.py": "a1fa327682f4b653d9a45989bf6a7625b0253250573eab66ef6c338502f2654d",
+        "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json": "b3dfa066cd0e757655afbc411430645e34f2670d7cf307102b96f09b6d737479",
+        "upstream_commit:mem0": "c7ee362aff94a369af70f13f2b4f853f6793ff4c",
+        "upstream_commit:A-mem": "ceffb860f0712bbae97b184d440df62bc910ca8d",
+        "upstream_commit:LightMem": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+        "upstream_commit:MemoryArena": "6cd9de14b71915e39ac742a20dc33785e14b6aab",
+        "embedding:model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+        "embedding:config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+        "embedding:tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+      },
+      "task_specific": {
+        "max_steps": 12,
+        "llm_max_tokens": 32768,
+        "llm_thinking": "default",
+        "inherit_unspecified_from_base": true,
+        "decoder": "query-target/base-inheritance-v3",
+        "llm_transport": "stream_accumulate"
+      },
+      "complete": true
+    },
+    "amem": {
+      "family": "results/development/p2_recent_baselines_tokenrhythm_v2",
+      "episode_ids": [
+        101
+      ],
+      "protocol_sha256": "fd4e39dc5efcec17f4253a86b9578114e1625e5c3b28d7e648d18ae9bedff6f9",
+      "config_sha256": "701f2cdf28602804bb91c84200153500950686136efba1f4647ea0e3f87aaa3a",
+      "source_hashes": {
+        "code/arena_recent_memory.py": "7716df21ab4c3230e52bcb866b431983dae563424461b9779e1e92ed80c61ec1",
+        "code/arena_e2e_run.py": "a499398eb84d3944d27103bfc9c4a1feba1788ff97143b01a7bffa8efd0895da",
+        "code/arena_e2e_inherit.py": "a853863067dd12a7efa91d366adc11f9f064b93e010b626c277d20763246026f",
+        "code/arena_causal_memory.py": "b3d1b439e2877483e6adb8ce0d90ffba2426bf6e3407ad0c40fcbfe61d43d5a3",
+        "code/arena_recent_suite.py": "2c1ab43e8c9940efeb25bdaef7db61559f726baa667071e55ec5546bb557e370",
+        "code/run_with_local_deepseek.py": "91c02477e20b1ce4bfab780e0b98d7ae3f659e3e15794b1c463be5252b729f61",
+        "code/relay_chat_transport.py": "a1fa327682f4b653d9a45989bf6a7625b0253250573eab66ef6c338502f2654d",
+        "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json": "b3dfa066cd0e757655afbc411430645e34f2670d7cf307102b96f09b6d737479",
+        "upstream_commit:mem0": "c7ee362aff94a369af70f13f2b4f853f6793ff4c",
+        "upstream_commit:A-mem": "ceffb860f0712bbae97b184d440df62bc910ca8d",
+        "upstream_commit:LightMem": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+        "upstream_commit:MemoryArena": "6cd9de14b71915e39ac742a20dc33785e14b6aab",
+        "embedding:model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+        "embedding:config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+        "embedding:tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+      },
+      "task_specific": {
+        "max_steps": 12,
+        "llm_max_tokens": 32768,
+        "llm_thinking": "default",
+        "inherit_unspecified_from_base": true,
+        "decoder": "query-target/base-inheritance-v3",
+        "llm_transport": "stream_accumulate"
+      },
+      "complete": true
+    },
+    "lightmem": {
+      "family": "results/development/p2_recent_baselines_tokenrhythm_v5",
+      "episode_ids": [
+        101
+      ],
+      "protocol_sha256": "810f6d7b5547142db1807c6c64546cdb5b6f445a87b56162018e9ab4391d85e8",
+      "config_sha256": "c40327932809c7f5fb69945902017813b5713621a6c2da0e28a581f60ecdbb7d",
+      "source_hashes": {
+        "code/arena_recent_memory.py": "2785335cc7f4d0295ffcd2aa91d50813c78a21af83d5f367dd41d37aa087cd87",
+        "code/arena_e2e_run.py": "015c3388677ac0ca3112333f386611c48faf461d1420221b7a02042b43673913",
+        "code/arena_e2e_inherit.py": "a853863067dd12a7efa91d366adc11f9f064b93e010b626c277d20763246026f",
+        "code/arena_causal_memory.py": "b3d1b439e2877483e6adb8ce0d90ffba2426bf6e3407ad0c40fcbfe61d43d5a3",
+        "code/arena_recent_suite.py": "b7bfe32b4c865b900304eff47b93f1ea95a5fd148a9f6b38d4624a8828cbe470",
+        "code/run_with_local_deepseek.py": "91c02477e20b1ce4bfab780e0b98d7ae3f659e3e15794b1c463be5252b729f61",
+        "code/relay_chat_transport.py": "0b10f10cb29b0f15f1354dee1f58665ea350150df6bfcaa564d4de9e9cb2d11e",
+        "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json": "b3dfa066cd0e757655afbc411430645e34f2670d7cf307102b96f09b6d737479",
+        "upstream_commit:mem0": "c7ee362aff94a369af70f13f2b4f853f6793ff4c",
+        "upstream_commit:A-mem": "ceffb860f0712bbae97b184d440df62bc910ca8d",
+        "upstream_commit:LightMem": "8449d574df6bae1bdf3314a1564da65e2f37e046",
+        "upstream_commit:MemoryArena": "6cd9de14b71915e39ac742a20dc33785e14b6aab",
+        "embedding:model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+        "embedding:config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+        "embedding:tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+      },
+      "task_specific": {
+        "max_steps": 12,
+        "llm_max_tokens": 32768,
+        "llm_thinking": "default",
+        "inherit_unspecified_from_base": true,
+        "decoder": "query-target/base-inheritance-v3",
+        "llm_transport": "stream_accumulate"
+      },
+      "complete": true
+    }
+  },
+  "evaluation_policy": "All ten arms run freshly under one common frozen protocol."
+}

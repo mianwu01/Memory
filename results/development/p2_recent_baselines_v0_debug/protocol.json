@@ -1,0 +1,36 @@
+{
+  "schema": "memoryarena-recent-baselines/v1",
+  "phase": "development",
+  "episode_ids": [
+    101
+  ],
+  "arms": [
+    "ours",
+    "noG",
+    "bm25",
+    "full",
+    "dense",
+    "summary",
+    "mem0",
+    "amem",
+    "lightmem"
+  ],
+  "model": "deepseek-v4-flash",
+  "endpoint": "https://bboluo.com/v1",
+  "source_hashes": {
+    "code/arena_recent_memory.py": "b95b07e434907e24ddba7a3e4758b2e0efb05293e8deda601260a5ad9a2ea37f",
+    "code/arena_e2e_run.py": "4afaaa5fdb17e8f26175d6b62bfea4e55649d21c0e50c01c6051262a2f65d4f7",
+    "code/arena_e2e_inherit.py": "a853863067dd12a7efa91d366adc11f9f064b93e010b626c277d20763246026f",
+    "code/arena_causal_memory.py": "b3d1b439e2877483e6adb8ce0d90ffba2426bf6e3407ad0c40fcbfe61d43d5a3",
+    "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json": "b3dfa066cd0e757655afbc411430645e34f2670d7cf307102b96f09b6d737479"
+  },
+  "interpretation": "paired descriptive replication; reused historical holdout IDs, not pristine confirmatory",
+  "decoder": "query-target/base-inheritance-v3",
+  "actor_thinking": "default",
+  "memory_thinking": "disabled",
+  "memory_max_tokens": 8192,
+  "graph": "results/real/p2_compact_v3/travel_learned_graph_holdout_111_120.json",
+  "seeds": "one API realization per arm/episode",
+  "selection": "first three IDs of existing 111-120 graph holdout; fixed before new evaluation",
+  "timestamp": "2026-09-14T07:38:13+0800"
+}

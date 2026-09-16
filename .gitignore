@@ -10,3 +10,7 @@ code/results/
 deepseek_apikey.md
 results/real/_tpdb/
 .tmp/
+
+# Runtime ownership markers are host-local and can prevent a clean resume.
+# The corresponding portable Qdrant SQLite stores remain tracked.
+results/**/.lock

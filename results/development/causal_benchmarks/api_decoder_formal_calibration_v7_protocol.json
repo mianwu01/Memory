@@ -1,0 +1,378 @@
+{
+  "schema": "causal-api-decoder-protocol/v1",
+  "phase": "dev_decoder_gate",
+  "frozen_date": "2026-08-31",
+  "development_revision": 7,
+  "experiment": "value_decoder_given_runtime_oracle_write_mask",
+  "episodes_generated_per_task": 150,
+  "dataset_seed": 17,
+  "dev_episodes_per_task": 6,
+  "task_families": [
+    "causal_formal"
+  ],
+  "arms": [
+    "oracle_context",
+    "full_context"
+  ],
+  "runtime": {
+    "model": "deepseek-v4-flash",
+    "temperature": 0.0,
+    "max_tokens": 32768,
+    "api_retries": 3,
+    "response_format": "json_object"
+  },
+  "gold_access": "protocol assertion and post-generation scoring only; never prompt-visible",
+  "outcome_isolation": "runtime_view(training=False)",
+  "runtime_resource_policy": "Outcome-free task resources are identical across context arms. Shopping receives the post-intervention availability snapshot and only catalog entities present in the runtime state; simulator tool-query outcomes are not disclosed.",
+  "decoder_gate": {
+    "semantic_coverage_min": 1.0,
+    "episode_success_min": 0.8,
+    "rule": "both arms must meet both thresholds on every task before test API work"
+  },
+  "invalid_response_policy": "Transport failures and incomplete (length/empty) completions are retried. Unresolved API/schema failures make the block incomplete and are excluded from semantic accuracy. The gate requires complete semantic coverage; only valid JSON state values can be semantic failures.",
+  "cases": [
+    {
+      "request_id": "causal_formal:causal_formal_math-20-00042:oracle_context",
+      "task_family": "causal_formal",
+      "task": "causal_formal_math",
+      "episode_id": "causal_formal_math-20-00042",
+      "arm": "oracle_context",
+      "decoder_seed": 1703000,
+      "write_nodes": [
+        "lemma.active_branch",
+        "lemma.term_2",
+        "lemma.term_3",
+        "parameter.base",
+        "theorem.core",
+        "theorem.final"
+      ],
+      "context_nodes": [
+        "axiom.twist_enabled",
+        "definition.step",
+        "definition.twist",
+        "lemma.active_branch",
+        "lemma.term_2",
+        "lemma.term_3",
+        "parameter.base",
+        "theorem.core",
+        "theorem.final"
+      ],
+      "prompt_sha256": "7e453d1e527ade2040fbf1c7072cbcb248a2be058149ab498532d7268f34aba0"
+    },
+    {
+      "request_id": "causal_formal:causal_formal_math-20-00042:full_context",
+      "task_family": "causal_formal",
+      "task": "causal_formal_math",
+      "episode_id": "causal_formal_math-20-00042",
+      "arm": "full_context",
+      "decoder_seed": 1703000,
+      "write_nodes": [
+        "lemma.active_branch",
+        "lemma.term_2",
+        "lemma.term_3",
+        "parameter.base",
+        "theorem.core",
+        "theorem.final"
+      ],
+      "context_nodes": [
+        "axiom.twist_enabled",
+        "control.notation_invariant",
+        "control.notation_scale",
+        "definition.step",
+        "definition.twist",
+        "lemma.active_branch",
+        "lemma.term_2",
+        "lemma.term_3",
+        "parameter.base",
+        "theorem.core",
+        "theorem.final"
+      ],
+      "prompt_sha256": "c31e0fc5bff9fc4849376cac67f9420484090bbaac7fa697c47cb34e5253b3b3"
+    },
+    {
+      "request_id": "causal_formal:causal_formal_phys-20-00042:oracle_context",
+      "task_family": "causal_formal",
+      "task": "causal_formal_phys",
+      "episode_id": "causal_formal_phys-20-00042",
+      "arm": "oracle_context",
+      "decoder_seed": 1703001,
+      "write_nodes": [
+        "lemma.active_force",
+        "lemma.inertial_momentum",
+        "parameter.mass",
+        "theorem.displacement_score",
+        "theorem.net_momentum"
+      ],
+      "context_nodes": [
+        "axiom.field_enabled",
+        "definition.drag_coefficient",
+        "lemma.active_force",
+        "lemma.drag_loss",
+        "lemma.inertial_momentum",
+        "parameter.duration",
+        "parameter.field_strength",
+        "parameter.mass",
+        "parameter.velocity",
+        "theorem.displacement_score",
+        "theorem.net_momentum"
+      ],
+      "prompt_sha256": "bb9d52a2d53f8793db9021da04e2cb400d4a09013021b855a9b73777487b7b70"
+    },
+    {
+      "request_id": "causal_formal:causal_formal_phys-20-00042:full_context",
+      "task_family": "causal_formal",
+      "task": "causal_formal_phys",
+      "episode_id": "causal_formal_phys-20-00042",
+      "arm": "full_context",
+      "decoder_seed": 1703001,
+      "write_nodes": [
+        "lemma.active_force",
+        "lemma.inertial_momentum",
+        "parameter.mass",
+        "theorem.displacement_score",
+        "theorem.net_momentum"
+      ],
+      "context_nodes": [
+        "axiom.field_enabled",
+        "control.calibration_checksum",
+        "control.detector_bias",
+        "definition.drag_coefficient",
+        "lemma.active_force",
+        "lemma.drag_loss",
+        "lemma.inertial_momentum",
+        "parameter.duration",
+        "parameter.field_strength",
+        "parameter.mass",
+        "parameter.velocity",
+        "theorem.displacement_score",
+        "theorem.net_momentum"
+      ],
+      "prompt_sha256": "3b17c35bf059584b2a887bc5240dd32ffacc736188657e91a212be6ad17efda5"
+    },
+    {
+      "request_id": "causal_formal:causal_formal_math-20-00043:oracle_context",
+      "task_family": "causal_formal",
+      "task": "causal_formal_math",
+      "episode_id": "causal_formal_math-20-00043",
+      "arm": "oracle_context",
+      "decoder_seed": 1703002,
+      "write_nodes": [
+        "definition.step",
+        "lemma.active_branch",
+        "lemma.term_2",
+        "lemma.term_3",
+        "theorem.core",
+        "theorem.final"
+      ],
+      "context_nodes": [
+        "axiom.twist_enabled",
+        "definition.step",
+        "definition.twist",
+        "lemma.active_branch",
+        "lemma.term_2",
+        "lemma.term_3",
+        "parameter.base",
+        "theorem.core",
+        "theorem.final"
+      ],
+      "prompt_sha256": "2c4ec1a465e726b50b681cfe05f16e0734ead19a2aa86b9d50d67fbd11dd79a3"
+    },
+    {
+      "request_id": "causal_formal:causal_formal_math-20-00043:full_context",
+      "task_family": "causal_formal",
+      "task": "causal_formal_math",
+      "episode_id": "causal_formal_math-20-00043",
+      "arm": "full_context",
+      "decoder_seed": 1703002,
+      "write_nodes": [
+        "definition.step",
+        "lemma.active_branch",
+        "lemma.term_2",
+        "lemma.term_3",
+        "theorem.core",
+        "theorem.final"
+      ],
+      "context_nodes": [
+        "axiom.twist_enabled",
+        "control.notation_invariant",
+        "control.notation_scale",
+        "definition.step",
+        "definition.twist",
+        "lemma.active_branch",
+        "lemma.term_2",
+        "lemma.term_3",
+        "parameter.base",
+        "theorem.core",
+        "theorem.final"
+      ],
+      "prompt_sha256": "f44a8f952931113455c975e1b9865891663441e9d76bed89656f76eb67f6564a"
+    },
+    {
+      "request_id": "causal_formal:causal_formal_phys-20-00043:oracle_context",
+      "task_family": "causal_formal",
+      "task": "causal_formal_phys",
+      "episode_id": "causal_formal_phys-20-00043",
+      "arm": "oracle_context",
+      "decoder_seed": 1703003,
+      "write_nodes": [
+        "definition.drag_coefficient",
+        "lemma.active_force",
+        "lemma.drag_loss",
+        "theorem.displacement_score",
+        "theorem.net_momentum"
+      ],
+      "context_nodes": [
+        "axiom.field_enabled",
+        "definition.drag_coefficient",
+        "lemma.active_force",
+        "lemma.drag_loss",
+        "lemma.inertial_momentum",
+        "parameter.duration",
+        "parameter.field_strength",
+        "parameter.mass",
+        "parameter.velocity",
+        "theorem.displacement_score",
+        "theorem.net_momentum"
+      ],
+      "prompt_sha256": "498ff5c008c135c02a4c322c64a54b769aa36091495ae2a54e6830dc6d13c560"
+    },
+    {
+      "request_id": "causal_formal:causal_formal_phys-20-00043:full_context",
+      "task_family": "causal_formal",
+      "task": "causal_formal_phys",
+      "episode_id": "causal_formal_phys-20-00043",
+      "arm": "full_context",
+      "decoder_seed": 1703003,
+      "write_nodes": [
+        "definition.drag_coefficient",
+        "lemma.active_force",
+        "lemma.drag_loss",
+        "theorem.displacement_score",
+        "theorem.net_momentum"
+      ],
+      "context_nodes": [
+        "axiom.field_enabled",
+        "control.calibration_checksum",
+        "control.detector_bias",
+        "definition.drag_coefficient",
+        "lemma.active_force",
+        "lemma.drag_loss",
+        "lemma.inertial_momentum",
+        "parameter.duration",
+        "parameter.field_strength",
+        "parameter.mass",
+        "parameter.velocity",
+        "theorem.displacement_score",
+        "theorem.net_momentum"
+      ],
+      "prompt_sha256": "fb4267d5e1ff0ee215f6da8dc66cab391b4a2bf219e1f8c0890b7938100aed17"
+    },
+    {
+      "request_id": "causal_formal:causal_formal_math-20-00044:oracle_context",
+      "task_family": "causal_formal",
+      "task": "causal_formal_math",
+      "episode_id": "causal_formal_math-20-00044",
+      "arm": "oracle_context",
+      "decoder_seed": 1703004,
+      "write_nodes": [
+        "axiom.twist_enabled",
+        "lemma.active_branch",
+        "theorem.final"
+      ],
+      "context_nodes": [
+        "axiom.twist_enabled",
+        "definition.step",
+        "lemma.active_branch",
+        "lemma.term_2",
+        "lemma.term_3",
+        "parameter.base",
+        "theorem.core",
+        "theorem.final"
+      ],
+      "prompt_sha256": "cab0ba5b6f31907f40f3cc261b62481ccb040747f8aaf2edf17fc70488d65602"
+    },
+    {
+      "request_id": "causal_formal:causal_formal_math-20-00044:full_context",
+      "task_family": "causal_formal",
+      "task": "causal_formal_math",
+      "episode_id": "causal_formal_math-20-00044",
+      "arm": "full_context",
+      "decoder_seed": 1703004,
+      "write_nodes": [
+        "axiom.twist_enabled",
+        "lemma.active_branch",
+        "theorem.final"
+      ],
+      "context_nodes": [
+        "axiom.twist_enabled",
+        "control.notation_invariant",
+        "control.notation_scale",
+        "definition.step",
+        "definition.twist",
+        "lemma.active_branch",
+        "lemma.term_2",
+        "lemma.term_3",
+        "parameter.base",
+        "theorem.core",
+        "theorem.final"
+      ],
+      "prompt_sha256": "ea16b4d368bbf513f78ad657136f07469124a1da503870f91503f8546ce7e0ad"
+    },
+    {
+      "request_id": "causal_formal:causal_formal_phys-20-00044:oracle_context",
+      "task_family": "causal_formal",
+      "task": "causal_formal_phys",
+      "episode_id": "causal_formal_phys-20-00044",
+      "arm": "oracle_context",
+      "decoder_seed": 1703005,
+      "write_nodes": [
+        "axiom.field_enabled",
+        "lemma.active_force",
+        "theorem.displacement_score"
+      ],
+      "context_nodes": [
+        "axiom.field_enabled",
+        "definition.drag_coefficient",
+        "lemma.active_force",
+        "lemma.drag_loss",
+        "lemma.inertial_momentum",
+        "parameter.duration",
+        "parameter.mass",
+        "parameter.velocity",
+        "theorem.displacement_score",
+        "theorem.net_momentum"
+      ],
+      "prompt_sha256": "50b641b0030c22a84e811b17a5f0920a4be857efddeb9df1750e82482bda09b8"
+    },
+    {
+      "request_id": "causal_formal:causal_formal_phys-20-00044:full_context",
+      "task_family": "causal_formal",
+      "task": "causal_formal_phys",
+      "episode_id": "causal_formal_phys-20-00044",
+      "arm": "full_context",
+      "decoder_seed": 1703005,
+      "write_nodes": [
+        "axiom.field_enabled",
+        "lemma.active_force",
+        "theorem.displacement_score"
+      ],
+      "context_nodes": [
+        "axiom.field_enabled",
+        "control.calibration_checksum",
+        "control.detector_bias",
+        "definition.drag_coefficient",
+        "lemma.active_force",
+        "lemma.drag_loss",
+        "lemma.inertial_momentum",
+        "parameter.duration",
+        "parameter.field_strength",
+        "parameter.mass",
+        "parameter.velocity",
+        "theorem.displacement_score",
+        "theorem.net_momentum"
+      ],
+      "prompt_sha256": "66518334fb1823bb68ab14b635247a3d67bbd4d39b7b82d1101284520900edde"
+    }
+  ],
+  "case_manifest_sha256": "98a5c0d023f3d70bebaebd9ddd5d70bc8466d3291701d6dd2f00ed920c705cec"
+}

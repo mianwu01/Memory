@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "arm": "lightmem",
+  "id": 101,
+  "counts": {
+    "actor_contract": 1,
+    "init": 1,
+    "mechanism": 24,
+    "llm": 214,
+    "write": 8,
+    "consolidate": 8,
+    "retrieve": 7
+  },
+  "scope": "original MemoryArena actor; full plan; no custom decoder"
+}

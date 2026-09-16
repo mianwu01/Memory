@@ -1,0 +1,1 @@
+{"accepted": false, "reason": "Initial offline test failed to observe the upstream compression fallback; superseded by the stricter test. Local model path lacked the model-family substring required by LLMLingua."}

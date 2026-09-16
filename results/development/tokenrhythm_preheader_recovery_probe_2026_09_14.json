@@ -1,0 +1,40 @@
+{
+  "endpoint": "https://tokenrhythm.studio/v1",
+  "model": "deepseek-flash",
+  "purpose": "one live compatibility probe of v5 transport; timeout recovery tested offline",
+  "requests": [
+    {
+      "success": true,
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 37,
+        "total_tokens": 42,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        }
+      },
+      "model_returned": "deepseek-flash",
+      "finish_reason": "stop",
+      "duration_seconds": 6.15486482065171,
+      "transport_metrics": {
+        "stream_read_seconds": 1.6148768784478307,
+        "first_stream_token_seconds": 1.5365367215126753,
+        "first_stream_answer_seconds": 1.5365372113883495,
+        "attempts": [
+          {
+            "status_code": 200,
+            "seconds": 6.132704386487603
+          }
+        ]
+      },
+      "provider_cost_cny": "0.00011400"
+    }
+  ]
+}

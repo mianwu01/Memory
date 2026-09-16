@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "arm": "lightmem",
+  "offline": true,
+  "scope": "development mechanism validation, not benchmark results",
+  "counts": {
+    "init": 1,
+    "mechanism": 2
+  },
+  "retrieved_text": "Nora leads Orion satellite review project scheduled Monday Oslo access phrase cobalt - lantern Elias safety reviewer Update Orion review meeting moved Monday to Tuesday Oslo Elias approve safety checklist before review access phrase remains cobalt - lantern Elias completed Orion safety checklist approved Nora hold Orion review Tuesday Oslo access phrase cobalt - lantern Nora leads Orion Monday Oslo cobalt - lantern Elias safety reviewer Orion review meeting moved Monday to Tuesday Oslo Elias approve safety checklist before review access phrase cobalt - lantern Elias completed Orion safety checklist approved Nora hold Orion review Tuesday Oslo access phrase cobalt - lantern",
+  "failures": []
+}

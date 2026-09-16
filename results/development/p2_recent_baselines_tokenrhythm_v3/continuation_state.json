@@ -1,0 +1,4 @@
+{
+  "stage": "superseded_after_lightmem_503",
+  "reason": "Preserve successful development validation; only rerun failed LightMem with common pre-stream 5xx retries. Future evaluation requires a new v4 freeze, never mix evaluation results."
+}

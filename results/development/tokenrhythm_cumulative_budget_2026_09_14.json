@@ -1,0 +1,299 @@
+{
+  "schema": "memoryarena-cumulative-budget/v1",
+  "snapshot_time": "2026-09-14T19:56:00+08:00",
+  "currency": "CNY",
+  "invoice_verified": false,
+  "evaluation_complete": true,
+  "completed_result_views_excluded_from_billing": [
+    "results/real/p2_recent_baselines_tokenrhythm_v5_completed"
+  ],
+  "old_bboluo_spend_user_report": 230,
+  "tokenrhythm_probe_usage": {
+    "responses_with_usage": 20,
+    "input_tokens": 18503,
+    "output_tokens": 9785,
+    "cached_input_tokens": 256,
+    "cache_usage_unspecified": 0,
+    "estimated_cny": 0.11478424,
+    "api_seconds": 6.15486482065171,
+    "explicit_rate_limit_rejections": 0,
+    "provider_cost_responses": 2,
+    "transport_failures_without_usage": 0,
+    "pre_stream_connection_failures": 0,
+    "provider_reported_cny": 0.000144,
+    "median_api_seconds": 0.0,
+    "max_api_seconds": 6.15486482065171
+  },
+  "tokenrhythm_development_estimated_cny": 20.68398692,
+  "tokenrhythm_evaluation_estimated_cny": 25.683337839999997,
+  "tokenrhythm_total_logged_estimated_cny": 46.482108999999994,
+  "old_spend_plus_logged_estimate_cny": 276.482109,
+  "family_usage": {
+    "results/development/p2_recent_baselines_tokenrhythm_v1": {
+      "estimated_cny": 2.10263348,
+      "responses_with_usage": 58,
+      "recorded_api_errors": 0,
+      "transport_failures_without_usage": 0,
+      "complete_arms": [
+        "ours",
+        "noG"
+      ]
+    },
+    "results/development/p2_recent_baselines_tokenrhythm_v2": {
+      "estimated_cny": 5.191221680000001,
+      "responses_with_usage": 107,
+      "recorded_api_errors": 30,
+      "transport_failures_without_usage": 0,
+      "complete_arms": [
+        "noGcompact",
+        "mem0",
+        "amem"
+      ]
+    },
+    "results/development/p2_recent_baselines_tokenrhythm_v3": {
+      "estimated_cny": 7.277269080000001,
+      "responses_with_usage": 173,
+      "recorded_api_errors": 1,
+      "transport_failures_without_usage": 5,
+      "complete_arms": [
+        "ours",
+        "noG",
+        "bm25",
+        "full",
+        "dense",
+        "summary"
+      ]
+    },
+    "results/development/p2_recent_baselines_tokenrhythm_v4": {
+      "estimated_cny": 3.2084595599999983,
+      "responses_with_usage": 766,
+      "recorded_api_errors": 1,
+      "transport_failures_without_usage": 18,
+      "complete_arms": []
+    },
+    "results/development/p2_recent_baselines_tokenrhythm_v5": {
+      "estimated_cny": 2.904403119999999,
+      "responses_with_usage": 720,
+      "recorded_api_errors": 0,
+      "transport_failures_without_usage": 3,
+      "complete_arms": [
+        "lightmem"
+      ]
+    },
+    "results/real/p2_recent_baselines_tokenrhythm_v5": {
+      "estimated_cny": 23.598080559999996,
+      "responses_with_usage": 1793,
+      "recorded_api_errors": 1,
+      "transport_failures_without_usage": 18,
+      "complete_arms": [
+        "ours",
+        "noG",
+        "noGcompact",
+        "bm25",
+        "full",
+        "dense",
+        "mem0",
+        "amem",
+        "lightmem"
+      ]
+    },
+    "results/real/p2_recent_baselines_tokenrhythm_v5_summary_recovery_1": {
+      "estimated_cny": 2.08525728,
+      "responses_with_usage": 74,
+      "recorded_api_errors": 0,
+      "transport_failures_without_usage": 0,
+      "complete_arms": [
+        "summary"
+      ]
+    }
+  },
+  "development_calibration": {
+    "ours": {
+      "development_family": "results/development/p2_recent_baselines_tokenrhythm_v3",
+      "development_actor_cny_without_cache": 0.55474,
+      "development_memory_cny_without_cache": 0.0,
+      "evaluation_actor_cny": 1.7434685714285716,
+      "evaluation_memory_cny": 0.0,
+      "observed_actor_calls": 14,
+      "observed_memory_calls": 0
+    },
+    "noG": {
+      "development_family": "results/development/p2_recent_baselines_tokenrhythm_v3",
+      "development_actor_cny_without_cache": 0.671236,
+      "development_memory_cny_without_cache": 0.0,
+      "evaluation_actor_cny": 2.109598857142857,
+      "evaluation_memory_cny": 0.0,
+      "observed_actor_calls": 15,
+      "observed_memory_calls": 0
+    },
+    "noGcompact": {
+      "development_family": "results/development/p2_recent_baselines_tokenrhythm_v2",
+      "development_actor_cny_without_cache": 0.605908,
+      "development_memory_cny_without_cache": 0.0,
+      "evaluation_actor_cny": 1.9042822857142858,
+      "evaluation_memory_cny": 0.0,
+      "observed_actor_calls": 14,
+      "observed_memory_calls": 0
+    },
+    "bm25": {
+      "development_family": "results/development/p2_recent_baselines_tokenrhythm_v3",
+      "development_actor_cny_without_cache": 2.528086,
+      "development_memory_cny_without_cache": 0.0,
+      "evaluation_actor_cny": 7.945413142857142,
+      "evaluation_memory_cny": 0.0,
+      "observed_actor_calls": 16,
+      "observed_memory_calls": 0
+    },
+    "full": {
+      "development_family": "results/development/p2_recent_baselines_tokenrhythm_v3",
+      "development_actor_cny_without_cache": 0.949424,
+      "development_memory_cny_without_cache": 0.0,
+      "evaluation_actor_cny": 2.983904,
+      "evaluation_memory_cny": 0.0,
+      "observed_actor_calls": 13,
+      "observed_memory_calls": 0
+    },
+    "dense": {
+      "development_family": "results/development/p2_recent_baselines_tokenrhythm_v3",
+      "development_actor_cny_without_cache": 2.060832,
+      "development_memory_cny_without_cache": 0.0,
+      "evaluation_actor_cny": 6.476900571428572,
+      "evaluation_memory_cny": 0.0,
+      "observed_actor_calls": 14,
+      "observed_memory_calls": 0
+    },
+    "summary": {
+      "development_family": "results/development/p2_recent_baselines_tokenrhythm_v3",
+      "development_actor_cny_without_cache": 0.576876,
+      "development_memory_cny_without_cache": 0.402964,
+      "evaluation_actor_cny": 1.8130388571428573,
+      "evaluation_memory_cny": 1.2592625,
+      "observed_actor_calls": 14,
+      "observed_memory_calls": 10
+    },
+    "mem0": {
+      "development_family": "results/development/p2_recent_baselines_tokenrhythm_v2",
+      "development_actor_cny_without_cache": 3.342716,
+      "development_memory_cny_without_cache": 0.276886,
+      "evaluation_actor_cny": 10.505678857142856,
+      "evaluation_memory_cny": 0.86526875,
+      "observed_actor_calls": 21,
+      "observed_memory_calls": 8
+    },
+    "amem": {
+      "development_family": "results/development/p2_recent_baselines_tokenrhythm_v2",
+      "development_actor_cny_without_cache": 0.86698,
+      "development_memory_cny_without_cache": 0.389024,
+      "evaluation_actor_cny": 2.7247942857142857,
+      "evaluation_memory_cny": 1.2157,
+      "observed_actor_calls": 13,
+      "observed_memory_calls": 15
+    },
+    "lightmem": {
+      "development_family": "results/development/p2_recent_baselines_tokenrhythm_v5",
+      "development_actor_cny_without_cache": 2.410978,
+      "development_memory_cny_without_cache": 1.315504,
+      "evaluation_actor_cny": 7.5773594285714285,
+      "evaluation_memory_cny": 4.11095,
+      "observed_actor_calls": 16,
+      "observed_memory_calls": 704
+    }
+  },
+  "forecast_ready": true,
+  "forecast_method": "Per-arm complete development actor cost scaled by 22/7 rounds; memory cost by 25/8 writes. Future cache discount is zero. 30% reserve is a planning choice, not a confidence interval or bound.",
+  "limitations": [
+    "Includes logged successful usage from all failed/interrupted development versions, not just valid cohorts.",
+    "Unlogged SDK retries, interrupted requests and rejected attempts may have additional charges; a zero recorded-error count does not prove no failures.",
+    "aiaaa probe pricing remains unknown and is excluded from CNY totals.",
+    "One development episode per arm does not estimate task variance; LightMem update growth can be nonlinear.",
+    "Historical bboluo CNY 230 is user-reported billed spend, while TokenRhythm amounts are usage estimates.",
+    "Live ledgers may grow while a snapshot is read; input hashes are captured after the usage read and become reproducible only once writers stop."
+  ],
+  "forecast_full_evaluation_cny": 53.23562010714286,
+  "forecast_full_evaluation_with_30pct_reserve_cny": 69.20630613928572,
+  "remaining_evaluation_cny": 0,
+  "prior_development_calibrated_whole_round_planning_cny": 320.00507729928574,
+  "aiaaa_unpriced_probe_usage": {
+    "responses_with_usage": 4,
+    "input_tokens": 824,
+    "output_tokens": 539,
+    "estimated_cny": null
+  },
+  "input_sha256": {
+    "results/development/tokenrhythm_latency_2026_09_14.json": "95ef9cdd607e98ec49f05065baada2273ddc3b418ee36b86ad18fe98e6f772a2",
+    "results/development/tokenrhythm_historical_probe_2026_09_14.json": "5eac690b66d4c29ff13e45d2748be007522720c32eb4cf8f9ec7892764c10396",
+    "results/development/tokenrhythm_stream_transport_probe_2026_09_14.json": "9a460a712ae22e0c4b00102cfd54b72dd3ca65e639fdb54d0837bdb2bbcd24c6",
+    "results/development/tokenrhythm_preheader_recovery_probe_2026_09_14.json": "ee0edb76eb868eb739d10c8ec6f284dce079da68829a00e3eed81451a45f093c",
+    "results/development/tokenrhythm_rate_limit_probe_2026_09_14.json": "15c58b5091ee0d1cdc2934e60779f9f81e5bc3800d7bb4d80d2300970c67a7d5",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/protocol.json": "24a05b4cd98adda376e3081ea9776e2a43add3244c49f5235b3cfe584dbeddc4",
+    "results/development/p2_recent_baselines_tokenrhythm_v2/protocol.json": "fd4e39dc5efcec17f4253a86b9578114e1625e5c3b28d7e648d18ae9bedff6f9",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/protocol.json": "baedf8e559a9037c2261aff4545193fd3b37a4e7ce2b36fcda0d4586a30aa0e2",
+    "results/development/p2_recent_baselines_tokenrhythm_v4/protocol.json": "183b8a0b73a7d1b29df2645a2fc1bbb6fc1dfeb78a4a7ac18ad57a90a7ae2857",
+    "results/development/p2_recent_baselines_tokenrhythm_v5/protocol.json": "810f6d7b5547142db1807c6c64546cdb5b6f445a87b56162018e9ab4391d85e8",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/protocol.json": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1",
+    "results/real/p2_recent_baselines_tokenrhythm_v5_summary_recovery_1/protocol.json": "4f8768388ddf5e572a42fb9a64b3d8379224ea41b03dec9f0c623d72753cbfb1",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/bm25/llm_call_usage.jsonl": "e82c15453eae70af28dfccac2d4f7a83ec78560f8203eb675f8c1ac0ee62d03a",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/dense/llm_call_usage.jsonl": "16b8f7f81b3778bdd3f0bc1d0f138f3d1921ed918362e121e8cb300138c06c9e",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/full/llm_call_usage.jsonl": "331217021a7b937c338cff7a2a6b71c87ed8bd2363f3a6a7173bc533e90f9ca6",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/mem0/llm_call_usage.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/noG/llm_call_usage.jsonl": "9fa82a7298e2631116c76a3972e10a81e3ea738d89b064b38ba6634596e091b4",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/noGcompact/llm_call_usage.jsonl": "2af7a408bbf8ede2fa6ab7a601c06207e1e68e85815e2b12c1b99f6f8ea59618",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/ours/llm_call_usage.jsonl": "5fb9065f026540af58e4bed6cdc23bb0973f88a59a4a32b8d7bfb1be941365ec",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/summary/llm_call_usage.jsonl": "56e2a85f706f5fb5afd1222936aa80a3289e93216487b6798376ceb265800f42",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/bm25/memory_events.jsonl": "db65d16c64363d58ae78c1fb3362485771a59f698e3b362d876e529ceb62af13",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/dense/memory_events.jsonl": "c8dae613d61e3b87f08400220a5434c99bd03790f19abe9ab517b32f0a287020",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/full/memory_events.jsonl": "366db625a8cb0eefeeca935249023061b4ebdf05b2cfd3062f0c194a4c350ba9",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/noG/memory_events.jsonl": "978c6599f98e8a6f93948c54517d412b1fc16850c2de6d4c8f6d84750c0f6fb2",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/noGcompact/memory_events.jsonl": "df8aade1743d94589d6d3da559c9cf387dba74c2f5322cd31f60d68b0ed7e51d",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/ours/memory_events.jsonl": "9e519e95d291ede9af6ce562e055d8e98af8f27acfd4d1240991706dbcedaadc",
+    "results/development/p2_recent_baselines_tokenrhythm_v1/e2e/summary/memory_events.jsonl": "b89345ca48b7f56a5654a5bcc33cf6944e71918f35b635952db0f141dbce56ef",
+    "results/development/p2_recent_baselines_tokenrhythm_v2/e2e/amem/llm_call_usage.jsonl": "7b4b1cee17b0d31fd5969176729cc87ec03e1e243aa19879c380fd54a78100cc",
+    "results/development/p2_recent_baselines_tokenrhythm_v2/e2e/lightmem/llm_call_usage.jsonl": "4b1b44e21e758fad777895ebf02b9b76427c41c8a59f490d86bcb660b24406f5",
+    "results/development/p2_recent_baselines_tokenrhythm_v2/e2e/mem0/llm_call_usage.jsonl": "9ead77cf2776fff103a1fd2e49b7fc88a6506a3f41251f67df6da88dd7982872",
+    "results/development/p2_recent_baselines_tokenrhythm_v2/e2e/noGcompact/llm_call_usage.jsonl": "ba4fbcdcf4ef6f5c6e97cb7b3c126b7933e5d5436e17cb9a8107eb806060e5c9",
+    "results/development/p2_recent_baselines_tokenrhythm_v2/e2e/amem/memory_events.jsonl": "85fa1aaff8aad5254f5c9eec0df3bc30275c5323dfce8e0d955028fbd98c416e",
+    "results/development/p2_recent_baselines_tokenrhythm_v2/e2e/lightmem/memory_events.jsonl": "ca93ff95d70d9d387226ff2f783e2bae4a34a775b097da1d2c25fc390a91d69e",
+    "results/development/p2_recent_baselines_tokenrhythm_v2/e2e/mem0/memory_events.jsonl": "a63156159013898c48d85e06a1d58c87df0b30f4ec9893812f1537c2758a7558",
+    "results/development/p2_recent_baselines_tokenrhythm_v2/e2e/noGcompact/memory_events.jsonl": "b7bcbb76176460182a2efa962c06d61b5fa80ed75ce4fbbf40afa01411a77e4a",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/e2e/bm25/llm_call_usage.jsonl": "d2e35804937e37e96aaac4a39417edc3984c109370176bb11b99bf1bcbbca620",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/e2e/dense/llm_call_usage.jsonl": "bcc771cabbe46fc18630192a1e94b51d6e3aafd3e9e733f44e066e276e31f3f9",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/e2e/full/llm_call_usage.jsonl": "096610b957b08b2ba397c23dd637abc216debf7465c8f399819e7bd71c17dd04",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/e2e/lightmem/llm_call_usage.jsonl": "e9046e2c9f8a07fbb1132766d3c09c5ac61dcf259d82bcb5d66aaf18713e5a8a",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/e2e/noG/llm_call_usage.jsonl": "539766150242396287dc37672679cae1b6f6ca1a898ba0c91c8ac4a823772ae0",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/e2e/ours/llm_call_usage.jsonl": "5f943694477aa694e51b5998cff83484ce03a92ac2ec3a479b15ca0aea1e63b2",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/e2e/summary/llm_call_usage.jsonl": "a567df1f46b29a46708d05d62c4e54b97aef67b9c48de993ad379d97fd36c526",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/e2e/bm25/memory_events.jsonl": "23f4bde04a352748cba430974d9f425ed4d9e2bd5ab93e594d0d5c62fad2ba49",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/e2e/dense/memory_events.jsonl": "aaeb3e70b3e0c46c9e0ea5e407283ae702f940aacbca5b372e59b083cda944bf",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/e2e/full/memory_events.jsonl": "992be803a8bdc19a6dc1faebfffe87b56ea2ce9e4df2cdc159148cd8425ae423",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/e2e/lightmem/memory_events.jsonl": "62ea616b7f90bc99e20b6b9297bd83dee851e7ccd5470b695d8b38c3ff93477a",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/e2e/noG/memory_events.jsonl": "4221a2a6baadcf95d0c4c16686b5984f784f586274b7357658e6130fecf10a40",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/e2e/ours/memory_events.jsonl": "d8258d0ece64fe503470a5fed3515fc6b9a5dd9cebdb239deab57c99191c6ea2",
+    "results/development/p2_recent_baselines_tokenrhythm_v3/e2e/summary/memory_events.jsonl": "1af651def0bed08b30bf51bbc84b356a02d282b2b90a7b90c4d42284c996c6d8",
+    "results/development/p2_recent_baselines_tokenrhythm_v4/e2e/lightmem/llm_call_usage.jsonl": "2e6c9dca8883e3e3d0779f1e1f217c7470a3eed0180b063115e536c29fbcae91",
+    "results/development/p2_recent_baselines_tokenrhythm_v4/e2e/lightmem/memory_events.jsonl": "f506597add49229ab97b542f91e1ceaf06621765a4c5c5bd6811ba7366ca9823",
+    "results/development/p2_recent_baselines_tokenrhythm_v5/e2e/lightmem/llm_call_usage.jsonl": "31a0830cad40e6ead94d759b9bd967440243ec93f221b98ee057c288ad7b904e",
+    "results/development/p2_recent_baselines_tokenrhythm_v5/e2e/lightmem/memory_events.jsonl": "98c3c15a7222b0f4544046dd8c5bdac75dafceaf7beebc2d6f00d724ec9a9904",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/amem/llm_call_usage.jsonl": "387067eaa5c30d0f66527794b9b52d9fdb756ae15ffcfaf5cc67bb99212842e2",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/bm25/llm_call_usage.jsonl": "0f1f38973f0190ced43843d377ad0be81c3d02ad7e5ba3aaf066e487a40e84aa",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/dense/llm_call_usage.jsonl": "17a30ba6704dc06ded2e8cbd997ecba722df1ddd3c928ea41f9f39559747144f",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/full/llm_call_usage.jsonl": "de765b5ebf102b9d3df4e67055448d69cb704be5759612c55796b25cec749db0",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/lightmem/llm_call_usage.jsonl": "27a6161f12a416ae4d18d51d6fda2e84d165441e51e3f4bc2acb3f3fbdd5ce4e",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/mem0/llm_call_usage.jsonl": "74e2bedcffc505abf8369b72ace0bfa637b61c55d5c1b0e06c542fe556b8abb7",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/noG/llm_call_usage.jsonl": "28eea2f7936b667fd1bf23cd66ec542d4d4bb67f29c64492d969f28771365b1b",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/noGcompact/llm_call_usage.jsonl": "b6c34ff8bd8d986f637f1de1bb870595d44c1bb9ca3c4d71123701c1d85c7416",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/ours/llm_call_usage.jsonl": "611dfd76255e47bb72301b71567e4452f96cf1fca854a6ac29eadf9b086acc17",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/summary/llm_call_usage.jsonl": "e64d56d6150a72ce7eeda06572dc40d277ed8c760ba9ac7b7c8e17ea62eddbed",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/amem/memory_events.jsonl": "7d069e0e4a9203b54a10dc33f7bebd4f63dacee9115e595a630a0e25fede2164",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/bm25/memory_events.jsonl": "45a3cacd8503431717785522d734c1321d760e6b3b14c29689c48a16e1fbff6e",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/dense/memory_events.jsonl": "defd0deca82df6f8b6be6d1f21e85d51819cd5bf93b370ad9ed71e307f32b184",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/full/memory_events.jsonl": "5c5bca72053e23352c22bb2413ac9ab9ffb238a3173fa8fc5c014fbf82e31863",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/lightmem/memory_events.jsonl": "646ddb70bb64dfb96ad09aaf5b44b70175e2b951f382eca76c3bb18c8899ce7b",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/mem0/memory_events.jsonl": "dc6eff63e18e02b38bbde3d97da4b96104e08818e04a52708b615b00cdc43d53",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/noG/memory_events.jsonl": "2b36a25127dd34098ee80d4eb2f1eda761de57d89d9edd1e3529c706bd588854",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/noGcompact/memory_events.jsonl": "67a66c96f437a13e9b37630846dc5a759d7e1039e1bfa42f86a25c7a205a7df4",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/ours/memory_events.jsonl": "e49ac26865f32af88883ab855ae958def87ecafee905bda3d061addf4c8f3180",
+    "results/real/p2_recent_baselines_tokenrhythm_v5/e2e/summary/memory_events.jsonl": "72bf6cff580eeb79bd0792c1fffb50e3c7974bd4a935f82436c9df840d61c84e",
+    "results/real/p2_recent_baselines_tokenrhythm_v5_summary_recovery_1/e2e/summary/llm_call_usage.jsonl": "a7ec5747662360dfbeed77dd69173017a4a44078bc207ad7f3e64e52e5c57125",
+    "results/real/p2_recent_baselines_tokenrhythm_v5_summary_recovery_1/e2e/summary/memory_events.jsonl": "4af29e68af221138f0058bf477042341ae0bf6e77b9ed4386ccc907a1a88f444"
+  }
+}
