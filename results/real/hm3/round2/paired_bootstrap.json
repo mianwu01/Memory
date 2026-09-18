@@ -1,0 +1,200 @@
+{
+ "travel|graph/compact-full/verbose|round1": {
+  "mean": -0.25,
+  "ci_lo": -0.5,
+  "ci_hi": 0.0,
+  "wtl": [
+   1,
+   13,
+   6
+  ],
+  "n": 20
+ },
+ "travel|graph/compact-full/verbose|round2": {
+  "mean": 0.0,
+  "ci_lo": -0.3,
+  "ci_hi": 0.3,
+  "wtl": [
+   5,
+   10,
+   5
+  ],
+  "n": 20
+ },
+ "travel|graph/compact-full/verbose|pooled": {
+  "mean": -0.125,
+  "ci_lo": -0.325,
+  "ci_hi": 0.075,
+  "wtl": [
+   6,
+   23,
+   11
+  ],
+  "n": 40
+ },
+ "travel|graph/verbose-full/verbose|round1": {
+  "mean": -0.05,
+  "ci_lo": -0.3,
+  "ci_hi": 0.2,
+  "wtl": [
+   3,
+   13,
+   4
+  ],
+  "n": 20
+ },
+ "travel|graph/verbose-full/verbose|round2": {
+  "mean": -0.25,
+  "ci_lo": -0.5,
+  "ci_hi": 0.0,
+  "wtl": [
+   1,
+   13,
+   6
+  ],
+  "n": 20
+ },
+ "travel|graph/verbose-full/verbose|pooled": {
+  "mean": -0.15,
+  "ci_lo": -0.325,
+  "ci_hi": 0.025,
+  "wtl": [
+   4,
+   26,
+   10
+  ],
+  "n": 40
+ },
+ "travel|full/compact-full/verbose|round1": {
+  "mean": 0.0,
+  "ci_lo": -0.2,
+  "ci_hi": 0.2,
+  "wtl": [
+   2,
+   16,
+   2
+  ],
+  "n": 20
+ },
+ "travel|full/compact-full/verbose|round2": {
+  "mean": 0.05,
+  "ci_lo": -0.2,
+  "ci_hi": 0.3,
+  "wtl": [
+   4,
+   13,
+   3
+  ],
+  "n": 20
+ },
+ "travel|full/compact-full/verbose|pooled": {
+  "mean": 0.025,
+  "ci_lo": -0.15,
+  "ci_hi": 0.175,
+  "wtl": [
+   6,
+   29,
+   5
+  ],
+  "n": 40
+ },
+ "search|graph/compact-full/verbose|round1": {
+  "mean": 0.15,
+  "ci_lo": -0.15,
+  "ci_hi": 0.45,
+  "wtl": [
+   6,
+   11,
+   3
+  ],
+  "n": 20
+ },
+ "search|graph/compact-full/verbose|round2": {
+  "mean": -0.2,
+  "ci_lo": -0.4,
+  "ci_hi": 0.0,
+  "wtl": [
+   1,
+   14,
+   5
+  ],
+  "n": 20
+ },
+ "search|graph/compact-full/verbose|pooled": {
+  "mean": -0.025,
+  "ci_lo": -0.2,
+  "ci_hi": 0.175,
+  "wtl": [
+   7,
+   25,
+   8
+  ],
+  "n": 40
+ },
+ "search|graph/verbose-full/verbose|round1": {
+  "mean": 0.0,
+  "ci_lo": -0.35,
+  "ci_hi": 0.35,
+  "wtl": [
+   6,
+   8,
+   6
+  ],
+  "n": 20
+ },
+ "search|graph/verbose-full/verbose|round2": {
+  "mean": -0.1,
+  "ci_lo": -0.35,
+  "ci_hi": 0.15,
+  "wtl": [
+   2,
+   14,
+   4
+  ],
+  "n": 20
+ },
+ "search|graph/verbose-full/verbose|pooled": {
+  "mean": -0.05,
+  "ci_lo": -0.25,
+  "ci_hi": 0.15,
+  "wtl": [
+   8,
+   22,
+   10
+  ],
+  "n": 40
+ },
+ "search|full/compact-full/verbose|round1": {
+  "mean": 0.0,
+  "ci_lo": -0.25,
+  "ci_hi": 0.25,
+  "wtl": [
+   3,
+   14,
+   3
+  ],
+  "n": 20
+ },
+ "search|full/compact-full/verbose|round2": {
+  "mean": 0.05,
+  "ci_lo": -0.25,
+  "ci_hi": 0.35,
+  "wtl": [
+   5,
+   11,
+   4
+  ],
+  "n": 20
+ },
+ "search|full/compact-full/verbose|pooled": {
+  "mean": 0.025,
+  "ci_lo": -0.175,
+  "ci_hi": 0.225,
+  "wtl": [
+   8,
+   25,
+   7
+  ],
+  "n": 40
+ }
+}

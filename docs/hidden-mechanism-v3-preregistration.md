@@ -1,286 +1,266 @@
-# Hidden Mechanism v3：四任务重建预注册（待 Yujia double-check）
+# Hidden Mechanism v3 预注册（重建版，2026-09-03，正式输出前冻结）
 
-## 0. 决策与冻结边界
+## 0. 来源与状态
 
-本预注册取代“把 v1 task 继续调到正结果”的路线。
+本文件在 2026-09-03 的仓库中并不存在；`docs/`、另一分支
+`claude/memoryagentbench-memoryarena-5415kl`、git reflog 与备份目录都没有它，也没有
+dynamic/formal v1、dev killer audit、real-API v1（288 requests / $6.607622）和
+hidden-routing v2 的代码或结果。本文件根据 2026-09-03 用户给出的 P2 问题清单与
+v3 方案逐条重建，并记录 double-check 时发现的问题和处理方式。凡是方案原文没有、
+由本轮补充的设计，用 **[补充]** 标出。
 
-- 原 Travel 是 query-explicit slot update，对 causal necessity 为 NO-GO。
-- dynamic/formal v1 有真实 intervention/propagation，但 dev killer audit 显示四项
-  `source_union` 或 `query_signature` 都能形成 100% sufficient write superset；整体 stop。
-- real-API six-arm v1 已执行，但 domain arm 偏弱、node-set semantic error 被旧策略重试；
-  只能作为 conditional execution/efficiency evidence。
-- hidden-routing v2 仍是四个同构外壳；history 逐边列 potential graph，公平的
-  train-enabled codebook program 与 learner 完全并列；总体 verdict 为 PARTIAL。
+冻结顺序：本文件 → generator / killer baselines / dev gate 实现 → dev seeds 上跑
+gate → gate 通过的 setup 才进入 test split 与真实 API。dev 结果只用于 gate 判断与
+方法选择；test seeds 与 API 输出在 gate 之后才产生。
 
-因此 v3 不以“稀疏 mask F1 更高”代替 correctness。方法必须提交可执行、非幂等的 repair
-transaction；多写一个 unaffected object 会真实改变 revision、费用、price lock、receipt 或
-proof version，从而让 conservative superset endpoint 失败。
+## 1. 问题定义
 
-本页先冻结 formulation 与准入条件。按 Yujia 8-15 遗留要求，四个环境的 generator/API
-实现和 confirmatory test 必须在她 double-check 本页后再冻结；此前只能做 development
-generator、identifiability 与 baseline feasibility，不得调用 test API。
+P2 要证明的是：学到 hidden temporal causal structure 之后，memory 维护更准、更省。
+v1/v2 只证明了 structured memory / compression 有用，四个 lookup baseline 的
+propagation sufficient-mask rate 都是 1.0，而且 selection 与 serialization 混在一起。
 
-## 1. 统一 sample、variable 与 trajectory
+v3 把任务改成
 
-统计单位是一个独立 world/template，而不是同一 world 下的相关 query。默认生成 80 个
-world，每个 world 六个单干预 episode：
+> learned hidden mechanism → causal memory maintenance → executable downstream repair
 
-| Split | Worlds | Episodes | 用途 |
-|---|---:|---:|---|
-| train | 48 | 288 | 所有 non-oracle 方法共享 completed transitions |
-| dev | 12 | 72 | generator、learner、baseline 与 API prompt 开发 |
-| test | 20 | 120 | 一次冻结的 held-out confirmatory evaluation |
+一个 episode 是 `(H, S0, I, A, S1, R)`：
 
-一个 transition sample 是：
-
-\[
-e=(H,S_0,I,A,S_1,R),\qquad S_0\xrightarrow{do(I),A}S_1,
-\]
-
-其中 `H` 是 pre-query 部分观测 history，`I` 是一个 intervention，`A` 是执行 action
-trace，`R` 是 receipt。一个 trajectory 是同一 world/mechanism 下的 pre-query probes 与
-completed transition；bootstrap/CI 以 world 为 cluster。
-
-一个 variable 是一个有 opaque ID 的 scalar/categorical/object state cell。对象可包含多个
-typed fields，但 discovery 与 read/write accounting 必须展开到 `(object_id, field)`；不能把
-整段文本或整个 embedding 悄悄当成一个 causal variable。
-
-Runtime 与 evaluator artifact 物理分离。Test runtime 只含：
-
-```json
-{
-  "task": "...",
-  "episode_id": "...",
-  "split": "test",
-  "history": [],
-  "memory_state": {},
-  "runtime_resources": {},
-  "query": {
-    "text": "...",
-    "intervention": {
-      "node": "...", "field": "...", "old_value": null,
-      "new_value": null, "kind": "..."
-    }
-  }
-}
-```
-
-Train runtime 才额外含：
-
-```json
-{
-  "observed_transition": {
-    "pre_state": {}, "intervention": {}, "action_trace": [],
-    "post_state": {}, "receipt": {}
-  }
-}
-```
-
-Evaluator-only gold 包含 potential/pre-active/post-active graph、affected objects、instrumented
-required reads/history IDs、oracle actions、post-state、receipt、topology hash 与
-anti-shortcut pair ID。所有 non-oracle arm 共享同一个 train manifest hash。
-
-## 2. 可执行输出与 primary endpoint
-
-方法输出：
-
-```json
-{
-  "declared_reads": ["history/resource/state IDs"],
-  "actions": [
-    {
-      "op": "...",
-      "object_id": "...",
-      "expected_revision": 3,
-      "payload": {}
-    }
-  ]
-}
-```
-
-Evaluator 执行 action，而不是接受模型提交一张任意 post-state。Action 非幂等：即使 payload
-等于当前值，也会增加 revision，并按领域消耗 token/lock、产生费用、更新 confirmation、
-package、promotion 或 proof certificate。未写对象自然继承。
-
-Primary：
-
-```text
-Executable Exact Success =
-    all transactions legal
-    AND materialized post_state == oracle post_state
-    AND receipt == oracle receipt
-```
-
-同时报告 exact action/write set、affected P/R/F1、collateral transactions、instrumented
-required-read recall、value accuracy、full-state exact match、utility regret、token/cost/latency。
-Mask F1 是诊断，不是 primary。
-
-必须有 superset mutation test：在 oracle plan 中加入一个 same-value unaffected write，
-`Executable Exact Success` 必须从 1 变 0。
-
-## 3. Dynamic Travel v3
-
-### 3.1 Variables and DGP
-
-每个 world 有 12–24 个 opaque reservations：flight/rail/transfer/activity/meal/hotel。公开
-fields 包括 start/end、location、status、provider descriptor、confirmation、revision、
-locked price、change tokens。候选 alternatives 通过相同 runtime resources 给所有 arm。
-
-Generator latent mechanism：episode-specific temporal/location/resource prerequisite graph、
-protected-bundle hypergraph、contextual transfer time、provider flexibility/change-token gate、
-bundle-protection gate 与 alternative availability。Repair 用冻结的 lexicographic policy：
-
-1. 保住 mandatory commitments；
-2. 最大化 feasible reservation utility；
-3. 最小化 fee；
-4. 最少 transactions；
-5. opaque candidate ID tie-break。
-
-History 是同一 provider/world 的部分 probes：历史 connection quote、接受/拒绝改签、bundle
-receipt、capacity observation 与 distractor；不直接列完整 graph/公式，也不 probe 最终
-target 的同 value intervention。
-
-### 3.2 Intervention and endpoint damage
-
-Interventions：arrival/departure correction、service cancellation、terminal/location change、
-provider deadline change。传播可跨 transfer → activity → protected meal → hotel/fallback。
-
-Actions：shift/cancel/rebook/consume-token/accept-quote。对 unaffected reservation 做同值
-shift 也会 `revision += 1`、消耗 token、更新 confirmation、收 fee、丢失 price lock。
-
-Test 使用新 reservation/provider/city IDs、更长 timeline，以及 train-seen atomic motifs 的
-held-out composition。相同 query/source/public summary 必须有 history 不同、gold action
-不同的 paired worlds。
-
-## 4. Dynamic Shopping v3
-
-### 4.1 Variables and DGP
-
-每个 world 有 8–16 个 cart lines、20–50 个 candidates。公开 fields 包括 slot descriptor、
-opaque SKU、quantity、price、price lock、merchant descriptor、package、revision；catalog 只
-给 attribute tokens、quote、inventory observation、merchant descriptor。
-
-Generator latent mechanism 是 personalized compatibility factor graph、bundle/promotion
-hyperedges、shipping partition、substitute utility 与 price-lock transition。Repair 是 factor/
-hypergraph 上的全局 lexicographic optimizer：mandatory coverage → user utility/promotion →
-checkout cost → transaction cost → opaque ID tie-break。
-
-History 给 accepted/rejected substitution、aborted checkout、pairwise swap、bundle/package/
-promotion receipt、preference 和 price-lock 案例；不提供 compatibility matrix、hyperedge、
-utility weights或最终 repair。
-
-### 4.2 Intervention and endpoint damage
-
-Interventions：inventory loss、locked-price correction、promotion revoke、merchant/package
-policy observation change。传播可经 substitute → incompatibility → bundle loss → budget →
-second replacement → package/shipping/receipt。
-
-Actions：remove/add/replace/reprice/repackage/apply/release promotion。任何 extra touch 都会
-增加 revision、使 price lock 失效，并可能产生 fee、promotion/package 变化。
-
-Test 使用新 merchant/user/SKU IDs 和 train-seen factors 的新 hypergraph composition；同一
-source/visible regime 的 paired worlds 必须由 history 决定不同 factor/action。
-
-## 5. Dynamic Search v3
-
-每个 world 包含 6 sources、10 documents、4 claims、2 decisions、2 briefs、3 policy/gate
-cells，均使用 opaque UUID。History 给 document card 的 source/route code/cluster/stance/
-active 与 claim card 的 socket/window/threshold；不列 document→claim 或 claim→decision
-incidence。
-
-稳定但隐藏的 route/socket compatibility 从 train interventions 学。有效 evidence 还受
-source trust/license、time window、independence-cluster dedup gate 控制。Claim 聚合 stance ×
-trust weight，decision 再做 strict/lenient multi-claim aggregation，brief downstream 更新。
-
-Interventions：source trust/license、document stance/version、pivotal retraction、decision
-policy；out-of-window update 与 losing duplicate update 是 matched negative controls。
-Test 组合 train-seen local route/window/dedup motifs为新 fan-out/diamond/multi-claim topology，
-并包含 observational twins：相同 pre-state output、不同 hidden route、对 intervention 的
-post-state不同。
-
-Extra declared claim/decision/brief write 会增加 provenance revision/certificate version，
-使 exact receipt 失败。
-
-## 6. Causal Formal v3
-
-每个 notebook world 有 6–8 primitive definition/axiom cells、4–6 binding/scope cells、
-10–16 lemma/theorem cells与 independent controls。Derived value 为
-`{status: proved|disproved|undefined, value}`。
-
-History 给 declaration chronology、scope ID、producer port code、公开 arithmetic/logical rule
-token、consumer socket codes与当前 recorded value；不列 resolved parent edges。稳定但隐藏的
-port compatibility与shadowing precedence只能从 train interventions学习。Binding edit 可改变
-post-intervention topology；axiom gate控制 operand edge；undefined 沿 active descendants传播。
-
-Interventions：primitive correction、rule-token patch、axiom activation/retraction、binding
-rebasing；shadowed definition和gated-off operand是 negative controls。生成器制造
-counterfactual ambiguity：多个 candidate wiring 对 pre-state 给同值，但对 intervention 的
-post-state不同。
-
-Extra theorem write 会增加 proof revision、重签 certificate/依赖摘要，导致 receipt失败。
-Test 使用新 UUID、deeper DAG、nested scope、diamond/fan-out/fan-in，以及 train-seen operator/
-gate/shadow motifs的 held-out composition；完全 unseen operator只作 OOD diagnostic，不进入
-主验收。
-
-## 7. 公平 baseline matrix
-
-所有 non-oracle 方法共享 train completed transitions、runtime 与计算/上下文预算：
-
-| Baseline | 作用 |
+| 符号 | 含义 |
 |---|---|
-| Exact-KV | 只执行 query target transaction |
-| Flat/source lookup | source kind、intervention kind、delta shape → modal impact/action |
-| Source + visible-regime | 加不含 history 的公开摘要；检验 query/state shortcut |
-| Transition kNN | 完整 observable 上最近 train transition，做 ID alignment |
-| Flat black-box | canonical serialization classifier/direct transition predictor |
-| Permutation-equivariant black-box | DeepSets/Set Transformer/GNN-like direct action predictor，不要求显式 graph |
-| Conservative superset | public type/temporal/slot closure，对全部可能对象执行 action |
-| Relational/program learner | 从相同 train outcome 归纳 clauses/factors/compatibility，再执行 CSP/ILP/fixed point |
-| Learned causal graph | 学 typed edges、history-conditioned gates、local value heads，再传播/优化 |
-| Oracle | generator graph/parameters + deterministic executor |
-| Full runtime | 全 history/state/resources，测 context ceiling，不拥有 gold |
+| H | 干预前历史：更早的干预以及环境自动效果、修复事务各自的结果记录 |
+| S0 | pre-state：对象、字段、link、revision、status |
+| I | 干预：只暴露 source 对象和它的新值 |
+| A | oracle 修复事务 |
+| S1 | 执行 I 与 A 之后的 post-state |
+| R | receipt：intervention / auto / txn 条目的账本 |
 
-关系程序不能被故意削弱。如果它或 permutation-equivariant black-box 与 graph 持平，只支持
-“可组合 relation/structure 有用”；不能声称 causal representation 独有优势。
+Test 方法只看 `(H, S0, I)`。graph、affected nodes、required reads、oracle actions、
+post-state 对方法不可见。
 
-## 8. Admission gates（未全部通过不得调用 API test）
+### 1.1 Query 只暴露 source
 
-1. 四个 domain 的 normalized structural/process fingerprints 两两不同；禁止换名复制 DGP。
-2. 每个 test world 至少两跳真实变化，并含 active/inactive matched gate controls。
-3. Train/test node/entity/provider/merchant/template IDs完全不重叠。
-4. Query 不含 downstream IDs、gate label、scenario/composition。
-5. Final target 未被 history 以同 intervention/value直接 probe。
-6. 每个 source/visible-regime signature 有 history不同、gold actions不同的 paired worlds。
-7. 每个 atomic mechanism 在 train 有正负 intervention evidence；test只组合，不引入不可识别规则。
-8. Test canonical topology hash 不与 train/dev 重叠；统计按 world cluster。
-9. Exact-KV、flat lookup、regime table、kNN 与 conservative superset 均不能完成 endpoint。
-10. Superset mutation 必须产生 revision/fee/receipt damage并使 endpoint失败。
-11. Runtime-history oracle（使用可学习的 mechanism，不读 evaluator graph）必须可解，排除不识别。
-12. Learned graph 在至少三个 dataset seeds 的 dev 上优于 matched flat/black-box；报告
-    world-clustered CI 与 counterfactual-twin slice。
-13. Strongest relational/program baseline必须运行。若 tie，则 causal-necessity stop。
-14. 所有 predictions、raw API responses与 usage ledger 先落盘，再加载 test gold评分。
-15. 合法 JSON 的错 node/action/value 是 semantic failure，不重试；只有 transport/empty/
-    truncated/JSON syntax/type-level错误可在冻结预算内重试。
+Query 形如 “Flight F68 (Lena, day 2) now arrives at 18:15.” 或
+“Document D77 is now published.”，只含 source id 与新值。gate C1 机器检查 query 与
+I 的 JSON 里不出现任何下游 id，也不出现 gate 词汇。
 
-## 9. Yujia 两卖点中的位置
+### 1.2 输出是非幂等 transaction
 
-- P1 simulation：继续由已知 DGP linear/nonlinear/latent-boundary 表承担；v3 不替代它。
-- P2 effectiveness/efficiency：v3 测 hidden mechanism → learned structure → executable memory
-  maintenance；Travel/Search 作为建议的 1–2 个真实 API representative setups，Shopping/
-  Formal 先做 CPU deterministic replication。
-- P3 trustworthiness/auditing：现有 MINJA/AgentPoison hidden-driver evidence保留；当前 online
-  mitigation FAIL 不由 v3 覆盖。若以后把 v3 graph用于 gate action，必须另立 held-out ASR/
-  benign utility协议。
+```
+{"op": "shift_reservation", "object_id": "S12", "expected_revision": 1, "payload": {"checkin": 1205}}
+```
 
-Scalability 另做变量数、distractor、trajectory length、fit/update time、memory sweep；grouping
-必须由 train observables学习，不能预先知道 latent proxy group。
+每个手动事务都会：revision +1、消耗一个 change token、按 op 收费、丢失 price lock、
+写入 receipt。即使把原值写回也一样。`expected_revision` 与当前 revision 不符即为
+非法。环境自动效果（auto）同样使 revision +1，但不收费、不消耗 token。因此对一个
+已被环境自动更新的对象再写一次，会因为 revision 过期而非法；对 unaffected 对象写回
+原值，会让 post-state 与 receipt 都偏离 oracle。conservative superset 在这里真实失败。
 
-## 10. 冻结顺序
+**[补充]** receipt 以多重集比较（kind, op, object, rev, fee, token）；每个 plan 对同一
+对象只允许一个手动事务，同一对象需要改多个字段时合并进一个 payload。
 
-1. Yujia double-check 本页的 sample/variable/transaction semantics 与 claim wording；
-2. development generator + identifiability/pair/mutation tests；
-3. dev 上运行完整 killer baseline matrix；
-4. 只有 admission gates 全过才冻结 test manifest、API failure policy、price 与 seed；
-5. 先做 Travel/Search representative API，Shopping/Formal保留 deterministic replication；
-6. 一次 test；任何失败作为结果或新 version，不回填原 artifact。
+### 1.3 Primary metric
+
+```
+Executable Exact Success (EES) = 全部事务合法 AND post_state == oracle post_state AND receipt == oracle receipt
+```
+
+同时报告：exact action set、affected P/R/F1、collateral transactions、required-read
+recall、value accuracy、utility/regret（fee + 5 × token 相对 oracle）、input/output
+tokens、cost、latency。Mask F1 只作诊断。
+
+## 2. 四个 DGP
+
+四个任务共用 `code/hm3/core.py` 的对象 / 事务 / receipt 引擎，机制各不相同：
+
+| 任务 | 结构 | hidden 参数（按 episode 抽样，按可见 key 索引） | 自动效果 |
+|---|---|---|---|
+| Travel | flight → transfer → stay → {dinner, activity}，dinner → bundle | `auto_rebook[provider]`、`buffer[provider]`（连续）、`enforce_late[hotel]`、`late_seating[restaurant]`、`linked[vendor]` | transfer 自动跟随航班（若 auto_rebook） |
+| Shopping | base line → accessories（compatibility factor graph）、promo（hypergraph）、cart budget（全局重优化） | `compat[base|acc]`、`strict_promo[promo]`、`auto_promo`、`enforce_budget` | promo 自动开关（若 auto_promo）、cart total 重算 |
+| Search | doc → base claim → composite claim（AND/OR，两层） | `trust[class] ∈ {0,1,2}`、`dedup`、`policy ∈ {propagate, ignore}`、`auto_base` | evidence_effect 记录、base verdict 自动更新（若 auto_base） |
+| Formal | def → scope → lemma，lemma → dependents（proof DAG），section/local shadowing | `section_shadows`、`sensitive[lemma|name]`、`stmt_sensitive[lemma]`、`auto_local` | rebind（总是 auto）、local 块 recheck（若 auto_local） |
+
+每个 hidden 参数都能由 H 中的一个 outcome witness 精确恢复：例如
+`buffer = pickup_new − arrival_new`，`late_seating` 由过去的 dinner shift/cancel 决定，
+`trust[class]` 由 evidence_effect 的 weight/reason 决定，`sensitive[l|n]` 由上一次
+bump 后 l 是否 recheck 决定。witness 全部是结果记录，没有任何 policy 声明记录。
+
+**[补充] 可辨识性由构造保证。** generator 先随机生成若干 prior segments，再选 test
+intervention，然后用 runtime-history parser 检查 oracle 实际 consult 的每个参数是否能从
+H 恢复；缺的参数通过定向 prior intervention（在副本上模拟并验证）补齐，补不齐就重采样
+world。每个 consult 的参数家族还会再补一个其他 key 的 distractor witness，防止
+episode 级聚合统计（自动事件数量、取消数量）泄露 query 触及实体的 regime。
+
+**[补充] 可见状态泄露检查。** Travel 初始 pickup 原来等于 arrival + buffer，直接泄露
+buffer，已改为独立的手动预订时间。可见的 late_arrival=1 蕴含 enforce_late=1、S0 中
+composite verdict 与 promo 状态与 hidden policy 一致，这三处保留，属于 visible regime
+cue，`source + visible-regime table` 能利用其中一部分。
+
+## 3. 方法
+
+所有非 oracle 方法共用同一份训练数据 `(H, S0, I, A, S1, R)`。
+
+**[补充] 结构与取值分离。** 确定性方法输出 structural plan：对哪些对象、什么 op、
+auto 还是 txn、写哪些字段。取值由共享 executor（`core.plan_to_txns`）按领域的局部规则
+在 scratch state 上顺序计算，scratch 反映干预与此前已计划的效果，因此上游漏判或误判
+会污染下游取值。executor 能用的 regime 参数只来自该方法**实际读取**的历史记录
+（`restricted_est`），不读历史的方法拿不到 hidden 参数。LLM full runtime 自己给出取值。
+
+| 方法 | 看到什么 | 结构决策 |
+|---|---|---|
+| exact_kv | source | 空 plan |
+| source_union | 训练集里同 source 类型出现过的 impact template 的并集 | 只要出现过就写 |
+| source_regime | 同上 + 候选对象的可见类别字段与 status 做细 key | 多数票，退化到粗 key |
+| knn | episode 级特征（source、对象计数、H 聚合计数）；k=5 | 邻居 template 投票 |
+| flat / flat_est | 对象 slot-position、类型、数值字段、自身历史计数；`_est` 加 history parser 的估计 | HistGradientBoosting 逐对象 |
+| gnn / gnn_est | 同上但 permutation-equivariant，3 层 relation-typed message passing | 逐节点分类 |
+| superset | 学到的 typed-path skeleton，所有边强制激活 | 全部可达对象都写 |
+| program | typed path、witness 统计、regime 估计、1-hop 邻居上下文、parent-relative 差分；两遍 iterative closure | HistGradientBoosting 逐对象 |
+| graph | typed-path skeleton + 每条边一个 gated 局部机制（决策树：parent 新值与 child 字段差分、regime 估计） | 从 source 沿 skeleton 传播，值实时进入 scratch |
+| rh_oracle | 真实机制，参数由 H 解析 | — |
+| oracle | 真实机制与参数 | — |
+
+history parser（`infer_params`）是共享基础设施：graph、program、flat_est、gnn_est 都拿
+它的输出当特征；差别在于是否用关系结构与传播来组合这些估计。**预先声明：** program
+与 graph 打平是可能的诚实结果，届时结论写成“可组合关系结构有用，causal graph 不具备
+独占优势”。
+
+**[补充] 类型一致解码。** 分类型基线只在训练中见过该对象类型的标签里取 argmax。
+
+**[补充] dev 阶段对关系型学习器的特征修订（在 gate 与 test 之前，全部披露）。**
+在 dev seed 0 上观察到 program 与 graph 的失败集中在三类局部特征无法表达的判断：
+超边条件（promo 是否仍满足全部 required categories 与 brand）、同类兄弟排序（预算
+超支时移除“最可选、最贵”的一行）、以及“聚合后取值是否真的改变”（Search 的
+verdict、Formal 的 cert）。为此给 program 与 graph 同时加入四类通用特征：
+(a) 候选对象与 parent 的 dict 字段逐 key 相等指示；(b) 1-hop / 2-hop 邻域 token 重叠
+计数；(c) 同类兄弟的数值字段排名；(d) 与 parent token 关联的 regime 估计
+（`sensitive[lemma|name]` 里 name 是刚被 bump 的定义）；以及 (e) would-change：在
+当前 scratch 上模拟该模板多数 op 的局部取值规则，看值是否变化。(e) 把领域声明的
+局部取值规则当作特征暴露给关系型学习器；这与 executor 用同一规则计算取值是一致的，
+黑盒基线（flat / gnn）不使用它。graph 的传播引擎同时允许已判定对象被新的 parent
+再次触发（预算级联需要 cart → line → cart 的第二轮）。program 改为只在闭包上下文
+（S1 邻居取值）上训练，测试时迭代三遍。dev seed 0 单次试验的 graph EES：Travel
+0.83、Shopping 0.73、Search 1.00、Formal 0.80；这些数字是开发观察，正式 dev 表以
+`results/development/hm3/det_dev.json` 为准。
+
+## 4. Selection × Serialization
+
+LLM 臂固定二维消融：selection ∈ {exact, source, graph, program, full} ×
+serialization ∈ {verbose JSON, compact 行}。selection 决定哪些对象与历史记录进入
+prompt；serialization 决定同一集合怎么写。主判断固定为 (graph, compact) 相对
+(full, verbose)：**EES 差 ≥ −0.10 且 input tokens 减少 ≥ 30%**。次级：
+(graph, verbose) − (full, verbose) 隔离 selection；(full, compact) − (full, verbose)
+隔离 serialization；(program, ·) 与 (graph, ·) 并列报告。
+
+## 5. 零 API gate（dev seeds 0/1/2）
+
+| 检查 | 阈值（本文件写下后不再改） |
+|---|---|
+| C1 query leak | query 与 I 不含任何下游 id，不含 gate 词汇：0 处泄露 |
+| C2 split separation | train/dev/test episode id 两两不交；topology hash 重叠 = 0 |
+| C3 history load-bearing | 直接翻转 relevant hidden 参数改变 gold 的比例 ≥ 0.8；同一初始世界、同一 I、翻转参数后重新生成 H 的配对 episode 中 gold 不同的比例 ≥ 0.5，配对数 ≥ 10；另报告可见摘要完全相同的配对里 gold 不同的比例 |
+| C4 killers fail | exact_kv、source_union、source_regime、knn、superset 的 dev EES 各 ≤ 0.50 |
+| C5 identifiable | oracle 与 rh_oracle 的 dev EES = 1.0 |
+| C6 non-idempotent | oracle plan 加一次对 unaffected 对象的原值写回：100% episode 端点失败 |
+| C7 graph > black box | graph 的 EES 在 ≥ 2/3 dev seeds 上高于 flat、flat_est、gnn、gnn_est，且均值更高 |
+| C8 program ran | program 有结果；`tie` = \|graph − program\| ≤ 0.05；`program_better` = program > graph + 0.05 |
+
+`api_allowed[domain]` = C1–C7 全部通过。C8 只报告。真实 API 只为 Travel 与 Search；
+Shopping 与 Formal 做 deterministic replication。
+
+**[披露]** 在写下 C4 阈值之前，Travel 已经做过 80/120 个训练 episode 的 smoke run；
+那次 kNN 为 0.50–0.58，原因是许多 episode 只有一个 hidden 二元决策，模板复制有一半
+机会碰对。随后把 Travel 的干预采样改为更常触发 late-cutoff / dinner-conflict，并把
+bundle 概率提高到 0.75，使每个 episode 平均含多个 hidden 决策；改动在 gate 与全量
+dev run 之前完成。
+
+## 6. 数据边界
+
+- dev：seeds 0/1/2，每 seed train 200 / dev 60；gate、方法选择、prompt 检查只用 dev。
+- test：seeds 10/11/12，train seeds 110/111/112（offset 100）；每 seed test 60。
+- API：Travel 与 Search，test seed 10 的前 20 个 episode，5 × 2 cells，共 400 requests；
+  model `deepseek-chat`（记录 returned model）、temperature 0、max_tokens 2048；预算上限
+  $15；retry 只允许一次 format-only repair，node set / identity / value / revision 错误
+  为 terminal semantic failure，不重试；append-only ledger，resume 只跳过已完成 cell。
+- 凭证只经 `code/run_with_local_deepseek.py` 进入子进程环境，不进入任何结果文件。
+
+## 7. 现在能写与不能写的结论
+
+gate 与 test 之前，P2 的可写结论仍然是：structured / dependency-aware memory 在
+MemoryArena 上保持效果并减少输入；compact SelectionPlan 能驱动 value update。
+“learned causal structure 对四任务正确性必不可少”要等 v3 的 test 与 API 结果。
+
+
+## 8. Test 之后的追加（2026-09-03，全部 post-hoc，不改变 §5 的判断）
+
+- `program_reg`：program learner 的正则化配置（max_iter 150、lr 0.05、min_samples_leaf 10、
+  L2 1.0、max_leaf_nodes 15），因为默认配置在 Formal 的 train seed 110 上连自己的训练
+  episode 都只拟合 9/40。在 test 已经评分之后加入并在 dev/test 全部重跑；`program` 的
+  原始数字保持为 confirmatory。
+- `shopping31`：Shopping 的加密隐藏决策变体，只跑了 dev 与 gate（C4 仍失败：source+regime
+  0.533），没有 test split。
+- Travel thinking-enabled 重跑：2 cells 后中止（reasoning 占满 8192 completion tokens，
+  无可见答案），$0.334，不计入 §5。
+
+## 9. API round 2（2026-09-03，在 round 1 评分之后、round 2 输出之前冻结）
+
+Round 1 的 Travel 失败集中在四类：写到已被环境自动更新的 transfer（stale revision）、漏掉
+bundle rebook、transfer pickup 算错 buffer、对未变对象的 collateral 写。这些都是“没有先把
+实体的 policy 从历史里读出来再传播”的错误。Round 2 只改 system prompt：在原有输出格式
+之上加一个固定方法（STEP A policy ledger：逐实体引用历史记录 id 并写出 policy 与数字；
+STEP B 按依赖顺序用新上游值重算并标 stale / automatic / unchanged；STEP C 检查
+expected_revision、已取消对象、空 payload）。model、temperature、max_tokens、episode、
+selection × serialization cells、selector、retry policy 全部与 round 1 相同。
+
+在冻结前用 Travel graph/compact 的 4 个 test cell（episode 1/3/7/12）探针了 v2 prompt：
+4/4 EES，$0.058；这 4 个 cell 的探针结果不计入 round 2 正式输出（正式输出重新调用）。
+
+判断与 round 1 相同：主判断 (graph, compact) 相对 (full, verbose) EES 差 ≥ −0.10 且
+input 减少 ≥ 30%；selection 与 serialization 各自隔离。Round 1 与 round 2 并列报告，
+round 2 是 prompt 的第二个版本，属于 runtime 侧的改动；不覆盖 round 1。
+输出目录 `results/real/hm3/round2/`。
+
+## 10. Round 2 deterministic（2026-09-03，在 fresh test seeds 评分之前冻结）
+
+- **Shopping v3.2（`shopping32`）**：v3.1 的密度设计之上，初始状态与 hidden policy 解耦：
+  promotion 初始 active 随机、accessory 初始随机预订；商店只在某条被要求类别的 line 变化时
+  重新评估该 promotion 的 eligibility，只在 base 变化时检查 accessory 的兼容性。history
+  parser 不再从 S0 一致性推断 strictness，只用商店真正重新评估过的 segment。gate（dev
+  seeds 0/1/2）全部通过：C4 source+regime 0.461、kNN 0.239；C7 graph 0.806 高于全部黑盒；
+  C8 program 0.789（tie）。v3 的 Shopping 结果保留，v3.2 是修复 C4 的正式版本。
+- **fresh test seeds 20/21/22（train 120/121/122）**，四个 v3 任务加 shopping32，全部方法：
+  round 1 的 13 个方法加上两个在 round 1 test 之后加入的方法——`program_reg`（正则化
+  program learner）与 `graph_pooled`（所有 template 共享一个正则化 gradient-boosted gate，
+  template 身份作 one-hot，传播与 reads 与 `graph` 相同）。两者在 dev 上的选择依据：
+  `program_reg` 修复 Formal 的拟合失败；`graph_pooled` 在 dev seed 0 上 Formal 0.883 /
+  Shopping 0.883 / Travel 0.833 / Search 0.983（`graph` 为 0.800 / 0.733 / 0.833 / 1.000）。
+- 判断不变：C7 的比较对象换成 `graph_pooled` 时也要报告；graph 与 program 的关系按
+  \|差\| ≤ 0.05 记 tie。round 1（seeds 10–12）与 round 2（seeds 20–22）并列报告，不覆盖。
+- 真实 API 仍只做 Travel 与 Search（§9）；shopping32 不进入 API。
+
+## 11. API round 3 — power for the selection judgement（2026-09-03，输出前冻结）
+
+两轮 API 的配对区间都跨 0，每 cell 20 个 episode 只能分辨 ±0.25。Round 3 只为主判断补
+样本：Travel 与 Search 各取 test seed 10 的 episode 0–79（前 20 个与 round 1/2 相同，
+其后 60 个是新的），只跑主判断与两个隔离所需的四个 cell：(graph, compact)、
+(full, verbose)、(graph, verbose)、(full, compact)，prompt v2，模型与参数不变。
+每 cell 80 个 episode，共 640 calls。判断与 §9 相同（点估计规则）并报告配对 bootstrap
+95% 区间；区间宽度预期收到 ±0.12。round 3 的 20 个重叠 episode 用新的调用重新评分，
+不复用 round 2 的输出。预算上限 $12。输出目录 `results/real/hm3/round3/`。
+
+## 12. API round 4 — graph selection with witness closure（2026-09-03，输出前冻结）
+
+Round 3（§11，预算上限 $12 在 527/640 cells 时到达，每 cell 63–69 个 episode）给出
+Travel graph/compact 0.219 对 full/verbose 0.635，配对 −0.413 [−0.540, −0.286]；Search
+0.493 对 0.597，−0.104 [−0.254, +0.045]。失败 episode 的审计：Travel 38 个失败的
+late episode 里 33 个的 witness 记录指向未被选入 state 的对象（其他链的 flight /
+transfer / dinner / bundle），模型看得到 “T58 pickup 860→1045” 却看不到 T58 的
+provider，无法把 witness 落到 policy 的 key 上。graph 的 required-read recall 为 1.00，
+说明这是 LLM 侧 selection 的闭包缺陷，与确定性 executor 无关（executor 总能看到完整
+S0，graph 在同一 episode 上 0.856）。
+
+Round 4 只改 selection：`graph_closed` = graph 的 reads ∪ 所选 history 记录的
+referent 对象 ∪ 这些 referent 的 1-hop 邻居。cells：(graph_closed, compact) 与
+(graph_closed, verbose)，Travel 与 Search 各 80 个 episode（与 round 3 相同），prompt
+v2，模型参数不变；配对对象是 round 3 已经评分的 (full, verbose) 同一 episode。判断与
+§9 相同（EES 差 ≥ −0.10 且 input 减少 ≥ 30%），并报告配对 95% 区间。预算上限 $8，
+每 shard $2；到达上限时按已完成 episode 报告。输出目录 `results/real/hm3/round4/`。

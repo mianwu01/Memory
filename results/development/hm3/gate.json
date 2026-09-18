@@ -1,0 +1,1381 @@
+{
+ "thresholds": {
+  "C3": "direct flip changes gold >= 0.8; regenerated pairs differ >= 0.5",
+  "C4": "each killer EES <= 0.50",
+  "C5": "oracle = rh_oracle = 1.0",
+  "C6": "100% of extra-write plans fail",
+  "C7": ">= 2/3 seeds and mean",
+  "C8": "program learner present; tie if |graph - program| <= 0.05"
+ },
+ "domains": {
+  "travel": {
+   "checks": {
+    "C2_split_separation": {
+     "pass": true,
+     "per_seed": [
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      },
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      },
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      }
+     ]
+    },
+    "C3_history_load_bearing": {
+     "pass": true,
+     "per_seed": [
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 1.0,
+       "n_direct": 30,
+       "first_param_flip_changes_gold": 1.0,
+       "pairs_with_different_gold": 1.0,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 11,
+       "same_summary_pairs_with_different_gold": 1.0,
+       "examples": [
+        {
+         "query": "Flight F88 (Gao, day 1) now arrives at 20:00.",
+         "flipped": "auto_rebook[P95]",
+         "gold_A": [
+          [
+           "shift_reservation",
+           "D60",
+           "{\"start\": 1320}"
+          ],
+          [
+           "shift_reservation",
+           "S58",
+           "{\"checkin\": 1275}"
+          ],
+          [
+           "shift_reservation",
+           "T69",
+           "{\"pickup\": 1245}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "shift_reservation",
+           "D60",
+           "{\"start\": 1320}"
+          ],
+          [
+           "shift_reservation",
+           "S58",
+           "{\"checkin\": 1275}"
+          ]
+         ],
+         "same_summary": true
+        },
+        {
+         "query": "Flight F79 (Hana, day 1) now arrives at 20:45.",
+         "flipped": "auto_rebook[P77]",
+         "gold_A": [
+          [
+           "shift_reservation",
+           "D57",
+           "{\"start\": 1395}"
+          ],
+          [
+           "shift_reservation",
+           "S68",
+           "{\"checkin\": 1345}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "shift_reservation",
+           "D57",
+           "{\"start\": 1395}"
+          ],
+          [
+           "shift_reservation",
+           "S68",
+           "{\"checkin\": 1345}"
+          ],
+          [
+           "shift_reservation",
+           "T37",
+           "{\"pickup\": 1295}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Flight F24 (Mateo, day 1) now arrives at 23:30.",
+         "flipped": "auto_rebook[P33]",
+         "gold_A": [
+          [
+           "cancel_reservation",
+           "D20",
+           "{}"
+          ],
+          [
+           "rebook_bundle",
+           "B44",
+           "{}"
+          ],
+          [
+           "shift_reservation",
+           "S56",
+           "{\"checkin\": 1470}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "shift_reservation",
+           "S56",
+           "{\"checkin\": 1470}"
+          ],
+          [
+           "shift_reservation",
+           "T49",
+           "{\"pickup\": 1430}"
+          ]
+         ],
+         "same_summary": false
+        }
+       ]
+      },
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 1.0,
+       "n_direct": 30,
+       "first_param_flip_changes_gold": 1.0,
+       "pairs_with_different_gold": 1.0,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 10,
+       "same_summary_pairs_with_different_gold": 1.0,
+       "examples": [
+        {
+         "query": "Flight F53 (Dana, day 2) now arrives at 13:45.",
+         "flipped": "auto_rebook[P35]",
+         "gold_A": [
+          [
+           "shift_reservation",
+           "S27",
+           "{\"checkin\": 920}"
+          ],
+          [
+           "shift_reservation",
+           "T35",
+           "{\"pickup\": 880}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "shift_reservation",
+           "S27",
+           "{\"checkin\": 920}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Flight F77 (Dana, day 1) now arrives at 18:45.",
+         "flipped": "auto_rebook[P27]",
+         "gold_A": [
+          [
+           "shift_reservation",
+           "S70",
+           "{\"checkin\": 1220}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "cancel_reservation",
+           "D31",
+           "{}"
+          ],
+          [
+           "rebook_bundle",
+           "B48",
+           "{}"
+          ],
+          [
+           "shift_reservation",
+           "S70",
+           "{\"checkin\": 1220}"
+          ],
+          [
+           "shift_reservation",
+           "T71",
+           "{\"pickup\": 1180}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Flight F70 (Fatima, day 2) now arrives at 19:30.",
+         "flipped": "auto_rebook[P62]",
+         "gold_A": [
+          [
+           "shift_reservation",
+           "S53",
+           "{\"checkin\": 1220}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "cancel_reservation",
+           "D22",
+           "{}"
+          ],
+          [
+           "rebook_bundle",
+           "B65",
+           "{}"
+          ],
+          [
+           "shift_reservation",
+           "S53",
+           "{\"checkin\": 1220}"
+          ],
+          [
+           "shift_reservation",
+           "T76",
+           "{\"pickup\": 1200}"
+          ]
+         ],
+         "same_summary": false
+        }
+       ]
+      },
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 1.0,
+       "n_direct": 30,
+       "first_param_flip_changes_gold": 1.0,
+       "pairs_with_different_gold": 1.0,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 5,
+       "same_summary_pairs_with_different_gold": 1.0,
+       "examples": [
+        {
+         "query": "Flight F12 (Jun, day 2) now arrives at 13:30.",
+         "flipped": "auto_rebook[P26]",
+         "gold_A": [
+          [
+           "shift_reservation",
+           "S99",
+           "{\"checkin\": 880}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "shift_reservation",
+           "S99",
+           "{\"checkin\": 880}"
+          ],
+          [
+           "shift_reservation",
+           "T61",
+           "{\"pickup\": 840}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Flight F31 (Eli, day 1) now arrives at 19:45.",
+         "flipped": "auto_rebook[P70]",
+         "gold_A": [
+          [
+           "shift_reservation",
+           "S61",
+           "{\"checkin\": 1255}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "shift_reservation",
+           "S61",
+           "{\"checkin\": 1255}"
+          ],
+          [
+           "shift_reservation",
+           "T82",
+           "{\"pickup\": 1215}"
+          ]
+         ],
+         "same_summary": true
+        },
+        {
+         "query": "Flight F79 (Gao, day 2) now arrives at 20:15.",
+         "flipped": "auto_rebook[P10]",
+         "gold_A": [
+          [
+           "rebook_bundle",
+           "B84",
+           "{}"
+          ],
+          [
+           "shift_reservation",
+           "D52",
+           "{\"start\": 1380}"
+          ],
+          [
+           "shift_reservation",
+           "S78",
+           "{\"checkin\": 1325}"
+          ],
+          [
+           "shift_reservation",
+           "T69",
+           "{\"pickup\": 1275}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "shift_reservation",
+           "S78",
+           "{\"checkin\": 1325}"
+          ]
+         ],
+         "same_summary": false
+        }
+       ]
+      }
+     ]
+    },
+    "C1_query_leak": {
+     "pass": true,
+     "n": 180,
+     "leaks": []
+    },
+    "C6_nonidempotent": {
+     "pass": true,
+     "n": 180,
+     "endpoint_failed": 180
+    },
+    "C4_killers_fail": {
+     "pass": true,
+     "ees": {
+      "exact_kv": 0.0,
+      "source_union": 0.022222222222222223,
+      "source_regime": 0.044444444444444446,
+      "knn": 0.3222222222222222,
+      "superset": 0.016666666666666666
+     }
+    },
+    "C5_identifiable": {
+     "pass": true,
+     "oracle": 1.0,
+     "rh_oracle": 1.0
+    },
+    "C7_graph_beats_blackbox": {
+     "pass": true,
+     "seed_wins": {
+      "flat": 3,
+      "flat_est": 3,
+      "gnn": 3,
+      "gnn_est": 3
+     },
+     "n_seeds": 3,
+     "graph_mean": 0.8722222222222222,
+     "blackbox_mean": {
+      "flat": 0.011111111111111112,
+      "flat_est": 0.005555555555555556,
+      "gnn": 0.3444444444444445,
+      "gnn_est": 0.7666666666666666
+     }
+    },
+    "C8_program_ran": {
+     "pass": true,
+     "graph": 0.8722222222222222,
+     "program": 0.688888888888889,
+     "tie": false,
+     "program_better": false
+    }
+   },
+   "api_allowed": true
+  },
+  "shopping": {
+   "checks": {
+    "C2_split_separation": {
+     "pass": true,
+     "per_seed": [
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      },
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      },
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      }
+     ]
+    },
+    "C3_history_load_bearing": {
+     "pass": true,
+     "per_seed": [
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 0.9428571428571428,
+       "n_direct": 35,
+       "first_param_flip_changes_gold": 0.7714285714285715,
+       "pairs_with_different_gold": 1.0,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 0,
+       "same_summary_pairs_with_different_gold": 0.0,
+       "examples": [
+        {
+         "query": "Line L50 (phone) is now SKU PH-2.",
+         "flipped": "strict_promo[PR55]",
+         "gold_A": [
+          [
+           "remove_line",
+           "L83",
+           "{}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "replace_line",
+           "L83",
+           "{\"sku\": \"CA-4\"}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Line L96 (printer) is now SKU PR-3.",
+         "flipped": "compat[printer|cartridge]",
+         "gold_A": [
+          [
+           "replace_line",
+           "L24",
+           "{\"sku\": \"CA-4\"}"
+          ]
+         ],
+         "gold_B": [],
+         "same_summary": false
+        },
+        {
+         "query": "Line L64 (phone) is now SKU PH-5.",
+         "flipped": "compat[phone|charger]",
+         "gold_A": [
+          [
+           "replace_line",
+           "L57",
+           "{\"sku\": \"CH-4\"}"
+          ]
+         ],
+         "gold_B": [],
+         "same_summary": false
+        }
+       ]
+      },
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 0.9411764705882353,
+       "n_direct": 34,
+       "first_param_flip_changes_gold": 0.8823529411764706,
+       "pairs_with_different_gold": 0.9666666666666667,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 0,
+       "same_summary_pairs_with_different_gold": 0.0,
+       "examples": [
+        {
+         "query": "Line L34 (camera) is now SKU CA-5.",
+         "flipped": "compat[camera|bag]",
+         "gold_A": [
+          [
+           "replace_line",
+           "L12",
+           "{\"sku\": \"BA-1\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "remove_line",
+           "L12",
+           "{}"
+          ],
+          [
+           "remove_line",
+           "L44",
+           "{}"
+          ],
+          [
+           "remove_line",
+           "L92",
+           "{}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Line L85 (printer) is now SKU PR-5.",
+         "flipped": "enforce_budget[global]",
+         "gold_A": [
+          [
+           "remove_line",
+           "L53",
+           "{}"
+          ]
+         ],
+         "gold_B": [],
+         "same_summary": false
+        },
+        {
+         "query": "Line L40 (camera) is now SKU CA-4.",
+         "flipped": "strict_promo[PR59]",
+         "gold_A": [
+          [
+           "remove_line",
+           "L85",
+           "{}"
+          ],
+          [
+           "remove_line",
+           "L87",
+           "{}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "remove_line",
+           "L87",
+           "{}"
+          ]
+         ],
+         "same_summary": false
+        }
+       ]
+      },
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 1.0,
+       "n_direct": 35,
+       "first_param_flip_changes_gold": 0.8857142857142857,
+       "pairs_with_different_gold": 0.9666666666666667,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 0,
+       "same_summary_pairs_with_different_gold": 0.0,
+       "examples": [
+        {
+         "query": "Line L71 (phone) is now SKU PH-6.",
+         "flipped": "compat[phone|case]",
+         "gold_A": [
+          [
+           "replace_line",
+           "L64",
+           "{\"sku\": \"CA-5\"}"
+          ]
+         ],
+         "gold_B": [],
+         "same_summary": false
+        },
+        {
+         "query": "Line L54 (camera) is now SKU CA-3.",
+         "flipped": "compat[camera|lens]",
+         "gold_A": [
+          [
+           "replace_line",
+           "L14",
+           "{\"sku\": \"LE-5\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "remove_line",
+           "L14",
+           "{}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Line L17 (printer) is now SKU PR-2.",
+         "flipped": "compat[printer|cartridge]",
+         "gold_A": [
+          [
+           "remove_line",
+           "L27",
+           "{}"
+          ]
+         ],
+         "gold_B": [],
+         "same_summary": false
+        }
+       ]
+      }
+     ]
+    },
+    "C1_query_leak": {
+     "pass": true,
+     "n": 180,
+     "leaks": []
+    },
+    "C6_nonidempotent": {
+     "pass": true,
+     "n": 180,
+     "endpoint_failed": 180
+    },
+    "C4_killers_fail": {
+     "pass": false,
+     "ees": {
+      "exact_kv": 0.03333333333333333,
+      "source_union": 0.0,
+      "source_regime": 0.5666666666666665,
+      "knn": 0.5111111111111111,
+      "superset": 0.0
+     }
+    },
+    "C5_identifiable": {
+     "pass": true,
+     "oracle": 1.0,
+     "rh_oracle": 1.0
+    },
+    "C7_graph_beats_blackbox": {
+     "pass": true,
+     "seed_wins": {
+      "flat": 3,
+      "flat_est": 3,
+      "gnn": 2,
+      "gnn_est": 2
+     },
+     "n_seeds": 3,
+     "graph_mean": 0.7944444444444444,
+     "blackbox_mean": {
+      "flat": 0.32222222222222224,
+      "flat_est": 0.3277777777777778,
+      "gnn": 0.7777777777777777,
+      "gnn_est": 0.7444444444444445
+     }
+    },
+    "C8_program_ran": {
+     "pass": true,
+     "graph": 0.7944444444444444,
+     "program": 0.4055555555555556,
+     "tie": false,
+     "program_better": false
+    }
+   },
+   "api_allowed": false
+  },
+  "search": {
+   "checks": {
+    "C2_split_separation": {
+     "pass": true,
+     "per_seed": [
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      },
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      },
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      }
+     ]
+    },
+    "C3_history_load_bearing": {
+     "pass": true,
+     "per_seed": [
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 0.8085106382978723,
+       "n_direct": 47,
+       "first_param_flip_changes_gold": 0.574468085106383,
+       "pairs_with_different_gold": 0.9,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 6,
+       "same_summary_pairs_with_different_gold": 1.0,
+       "examples": [
+        {
+         "query": "Document D26 has been retracted.",
+         "flipped": "trust[wiki]",
+         "gold_A": [
+          [
+           "set_verdict",
+           "C36",
+           "{\"verdict\": \"supported\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "set_verdict",
+           "C36",
+           "{\"verdict\": \"supported\"}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Document D33 has been retracted.",
+         "flipped": "auto_base[global]",
+         "gold_A": [
+          [
+           "set_verdict",
+           "C72",
+           "{\"verdict\": \"unresolved\"}"
+          ]
+         ],
+         "gold_B": [],
+         "same_summary": false
+        },
+        {
+         "query": "Document D24 is now published.",
+         "flipped": "auto_base[global]",
+         "gold_A": [
+          [
+           "set_verdict",
+           "C34",
+           "{\"verdict\": \"refuted\"}"
+          ]
+         ],
+         "gold_B": [],
+         "same_summary": false
+        }
+       ]
+      },
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 0.825,
+       "n_direct": 40,
+       "first_param_flip_changes_gold": 0.675,
+       "pairs_with_different_gold": 0.9,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 7,
+       "same_summary_pairs_with_different_gold": 1.0,
+       "examples": [
+        {
+         "query": "Document D27 has been retracted.",
+         "flipped": "auto_base[global]",
+         "gold_A": [
+          [
+           "set_verdict",
+           "C99",
+           "{\"verdict\": \"unresolved\"}"
+          ]
+         ],
+         "gold_B": [],
+         "same_summary": true
+        },
+        {
+         "query": "Document D27 is now published.",
+         "flipped": "dedup[global]",
+         "gold_A": [
+          [
+           "set_verdict",
+           "C76",
+           "{\"verdict\": \"unresolved\"}"
+          ],
+          [
+           "set_verdict",
+           "C94",
+           "{\"verdict\": \"unresolved\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "set_verdict",
+           "C55",
+           "{\"verdict\": \"refuted\"}"
+          ],
+          [
+           "set_verdict",
+           "C76",
+           "{\"verdict\": \"unresolved\"}"
+          ],
+          [
+           "set_verdict",
+           "C94",
+           "{\"verdict\": \"refuted\"}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Document D42 has been retracted.",
+         "flipped": "auto_base[global]",
+         "gold_A": [
+          [
+           "set_verdict",
+           "C76",
+           "{\"verdict\": \"unresolved\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "set_verdict",
+           "C27",
+           "{\"verdict\": \"unresolved\"}"
+          ],
+          [
+           "set_verdict",
+           "C53",
+           "{\"verdict\": \"unresolved\"}"
+          ],
+          [
+           "set_verdict",
+           "C68",
+           "{\"verdict\": \"unresolved\"}"
+          ]
+         ],
+         "same_summary": false
+        }
+       ]
+      },
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 0.9090909090909091,
+       "n_direct": 33,
+       "first_param_flip_changes_gold": 0.696969696969697,
+       "pairs_with_different_gold": 0.9333333333333333,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 8,
+       "same_summary_pairs_with_different_gold": 1.0,
+       "examples": [
+        {
+         "query": "Document D53 has been retracted.",
+         "flipped": "trust[wire]",
+         "gold_A": [],
+         "gold_B": [
+          [
+           "set_verdict",
+           "C13",
+           "{\"verdict\": \"unresolved\"}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Document D70 is now published.",
+         "flipped": "trust[blog]",
+         "gold_A": [],
+         "gold_B": [
+          [
+           "set_verdict",
+           "C10",
+           "{\"verdict\": \"refuted\"}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Document D92 is now published.",
+         "flipped": "auto_base[global]",
+         "gold_A": [
+          [
+           "set_verdict",
+           "C43",
+           "{\"verdict\": \"refuted\"}"
+          ],
+          [
+           "set_verdict",
+           "C73",
+           "{\"verdict\": \"refuted\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "set_verdict",
+           "C24",
+           "{\"verdict\": \"refuted\"}"
+          ],
+          [
+           "set_verdict",
+           "C42",
+           "{\"verdict\": \"refuted\"}"
+          ]
+         ],
+         "same_summary": false
+        }
+       ]
+      }
+     ]
+    },
+    "C1_query_leak": {
+     "pass": true,
+     "n": 180,
+     "leaks": []
+    },
+    "C6_nonidempotent": {
+     "pass": true,
+     "n": 180,
+     "endpoint_failed": 180
+    },
+    "C4_killers_fail": {
+     "pass": true,
+     "ees": {
+      "exact_kv": 0.0888888888888889,
+      "source_union": 0.09999999999999999,
+      "source_regime": 0.12222222222222223,
+      "knn": 0.47222222222222227,
+      "superset": 0.2333333333333333
+     }
+    },
+    "C5_identifiable": {
+     "pass": true,
+     "oracle": 1.0,
+     "rh_oracle": 1.0
+    },
+    "C7_graph_beats_blackbox": {
+     "pass": true,
+     "seed_wins": {
+      "flat": 3,
+      "flat_est": 3,
+      "gnn": 3,
+      "gnn_est": 3
+     },
+     "n_seeds": 3,
+     "graph_mean": 1.0,
+     "blackbox_mean": {
+      "flat": 0.10000000000000002,
+      "flat_est": 0.09444444444444444,
+      "gnn": 0.32222222222222224,
+      "gnn_est": 0.41111111111111115
+     }
+    },
+    "C8_program_ran": {
+     "pass": true,
+     "graph": 1.0,
+     "program": 1.0,
+     "tie": true,
+     "program_better": false
+    }
+   },
+   "api_allowed": true
+  },
+  "formal": {
+   "checks": {
+    "C2_split_separation": {
+     "pass": true,
+     "per_seed": [
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      },
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      },
+      {
+       "pass": true,
+       "id_disjoint": true,
+       "topology_hash_overlap": 0,
+       "n_train": 200,
+       "n_dev": 60,
+       "n_test": 60
+      }
+     ]
+    },
+    "C3_history_load_bearing": {
+     "pass": true,
+     "per_seed": [
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 1.0,
+       "n_direct": 35,
+       "first_param_flip_changes_gold": 0.7714285714285715,
+       "pairs_with_different_gold": 0.8333333333333334,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 1,
+       "same_summary_pairs_with_different_gold": 0.0,
+       "examples": [
+        {
+         "query": "Definition DEF38 (mul, module M22) is now version 5.",
+         "flipped": "section_shadows[global]",
+         "gold_A": [
+          [
+           "recheck",
+           "LEM15",
+           "{\"cert\": \"4d6e9f8b7e\"}"
+          ],
+          [
+           "recheck",
+           "LEM31",
+           "{\"cert\": \"c24e401071\"}"
+          ],
+          [
+           "recheck",
+           "LEM45",
+           "{\"cert\": \"e779e13bde\"}"
+          ],
+          [
+           "recheck",
+           "LEM53",
+           "{\"cert\": \"c157fbf918\"}"
+          ],
+          [
+           "recheck",
+           "LEM57",
+           "{\"cert\": \"bb90e29448\"}"
+          ],
+          [
+           "recheck",
+           "LEM81",
+           "{\"cert\": \"0f2fef16c1\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "recheck",
+           "LEM15",
+           "{\"cert\": \"0f299df073\"}"
+          ],
+          [
+           "recheck",
+           "LEM31",
+           "{\"cert\": \"c24e401071\"}"
+          ],
+          [
+           "recheck",
+           "LEM45",
+           "{\"cert\": \"e779e13bde\"}"
+          ],
+          [
+           "recheck",
+           "LEM53",
+           "{\"cert\": \"c157fbf918\"}"
+          ],
+          [
+           "recheck",
+           "LEM57",
+           "{\"cert\": \"bb90e29448\"}"
+          ],
+          [
+           "recheck",
+           "LEM81",
+           "{\"cert\": \"0f2fef16c1\"}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Definition DEF91 (add, module M14) is now version 3.",
+         "flipped": "sensitive[LEM51|pair]",
+         "gold_A": [
+          [
+           "recheck",
+           "LEM67",
+           "{\"cert\": \"2920e61b42\"}"
+          ],
+          [
+           "recheck",
+           "LEM71",
+           "{\"cert\": \"8653d8b8c2\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "recheck",
+           "LEM67",
+           "{\"cert\": \"2920e61b42\"}"
+          ],
+          [
+           "recheck",
+           "LEM71",
+           "{\"cert\": \"8653d8b8c2\"}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Definition DEF97 (comp, module M23) is now version 5.",
+         "flipped": "section_shadows[global]",
+         "gold_A": [
+          [
+           "recheck",
+           "LEM46",
+           "{\"cert\": \"9969f3de3a\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "recheck",
+           "LEM46",
+           "{\"cert\": \"9969f3de3a\"}"
+          ]
+         ],
+         "same_summary": true
+        }
+       ]
+      },
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 0.9459459459459459,
+       "n_direct": 37,
+       "first_param_flip_changes_gold": 0.7567567567567568,
+       "pairs_with_different_gold": 0.7666666666666667,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 0,
+       "same_summary_pairs_with_different_gold": 0.0,
+       "examples": [
+        {
+         "query": "Definition DEF49 (bound) is now active in section S43.",
+         "flipped": "section_shadows[global]",
+         "gold_A": [
+          [
+           "recheck",
+           "LEM41",
+           "{\"cert\": \"456e4a370c\"}"
+          ]
+         ],
+         "gold_B": [],
+         "same_summary": false
+        },
+        {
+         "query": "Definition DEF93 (mul, module M69) is now version 5.",
+         "flipped": "section_shadows[global]",
+         "gold_A": [
+          [
+           "recheck",
+           "LEM82",
+           "{\"cert\": \"0137d26ff6\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "recheck",
+           "LEM82",
+           "{\"cert\": \"fb0e4ff5b0\"}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Definition DEF19 (pair) is now active in local L76.",
+         "flipped": "sensitive[LEM15|step]",
+         "gold_A": [
+          [
+           "recheck",
+           "LEM17",
+           "{\"cert\": \"1dcf8e45e9\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "recheck",
+           "LEM17",
+           "{\"cert\": \"1dcf8e45e9\"}"
+          ]
+         ],
+         "same_summary": false
+        }
+       ]
+      },
+      {
+       "pass": true,
+       "direct_flip_changes_gold": 1.0,
+       "n_direct": 35,
+       "first_param_flip_changes_gold": 0.8285714285714286,
+       "pairs_with_different_gold": 0.8,
+       "n_pairs": 30,
+       "pairs_same_visible_summary": 1,
+       "same_summary_pairs_with_different_gold": 0.0,
+       "examples": [
+        {
+         "query": "Definition DEF69 (dist, local L64) is now version 3.",
+         "flipped": "stmt_sensitive[LEM14]",
+         "gold_A": [
+          [
+           "recheck",
+           "LEM89",
+           "{\"cert\": \"701acdc33c\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "recheck",
+           "LEM89",
+           "{\"cert\": \"c4c0d1f69f\"}"
+          ]
+         ],
+         "same_summary": false
+        },
+        {
+         "query": "Definition DEF81 (inv, module M13) is now version 5.",
+         "flipped": "section_shadows[global]",
+         "gold_A": [
+          [
+           "recheck",
+           "LEM32",
+           "{\"cert\": \"9b4c987f75\"}"
+          ],
+          [
+           "recheck",
+           "LEM46",
+           "{\"cert\": \"be416e973d\"}"
+          ],
+          [
+           "recheck",
+           "LEM93",
+           "{\"cert\": \"af276ed968\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "recheck",
+           "LEM32",
+           "{\"cert\": \"9b4c987f75\"}"
+          ],
+          [
+           "recheck",
+           "LEM46",
+           "{\"cert\": \"be416e973d\"}"
+          ],
+          [
+           "recheck",
+           "LEM93",
+           "{\"cert\": \"af276ed968\"}"
+          ]
+         ],
+         "same_summary": true
+        },
+        {
+         "query": "Definition DEF99 (norm, module M44) is now version 5.",
+         "flipped": "section_shadows[global]",
+         "gold_A": [
+          [
+           "recheck",
+           "LEM69",
+           "{\"cert\": \"07e04747d0\"}"
+          ]
+         ],
+         "gold_B": [
+          [
+           "recheck",
+           "LEM19",
+           "{\"cert\": \"b58c5806e9\"}"
+          ],
+          [
+           "recheck",
+           "LEM41",
+           "{\"cert\": \"2b16c82070\"}"
+          ],
+          [
+           "recheck",
+           "LEM56",
+           "{\"cert\": \"17ae88c7d9\"}"
+          ],
+          [
+           "recheck",
+           "LEM69",
+           "{\"cert\": \"07e04747d0\"}"
+          ],
+          [
+           "recheck",
+           "LEM96",
+           "{\"cert\": \"c1b093a647\"}"
+          ]
+         ],
+         "same_summary": false
+        }
+       ]
+      }
+     ]
+    },
+    "C1_query_leak": {
+     "pass": true,
+     "n": 180,
+     "leaks": []
+    },
+    "C6_nonidempotent": {
+     "pass": true,
+     "n": 180,
+     "endpoint_failed": 180
+    },
+    "C4_killers_fail": {
+     "pass": true,
+     "ees": {
+      "exact_kv": 0.027777777777777776,
+      "source_union": 0.005555555555555556,
+      "source_regime": 0.016666666666666666,
+      "knn": 0.08888888888888889,
+      "superset": 0.1111111111111111
+     }
+    },
+    "C5_identifiable": {
+     "pass": true,
+     "oracle": 1.0,
+     "rh_oracle": 1.0
+    },
+    "C7_graph_beats_blackbox": {
+     "pass": true,
+     "seed_wins": {
+      "flat": 3,
+      "flat_est": 3,
+      "gnn": 3,
+      "gnn_est": 3
+     },
+     "n_seeds": 3,
+     "graph_mean": 0.75,
+     "blackbox_mean": {
+      "flat": 0.12777777777777777,
+      "flat_est": 0.2333333333333333,
+      "gnn": 0.25555555555555554,
+      "gnn_est": 0.2555555555555556
+     }
+    },
+    "C8_program_ran": {
+     "pass": true,
+     "graph": 0.75,
+     "program": 0.9388888888888888,
+     "tie": false,
+     "program_better": true
+    }
+   },
+   "api_allowed": true
+  }
+ }
+}

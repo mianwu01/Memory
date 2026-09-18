@@ -1,0 +1,86 @@
+{
+ "cells": {
+  "search/graph_closed/compact": {
+   "n": 80,
+   "ees": 0.525,
+   "legal": 0.9375,
+   "exact_action_set": 0.525,
+   "affected_f1": 0.6695833333333333,
+   "collateral_txns": 0.3,
+   "value_accuracy": 0.70625,
+   "required_read_recall": 0.9589011111437582,
+   "input_tokens": 154162,
+   "output_tokens": 108993,
+   "cost": 1.265095,
+   "duration": 800.5209996700287,
+   "parse_ok": 1.0,
+   "format_repairs": 6,
+   "returned_models": [
+    "deepseek-v4-flash"
+   ]
+  },
+  "search/graph_closed/verbose": {
+   "n": 80,
+   "ees": 0.5,
+   "legal": 0.9125,
+   "exact_action_set": 0.5,
+   "affected_f1": 0.6943253968253968,
+   "collateral_txns": 0.3,
+   "value_accuracy": 0.6875,
+   "required_read_recall": 0.9589011111437582,
+   "input_tokens": 336678,
+   "output_tokens": 124649,
+   "cost": 1.712345,
+   "duration": 855.6215603351593,
+   "parse_ok": 1.0,
+   "format_repairs": 12,
+   "returned_models": [
+    "deepseek-v4-flash"
+   ]
+  },
+  "travel/graph_closed/compact": {
+   "n": 80,
+   "ees": 0.4125,
+   "legal": 0.9625,
+   "exact_action_set": 0.4125,
+   "affected_f1": 0.7920238095238096,
+   "collateral_txns": 0.3,
+   "value_accuracy": 0.6083333333333334,
+   "required_read_recall": 1.0,
+   "input_tokens": 204276,
+   "output_tokens": 141927,
+   "cost": 1.597608,
+   "duration": 956.3477675914764,
+   "parse_ok": 1.0,
+   "format_repairs": 13,
+   "returned_models": [
+    "deepseek-v4-flash"
+   ]
+  },
+  "travel/graph_closed/verbose": {
+   "n": 80,
+   "ees": 0.325,
+   "legal": 0.975,
+   "exact_action_set": 0.3,
+   "affected_f1": 0.753968253968254,
+   "collateral_txns": 0.225,
+   "value_accuracy": 0.52125,
+   "required_read_recall": 1.0,
+   "input_tokens": 348651,
+   "output_tokens": 136044,
+   "cost": 1.8377955,
+   "duration": 910.5991020202637,
+   "parse_ok": 1.0,
+   "format_repairs": 13,
+   "returned_models": [
+    "deepseek-v4-flash"
+   ]
+  }
+ },
+ "total": {
+  "cells": 320,
+  "cost": 6.4128435,
+  "input_tokens": 1043767,
+  "output_tokens": 511613
+ }
+}

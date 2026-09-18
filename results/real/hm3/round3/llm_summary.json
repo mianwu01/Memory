@@ -1,0 +1,162 @@
+{
+ "cells": {
+  "search/full/compact": {
+   "n": 69,
+   "ees": 0.4927536231884058,
+   "legal": 0.9420289855072463,
+   "exact_action_set": 0.4927536231884058,
+   "affected_f1": 0.6823326432022084,
+   "collateral_txns": 0.391304347826087,
+   "value_accuracy": 0.7391304347826086,
+   "required_read_recall": 1.0,
+   "input_tokens": 202900,
+   "output_tokens": 137608,
+   "cost": 1.571426,
+   "duration": 929.1571154594421,
+   "parse_ok": 1.0,
+   "format_repairs": 10,
+   "returned_models": [
+    "deepseek-v4-flash"
+   ]
+  },
+  "search/full/verbose": {
+   "n": 67,
+   "ees": 0.5970149253731343,
+   "legal": 0.9552238805970149,
+   "exact_action_set": 0.5970149253731343,
+   "affected_f1": 0.7331674958540629,
+   "collateral_txns": 0.31343283582089554,
+   "value_accuracy": 0.7835820895522388,
+   "required_read_recall": 1.0,
+   "input_tokens": 423982,
+   "output_tokens": 141402,
+   "cost": 1.973431,
+   "duration": 947.3210868835449,
+   "parse_ok": 1.0,
+   "format_repairs": 9,
+   "returned_models": [
+    "deepseek-v4-flash"
+   ]
+  },
+  "search/graph/compact": {
+   "n": 69,
+   "ees": 0.4927536231884058,
+   "legal": 1.0,
+   "exact_action_set": 0.4927536231884058,
+   "affected_f1": 0.5410628019323671,
+   "collateral_txns": 0.08695652173913043,
+   "value_accuracy": 0.5362318840579711,
+   "required_read_recall": 0.9165926571297415,
+   "input_tokens": 172230,
+   "output_tokens": 125028,
+   "cost": 1.360887,
+   "duration": 904.8881659507751,
+   "parse_ok": 1.0,
+   "format_repairs": 15,
+   "returned_models": [
+    "deepseek-v4-flash"
+   ]
+  },
+  "search/graph/verbose": {
+   "n": 69,
+   "ees": 0.5217391304347826,
+   "legal": 0.9130434782608695,
+   "exact_action_set": 0.5217391304347826,
+   "affected_f1": 0.6824706694271911,
+   "collateral_txns": 0.14492753623188406,
+   "value_accuracy": 0.6521739130434783,
+   "required_read_recall": 0.9165926571297415,
+   "input_tokens": 199869,
+   "output_tokens": 88218,
+   "cost": 1.1117085,
+   "duration": 653.7617366313934,
+   "parse_ok": 1.0,
+   "format_repairs": 5,
+   "returned_models": [
+    "deepseek-v4-flash"
+   ]
+  },
+  "travel/full/compact": {
+   "n": 63,
+   "ees": 0.49206349206349204,
+   "legal": 0.9841269841269841,
+   "exact_action_set": 0.4603174603174603,
+   "affected_f1": 0.8035525321239607,
+   "collateral_txns": 0.15873015873015872,
+   "value_accuracy": 0.5952380952380952,
+   "required_read_recall": 1.0,
+   "input_tokens": 259518,
+   "output_tokens": 151260,
+   "cost": 1.749267,
+   "duration": 945.688943862915,
+   "parse_ok": 1.0,
+   "format_repairs": 14,
+   "returned_models": [
+    "deepseek-v4-flash"
+   ]
+  },
+  "travel/full/verbose": {
+   "n": 63,
+   "ees": 0.6349206349206349,
+   "legal": 1.0,
+   "exact_action_set": 0.6031746031746031,
+   "affected_f1": 0.8340639959687578,
+   "collateral_txns": 0.20634920634920634,
+   "value_accuracy": 0.783068783068783,
+   "required_read_recall": 1.0,
+   "input_tokens": 627177,
+   "output_tokens": 154660,
+   "cost": 2.2839505,
+   "duration": 946.997330904007,
+   "parse_ok": 1.0,
+   "format_repairs": 18,
+   "returned_models": [
+    "deepseek-v4-flash"
+   ]
+  },
+  "travel/graph/compact": {
+   "n": 64,
+   "ees": 0.21875,
+   "legal": 0.9375,
+   "exact_action_set": 0.21875,
+   "affected_f1": 0.711532738095238,
+   "collateral_txns": 0.25,
+   "value_accuracy": 0.4471354166666667,
+   "required_read_recall": 1.0,
+   "input_tokens": 125735,
+   "output_tokens": 87873,
+   "cost": 0.9612275,
+   "duration": 591.0243911743164,
+   "parse_ok": 1.0,
+   "format_repairs": 7,
+   "returned_models": [
+    "deepseek-v4-flash"
+   ]
+  },
+  "travel/graph/verbose": {
+   "n": 63,
+   "ees": 0.23809523809523808,
+   "legal": 1.0,
+   "exact_action_set": 0.2222222222222222,
+   "affected_f1": 0.7034391534391534,
+   "collateral_txns": 0.1111111111111111,
+   "value_accuracy": 0.41666666666666663,
+   "required_read_recall": 1.0,
+   "input_tokens": 180892,
+   "output_tokens": 82989,
+   "cost": 1.012264,
+   "duration": 559.5350596904755,
+   "parse_ok": 1.0,
+   "format_repairs": 6,
+   "returned_models": [
+    "deepseek-v4-flash"
+   ]
+  }
+ },
+ "total": {
+  "cells": 527,
+  "cost": 12.0241615,
+  "input_tokens": 2192303,
+  "output_tokens": 969038
+ }
+}

@@ -1,0 +1,74 @@
+[
+ {
+  "sigma": 0.0,
+  "n_ep": 150,
+  "T": 3000,
+  "blind_read": 0,
+  "regime_read": 2,
+  "regime_gated": 2
+ },
+ {
+  "sigma": 0.0,
+  "n_ep": 600,
+  "T": 12000,
+  "blind_read": 1,
+  "regime_read": 2,
+  "regime_gated": 2
+ },
+ {
+  "sigma": 0.0,
+  "n_ep": 3000,
+  "T": 60000,
+  "blind_read": 2,
+  "regime_read": 2,
+  "regime_gated": 2
+ },
+ {
+  "sigma": 0.01,
+  "n_ep": 150,
+  "T": 3000,
+  "blind_read": 0,
+  "regime_read": 2,
+  "regime_gated": 2
+ },
+ {
+  "sigma": 0.01,
+  "n_ep": 600,
+  "T": 12000,
+  "blind_read": 1,
+  "regime_read": 2,
+  "regime_gated": 2
+ },
+ {
+  "sigma": 0.01,
+  "n_ep": 3000,
+  "T": 60000,
+  "blind_read": 2,
+  "regime_read": 2,
+  "regime_gated": 2
+ },
+ {
+  "sigma": 0.1,
+  "n_ep": 150,
+  "T": 3000,
+  "blind_read": 0,
+  "regime_read": 2,
+  "regime_gated": 2
+ },
+ {
+  "sigma": 0.1,
+  "n_ep": 600,
+  "T": 12000,
+  "blind_read": 1,
+  "regime_read": 2,
+  "regime_gated": 2
+ },
+ {
+  "sigma": 0.1,
+  "n_ep": 3000,
+  "T": 60000,
+  "blind_read": 2,
+  "regime_read": 2,
+  "regime_gated": 2
+ }
+]

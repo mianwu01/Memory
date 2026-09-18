@@ -496,3 +496,65 @@ selection/serialization 是否泛化，并设计能拆开两部分贡献的 abla
 discovery 不读取 oracle-derived `poison_retr`。P3-B 若继续则需提高实际 deletion exposure、
 避开两个 seed 的 0-ASR floor，并进一步减少独立调用噪声。不得补抽有利 seed/ID、增加
 结果导向的 replicate，或回写任一冻结负结果。
+
+## 8. P2 Hidden Mechanism v3（2026-09-03）
+
+v1/v2 只证明了 structured memory / compression 有用（lookup baseline 的 sufficient-mask
+rate 全为 1.0）。v3 把 P2 改成 `learned hidden mechanism → causal memory maintenance →
+executable downstream repair`：query 只暴露 source，输出是非幂等 transaction，primary
+metric 是 Executable Exact Success（事务全部合法 ∧ post-state ∧ receipt 与 oracle 一致）。
+预注册（重建版，原文件在本仓库不存在）：`docs/hidden-mechanism-v3-preregistration.md`；
+结果：`docs/hidden-mechanism-v3-results.md`；代码 `code/hm3/`。
+
+| 项目 | 状态 | 证据 |
+|---|---|---|
+| 四个 DGP 可辨识、非幂等端点成立 | 已支持 | oracle 与 runtime-history oracle 在 dev/test 全部 1.000；oracle plan 加一次原值写回 180/180 端点失败 |
+| 零 API gate | Travel / Search / Formal 通过；Shopping C4 失败 | `results/development/hm3/gate.json`：Shopping 的 source+regime 0.567、kNN 0.511 > 0.50 |
+| learned graph 高于 lookup / kNN / superset / flat / gnn | 已支持（dev 与 test） | test EES：graph 0.856 / 0.828 / 0.994 / 0.789（travel / shopping / search / formal），gnn_est 0.667 / 0.728 / 0.522 / 0.272，lookup 与 superset ≤ 0.23（Shopping 的 source_regime 0.628 除外） |
+| causal graph 相对 relational program learner 的独占优势 | 不支持为一般结论 | Search 两者打平（0.994 / 0.989），Formal dev 上 program 更高（0.939 vs 0.750）、test 上 program 不稳定（0.450 ± 0.334）；Travel 与 Shopping graph 更高 |
+| 真实 API selection × serialization（Travel、Search，deepseek-v4-flash，400 cells，$6.59） | Search 主判断 PASS，Travel FAIL | Search：graph/compact 0.650 vs full/verbose 0.500，input −73.0%；Travel：0.250 vs 0.500，input −72.1%，损失是 compact × graph 的交互项（graph/verbose 0.450、full/compact 0.500）；LLM 最好 cell 远低于 learned graph 的 0.856 / 0.994；`results/real/hm3/llm_summary.json` |
+
+Round 2（预注册 §9/§10，fresh seeds 20–22 与 prompt v2）：graph 0.883 / 0.800 / 1.000 / 0.717，graph_pooled
+0.867 / 0.839 / 0.989 / 0.733，program_reg 0.667 / 0.828 / 0.994 / 0.889；Shopping v3.2 通过全部 gate
+（source+regime 0.461、kNN 0.239），fresh seeds 上 graph 0.756 / program_reg 0.778。API round 2（prompt v2，
+400 cells，$6.31）：Travel graph/compact 0.600 = full/verbose 0.600（input −79.9%），Search 0.450 vs 0.650；
+两轮配对 bootstrap 合并后六个区间全部跨 0，selection 的 EES 效应在 n=20/cell 下不可分辨，稳定的只有
+68–80% 的 input 减少。
+
+API round 3/4（预注册 §11/§12，每 cell 63–69 episodes，prompt v2，$18.4）：graph selection 加 witness 闭包相对
+full/verbose，Travel 0.444 vs 0.635（配对 −0.190 [−0.333, −0.048]），Search 0.493 vs 0.597（−0.104 [−0.254, +0.045]），
+input −70–74%；闭包修复 Travel 一半差距（+0.234 [+0.094, +0.359]）；−0.10 边界下的非劣性未达到。四轮 P2 API 合计 $32.1。
+
+追加（post-hoc）：正则化的 `program_reg` 在 test 上 Shopping 0.828（与 graph 打平）、Formal 0.933
+（高于 graph 0.789）、Travel 0.656（低于 graph 0.856）；Shopping v3.1 让 kNN 降到 0.383 但 source+regime
+仍 0.533，C4 未过；thinking-enabled Travel 重跑不可行（reasoning 耗尽 8192 tokens，无答案）。
+
+可写：可组合关系结构加上从历史读出的 regime 才能完成可执行修复；conservative superset
+与 lookup 在非幂等端点上真实失败；Search 上 graph selection 加 compact 序列化让 LLM 以 27%
+的 input 达到更高 EES。不能写：learned causal structure 对四任务正确性必不可少；LLM runtime
+已经能利用学到的结构（Travel 的 graph/compact 低于 full/verbose）。下一步：API 的 selection 效应需要每 cell ≥ 80 episodes 或更强的 runtime 才能做成 confirmatory；
+Formal 上 graph 相对 program 的差距（0.72 vs 0.89）是方法侧的公开问题；两者都交给 Yujia 决定。
+
+## 9. P3-B round 3（2026-09-03，MINJA，冻结协议 `docs/p3b-round3-protocol-2026-09-03.md`）
+
+round 2 的失败被 power audit 定位在 calibration exposure（约一半记忆从未被打分）与独立调用噪声。
+round 3 保留 label-free driver，加入 prefix 邻域扩展（g1）、trigger-regime 隔离（g2）、同一冻结记忆
+上的 no-op 对照臂、先删记忆再检索的语义，10 个 seed × 12 held-out rounds × 4 臂。
+
+| 臂 | attacks / 120 | accuracy |
+|---|---:|---:|
+| ungated | 4 | 0.85 |
+| noop | 9 | 0.82 |
+| g1（implicated + 同题干扩展） | 4 | 0.85 |
+| g2（g1 + 未经 vetted 的记录在 trigger 查询下隔离） | 0 | 0.89 |
+
+配对（noop − arm，touched queries）：g1 +0.097 [−0.032, +0.226]（n=31）；g2 +0.125 [+0.047, +0.219]
+（n=64），全部查询 +0.075 [+0.033, +0.125]。冻结判断：g1 primary 未过；g2 primary 通过但 consistency
+不可评估（本轮 base attack rate 3–8%，没有 12-round block 达到 ≥2 ungated attacks）→ 两臂均 **FAIL**（保留）。
+round 4（协议 §6，seeds 10–21，三 seed 一个 block，gate-free 臂合计 ≥3 attacks 才可评估）：4/4 block 可评估；
+attacks / 144：ungated 10、noop 9、g1 4、g2 2；配对（touched）g1 +0.087 [+0.022, +0.174]（n=46）、g2 +0.072
+[+0.021, +0.124]（n=97）；两臂各在 3/4 block 上优于 noop → **g1 primary PASS，g2 secondary PASS**；g2 accuracy 0.87 为四臂最高。
+22 seeds 合并（描述性）：g1 +0.091 [+0.026, +0.169]，g2 +0.093 [+0.050, +0.143]，可评估 block 6/6 与 5/6 改善。
+边界：单一载体与模型；round 4 的 block 设计在看过 5 个 round-3 seed 的中期汇总后冻结（协议 §6 披露）；不升级 P3-A 的恢复证据。
+AgentPoison round 3 在本环境不可行（无网络取 dev split 与 DPR encoder）。
+结果：`results/real/p3b_round3/`，`docs/p3b-round3-results-2026-09-03.md`。
