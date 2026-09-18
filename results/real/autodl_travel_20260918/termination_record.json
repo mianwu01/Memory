@@ -1,0 +1,17 @@
+{
+  "schema": "travel-campaign-termination/v1",
+  "date": "2026-09-19",
+  "reason": "User is migrating to a new workspace after the method/task audit; broad Travel completion has low scientific value.",
+  "new_dispatch_was_already_paused": true,
+  "terminated_long_running_cases": [
+    "implicit/lightmem/133/r2",
+    "implicit/lightmem/135/r2",
+    "implicit/lightmem/142/r2"
+  ],
+  "terminated_process_roles": [
+    "paused main controller",
+    "read-only campaign watcher"
+  ],
+  "data_policy": "Preserve all existing case states, attempts, logs, usage, protocols, and results; do not relabel terminated cases as complete.",
+  "resume_policy": "Do not resume this campaign automatically. See docs/new-workspace-handoff-2026-09-19.md."
+}

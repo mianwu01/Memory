@@ -34,7 +34,7 @@ Agent memory 应被表示为可观察的 write--hold--read 时序过程。存储
 
 implicit-v1 又把 future notice 与 source traveler 的 final plan 放在同一个历史 chunk。普通检索命中一个 chunk 时同时得到依赖说明和 source value；每个 episode 只有约 5--8 个 chunk，而多种 baseline 的 retrieval limit 已覆盖全部历史。因此它主要测写入保真和 context compression，不能有力区分 learned graph 与维护良好的 ledger/`memory.md`。
 
-暂停动作和覆盖率见[停跑决定](travel-campaign-pause-decision-2026-09-19.md)。不要因为旧协议还有未完成 case 就恢复全表。
+暂停、最后三条长时间未结束 case 的终止动作及覆盖率见[停跑决定](travel-campaign-pause-decision-2026-09-19.md)。旧 controller 和 watcher 已关闭；不要因为旧协议还有未完成 case 就恢复全表。
 
 ## 4. 新实现的硬性设计条件
 

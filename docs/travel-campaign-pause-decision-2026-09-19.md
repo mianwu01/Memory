@@ -1,16 +1,18 @@
 # Travel 正式实验暂停新增调度决定（2026-09-19）
 
-状态：**已暂停新增 case；保留全部既有结果；已发出的 case 自然结束。** 这不是删除或否定整个 Travel 实验，而是停止继续补齐信息增量较低的 1,950-case 全表。
+状态：**已停止 campaign；保留全部既有结果。** 新增 dispatch 先被暂停，大部分已发出的 case 自然结束；最后 3 个持续 33--65 分钟仍未结束的 LightMem case 在工作区迁移前终止。该决定不是删除或否定整个 Travel 实验，而是停止继续补齐信息增量较低的 1,950-case 全表。
 
 ## 决定
 
 2026-09-19 对 Travel implicit-v1 的学图和运行时链路复核后，停止主 controller 派发新的正式 case：
 
 - `results/real/autodl_travel_20260918/dispatch_control.json` 已设为 `pause_dispatch: true`；controller 已确认 `dispatch_limit=0`。
-- 不终止已经启动的 actor case，使其完成并保存完整事件、用量和状态。
+- 暂停后先允许已经启动的 actor case 自然结束；迁移前仅终止最后 3 个长期未结束的 LightMem case，并保留其不完整状态、事件和已记录用量。
 - 已停止“当前恢复批次结束后继续无限启动恢复轮次”的 supervisor；已经启动的有限恢复批次不强杀。
 - 不删除、不改写、不按表现挑选已经产生的任何结果。
 - 在完成覆盖率审计和重新定义科学问题前，不恢复十臂全表调度。
+
+最终停止记录为 `results/real/autodl_travel_20260918/termination_record.json`：终止的 case 是 `implicit/lightmem/{133,135,142}/r2`，同时关闭已暂停的主 controller 和只读 watcher。任何新工作区都不得将这三例标记为 complete，也不得自动恢复旧 campaign。
 
 暂停附近最近一次独立文件扫描记录为：全表 1,710/1,950 complete、77 failed、62 running、101 not started；预登记核心面板 819/900 complete、21 failed、60 尚未终态。该扫描只读取运行状态和用量，没有读取部分任务分数。主 controller 自身的 `campaign_state.json` 不包含其他 dispatcher 后来写入其内存状态表的完成更新，因此进度以 `monitoring/health_*.json` 对磁盘 case state 的扫描为准。
 
