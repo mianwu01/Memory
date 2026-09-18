@@ -101,7 +101,7 @@ git clone https://github.com/mianwu01/Memory.git
 cd Memory
 git checkout claude/artifact-ordering-inzyf3
 python3 -m compileall -q code
-PYTHONPATH=code python3 code/test_travel_implicit.py
+PYTHONPATH=code python3 -m unittest discover -s code -p 'test_*.py'
 python3 code/regime_grace.py
 ```
 

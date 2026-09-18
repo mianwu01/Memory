@@ -1,0 +1,14 @@
+{
+  "registered_at": 1789736101.729221,
+  "scope": "AutoDL A-Mem memory only; every call max_tokens=16000; original actor and other memory methods unchanged",
+  "reason": "Native1000 truncated normal1289-token neighbor update; identical16k diagnostic parsed all5 neighbors",
+  "diagnostic": "results/development/autodl_native_validation_20260918/diagnostic_amem_16k/report.json",
+  "old_travel_family": "autodl_travel_dev_v2",
+  "old_all13_children_already_source_loaded": true,
+  "old_family_not_relabelled": "Existing13 child processes and native checks retain old loaded source; old family provenance and frozen copies preserved",
+  "old_source_sha256": "bee3993cdbe3a3cbc1467ccbd3580a96a0503af49daf5555b0d263a5a18f7f44",
+  "before_formal_test": true,
+  "native_defaults_note": "Budget adaptation, not all native defaults preserved. Old provider v1 budget failure caused by reasoning mode is distinct from present actual1289-token正文.",
+  "new_source_sha256": "9b5880b84b7ed7b43c2b2fdc0d609aa1aec34f8acd55f0bf8cd0b4de04fcefa0",
+  "applied_at": 1789736144.3887143
+}
