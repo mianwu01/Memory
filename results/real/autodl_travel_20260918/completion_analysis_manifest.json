@@ -1,0 +1,7 @@
+{
+  "registered_at": 1789736725.1596713,
+  "source_hashes": {
+    "code/autodl_completion_report.py": "cc6fed09555953b82b0bd3237cfe31696ae16912350f41ba667c8af7cee3bda9"
+  },
+  "failure_reporting_policy": "Completion/terminal coverage, evidence-based separate model length/format, transport/API, environment/implementation, mixed or insufficient evidence; no missing score imputation, partial ranking, or bounds."
+}

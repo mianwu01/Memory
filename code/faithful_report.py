@@ -94,8 +94,14 @@ def probe_rows(probe):
             except json.JSONDecodeError:
                 response = {}
             yield index, {"response": response, "status_code": item.get("status")}
+    elif probe.get("schema") == "faithful-memory-concurrency-probe/v1":
+        index = 0
+        for level in probe["levels"]:
+            for row in level["rows"]:
+                yield index, {"response": row, "status_code": row.get("status_code")}
+                index += 1
     else:
-        yield from enumerate(probe.get("rows", [probe]))
+        yield from enumerate(probe.get("rows", [{"response": probe, "status_code": probe.get("status_code")}]))
 
 
 def ledger():
@@ -117,7 +123,10 @@ def ledger():
     probes = []
     probe_paths = [ROOT / "results/development" / name for name in (
         "faithful_memory_backup_probe_2026_09_15.json", "faithful_memory_protocol_probe_2026_09_15.json")]
-    probe_paths += sorted((ROOT / "results/development").glob("faithful_memory*/*access_diagnostic.json"))
+    for folder in (ROOT / "results/development", ROOT / "results/real"):
+        probe_paths += sorted(folder.glob("faithful_memory*/*access_diagnostic.json"))
+        probe_paths += sorted(folder.glob("faithful_memory*/*generation_probe*.json"))
+        probe_paths += sorted(folder.glob("faithful_memory*/*concurrency_probe*.json"))
     for probe_path in probe_paths:
         if not probe_path.exists():
             continue
@@ -160,6 +169,15 @@ def collect(base):
         ROOT / "benchmarks/MemoryArena/agent/travel_planner.py",
         ROOT / "benchmarks/MemoryArena/env/env_systems/travel_planner_env/prompts.py",
         ROOT / "benchmarks/MemoryArena/env/env_systems/travel_planner_env/tool_schemas.py")}
+    mapping_path = base / "formal_recovery_sources.json"
+    mapping = json.loads(mapping_path.read_text()) if mapping_path.exists() else {}
+    if mapping and mapping.get("schema") != "faithful-memory-formal-recovery-sources/v1":
+        raise ValueError("Unsupported formal recovery mapping schema")
+    if mapping and mapping.get("protocol_sha256") != digest(base / "protocol.json"):
+        raise ValueError("Formal recovery mapping does not match protocol")
+    expected_cases = {f"{arm}_{ident}" for arm in protocol["arms"] for ident in expected_ids}
+    if mapping and set(mapping.get("cases", {})) != expected_cases:
+        raise ValueError("Formal recovery mapping must cover exactly the frozen cases")
     combined = base / "analysis"
     combined.mkdir(exist_ok=True)
     report = {"complete": False, "protocol_sha256": digest(base / "protocol.json"),
@@ -168,7 +186,11 @@ def collect(base):
     for arm in protocol["arms"]:
         records, all_events, hashes = [], [], {}
         for ident in sorted(expected_ids):
-            folder = base / "travel" / f"{arm}_{ident}"
+            key = f"{arm}_{ident}"
+            relative_folder = mapping.get("cases", {}).get(key, f"travel/{key}")
+            folder = (base / relative_folder).resolve()
+            if base.resolve() not in folder.parents:
+                raise ValueError("Formal recovery mapping escapes the evaluation family")
             try:
                 status = json.loads((folder / "status.json").read_text())
                 if not status["complete"]:

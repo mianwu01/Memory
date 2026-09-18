@@ -1,0 +1,195 @@
+{
+  "schema": "travel-type-level-slot-graph/v1",
+  "source": "grace on spec=ind, max_lag=3, 219 episodes, 219 trials, 1080 windows, center_by_trial=True",
+  "created": "2026-09-18 20:30:05",
+  "slots": [
+    "current_city",
+    "transportation",
+    "breakfast",
+    "attraction",
+    "lunch",
+    "dinner",
+    "accommodation"
+  ],
+  "max_lag": 3,
+  "excluded_episode_ids": [
+    101,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160
+  ],
+  "edges": [
+    {
+      "cause": "breakfast",
+      "effect": "breakfast",
+      "lag": 1,
+      "weight": 0.6957
+    },
+    {
+      "cause": "breakfast",
+      "effect": "breakfast",
+      "lag": 2,
+      "weight": 0.6754
+    },
+    {
+      "cause": "breakfast",
+      "effect": "breakfast",
+      "lag": 3,
+      "weight": 0.6689
+    },
+    {
+      "cause": "breakfast",
+      "effect": "lunch",
+      "lag": 3,
+      "weight": 0.5804
+    },
+    {
+      "cause": "breakfast",
+      "effect": "dinner",
+      "lag": 1,
+      "weight": 0.5635
+    },
+    {
+      "cause": "lunch",
+      "effect": "lunch",
+      "lag": 1,
+      "weight": 0.6915
+    },
+    {
+      "cause": "lunch",
+      "effect": "lunch",
+      "lag": 2,
+      "weight": 0.685
+    },
+    {
+      "cause": "dinner",
+      "effect": "dinner",
+      "lag": 2,
+      "weight": 0.6764
+    },
+    {
+      "cause": "dinner",
+      "effect": "dinner",
+      "lag": 3,
+      "weight": 0.6684
+    },
+    {
+      "cause": "accommodation",
+      "effect": "accommodation",
+      "lag": 1,
+      "weight": 0.7031
+    },
+    {
+      "cause": "accommodation",
+      "effect": "accommodation",
+      "lag": 2,
+      "weight": 0.6821
+    },
+    {
+      "cause": "accommodation",
+      "effect": "accommodation",
+      "lag": 3,
+      "weight": 0.6797
+    }
+  ],
+  "slot_ancestors": {
+    "current_city": [],
+    "transportation": [],
+    "breakfast": [
+      "breakfast"
+    ],
+    "attraction": [],
+    "lunch": [
+      "breakfast",
+      "lunch"
+    ],
+    "dinner": [
+      "breakfast",
+      "dinner"
+    ],
+    "accommodation": [
+      "accommodation"
+    ]
+  },
+  "slot_adjacency_any_lag": {
+    "current_city": [],
+    "transportation": [],
+    "breakfast": [
+      "breakfast"
+    ],
+    "attraction": [],
+    "lunch": [
+      "breakfast",
+      "lunch"
+    ],
+    "dinner": [
+      "breakfast",
+      "dinner"
+    ],
+    "accommodation": [
+      "accommodation"
+    ]
+  },
+  "persistent_slots": [
+    "current_city",
+    "transportation",
+    "attraction"
+  ],
+  "lag_coverage": 0.9586,
+  "eval_vs_query_ground_truth": {
+    "TP": 12,
+    "FP": 0,
+    "FN": 18,
+    "P": 1.0,
+    "R": 0.4,
+    "F1": 0.571
+  },
+  "notes": "query-parsed ground truth covers only the explicit constraint edges; it does not contain the shared-trip scaffold, so scaffold self-edges score as FP against it. See docs/p2-grace-integration-results.md."
+}

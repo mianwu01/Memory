@@ -12,8 +12,12 @@ from pathlib import Path
 import time
 
 
-def wait_for_route_slot(endpoint, spacing=2.1):
+def wait_for_route_slot(endpoint, spacing=None):
     """One shared request-start schedule across arm processes and clients."""
+    if spacing is None:
+        # AutoDL's registered 2026-09-18 probe passed 16 concurrent requests.
+        # Historical routes retain their original request-start spacing.
+        spacing = 0.05 if str(endpoint).rstrip("/") == "https://www.autodl.art/api/v1" else 2.1
     directory = Path(__file__).resolve().parents[1] / ".tmp/relay-rate-limits"
     directory.mkdir(parents=True, exist_ok=True)
     path = directory / (hashlib.sha256(str(endpoint).encode()).hexdigest()[:16] + ".json")

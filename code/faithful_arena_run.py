@@ -18,6 +18,9 @@ def main():
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--env-port", type=int, default=8941)
     ap.add_argument("--actor-thinking", choices=["default", "disabled"], default="disabled")
+    ap.add_argument("--variant", choices=["original", "explicit", "implicit"], default="original")
+    ap.add_argument("--graph", type=Path)
+    ap.add_argument("--repeat", type=int, default=0)
     args = ap.parse_args()
     environment()
     runtime = Runtime(args.out.resolve(), args.arm, args.id, actor_thinking=args.actor_thinking)
@@ -28,11 +31,21 @@ def main():
                         "faithful_arena_run.py", "faithful_memory.py", "faithful_transport.py",
                         "arena_causal_memory.py", "arena_e2e_inherit.py", "relay_chat_transport.py")]},
                   "model": os.environ["OPENAI_MODEL"], "endpoint": os.environ["OPENAI_BASE_URL"],
-                  "actor_thinking": args.actor_thinking, "actor_length_policy": "native_passthrough"}
+                  "actor_thinking": args.actor_thinking, "actor_length_policy": "native_passthrough",
+                  "variant": args.variant, "repeat": args.repeat}
+    if args.graph:
+        provenance["graph_path"] = str(args.graph.resolve())
+        provenance["graph_sha256"] = hashlib.sha256(args.graph.read_bytes()).hexdigest()
+    if args.variant != "original":
+        source = ROOT / "code/travel_implicit.py"
+        provenance["source_hashes"][str(source.relative_to(ROOT))] = hashlib.sha256(source.read_bytes()).hexdigest()
     (runtime.directory / "provenance.json").write_text(json.dumps(provenance, indent=2))
     runtime.install_clients()
     arena = ROOT / "benchmarks/MemoryArena"
     import run_travel
+    if args.variant != "original":
+        from travel_implicit import install_variant
+        install_variant(run_travel, args.variant)
     from agent.travel_planner import TravelPlannerAgent
     from env.env_systems.travel_planner_env import prompts
     assert run_travel.TravelPlannerAgent is TravelPlannerAgent
@@ -51,7 +64,8 @@ def main():
 
     def memory_factory(*_args, **_kwargs):
         if args.arm in {"ours", "noGcompact", "query_only"}:
-            return StructuredMemory(args.arm, runtime)
+            return StructuredMemory(args.arm, runtime, learned_graph_path=args.graph,
+                                    historical_notes=args.variant != "original")
         if args.arm in {"dense", "summary"}:
             return ConventionalMemory(args.arm, runtime)
         memory = AuthorMemory(args.arm, runtime)
@@ -93,6 +107,13 @@ def main():
         status = {"complete": True, "arm": args.arm, "id": args.id, "counts": runtime.counts,
                   "scope": "original MemoryArena actor; full plan; no custom decoder"}
     except Exception as exc:
+        import traceback
+        detail = traceback.format_exc()
+        for secret_name in ("OPENAI_API_KEY", "DEEPSEEK_API_KEY"):
+            secret = os.environ.get(secret_name)
+            if secret:
+                detail = detail.replace(secret, "[REDACTED]")
+        (runtime.directory / "error_traceback.txt").write_text(detail)
         status = {"complete": False, "arm": args.arm, "id": args.id, "counts": runtime.counts,
                   "error_type": type(exc).__name__, "failures": runtime.failures}
         (runtime.directory / "status.json").write_text(json.dumps(status, indent=2))

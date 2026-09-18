@@ -8,6 +8,7 @@ __pycache__/
 code/results/
 .env
 deepseek_apikey.md
+.secrets/
 results/real/_tpdb/
 .tmp/
 

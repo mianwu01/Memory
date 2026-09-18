@@ -1,0 +1,35 @@
+{
+  "schema": "autodl-travel-usage-coverage/v1",
+  "created_at": 1789739971.0342388,
+  "analysis_sha256": "019f3542c0b5ff1b97e92cfee4fd18c25c264d87fc18e980a6157b9a0d834e08",
+  "protocol_sha256": "401a0cc99e253b363e769a064568ed78cbea1ac72d92a323f41ba944b9e22d17",
+  "scope": "all persisted attempts of registered cases; live scan is not atomic",
+  "recorded_llm_responses": 4090,
+  "recorded_input_tokens": 62179927,
+  "recorded_output_tokens": 21716277,
+  "recorded_llm_responses_without_usage": 0,
+  "api_error_events_with_unknown_usage": 7,
+  "failed_transport_attempt_receipts": 415,
+  "failed_transport_attempt_statuses": {
+    "429": 390,
+    "None": 25
+  },
+  "api_error_events_without_attempt_receipts": 0,
+  "minimum_unlogged_returned_responses": 1,
+  "affected_attempts": [
+    {
+      "case": "implicit/mem0/120/r0",
+      "attempt": "attempt_0",
+      "traceback_sha256": "166306c4acdcf18fc81426fac45d64320479f26cc447e1dbdf938eb56b1545ef",
+      "minimum_unlogged_returned_responses": 1,
+      "usage": null,
+      "finish_reason": null,
+      "reason": "Returned completion failed in reasoning_history.remember before its llm event; preceding logged response is not this response."
+    }
+  ],
+  "partial_trailing_records": [],
+  "monetary_cost": null,
+  "note": "Recorded token sums are lower bounds. Unknown response/failed-request usage is not zero; provider pricing is unknown.",
+  "attempt_count_note": "Failed attempt receipts include retries before successful responses and terminal API errors. Do not add the terminal api_error event count to receipt counts; these overlap. Receipts do not include absolute attempt timestamps; response-event time is not failure time.",
+  "known_usage_gaps": true
+}

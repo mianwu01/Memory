@@ -1,5 +1,5 @@
 {
-  "as_of": 1789442773.059829,
+  "as_of": 1789598000.9893289,
   "rates_cny_per_million": {
     "uncached_input": 2.0,
     "cached_input": 0.04,
@@ -847,6 +847,238 @@
       "api_errors_unknown_usage": 1,
       "length_responses": 0,
       "phases": {}
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel_recovery_balance/amem_101/events.jsonl",
+      "arm": "amem",
+      "episode": 101,
+      "calls": 44,
+      "input_tokens": 6840813,
+      "cached_input_tokens": 2144768,
+      "output_tokens": 145109,
+      "estimated_cny": 15.6055658,
+      "provider_reported_cny": 15.605565799999999,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 44,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 1,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 3,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 29,
+          "input_tokens": 2732127,
+          "output_tokens": 3778,
+          "estimated_cny": 8.227356
+        },
+        "actor": {
+          "calls": 15,
+          "input_tokens": 4108686,
+          "output_tokens": 141331,
+          "estimated_cny": 7.3782098
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel_recovery_balance/bm25_101/events.jsonl",
+      "arm": "bm25",
+      "episode": 101,
+      "calls": 16,
+      "input_tokens": 188886,
+      "cached_input_tokens": 76800,
+      "output_tokens": 266172,
+      "estimated_cny": 2.739486,
+      "provider_reported_cny": 2.739486,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 16,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 7,
+      "phases": {
+        "actor": {
+          "calls": 16,
+          "input_tokens": 188886,
+          "output_tokens": 266172,
+          "estimated_cny": 2.739486
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel_recovery_balance/dense_101/events.jsonl",
+      "arm": "dense",
+      "episode": 101,
+      "calls": 30,
+      "input_tokens": 237963,
+      "cached_input_tokens": 150528,
+      "output_tokens": 215742,
+      "estimated_cny": 2.2190358,
+      "provider_reported_cny": 2.2190358000000003,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 30,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 6,
+      "phases": {
+        "actor": {
+          "calls": 30,
+          "input_tokens": 237963,
+          "output_tokens": 215742,
+          "estimated_cny": 2.2190358000000003
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel_recovery_balance/full_101/events.jsonl",
+      "arm": "full",
+      "episode": 101,
+      "calls": 16,
+      "input_tokens": 1556502,
+      "cached_input_tokens": 901888,
+      "output_tokens": 197239,
+      "estimated_cny": 3.8291818,
+      "provider_reported_cny": 3.8291817999999993,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 16,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 5,
+      "phases": {
+        "actor": {
+          "calls": 16,
+          "input_tokens": 1556502,
+          "output_tokens": 197239,
+          "estimated_cny": 3.8291817999999993
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel_recovery_balance/lightmem_101/events.jsonl",
+      "arm": "lightmem",
+      "episode": 101,
+      "calls": 308,
+      "input_tokens": 3095256,
+      "cached_input_tokens": 2912384,
+      "output_tokens": 83091,
+      "estimated_cny": 1.58192,
+      "provider_reported_cny": 1.5819200000000018,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 308,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 15,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 0,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 125,
+          "input_tokens": 78370,
+          "output_tokens": 10015,
+          "estimated_cny": 0.14614119999999992
+        },
+        "actor": {
+          "calls": 183,
+          "input_tokens": 3016886,
+          "output_tokens": 73076,
+          "estimated_cny": 1.4357788
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel_recovery_balance/mem0_101/events.jsonl",
+      "arm": "mem0",
+      "episode": 101,
+      "calls": 23,
+      "input_tokens": 871727,
+      "cached_input_tokens": 43520,
+      "output_tokens": 204622,
+      "estimated_cny": 3.675566,
+      "provider_reported_cny": 3.6755660000000003,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 23,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 3,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 5,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 8,
+          "input_tokens": 757563,
+          "output_tokens": 3695,
+          "estimated_cny": 1.621243
+        },
+        "actor": {
+          "calls": 15,
+          "input_tokens": 114164,
+          "output_tokens": 200927,
+          "estimated_cny": 2.054323
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel_recovery_balance/ours_101/events.jsonl",
+      "arm": "ours",
+      "episode": 101,
+      "calls": 17,
+      "input_tokens": 115993,
+      "cached_input_tokens": 46592,
+      "output_tokens": 181305,
+      "estimated_cny": 1.8446072,
+      "provider_reported_cny": 1.8446072,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 17,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 3,
+      "phases": {
+        "actor": {
+          "calls": 17,
+          "input_tokens": 115993,
+          "output_tokens": 181305,
+          "estimated_cny": 1.8446072
+        }
+      }
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/travel_recovery_balance/summary_101/events.jsonl",
+      "arm": "summary",
+      "episode": 101,
+      "calls": 24,
+      "input_tokens": 741758,
+      "cached_input_tokens": 62464,
+      "output_tokens": 202613,
+      "estimated_cny": 3.8676454,
+      "provider_reported_cny": 3.8676454,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 24,
+      "unknown_billing_attempts": 0,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 0,
+      "length_responses": 3,
+      "phases": {
+        "memory_or_native_qa": {
+          "calls": 8,
+          "input_tokens": 580029,
+          "output_tokens": 37444,
+          "estimated_cny": 2.077083
+        },
+        "actor": {
+          "calls": 16,
+          "input_tokens": 161729,
+          "output_tokens": 165169,
+          "estimated_cny": 1.7905624
+        }
+      }
     },
     {
       "path": "results/development/faithful_memory_aiaaa_v2/validation/amem_online/events.jsonl",
@@ -1776,26 +2008,320 @@
           "estimated_cny": 1.1036931200000002
         }
       }
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/amem_111/events.jsonl",
+      "arm": "amem",
+      "episode": 111,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/bm25_111/events.jsonl",
+      "arm": "bm25",
+      "episode": 111,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/bm25_112/events.jsonl",
+      "arm": "bm25",
+      "episode": 112,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/dense_111/events.jsonl",
+      "arm": "dense",
+      "episode": 111,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/dense_112/events.jsonl",
+      "arm": "dense",
+      "episode": 112,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/full_111/events.jsonl",
+      "arm": "full",
+      "episode": 111,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/full_112/events.jsonl",
+      "arm": "full",
+      "episode": 112,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/lightmem_111/events.jsonl",
+      "arm": "lightmem",
+      "episode": 111,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/mem0_111/events.jsonl",
+      "arm": "mem0",
+      "episode": 111,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/noGcompact_111/events.jsonl",
+      "arm": "noGcompact",
+      "episode": 111,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/noGcompact_112/events.jsonl",
+      "arm": "noGcompact",
+      "episode": 112,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/ours_111/events.jsonl",
+      "arm": "ours",
+      "episode": 111,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/query_only_111/events.jsonl",
+      "arm": "query_only",
+      "episode": 111,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/query_only_112/events.jsonl",
+      "arm": "query_only",
+      "episode": 112,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/summary_111/events.jsonl",
+      "arm": "summary",
+      "episode": 111,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
+    },
+    {
+      "path": "results/real/faithful_memory_aiaaa_v2_formal/travel/summary_112/events.jsonl",
+      "arm": "summary",
+      "episode": 112,
+      "calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cny": 0.0,
+      "provider_reported_cny": 0.0,
+      "reasoning_tokens": 0,
+      "nonthinking_requested_but_reasoning_observed_calls": 0,
+      "transport_attempts": 1,
+      "unknown_billing_attempts": 1,
+      "unpriced_calls": 0,
+      "api_errors_unknown_usage": 1,
+      "length_responses": 0,
+      "phases": {}
     }
   ],
   "separate_probes": [
     {
       "path": "results/development/faithful_memory_backup_probe_2026_09_15.json",
       "row": 0,
-      "provider_reported_cny": 4.8e-05,
-      "usage": {
-        "completion_tokens": 2,
-        "prompt_tokens": 10,
-        "total_tokens": 12,
-        "completion_tokens_details": {
-          "reasoning_tokens": 0
-        },
-        "prompt_tokens_details": {
-          "cached_tokens": 0
-        }
-      },
+      "provider_reported_cny": null,
+      "usage": null,
       "status_code": 200,
-      "billing_unknown": false
+      "billing_unknown": true
     },
     {
       "path": "results/development/faithful_memory_protocol_probe_2026_09_15.json",
@@ -1968,13 +2494,488 @@
       "usage": null,
       "status_code": 402,
       "billing_unknown": true
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/generation_probe_20260917.json",
+      "row": 0,
+      "provider_reported_cny": 8.1e-05,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 15,
+        "total_tokens": 19,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 0,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 1,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 2,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 3,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 4,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 5,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 6,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 7,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 8,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 9,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 10,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 11,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 12,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 13,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 14,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 15,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 16,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 17,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 18,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 19,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 20,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 21,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 22,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
+    },
+    {
+      "path": "results/development/faithful_memory_aiaaa_v2/concurrency_probe_20260917.json",
+      "row": 23,
+      "provider_reported_cny": 0.005214,
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 31,
+        "total_tokens": 600,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": null
+      },
+      "status_code": 200,
+      "billing_unknown": false
     }
   ],
-  "remediation_recorded_cny": 44.03236976,
+  "remediation_recorded_cny": 79.52054676,
   "previous_recorded_cny": 276.482109,
-  "cumulative_recorded_cny": 320.51447876,
-  "unknown_usage_errors": 28,
-  "unknown_billing_attempts": 74,
-  "unpriced_calls": 45,
+  "cumulative_recorded_cny": 356.00265576,
+  "unknown_usage_errors": 45,
+  "unknown_billing_attempts": 90,
+  "unpriced_calls": 64,
   "limitations": "Provider cost_cny with billing_pending=false takes precedence; TokenRhythm fallback uses advertised rates. Unpriced calls are counted, not assigned another provider's rate. Diagnostic probes outside event logs are listed separately."
 }

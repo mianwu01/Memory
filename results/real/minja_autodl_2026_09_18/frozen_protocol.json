@@ -1,0 +1,58 @@
+{
+ "config": {
+  "out": "results/real/minja_autodl_2026_09_18",
+  "base_url": "https://www.autodl.art/api/v1",
+  "model": "DeepSeek-V4.1-Flash",
+  "minja_qa_dir": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/benchmarks/MINJA/QA",
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "repetitions": 3,
+  "max_tokens": 6000,
+  "driver_threshold": 0.2
+ },
+ "arms": [
+  "ungated",
+  "frequency_regime",
+  "frequency_pooled",
+  "random_matched",
+  "oracle",
+  "noop",
+  "regime_structure"
+ ],
+ "split": {
+  "pre_trigger": 5,
+  "attack_templates": 6,
+  "benign_write": 25,
+  "calibration_trigger": 8,
+  "test_trigger": 12,
+  "test_clean": 28
+ },
+ "ranking_frozen_before_test": true,
+ "test_writeback": false,
+ "same_top3_filter_no_refill": true,
+ "thinking": "disabled",
+ "reasoning_effort": "none",
+ "calibration_checkpoint_preserves_injection_note_order": true,
+ "protocol_version": "minja-autodl-sevenarm-v2",
+ "structure_config": {
+  "candidate_limit": 12,
+  "candidate_selection": "note_free_retrieval_count_desc_then_opaque_id",
+  "max_lag": 0,
+  "alpha": 0.01,
+  "min_rows": 10,
+  "gate_ratio": 4.0,
+  "within_step_order": "retrieval=0,action=1",
+  "selection_regime": 1,
+  "positive_coefficients_only": true
+ }
+}

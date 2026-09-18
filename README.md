@@ -1,10 +1,12 @@
 # Causal Memory / 因果记忆
 
-> **2026-09-15 当前状态：实现已修复，完整验收因 API 余额不足中断。** Mem0 完整检索、
-> A-Mem 论文 robust 实现、LightMem 完整机制已接通；三个 online 小例和两个 Travel 开发案例通过。
-> aiaaa 与 TokenRhythm 的生成接口均已明确返回 `INSUFFICIENT_BALANCE`。三套完整 LoCoMo 验证未通过，
-> 正式 100 cases 尚未冻结或启动；下方旧 v5 仅为历史探索性结果。
-> [当前状态与待完成项](docs/yujia-progress-2026-09-15.md) · [修复与验收记录](docs/faithful-memory-remediation-2026-09-15.md)。
+> **2026-09-19 迁移更新：** 当前 Travel 全表已暂停，不应在新工作区自动恢复。重新实现真正的 write--hold--read regime-gated memory 时，以[新工作区权威交接](docs/new-workspace-handoff-2026-09-19.md)和[停跑决定](docs/travel-campaign-pause-decision-2026-09-19.md)为入口。下方保留历史执行记录。
+
+> **2026-09-18 当前状态：已切换用户授权的 AutoDL，正在执行新版实验。**
+> Travel 当前 query 移除依赖线索，历史保留要求；1,950 个正式 actor episodes 已冻结并启动。
+> 无标签 MINJA 七臂 8,400 次测试和 AgentPoison 352 条轨迹已完成并核验；完整原生 memory 接口检查单独推进。
+> [本轮范围、进度与边界](docs/autodl-campaign-2026-09-18.md)；下方旧数字均为独立历史结果，
+> 不代表新任务、新模型或无标签结构估计的结果。
 
 <!-- recent-memory-completion:start -->
 > **历史探索性配对评估（已降级）：** 十臂均完成 IDs 111/112/113，官方评分与用量完整性检查通过。
@@ -17,7 +19,7 @@
 
 **旧 v5 对照（不进入新主表）：** Ours 与同格式 noGcompact 的逐 episode PS/SPS/SR 全部持平，官方 person-PS 都为 90.91%（20/22）。输入从 245,599 降至 123,701 tokens，减少 49.63%；总费用估算为 ¥0.8067 / ¥0.7713，Ours 高 4.59%。这支持输入压缩的观察；相对这一对照，本轮未显示准确率或货币成本优势。
 
-本项目把 agent memory 建模为可审计的时序因果结构：同一张图既用于选择更小的记忆上下文，也用于定位并 gate 被投毒记忆所驱动的动作。
+本项目用 write–hold–read 时序依赖框架组织记忆选择与来源审计。不同应用使用的估计器和证据分别报告；无标签定位、图恢复和在线干预收益分别检验。
 
 > **9/04 会议执行更新（2026-09-14）：** 主线转为近期 memory baseline、公平比较、具体
 > demo 与论文 outline；simulation 冻结。已接入 Mem0 OSS / 作者 A-Mem SDK / LightMem，

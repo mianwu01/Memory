@@ -1,0 +1,18 @@
+{
+ "passed": true,
+ "errors": [],
+ "checked_saved_results": 8400,
+ "expected_paired_sets": 1200,
+ "found_paired_sets": 1200,
+ "checks": [
+  "snapshot integrity",
+  "complete paired arms",
+  "same-count random deletion",
+  "identical no-op prompts",
+  "clean trigger gating",
+  "API receipt consistency",
+  "frozen ranking compliance",
+  "oracle evaluation-only deletion",
+  "calibration/test barrier"
+ ]
+}

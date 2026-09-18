@@ -19,7 +19,8 @@ SOURCES = ["code/faithful_memory.py", "code/faithful_transport.py", "code/faithf
            "code/run_with_local_deepseek.py", "code/relay_chat_transport.py",
            "code/requirements-faithful-memory.txt", "code/faithful_acceptance.py",
            "code/faithful_locomo_validate.py", "code/faithful_memory_validate.py", "code/faithful_campaign.py",
-           "code/faithful_development_recover.py"]
+           "code/faithful_development_recover.py", "code/faithful_recover_balance.py",
+           "code/faithful_generation_probe.py", "code/faithful_concurrency_probe.py"]
 REPOS = ("MemoryArena", "mem0", "AgenticMemory-paper", "LightMem", "mem0-memory-benchmarks")
 
 
@@ -114,9 +115,9 @@ def main():
         if args.phase != "evaluation":
             raise ValueError("Only evaluation is frozen")
         from faithful_acceptance import acceptance
-        accepted = acceptance(args.development_family)
         acceptance_path = ROOT / "results/development" / args.development_family / "acceptance.json"
         saved = json.loads(acceptance_path.read_text())
+        accepted = acceptance(args.development_family, defer_native=saved.get("native_gates") == "deferred")
         if saved["source_hashes"] != current or saved["evidence_sha256"] != accepted["evidence_sha256"]:
             raise RuntimeError("Acceptance source/evidence changed")
         protocol = {"schema": "faithful-memory-comparison/v1", "frozen_at": time.time(),
@@ -142,7 +143,11 @@ def main():
                     "development_hardware_note": "Earlier interface tests inherited OMP_NUM_THREADS=72; development timings are not compared to formal timings.",
                     "acceptance_sha256": hashlib.sha256(acceptance_path.read_bytes()).hexdigest(),
                     "interpretation": "fixed common backbone and original actor; not universal method rankings or proven causal necessity",
-                    "development_family": args.development_family}
+                    "development_family": args.development_family,
+                    "native_gates": saved.get("native_gates", "required"),
+                    "fidelity_claim_ready": saved.get("fidelity_claim_ready", True),
+                    "workers": args.workers,
+                    "concurrency_note": "worker count changes wall time and relay load only; every case keeps one attempt and the registered request retry policy"}
         with protocol_path.open("x") as handle:
             json.dump(protocol, handle, indent=2)
         print(json.dumps({"frozen": str(protocol_path), "cases": len(ids) * len(ARMS)}), flush=True)
@@ -152,7 +157,8 @@ def main():
         if frozen["source_hashes"] != current:
             raise RuntimeError("Source/dependency/model changed after freeze")
         for key, value in {"model": os.environ["OPENAI_MODEL"], "endpoint": os.environ["OPENAI_BASE_URL"],
-                           "actor_thinking": args.actor_thinking, "episode_ids": ids}.items():
+                           "actor_thinking": args.actor_thinking, "episode_ids": ids,
+                           "workers": args.workers}.items():
             if frozen[key] != value:
                 raise RuntimeError(f"Frozen setting changed: {key}")
     else:

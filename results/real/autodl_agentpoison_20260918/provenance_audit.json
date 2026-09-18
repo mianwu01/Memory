@@ -1,0 +1,41 @@
+{
+  "schema": "autodl-agentpoison-provenance-audit/v1",
+  "created_at": 1789736409.6199007,
+  "protocol_matches_completed_report": true,
+  "frozen_driver_matches_completed_report": true,
+  "all_calibration_api_calls_precede_heldout": true,
+  "calibration_tasks_in_ledger": 64,
+  "heldout_tasks_in_ledger": 288,
+  "source_hashes_match": {
+    "code/autodl_agentpoison.py": true,
+    "code/agentpoison_strategyqa_gate.py": true,
+    "code/agentpoison_strategyqa_summary.py": true
+  },
+  "fixed_schedule_matches_old_round2": true,
+  "snapshot_hash_matches_old_round2": true,
+  "ledger_matrix_validation": {
+    "expected_cells": 288,
+    "observed_cells": 288,
+    "missing": 0,
+    "unexpected": 0,
+    "schedule_seed_mismatches": 0,
+    "paired_seed_mismatches": 0
+  },
+  "api_calls": 1834,
+  "api_errors": 0,
+  "length_responses": 1,
+  "input_tokens": 3054985,
+  "cached_input_tokens": 2715136,
+  "output_tokens": 106269,
+  "requested_models": [
+    "DeepSeek-V4.1-Flash"
+  ],
+  "returned_models": [
+    "DeepSeek-Flash"
+  ],
+  "pricing_known": false,
+  "total_price": null,
+  "unpriced_calls": 1834,
+  "label_access_boundary": "Labels are present in loaded carrier rows, but learn_driver and calibration do not read correctness or poison membership. attach_posthoc_correctness runs only after all 352 trajectories; poison membership is then intersected for final reporting.",
+  "interpretation": "New-provider/model rerun of the preserved split and fixed design; not a new unseen test set. Expanded recovery includes the explicitly frozen cluster expansion; utility shifts without touched retrieval are not attributed to deletion."
+}

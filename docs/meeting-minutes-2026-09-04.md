@@ -36,7 +36,7 @@ MW 为我方。材料为不连续片段，不能推断片段间缺失的问答�
 
 ## 本轮交付清单
 
-- [ ] 代表性 baseline 来源、版本、适配边界与可执行比较结果：三套 native 实现已接入、开发已运行；relay 401 Invalid token 打断，正式配对结果仍未完成。
+- [ ] 代表性 baseline 来源、版本、适配边界与可执行比较结果：三套 native 实现已接入；2026-09-18 已切换用户授权的新 API，十臂 Travel 共1,950个正式episodes正在运行。最终比较仍待完成；详见[本轮执行记录](autodl-campaign-2026-09-18.md)，旧relay 401不再是当前阻塞。
 - [x] setting / variable / sample / regime 的明确说明与机器可读审计。
 - [x] 三页具体 slide / PDF / 可展开证据的可视化（read-only Travel 对比 + MINJA 风险案例）。
 - [x] 中文段落/句子目标 outline，并接入现有 LaTeX。

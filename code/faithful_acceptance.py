@@ -38,7 +38,7 @@ def evidence(path, field):
     return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 
 
-def acceptance(family):
+def acceptance(family, defer_native=False):
     from faithful_suite import fingerprints
     base = ROOT / "results/development" / family
     source = fingerprints()
@@ -48,9 +48,17 @@ def acceptance(family):
     transport = json.loads(transport_path.read_text()) if transport_path.exists() else None
     recovery_path = base / "development_recovery_sources.json"
     recovery = json.loads(recovery_path.read_text()) if recovery_path.exists() else {}
+    if recovery:
+        if recovery.get("schema") != "faithful-memory-recovery-sources/v2":
+            raise ValueError("Unsupported recovery mapping schema")
+        expected_native_mode = "deferred" if defer_native else "included"
+        if recovery.get("native_gates") != expected_native_mode:
+            raise ValueError("Acceptance native-gate mode differs from registered recovery")
+        if recovery.get("endpoint", "").rstrip("/") != os.environ["OPENAI_BASE_URL"].rstrip("/") or recovery.get("model") != os.environ["OPENAI_MODEL"]:
+            raise ValueError("Recovery route differs from acceptance route")
     retrieval_path = base / "retrieval_config_amendment.json"
     retrieval = json.loads(retrieval_path.read_text()) if retrieval_path.exists() else None
-    hashes, mechanisms = {}, {}
+    hashes, mechanisms, deferred_native = {}, {}, {}
     expected = {
         "mem0": {"mem0_keyword_search", "mem0_search", "mem0_entity_boosts"},
         "amem": {"amem_process_memory", "amem_find_related_memories_raw", "amem_generate_query"},
@@ -93,7 +101,12 @@ def acceptance(family):
             if row["event"] == "llm" and (row["endpoint"] != os.environ["OPENAI_BASE_URL"] or row["requested_model"] != os.environ["OPENAI_MODEL"]):
                 raise ValueError("Mechanism validation used another provider")
         mechanisms[arm] = sorted(observed)
-        folder = base / (amendment["new_native_output"] if amendment and arm == "amem" else "native/" + arm)
+        native = amendment["new_native_output"] if amendment and arm == "amem" else "native/" + arm
+        native = recovery.get("native/" + arm, native)
+        deferred_native[arm] = native
+        if defer_native:
+            continue
+        folder = base / native
         hashes.update(evidence(folder / "validation.json", "passed"))
         proto = json.loads((folder / "protocol.json").read_text())
         status = json.loads((folder / "validation.json").read_text())
@@ -108,21 +121,31 @@ def acceptance(family):
             raise ValueError("Native-task generation source changed")
     if amendment:
         hashes[str(amendment_path.relative_to(ROOT))] = hashlib.sha256(amendment_path.read_bytes()).hexdigest()
-    for path in (transport_path, recovery_path, retrieval_path):
+    balance_path = base / "balance_recovery_amendment.json"
+    for path in (transport_path, recovery_path, retrieval_path, balance_path):
         if path.exists():
             hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
-    return {"schema": "faithful-memory-acceptance/v1", "accepted": True, "created_at": time.time(),
-            "development_family": family, "source_hashes": source, "evidence_sha256": hashes,
-            "observed_mechanisms": mechanisms,
-            "development_generation_amendment": amendment,
-            "interpretation": "Configured author mechanisms, native complete-history task and original actor interfaces verified; no claim of published-score replication or scientific success."}
+    record = {"schema": "faithful-memory-acceptance/v1", "accepted": True, "created_at": time.time(),
+              "development_family": family, "source_hashes": source, "evidence_sha256": hashes,
+              "observed_mechanisms": mechanisms,
+              "development_generation_amendment": amendment,
+              "native_gates": "deferred" if defer_native else "required",
+              "fidelity_claim_ready": not defer_native,
+              "interpretation": "Configured author mechanisms, native complete-history task and original actor interfaces verified; no claim of published-score replication or scientific success."}
+    if defer_native:
+        record["deferred_native_outputs"] = deferred_native
+        record["interpretation"] = ("Configured author mechanisms and original actor interfaces verified; the native "
+                                    "complete-history LoCoMo checks are deferred and must be reported separately "
+                                    "before any fidelity claim; no claim of published-score replication or scientific success.")
+    return record
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--family", required=True)
+    ap.add_argument("--defer-native", action="store_true")
     args = ap.parse_args()
-    result = acceptance(args.family)
+    result = acceptance(args.family, defer_native=args.defer_native)
     path = ROOT / "results/development" / args.family / "acceptance.json"
     with path.open("x") as handle:
         json.dump(result, handle, indent=2)

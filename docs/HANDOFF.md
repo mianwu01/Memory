@@ -1,4 +1,16 @@
-# Handoff — causal-memory experiment state (updated 2026-09-15)
+# Handoff — causal-memory experiment state (updated 2026-09-18)
+
+> **2026-09-19：** 本页保存历史细节，但不再是迁移后的首要状态入口。当前 Travel 全表已经暂停，新的实现目标、必须修复的时间语义、对照和启动步骤见[新工作区权威交接](new-workspace-handoff-2026-09-19.md)；停跑依据见[Travel 停跑决定](travel-campaign-pause-decision-2026-09-19.md)。不要按本页较早的“待恢复”条目自动续跑旧 Travel。
+
+> **当前执行入口（2026-09-18，优先于下方历史记录）：** 用户已提供新 AutoDL 凭据并授权大规模运行全部选定实验。
+> 使用 `.tmp/memory-faithful-venv/bin/python`、`code/run_with_autodl.py`，CPU-only；凭据不进入源码或结果。
+> 无标签 MINJA 七臂 8,400 次测试及 AgentPoison 352 条轨迹已完成并核验。新版 implicit/explicit Travel 正式实验和 A-Mem 16k 的完整 native 接口检查仍在运行。
+> 精确范围、实时产物及解释见 [本轮执行记录](autodl-campaign-2026-09-18.md)。Travel 正式目标为 1,950 actor episodes；旧预算开发轮为 11 完成、2 失败，新预算 A-Mem 开发已在技术恢复后完整执行，不能以开发完成替代正式完成。
+> 新版图排除 dev 101 和正式 111–160，用余下 219 episodes 训练；三结构臂共享历史 notice 解析。
+> MINJA 真实结构臂目前 10 runs 全为空集合，不能拿频率定位成功替代图恢复。旧 3/3 和 Travel 39.55% 均不回填新结果。
+> 新 native 检查已发现 LightMem JSON 循环长度失败及 A-Mem 1000-token 正文截断；原失败保留，开发诊断单列。
+> A-Mem 精确请求提高至16k后输出1289tokens、原解析器恢复5/5邻居；若据此适配新配置，须另行冻结并披露，不能回填旧v2成功。
+> 下方旧 provider 余额、默认模型、A-Mem 模式与续跑入口均为历史记录；不要据它们停止本次已授权任务或重启旧协议。
 
 > **当前续跑入口（2026-09-15，优先于下方历史记录）：** `faithful_memory_aiaaa_v2` 已因余额不足停止，没有在后台继续运行。
 > 最新逐项快照：[readiness.json](../results/development/faithful_memory_aiaaa_v2/readiness.json)；5/16 个开发门槛通过，正式 0/100。

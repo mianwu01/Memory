@@ -1,0 +1,6 @@
+{
+  "date_utc": "2026-09-18T12:43:39.963785+00:00",
+  "change": "Disable repeated full-directory aggregation while all submitted test jobs drain; aggregate once at completion.",
+  "mechanism": "SIGINT main thread; ThreadPoolExecutor.shutdown(wait=True,cancel_futures=False) preserves all 8400 submitted calls",
+  "scientific_configuration_changed": false
+}

@@ -1,0 +1,15 @@
+{
+  "real_http_reset": true,
+  "episode": 101,
+  "observation_keys": [
+    "group_id",
+    "base_person",
+    "questions",
+    "answers",
+    "step"
+  ],
+  "answers_unchanged": true,
+  "base_plan_unchanged": true,
+  "base_notice_count": 3,
+  "passed": true
+}

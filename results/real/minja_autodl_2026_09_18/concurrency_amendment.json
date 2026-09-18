@@ -1,0 +1,7 @@
+{
+  "change": "api_concurrency 8 to 24 for heldout phase",
+  "basis": "technical throughput probe: 32/32 and 64/64 HTTP success",
+  "scientific_configuration_changed": false,
+  "date_utc": "2026-09-18T12:32:58.805007+00:00",
+  "restart": "SIGINT after calibration executor drains, checkpoint reuse; no test outcome consulted"
+}

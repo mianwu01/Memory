@@ -4,10 +4,20 @@ import tempfile
 import unittest
 from types import SimpleNamespace
 
-from faithful_memory import InvalidExecution, Runtime, StructuredMemory, request_mode_parameters
+from faithful_memory import InvalidExecution, Runtime, StructuredMemory, request_mode_parameters, memory_budget_parameters
 
 
 class FidelityGates(unittest.TestCase):
+    def test_autodl_memory_budget_never_changes_actor_or_other_methods(self):
+        route = "https://www.autodl.art/api/v1"
+        for phase in ("memory_write", "memory_read", "native_qa"):
+            self.assertEqual(memory_budget_parameters(route, "amem", phase), {"max_tokens": 16000})
+        for arm in ("ours", "amem", "lightmem", "mem0"):
+            self.assertEqual(memory_budget_parameters(route, arm, "actor"), {})
+        for arm in ("ours", "lightmem", "mem0"):
+            self.assertEqual(memory_budget_parameters(route, arm, "memory_write"), {})
+        self.assertEqual(memory_budget_parameters("https://aiaaa.cc/v1", "amem", "memory_write"), {})
+
     def test_relay_mode_fix_is_separate_from_original_actor_and_output_budget(self):
         self.assertEqual(request_mode_parameters("https://aiaaa.cc/v1", "actor", "default"), {})
         for phase in ("memory_write", "memory_read", "native_qa"):

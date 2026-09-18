@@ -1,0 +1,15 @@
+{
+  "registered_at": 1789736489.1582608,
+  "status": "dispatching",
+  "primary_panel": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/autodl_travel_20260918/registered_core",
+  "case_count": 1950,
+  "core_case_count": 900,
+  "maximum_workers": 128,
+  "initial_dispatch_workers": 64,
+  "known_native_compatibility": "A-Mem output budget adapted to16k based on dev1289-token valid update; LightMem native long-conversation JSON looping observed, no parameter repair found. Retain semantic failures and report completion separately; no resampling to win, no ranking with missing full scope.",
+  "native_gate_interpretation": "Full conv interface checks separately report failure; not reproduction of published benchmark scores.",
+  "statistics": "50 episode clusters, three API realizations averaged per episode; paired descriptive intervals; no new noninferiority claim",
+  "limits": "Baseline source task benchmark previously inspected; current split exclusion does not make benchmark pristine.",
+  "dispatch_registered_at": 1789736725.131877,
+  "readiness_basis": "All10 method interfaces have completed real read/write/actor operations on dev101; all6 core variant cases complete. Full episode tails and long-conversation checks remain separately reported. Semantic generation failures remain measured failures; full main table withheld if any case invalid."
+}

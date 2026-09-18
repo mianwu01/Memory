@@ -54,9 +54,18 @@ def request_mode_parameters(endpoint, phase, actor_thinking):
     params = {"thinking": {"type": "disabled"}}
     # The relay's normalized OpenAI route ignores DeepSeek's thinking field on
     # hard prompts. A paired exact-request probe verified this standard field.
-    if endpoint.rstrip("/") == "https://aiaaa.cc/v1":
+    if endpoint.rstrip("/") in {"https://aiaaa.cc/v1", "https://www.autodl.art/api/v1"}:
         params["reasoning_effort"] = "none"
     return params
+
+
+def memory_budget_parameters(endpoint, arm, phase):
+    # Registered on independent development data: this backbone needs 1,289
+    # answer tokens for a native neighbor update bounded upstream at 1,000.
+    # Preserve the original actor and historical-provider configurations.
+    if endpoint.rstrip("/") == "https://www.autodl.art/api/v1" and arm == "amem" and phase != "actor":
+        return {"max_tokens": 16000}
+    return {}
 
 
 class Runtime:
@@ -110,6 +119,9 @@ class Runtime:
                 def measured(*args, **kwargs):
                     runtime.require_valid()
                     native_limit = kwargs.get("max_tokens")
+                    budget = memory_budget_parameters(os.environ["OPENAI_BASE_URL"],
+                                                      runtime.arm, runtime.phase)
+                    kwargs.update(budget)
                     extra = dict(kwargs.get("extra_body") or {})
                     mode = request_mode_parameters(os.environ["OPENAI_BASE_URL"], runtime.phase, runtime.actor_thinking)
                     if mode:
@@ -140,6 +152,7 @@ class Runtime:
                                   requested_model=kwargs.get("model"),
                                   max_tokens=kwargs.get("max_tokens"),
                                   upstream_max_tokens=native_limit,
+                                  memory_budget_adaptation=budget or None,
                                   thinking=extra.get("thinking", "provider_default"),
                                   reasoning_effort=kwargs.get("reasoning_effort", "provider_default"),
                                   messages=kwargs.get("messages"), tools=kwargs.get("tools"),
@@ -160,7 +173,7 @@ class Runtime:
             raise InvalidExecution("Incomplete API response")
         details = getattr(result.usage, "completion_tokens_details", None)
         reasoning = getattr(details, "reasoning_tokens", 0) or 0
-        if (self.phase != "actor" and os.environ.get("OPENAI_BASE_URL", "").rstrip("/") == "https://aiaaa.cc/v1"
+        if (self.phase != "actor" and os.environ.get("OPENAI_BASE_URL", "").rstrip("/") in {"https://aiaaa.cc/v1", "https://www.autodl.art/api/v1"}
                 and reasoning > 0):
             self.fail("Relay ignored explicit reasoning_effort=none for memory")
             raise InvalidExecution("Memory model mode is inconsistent with registered request")
@@ -419,11 +432,15 @@ class StructuredMemory:
     use the same base and representation. query_only removes learned slot edges
     while preserving the explicit-reference parser, isolating the learned graph.
     """
-    def __init__(self, arm, runtime):
+    def __init__(self, arm, runtime, learned_graph_path=None, historical_notes=False):
         from arena_causal_memory import CausalMemorySystem
         self.runtime, self.arm, self.base = runtime, arm, ""
+        self.notes = None
+        if historical_notes:
+            from travel_implicit import HistoryNotes
+            self.notes = HistoryNotes()
         self.backend = CausalMemorySystem(
-            graph_mode="learned", learned_graph_path=str(GRAPH), use_names=False,
+            graph_mode="learned", learned_graph_path=str(learned_graph_path or GRAPH), use_names=False,
             ablate_graph=arm == "noGcompact", inherit_unspecified_from_base=False,
             keep_provenance=False, compact_serialization=True, decoder_base_tag=False)
         if arm == "query_only":
@@ -438,19 +455,22 @@ class StructuredMemory:
         data = json.loads(text)
         if data.get("is_base_person"):
             self.base = data["final_plan"]
-        result = self.backend.add_chunk(text)
+        clean_text = self.notes.add_chunk(text) if self.notes is not None else text
+        result = self.backend.add_chunk(clean_text)
         self.runtime.event("write", text=text)
         self.runtime.round += 1
         return result
 
     def wrap_user_prompt(self, query):
         self.runtime.phase = "memory_read"
-        selected = self.backend._ancestors_of(query)
+        resolved = self.notes.resolve(query) if self.notes is not None else None
+        selected = self.backend._ancestors_of(resolved.selection_query if resolved else query)
         if self.backend._people:
             selected = {cell for cell in selected if cell[0] != self.backend._people[0]}
         body = self.backend._render_compact(selected)
+        notes_text = resolved.memory_text if resolved else ""
         text = ("<memory_context>\n<public_base_plan>\n" + self.base +
-                "\n</public_base_plan>\n" + body + "\n</memory_context>\nUser: " + query)
+                "\n</public_base_plan>\n" + notes_text + "\n" + body + "\n</memory_context>\nUser: " + query)
         self.runtime.event("retrieve", query=query, text=text, selected_cells=sorted(selected))
         self.runtime.phase = "actor"
         return text

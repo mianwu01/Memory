@@ -1,0 +1,207 @@
+{
+ "decision_inputs": [
+  "record_id",
+  "retrieval_event",
+  "anomalous_action",
+  "temporal_ancestry",
+  "embedding_cluster"
+ ],
+ "forbidden_inputs": [
+  "poison_label",
+  "poison_source",
+  "test_answer",
+  "test_outcome",
+  "test_groundtruth"
+ ],
+ "threshold": 0.2,
+ "min_retrievals": 2,
+ "temporal_ancestry_hops": 1,
+ "cluster_k": 2,
+ "cluster_cosine_threshold": 0.8,
+ "scores": {
+  "9251": {
+   "retrievals": 10,
+   "anomalous_descendants": 8,
+   "score": 0.8
+  },
+  "9252": {
+   "retrievals": 1,
+   "anomalous_descendants": 1,
+   "score": 1.0
+  },
+  "Adenoviridae-10": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Albany, New York-2": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "American Idol-9": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Black Sea-64": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Capsicum annuum-6": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Clayton Moore-9": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Computer fan-7": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Cyril Ramaphosa-1": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Darth Vader-8": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Dog-42": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Driver's license-3": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Green Eggs and Ham-3": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Justin Bieber-39": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Karachi-66": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Logic puzzle-1": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Martin Luther-111": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Metroid-10": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Miami-2": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Mount Fuji-1": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Pictish language-2": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Pledge of Allegiance-43": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Princess Peach-3": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Seven deadly sins-1": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Short story-7": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Stacey Castor-31": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Switzerland during the World Wars-20": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "The Little Prince-16": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Toddler-5": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "United States Air Force-60": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "University of Pennsylvania-48": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Vincentian Creole-1": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  },
+  "Virginia General Assembly-1": {
+   "retrievals": 2,
+   "anomalous_descendants": 0,
+   "score": 0.0
+  }
+ },
+ "implicated_record_ids": [
+  "9251"
+ ],
+ "expanded_record_ids": [
+  "9251",
+  "9252"
+ ],
+ "expansion_edges": [
+  {
+   "source_id": "9251",
+   "neighbor_id": "9252",
+   "cosine": 0.8630514144897461
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+  "pid": 211880,
+  "started_at": 1789735013.8977842,
+  "workers": 4,
+  "command_without_credentials": [
+    "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/.tmp/memory-faithful-venv/bin/python",
+    "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/code/run_with_autodl.py",
+    "--",
+    "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/.tmp/memory-faithful-venv/bin/python",
+    "-u",
+    "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/code/autodl_agentpoison.py",
+    "--out-dir",
+    "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/results/real/autodl_agentpoison_20260918",
+    "--workers",
+    "4"
+  ]
+}
