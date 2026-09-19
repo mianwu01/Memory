@@ -16,8 +16,8 @@
 | 要证明的事 | 证据层 | 状态 |
 |---|---|---|
 | (1) access-regime conditioning 能恢复 pooled / additive 方法漏掉的依赖 | E0 v2（受控仿真） | 完成，PASS |
-| (2) 学得的结构相对 ledger / 检索 / 全读有增量，并把读取量压平 | HM3 确定性层 + 真实 actor 层 | Travel 完成；Shopping 为边界 |
-| (3) 同一张图反向遍历能定位驱动错误动作的写入记录，且经干预验证 | HM3 provenance（确定性 + actor 层） | Travel 完成；Shopping 为边界 |
+| (2) 学得的结构相对 ledger / 检索 / 全读有增量，并把读取量压平 | HM3 确定性层 + 真实 actor 层 | Travel 与 Shopping 在长历史下成立；native 档全读更好（crossover） |
+| (3) 同一张图反向遍历能定位驱动错误动作的写入记录，且经干预验证 | HM3 provenance（确定性 + actor 层） | Travel 完成（确定性与 actor 层）；Shopping 为边界 |
 
 ## 2. 任务设定：Hidden Mechanism v3（HM3）
 
@@ -152,7 +152,7 @@ crossover：历史短到能全读时，全读最好。
 
 actor 层（全部 52 个事件，graph_seg/verbose）：干净历史 0.42，污染历史 0.17，替换审计器 top-3 后 0.48，替换
 random-3 后 0.27；top-3 − random-3 = +0.21 [+0.04, +0.37]，top-3 − 污染 +0.31 [+0.15, +0.46]，替换后不低于干净历史。random-3 臂的 prompt 与污染
-prompt 逐字相同（图只读约 6 条记录，top-3 被排除），所以它度量的是 actor 的逐次调用方差，+0.22 已扣除。
+prompt 逐字相同（图只读约 6 条记录，top-3 被排除），所以它度量的是 actor 的逐次调用方差，+0.21 已扣除。
 
 ## 5. 边界与需要如实说的地方
 
