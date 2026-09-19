@@ -116,10 +116,17 @@ def _fmt(v):
 
 def serialize_state(domain, S0: State, oids: List[str], mode: str) -> str:
     objs = [S0.get(o) for o in sorted(oids) if o in S0.objects]
+    catalog = S0.meta.get("catalog")
     if mode == "verbose":
-        return json.dumps({"policy": {k: v for k, v in S0.meta.items() if k != "catalog"},
-                           "objects": [o.to_dict() for o in objs]}, indent=1)
+        out = {"policy": {k: v for k, v in S0.meta.items() if k != "catalog"},
+               "objects": [o.to_dict() for o in objs]}
+        if catalog:
+            out["catalog"] = catalog
+        return json.dumps(out, indent=1)
     lines = ["policy " + " ".join(f"{k}={_fmt(v)}" for k, v in S0.meta.items() if k != "catalog")]
+    if catalog:
+        for cat, variants in catalog.items():
+            lines.append(f"catalog {cat}: " + "; ".join(f"{v['sku']} {_fmt(v['attrs'])} price={v['price']}" for v in variants))
     for o in objs:
         fields = " ".join(f"{k}={_fmt(v)}" for k, v in o.fields.items())
         links = " ".join(f"{k}->{','.join(v)}" for k, v in o.links.items() if v)
@@ -314,7 +321,8 @@ PROMPT_VERSION = "v1"
 
 
 def build_messages(domain, ep: Episode, sel: dict, ser: str) -> List[dict]:
-    user = (f"DOMAIN: {domain.NAME}\n{OP_CARDS[domain.NAME]}\n\n"
+    card = OP_CARDS.get(domain.NAME) or OP_CARDS[domain.NAME.rstrip("0123456789")]
+    user = (f"DOMAIN: {domain.NAME}\n{card}\n\n"
             f"### HISTORY (earlier interventions and what followed; {ser} form)\n"
             f"{serialize_history(ep.H, sel['records'], ser)}\n\n"
             f"### CURRENT STATE before the intervention ({ser} form)\n"
