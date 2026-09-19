@@ -179,6 +179,138 @@ actor 的采样噪声）；论文主表将同时给出两种 selector 口径。f
 Pro 的整体 legal 率低于 flash（0.79–0.85 对 0.95），主要是 expected_revision 错误。费用按 flash 费率估计，
 实际 Pro 计费更高。
 
+
+### 3.3 全部 shard 落盘后的 API 面板（2026-09-18 深夜；Travel 三档 63–64 个 episode 完成；Shopping 100/500 档尚在补齐）
+
+
+#### travel
+
+| condition | cell | n | EES | legal | affected F1 | input tok | output tok | est $/cell |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| native | bm25_k16/compact | 64 | 0.36 | 0.98 | 0.56 | 2473 | 1883 | 0.025 |
+| native | bm25_k16/verbose | 64 | 0.34 | 0.98 | 0.51 | 5572 | 1678 | 0.028 |
+| native | full/compact | 64 | 0.58 | 0.95 | 0.83 | 3744 | 2351 | 0.032 |
+| native | full/verbose | 64 | 0.55 | 0.97 | 0.82 | 8638 | 2287 | 0.042 |
+| native | graph_closed/compact | 64 | 0.22 | 0.95 | 0.68 | 2338 | 1568 | 0.022 |
+| native | graph_closed/verbose | 64 | 0.36 | 0.91 | 0.77 | 3737 | 1576 | 0.025 |
+| native | recency_k16/compact | 64 | 0.31 | 0.97 | 0.57 | 3016 | 2114 | 0.028 |
+| native | recency_k16/verbose | 64 | 0.28 | 0.97 | 0.51 | 5653 | 1682 | 0.026 |
+| 100 | bm25_k16/compact | 64 | 0.05 | 0.88 | 0.23 | 6101 | 3252 | 0.045 |
+| 100 | bm25_k16/verbose | 64 | 0.03 | 0.86 | 0.15 | 10470 | 2845 | 0.049 |
+| 100 | full/compact | 64 | 0.05 | 0.95 | 0.22 | 18081 | 3760 | 0.069 |
+| 100 | full/verbose | 64 | 0.05 | 0.98 | 0.20 | 54209 | 3906 | 0.123 |
+| 100 | graph_closed/compact | 64 | 0.38 | 0.89 | 0.79 | 2573 | 1708 | 0.023 |
+| 100 | graph_closed/verbose | 64 | 0.34 | 0.91 | 0.70 | 5047 | 1782 | 0.026 |
+| 100 | recency_k16/compact | 64 | 0.09 | 0.95 | 0.23 | 3087 | 1888 | 0.026 |
+| 100 | recency_k16/verbose | 64 | 0.11 | 1.00 | 0.25 | 6515 | 2011 | 0.035 |
+| 500 | bm25_k16/compact | 63 | 0.02 | 0.87 | 0.17 | 7049 | 3401 | 0.048 |
+| 500 | bm25_k16/verbose | 63 | 0.03 | 0.90 | 0.11 | 11428 | 2923 | 0.051 |
+| 500 | full/compact | 63 | 0.02 | 0.95 | 0.21 | 67881 | 3754 | 0.142 |
+| 500 | full/verbose | 63 | 0.06 | 0.89 | 0.19 | 236498 | 3892 | 0.384 |
+| 500 | graph_closed/compact | 63 | 0.33 | 0.95 | 0.72 | 2593 | 1761 | 0.024 |
+| 500 | graph_closed/verbose | 63 | 0.29 | 0.95 | 0.69 | 4499 | 1741 | 0.025 |
+| 500 | recency_k16/compact | 63 | 0.06 | 0.89 | 0.18 | 2917 | 1970 | 0.027 |
+| 500 | recency_k16/verbose | 63 | 0.05 | 0.92 | 0.18 | 6943 | 1964 | 0.035 |
+
+| condition | paired comparison (EES) | n episodes | mean [95% CI] | W/T/L | input reduction |
+|---|---|---:|---|---|---:|
+| native | graph_closed/compact − full/verbose | 64 | -0.328 [-0.469, -0.188] | 3/37/24 | 73% |
+| native | graph_closed/verbose − full/verbose | 64 | -0.188 [-0.328, -0.047] | 7/38/19 | 57% |
+| native | full/compact − full/verbose | 64 | +0.031 [-0.125, +0.188] | 14/38/12 | 57% |
+| native | bm25_k16/compact − full/verbose | 64 | -0.188 [-0.328, -0.047] | 6/40/18 | 71% |
+| native | recency_k16/compact − full/verbose | 64 | -0.234 [-0.375, -0.094] | 6/37/21 | 65% |
+| 100 | graph_closed/compact − full/verbose | 64 | +0.328 [+0.203, +0.469] | 23/39/2 | 95% |
+| 100 | graph_closed/verbose − full/verbose | 64 | +0.297 [+0.172, +0.406] | 20/43/1 | 91% |
+| 100 | full/compact − full/verbose | 64 | +0.000 [-0.062, +0.062] | 2/60/2 | 67% |
+| 100 | bm25_k16/compact − full/verbose | 64 | +0.000 [-0.078, +0.078] | 3/58/3 | 89% |
+| 100 | recency_k16/compact − full/verbose | 64 | +0.047 [-0.031, +0.125] | 5/57/2 | 94% |
+| 500 | graph_closed/compact − full/verbose | 63 | +0.270 [+0.127, +0.413] | 21/38/4 | 99% |
+| 500 | graph_closed/verbose − full/verbose | 63 | +0.222 [+0.095, +0.349] | 17/43/3 | 98% |
+| 500 | full/compact − full/verbose | 63 | -0.048 [-0.111, +0.016] | 1/58/4 | 71% |
+| 500 | bm25_k16/compact − full/verbose | 63 | -0.048 [-0.111, +0.016] | 1/58/4 | 97% |
+| 500 | recency_k16/compact − full/verbose | 63 | +0.000 [-0.079, +0.079] | 3/57/3 | 99% |
+
+Same 63 episodes completed in all conditions (graph_closed/compact and full/verbose):
+
+| condition | graph_closed/compact EES | full/verbose EES | graph input tok | full input tok |
+|---|---:|---:|---:|---:|
+| native | 0.21 | 0.54 | 2346 | 8667 |
+| 100 | 0.38 | 0.05 | 2585 | 54135 |
+| 500 | 0.33 | 0.06 | 2593 | 236498 |
+
+#### shopping32
+
+| condition | cell | n | EES | legal | affected F1 | input tok | output tok | est $/cell |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| native | bm25_k16/compact | 64 | 0.47 | 0.92 | 0.70 | 4025 | 2261 | 0.028 |
+| native | bm25_k16/verbose | 64 | 0.44 | 0.91 | 0.66 | 7591 | 1801 | 0.025 |
+| native | full/compact | 64 | 0.62 | 0.98 | 0.76 | 3817 | 2204 | 0.031 |
+| native | full/verbose | 64 | 0.48 | 0.94 | 0.69 | 7520 | 1738 | 0.035 |
+| native | graph_closed/compact | 64 | 0.42 | 0.94 | 0.70 | 3249 | 1742 | 0.025 |
+| native | graph_closed/verbose | 64 | 0.47 | 0.94 | 0.70 | 6769 | 1623 | 0.031 |
+| native | recency_k16/compact | 64 | 0.55 | 0.94 | 0.75 | 3673 | 2161 | 0.026 |
+| native | recency_k16/verbose | 64 | 0.53 | 0.94 | 0.75 | 7582 | 1823 | 0.024 |
+| 100 | bm25_k16/compact | 57 | 0.35 | 0.96 | 0.48 | 4787 | 1742 | 0.029 |
+| 100 | bm25_k16/verbose | 57 | 0.44 | 0.95 | 0.54 | 11167 | 1313 | 0.039 |
+| 100 | full/compact | 57 | 0.32 | 0.98 | 0.46 | 16865 | 3414 | 0.065 |
+| 100 | full/verbose | 57 | 0.39 | 1.00 | 0.55 | 40339 | 3366 | 0.107 |
+| 100 | graph_closed/compact | 57 | 0.39 | 0.93 | 0.63 | 3772 | 1760 | 0.026 |
+| 100 | graph_closed/verbose | 57 | 0.46 | 0.95 | 0.69 | 8697 | 1750 | 0.037 |
+| 100 | recency_k16/compact | 57 | 0.40 | 0.93 | 0.54 | 5515 | 2117 | 0.033 |
+| 100 | recency_k16/verbose | 57 | 0.37 | 0.98 | 0.51 | 12647 | 1986 | 0.047 |
+| 500 | bm25_k16/compact | 47 | 0.15 | 0.94 | 0.22 | 6718 | 1878 | 0.033 |
+| 500 | bm25_k16/verbose | 47 | 0.26 | 0.87 | 0.34 | 13203 | 1247 | 0.043 |
+| 500 | full/compact | 47 | 0.30 | 0.98 | 0.40 | 58426 | 3380 | 0.131 |
+| 500 | full/verbose | 47 | 0.28 | 0.98 | 0.41 | 174811 | 3407 | 0.318 |
+| 500 | graph_closed/compact | 47 | 0.34 | 0.94 | 0.62 | 4513 | 2189 | 0.032 |
+| 500 | graph_closed/verbose | 47 | 0.32 | 0.94 | 0.60 | 9190 | 1825 | 0.038 |
+| 500 | recency_k16/compact | 47 | 0.34 | 0.96 | 0.53 | 6404 | 2131 | 0.035 |
+| 500 | recency_k16/verbose | 47 | 0.36 | 0.94 | 0.49 | 16069 | 2117 | 0.052 |
+
+| condition | paired comparison (EES) | n episodes | mean [95% CI] | W/T/L | input reduction |
+|---|---|---:|---|---|---:|
+| native | graph_closed/compact − full/verbose | 64 | -0.062 [-0.203, +0.078] | 9/42/13 | 57% |
+| native | graph_closed/verbose − full/verbose | 64 | -0.016 [-0.188, +0.156] | 14/35/15 | 10% |
+| native | full/compact − full/verbose | 64 | +0.141 [-0.016, +0.297] | 19/35/10 | 49% |
+| native | bm25_k16/compact − full/verbose | 64 | -0.016 [-0.141, +0.125] | 9/45/10 | 46% |
+| native | recency_k16/compact − full/verbose | 64 | +0.062 [-0.078, +0.203] | 13/42/9 | 51% |
+| 100 | graph_closed/compact − full/verbose | 57 | +0.000 [-0.158, +0.158] | 12/33/12 | 91% |
+| 100 | graph_closed/verbose − full/verbose | 57 | +0.070 [-0.070, +0.211] | 11/39/7 | 78% |
+| 100 | full/compact − full/verbose | 57 | -0.070 [-0.228, +0.088] | 8/37/12 | 58% |
+| 100 | bm25_k16/compact − full/verbose | 57 | -0.035 [-0.193, +0.140] | 11/33/13 | 88% |
+| 100 | recency_k16/compact − full/verbose | 57 | +0.018 [-0.140, +0.175] | 12/34/11 | 86% |
+| 500 | graph_closed/compact − full/verbose | 47 | +0.064 [-0.128, +0.255] | 11/28/8 | 97% |
+| 500 | graph_closed/verbose − full/verbose | 47 | +0.043 [-0.128, +0.213] | 10/29/8 | 95% |
+| 500 | full/compact − full/verbose | 47 | +0.021 [-0.128, +0.170] | 7/34/6 | 67% |
+| 500 | bm25_k16/compact − full/verbose | 47 | -0.128 [-0.277, +0.000] | 3/35/9 | 96% |
+| 500 | recency_k16/compact − full/verbose | 47 | +0.064 [-0.128, +0.255] | 11/28/8 | 96% |
+
+Same 47 episodes completed in all conditions (graph_closed/compact and full/verbose):
+
+| condition | graph_closed/compact EES | full/verbose EES | graph input tok | full input tok |
+|---|---:|---:|---:|---:|
+| native | 0.45 | 0.51 | 3292 | 7818 |
+| 100 | 0.45 | 0.38 | 3582 | 40750 |
+| 500 | 0.34 | 0.28 | 4513 | 174811 |
+
+
+### 3.4 selector 口径对照（Travel；`travel_{100,500}_natsel` 只跑 graph_closed）
+
+| condition | selector | n | graph_closed/compact EES | full/verbose EES (same episodes) | graph − full | graph − graph@native | graph input tok | identical prompt to native |
+|---|---|---:|---:|---:|---|---|---:|---:|
+| 100 | refit on same condition (preregistered) | 64 | 0.38 | 0.05 | +0.328 [+0.203, +0.453] | +0.156 [+0.016, +0.281] | 2573 | 38/64 |
+| 100 | fitted on native train | 64 | 0.31 | 0.05 | +0.266 [+0.156, +0.391] | +0.094 [-0.031, +0.219] | 2760 | 38/64 |
+| 500 | refit on same condition (preregistered) | 63 | 0.33 | 0.06 | +0.270 [+0.127, +0.413] | +0.127 [-0.016, +0.270] | 2593 | 29/63 |
+| 500 | fitted on native train | 63 | 0.30 | 0.06 | +0.238 [+0.111, +0.365] | +0.095 [-0.048, +0.238] | 2219 | 29/63 |
+
+复核结论：即使 selector 固定在 native train 上拟合，100/500 档的 graph prompt 也只在约一半 episode 与 native
+逐字相同。逐 episode 重算选择（12 个 episode）显示新增记录全部是外来世界的 witness（`x` 前缀 rid），对应
+被评估对象的 policy key 在原生历史里没有 witness、而 B/C 型外来 segment 给了一个；closure 再把这些
+witness 的外来对象带入 state。也就是说，长历史里同一 provider/hotel/restaurant 的额外 witness 会被
+graph 选中，actor 因而拿到原本缺失的 policy 证据（B 型正确、C 型冲突），净效果是 EES 上升 0.09。
+reads 仍在 native 的 1.25 倍以内（P1 成立）；P2 的"配对差绝对值 ≤ 0.05"在上方向不成立，原因如上，
+不是干扰记录压低了 graph。full / bm25 / recency 三臂不受此机制影响。
+
 ## 4. backward provenance（dev，seeds 0/1/2，各 60 episode）
 
 smoke（seed 0，40 episode，实现修订前）：Travel 31 个事件，p@1 0.39、p@3 0.84、MRR 0.62；
