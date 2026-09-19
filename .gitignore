@@ -10,3 +10,5 @@ code/results/
 deepseek_apikey.md
 results/real/_tpdb/
 .tmp/
+api/
+.secrets/
