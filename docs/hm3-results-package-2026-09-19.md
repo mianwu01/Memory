@@ -41,12 +41,12 @@ Paired differences of graph_closed/compact against full/verbose on the same epis
 | history | graph EES | full EES | graph − full [95% CI] | graph tokens | full tokens |
 |---|---:|---:|---|---:|---:|
 | native (≈13 records) | 0.22 | 0.53 | −0.33 [−0.47, −0.19] | 2.3k | 8k |
-| 100 mixed distractors (v2) | 0.36 | 0.05 | +0.27 [+0.13, +0.42] (interim, n=48) | 2.6k | 51k |
+| 100 mixed distractors (v2) | 0.36 | 0.08 | +0.28 [+0.16, +0.41] | 2.6k | 51k |
 | 500 mixed distractors (v2) | 0.37 | 0.13 | +0.24 [+0.10, +0.38] | 2.6k | 240k |
 | second test seed 31, native | 0.35 | 0.67 | −0.34 [−0.50, −0.16] | | |
 | second test seed 31, 500 | 0.30 | 0.08 | +0.22 [+0.10, +0.35] | | |
 
-BM25 top-16 and recency-16 sit at or below full history at 100 and 500 (EES ≤ 0.05).
+BM25 top-16 and recency-16 sit at or below full history at 100 and 500 (v2: −0.05/+0.03 at 100, −0.11/−0.10 at 500 against full/verbose).
 Selector fitted on native histories only: +0.27 / +0.24 (same conclusion).
 Whole-witness-segment selection (graph_seg) narrows the native gap to −0.11 [−0.27, +0.05] in verbose
 form and keeps +0.25 at 500. DeepSeek-V4-Pro: native −0.10 [−0.28, +0.08], 500 +0.07 [−0.09, +0.22].
