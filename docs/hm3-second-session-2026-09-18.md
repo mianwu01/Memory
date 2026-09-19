@@ -73,3 +73,12 @@ recency_k16 0.97 → 0.52 → 0.37；Shopping 的 cart 两跳内全连通，wron
 该对照在 Shopping 无区分力（如实报告）。旧的 `wrong_graph_k`（majority 沿错误拓扑）继承 superset 的
 collateral 失败，EES 恒为 0，只放附录，不进主表。已完成的 (domain, seed, condition) 会被跳过，所以对已有的
 det_dev_*.json 追加这些臂需要删掉对应 entry 的 `complete` 标记，或写到新文件 `det_dev_ladder_$D.json`。
+
+## 2026-09-19 凌晨补充：Shopping 增广的丢弃率修正（需要重跑 Shopping 的 50/100/500 条件）
+
+`augment_split` 在 5 次重试都失败后改为把全部外来 segment 放在真实历史之前再验证一次（`fallback_no_interleave`，
+统计里记录次数）。原因：Shopping 的 promo strictness witness 由 segment 之后的 cart 状态推出，只有在整条历史
+里才会出现，逐 segment 的插入检查看不到；test seed 30 在 500 档原来丢弃 27%，修正后 64/64 保留（17 个
+episode 走 fallback）。**请 `git pull --rebase` 后删除 `det_dev_shopping32.json`、`det_dev_ladder_shopping32.json`
+里 key 以 `/50`、`/100`、`/500`、`/b100`、`/c100`、`/d100` 结尾的 entry（或直接换新文件名重跑这些条件）**；
+Travel 不受影响（丢弃率 0–2%）。

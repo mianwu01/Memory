@@ -195,7 +195,8 @@ def stale_clones(domain, ep: Episode, snaps0: State) -> Tuple[List[List[dict]], 
     return out, n_keys, n_diff
 
 
-def augment_episode(domain, ep: Episode, target: Optional[int], mix: str, tag: str = "") -> Tuple[Episode, dict]:
+def augment_episode(domain, ep: Episode, target: Optional[int], mix: str, tag: str = "",
+                    interleave: bool = True) -> Tuple[Episode, dict]:
     rng = random.Random(_seed_int("scaling", ep.id, target, mix, tag))
     snaps0 = timeline(ep.S0, ep.H)[0]
     stats = {"a_keys": 0, "a_diff": 0, "b": 0, "c": 0, "d": 0, "foreign_objects": 0}
@@ -245,7 +246,7 @@ def augment_episode(domain, ep: Episode, target: Optional[int], mix: str, tag: s
         probe.add(Obj.from_dict(o.to_dict()))
     before, inter = [], []
     for seg in segs_new:
-        if seg[0].get("_type") in INTERLEAVED and not _touches(domain, seg, probe, ep.relevant_params):
+        if interleave and seg[0].get("_type") in INTERLEAVED and not _touches(domain, seg, probe, ep.relevant_params):
             inter.append(seg)
         else:
             before.append(seg)
@@ -292,6 +293,7 @@ def augment_episode(domain, ep: Episode, target: Optional[int], mix: str, tag: s
         S0.add(Obj.from_dict(o.to_dict()))
         S1.add(Obj.from_dict(o.to_dict()))
     stats["foreign_objects"] = len(foreign_objs)
+    stats["interleaved"] = int(interleave and bool(inter))
     d = ep.__dict__.copy()
     d.update(H=H_new, S0=S0, S1=S1)
     aug = Episode(**d)
@@ -349,6 +351,7 @@ def augment_split(domain, eps: List[Episode], target: Optional[int], mix: str, t
     out = []
     agg = {"n": len(eps), "dropped": 0, "retries": 0, "a_keys": 0, "a_diff": 0, "b": 0, "c": 0, "d": 0,
            "records": 0, "objects": 0, "fail_reasons": {}}
+    agg["fallback_no_interleave"] = 0
     for ep in eps:
         ok = False
         for attempt in range(5):
@@ -359,6 +362,19 @@ def augment_split(domain, eps: List[Episode], target: Optional[int], mix: str, t
                 break
             agg["retries"] += 1
             agg["fail_reasons"][why] = agg["fail_reasons"].get(why, 0) + 1
+        if not ok:
+            # state-dependent witnesses (Shopping's promo strictness is read off the cart state
+            # after a segment) can appear only in the context of the whole history, which the
+            # per-segment interleaving check cannot see: fall back to placing every foreign
+            # segment before the real history, which the validation then accepts
+            for attempt in range(3):
+                aug, st = augment_episode(domain, ep, target, mix, f"{tag}/nointer{attempt}", interleave=False)
+                good, why = validate(domain, ep, aug)
+                if good:
+                    ok = True
+                    agg["fallback_no_interleave"] += 1
+                    break
+                agg["fail_reasons"][why] = agg["fail_reasons"].get(why, 0) + 1
         if not ok:
             agg["dropped"] += 1
             continue
