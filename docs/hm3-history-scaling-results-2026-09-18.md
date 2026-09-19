@@ -399,6 +399,10 @@ v2 重跑（`results/real/hm3/scaling_v2/`）：Travel 与 Shopping32 的 100/50
 full/verbose（独立 `shards_v` 目录）、full/compact（仅 100 档）、bm25_k16/compact、recency_k16/compact；
 native 档不受影响，沿用 §3.3。v1 表保留为"带标注伪影的首轮"。
 
+v2 中期（重编号后，仍在运行）：Travel 100 档 graph_closed/compact 0.36 对 full/verbose 0.05（+0.32 [+0.14, +0.50]，
+n=22）；500 档 0.52 对 0.17（+0.35 [+0.10, +0.59]，n=29；full 的 input tokens 240k）。标注伪影修正后 full 在
+500 档略有回升（v1 0.06 → 0.17），主结论不变。
+
 ### 3.6 针对 native 差距的 selection 修订：graph_seg
 
 round 3/4 与本轮 natsel 分析都指向同一件事：actor 拿到的 witness 越完整越好。`graph_seg` = graph_closed 的
@@ -406,6 +410,14 @@ round 3/4 与本轮 natsel 分析都指向同一件事：actor 拿到的 witness
 这些记录 referent 的 1-hop closure。dev seed 0 的一个 episode：graph_closed 6 条记录 / 14 个对象，graph_seg
 11 / 17，prompt 3.4k → 4.0k 字符。在 Travel native（compact + verbose）与 500 档（compact）上运行，
 预测：native 档相对 full/verbose 的差距缩小，500 档仍远高于 full。
+
+结果（test seed 30，63–64 episode，配对）：native 档 graph_seg/compact EES 0.30（graph_closed/compact 0.22，
+full/verbose 0.55；seg − full −0.25 [−0.39, −0.09]），graph_seg/verbose 0.43（graph_closed/verbose 0.35，
+full/verbose 0.54；seg − full −0.11 [−0.27, +0.05]）；500 档 graph_seg/compact 0.32（graph_closed 0.33，full 0.06；
+seg − full +0.25 [+0.13, +0.38]），input tokens 3.2k。整段 witness 让 native 差距缩小约 0.08，verbose 序列化下
+与 full 的差距落在非劣边界附近；500 档不变。结论：native 档的差距是"历史短到可以全读时，全读最好"的成本，
+selection 在此处付出 0.1–0.25 的 EES 换取 60–75% 的输入；历史变长后反转为 +0.25 以上。论文按这个 crossover
+写，不再试图在 native 档赢过 full。
 
 ### 3.7 actor 层的 provenance 干预验证（`code/hm3/provenance_llm.py`）
 
