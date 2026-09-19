@@ -20,7 +20,7 @@ for ((s=0; s<NEVAL; s+=SHARD)); do
   key=${KEYS[$((i % NK))]}; i=$((i+1))
   dir=$OUT/$SHARDSUB/${DOMAIN}_${s}_${e}
   mkdir -p $dir
-  (cd $ROOT/code && OPENAI_API_KEY="$key" OPENAI_BASE_URL=https://www.autodl.art/api/v1 PYTHONPATH=$PYLIB:. \
+  (cd $ROOT/code && OMP_NUM_THREADS=${OMP_NUM_THREADS:-2} OPENAI_API_KEY="$key" OPENAI_BASE_URL=https://www.autodl.art/api/v1 PYTHONPATH=$PYLIB:. \
     nohup python3 -m hm3.llm --domains $DOMAIN --seed $SEED --n_eval $NEVAL --ep_start $s --ep_end $e \
       --selections $SELS --serializations $SERS --model $MODEL --prompt $PROMPT --history $HIST \
       --out_dir $ROOT/$dir --budget_usd $BUDGET ${SELHIST:+--selector_history $SELHIST} > $ROOT/$dir/shard.log 2>&1 &)
