@@ -25,17 +25,27 @@ Same executor, only the read set changes. EES = executable exact success.
 | bm25_k16 | 0.90 | 0.32 | 0.04 | 0.04 | 21.2 |
 | retrieval_k16 (lexical overlap) | 0.90 | 0.27 | 0.04 | 0.04 | 21.2 |
 | recency_k16 | 0.94 | 0.71 | 0.47 | 0.32 | 21.3 |
-| learned graph (gated decisions) | 0.87 ± 0.06 | 0.84 | 0.84 | 0.85 | 12.3 |
+| learned graph, gate fitted on native training histories (graph_nf, formal arm) | 0.87 ± 0.06 | 0.86 | 0.84 | 0.83 | 12.4 |
+| learned graph, gate refitted per condition (ablation) | 0.87 ± 0.06 | 0.84 | 0.84 | 0.85 | 12.3 |
 | program_reg (reads everything) | 0.68 | 0.66 | 0.68 | 0.68 | 1125 |
 | knn (reads everything) | 0.32 | 0.39 | 0.33 | 0.32 | 1125 |
 | source_regime / exact_kv lookups | 0.04 / 0.00 | same | same | same | 3.5 / 1 |
 
-All rows are three dev seeds (0/1/2), 60 episodes each. Preregistered predictions P1 (flat graph reads:
-11.4 → 12.3), P2 (stable graph EES: 0.87 → 0.85), P3 (fixed-K retrieval loses required records: recall
+All rows are three dev seeds (0/1/2), 60 episodes each. The formal graph arm fits the gate once on the seed's
+native training episodes and evaluates on the augmented histories (design amendment §9.6, approved 2026-09-19):
+long histories change the evidence, not the mechanism. Refitting the gate per condition trains it on
+foreign-witness-polluted regime estimates; that row is kept as the ablation. On the reserved test seeds
+(30/31/32, 60 episodes each) graph_nf gives 0.88 / 0.86 / 0.85 / 0.80 at native / 50 / 100 / 500 with reads
+11.2 → 12.1 and required-record recall 1.00. Preregistered predictions P1 (flat graph reads: 11.4 → 12.4, ratio
+1.09), P2 (stable graph EES: paired −0.01 / −0.03 / −0.04 at 50 / 100 / 500, all within 0.05; the conflicting-witness
+condition c100 alone exceeds it at −0.07 [−0.12, −0.03]), P3 (fixed-K retrieval loses required records: recall
 0.97 → 0.64), P4 (full-history readers grow linearly: 53 → 1125 reads) all hold. Single-type conditions:
 conflicting witnesses (c100) are the only type that moves the learned graph (0.83); sd ≤ 0.06 except
 wrong_select_1 (0.26, seed-dependent re-wiring).
-Shopping selection ladder (three dev seeds): graph_select 0.99 at every length, BM25-16 0.99 → 0.07 at 500,
+Shopping32 deterministic (second session audit, seed 0 so far, three-seed panel rerunning with the
+augmentation fix): refitting the gate per condition collapses to 0.175 at 100 records (a high-variance tree fit on
+polluted training estimates, 0.57 averaged over seeds at 100/500), while the native-fit gate stays at 0.77–0.81 on
+the same evaluation episodes, i.e. at its native level. Shopping selection ladder (three dev seeds): graph_select 0.99 at every length, BM25-16 0.99 → 0.07 at 500,
 recency-16 falls likewise; two of three re-wired skeletons coincide with the learned one (uninformative control),
 the third scores 0.13. Test-seed Travel panel (seeds 30/31/32, 11 of 12 conditions done): graph 0.88 → 0.89,
 program_reg 0.71 → 0.68 (reads everything), BM25-16 0.92 → 0.03, recency-16 0.93 → 0.30, graph_select 1.00,
@@ -125,5 +135,13 @@ it lexically but replacing it restores ≤ 0.08. Reported as a boundary.
   no-interleave fallback (0 drops, 17/64 episodes fall back); the v3 actor conditions above use it; the second
   session is rerunning the deterministic Shopping conditions with it.
 - Three-seed Shopping panels, test-seed deterministic panels and E0 v2: second session, in progress.
+- Per-condition gate refitting replaced by the native-fit gate after the second session's per-episode audit: the
+  augmentation itself is clean (oracle and runtime-history oracle never flip); the only feature block that changes is
+  the regime estimate, through three channels (foreign witnesses define keys the real history never witnessed,
+  foreign witnesses override real ones for keys the task does not consult, and Travel's late-flag state inference
+  reads foreign stays with the same hotel name); the native-fit gate removes the training-side effect, the
+  evaluation-side effect on c100 remains and is reported.
+- Assumption stated precisely: the current world's own witnesses are the most recent for the keys the task
+  consults; for unconsulted keys foreign witnesses can be the latest.
 - Mem0 / dense not run (no embeddings endpoint; user decision). A-Mem installed, LightMem source-only
   (Python < 3.12 required); both belong to the MemoryArena layer.
