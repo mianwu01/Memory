@@ -50,3 +50,22 @@ trace(anomalous objects) → 沿 skeleton 模板从 source 到异常对象的路
 
 - 这是对已知机制生成器上的定位与干预实验；不声称在无 ground truth 的真实日志上成立。
 - 若 trace 只在 top-1 处退化到"最近记录"同等水平，则同图反向审计的增量未被证实，如实报告。
+
+## 7. dev 校准修订（2026-09-18 晚，正式 test 报告之前；首轮 test 用 §3 的结构排序，两版并列保留）
+
+1. **排序规则。** §3 的结构排序（路径距离升序、时间降序）在同一 key 的 witness 三元组内无法区分，
+   p@1 受限于约 1/3–1/2。修订：结构候选（前 12 条）再按 leave-one-record-out 重排——把候选记录从
+   污染历史中遮蔽后重跑同一 forward graph，按"异常对象中决策发生变化的数量"降序，平局按原顺序。
+   这只用审计时可见的信息（污染历史与同一 graph artifact），与 §4 的 clean replacement 验证是两个
+   不同的操作。dev seed 0：Travel p@3 从 0.84 升到 0.97，top-3 联合替换恢复率 0.97（random-3 为 0）。
+2. **无 witness 的 key。** parser 对路径上某个 key 找不到可接受的 witness 时（污染"静默"了 witness），
+   候选加入写到该 key 所属对象（compat 类 pair key 含其关联对象）的最新 3 条记录，排在同距离的已归因
+   witness 之后。
+3. **基线。** 按三层实验方案增加不使用图的定位基线：recency、BM25（以异常对象的状态文本为 query）、
+   source heuristic（写到异常对象及其一跳邻居的最新记录）。每个基线返回同样的 top-k，并做同样的
+   top-1 clean replacement。
+4. **Shopping 的机制性发现。** dev seed 0 的 40 个 episode 中，Shopping 24 个可污染 episode 有 19 个
+   的污染使该 key 在 parser 中失去 witness（Travel 39 个中只有 4 个）。witness-based 的反向追踪按构造
+   找不到静默的记录；修订 2 只能部分补救（p@3 0.33）。BM25 基线在 Shopping 的 p@3 为 0.93（但 top-1
+   替换恢复率 0.07），因为污染记录写在异常对象本身且词元重合。Shopping 因此按 §6 报告为边界：
+   在 witness 被静默的污染类型下，同图反向审计没有增量。

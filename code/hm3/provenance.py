@@ -166,22 +166,89 @@ def trace(domain, g: LearnedGraph, ep: Episode, anomalies: List[str], reads: dic
                 path_objs[o] = min(path_objs.get(o, 99), dist[o])
         path_objs[a] = 0
     prov: Dict[str, list] = {}
-    domain.infer_params(ep.H, ep.S0, prov)
+    est = domain.infer_params(ep.H, ep.S0, prov)
     order = {r["rid"]: i for i, r in enumerate(ep.H)}
     scored = []
     for o, d in path_objs.items():
         if o not in ep.S0.objects:
             continue
         for name, key in domain.param_keys_for(ep.S0.get(o), ep.S0):
-            for rid in prov.get(f"{name}[{key}]", []):
+            attributed = prov.get(f"{name}[{key}]", [])
+            for rid in attributed:
                 if rid in order:
                     scored.append((d, -order[rid], rid))
+            if not attributed:
+                # the key has no witness the parser accepts (a silenced witness is one way a
+                # corruption shows up): candidates are the newest records written to the
+                # objects that carry this key, ranked after attributed witnesses at this distance
+                owners = {o}
+                if "|" in str(key):
+                    for ts in ep.S0.get(o).links.values():
+                        owners.update(t for t in ts if t in ep.S0.objects)
+                recs = [r["rid"] for r in reversed(ep.H) if r["object_id"] in owners][:3]
+                for j, rid in enumerate(recs):
+                    scored.append((d + 0.5, -order[rid], rid))
     scored = sorted(set(scored))
     ranked = []
     for _d, _o, rid in scored:
         if rid not in ranked:
             ranked.append(rid)
     return ranked[:k], sorted(path_objs)
+
+
+def mask_record(ep: Episode, rid: str) -> Episode:
+    d = ep.__dict__.copy()
+    d["H"] = [copy.deepcopy(r) for r in ep.H if r["rid"] != rid]
+    return Episode(**d)
+
+
+def trace_loo(domain, g: LearnedGraph, ep: Episode, anomalies: List[str], structural: List[str],
+              bad_txns: List[dict], k: int = 5) -> List[str]:
+    """Leave-one-record-out re-ranking of the structural candidates: a record scores
+    by how many anomalous objects change their decision when the record is masked
+    (audit-time information only: the corrupted history and the same graph)."""
+    base = {t["object_id"]: canonical_txn(t) for t in bad_txns}
+    scored = []
+    for i, rid in enumerate(structural):
+        try:
+            txns, _r, _s = _run(domain, g, mask_record(ep, rid))
+        except Exception:
+            scored.append((0, i, rid))
+            continue
+        now = {t["object_id"]: canonical_txn(t) for t in txns}
+        changed = sum(1 for o in anomalies if base.get(o) != now.get(o))
+        scored.append((changed, -i, rid))
+    scored.sort(key=lambda x: (-x[0], -x[1]))
+    return [rid for _c, _i, rid in scored[:k]]
+
+
+def baseline_rankings(ep: Episode, anomalies: List[str], k: int = 5) -> Dict[str, List[str]]:
+    """Provenance baselines that do not use the graph."""
+    from .scaling import bm25_topk, _fmt
+    rids = [r["rid"] for r in ep.H]
+    out = {"recency": list(reversed(rids))[:k]}
+    # BM25 against the anomalous objects' state lines
+    lines = []
+    for o in anomalies:
+        if o in ep.S0.objects:
+            ob = ep.S0.get(o)
+            lines.append(f"{ob.id} {ob.type} " + " ".join(f"{a}={_fmt(v)}" for a, v in ob.fields.items()))
+    q = " ".join(lines) or ep.query
+    fake = copy.copy(ep)
+    fake.query = q
+    fake.I = dict(ep.I)
+    try:
+        out["bm25_anomaly"] = bm25_topk(fake, k)
+    except Exception:
+        out["bm25_anomaly"] = out["recency"]
+    # source heuristic: records written to the anomalous objects or their 1-hop neighbours, newest first
+    near = set(anomalies)
+    for o in anomalies:
+        if o in ep.S0.objects:
+            for ts in ep.S0.get(o).links.values():
+                near.update(t for t in ts if t in ep.S0.objects)
+    out["source_heuristic"] = [r["rid"] for r in reversed(ep.H) if r["object_id"] in near][:k]
+    return out
 
 
 def controls(ep: Episode, reads: dict, ranked: List[str], path_objs: List[str], rng: random.Random) -> Dict[str, Optional[str]]:
@@ -256,9 +323,15 @@ def run_domain(domain, seed: int, split: str, n_train: int, n_eval: int, train_s
             continue
         counts["incidents"] += 1
         anomalies = anomalous_objects(domain, bad, bad_txns, bad_score)
-        ranked, path_objs = trace(domain, g, bad, anomalies, bad_reads)
+        structural, path_objs = trace(domain, g, bad, anomalies, bad_reads, k=12)
+        ranked = trace_loo(domain, g, bad, anomalies, structural, bad_txns)
         ctrl = controls(bad, bad_reads, ranked, path_objs, rng)
         rank = ranked.index(gold_rid) + 1 if gold_rid in ranked else None
+        rank_struct = structural.index(gold_rid) + 1 if gold_rid in structural[:5] else None
+        baselines = baseline_rankings(bad, anomalies)
+        baseline_rank = {n: (lst.index(gold_rid) + 1 if gold_rid in lst else None) for n, lst in baselines.items()}
+        for n, lst in baselines.items():
+            ctrl[f"bl_{n}"] = lst[0] if lst else None
         interventions = {}
         similar_kind = ctrl.pop("similar_kind", None)
         for name, rid in [("predicted", ranked[0] if ranked else None), ("predicted_top3", ranked[:3] or None)] + list(ctrl.items()):
@@ -270,7 +343,8 @@ def run_domain(domain, seed: int, split: str, n_train: int, n_eval: int, train_s
             interventions[name] = {"rid": rid, "ees": bool(f_score["ees"]),
                                    "plan_restored": {canonical_txn(t) for t in f_txns} == {canonical_txn(t) for t in clean_txns}}
         rows.append({"episode": ep.id, "gold_rid": gold_rid, "key": key, "anomalies": anomalies, "similar_kind": similar_kind,
-                     "ranked": ranked, "rank": rank, "n_path_objects": len(path_objs), "n_records": len(bad.H),
+                     "ranked": ranked, "rank": rank, "structural": structural[:5], "rank_struct": rank_struct,
+                     "baseline_rank": baseline_rank, "n_path_objects": len(path_objs), "n_records": len(bad.H),
                      "interventions": interventions})
     summ = summarize_rows(rows)
     summ.update(counts)
@@ -286,8 +360,15 @@ def summarize_rows(rows: List[dict]) -> dict:
     p1 = np.mean([r["rank"] == 1 for r in rows])
     p3 = np.mean([r["rank"] is not None and r["rank"] <= 3 for r in rows])
     mrr = np.mean([1.0 / r["rank"] if r["rank"] else 0.0 for r in rows])
-    out = {"n": n, "precision_at_1": float(p1), "precision_at_3": float(p3), "mrr": float(mrr)}
-    for name in ("predicted", "predicted_top3", "matched_random", "matched_random3", "similar_non_ancestor", "recency"):
+    out = {"n": n, "precision_at_1": float(p1), "precision_at_3": float(p3), "mrr": float(mrr),
+           "precision_at_1_structural": float(np.mean([r.get("rank_struct") == 1 for r in rows])),
+           "precision_at_3_structural": float(np.mean([r.get("rank_struct") is not None and r["rank_struct"] <= 3 for r in rows]))}
+    for bl in ("recency", "bm25_anomaly", "source_heuristic"):
+        rk = [r.get("baseline_rank", {}).get(bl) for r in rows]
+        out[f"p1_{bl}"] = float(np.mean([x == 1 for x in rk]))
+        out[f"p3_{bl}"] = float(np.mean([x is not None and x <= 3 for x in rk]))
+    for name in ("predicted", "predicted_top3", "matched_random", "matched_random3", "similar_non_ancestor", "recency",
+                 "bl_recency", "bl_bm25_anomaly", "bl_source_heuristic"):
         vals = [r["interventions"][name]["ees"] for r in rows if r["interventions"].get(name)]
         out[f"restore_{name}"] = float(np.mean(vals)) if vals else None
     return out
