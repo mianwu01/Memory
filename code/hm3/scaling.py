@@ -422,5 +422,32 @@ class RetrievalTopK(Learner):
         return {"txns": txns, "reads": {"objects": list(tr.read_objects), "records": top}}
 
 
+def bm25_topk(ep: Episode, k: int, k1: float = 1.5, b: float = 0.75) -> List[str]:
+    """Okapi BM25 over the compact record lines; query = query text + source object line."""
+    import math
+    docs = [_TOK.findall(record_text(r).lower()) for r in ep.H]
+    q = _TOK.findall(query_text(ep).lower())
+    n = len(docs)
+    avg = sum(len(d) for d in docs) / max(1, n)
+    df: Dict[str, int] = {}
+    for d in docs:
+        for t in set(d):
+            df[t] = df.get(t, 0) + 1
+    scores = []
+    for i, d in enumerate(docs):
+        tf: Dict[str, int] = {}
+        for t in d:
+            tf[t] = tf.get(t, 0) + 1
+        sc = 0.0
+        for t in q:
+            if t not in tf:
+                continue
+            idf = math.log(1 + (n - df[t] + 0.5) / (df[t] + 0.5))
+            sc += idf * tf[t] * (k1 + 1) / (tf[t] + k1 * (1 - b + b * len(d) / max(1e-9, avg)))
+        scores.append((sc, i))
+    scores.sort(key=lambda x: (-x[0], -x[1]))
+    return [ep.H[i]["rid"] for _s, i in scores[:k]]
+
+
 def scaling_learners() -> List[Learner]:
     return [RetrievalTopK(8), RetrievalTopK(16), RetrievalTopK(16, mode="recency")]

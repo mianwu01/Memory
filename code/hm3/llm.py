@@ -28,6 +28,7 @@ from .core import Episode, State, hhmm, score_plan
 from .domains import get_domain
 from .generate import generate_split
 from .learners import LearnedGraph, ProgramLearner, SourceUnion, all_reads
+from .scaling import augment_split, bm25_topk
 
 COST_RATES_USD_PER_MILLION = {"uncached_input": 2.5, "cached_input": 0.25, "output": 10.0}
 DEEPSEEK_BASE_URL = "https://api.deepseek.com/v1"
@@ -43,6 +44,18 @@ Known visible rules: a stay's checkin = its transfer's pickup + ride; an activit
 Whether the transfer follows the flight automatically, by how many minutes, whether the hotel maintains the late-arrival
 flag past late_cutoff, whether a restaurant accepts a later seating or cancels, and whether a bundle must be re-booked
 when its dinner changes, all depend on the provider / hotel / restaurant / vendor and are only visible in the history.""",
+    "shopping": """Objects: cart(budget, total; links lines, promos), line(category, role base|accessory, sku, attrs, price, priority;
+links cart, base, accessories; status active|removed), promo(requires [categories], brand, discount, active 0|1).
+The catalog (per category: sku, attrs, price) is given in the policy block.
+Ops you may emit: replace_line(payload {"sku": ...}) on an active line, remove_line (active line, empty payload),
+apply_promo / drop_promo (promo, empty payload). The cart total is recomputed automatically (never write to the cart).
+Known visible rules: an accessory whose constrained attribute no longer matches its base must be replaced by the cheapest
+compatible variant of its category (or removed when none exists); a promotion is eligible when the cart has an active line in
+every required category (a strict promotion also requires the promotion's brand on those lines); when the total exceeds the
+budget, optional lines (priority > 1) are dropped, most optional first, then priciest.
+Whether a (base category, accessory category) pair is constrained, whether each promotion is strict, whether the store
+re-evaluates promotions itself (automatic) or the agent must apply/drop them, and whether the budget rule is enforced,
+depend on the store and are only visible in the history.""",
     "search": """Objects: doc(cls, cluster, stance, ts, status pending|active|retracted) attached to base claims; claim(kind base|composite,
 combinator AND|OR, verdict supported|refuted|unresolved). Policy: now, window (docs older than now-window are ignored),
 margin (score >= margin supported, <= -margin refuted).
@@ -131,13 +144,33 @@ def serialize_history(H: List[dict], rids: List[str], mode: str) -> str:
 # ----------------------------------------------------------------- selection
 
 class Selector:
+    """Learners are fitted lazily, only for the selection modes actually requested."""
+
     def __init__(self, domain, train: List[Episode]):
-        self.union = SourceUnion()
-        self.union.fit(domain, train)
-        self.graph = LearnedGraph()
-        self.graph.fit(domain, train)
-        self.program = ProgramLearner(3)
-        self.program.fit(domain, train)
+        self.domain = domain
+        self.train = train
+        self._fitted: Dict[str, object] = {}
+
+    def _get(self, name: str):
+        if name not in self._fitted:
+            t0 = time.time()
+            learner = {"union": SourceUnion, "graph": LearnedGraph, "program": lambda: ProgramLearner(3)}[name]()
+            learner.fit(self.domain, self.train)
+            print(f"selector fit {name} on {len(self.train)} episodes: {time.time() - t0:.1f}s", flush=True)
+            self._fitted[name] = learner
+        return self._fitted[name]
+
+    @property
+    def union(self):
+        return self._get("union")
+
+    @property
+    def graph(self):
+        return self._get("graph")
+
+    @property
+    def program(self):
+        return self._get("program")
 
     def select(self, domain, ep: Episode, mode: str) -> dict:
         src = ep.I["object_id"]
@@ -166,6 +199,19 @@ class Selector:
                 for targets in ep.S0.get(oid).links.values():
                     closure.update(t for t in targets if t in ep.S0.objects)
             return {"objects": sorted(objs | closure), "records": sorted(recs)}
+        if mode.startswith("bm25_k") or mode.startswith("recency_k"):
+            k = int(mode.split("_k")[1])
+            if mode.startswith("bm25"):
+                recs = bm25_topk(ep, k)
+            else:
+                recs = [r["rid"] for r in ep.H[-k:]]
+            rs = set(recs)
+            referents = {r["object_id"] for r in ep.H if r["rid"] in rs and r["object_id"] in ep.S0.objects}
+            closure = set(referents) | {src}
+            for oid in list(referents) + [src]:
+                for targets in ep.S0.get(oid).links.values():
+                    closure.update(t for t in targets if t in ep.S0.objects)
+            return {"objects": sorted(closure), "records": sorted(rs, key=lambda r: [x["rid"] for x in ep.H].index(r))}
         if mode == "program":
             out = self.program.predict(domain, ep)
             objs = {src} | {it["object_id"] for it in out["plan"]}
@@ -231,7 +277,10 @@ class Client:
 
     def chat(self, messages: List[dict], max_tokens: int = 4096) -> dict:
         t0 = time.time()
-        extra = {"thinking": {"type": "enabled"}} if self.thinking else None
+        # AutoDL / DeepSeek reasoning models think by default; the MINJA AutoDL campaign
+        # disabled it with exactly these two fields, so the non-thinking arm stays comparable
+        extra = {"thinking": {"type": "enabled"}} if self.thinking else \
+            {"thinking": {"type": "disabled"}, "reasoning_effort": "none"}
         resp = None
         for attempt in range(12):
             try:
@@ -279,7 +328,7 @@ def build_messages(domain, ep: Episode, sel: dict, ser: str) -> List[dict]:
 def run(domains: List[str], seed: int, n_eval: int, selections: List[str], serializations: List[str],
         model: str, out_dir: Path, budget_usd: float, n_train: int = 200, train_seed_offset: int = 100,
         dry_run: bool = False, ep_start: int = 0, ep_end: Optional[int] = None,
-        resume_from: Optional[List[str]] = None, thinking: bool = False):
+        resume_from: Optional[List[str]] = None, thinking: bool = False, history: Optional[str] = None):
     out_dir.mkdir(parents=True, exist_ok=True)
     ledger_path = out_dir / "llm_ledger.jsonl"
     done = set()
@@ -296,13 +345,20 @@ def run(domains: List[str], seed: int, n_eval: int, selections: List[str], seria
                 "serializations": serializations, "model": model, "n_train": n_train,
                 "train_seed_offset": train_seed_offset, "budget_usd": budget_usd,
                 "retry_policy": "one format-only repair; semantic failures terminal", "thinking": thinking,
-                "prompt_version": PROMPT_VERSION,
+                "prompt_version": PROMPT_VERSION, "history": history or "native",
+                "base_url": os.environ.get("OPENAI_BASE_URL", DEEPSEEK_BASE_URL),
                 "cost_rates_usd_per_million": COST_RATES_USD_PER_MILLION}
     json.dump(protocol, open(out_dir / "llm_protocol.json", "w"), indent=1)
     for dname in domains:
         domain = get_domain(dname)
         train = generate_split(domain, seed + train_seed_offset, "train", n_train)
         evals = generate_split(domain, seed, "test", n_eval)[ep_start:ep_end]
+        if history and history != "native":
+            target, mix = history.split(":")
+            train, st_tr = augment_split(domain, train, int(target), mix, f"train{seed}")
+            evals, st_ev = augment_split(domain, evals, int(target), mix, f"test{seed}")
+            with open(out_dir / "augment_stats.json", "w") as f:
+                json.dump({"domain": dname, "history": history, "train": st_tr, "eval": st_ev}, f, indent=1)
         selector = Selector(domain, train)
         for ep in evals:
             for sel_mode in selections:
@@ -418,11 +474,15 @@ if __name__ == "__main__":
     ap.add_argument("--resume_from", nargs="*", default=None)
     ap.add_argument("--thinking", action="store_true")
     ap.add_argument("--prompt", default="v1", choices=["v1", "v2"])
+    ap.add_argument("--history", default=None, help="e.g. 500:abcd (docs/hm3-history-scaling-design-2026-09-18.md)")
+    ap.add_argument("--base_url", default=None)
     a = ap.parse_args()
     PROMPT_VERSION = a.prompt
+    if a.base_url:
+        os.environ["OPENAI_BASE_URL"] = a.base_url
     if a.summarize:
         print(json.dumps(summarize(Path(a.out_dir))["total"]))
     else:
         run(a.domains, a.seed, a.n_eval, a.selections, a.serializations, a.model, Path(a.out_dir), a.budget_usd,
             dry_run=a.dry_run, ep_start=a.ep_start, ep_end=a.ep_end, resume_from=a.resume_from,
-            thinking=a.thinking)
+            thinking=a.thinking, history=a.history)
