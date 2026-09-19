@@ -23,7 +23,7 @@ for D in travel shopping32; do
   nohup python3 -m hm3.run_scaling --domains $D --seeds 0 1 2 \
     --conditions native 50 100 500 a100 b100 c100 d100 --split dev \
     --learners exact_kv source_union source_regime knn superset program program_reg graph graph_pooled \
-               rh_oracle oracle retrieval_k8 retrieval_k16 recency_k16 \
+               rh_oracle oracle retrieval_k8 retrieval_k16 recency_k16 bm25_k16 graph_select wrong_select_1 wrong_select_2 wrong_select_3 \
     --out results/development/hm3/scaling/det_dev_$D.json > results/development/hm3/scaling/det_dev_$D.log 2>&1 &
 done
 ```
@@ -44,7 +44,7 @@ for D in travel shopping32; do
   nohup python3 -m hm3.run_scaling --domains $D --seeds 30 31 32 --train_seed_offset 100 --split test \
     --conditions native 50 100 500 \
     --learners exact_kv source_union source_regime knn superset program program_reg graph graph_pooled \
-               rh_oracle oracle retrieval_k8 retrieval_k16 recency_k16 \
+               rh_oracle oracle retrieval_k8 retrieval_k16 recency_k16 bm25_k16 graph_select wrong_select_1 wrong_select_2 wrong_select_3 \
     --out results/real/hm3/scaling/det_test_$D.json > results/real/hm3/scaling/det_test_$D.log 2>&1 &
 done
 ```
@@ -63,3 +63,13 @@ ImportError；它们的错误行会写进 `results/e0v2/e0a.jsonl`，重跑前�
 
 第二个 session 只提交：`results/development/hm3/scaling/`、`results/real/hm3/scaling/det_test_*.json`、
 `results/e0v2/`、以及结果文档里自己写的表格。不要改 `code/`；发现 bug 在文档里记下来。
+
+## 2026-09-18 晚补充：selection ladder 臂（代码已提交，`git pull --rebase` 后可用）
+
+`bm25_k16`（BM25 top-16 → restricted_est → 执行器）、`graph_select`（沿学得 skeleton 读取 → 同一执行器）、
+`wrong_select_1/2/3`（沿三个固定重接线的 skeleton 读取 → 同一执行器）。dev seed 0 的快速结果：Travel
+graph_select 三档全 1.000（reads 11–12 持平），wrong_select 0.60 / 0.03 / 0.03，bm25_k16 0.95 → 0.03 → 0.03，
+recency_k16 0.97 → 0.52 → 0.37；Shopping 的 cart 两跳内全连通，wrong_select_1/2 与 graph_select 读到同一集合，
+该对照在 Shopping 无区分力（如实报告）。旧的 `wrong_graph_k`（majority 沿错误拓扑）继承 superset 的
+collateral 失败，EES 恒为 0，只放附录，不进主表。已完成的 (domain, seed, condition) 会被跳过，所以对已有的
+det_dev_*.json 追加这些臂需要删掉对应 entry 的 `complete` 标记，或写到新文件 `det_dev_ladder_$D.json`。

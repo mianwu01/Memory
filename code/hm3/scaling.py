@@ -30,7 +30,8 @@ from typing import Dict, List, Optional, Tuple
 from .core import (Episode, FallbackTracker, Illegal, Obj, State, canonical_txn, execute_intervention,
                    restricted_est, score_plan, timeline)
 from .generate import DEFAULT_CFG, run_segment
-from .learners import Learner, RuntimeHistoryOracle
+from .learners import LearnedGraph, Learner, RuntimeHistoryOracle, follow_template
+from .features import path_types
 
 KEY_FIELDS = {"travel": ["provider", "hotel", "restaurant", "vendor"]}
 CONTINUOUS = {"buffer": [20, 25, 30, 35, 40, 45, 50, 55, 60]}
@@ -395,7 +396,7 @@ class RetrievalTopK(Learner):
     def __init__(self, k: int = 16, mode: str = "lexical"):
         self.k = k
         self.mode = mode
-        self.name = f"retrieval_k{k}" if mode == "lexical" else f"recency_k{k}"
+        self.name = {"lexical": f"retrieval_k{k}", "recency": f"recency_k{k}", "bm25": f"bm25_k{k}"}[mode]
 
     def fit(self, domain, train):
         return None
@@ -403,6 +404,8 @@ class RetrievalTopK(Learner):
     def select(self, ep: Episode) -> List[str]:
         if self.mode == "recency":
             return [r["rid"] for r in ep.H[-self.k:]]
+        if self.mode == "bm25":
+            return bm25_topk(ep, self.k)
         q = _tokens(query_text(ep))
         scored = []
         for i, r in enumerate(ep.H):
@@ -449,5 +452,115 @@ def bm25_topk(ep: Episode, k: int, k1: float = 1.5, b: float = 0.75) -> List[str
     return [ep.H[i]["rid"] for _s, i in scores[:k]]
 
 
+def rewire_skeleton(g: LearnedGraph, train: List[Episode], perm_seed: int) -> Dict[str, str]:
+    """Re-wire the learned skeleton's templates to other valid typed paths seen in
+    training (same parent type, same number of templates, same majority labels).
+    Returns the mapping old -> new for the record."""
+    pool = set()
+    for ep in train:
+        src = ep.I["object_id"]
+        stype = ep.S0.get(src).type
+        for _c, template in path_types(ep.S0, src, g.MAX_TEMPLATE_HOPS).items():
+            if template:
+                pool.add((stype, tuple(template)))
+        for o in list(ep.S0.objects.values())[:12]:
+            for _c, template in path_types(ep.S0, o.id, g.MAX_TEMPLATE_HOPS).items():
+                if template:
+                    pool.add((o.type, tuple(template)))
+    rng = random.Random(1000 + perm_seed)
+    real = list(g.skeleton)
+    used = set()
+    new_skel, new_major, mapping = {}, {}, {}
+    for key in real:
+        ptype, template = key
+        cands = [k for k in pool if k[0] == ptype and k not in g.skeleton and k not in used and len(k[1]) == len(template)]
+        if not cands:
+            cands = [k for k in pool if k[0] == ptype and k not in g.skeleton and k not in used]
+        if not cands:
+            cands = [k for k in pool if k not in used and k not in g.skeleton]
+        if not cands:
+            continue
+        nk = rng.choice(sorted(cands))
+        used.add(nk)
+        new_skel[nk] = g.skeleton[key]
+        new_major[nk] = g.majority[key]
+        mapping[str(key)] = str(nk)
+    g.skeleton, g.majority = new_skel, new_major
+    g.models = {k: ("const", new_major[k]) for k in new_skel}
+    return mapping
+
+
+def skeleton_reads(domain, g: LearnedGraph, ep: Episode, max_expansions: int = 400) -> dict:
+    """Objects reachable from the source along the skeleton templates, plus the
+    history records the parser attributes to their policy keys."""
+    src = ep.I["object_id"]
+    seen = [src]
+    frontier = [src]
+    budget = max_expansions
+    while frontier and budget > 0:
+        o = frontier.pop(0)
+        if o not in ep.S0.objects:
+            continue
+        for (ptype, template) in g.skeleton:
+            if ptype != ep.S0.get(o).type:
+                continue
+            for c in follow_template(ep.S0, o, template):
+                budget -= 1
+                if c not in seen and c in ep.S0.objects:
+                    seen.append(c)
+                    frontier.append(c)
+    prov: Dict[str, list] = {}
+    domain.infer_params(ep.H, ep.S0, prov)
+    records = set()
+    for oid in seen:
+        for name, key in domain.param_keys_for(ep.S0.get(oid), ep.S0):
+            records.update(prov.get(f"{name}[{key}]", []))
+    return {"objects": sorted(seen), "records": sorted(records)}
+
+
+class SelectExecute(Learner):
+    """Selection ladder with a fixed executor: read along the learned skeleton
+    (graph_select) or along a re-wired skeleton (wrong_select_k), recover the
+    parameters from those records only, execute with the runtime-history
+    executor.  Isolates the value of the topology for *selection* from the
+    learned gate models; comparable with retrieval_k / bm25_k / recency_k."""
+
+    def __init__(self, perm_seed: Optional[int] = None):
+        self.perm_seed = perm_seed
+        self.name = "graph_select" if perm_seed is None else f"wrong_select_{perm_seed}"
+
+    def fit(self, domain, train):
+        self.g = LearnedGraph()
+        self.g.fit(domain, train)
+        self.rewired = rewire_skeleton(self.g, train, self.perm_seed) if self.perm_seed is not None else {}
+
+    def predict(self, domain, ep):
+        reads = skeleton_reads(domain, self.g, ep)
+        est = restricted_est(domain, ep.H, ep.S0, reads["records"])
+        tr = FallbackTracker(est)
+        post = ep.S0.copy()
+        try:
+            _rc, txns, tr = execute_intervention(domain, est, post, ep.I, tr)
+        except Exception:
+            txns = []
+        return {"txns": txns, "reads": reads}
+
+
+class WrongGraph(LearnedGraph):
+    """Appendix control: majority labels propagated along a re-wired skeleton
+    (the superset rule on the wrong topology).  Inherits the superset rule's
+    collateral writes, so it is not the matched topology control; see SelectExecute."""
+
+    def __init__(self, perm_seed: int):
+        super().__init__(superset=True)
+        self.perm_seed = perm_seed
+        self.name = f"wrong_graph_{perm_seed}"
+
+    def fit(self, domain, train):
+        super().fit(domain, train)
+        self.rewired_from = rewire_skeleton(self, train, self.perm_seed)
+
+
 def scaling_learners() -> List[Learner]:
-    return [RetrievalTopK(8), RetrievalTopK(16), RetrievalTopK(16, mode="recency")]
+    return [RetrievalTopK(8), RetrievalTopK(16), RetrievalTopK(16, mode="recency"), RetrievalTopK(16, mode="bm25"),
+            SelectExecute(), SelectExecute(1), SelectExecute(2), SelectExecute(3)]

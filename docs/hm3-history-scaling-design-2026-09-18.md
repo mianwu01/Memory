@@ -102,3 +102,11 @@ API（与 round 3/4 可比）：
 4. A 的"隐含值不同于真值"比例：Travel 约 55%（37/67 keys），Shopping 约 5%（3/62）。Shopping 的
    compat witness 需要替换后的 accessory 属性与 base 匹配，重新链接后的克隆很少满足，因此
    A 在 Shopping 中主要是同对象的冗余旧记录而不是冲突记录。如实报告，不改构造。
+
+5. **selection ladder 与 wrong-graph 对照（2026-09-18 晚，test 生成前）。** 首版 wrong graph 用 superset 规则沿
+   重接线拓扑传播，EES 恒为 0，与 superset 本身相同，说明它测的是缺失的 gate 模型而不是拓扑；作废，移入附录
+   （`wrong_graph_k`）。正式对照改为 selection ladder：`graph_select`（沿学得 skeleton 读取对象与其 policy
+   记录）与 `wrong_select_1/2/3`（沿三个固定重接线 skeleton 读取），全部经 `restricted_est` 与运行时执行器，
+   与 `bm25_k16` / `recency_k16` / `retrieval_k` 同一执行器、同一口径；报告 reads 数。这样对照隔离的是拓扑对
+   **选择** 的价值，正是 LLM 臂所测的量。Shopping 的 cart 在两跳内全连通，重接线后读取集合常与原图相同，
+   该对照在 Shopping 预期无区分力。
