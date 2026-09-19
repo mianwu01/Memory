@@ -93,11 +93,17 @@ shuffle 对照 0.54–0.63。
 | wrong_select 1 / 2 / 3（重接线 skeleton） | 0.43 / 0.04 / 0.04 | 同 | 同 | 同 | 5.9 / 2.2 / 2.8 |
 | bm25_k16 | 0.90 | 0.32 | 0.04 | 0.04 | 21.2 |
 | recency_k16 | 0.94 | 0.71 | 0.47 | 0.32 | 21.3 |
-| learned graph（含门控决策） | 0.87 | 0.84 | 0.84 | 0.85 | 12.3 |
+| learned graph，gate 在 native 训练集上拟合（正式臂 graph_nf） | 0.87 | 0.86 | 0.84 | 0.83 | 12.4 |
+| learned graph，gate 按档位重拟合（消融） | 0.87 | 0.84 | 0.84 | 0.85 | 12.3 |
 | program_reg（读取全部） | 0.68 | 0.66 | 0.68 | 0.68 | 1125 |
 | knn（读取全部） | 0.32 | 0.39 | 0.33 | 0.32 | 1125 |
 
-预注册的四条预测全部成立：P1 graph reads 平坦（11.4 → 12.3）；P2 graph EES 稳定（0.87 → 0.85）；
+正式 graph 臂的 gate 在该 seed 的 native 训练集上拟合一次、只增广评测历史（设计修订 §9.6，2026-09-19 拍板）：
+历史变长改变的是证据，机制不变；按档位重拟合会让 gate 在被外来 witness 污染的 regime 估计上训练，保留为消融
+（Shopping 的重拟合在 100 档坍塌到 0.175 而 native-fit gate 在同一评测集上保持 0.77–0.81）。reserved test seeds
+30/31/32 上 graph_nf 为 0.88 / 0.86 / 0.85 / 0.80（native / 50 / 100 / 500），reads 11.2 → 12.1。
+预注册的四条预测对正式臂全部成立：P1 graph reads 平坦（11.4 → 12.4）；P2 graph EES 稳定（配对差 −0.01 / −0.03 /
+−0.04，只有冲突 witness 单类型条件 c100 越界到 −0.07）；
 P3 固定 K 检索丢失必需记录（recall 0.97 → 0.64）；P4 读全部历史的方法 reads 线性增长（53 → 1125）。
 重接线的图对照说明收益来自正确的依赖拓扑；bm25 / recency 说明词法检索与最近记录在长历史下失效。
 
@@ -162,7 +168,11 @@ prompt 逐字相同（图只读约 6 条记录，top-3 被排除），所以它�
    parser 失去该 key 的 witness，witness-based 追踪按构造找不到；BM25 能按词元找到但替换后恢复 ≤ 0.08）；重接线
    对照在 Shopping 无区分力（cart 两跳内全连通，三个重接线里两个读到与学得 skeleton 相同的集合）。
 2. **native 档全读更好**（flash −0.33，Pro −0.10）。论文按 crossover 写。
-3. **假设**：当前世界自己的 witness 是该 key 最新的记录（增广按此构造，parser 取最后一个 witness）。
+3. **假设**：当前世界自己的 witness 是任务会 consult 的 key 的最新记录（增广按此构造，parser 取最后一个 witness）；
+   对任务不 consult 的 key，外来 witness 可能更晚。第二个 session 的逐 episode 审计确认增广本身干净（oracle 与
+   rh_oracle 在所有档位无一翻转），确定性 graph 的偏移只来自 regime 估计特征块的三条通道（外来 witness 定义了
+   真实历史未见证的 key；对未 consult 的 key 覆盖真实 witness；Travel 的 late 标志状态推断读到同名 hotel 的外来
+   stay），因此正式臂改为 native-fit gate。
 4. **复核过并已修正 / 解释的地方**：首轮 prompt 用不同前缀标出了外来记录（已统一重编号并重跑，结论不变）；
    graph 臂在长历史下自身分数上升，来自同实体额外 witness 被图选中（逐 episode 核实）；首版 wrong graph
    继承 superset 规则的失败、测的是缺失的门控模型，已换成 selection ladder；Shopping 增广曾丢弃 27% episode，

@@ -108,11 +108,16 @@ reading is robust to both; structure also yields intervention-validated provenan
   intervention, the oracle repair and the required reads are unchanged, so lengths are paired. Validity is asserted
   per episode (Travel drops 0–2 %).
 - Result (native → 500): graph_select 1.00 → 1.00 with 11.4 → 12.4 reads; re-wired skeletons 0.43 / 0.04 / 0.04
-  throughout; BM25 top-16 0.90 → 0.04; recency-16 0.94 → 0.32; learned graph 0.87 → 0.85; program learner 0.68 flat
-  while reading 53 → 1125 records. Preregistered P1–P4 all hold; required-record recall of fixed-K retrieval
-  0.97 → 0.64.
+  throughout; BM25 top-16 0.90 → 0.04; recency-16 0.94 → 0.32; learned graph with the gate fitted on native
+  training histories (formal arm) 0.87 → 0.83 on dev and 0.88 → 0.80 on the reserved test seeds, with the
+  per-condition refit as an ablation (0.87 → 0.85 on dev; on Shopping the refit collapses at 100 records while the
+  native-fit gate stays at its native level); program learner 0.68 flat while reading 53 → 1125 records.
+  Preregistered P1–P4 all hold for the formal arm (P2 paired shifts −0.01 / −0.03 / −0.04; the conflicting-witness
+  condition alone reaches −0.07); required-record recall of fixed-K retrieval 0.97 → 0.64.
 - Observation: the value comes from the correct topology (re-wired controls fail at every length) and reads stay
-  flat by construction of the frontier; fixed-K retrieval loses the required records as distractors grow.
+  flat by construction of the frontier; fixed-K retrieval loses the required records as distractors grow. The gate is
+  a mechanism model: fit it once on clean histories; refitting it on long histories trains it on foreign witnesses
+  for keys the task never consults (audited per episode; the augmentation itself never flips the oracles).
 - Figure: EES and reads versus history length, one line per arm.
 
 ### 4.4 Real LLM actor (DeepSeek-V4-Flash, thinking off; Travel test seed 30 with seed 31 replication) — status: have
@@ -132,7 +137,7 @@ reading is robust to both; structure also yields intervention-validated provenan
 - Observation (the sentence for the abstract): a full-context actor survives pure volume and collapses under
   conflicting evidence about the same entities; structure-guided reading resolves the conflict at read time and
   stays at 0.3 or above at 1–3 % of the tokens; when the history is short enough to read, reading everything is
-  still best (crossover). Assumption to state: the current world's own witnesses are the most recent for their keys.
+  still best (crossover). Assumption to state: the current world's own witnesses are the most recent records for the keys the task consults (for other keys, foreign witnesses may be the latest, which is what perturbs a refitted gate).
 - Figures: crossover plot (EES vs history length for graph, full, BM25, recency, with token counts on a second axis);
   decomposition bar chart.
 
@@ -163,7 +168,10 @@ reading is robust to both; structure also yields intervention-validated provenan
   localization 1/2 directly, 2/2 after frozen cluster expansion; a case, not a statistic.
 - Native-length loss of selection is real (−0.33 flash, −0.10 Pro).
 - Artifacts found and fixed during review: foreign-record labeling in the first API round (relabeled, rerun);
-  superset-based wrong-graph control (replaced by the selection ladder); Shopping augmentation drops (fallback).
+  superset-based wrong-graph control (replaced by the selection ladder); Shopping augmentation drops (fallback);
+  per-condition gate refitting replaced by the native-fit gate after a per-episode audit traced every EES shift of
+  the deterministic graph to the regime-estimate feature block (three channels, all from foreign witnesses on
+  unconsulted keys); the same mechanism explains the actor arm's gain under long histories.
 
 ### 4.7 Missing or partial (say so in the paper or drop)
 
