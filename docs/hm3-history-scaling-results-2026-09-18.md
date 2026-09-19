@@ -473,6 +473,34 @@ selection 在此处付出 0.1–0.25 的 EES 换取 60–75% 的输入；历史�
    bm25_k16/compact、recency_k16/compact，检验 seed 30 的结论在独立世界上是否复现。
 4. **actor 层 provenance 干预**（§3.7）中期：7 个配对事件，污染历史 EES 0.00，top-3 替换 0.29，random-3 替换 0.00。
 
+
+### 3.9 单类型分解的中期结果与公平性诊断（2026-09-19 凌晨）
+
+Travel 100 条，graph_closed/compact 对 full/verbose，同一批 episode（n=23–38，仍在运行）：
+
+| 干扰类型 | graph_closed/compact | full/verbose | full 的 input tokens |
+|---|---:|---:|---:|
+| a100 同对象旧版本（约 26 条） | 0.32 | 0.39 | 10k |
+| b100 一致的重复 witness | 0.29 | 0.50 | 41k |
+| c100 同 key 的冲突 witness | 0.35 | 0.04 | 54k |
+| d100 无关世界 | 0.25 | 0.46 | 42k |
+
+读法：100 条记录的 full 崩溃几乎全部来自 **C 型冲突 witness**；纯体积（D）与一致重复（B）在 40k tokens 下
+不伤害 full，旧版本克隆（A）也不伤害。graph 臂在四种类型下都在 0.25–0.35。
+
+由此产生一个必须回答的公平性问题：C 型条件下真实 witness 按构造排在冲突 witness 之后，parser 的
+"最后一个 witness 生效"规则让 graph 自动取到正确值；actor 的 system prompt 却写着"同 id 的实体共享同一
+policy"，没有告诉它冲突时以更近的记录为准。graph 的优势是否只是这条未告知的规则？诊断（已启动）：
+
+1. `travel_c100_v3`、`travel_500_v3`：prompt v3 = v2 + 明确的冲突规则（"同一实体的记录冲突时，历史中更靠后
+   的记录反映当前 policy"），full/verbose 与 graph_closed/compact 都用 v3 重跑。若 full 在规则下恢复，
+   graph 在 C 型上的优势就要改写为"结构把时间规则实现在选择里，而 actor 需要被显式告知"；若不恢复，
+   优势来自选择本身。
+2. `travel_d500`：只加无关世界到 500 条（约 240k tokens），检验纯体积是否让 full 崩溃。
+3. 第二个 test seed 31 与 program 选择臂仍在运行。
+
+500 档 abcd 混合里 C 型占外来记录的三分之一；v2 重跑中 full/verbose 在 500 档为 0.17、graph 0.52（中期）。
+
 ## 4. backward provenance（dev，seeds 0/1/2，各 60 episode）
 
 smoke（seed 0，40 episode，实现修订前）：Travel 31 个事件，p@1 0.39、p@3 0.84、MRR 0.62；
