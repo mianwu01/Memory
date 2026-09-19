@@ -336,7 +336,8 @@ def build_messages(domain, ep: Episode, sel: dict, ser: str) -> List[dict]:
 def run(domains: List[str], seed: int, n_eval: int, selections: List[str], serializations: List[str],
         model: str, out_dir: Path, budget_usd: float, n_train: int = 200, train_seed_offset: int = 100,
         dry_run: bool = False, ep_start: int = 0, ep_end: Optional[int] = None,
-        resume_from: Optional[List[str]] = None, thinking: bool = False, history: Optional[str] = None):
+        resume_from: Optional[List[str]] = None, thinking: bool = False, history: Optional[str] = None,
+        selector_history: Optional[str] = None):
     out_dir.mkdir(parents=True, exist_ok=True)
     ledger_path = out_dir / "llm_ledger.jsonl"
     done = set()
@@ -354,6 +355,7 @@ def run(domains: List[str], seed: int, n_eval: int, selections: List[str], seria
                 "train_seed_offset": train_seed_offset, "budget_usd": budget_usd,
                 "retry_policy": "one format-only repair; semantic failures terminal", "thinking": thinking,
                 "prompt_version": PROMPT_VERSION, "history": history or "native",
+                "selector_history": selector_history or history or "native",
                 "base_url": os.environ.get("OPENAI_BASE_URL", DEEPSEEK_BASE_URL),
                 "cost_rates_usd_per_million": COST_RATES_USD_PER_MILLION}
     json.dump(protocol, open(out_dir / "llm_protocol.json", "w"), indent=1)
@@ -361,13 +363,17 @@ def run(domains: List[str], seed: int, n_eval: int, selections: List[str], seria
         domain = get_domain(dname)
         train = generate_split(domain, seed + train_seed_offset, "train", n_train)
         evals = generate_split(domain, seed, "test", n_eval)[ep_start:ep_end]
+        train_native = train
         if history and history != "native":
             target, mix = history.split(":")
             train, st_tr = augment_split(domain, train, int(target), mix, f"train{seed}")
             evals, st_ev = augment_split(domain, evals, int(target), mix, f"test{seed}")
             with open(out_dir / "augment_stats.json", "w") as f:
                 json.dump({"domain": dname, "history": history, "train": st_tr, "eval": st_ev}, f, indent=1)
-        selector = Selector(domain, train)
+        # the selector may be fitted on the native training histories: then the graph's
+        # selection depends only on the real objects and records and its prompt is
+        # invariant to the distractor condition by construction
+        selector = Selector(domain, train_native if selector_history == "native" else train)
         for ep in evals:
             for sel_mode in selections:
                 sel = selector.select(domain, ep, sel_mode)
@@ -484,6 +490,7 @@ if __name__ == "__main__":
     ap.add_argument("--prompt", default="v1", choices=["v1", "v2"])
     ap.add_argument("--history", default=None, help="e.g. 500:abcd (docs/hm3-history-scaling-design-2026-09-18.md)")
     ap.add_argument("--base_url", default=None)
+    ap.add_argument("--selector_history", default=None, help="'native' fits the selector on native train histories")
     a = ap.parse_args()
     PROMPT_VERSION = a.prompt
     if a.base_url:
@@ -493,4 +500,4 @@ if __name__ == "__main__":
     else:
         run(a.domains, a.seed, a.n_eval, a.selections, a.serializations, a.model, Path(a.out_dir), a.budget_usd,
             dry_run=a.dry_run, ep_start=a.ep_start, ep_end=a.ep_end, resume_from=a.resume_from,
-            thinking=a.thinking, history=a.history)
+            thinking=a.thinking, history=a.history, selector_history=a.selector_history)

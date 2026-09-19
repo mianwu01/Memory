@@ -9,6 +9,7 @@ OUT=$1; DOMAIN=$2; HIST=$3; NEVAL=$4; SHARD=$5; BUDGET=$6; shift 6; SELS="$@"
 MODEL=${MODEL:-deepseek-v4-flash}
 SEED=${SEED:-30}
 SERS=${SERS:-compact verbose}
+SELHIST=${SELHIST:-}
 mapfile -t KEYS < <(grep -v '^\s*$' $ROOT/api/api.txt)
 NK=${#KEYS[@]}
 i=0
@@ -20,6 +21,6 @@ for ((s=0; s<NEVAL; s+=SHARD)); do
   (cd $ROOT/code && OPENAI_API_KEY="$key" OPENAI_BASE_URL=https://www.autodl.art/api/v1 PYTHONPATH=$PYLIB:. \
     nohup python3 -m hm3.llm --domains $DOMAIN --seed $SEED --n_eval $NEVAL --ep_start $s --ep_end $e \
       --selections $SELS --serializations $SERS --model $MODEL --prompt v2 --history $HIST \
-      --out_dir $ROOT/$dir --budget_usd $BUDGET > $ROOT/$dir/shard.log 2>&1 &)
+      --out_dir $ROOT/$dir --budget_usd $BUDGET ${SELHIST:+--selector_history $SELHIST} > $ROOT/$dir/shard.log 2>&1 &)
   echo "shard $dir key#$((i % NK)) pid $!"
 done
