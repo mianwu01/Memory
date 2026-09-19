@@ -471,7 +471,7 @@ selection 在此处付出 0.1–0.25 的 EES 换取 60–75% 的输入；历史�
    与 graph_closed 在同一 actor 下比较，回应"为什么不是关系程序"。
 3. **第二个 test seed（31）**：`travel_native_s31`、`travel_500_s31`，cells graph_closed/compact、full/verbose、
    bm25_k16/compact、recency_k16/compact，检验 seed 30 的结论在独立世界上是否复现。
-4. **actor 层 provenance 干预**（§3.7）中期：7 个配对事件，污染历史 EES 0.00，top-3 替换 0.29，random-3 替换 0.00。
+4. **actor 层 provenance 干预**（§3.7）v2（graph_seg/verbose，加入干净历史上限臂）中期：25 个配对事件，干净历史 EES 0.44，污染历史 0.20，top-3 替换 0.48，random-3 替换 0.28；top-3 − 污染 +0.28 [+0.08, +0.48]，top-3 − 干净 +0.04 [−0.28, +0.36]，top-3 − random-3 +0.20 [−0.04, +0.44]。替换定位到的记录后 actor 回到干净历史的水平；random-3 高于污染是 actor 采样噪声与小样本，等 52 个事件齐后定稿。
 
 
 ### 3.9 单类型分解的中期结果与公平性诊断（2026-09-19 凌晨）
