@@ -1,0 +1,103 @@
+# HM3 results package for the paper claim (2026-09-19, early morning)
+
+Evidence log with every number's provenance: `docs/hm3-history-scaling-results-2026-09-18.md`.
+Designs: `docs/hm3-history-scaling-design-2026-09-18.md`, `docs/hm3-provenance-design-2026-09-18.md`.
+Branch `claude/hm3-handoff-2026-09-18`. Numbers marked (interim) come from runs still completing.
+
+## Claim the evidence supports
+
+> Access-conditioned temporal dependency structure keeps an agent's memory reads flat as the history
+> grows, stays robust when the history accumulates conflicting or stale evidence about the same
+> entities, and traces an anomalous action back to the record that caused it; matched retrieval,
+> recency, ledger and full-context baselines do not.
+
+What it does not support: that selection beats reading everything when the history is short enough to
+read, or that the same holds in every domain (Shopping is a boundary in both directions).
+
+## Layer 1 — controlled execution (deterministic, Travel, dev seeds 0/1/2)
+
+Same executor, only the read set changes. EES = executable exact success.
+
+| arm | native | 50 | 100 | 500 records | reads at 500 |
+|---|---:|---:|---:|---:|---:|
+| graph_select (learned skeleton) | 1.000 | 1.000 | 1.000 | 1.000 | 12.4 |
+| wrong_select 1 / 2 / 3 (re-wired skeletons) | 0.43 / 0.04 / 0.04 | same | same | same | 5.9 / 2.2 / 2.8 |
+| bm25_k16 | 0.90 | 0.32 | 0.04 | 0.04 | 21.2 |
+| recency_k16 | 0.94 | 0.71 | 0.48 | 0.37 | 21.3 |
+| learned graph (gated decisions) | 0.83 | 0.81 | 0.81 | 0.80 | 12.3 |
+| program_reg (reads everything) | 0.68 | 0.64 | 0.67 | 0.68 | 1125 |
+| knn (reads everything) | 0.32 | 0.33 | 0.29 | 0.37 | 1125 |
+
+Preregistered predictions P1 (flat graph reads), P2 (stable graph EES), P3 (fixed-K retrieval loses
+required records: recall 0.97 → 0.63), P4 (full-history readers grow linearly) all hold. The
+selection ladder is three-seed with sd ≤ 0.05 except wrong_select_1 (0.26, seed-dependent re-wiring).
+Shopping and the test-seed panels are being completed by the second session.
+
+## Layer 2 — real actor (DeepSeek-V4-Flash, thinking off, prompt v2, test seed 30, 63–64 episodes)
+
+Paired differences of graph_closed/compact against full/verbose on the same episodes.
+"v2" histories carry uniform record labels (the first round marked foreign records; see log §3.5).
+
+| history | graph EES | full EES | graph − full [95% CI] | graph tokens | full tokens |
+|---|---:|---:|---|---:|---:|
+| native (≈13 records) | 0.22 | 0.53 | −0.33 [−0.47, −0.19] | 2.3k | 8k |
+| 100 mixed distractors (v2) | 0.36 | 0.05 | +0.27 [+0.13, +0.42] (interim, n=48) | 2.6k | 51k |
+| 500 mixed distractors (v2) | 0.37 | 0.13 | +0.24 [+0.10, +0.38] | 2.6k | 240k |
+| second test seed 31, native | 0.35 | 0.67 | −0.34 [−0.50, −0.16] | | |
+| second test seed 31, 500 | 0.30 | 0.08 | +0.22 [+0.10, +0.35] | | |
+
+BM25 top-16 and recency-16 sit at or below full history at 100 and 500 (EES ≤ 0.05).
+Selector fitted on native histories only: +0.27 / +0.24 (same conclusion).
+Whole-witness-segment selection (graph_seg) narrows the native gap to −0.11 [−0.27, +0.05] in verbose
+form and keeps +0.25 at 500. DeepSeek-V4-Pro: native −0.10 [−0.28, +0.08], 500 +0.07 [−0.09, +0.22].
+
+### What makes the long history hard (single-distractor decomposition, Travel, 100 records)
+
+| distractor type | graph EES | full EES | graph − full |
+|---|---:|---:|---|
+| conflicting witnesses about the same entities (C) | 0.32 | 0.08 | +0.24 [+0.11, +0.37] |
+| same, with the conflict rule stated in the prompt (v3) | — | 0.08 | full unchanged (+0.00) |
+| unrelated worlds, pure volume (D), 100 records | 0.27 | 0.48 | −0.22 [−0.38, −0.06] |
+| unrelated worlds, pure volume, 500 records (240k tokens) | 0.33 | 0.41 | −0.10 [−0.24, +0.06] |
+| agreeing duplicate witnesses (B) | 0.35 | 0.44 | −0.10 [−0.27, +0.10] |
+| stale versions of the same records (A) | 0.36 | 0.41 | −0.05 [−0.22, +0.12] |
+
+Reading: the full-context actor survives pure volume up to 240k tokens and collapses only when the
+history holds conflicting evidence about the same entities. Telling it the latest-wins rule does not
+help. The learned structure resolves the conflict at read time (parser-attributed latest witness) and
+stays at 0.3 or above. So the actor-level claim is two-fold: cost (1–3 % of the tokens at similar
+accuracy under pure volume) and robustness (+0.24 to +0.29 under conflicting evidence).
+Assumption to state: the current world's own witnesses are the most recent records for their keys.
+
+Shopping32 (actor): no graph advantage at native (−0.07 [−0.21, +0.08]); +0.21 [+0.02, +0.41] at 100
+(v2, interim); the cart is fully connected within two hops, so topology adds little to selection there.
+
+## Layer 3 — backward provenance through the same graph artifact (Travel, test seeds 30/31/32)
+
+Forward selection and backward trace use one fitted graph (SHA recorded). One required witness is
+minimally corrupted; the auditor sees only the anomalous objects.
+
+| metric | seed 30 | seed 31 | seed 32 | at 500 records |
+|---|---:|---:|---:|---:|
+| incidents / episodes | 52/60 | 48/60 | 42/60 | 45–51 |
+| top-1 hit | 0.62 | 0.65 | 0.55 | 0.53–0.64 |
+| top-3 hit | 1.00 | 0.98 | 0.98 | 0.94–0.98 |
+| EES restored after replacing top-3 with clean versions | 1.00 | 0.98 | 0.98 | 0.94–0.98 |
+| same for 3 matched random records | 0.00 | 0.00 | 0.00 | 0.00 |
+| most similar non-ancestor record | 0.00 | 0.00 | 0.00 | 0.00 |
+| BM25-against-anomaly baseline, top-3 hit | 0.46 | 0.29 | 0.60 | 0.14–0.36 |
+
+Actor-level version (interim, 22 incidents, graph_seg/verbose): clean history 0.45, corrupted 0.23,
+top-3 replaced 0.45, random-3 replaced 0.32. Shopping32 fails the provenance test: 19 of 24 corruptions
+silence the parser's witness for the key, so a witness-based trace cannot reach the record; BM25 finds
+it lexically but replacing it restores ≤ 0.08. Reported as a boundary.
+
+## Boundaries and open items
+
+- Native-length loss of selection (−0.33 flash, −0.10 Pro) is real; frame as the crossover.
+- Shopping: boundary in selection value and in provenance; keep it, do not hide it.
+- Program-learner selection arm at native and 500: running (fits are slow at 500).
+- Shopping v2 at 500 records, the three-seed Shopping panels, the test-seed deterministic panels and
+  E0 v2: second session, in progress.
+- Mem0 / dense not run (no embeddings endpoint; user decision). A-Mem installed, LightMem source-only
+  (Python < 3.12 required); both belong to the MemoryArena layer.
