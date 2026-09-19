@@ -81,6 +81,11 @@ STEP C - CHECK. Every transaction quotes expected_revision = the object's curren
 that are cancelled cannot be shifted. Empty-payload ops (cancel, rebook) carry {} as payload.
 Then the fenced json block."""
 
+SYSTEM_V3_SUFFIX = """
+Conflict rule: the history may contain records about the same entity from different contexts or earlier policies.
+When records conflict, the MOST RECENT record (later in the history list) reflects the entity's current policy; use it
+and ignore the older, conflicting ones."""
+
 SYSTEM = """You maintain a transactional memory. An intervention has just been applied to one object. Decide which OTHER
 objects are now stale and emit the minimal set of repair transactions that brings the memory to the correct post-state.
 Rules:
@@ -341,7 +346,7 @@ def build_messages(domain, ep: Episode, sel: dict, ser: str) -> List[dict]:
             f"{serialize_state(domain, ep.S0, sel['objects'], ser)}\n\n"
             f"### INTERVENTION (already applied to {ep.I['object_id']})\n{ep.query}\n{json.dumps(ep.I)}\n\n"
             "Return the JSON array of repair transactions.")
-    system = SYSTEM + (SYSTEM_V2_SUFFIX if PROMPT_VERSION == "v2" else "")
+    system = SYSTEM + (SYSTEM_V2_SUFFIX if PROMPT_VERSION in ("v2", "v3") else "") + (SYSTEM_V3_SUFFIX if PROMPT_VERSION == "v3" else "")
     return [{"role": "system", "content": system}, {"role": "user", "content": user}]
 
 
@@ -499,7 +504,7 @@ if __name__ == "__main__":
     ap.add_argument("--ep_end", type=int, default=None)
     ap.add_argument("--resume_from", nargs="*", default=None)
     ap.add_argument("--thinking", action="store_true")
-    ap.add_argument("--prompt", default="v1", choices=["v1", "v2"])
+    ap.add_argument("--prompt", default="v1", choices=["v1", "v2", "v3"])
     ap.add_argument("--history", default=None, help="e.g. 500:abcd (docs/hm3-history-scaling-design-2026-09-18.md)")
     ap.add_argument("--base_url", default=None)
     ap.add_argument("--selector_history", default=None, help="'native' fits the selector on native train histories")
