@@ -327,6 +327,24 @@ def validate(domain, ep: Episode, aug: Episode) -> Tuple[bool, str]:
     return True, ""
 
 
+def relabel(ep: Episode) -> Dict[str, str]:
+    """Uniform record ids (h0..hN in history order) and sequential segment numbers, so
+    that foreign and real records are indistinguishable by label; required reads are
+    remapped through the same bijection."""
+    mapping = {}
+    seg_no = -1
+    for i, r in enumerate(ep.H):
+        mapping[r["rid"]] = f"h{i}"
+        if r["kind"] == "intervention" or seg_no < 0:
+            seg_no += 1
+        r["seg"] = seg_no
+    for r in ep.H:
+        r["rid"] = mapping[r["rid"]]
+    ep.required_reads = {"objects": list(ep.required_reads.get("objects", [])),
+                         "records": [mapping.get(x, x) for x in ep.required_reads.get("records", [])]}
+    return mapping
+
+
 def augment_split(domain, eps: List[Episode], target: Optional[int], mix: str, tag: str = "") -> Tuple[List[Episode], dict]:
     out = []
     agg = {"n": len(eps), "dropped": 0, "retries": 0, "a_keys": 0, "a_diff": 0, "b": 0, "c": 0, "d": 0,
@@ -344,6 +362,7 @@ def augment_split(domain, eps: List[Episode], target: Optional[int], mix: str, t
         if not ok:
             agg["dropped"] += 1
             continue
+        relabel(aug)
         out.append(aug)
         for k in ("a_keys", "a_diff", "b", "c", "d"):
             agg[k] += st[k]

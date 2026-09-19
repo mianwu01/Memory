@@ -20,7 +20,7 @@ PAIRS = [("graph_closed", "compact"), ("graph_closed", "verbose"), ("full", "com
 
 def load(root, domain, cond):
     cells = {}
-    for d in sorted(glob.glob(f"{root}/{domain}_{cond}/shards/*/")):
+    for d in sorted(glob.glob(f"{root}/{domain}_{cond}/shards*/*/")):
         lp = os.path.join(d, "llm_ledger.jsonl")
         if not os.path.exists(lp):
             continue

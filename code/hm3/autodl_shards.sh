@@ -10,13 +10,14 @@ MODEL=${MODEL:-deepseek-v4-flash}
 SEED=${SEED:-30}
 SERS=${SERS:-compact verbose}
 SELHIST=${SELHIST:-}
+SHARDSUB=${SHARDSUB:-shards}
 mapfile -t KEYS < <(grep -v '^\s*$' $ROOT/api/api.txt)
 NK=${#KEYS[@]}
 i=0
 for ((s=0; s<NEVAL; s+=SHARD)); do
   e=$((s+SHARD)); [ $e -gt $NEVAL ] && e=$NEVAL
   key=${KEYS[$((i % NK))]}; i=$((i+1))
-  dir=$OUT/shards/${DOMAIN}_${s}_${e}
+  dir=$OUT/$SHARDSUB/${DOMAIN}_${s}_${e}
   mkdir -p $dir
   (cd $ROOT/code && OPENAI_API_KEY="$key" OPENAI_BASE_URL=https://www.autodl.art/api/v1 PYTHONPATH=$PYLIB:. \
     nohup python3 -m hm3.llm --domains $DOMAIN --seed $SEED --n_eval $NEVAL --ep_start $s --ep_end $e \

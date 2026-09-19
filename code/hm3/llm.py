@@ -206,6 +206,18 @@ class Selector:
                 for targets in ep.S0.get(oid).links.values():
                     closure.update(t for t in targets if t in ep.S0.objects)
             return {"objects": sorted(objs | closure), "records": sorted(recs)}
+        if mode == "graph_seg":
+            # graph_closed plus the whole segment of every selected witness record: the
+            # intervention that produced the witness and everything that followed it
+            base = self.select(domain, ep, "graph_closed")
+            segs = {r["seg"] for r in ep.H if r["rid"] in set(base["records"])}
+            recs = [r["rid"] for r in ep.H if r["seg"] in segs]
+            referents = {r["object_id"] for r in ep.H if r["rid"] in set(recs) and r["object_id"] in ep.S0.objects}
+            closure = set(base["objects"]) | referents
+            for oid in referents:
+                for targets in ep.S0.get(oid).links.values():
+                    closure.update(t for t in targets if t in ep.S0.objects)
+            return {"objects": sorted(closure), "records": recs}
         if mode.startswith("bm25_k") or mode.startswith("recency_k"):
             k = int(mode.split("_k")[1])
             if mode.startswith("bm25"):
