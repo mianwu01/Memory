@@ -101,7 +101,7 @@ reading is robust to both; structure also yields intervention-validated provenan
   learner on Formal. State this honestly: "composable relational structure with regimes read from history".
 - Table: the four-domain table.
 
-### 4.3 History-length scaling, deterministic (Travel, dev seeds 0/1/2, 60 episodes each) — status: have
+### 4.3 History-length scaling, deterministic (Travel, dev seeds 0/1/2, 60 episodes each; test seeds 30/31/32 confirm) — status: have
 
 - Type: each episode's history is grown to 50 / 100 / 500 records with four frozen distractor types (stale versions,
   agreeing duplicates, conflicting witnesses about the same entities, unrelated worlds); the original chain, the
@@ -144,19 +144,20 @@ reading is robust to both; structure also yields intervention-validated provenan
   baselines (recency, BM25 against the anomaly, source heuristic); validation is clean replacement and re-execution.
 - Result: top-1 hit 0.55–0.65, top-3 hit 0.98–1.00; replacing the top-3 restores execution 0.98–1.00, replacing
   three matched random records 0.00, the similar non-ancestor 0.00, recency 0.00; BM25 baseline top-3 0.29–0.60;
-  at 500 records top-3 0.94–0.98. Actor level (45 incidents): clean 0.42, corrupted 0.18, top-3 replaced 0.53,
-  random-3 0.31 (its prompt is identical to the corrupted one, so it measures call-to-call variance); net effect
-  +0.22 [+0.04, +0.40], replaced ≥ clean.
+  at 500 records top-3 0.94–0.98. Actor level (52 incidents): clean 0.42, corrupted 0.17, top-3 replaced 0.48,
+  random-3 0.27 (its prompt is identical to the corrupted one, so it measures call-to-call variance); net effect
+  +0.21 [+0.04, +0.37], replaced ≥ clean (+0.06 [−0.13, +0.25]).
 - Observation: the same structure that selects also attributes, and the attribution is behaviourally causal.
 - Figure: the case figure Yujia asked for — one incident with the write/hold/read/action events, what each selector
   read, the trace, and the effect of replacing each candidate record.
 
 ### 4.6 Boundaries and negative results — status: have
 
-- Shopping32: no selection advantage at native (−0.07 [−0.21, +0.08]); +0.18 [+0.02, +0.33] at 100 records after
-  relabeling (rerun with the augmentation fix in progress); provenance fails because 19 of 24 corruptions silence
-  the parser's witness for the key (BM25 finds the record lexically, replacing it restores ≤ 0.08). The cart is fully
-  connected within two hops, so topology adds little to selection.
+- Shopping32: selection advantage at long histories holds after the augmentation fix (64 episodes: native −0.07
+  [−0.21, +0.08]; 100 records +0.25 [+0.11, +0.39]; 500 records +0.25 [+0.14, +0.38]; BM25 +0.19 / −0.03), so
+  Shopping joins Travel for the selection claim. Provenance fails there because 19 of 24 corruptions silence the
+  parser's witness for the key (BM25 finds the record lexically, replacing it restores ≤ 0.08). The re-wired-graph
+  control is uninformative in Shopping (the cart is fully connected within two hops).
 - MINJA (8,400 tests, label-free): the structure arm selected no edges in 10/10 runs and the frequency heuristic
   matched random deletion; an identification boundary for sparse record exposure. AgentPoison: label-free
   localization 1/2 directly, 2/2 after frozen cluster expansion; a case, not a statistic.
@@ -166,7 +167,9 @@ reading is robust to both; structure also yields intervention-validated provenan
 
 ### 4.7 Missing or partial (say so in the paper or drop)
 
-- Shopping three-seed deterministic panels and test-seed panels: running.
+- Shopping three-seed deterministic panels: ladder done (graph_select 0.99 at all lengths, BM25 0.99 → 0.07), main
+  panel being rerun with the augmentation fix; Travel test-seed panel 11/12 conditions done and consistent with dev
+  (graph 0.88 → 0.89, BM25 0.92 → 0.03, recency 0.93 → 0.30).
 - Transfer to the original MemoryArena actor and the modern agent-memory systems (Mem0, A-Mem, LightMem): not run
   (A-Mem installed, LightMem source-only, no embeddings endpoint for Mem0/dense). Present as future work or as a
   small appendix if time permits.

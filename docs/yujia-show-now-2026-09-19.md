@@ -150,15 +150,17 @@ crossover：历史短到能全读时，全读最好。
 | 替换最相似的非祖先记录 | 0.00 | 0.00 | 0.00 | 0.00 |
 | BM25（以异常对象为 query）top-3 命中 | 0.46 | 0.29 | 0.60 | 0.14–0.36 |
 
-actor 层（45 个事件，graph_seg/verbose）：干净历史 0.42，污染历史 0.18，替换审计器 top-3 后 0.53，替换
-random-3 后 0.31；top-3 − random-3 = +0.22 [+0.04, +0.40]，替换后不低于干净历史。random-3 臂的 prompt 与污染
+actor 层（全部 52 个事件，graph_seg/verbose）：干净历史 0.42，污染历史 0.17，替换审计器 top-3 后 0.48，替换
+random-3 后 0.27；top-3 − random-3 = +0.21 [+0.04, +0.37]，top-3 − 污染 +0.31 [+0.15, +0.46]，替换后不低于干净历史。random-3 臂的 prompt 与污染
 prompt 逐字相同（图只读约 6 条记录，top-3 被排除），所以它度量的是 actor 的逐次调用方差，+0.22 已扣除。
 
 ## 5. 边界与需要如实说的地方
 
-1. **Shopping32 是边界**：actor 层 native 无差别（−0.07 [−0.21, +0.08]），100 档 +0.18 [+0.02, +0.33]（重编号后）；
-   provenance 未通过（24 个污染里 19 个让 parser 失去该 key 的 witness，witness-based 追踪按构造找不到；BM25
-   能按词元找到但替换后恢复 ≤ 0.08）。cart 两跳内全连通，拓扑对选择的增量小。
+1. **Shopping32**：修正增广丢弃率后重跑（64 个 episode，无丢弃），actor 层 native 无差别（−0.07 [−0.21, +0.08]），
+   100 档 graph 0.50 对 full 0.25（+0.25 [+0.11, +0.39]），500 档 0.55 对 0.30（+0.25 [+0.14, +0.38]）；BM25 在 500 档
+   回到 full 的水平（−0.03）。因此长历史下的选择优势在 Shopping 也成立。provenance 仍是边界（24 个污染里 19 个让
+   parser 失去该 key 的 witness，witness-based 追踪按构造找不到；BM25 能按词元找到但替换后恢复 ≤ 0.08）；重接线
+   对照在 Shopping 无区分力（cart 两跳内全连通，三个重接线里两个读到与学得 skeleton 相同的集合）。
 2. **native 档全读更好**（flash −0.33，Pro −0.10）。论文按 crossover 写。
 3. **假设**：当前世界自己的 witness 是该 key 最新的记录（增广按此构造，parser 取最后一个 witness）。
 4. **复核过并已修正 / 解释的地方**：首轮 prompt 用不同前缀标出了外来记录（已统一重编号并重跑，结论不变）；
@@ -180,6 +182,7 @@ prompt 逐字相同（图只读约 6 条记录，top-3 被排除），所以它�
 
 ## 7. 正在补齐的
 
-Shopping 的 100/500 档 actor 重跑（修正丢弃率后）、Shopping 三 seed 确定性面板、test seeds 30–32 的确定性面板。
+Shopping 三 seed 主面板的重跑（ladder 已完成：graph_select 0.99，BM25 0.99 → 0.07）、test seeds 30–32 的确定性
+面板（Travel 已完成 11/12 个条件，与 dev 一致：graph 0.88 → 0.89，BM25 0.92 → 0.03，recency 0.93 → 0.30）。
 之后是把 Travel / Shopping 机制移植到 MemoryArena 原 actor 并接入 A-Mem / LightMem（第三层），以及论文的
 主表与 case figure。

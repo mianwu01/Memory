@@ -35,7 +35,11 @@ All rows are three dev seeds (0/1/2), 60 episodes each. Preregistered prediction
 0.97 → 0.64), P4 (full-history readers grow linearly: 53 → 1125 reads) all hold. Single-type conditions:
 conflicting witnesses (c100) are the only type that moves the learned graph (0.83); sd ≤ 0.06 except
 wrong_select_1 (0.26, seed-dependent re-wiring).
-Shopping and the test-seed panels are being completed by the second session.
+Shopping selection ladder (three dev seeds): graph_select 0.99 at every length, BM25-16 0.99 → 0.07 at 500,
+recency-16 falls likewise; two of three re-wired skeletons coincide with the learned one (uninformative control),
+the third scores 0.13. Test-seed Travel panel (seeds 30/31/32, 11 of 12 conditions done): graph 0.88 → 0.89,
+program_reg 0.71 → 0.68 (reads everything), BM25-16 0.92 → 0.03, recency-16 0.93 → 0.30, graph_select 1.00,
+re-wired 0.05 → 0.03.
 
 ## Structure learning (E0 v2, controlled, five seeds × three noise levels)
 
@@ -81,8 +85,11 @@ stays at 0.3 or above. So the actor-level claim is two-fold: cost (1–3 % of th
 accuracy under pure volume) and robustness (+0.24 to +0.29 under conflicting evidence).
 Assumption to state: the current world's own witnesses are the most recent records for their keys.
 
-Shopping32 (actor): no graph advantage at native (−0.07 [−0.21, +0.08]); +0.21 [+0.02, +0.41] at 100
-(v2, interim); the cart is fully connected within two hops, so topology adds little to selection there.
+Shopping32 (actor, v3 histories after the augmentation fix, 64 episodes, no drops): native −0.07 [−0.21, +0.08];
+100 records graph 0.50 vs full 0.25, +0.25 [+0.11, +0.39]; 500 records graph 0.55 vs full 0.30, +0.25 [+0.14, +0.38];
+BM25-16 +0.19 at 100 and −0.03 at 500; recency-16 +0.14 and +0.11. So the long-history selection advantage holds in
+Shopping as well; the re-wired-graph control is uninformative there (two of three re-wirings read the same set as the
+learned skeleton because the cart is fully connected within two hops), and provenance remains a boundary (below).
 
 ## Layer 3 — backward provenance through the same graph artifact (Travel, test seeds 30/31/32)
 
@@ -99,9 +106,9 @@ minimally corrupted; the auditor sees only the anomalous objects.
 | most similar non-ancestor record | 0.00 | 0.00 | 0.00 | 0.00 |
 | BM25-against-anomaly baseline, top-3 hit | 0.46 | 0.29 | 0.60 | 0.14–0.36 |
 
-Actor-level version (45 incidents, graph_seg/verbose): clean history 0.42, corrupted 0.18, top-3
-replaced 0.53, random-3 replaced 0.31; top-3 − random-3 +0.22 [+0.04, +0.40], top-3 − clean +0.11
-[−0.09, +0.33]. The random-3 arm's prompt is identical to the corrupted one (the graph reads ≈6 records
+Actor-level version (all 52 incidents, graph_seg/verbose): clean history 0.42, corrupted 0.17, top-3
+replaced 0.48, random-3 replaced 0.27; top-3 − random-3 +0.21 [+0.04, +0.37], top-3 − corrupted +0.31
+[+0.15, +0.46], top-3 − clean +0.06 [−0.13, +0.25]. The random-3 arm's prompt is identical to the corrupted one (the graph reads ≈6 records
 and the top-3 are excluded), so it measures the actor's call-to-call variance; the +0.22 is net of it. Shopping32 fails the provenance test: 19 of 24 corruptions
 silence the parser's witness for the key, so a witness-based trace cannot reach the record; BM25 finds
 it lexically but replacing it restores ≤ 0.08. Reported as a boundary.
@@ -109,13 +116,14 @@ it lexically but replacing it restores ≤ 0.08. Reported as a boundary.
 ## Boundaries and open items
 
 - Native-length loss of selection (−0.33 flash, −0.10 Pro) is real; frame as the crossover.
-- Shopping: boundary in selection value and in provenance; keep it, do not hide it.
+- Shopping: selection advantage now holds at long histories (v3); provenance stays a boundary; the re-wired
+  control is uninformative in this domain.
 - Program-learner selection arm: native 0.20 vs graph 0.22 (−0.02 [−0.14, +0.11]); 500 records 0.27 vs
   graph 0.37 (−0.10 [−0.24, +0.05]) and vs full 0.13 (+0.14). Competitive selector; graph edges it out at
   length without significance.
-- Shopping augmentation dropped 27 % of episodes at 500 records (state-dependent promo witnesses);
-  fixed with a no-interleave fallback (0 drops, 17/64 episodes fall back). Shopping 100/500 actor
-  conditions are being rerun (v3); the second session reruns the deterministic Shopping conditions.
+- Shopping augmentation dropped 27 % of episodes at 500 records (state-dependent promo witnesses); fixed with a
+  no-interleave fallback (0 drops, 17/64 episodes fall back); the v3 actor conditions above use it; the second
+  session is rerunning the deterministic Shopping conditions with it.
 - Three-seed Shopping panels, test-seed deterministic panels and E0 v2: second session, in progress.
 - Mem0 / dense not run (no embeddings endpoint; user decision). A-Mem installed, LightMem source-only
   (Python < 3.12 required); both belong to the MemoryArena layer.
