@@ -93,7 +93,7 @@ history holds conflicting evidence about the same entities. Telling it the lates
 help. The learned structure resolves the conflict at read time (parser-attributed latest witness) and
 stays at 0.3 or above. So the actor-level claim is two-fold: cost (1–3 % of the tokens at similar
 accuracy under pure volume) and robustness (+0.24 to +0.29 under conflicting evidence).
-Assumption to state: the current world's own witnesses are the most recent records for their keys.
+Assumption to state: the current world's own witnesses are the most recent records for the keys the task consults; for other keys foreign witnesses can be the latest, which is what perturbs a refitted gate.
 
 Shopping32 (actor, v3 histories after the augmentation fix, 64 episodes, no drops): native −0.07 [−0.21, +0.08];
 100 records graph 0.50 vs full 0.25, +0.25 [+0.11, +0.39]; 500 records graph 0.55 vs full 0.30, +0.25 [+0.14, +0.38];
