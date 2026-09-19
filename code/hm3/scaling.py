@@ -596,6 +596,226 @@ class WrongGraph(LearnedGraph):
         self.rewired_from = rewire_skeleton(self, train, self.perm_seed)
 
 
+class NativeFitGraph(LearnedGraph):
+    """graph_nf / graph_pooled_nf: the same learned graph, but the gate models are fitted on the
+    native training episodes of the seed (run_scaling passes train0 when fit_native is set) and
+    only the evaluation histories are augmented.  Rationale (design §9.6): long histories change
+    the evidence, not the mechanisms; refitting the gate on foreign-witness-polluted estimates is
+    what the per-condition graph rows measure, and is reported next to these as the ablation."""
+
+    fit_native = True
+
+    def __init__(self, pooled: bool = False):
+        super().__init__(pooled=pooled)
+        self.name = "graph_pooled_nf" if pooled else "graph_nf"
+
+
+class _ConflictMaskingDomain:
+    """Proxy around a domain: infer_params returns the ordinary last-witness estimates and records,
+    for the same est object, a masked copy in which a key is unknown when the latest witness about a
+    *different* object disagrees with the last witness (same-object stale versions are kept: they are
+    resolved by recency).  Keys inferred from the state snapshot alone (no record) are not checked."""
+
+    def __init__(self, domain):
+        self._d = domain
+        self.masked: Dict[int, dict] = {}
+
+    def __getattr__(self, name):
+        return getattr(self._d, name)
+
+    def infer_params(self, H, S0, prov=None):
+        own: Dict[str, list] = {} if prov is None else prov
+        est = self._d.infer_params(H, S0, own)
+        by_rid = {r["rid"]: r for r in H}
+        masked = {n: dict(v) for n, v in est.items()}
+        for name, kv in est.items():
+            for key, v1 in kv.items():
+                rids = own.get(f"{name}[{key}]", [])
+                objs = {by_rid[r]["object_id"] for r in rids if r in by_rid}
+                if not objs:
+                    continue
+                H2 = [r for r in H if r["object_id"] not in objs]
+                try:
+                    v2 = self._d.infer_params(H2, S0).get(name, {}).get(key)
+                except Exception:
+                    v2 = None
+                if v2 is not None and v2 != v1:
+                    masked[name][key] = None
+        self.masked[id(est)] = masked
+        return est
+
+
+class ConflictAwareGraph(LearnedGraph):
+    """graph_cf: native-fit graph whose gate features see conflict-masked estimates (see
+    _ConflictMaskingDomain); trackers and the value pathway keep the last-witness estimates."""
+
+    def __init__(self, pooled: bool = False, indicator: bool = False):
+        super().__init__(pooled=pooled)
+        # graph_cf: native-fit, conflicting keys masked to unknown for the gate.
+        # graph_cfa: per-condition fit, estimates kept, one conflict indicator per parameter family
+        #            for the child and the parent appended to the gate features (the gate can learn
+        #            what a conflict means only if its training histories contain conflicts).
+        self.indicator = indicator
+        self.fit_native = not indicator
+        base = "graph_pooled" if pooled else "graph"
+        self.name = base + ("_cfa" if indicator else "_cf")
+        self._proxy = None
+
+    def _feat(self, domain, p, p_new, c, state, est, pkind, wc=-1.0):
+        m = self._proxy.masked.get(id(est), est) if self._proxy is not None else est
+        if not self.indicator:
+            return super()._feat(domain, p, p_new, c, state, m, pkind, wc)
+        row = super()._feat(domain, p, p_new, c, state, est, pkind, wc)
+        real = self._proxy._d if self._proxy is not None else domain
+        for obj in (c, p):
+            keys = real.param_keys_for(obj, state)
+            for name in self.vocab.names:
+                conflict = any(n == name and est.get(n, {}).get(k) is not None and m.get(n, {}).get(k) is None
+                               for n, k in keys)
+                row.append(1.0 if conflict else 0.0)
+        return row
+
+    def fit(self, domain, train):
+        self._proxy = _ConflictMaskingDomain(domain)
+        super().fit(self._proxy, train)
+        self._proxy.masked.clear()
+
+    def predict(self, domain, ep):
+        self._proxy = _ConflictMaskingDomain(domain)
+        out = super().predict(self._proxy, ep)
+        self._proxy.masked.clear()
+        return out
+
+
+class UnionFitGraph(LearnedGraph):
+    """graph_un: gate fitted on the native training episodes plus the same episodes augmented under
+    the evaluation condition (run_scaling passes train0 + train when fit_union is set).  Each gate row
+    therefore appears twice with the same label and estimates that differ only where foreign
+    witnesses reached them; the tree cannot use those coordinates and keeps the structural ones."""
+
+    fit_union = True
+
+    def __init__(self, pooled: bool = False):
+        super().__init__(pooled=pooled)
+        self.name = "graph_pooled_un" if pooled else "graph_un"
+
+
+class UnionConflictGraph(ConflictAwareGraph):
+    """graph_un_cfa: union fit plus the conflict indicators of graph_cfa."""
+
+    fit_union = True
+
+    def __init__(self):
+        super().__init__(indicator=True)
+        self.fit_native = False
+        self.name = "graph_un_cfa"
+
+
+class SelectedGraph(Learner):
+    """graph_sel: the gate-fitting protocol is chosen per (seed, condition) by held-out training
+    episodes only.  Candidates: gate fitted on native training rows (graph_nf), on the condition's
+    augmented rows (graph), and on the augmented rows with conflict indicators (graph_cfa).  The
+    last 20% of training episodes (by id, fixed) are held out, augmented under the condition; each
+    candidate is fitted on the remaining 80% and scored by EES on the held-out augmented episodes;
+    the winner (ties -> native) is refitted on the full training set.  No dev/test episode is used."""
+
+    fit_both = True
+
+    def __init__(self, pooled: bool = False):
+        self.pooled = pooled
+        self.name = "graph_pooled_sel" if pooled else "graph_sel"
+        self.choice = None
+        self.scores = {}
+
+    def _candidates(self):
+        return {"native": NativeFitGraph(pooled=self.pooled), "condition": LearnedGraph(pooled=self.pooled),
+                "condition_cfa": ConflictAwareGraph(pooled=self.pooled, indicator=True)}
+
+    def fit_both(self, domain, train0, train):
+        from .run_det import evaluate_learner
+        ids = [ep.id for ep in train0]
+        n_hold = max(1, len(ids) // 5)
+        hold = set(ids[-n_hold:])
+        t0_fit = [ep for ep in train0 if ep.id not in hold]
+        ta_fit = [ep for ep in train if ep.id not in hold]
+        ta_hold = [ep for ep in train if ep.id in hold]
+        sets = {"native": t0_fit, "condition": ta_fit, "condition_cfa": ta_fit}
+        self.scores = {}
+        if train is train0 or not ta_hold:
+            self.choice = "native"
+        else:
+            for name, cand in self._candidates().items():
+                cand.fit(domain, sets[name])
+                self.scores[name] = evaluate_learner(domain, cand, ta_hold)["summary"]["ees"]
+            best = max(self.scores.values())
+            order = ["native", "condition", "condition_cfa"]
+            self.choice = next(n for n in order if self.scores[n] == best)
+        self.model = self._candidates()[self.choice]
+        self.model.fit(domain, {"native": train0, "condition": train, "condition_cfa": train}[self.choice])
+
+    def fit(self, domain, train):
+        self.fit_both(domain, train, train)
+
+    def predict(self, domain, ep):
+        out = self.model.predict(domain, ep)
+        out["selection"] = {"choice": self.choice, "held_out_ees": self.scores}
+        return out
+
+
+class BaggedGraph(LearnedGraph):
+    """graph_bag: the same learned graph and features, but every per-template gate is a bag of
+    depth-5 trees (25 bootstrap fits on 80% of the gate rows, majority vote) instead of one tree.
+    Motivation (results §2.4): under foreign-witness-polluted training rows the single tree sits on
+    a knife edge (Shopping32 seed 0, 100 records: 195 training episodes -> dev EES 0.75, 199 ->
+    0.18); bagging removes that variance without changing what the gate can see.  Per-condition
+    fit, like graph."""
+
+    def __init__(self, pooled: bool = False, n_estimators: int = 25, max_samples: float = 0.8):
+        super().__init__(pooled=pooled)
+        self.name = "graph_pooled_bag" if pooled else "graph_bag"
+        self.n_estimators, self.max_samples = n_estimators, max_samples
+
+    def fit(self, domain, train):
+        import sklearn.tree
+        from sklearn.ensemble import BaggingClassifier
+        orig = sklearn.tree.DecisionTreeClassifier
+        n, ms = self.n_estimators, self.max_samples
+
+        def bagged(**kw):
+            return BaggingClassifier(orig(**kw), n_estimators=n, max_samples=ms, random_state=0)
+        sklearn.tree.DecisionTreeClassifier = bagged
+        try:
+            super().fit(domain, train)
+        finally:
+            sklearn.tree.DecisionTreeClassifier = orig
+
+
+class NativeBaggedGraph(BaggedGraph):
+    """graph_nf_bag: bagged gate (BaggedGraph) fitted on the native training episodes (NativeFitGraph
+    protocol): clean mechanism learning plus variance reduction at prediction time."""
+
+    fit_native = True
+
+    def __init__(self, pooled: bool = False):
+        super().__init__(pooled=pooled)
+        self.name = "graph_pooled_nf_bag" if pooled else "graph_nf_bag"
+
+
+class UnionBaggedGraph(BaggedGraph):
+    """graph_un_bag: bagged gate fitted on native rows plus the condition's augmented rows."""
+
+    fit_union = True
+
+    def __init__(self, pooled: bool = False):
+        super().__init__(pooled=pooled)
+        self.name = "graph_pooled_un_bag" if pooled else "graph_un_bag"
+
+
 def scaling_learners() -> List[Learner]:
-    return [RetrievalTopK(8), RetrievalTopK(16), RetrievalTopK(16, mode="recency"), RetrievalTopK(16, mode="bm25"),
-            SelectExecute(), SelectExecute(1), SelectExecute(2), SelectExecute(3)]
+    from .keysel import KeySelect
+    from .tcd_logs import TCDSelect
+    return [KeySelect(1), KeySelect(2), KeySelect(3),
+            TCDSelect("parser"), TCDSelect("key"), TCDSelect("parser", estimator="pcmci"), TCDSelect("key", estimator="pcmci"),
+            RetrievalTopK(8), RetrievalTopK(16), RetrievalTopK(16, mode="recency"), RetrievalTopK(16, mode="bm25"),
+            SelectExecute(), SelectExecute(1), SelectExecute(2), SelectExecute(3),
+            NativeFitGraph(), NativeFitGraph(pooled=True), ConflictAwareGraph(), ConflictAwareGraph(pooled=True), ConflictAwareGraph(indicator=True), UnionFitGraph(), UnionFitGraph(pooled=True), UnionConflictGraph(), SelectedGraph(), SelectedGraph(pooled=True), BaggedGraph(), NativeBaggedGraph(), UnionBaggedGraph()]

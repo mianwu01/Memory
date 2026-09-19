@@ -592,7 +592,7 @@ the seven decisions above. Read them straight.
 
 | item | value |
 |---|---|
-| E0 | 8 variables, 3,000 steps, read regime 150/3,000; Regime-GRACE 2/2 edges and 2/2 gates at every σ ∈ {0, 0.01, 0.1}; blind PCMCI+ 0/2 → 1/2 at 12k → 2/2 at 60k, never a gate; additive u 0/2 |
+| E0 | 8 variables, 3,000 steps, read regime 150/3,000; Regime-GRACE 2/2 edges and 2/2 gates at every σ ∈ {0, 0.01, 0.1}; blind PCMCI+ 0/2 → 1/2 at 12k → 2/2 at 60k, never a gate; additive u 0/2. **Update 2026-09-18 (E0 v2, oracle-free):** pooled arms incl. official GRACE fail the gate table, shuffled-regime controls collapse, and per-regime regression recovers it as well as Regime-GRACE, so say "regime conditioning is necessary" and do not claim Regime-GRACE as the better estimator |
 | MemoryArena held-out IDs 111–120: graph / no graph / BM25 / long context | PS 93.94 / 95.45 / 72.73 / 92.42; input 434k / 718k / 1.46M / 2.06M; SR 70 / 80 / 30 / 80%; cost $4.30 / $5.11 / $15.31 / $8.20 |
 | Paired PS, graph − no graph; − BM25; − long | −1.43 [−4.29, 0.00] 0/9/1; +19.80 [+10.04, +29.70] 7/3/0; +1.07 [−4.29, +7.50] 1/8/1 |
 | Frozen criterion | PS loss ≤ 5 and input −30% → PASS (−1.43, −39.55%) |

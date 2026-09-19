@@ -68,6 +68,18 @@ simulation with MLP mechanisms is proposed and unrun.
 
 ## 3. Conditioning on write / hold / read reveals dependencies that pooling misses (E0)
 
+> **Update 2026-09-18 (E0 v2, oracle-free rerun; `docs/e0-v2-design-2026-09-03.md`, `results/e0v2/summary.md`).**
+> The numbers below come from E0 v0/v1 (`code/e0_synth.py`, `code/regime_grace.py`), whose gate labels and
+> per-regime targets were partly hard-coded. E0 v2 removes those leaks (32 variables, six observed regimes,
+> 206 edge × regime cells, seeds 0–4). Outcome: every pooled arm (pooled ridge, additive-u, PCMCI, official
+> GRACE, pooled gates) fails to recover the gate table at any sample size (C2), shuffled-regime controls
+> collapse (C3), and regime-aware arms recover it (C1). The design's C4 clause is triggered: per-regime
+> regression and interaction-HC recover the table as well, and per-regime regression needs 2–4× less data
+> than Regime-GRACE in the rarity sweep. The supported claim is therefore "conditioning on the regime is
+> necessary; any regime-indexed estimator fits the table; we use per-regime regression with FDR". No
+> estimator superiority is claimed for Regime-GRACE. Replace the v0 figures with the v2 tables when this
+> section is rewritten.
+
 Synthetic write–hold–read SCM, read regime active on 150 of 3,000 steps. Read-edge recovery out
 of 2, identical at every hold noise σ ∈ {0, 0.01, 0.1}:
 
@@ -343,7 +355,7 @@ in this environment (no network path to the StrategyQA dev split or the DPR enco
 
 | claim | status | evidence |
 |---|---|---|
-| Regime-conditioned discovery recovers gated read edges that pooled discovery misses | supported | E0 2/2 vs 0/2 at every σ; blind needs 20× data and never labels the gate |
+| Regime-conditioned discovery recovers gated read edges that pooled discovery misses | supported | E0 2/2 vs 0/2 at every σ; blind needs 20× data and never labels the gate. E0 v2 (2026-09-18, oracle-free): pooled arms incl. official GRACE fail C2, shuffled controls fail C3, regime-aware arms pass C1; per-regime regression passes too (C4), so the supported claim is regime necessity; Regime-GRACE has no estimator advantage here |
 | A learned slot graph beats a hand graph and retrieval baselines for memory selection on MemoryArena | supported | round 1: pure − BM25 +16.55 PS; compact graph −1.43 PS at −39.55% input → frozen PASS |
 | The travel PASS shows that learned causal structure is necessary | unsupported | dependencies are named in the query; lookup sufficient-mask rate 1.0 |
 | The v3 benchmark isolates hidden structure on an executable endpoint | supported | C3 pairs differ 0.77–1.00; C6 180/180; oracles 1.0; killers ≤ 0.46 (Shopping v3.2) |
@@ -391,7 +403,7 @@ Speaking draft: `docs/presenter-script-2026-09-03.md`.
 
 | what | where |
 |---|---|
-| E0 simulation | `code/e0_synth.py`, `code/regime_grace.py`, `results/regime_grace_e0.json` |
+| E0 simulation | `code/e0_synth.py`, `code/regime_grace.py`, `results/regime_grace_e0.json`; v2 (oracle-free, 2026-09-18): `code/e0v2/`, `results/e0v2/summary.md` |
 | MemoryArena plug-in and round 1 | `code/arena_causal_memory.py`, `code/arena_e2e_run.py`, `results/real/p2_compact_v3/` |
 | v3 engine, generators, learners, gate, runners | `code/hm3/` (`core.py`, `dgp_*.py`, `generate.py`, `learners.py`, `gate.py`, `run_det.py`, `llm.py`) |
 | v3 preregistration and results | `docs/hidden-mechanism-v3-preregistration.md`, `docs/hidden-mechanism-v3-results.md` |

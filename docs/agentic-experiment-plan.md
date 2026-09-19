@@ -17,7 +17,7 @@
 
 | 部分 | 载体 | 主评价 | 状态 |
 |---|---|---|---|
-| P1 仿真 | E0 (自造 SCM) + RoomEnv(受控) | 结构恢复 F1、regime 必要性 | ✅ 完成并**冻结**;仅留 regime-conditioned GRACE v1(E0 已本轮复跑复现) |
+| P1 仿真 | E0 (自造 SCM) + RoomEnv(受控) | 结构恢复 F1、regime 必要性 | ✅ 完成并**冻结**;E0 v2（无 oracle 泄漏）2026-09-18 跑完并通过 C1–C3;C4 触发:per-regime 回归同样达标,Regime-GRACE **不再作为方法贡献**(见 §1 修订) |
 | P2 效率/效果 | **MemoryArena**(真实 LLM-agent,**12** 记忆系统同台) | 任务成功率 / 压缩比 / 延迟 | 🔨 插件已对齐真实 7 槽 travel schema 并离线通过(压缩比 0.011);阻塞在 endpoint |
 | P3 可信性 | **MINJA-QA**(记忆投毒,复用其攻击与数据) | 隐藏驱动检出率、行为/相似度审计漏检对照 | ✅ **v0 已跑**(离线 answerer),见 `p3-minja-causal-audit-results.md` |
 
@@ -35,14 +35,25 @@
 **归位**:E0 + RoomEnv 的全部已有结果落此格。**不再投入扩展**
 (RoomEnv v2 coupling / 更多 scaling / kg-memory-transfer 复现 / Craftax 门 / SW·TW —— 全停)。
 
-**唯一保留活跃项:regime-conditioned GRACE v1**(纯 CPU,方法贡献本身):
+> **2026-09-18 修订(E0 v2 跑完后,用户拍板)。** E0 v2(`docs/e0-v2-design-2026-09-03.md`,
+> `results/e0v2/summary.md`)去掉了 v0/v1 的三处 oracle 泄漏后:池化臂(pooled ridge、additive-u、
+> PCMCI、GRACE 官方实现、池化 gate)在任何样本量都恢复不了 gate 表(C2 PASS);打乱 u 的对照全部坍塌
+> (C3 PASS);Regime-GRACE 达标(C1 PASS)。但 **C4 触发**:看到 u 的 per-regime 回归(v0 估计量去掉
+> oracle)与 interaction-HC 同样达标,E0b 里 per-regime 回归到达 memory-cell F1 ≥ 0.9 所需的 T 比
+> Regime-GRACE 小 2–4 倍,Regime-GRACE 在 λ=0.5 下对 distractor cell 还有约 9% 假阳性;E0c 的 MLP 机制
+> 也分不开两者;唯一领先处是 d=1000(per-regime 需 SIS 筛选,0.969 vs 1.000)。
+> 结论:E0 支持的是"**regime 条件化是必要的**"(池化 vs 条件化),不支持"Regime-GRACE 是更好的估计量"。
+> 论文第一部分按设计页 C4 的措辞写:regime 索引的 gate 表是正确的估计对象,若干估计量都能拟合,我们
+> 用最简单的 per-regime 回归 + FDR(P2/P3 已经在用);Regime-GRACE 降为附录行(d=1000 一行如实报告)。
+> **"regime-conditioned GRACE v1 作为方法贡献"一项撤销**;不再改造 E0(潜变量 regime 等版本)——
+> 那是加深第一部分,与 Yujia"可循既有论文、篇幅从简"的定调相悖。P3 的机制故事(隐藏触发 = 门控 read
+> 边,池化/行为审计看不见、regime 条件化看得见)不受影响,因为它是池化 vs 条件化的对比。
+
 E0 已证明 write–hold–read 门控边对 PCMCI+、池化回归、GRACE(盲+u 增广)**全部致盲**,
-唯显式 regime 条件化恢复。v1 = 把 regime 条件做进 GRACE(每-regime 子样本拟合,
-或 u-**乘性**门 `gate = f(edge) · g(u_t)`,而非现有的加性 u 列)。
-这是 formulation 核心 claim 的方法化,且是 P3 的机制底座——**故不算"加深仿真",算方法开发**。
+唯显式 regime 条件化恢复;E0 v2 在去掉 oracle 泄漏后复现了这一点。
 
 产出即用于论文的"第一部分",按 Yujia"可循既有论文"处理:篇幅从简,重点让读者信服
-金结构可恢复、门控需要 regime 条件。
+金结构可恢复、门控需要 regime 条件;估计量用 per-regime 回归。
 
 ---
 
@@ -118,7 +129,7 @@ MINJA 或驾驶域作为更强主张的第二设置。
 ## 5. 里程碑(依赖 key 到位)
 
 1. **M0(可离线做)**:`CausalMemorySystem` 骨架(✅ `code/arena_causal_memory.py`)+
-   regime-conditioned GRACE v1 in E0(纯 CPU,不依赖 key)。
+   regime-conditioned GRACE v1 in E0(纯 CPU,不依赖 key)。→ 2026-09-18:E0 v2 已跑完,该项按 §1 修订撤销。
 2. **M1(需 key)**:T0-Arena — 我方(规则/离线图 + 祖先掩码)vs long_context vs rag,
    travel 成功率-压缩 Pareto。
 3. **M2(需 key)**:P3 路线 B — 开 hint 环,验证图抓 hint→动作边 + 行为审计漏检对照。

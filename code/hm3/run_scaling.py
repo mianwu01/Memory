@@ -57,7 +57,15 @@ def run(domains: List[str], seeds: List[int], conditions: List[str], n_train: in
                         continue
                     t1 = time.time()
                     try:
-                        learner.fit(domain, train)
+                        # native-fit arms: the gate is a mechanism model, fitted once on native episodes
+                        # union arms: native rows and this condition's augmented rows together, so a feature
+                        # that moves with history length while the label does not is learned as irrelevant
+                        fit_set = train0 if getattr(learner, "fit_native", False) else \
+                            (train0 + train if getattr(learner, "fit_union", False) else train)
+                        if getattr(learner, "fit_both", False):
+                            learner.fit_both(domain, train0, train)   # model selection on held-out training episodes
+                        else:
+                            learner.fit(domain, fit_set)
                     except Exception as exc:
                         entry["learners"][learner.name] = {"error": f"fit {type(exc).__name__}: {str(exc)[:200]}"}
                         print(f"{key:28s} {learner.name:14s} FIT ERROR {type(exc).__name__}", flush=True)

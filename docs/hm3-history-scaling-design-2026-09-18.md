@@ -110,3 +110,54 @@ API（与 round 3/4 可比）：
    与 `bm25_k16` / `recency_k16` / `retrieval_k` 同一执行器、同一口径；报告 reads 数。这样对照隔离的是拓扑对
    **选择** 的价值，正是 LLM 臂所测的量。Shopping 的 cart 在两跳内全连通，重接线后读取集合常与原图相同，
    该对照在 Shopping 预期无区分力。
+
+6. **graph 的 gate 在 native 训练集上拟合（2026-09-19 凌晨，dev 面板判定之后、test seeds 运行之前；由第二个
+   session 记录，用户拍板）。** dev 面板与逐 episode 追踪（结果页 §2.4）表明：按"每档各自拟合"的口径，graph 的
+   EES 偏移全部来自 gate 模型的**训练**证据被同 key 的外来 witness 污染（B/C 副本与 D 世界的 category 级 key
+   把真实链未见证的 key 定义为外来值、或覆盖未 consult 的 key），以及断言丢弃使训练集在档位之间不再配对；
+   Shopping32 在 100/500 档因此从 0.78 跌到 0.57（seed 平均），而同一评测集用 native 训练集的 gate 为
+   0.77–0.81，用"只看真实记录"的 oracle 估计恰为 native。结构性 provenance 无法替代：Travel 的 policy 由同一
+   世界其它链的记录见证，C 副本与真实的另一条链只差取值，按链或按连通分量限定证据会丢掉必需 witness
+   （原型在 native 上跌到 0.37）。因此把 gate 视为**机制模型**：历史变长改变的是证据，不是机制；正式 graph 臂
+   改为 `graph_nf` / `graph_pooled_nf`（gate 在该 seed 的 native train 200 上拟合一次，评测历史按档增广；
+   `run_scaling` 对 `fit_native` 学习器传 native 训练集），P1/P2 对这两臂判定；原"每档各自拟合"的 `graph` /
+   `graph_pooled` 行保留为消融（量化在污染证据上重拟合 gate 的代价）。其它臂口径不变。
+   预期：两领域主档位 |ΔEES| ≤ 0.05；Travel c100 仍可能超界（评测侧 C 冲突 witness 经 enforce_late 状态推断
+   进入 gate 特征，见结果页 §2.4 通道 3），如实报告。
+   dev 结果（Travel，`det_dev_nf_travel.json`）：`graph_nf` P1 1.087 PASS；P2 50/100/500 = −0.011/−0.033/−0.044
+   通过，a100/d100 恰为 0，c100 = −0.072 [−0.117, −0.033] 越界（翻转几乎全是"先 cancel 再 shift 同一 dinner"
+   的非法计划，gate 被未 consult 的 key 的冲突估计带偏）。
+   **冲突感知的两个探索臂（同日 smoke，Travel seed 0 / Shopping seed 0）：** `graph_cf`（native-fit，gate 特征里
+   把"不同对象见证出不同取值"的 key 记为未知）**负结果**：c100 从 0.733 跌到 0.467、illegal 0.27——遮蔽同时丢掉
+   了 consult key 上正确的最后 witness，而 native 训练历史里没有冲突，gate 学不到"冲突意味着什么"。`graph_cfa`
+   （每档拟合，估计保留，按参数族追加冲突指示特征）：Travel c100 0.733 → 0.817（回到 native 0.817 的水平），
+   Shopping 100 档 0.183 → 0.200（无效，且拟合 81 s）。因此正式臂只有 `graph_nf` / `graph_pooled_nf`；
+   `graph_cfa` 作为探索臂在 Travel dev 全档与 test 上并列报告，Shopping 不跑。
+7. **Shopping 增广的 no-interleave fallback（`ec0662f`）之后，Shopping 的 50/100/500/b100/c100/d100 六个档
+   全部重跑**（dev 与 ladder 文件的旧 entry 已删除，旧结果备份在第二个 session 的 scratchpad）；Travel 的
+   评测集丢弃率为 0，不重跑；Travel 训练集原先每档丢 0–3 个 episode，在 `graph_nf` 口径下训练集为 native，
+   不受影响。
+
+8. **bagged gate 与最终口径（2026-09-19 早，dev 判定后、test 落盘后；用户"fix all"授权下的全部尝试如实记录）。**
+   §9.6 的 native-fit 口径在 Shopping dev 全部通过，但在 Travel test 500 档越界（−0.079 [−0.124, −0.039]）；
+   按档拟合的 `graph` 在 Travel dev/test 全部通过、在 Shopping dev/test 坍塌——两种口径各失一个领域。追踪 Shopping
+   的坍塌（seed 0，100 档）：按档拟合的 gate 在留出的训练 episode 上 EES 0.85、在 dev 上 0.18；前 195 个训练
+   episode 拟合得 dev 0.75，前 199 个得 0.18；去掉不同的 40-episode 块分别得 0.17 / 0.73 / 0.15 / 0.18 / 0.78。
+   这是深度 5、叶最小 2 的单棵决策树在受污染训练行上的刀锋式方差。于是试了 gate 装袋（25 棵同规格树，80% 行，
+   多数票）与训练行并集（native ∪ 该档增广）：
+   - `graph_bag`（按档拟合 + 装袋）：Travel dev/test 全部通过（|Δ| ≤ 0.022）；Shopping 仍各有一个 seed 坍塌
+     （dev seed 2 的 100 档 0.133，test seed 31 的 500 档 0.233），P2 在 Shopping dev 100 档（−0.217）与 test
+     500 档（−0.167）越界。
+   - `graph_nf_bag`（native-fit + 装袋）：与 `graph_nf` 几乎相同——Shopping dev/test 全部通过（|Δ| ≤ 0.022），
+     Travel test 500 档 −0.073、dev c100 −0.067 越界；装袋不改变评测侧的污染效应。
+   - `graph_un_bag`（native ∪ 增广训练行 + 装袋，只跑了失败的 cell）：Travel test 500 档三个 seed 0.915/0.883/0.847
+     （native 0.950/0.900/0.833）、dev c100 与 native 相同；Shopping dev seed 2 的 100 档回到 0.733（native 0.783），
+     但 Shopping test seed 31 的 500 档仍坍塌（0.250）。凡让 gate 在受污染的训练行上拟合的口径，在 Shopping 都
+     至少有一个 (seed, 档) 坍塌；该 cell 的训练集（train seed 131，500 档）有 17 个 episode 走了 no-interleave
+     fallback，是否由此导致尚未查明，记为未决。
+   - `graph_sel`（按留出训练集选口径）作废：留出训练集看不到这种方差（0.85 vs 0.18），会选错。`graph_un` /
+     `graph_un_cfa`（不装袋）smoke 无效（Shopping 100 档 0.167），作废。
+   **最终口径：正式 graph 臂 = `graph_nf` / `graph_pooled_nf`（§9.6），P1/P2 对其判定。** 理由：唯一在训练侧
+   与污染证据完全隔离的口径，8 个 (领域 × split) 判定中通过 7 个；唯一越界是 Travel test 500 档（−0.073 ~ −0.079），
+   机制为评测侧 C 类冲突 witness 经未 consult 的 key 进入 gate 特征（结果页 §2.4），如实报告。`graph`（按档单树）、
+   `graph_bag`、`graph_nf_bag`、`graph_cfa`、`graph_un_bag` 作为消融/探索行并列报告。
