@@ -51,16 +51,26 @@ reading is robust to both; structure also yields intervention-validated provenan
   say "we show" for the lemma and "we demonstrate" for identification)*
 - Failure modes named as experimental arms: frozen-variable regime, selection, policy confounding, latent
   confounders. *(have: text; selection and confounding are stated boundaries, not experiments)*
+- **Causal vocabulary (settled 2026-09-19, see `docs/causal-vocabulary-and-estimators-2026-09-19.md`).** "Temporal
+  causal process" is the modelling object. "Temporal causal graph" is used with an explicit definition: edges are
+  propagation effects estimated from trajectories whose upstream change is a known intervention, gated by the access
+  regime, and checked by intervention (ground-truth recovery in E0, re-wired controls and clean-replacement tests in
+  the agent tasks). No causal-discovery algorithm is contributed and no identification from observational agent
+  logs is claimed; MINJA is the negative result for that case.
 
 ## 3. Method
 
-1. **Regime-conditioned structure estimation.** Regime-GRACE: per-regime coefficients on the write/hold/read
-   indicators with a penalized gated-edge model; baselines pooled ridge, additive-regime, PCMCI+, interaction model
-   with HC0 errors, per-regime fits, shuffled-regime controls. *(have: `code/regime_grace.py`, `code/e0v2`)*
-2. **Structure for an agent task (HM3 instantiation).** From training trajectories, learn a typed-path skeleton
-   (which linked objects change after which upstream change) with a gated local decision per template, and a
-   history parser that attributes every hidden policy key to its latest outcome witness (provenance map).
-   *(have: `code/hm3/learners.py::LearnedGraph`)*
+1. **Regime-conditioned structure estimation (E0).** Lagged regression fitted separately within each access
+   regime with false-discovery control; an edge is gated when its coefficient changes across regimes. Baselines:
+   pooled ridge, additive-regime, PCMCI+, pooled GRACE, HC0 interaction model, shuffled-regime controls. Per-regime
+   GRACE gives the same recovery and is an appendix row; the estimator is not a contribution (E0 v2 criterion C4).
+   *(have: `code/regime_grace.py`, `code/e0v2`)*
+2. **Structure for an agent task (HM3 instantiation).** From training trajectories in which every episode is a
+   known intervention on one source object with the observed propagation of changes, learn a typed-path skeleton
+   (which linked objects change after which upstream change) with a regime-gated local decision per template, and a
+   history parser that attributes every hidden policy key to its latest outcome witness (provenance map). This is
+   structure learning from interventional data, not observational discovery; GRACE/PCMCI+ do not apply because
+   episodes share no fixed variable set. *(have: `code/hm3/learners.py::LearnedGraph`)*
 3. **Forward selection.** Read set = objects reached along the skeleton from the intervention source, plus the
    witness records attributed to their policy keys, plus the witnesses' referents and one-hop neighbours
    (graph_closed); optional whole-witness-segment variant (graph_seg). Records go to the executor or to the LLM
@@ -233,6 +243,8 @@ the non-graph baselines' rankings on the same incident, and the actor-level arms
 
 1. We formulate agent memory as gated long-lag causal dependence and show that the causal frontier is the unique
    minimum memory.
+   (Causal vocabulary: process and frontier are formal; the learned graph is causal in the interventional sense
+   defined in §2; no discovery algorithm is claimed.)
 2. We demonstrate that conditioning on the access regime recovers gated memory edges that pooled temporal discovery
    misses.
 3. We build a benchmark with hidden mechanisms, non-idempotent repairs and controlled history growth in which lookup
