@@ -143,7 +143,12 @@ it lexically but replacing it restores ≤ 0.08. Reported as a boundary.
   evaluation-side effect on c100 remains and is reported.
 - Assumption stated precisely: the current world's own witnesses are the most recent for the keys the task
   consults; for unconsulted keys foreign witnesses can be the latest.
-- A-Mem is running as a read-budget-matched selector arm (Travel and Shopping, native and 100 records; own LLM
+- A-Mem (read-budget-matched selector arm, own LLM note construction and evolution, top-16 embedding search, same
+  actor prompt), interim: Travel native 0.33 (n=55) — vs graph_closed +0.07 [−0.09, +0.22], vs full −0.24
+  [−0.38, −0.09], vs BM25 −0.04; Shopping native 0.55 (n=64) — vs graph +0.13 [−0.02, +0.27], vs full +0.06; at 100
+  records (n≈10, running) Travel 0.09 and Shopping 0.30, i.e. at the level of full/BM25, with about 100 write-side
+  LLM calls and 130–146k write tokens per episode against 5–7k actor input tokens. Mem0 arm: smoke test running.
+- (superseded) A-Mem is running as a read-budget-matched selector arm (Travel and Shopping, native and 100 records; own LLM
   note construction, top-16 embedding search, same actor prompt; write tokens reported). LightMem deferred (its
   extracted facts do not map back to record ids). Mem0 / dense not run (no embeddings endpoint; a local embedder
   now works). Transfer to the original MemoryArena actor: not run.
