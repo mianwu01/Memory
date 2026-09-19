@@ -529,6 +529,34 @@ policy"，没有告诉它冲突时以更近的记录为准。graph 的优势是�
    key 最新的记录（增广按此构造；provenance 设计与 scaling 设计 §3 已写明）。
 
 
+
+### 3.10 program 选择臂与 actor 层 provenance 的完成结果（2026-09-19 凌晨）
+
+**program 选择臂**（program learner 的计划对象 + 1-hop 邻居 + 其 segment，compact；Travel test seed 30）：
+
+| history | program/compact | graph_closed/compact | full/verbose | program − graph [95% CI] | program − full |
+|---|---:|---:|---:|---|---|
+| native | 0.20（1.3k tokens） | 0.22 | 0.55 | −0.02 [−0.14, +0.11] | −0.34 [−0.48, −0.22] |
+| 500 abcd | 0.27（5.2k tokens） | 0.37 | 0.13 | −0.10 [−0.24, +0.05] | +0.14 [+0.00, +0.27] |
+
+读法：关系程序的选择在 native 与 graph 相当，500 档低于 graph 0.10（区间跨 0），仍高于 full。回应"为什么不是
+关系程序"：在选择任务上两者接近，图在长历史下略优但未达显著；确定性层的 program_reg 读取全部历史（1125 reads）。
+
+**actor 层 provenance 干预**（v2，graph_seg/verbose，test seed 30，45–46 个配对事件）：
+
+| 历史 | actor EES |
+|---|---:|
+| 干净历史（上限） | 0.42 |
+| 污染历史 | 0.18 |
+| 审计器 top-3 替换为干净版本 | 0.53 |
+| matched random-3 替换（不含 top-3） | 0.31 |
+
+配对差：top-3 − 污染 +0.36 [+0.20, +0.51]；top-3 − random-3 +0.22 [+0.04, +0.40]；top-3 − 干净 +0.11
+[−0.09, +0.33]。**注意**：graph 的读取集合约 6 条记录，top-3 之外的 3 条替换为干净版本时与污染版本逐字相同
+（gold 从不在 random-3 中，46/46 的记录数与对象数相同），所以 random-3 臂实际上是对同一污染 prompt 的第二次
+调用，其 0.31 对 0.18 度量的是 actor 的逐次调用方差（同一 prompt 上 (0,1) 7 例、(1,0) 2 例）。因此 actor 层的
+公平估计是 top-3 − random-3 = +0.22，且替换后不低于干净历史。确定性版本无此噪声（0.98 对 0.00）。
+
 ## 4. backward provenance（dev，seeds 0/1/2，各 60 episode）
 
 smoke（seed 0，40 episode，实现修订前）：Travel 31 个事件，p@1 0.39、p@3 0.84、MRR 0.62；

@@ -87,8 +87,10 @@ minimally corrupted; the auditor sees only the anomalous objects.
 | most similar non-ancestor record | 0.00 | 0.00 | 0.00 | 0.00 |
 | BM25-against-anomaly baseline, top-3 hit | 0.46 | 0.29 | 0.60 | 0.14–0.36 |
 
-Actor-level version (interim, 22 incidents, graph_seg/verbose): clean history 0.45, corrupted 0.23,
-top-3 replaced 0.45, random-3 replaced 0.32. Shopping32 fails the provenance test: 19 of 24 corruptions
+Actor-level version (45 incidents, graph_seg/verbose): clean history 0.42, corrupted 0.18, top-3
+replaced 0.53, random-3 replaced 0.31; top-3 − random-3 +0.22 [+0.04, +0.40], top-3 − clean +0.11
+[−0.09, +0.33]. The random-3 arm's prompt is identical to the corrupted one (the graph reads ≈6 records
+and the top-3 are excluded), so it measures the actor's call-to-call variance; the +0.22 is net of it. Shopping32 fails the provenance test: 19 of 24 corruptions
 silence the parser's witness for the key, so a witness-based trace cannot reach the record; BM25 finds
 it lexically but replacing it restores ≤ 0.08. Reported as a boundary.
 
@@ -96,8 +98,12 @@ it lexically but replacing it restores ≤ 0.08. Reported as a boundary.
 
 - Native-length loss of selection (−0.33 flash, −0.10 Pro) is real; frame as the crossover.
 - Shopping: boundary in selection value and in provenance; keep it, do not hide it.
-- Program-learner selection arm at native and 500: running (fits are slow at 500).
-- Shopping v2 at 500 records, the three-seed Shopping panels, the test-seed deterministic panels and
-  E0 v2: second session, in progress.
+- Program-learner selection arm: native 0.20 vs graph 0.22 (−0.02 [−0.14, +0.11]); 500 records 0.27 vs
+  graph 0.37 (−0.10 [−0.24, +0.05]) and vs full 0.13 (+0.14). Competitive selector; graph edges it out at
+  length without significance.
+- Shopping augmentation dropped 27 % of episodes at 500 records (state-dependent promo witnesses);
+  fixed with a no-interleave fallback (0 drops, 17/64 episodes fall back). Shopping 100/500 actor
+  conditions are being rerun (v3); the second session reruns the deterministic Shopping conditions.
+- Three-seed Shopping panels, test-seed deterministic panels and E0 v2: second session, in progress.
 - Mem0 / dense not run (no embeddings endpoint; user decision). A-Mem installed, LightMem source-only
   (Python < 3.12 required); both belong to the MemoryArena layer.
