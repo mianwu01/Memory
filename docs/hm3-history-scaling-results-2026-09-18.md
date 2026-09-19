@@ -127,6 +127,58 @@ Same 19 episodes completed in all conditions (graph_closed/compact and full/verb
 中期读法（只对 Travel）：native 档复现 round 3/4 的方向（graph_closed/compact 低于 full/verbose 约 0.18）；100 与 500 档反转，graph_closed/compact 在同一批 episode 上高于 full/verbose 0.45 与 0.52，配对区间在 0 以上；graph 的 input tokens 三档持平（约 2.3k–2.7k），full/verbose 从 9k 升到 235k。bm25_k16 与 recency_k16 在 100/500 档接近 full 的水平或略高，均远低于 graph。这是预注册预测 P1（reads 平坦）在 actor 侧的对应现象；EES 的档间比较使用同一批 episode（表末）。n 尚小，结论等全部 64 个 episode 完成后再写。
 
 
+
+### 3.1 复核：graph_closed 在 100/500 档比 native 档更高的原因（2026-09-18 晚）
+
+同一批 62 个 episode 上 graph_closed/compact 的 EES 为 native 0.21、100 档 0.39、500 档 0.34，而它的 prompt 本应
+只依赖真实对象与记录。检查 ledger：三档 prompt 长度完全相同的只有 28/62 个 episode；其余 episode 在增广档位的
+选择更大（例如 test-004：native 9 个对象 / 3 条记录，100 档 19 / 7）。原因是 selector 按设计在同一档位的增广
+train 上重新拟合（设计 §4），拟合出的决策模型在增广数据上判定更多对象为 changed，read 集合与 closure 随之变大，
+actor 因此拿到更多上下文。returned_model、parse_ok（1.00）、finish_reason（stop）三档相同，排除了模型或截断差异。
+
+结论：graph 臂跨档位的 EES 上升来自 selector 重拟合导致的选择变大，不来自干扰记录本身；这与 round 3/4 的
+"closure 越完整 actor 越好"一致。为把长度效应与 selector 重拟合分开，增加 `--selector_history native`：
+selector 只在 native train 上拟合，此时 graph 的选择按构造与档位无关、prompt 逐字相同。100/500 档的
+`travel_{100,500}_natsel` 正在运行（只跑 graph_closed 两种序列化），其 EES 应与 native 档一致（差异即
+actor 的采样噪声）；论文主表将同时给出两种 selector 口径。full / bm25 / recency 臂不受此影响。
+
+### 3.2 更强 backbone：DeepSeek-V4-Pro（返回 `DeepSeek-V4-Pro-0813`，thinking off，Travel native 与 500）
+
+
+#### travel
+
+| condition | cell | n | EES | legal | affected F1 | input tok | output tok | est $/cell |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| native | bm25_k16/compact | 64 | 0.16 | 0.86 | 0.46 | 2766 | 1776 | 0.024 |
+| native | bm25_k16/verbose | 64 | 0.22 | 0.80 | 0.55 | 5460 | 1142 | 0.023 |
+| native | full/compact | 64 | 0.23 | 0.80 | 0.78 | 3227 | 1582 | 0.023 |
+| native | full/verbose | 64 | 0.38 | 0.83 | 0.75 | 7797 | 1298 | 0.031 |
+| native | graph_closed/compact | 64 | 0.31 | 0.86 | 0.73 | 2159 | 1422 | 0.020 |
+| native | graph_closed/verbose | 64 | 0.20 | 0.78 | 0.73 | 3830 | 956 | 0.017 |
+| 500 | bm25_k16/compact | 63 | 0.10 | 0.67 | 0.45 | 3817 | 1565 | 0.024 |
+| 500 | bm25_k16/verbose | 63 | 0.05 | 0.56 | 0.43 | 6494 | 678 | 0.022 |
+| 500 | full/compact | 63 | 0.10 | 0.52 | 0.60 | 42433 | 1104 | 0.104 |
+| 500 | full/verbose | 63 | 0.16 | 0.62 | 0.59 | 175716 | 2182 | 0.348 |
+| 500 | graph_closed/compact | 63 | 0.25 | 0.83 | 0.62 | 3264 | 1950 | 0.027 |
+| 500 | graph_closed/verbose | 63 | 0.19 | 0.68 | 0.68 | 4266 | 1051 | 0.020 |
+
+| condition | paired comparison (EES) | n episodes | mean [95% CI] | W/T/L | input reduction |
+|---|---|---:|---|---|---:|
+| native | graph_closed/compact − full/verbose | 64 | -0.062 [-0.234, +0.125] | 15/30/19 | 72% |
+| native | graph_closed/verbose − full/verbose | 64 | -0.172 [-0.328, +0.000] | 10/33/21 | 51% |
+| native | full/compact − full/verbose | 64 | -0.141 [-0.297, +0.031] | 11/33/20 | 59% |
+| native | bm25_k16/compact − full/verbose | 64 | -0.219 [-0.359, -0.062] | 7/36/21 | 65% |
+| 500 | graph_closed/compact − full/verbose | 63 | +0.095 [-0.063, +0.254] | 15/39/9 | 98% |
+| 500 | graph_closed/verbose − full/verbose | 63 | +0.032 [-0.095, +0.175] | 10/45/8 | 98% |
+| 500 | full/compact − full/verbose | 63 | -0.063 [-0.175, +0.048] | 4/51/8 | 76% |
+| 500 | bm25_k16/compact − full/verbose | 63 | -0.063 [-0.190, +0.048] | 6/47/10 | 98% |
+
+
+读法：Pro 在 native 档把 graph_closed/compact 与 full/verbose 的差距从 flash 的 −0.33 收窄到 −0.10
+[−0.28, +0.08]；500 档 full/verbose 从 0.38 跌到 0.17（flash 为 0.53 → 0.07），graph_closed/compact 0.28 → 0.24。
+Pro 的整体 legal 率低于 flash（0.79–0.85 对 0.95），主要是 expected_revision 错误。费用按 flash 费率估计，
+实际 Pro 计费更高。
+
 ## 4. backward provenance（dev，seeds 0/1/2，各 60 episode）
 
 smoke（seed 0，40 episode，实现修订前）：Travel 31 个事件，p@1 0.39、p@3 0.84、MRR 0.62；
@@ -152,6 +204,45 @@ predicted − random +0.26 [+0.03, +0.48]。Shopping32 14 个事件，p@1 0.07�
 事件之外的 episode：Travel 每 seed 1–4 个找不到改变解析值的污染、3–10 个干净计划本身已错、5–7 个污染后计划未变；Shopping 每 seed 17–19 个找不到污染、9–15 个干净计划已错。
 
 读法：Travel 三个 seed 一致——top-1 命中率 0.46–0.50、top-3 0.78–0.82；替换 top-1 的恢复率是 matched random 的 3–4 倍，similar 与 recency 对照接近 0；top-3 联合替换恢复 0.78–0.82，对照 0.06–0.17；全部配对区间在 0 以上。p@1 受每个 key 的 witness 三元组（intervention 记录 + 两条结果记录）限制，同一 key 内部无法从内容判断哪条被改，因此 top-3 是与设计一致的公平口径。Shopping32 未通过：p@1 ≤ 0.08，与三种对照无差别；原因是 skeleton 从任一 source 可达整个 cart（similar 对照全部退回 non_traced），路径排序没有区分力，且约 30% 的 episode 找不到改变解析值的最小污染。按 provenance 设计 §6 如实报告为边界。
+
+
+### 4.1 正式结果（修订后的方法，provenance 设计 §7；dev 与 test 并列）
+
+**dev seeds 0/1/2，native 长度**（`results/development/hm3/provenance/dev_v2.json`；LOO = 结构候选经 leave-one-out 重排的正式排序；struct = 首版结构排序；恢复率 = 替换后 forward graph 的 EES 恢复比例；top-3 − random-3 为配对 bootstrap 95% 区间）
+
+| run | incidents | p@1 (LOO) | p@3 (LOO) | p@1 struct | p@3 struct | BM25 p@1 / p@3 | source p@3 | restore top-1 | random-1 | similar | BM25 top-1 | restore top-3 | random-3 | top-3 − random-3 |
+|---|---:|---:|---:|---:|---:|---|---:|---:|---:|---:|---:|---:|---:|---|
+| travel/seed0 | 44/60 | 0.55 | 0.98 | 0.48 | 0.80 | 0.14 / 0.34 | 0.20 | 0.55 | 0.09 | 0.02 | 0.14 | 0.98 | 0.00 | +0.98 [+0.93, +1.00] |
+| travel/seed1 | 41/60 | 0.63 | 0.98 | 0.54 | 0.80 | 0.20 / 0.32 | 0.15 | 0.63 | 0.07 | 0.00 | 0.20 | 0.98 | 0.00 | +0.98 [+0.93, +1.00] |
+| travel/seed2 | 47/60 | 0.57 | 0.91 | 0.55 | 0.83 | 0.15 / 0.32 | 0.19 | 0.57 | 0.11 | 0.02 | 0.15 | 0.91 | 0.00 | +0.91 [+0.83, +0.98] |
+| shopping32/seed0 | 24/60 | 0.08 | 0.33 | 0.04 | 0.33 | 0.08 / 0.92 | 0.42 | 0.08 | 0.12 | 0.04 | 0.08 | 0.33 | 0.25 | +0.08 [-0.21, +0.38] |
+| shopping32/seed1 | 32/60 | 0.06 | 0.19 | 0.03 | 0.19 | 0.03 / 0.97 | 0.62 | 0.06 | 0.12 | 0.06 | 0.03 | 0.19 | 0.19 | +0.00 [-0.22, +0.22] |
+| shopping32/seed2 | 24/60 | 0.12 | 0.29 | 0.12 | 0.29 | 0.08 / 1.00 | 0.62 | 0.12 | 0.04 | 0.00 | 0.08 | 0.29 | 0.12 | +0.17 [-0.08, +0.42] |
+
+**test seeds 30/31/32，native 长度**（`results/real/hm3/provenance/test_v2.json`；LOO = 结构候选经 leave-one-out 重排的正式排序；struct = 首版结构排序；恢复率 = 替换后 forward graph 的 EES 恢复比例；top-3 − random-3 为配对 bootstrap 95% 区间）
+
+| run | incidents | p@1 (LOO) | p@3 (LOO) | p@1 struct | p@3 struct | BM25 p@1 / p@3 | source p@3 | restore top-1 | random-1 | similar | BM25 top-1 | restore top-3 | random-3 | top-3 − random-3 |
+|---|---:|---:|---:|---:|---:|---|---:|---:|---:|---:|---:|---:|---:|---|
+| travel/seed30 | 52/60 | 0.62 | 1.00 | 0.48 | 0.83 | 0.17 / 0.46 | 0.15 | 0.62 | 0.10 | 0.00 | 0.17 | 1.00 | 0.00 | +1.00 [+1.00, +1.00] |
+| travel/seed31 | 48/60 | 0.65 | 0.98 | 0.58 | 0.85 | 0.02 / 0.29 | 0.17 | 0.65 | 0.12 | 0.00 | 0.02 | 0.98 | 0.00 | +0.98 [+0.94, +1.00] |
+| travel/seed32 | 42/60 | 0.55 | 0.98 | 0.57 | 0.79 | 0.19 / 0.60 | 0.33 | 0.55 | 0.10 | 0.00 | 0.19 | 0.98 | 0.00 | +0.98 [+0.93, +1.00] |
+| shopping32/seed30 | 20/60 | 0.10 | 0.25 | 0.10 | 0.25 | 0.05 / 0.90 | 0.45 | 0.10 | 0.00 | 0.00 | 0.05 | 0.25 | 0.20 | +0.05 [-0.25, +0.35] |
+| shopping32/seed31 | 20/60 | 0.00 | 0.20 | 0.00 | 0.20 | 0.05 / 1.00 | 0.55 | 0.00 | 0.05 | 0.05 | 0.05 | 0.20 | 0.05 | +0.15 [-0.05, +0.35] |
+| shopping32/seed32 | 21/60 | 0.10 | 0.29 | 0.10 | 0.29 | 0.05 / 0.90 | 0.43 | 0.10 | 0.05 | 0.10 | 0.05 | 0.29 | 0.05 | +0.24 [+0.00, +0.48] |
+
+**test seeds 30/31/32，500 条记录（abcd 混合增广）**（`results/real/hm3/provenance/test_500_v2.json`；LOO = 结构候选经 leave-one-out 重排的正式排序；struct = 首版结构排序；恢复率 = 替换后 forward graph 的 EES 恢复比例；top-3 − random-3 为配对 bootstrap 95% 区间）
+
+| run | incidents | p@1 (LOO) | p@3 (LOO) | p@1 struct | p@3 struct | BM25 p@1 / p@3 | source p@3 | restore top-1 | random-1 | similar | BM25 top-1 | restore top-3 | random-3 | top-3 − random-3 |
+|---|---:|---:|---:|---:|---:|---|---:|---:|---:|---:|---:|---:|---:|---|
+| travel/seed30 | 51/59 | 0.59 | 0.98 | 0.51 | 0.73 | 0.06 / 0.25 | 0.18 | 0.59 | 0.04 | 0.00 | 0.06 | 0.98 | 0.00 | +0.98 [+0.94, +1.00] |
+| travel/seed31 | 49/60 | 0.53 | 0.94 | 0.45 | 0.73 | 0.06 / 0.14 | 0.06 | 0.53 | 0.12 | 0.00 | 0.06 | 0.94 | 0.00 | +0.94 [+0.86, +1.00] |
+| travel/seed32 | 45/59 | 0.64 | 0.98 | 0.62 | 0.84 | 0.09 / 0.36 | 0.31 | 0.64 | 0.02 | 0.00 | 0.09 | 0.98 | 0.00 | +0.98 [+0.93, +1.00] |
+
+读法：Travel 在 test seeds 上 top-1 命中 0.55–0.65、top-3 0.98–1.00；替换 top-3 后 forward graph 的 EES 恢复 0.98–1.00，matched random-3 为 0，similar 与 recency 对照为 0；BM25 定位基线 p@1 ≤ 0.19、p@3 ≤ 0.60。500 条记录下几乎不变（p@3 0.94–0.98）。首版结构排序的 p@3 为 0.73–0.85，LOO 重排把同一 key 内的 witness 三元组分开。Shopping32 在 dev 与 test 均未通过（p@3 ≤ 0.33，与 random-3 无差别）；BM25 基线 p@3 0.90–1.00 但 top-1 替换恢复 ≤ 0.08：污染记录写在异常对象本身且大多使 parser 失去该 key 的 witness（provenance 设计 §7.4），这是 witness-based 反向审计的边界。
+
+### 4.2 首版结构排序在 test seeds 上的结果（`test.json`、`test_500.json`，修订前，保留备查）
+
+Travel native p@1 0.46 / 0.51 / 0.57，500 档 0.51 / 0.45 / 0.62；Shopping p@1 0.19 / 0.00 / 0.19。
 
 ## 5. 结论槽
 

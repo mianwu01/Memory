@@ -1,0 +1,9468 @@
+{
+ "config": {
+  "domains": [
+   "travel",
+   "shopping32"
+  ],
+  "seeds": [
+   30,
+   31,
+   32
+  ],
+  "split": "test",
+  "n_train": 200,
+  "n_eval": 60,
+  "train_seed_offset": 100,
+  "history": "500:abcd",
+  "out": "../results/real/hm3/provenance/test_500.json"
+ },
+ "runs": {
+  "travel/seed30": {
+   "summary": {
+    "n": 51,
+    "precision_at_1": 0.5098039215686274,
+    "precision_at_3": 0.7254901960784313,
+    "mrr": 0.653267973856209,
+    "restore_predicted": 0.5098039215686274,
+    "restore_predicted_top3": 0.7254901960784313,
+    "restore_matched_random": 0.0196078431372549,
+    "restore_matched_random3": 0.1568627450980392,
+    "restore_similar_non_ancestor": 0.0,
+    "restore_recency": 0.0,
+    "episodes": 59,
+    "no_corruption": 2,
+    "clean_plan_wrong": 6,
+    "no_incident": 0,
+    "incidents": 51,
+    "graph_sha": "ac636292ee71c51e",
+    "fit_seconds": 15.232757568359375
+   },
+   "rows": [
+    {
+     "episode": "travel-s30-test-000",
+     "gold_rid": "h25",
+     "key": "auto_rebook[P51]",
+     "anomalies": [
+      "T43"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h25",
+      "h24",
+      "h7",
+      "h5",
+      "h27"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h25",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h25",
+        "h24",
+        "h7"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x442",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h27",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h27",
+        "x445",
+        "x446"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "h26",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-001",
+     "gold_rid": "h16",
+     "key": "buffer[P52]",
+     "anomalies": [
+      "D45",
+      "S58",
+      "T80"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h19",
+      "h17",
+      "h16",
+      "h9",
+      "h7"
+     ],
+     "rank": 3,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h19",
+        "h17",
+        "h16"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h9",
+        "h7"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x421",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-002",
+     "gold_rid": "h13",
+     "key": "late_seating[R40]",
+     "anomalies": [
+      "D22"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h13",
+      "h10",
+      "h16",
+      "h14",
+      "h15"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h13",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h13",
+        "h10",
+        "h16"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h15",
+        "h14"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x146",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-003",
+     "gold_rid": "h3",
+     "key": "buffer[P36]",
+     "anomalies": [
+      "S66",
+      "T96"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h15",
+      "h13",
+      "h4",
+      "h3",
+      "h9"
+     ],
+     "rank": 4,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h15",
+        "h13",
+        "h4"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h4",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h16",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h3",
+        "h9",
+        "h6"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x437",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-005",
+     "gold_rid": "h16",
+     "key": "auto_rebook[P41]",
+     "anomalies": [
+      "T25"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h16",
+      "h15",
+      "x410",
+      "x408",
+      "x476"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h16",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h16",
+        "h15",
+        "x410"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x476",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x476",
+        "x474",
+        "x408"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x451",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-007",
+     "gold_rid": "h11",
+     "key": "auto_rebook[P17]",
+     "anomalies": [
+      "T82"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h11",
+      "h10",
+      "h12",
+      "h13",
+      "h4"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h11",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h11",
+        "h10",
+        "h12"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h3",
+        "h13",
+        "h0"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x216",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-008",
+     "gold_rid": "h20",
+     "key": "auto_rebook[P60]",
+     "anomalies": [
+      "T83"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h20",
+      "h19",
+      "h21",
+      "h3",
+      "h0"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h20",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h20",
+        "h19",
+        "h21"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h0",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h23",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h3",
+        "h0"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x17",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-010",
+     "gold_rid": "h7",
+     "key": "buffer[P35]",
+     "anomalies": [
+      "S30",
+      "T17"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x435",
+      "x433",
+      "h8",
+      "h7",
+      "h14"
+     ],
+     "rank": 4,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x435",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x435",
+        "x433",
+        "h8"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h10",
+        "h14",
+        "h11"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x404",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-011",
+     "gold_rid": "h13",
+     "key": "auto_rebook[P47]",
+     "anomalies": [
+      "T64"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h13",
+      "h12",
+      "h17",
+      "h15",
+      "h19"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h13",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h13",
+        "h12",
+        "h17"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h23",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h19",
+        "h15",
+        "h18"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x225",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-012",
+     "gold_rid": "h5",
+     "key": "buffer[P76]",
+     "anomalies": [
+      "S52"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x461",
+      "x459",
+      "h6",
+      "h5",
+      "x477"
+     ],
+     "rank": 4,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x461",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x461",
+        "x459",
+        "h6"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "x477",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x141",
+        "x138",
+        "x477"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x447",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-013",
+     "gold_rid": "h8",
+     "key": "buffer[P12]",
+     "anomalies": [
+      "S73"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x193",
+      "x192",
+      "x481",
+      "x478",
+      "h9"
+     ],
+     "rank": null,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x193",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x193",
+        "x192",
+        "x481"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "x481",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h9",
+        "h8",
+        "x478"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x419",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-014",
+     "gold_rid": "h11",
+     "key": "buffer[P21]",
+     "anomalies": [
+      "S25"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h13",
+      "h11",
+      "h12",
+      "h7",
+      "h4"
+     ],
+     "rank": 2,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h13",
+        "h11",
+        "h12"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h4",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h4",
+        "h7"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x111",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-015",
+     "gold_rid": "h3",
+     "key": "auto_rebook[P44]",
+     "anomalies": [
+      "T46"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h3",
+      "h2",
+      "x458",
+      "x456",
+      "x490"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h3",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h3",
+        "h2",
+        "x458"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x68",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x64",
+        "x490",
+        "x67"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x170",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-017",
+     "gold_rid": "h17",
+     "key": "buffer[P13]",
+     "anomalies": [
+      "S42"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h19",
+      "h17",
+      "h18",
+      "h13",
+      "h12"
+     ],
+     "rank": 2,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h19",
+        "h17",
+        "h18"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h20",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h13",
+        "h12",
+        "h9"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x311",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-018",
+     "gold_rid": "h4",
+     "key": "buffer[P21]",
+     "anomalies": [
+      "S38"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h6",
+      "h4",
+      "x482",
+      "x479",
+      "h5"
+     ],
+     "rank": 2,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h6",
+        "h4",
+        "x482"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x479",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x479",
+        "h5"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x294",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-019",
+     "gold_rid": "h5",
+     "key": "buffer[P19]",
+     "anomalies": [
+      "S19"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x396",
+      "x394",
+      "h6",
+      "h5",
+      "x484"
+     ],
+     "rank": 4,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x396",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x396",
+        "x394",
+        "h6"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h7",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x481",
+        "h5",
+        "x238"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x455",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-020",
+     "gold_rid": "h17",
+     "key": "auto_rebook[P37]",
+     "anomalies": [
+      "T71"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h17",
+      "h16",
+      "h18",
+      "h19"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h17",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h17",
+        "h16",
+        "h18"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h19"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x166",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-021",
+     "gold_rid": "h7",
+     "key": "late_seating[R58]",
+     "anomalies": [
+      "D64"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h7",
+      "h4",
+      "h11",
+      "h8",
+      "x260"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h7",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h7",
+        "h4",
+        "h11"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x260",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h12",
+        "x260",
+        "h8"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x36",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-022",
+     "gold_rid": "h14",
+     "key": "late_seating[R44]",
+     "anomalies": [
+      "D90"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h14",
+      "h11",
+      "h18",
+      "h16",
+      "h7"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h14",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h14",
+        "h11",
+        "h18"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h20",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h6",
+        "h17",
+        "h3"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x478",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-023",
+     "gold_rid": "h14",
+     "key": "auto_rebook[P86]",
+     "anomalies": [
+      "T75"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h14",
+      "h13",
+      "h10",
+      "h8",
+      "x433"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h14",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h14",
+        "h13",
+        "h10"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x433",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x430",
+        "h8",
+        "x433"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x160",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-024",
+     "gold_rid": "h10",
+     "key": "buffer[P16]",
+     "anomalies": [
+      "D56",
+      "S36",
+      "T55"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h18",
+      "h15",
+      "h12",
+      "h11",
+      "h10"
+     ],
+     "rank": 5,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h18",
+        "h15",
+        "h12"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h10",
+       "ees": true,
+       "plan_restored": true
+      },
+      "recency": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h10",
+        "h11"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x52",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-026",
+     "gold_rid": "h7",
+     "key": "buffer[P87]",
+     "anomalies": [
+      "S61"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h9",
+      "h7",
+      "h11",
+      "h10",
+      "h8"
+     ],
+     "rank": 2,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h9",
+        "h7",
+        "h11"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h10",
+        "h8"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x171",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-027",
+     "gold_rid": "h16",
+     "key": "auto_rebook[P14]",
+     "anomalies": [
+      "T67"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h16",
+      "h15",
+      "h7",
+      "h5",
+      "h9"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h16",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h16",
+        "h15",
+        "h7"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h5",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h8",
+        "h9",
+        "h5"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x197",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-028",
+     "gold_rid": "h9",
+     "key": "buffer[P96]",
+     "anomalies": [
+      "D28",
+      "S82"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h3",
+      "h0",
+      "x242",
+      "x240",
+      "h10"
+     ],
+     "rank": null,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h3",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h3",
+        "h0",
+        "x242"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h10",
+        "h9",
+        "x240"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x424",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-029",
+     "gold_rid": "h8",
+     "key": "buffer[P82]",
+     "anomalies": [
+      "S70",
+      "T88"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x460",
+      "x458",
+      "h9",
+      "h8",
+      "x461"
+     ],
+     "rank": 4,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x460",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x460",
+        "x458",
+        "h9"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "x461",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h8",
+        "x461"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x483",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-030",
+     "gold_rid": "h5",
+     "key": "auto_rebook[P28]",
+     "anomalies": [
+      "T15"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h5",
+      "h4",
+      "h6",
+      "x445",
+      "x442"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h5",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h5",
+        "h4",
+        "h6"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h4",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x445",
+        "x438",
+        "x442"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x126",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-031",
+     "gold_rid": "h13",
+     "key": "late_seating[R34]",
+     "anomalies": [
+      "D43"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x163",
+      "x160",
+      "x448",
+      "x446",
+      "h17"
+     ],
+     "rank": null,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x163",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x163",
+        "x160",
+        "x448"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h22",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h15",
+        "h17",
+        "x446"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x313",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-032",
+     "gold_rid": "h24",
+     "key": "buffer[P52]",
+     "anomalies": [
+      "S48",
+      "T71"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h25",
+      "h24",
+      "h21",
+      "h19",
+      "h22"
+     ],
+     "rank": 2,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h25",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h25",
+        "h24",
+        "h21"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h27",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h19",
+        "h22"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-033",
+     "gold_rid": "h1",
+     "key": "auto_rebook[P74]",
+     "anomalies": [
+      "T32"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h1",
+      "h0",
+      "h7",
+      "h5",
+      "h9"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h1",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h1",
+        "h0",
+        "h7"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x450",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h8",
+        "h9",
+        "h5"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x468",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-034",
+     "gold_rid": "h7",
+     "key": "buffer[P50]",
+     "anomalies": [
+      "S49",
+      "T60"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h12",
+      "h10",
+      "h8",
+      "h7",
+      "h14"
+     ],
+     "rank": 4,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h12",
+        "h10",
+        "h8"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x239",
+        "x236",
+        "h14"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x482",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-035",
+     "gold_rid": "h9",
+     "key": "auto_rebook[P77]",
+     "anomalies": [
+      "T67"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h9",
+      "h8",
+      "x471",
+      "x470",
+      "h14"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h9",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h9",
+        "h8",
+        "x471"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x471",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h11",
+        "h14",
+        "x470"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x354",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-036",
+     "gold_rid": "h7",
+     "key": "auto_rebook[P90]",
+     "anomalies": [
+      "T47"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h7",
+      "h6",
+      "h16",
+      "h14",
+      "h12"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h7",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h7",
+        "h6",
+        "h16"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h9",
+        "h14",
+        "h12"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x99",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-038",
+     "gold_rid": "h14",
+     "key": "buffer[P93]",
+     "anomalies": [
+      "S32",
+      "T77"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h15",
+      "h14",
+      "x123",
+      "x121",
+      "x475"
+     ],
+     "rank": 2,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h15",
+        "h14",
+        "x123"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x472",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h16",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x121",
+        "x472",
+        "x475"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x395",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-039",
+     "gold_rid": "h1",
+     "key": "auto_rebook[P41]",
+     "anomalies": [
+      "T97"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h1",
+      "h0",
+      "x467",
+      "x466",
+      "h13"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h1",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h1",
+        "h0",
+        "x467"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x466",
+        "h13",
+        "h9"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x366",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-040",
+     "gold_rid": "h16",
+     "key": "auto_rebook[P29]",
+     "anomalies": [
+      "T22"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h16",
+      "h15",
+      "h17",
+      "h18",
+      "x402"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h16",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h16",
+        "h15",
+        "h17"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x399",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h21",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h18",
+        "x399",
+        "x402"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x404",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-041",
+     "gold_rid": "h11",
+     "key": "buffer[P15]",
+     "anomalies": [
+      "D76",
+      "S59",
+      "T73"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h14",
+      "h12",
+      "h11",
+      "x215",
+      "x213"
+     ],
+     "rank": 3,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h14",
+        "h12",
+        "h11"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h0",
+        "x215",
+        "h3"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x483",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-042",
+     "gold_rid": "h9",
+     "key": "auto_rebook[P37]",
+     "anomalies": [
+      "T29"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h9",
+      "h8",
+      "h5",
+      "h3",
+      "h7"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h9",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h9",
+        "h8",
+        "h5"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h6",
+        "h3",
+        "h7"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x198",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-044",
+     "gold_rid": "h13",
+     "key": "late_seating[R91]",
+     "anomalies": [
+      "D74"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h13",
+      "h10",
+      "h14",
+      "h7",
+      "h5"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h13",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h13",
+        "h10",
+        "h14"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h7",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h7",
+        "h11",
+        "h5"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x480",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-045",
+     "gold_rid": "h17",
+     "key": "buffer[P32]",
+     "anomalies": [
+      "S31"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h9",
+      "h7",
+      "h20",
+      "h18",
+      "h17"
+     ],
+     "rank": 5,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h9",
+        "h7",
+        "h20"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h21",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h18",
+        "h17"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x283",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-047",
+     "gold_rid": "h3",
+     "key": "buffer[P59]",
+     "anomalies": [
+      "S94"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x423",
+      "x421",
+      "h15",
+      "h14",
+      "h11"
+     ],
+     "rank": null,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x423",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x423",
+        "x421",
+        "h15"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h4",
+        "h14",
+        "h6"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x449",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-048",
+     "gold_rid": "h23",
+     "key": "late_seating[R42]",
+     "anomalies": [
+      "D31"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h23",
+      "h20",
+      "h24",
+      "h19",
+      "h17"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h23",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h23",
+        "h20",
+        "h24"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h24",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h28",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h18",
+        "h17",
+        "h19"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x464",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-049",
+     "gold_rid": "h17",
+     "key": "late_seating[R87]",
+     "anomalies": [
+      "D80"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h17",
+      "h14",
+      "h6",
+      "h5",
+      "h3"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h17",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h17",
+        "h14",
+        "h6"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h10",
+        "h5",
+        "h11"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x182",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-051",
+     "gold_rid": "h14",
+     "key": "buffer[P96]",
+     "anomalies": [
+      "S94"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x466",
+      "x464",
+      "h21",
+      "h19",
+      "x474"
+     ],
+     "rank": null,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x466",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x466",
+        "x464",
+        "h21"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h21",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h21",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x474",
+        "x471",
+        "h15"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x305",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-052",
+     "gold_rid": "h9",
+     "key": "buffer[P77]",
+     "anomalies": [
+      "S95",
+      "T83"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h10",
+      "h9",
+      "x480",
+      "x478",
+      "h3"
+     ],
+     "rank": 2,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h10",
+        "h9",
+        "x480"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x480",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h3",
+        "x478",
+        "h0"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x393",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-053",
+     "gold_rid": "h24",
+     "key": "buffer[P22]",
+     "anomalies": [
+      "S96",
+      "T49"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h25",
+      "h24",
+      "h14",
+      "h12",
+      "h27"
+     ],
+     "rank": 2,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h25",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h25",
+        "h24",
+        "h14"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h27",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h27",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h27",
+        "h12"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "h22",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-054",
+     "gold_rid": "h7",
+     "key": "buffer[P62]",
+     "anomalies": [
+      "S27",
+      "T58"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h8",
+      "h7",
+      "x462",
+      "x461",
+      "h10"
+     ],
+     "rank": 2,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h8",
+        "h7",
+        "x462"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x461",
+        "h10"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x222",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-055",
+     "gold_rid": "h19",
+     "key": "auto_rebook[P89]",
+     "anomalies": [
+      "T53"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h19",
+      "h18",
+      "x385",
+      "x383",
+      "x457"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h19",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h19",
+        "h18",
+        "x385"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h25",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h21",
+        "x383",
+        "x457"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x424",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-056",
+     "gold_rid": "h32",
+     "key": "auto_rebook[P63]",
+     "anomalies": [
+      "T82"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h32",
+      "h31",
+      "h5",
+      "h3",
+      "h29"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h32",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h32",
+        "h31",
+        "h5"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h26",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h35",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h29",
+        "h26",
+        "h3"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x443",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-057",
+     "gold_rid": "h9",
+     "key": "auto_rebook[P70]",
+     "anomalies": [
+      "T81"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h9",
+      "h8",
+      "h2",
+      "h0",
+      "h11"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h9",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h9",
+        "h8",
+        "h2"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h0",
+        "h11"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x176",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-058",
+     "gold_rid": "h11",
+     "key": "buffer[P19]",
+     "anomalies": [
+      "S49"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h16",
+      "h14",
+      "h12",
+      "h11",
+      "h3"
+     ],
+     "rank": 4,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h16",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h16",
+        "h14",
+        "h12"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h0",
+        "h11",
+        "h3"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s30-test-059",
+     "gold_rid": "h4",
+     "key": "auto_rebook[P51]",
+     "anomalies": [
+      "T39"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h4",
+      "h3",
+      "h8",
+      "h6",
+      "h10"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h4",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h4",
+        "h3",
+        "h8"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x464",
+        "h10",
+        "h6"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x66",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    }
+   ],
+   "paired": {
+    "predicted_minus_random": {
+     "n": 51,
+     "mean": 0.49019607843137253,
+     "ci95": [
+      0.35245098039215705,
+      0.6274509803921569
+     ]
+    },
+    "top3_minus_random3": {
+     "n": 51,
+     "mean": 0.5686274509803921,
+     "ci95": [
+      0.35294117647058826,
+      0.7647058823529411
+     ]
+    },
+    "predicted_minus_similar": {
+     "n": 51,
+     "mean": 0.5098039215686274,
+     "ci95": [
+      0.37254901960784315,
+      0.6470588235294118
+     ]
+    },
+    "predicted_minus_recency": {
+     "n": 51,
+     "mean": 0.5098039215686274,
+     "ci95": [
+      0.37254901960784315,
+      0.6470588235294118
+     ]
+    }
+   }
+  },
+  "travel/seed31": {
+   "summary": {
+    "n": 49,
+    "precision_at_1": 0.4489795918367347,
+    "precision_at_3": 0.7346938775510204,
+    "mrr": 0.6020408163265306,
+    "restore_predicted": 0.4489795918367347,
+    "restore_predicted_top3": 0.7346938775510204,
+    "restore_matched_random": 0.12244897959183673,
+    "restore_matched_random3": 0.14285714285714285,
+    "restore_similar_non_ancestor": 0.0,
+    "restore_recency": 0.04081632653061224,
+    "episodes": 60,
+    "no_corruption": 3,
+    "clean_plan_wrong": 7,
+    "no_incident": 1,
+    "incidents": 49,
+    "graph_sha": "be5be628238a0a7a",
+    "fit_seconds": 12.90435528755188
+   },
+   "rows": [
+    {
+     "episode": "travel-s31-test-000",
+     "gold_rid": "h15",
+     "key": "buffer[P68]",
+     "anomalies": [
+      "S40"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h17",
+      "h15",
+      "h16",
+      "x478",
+      "x475"
+     ],
+     "rank": 2,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h17",
+        "h15",
+        "h16"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x183",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x183",
+        "x186",
+        "x478"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-001",
+     "gold_rid": "h19",
+     "key": "buffer[P87]",
+     "anomalies": [
+      "S83"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x477",
+      "x475",
+      "h20",
+      "h19",
+      "h18"
+     ],
+     "rank": 4,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x477",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x477",
+        "x475",
+        "h20"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h21",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h15",
+        "h19",
+        "h18"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x189",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-003",
+     "gold_rid": "h7",
+     "key": "buffer[P92]",
+     "anomalies": [
+      "D14",
+      "S47"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h14",
+      "h11",
+      "x453",
+      "x452",
+      "h15"
+     ],
+     "rank": null,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h14",
+        "h11",
+        "x453"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "x452",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h8",
+        "h15",
+        "h7"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x162",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-004",
+     "gold_rid": "h14",
+     "key": "auto_rebook[P65]",
+     "anomalies": [
+      "T30"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h14",
+      "h13",
+      "h15",
+      "h23",
+      "h20"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h14",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h14",
+        "h13",
+        "h15"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h23",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h24",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h23",
+        "h20"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x426",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-005",
+     "gold_rid": "h0",
+     "key": "buffer[P81]",
+     "anomalies": [
+      "D97",
+      "S77",
+      "T79"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h17",
+      "h14",
+      "h6",
+      "h4",
+      "h1"
+     ],
+     "rank": null,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h17",
+        "h14",
+        "h6"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h4",
+        "h0",
+        "h1"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x384",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-006",
+     "gold_rid": "h17",
+     "key": "buffer[P91]",
+     "anomalies": [
+      "A69",
+      "S28",
+      "T59"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h18",
+      "h17",
+      "h16",
+      "h14",
+      "x320"
+     ],
+     "rank": 2,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h18",
+        "h17",
+        "h16"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x320",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h21",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h14",
+        "x317",
+        "x320"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x7",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-008",
+     "gold_rid": "h14",
+     "key": "auto_rebook[P77]",
+     "anomalies": [
+      "T15"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h14",
+      "h13",
+      "h15",
+      "x421",
+      "x418"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h14",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h14",
+        "h13",
+        "h15"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h20",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x421",
+        "x418"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x179",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-009",
+     "gold_rid": "h22",
+     "key": "auto_rebook[P91]",
+     "anomalies": [
+      "T13"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h22",
+      "h21",
+      "h19",
+      "h17",
+      "h24"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h22",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h22",
+        "h21",
+        "h19"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h20",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h24",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h17",
+        "h20",
+        "h24"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x250",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-010",
+     "gold_rid": "h17",
+     "key": "buffer[P77]",
+     "anomalies": [
+      "S62",
+      "T57"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h18",
+      "h17",
+      "h2",
+      "h0",
+      "x471"
+     ],
+     "rank": 2,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h18",
+        "h17",
+        "h2"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x468",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x471",
+        "h0",
+        "x468"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x85",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-011",
+     "gold_rid": "h21",
+     "key": "late_seating[R43]",
+     "anomalies": [
+      "D54"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h21",
+      "h18",
+      "x476",
+      "x474",
+      "h19"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h21",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h21",
+        "h18",
+        "x476"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x476",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h21",
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random3": {
+       "rid": [
+        "h19",
+        "x474"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x394",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-012",
+     "gold_rid": "h19",
+     "key": "auto_rebook[P17]",
+     "anomalies": [
+      "T36"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h19",
+      "h18",
+      "h20",
+      "h30",
+      "h27"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h19",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h19",
+        "h18",
+        "h20"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h20",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h31",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x416",
+        "x419",
+        "h27"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x436",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-013",
+     "gold_rid": "h19",
+     "key": "auto_rebook[P85]",
+     "anomalies": [
+      "T65"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h19",
+      "h18",
+      "h20",
+      "h17",
+      "h14"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h19",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h19",
+        "h18",
+        "h20"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h20",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h20",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h17",
+        "h14",
+        "h9"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x36",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-014",
+     "gold_rid": "h11",
+     "key": "auto_rebook[P25]",
+     "anomalies": [
+      "T17"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h11",
+      "h10",
+      "x422",
+      "x420",
+      "x445"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h11",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h11",
+        "h10",
+        "x422"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x442",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x416",
+        "x445",
+        "x420"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x38",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-015",
+     "gold_rid": "h11",
+     "key": "buffer[P43]",
+     "anomalies": [
+      "S33",
+      "T26"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h12",
+      "h11",
+      "x451",
+      "x449",
+      "h3"
+     ],
+     "rank": 2,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h12",
+        "h11",
+        "x451"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x451",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x449",
+        "h0",
+        "h3"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x432",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-016",
+     "gold_rid": "h8",
+     "key": "buffer[P55]",
+     "anomalies": [
+      "S38"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h13",
+      "h11",
+      "x425",
+      "x422",
+      "h9"
+     ],
+     "rank": null,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h13",
+        "h11",
+        "x425"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h3",
+        "h9",
+        "h8"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x228",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-017",
+     "gold_rid": "h6",
+     "key": "auto_rebook[P31]",
+     "anomalies": [
+      "T52"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h6",
+      "h5",
+      "x196",
+      "x194",
+      "x459"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h6",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h6",
+        "h5",
+        "x196"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x196",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h8",
+        "x194",
+        "x459"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x29",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-018",
+     "gold_rid": "h15",
+     "key": "late_seating[R69]",
+     "anomalies": [
+      "D86"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h15",
+      "h12",
+      "h10",
+      "h8",
+      "h9"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h15",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h15",
+        "h12",
+        "h10"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random3": {
+       "rid": [
+        "h8",
+        "h9"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x113",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-019",
+     "gold_rid": "h16",
+     "key": "buffer[P29]",
+     "anomalies": [
+      "S42"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h18",
+      "h16",
+      "h17",
+      "h7",
+      "h4"
+     ],
+     "rank": 2,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h18",
+        "h16",
+        "h17"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h7",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h21",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h7",
+        "h4"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x376",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-020",
+     "gold_rid": "h0",
+     "key": "buffer[P54]",
+     "anomalies": [
+      "D15",
+      "S44"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h12",
+      "h10",
+      "h8",
+      "h5",
+      "h9"
+     ],
+     "rank": null,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h12",
+        "h10",
+        "h8"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h0",
+       "ees": true,
+       "plan_restored": true
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h0",
+        "h1",
+        "h5"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x305",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-021",
+     "gold_rid": "h8",
+     "key": "auto_rebook[P73]",
+     "anomalies": [
+      "T64"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h8",
+      "h7",
+      "h9",
+      "h13",
+      "h10"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h8",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h8",
+        "h7",
+        "h9"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h3",
+        "h6",
+        "h10"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x264",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-024",
+     "gold_rid": "h5",
+     "key": "auto_rebook[P15]",
+     "anomalies": [
+      "T93"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h5",
+      "h4",
+      "h24",
+      "h22",
+      "h20"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h5",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h5",
+        "h4",
+        "h24"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h4",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h24",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h13",
+        "h20",
+        "h17"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x143",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-025",
+     "gold_rid": "h12",
+     "key": "buffer[P82]",
+     "anomalies": [
+      "D79",
+      "S68"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h17",
+      "h15",
+      "h9",
+      "h6",
+      "h19"
+     ],
+     "rank": null,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h17",
+        "h15",
+        "h9"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h13",
+        "h18",
+        "h6"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x0",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-027",
+     "gold_rid": "h9",
+     "key": "late_seating[R36]",
+     "anomalies": [
+      "D13"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x204",
+      "x201",
+      "h2",
+      "h0",
+      "h7"
+     ],
+     "rank": null,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x204",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x204",
+        "x201",
+        "h2"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h7",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h0",
+        "h7",
+        "h6"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x169",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-028",
+     "gold_rid": "h6",
+     "key": "late_seating[R18]",
+     "anomalies": [
+      "D55"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x156",
+      "x153",
+      "h15",
+      "h13",
+      "x126"
+     ],
+     "rank": null,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x156",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x156",
+        "x153",
+        "h15"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "x153",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h16",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x126",
+        "x123",
+        "h7"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x461",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-029",
+     "gold_rid": "h10",
+     "key": "auto_rebook[P16]",
+     "anomalies": [
+      "T69"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h10",
+      "h9",
+      "h11",
+      "h17",
+      "h16"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h10",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h10",
+        "h9",
+        "h11"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h13",
+        "h16",
+        "h17"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x160",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-030",
+     "gold_rid": "h22",
+     "key": "buffer[P84]",
+     "anomalies": [
+      "A54",
+      "D76",
+      "S50",
+      "T54"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h25",
+      "h23",
+      "h22",
+      "x464",
+      "x462"
+     ],
+     "rank": 3,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h25",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h25",
+        "h23",
+        "h22"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x462",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h26",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h20",
+        "x462",
+        "h17"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x468",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-031",
+     "gold_rid": "h3",
+     "key": "late_seating[R38]",
+     "anomalies": [
+      "D77"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h3",
+      "h0",
+      "x321",
+      "x320",
+      "h11"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h3",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h3",
+        "h0",
+        "x321"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x320",
+        "h10",
+        "h11"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x485",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-032",
+     "gold_rid": "h17",
+     "key": "buffer[P77]",
+     "anomalies": [
+      "S98",
+      "T54"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h19",
+      "h18",
+      "h17",
+      "h20"
+     ],
+     "rank": 3,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h19",
+        "h18",
+        "h17"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h20",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h20",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h20"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x378",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-033",
+     "gold_rid": "h16",
+     "key": "buffer[P48]",
+     "anomalies": [
+      "S40",
+      "T71"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h17",
+      "h16",
+      "x471",
+      "x469",
+      "h15"
+     ],
+     "rank": 2,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h17",
+        "h16",
+        "x471"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h16",
+       "ees": true,
+       "plan_restored": true
+      },
+      "recency": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x469",
+        "h12",
+        "h15"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-034",
+     "gold_rid": "h10",
+     "key": "auto_rebook[P12]",
+     "anomalies": [
+      "T45"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h10",
+      "h9",
+      "h11",
+      "h8",
+      "h5"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h10",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h10",
+        "h9",
+        "h11"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h8",
+        "h5"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x452",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-035",
+     "gold_rid": "h16",
+     "key": "buffer[P37]",
+     "anomalies": [
+      "S61"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x383",
+      "x381",
+      "h20",
+      "h19",
+      "h17"
+     ],
+     "rank": null,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x383",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x383",
+        "x381",
+        "h20"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h16",
+       "ees": true,
+       "plan_restored": true
+      },
+      "recency": {
+       "rid": "h23",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h17",
+        "h16",
+        "h19"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x266",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-036",
+     "gold_rid": "h12",
+     "key": "auto_rebook[P20]",
+     "anomalies": [
+      "T31"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h12",
+      "h11",
+      "h6",
+      "h4",
+      "h3"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h12",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h12",
+        "h11",
+        "h6"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h0",
+        "h4",
+        "h3"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x191",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-037",
+     "gold_rid": "h5",
+     "key": "auto_rebook[P95]",
+     "anomalies": [
+      "T32"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h5",
+      "h4",
+      "h10",
+      "h8",
+      "x487"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h5",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h5",
+        "h4",
+        "h10"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h7",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x484",
+        "h8",
+        "x487"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x377",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-038",
+     "gold_rid": "h16",
+     "key": "auto_rebook[P37]",
+     "anomalies": [
+      "T43"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h16",
+      "h15",
+      "h9",
+      "h7",
+      "h6"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h16",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h16",
+        "h15",
+        "h9"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h6",
+        "h3",
+        "h7"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x190",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-039",
+     "gold_rid": "h8",
+     "key": "late_seating[R45]",
+     "anomalies": [
+      "B80",
+      "D29"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h14",
+      "h13",
+      "h10",
+      "h8",
+      "h5"
+     ],
+     "rank": 4,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h14",
+        "h13",
+        "h10"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h15",
+        "h17",
+        "h16"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x468",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-041",
+     "gold_rid": "h14",
+     "key": "buffer[P13]",
+     "anomalies": [
+      "S25",
+      "T45"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h15",
+      "h14",
+      "x396",
+      "x395",
+      "h9"
+     ],
+     "rank": 2,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h15",
+        "h14",
+        "x396"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h14",
+       "ees": true,
+       "plan_restored": true
+      },
+      "recency": {
+       "rid": "h16",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h6",
+        "h9",
+        "x395"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x66",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-042",
+     "gold_rid": "h3",
+     "key": "late_seating[R60]",
+     "anomalies": [
+      "D69"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x275",
+      "x272",
+      "h6",
+      "h4",
+      "h18"
+     ],
+     "rank": null,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x275",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x275",
+        "x272",
+        "h6"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h20",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h4",
+        "h18",
+        "h17"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x471",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-045",
+     "gold_rid": "h7",
+     "key": "buffer[P48]",
+     "anomalies": [
+      "S39",
+      "T94"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h8",
+      "h7",
+      "x488",
+      "x486",
+      "x489"
+     ],
+     "rank": 2,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h8",
+        "h7",
+        "x488"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x489",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x478",
+        "x489",
+        "x486"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x151",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-046",
+     "gold_rid": "h0",
+     "key": "buffer[P39]",
+     "anomalies": [
+      "S67",
+      "T19"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x446",
+      "x444",
+      "h1",
+      "h0",
+      "x461"
+     ],
+     "rank": 4,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x446",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x446",
+        "x444",
+        "h1"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "x458",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x461",
+        "h0",
+        "x458"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x350",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-047",
+     "gold_rid": "h18",
+     "key": "buffer[P97]",
+     "anomalies": [
+      "S77",
+      "T88"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h20",
+      "h19",
+      "h18",
+      "x125",
+      "x122"
+     ],
+     "rank": 3,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h20",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h20",
+        "h19",
+        "h18"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x125",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h21",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x122",
+        "x125"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x398",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-048",
+     "gold_rid": "h10",
+     "key": "auto_rebook[P89]",
+     "anomalies": [
+      "T86"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h10",
+      "h9",
+      "h20",
+      "h18",
+      "h21"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h10",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h10",
+        "h9",
+        "h20"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h21",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h18",
+        "h21"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x135",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-049",
+     "gold_rid": "h19",
+     "key": "auto_rebook[P13]",
+     "anomalies": [
+      "T64"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h19",
+      "h18",
+      "h20",
+      "x472",
+      "x469"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h19",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h19",
+        "h18",
+        "h20"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x469",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h22",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x469",
+        "x472",
+        "h17"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x438",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-050",
+     "gold_rid": "h10",
+     "key": "buffer[P20]",
+     "anomalies": [
+      "S74",
+      "T89"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x467",
+      "x465",
+      "h11",
+      "h10",
+      "x479"
+     ],
+     "rank": 4,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x467",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x467",
+        "x465",
+        "h11"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "x479",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x479",
+        "x476",
+        "x174"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x438",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-051",
+     "gold_rid": "h21",
+     "key": "auto_rebook[P65]",
+     "anomalies": [
+      "T66"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h21",
+      "h20",
+      "h6",
+      "h4",
+      "h18"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h21",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h21",
+        "h20",
+        "h6"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h4",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h24",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x433",
+        "x430",
+        "x434"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x459",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-052",
+     "gold_rid": "h12",
+     "key": "buffer[P33]",
+     "anomalies": [
+      "S65",
+      "T77"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h13",
+      "h12",
+      "h10",
+      "h8",
+      "h15"
+     ],
+     "rank": 2,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h13",
+        "h12",
+        "h10"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h12",
+       "ees": true,
+       "plan_restored": true
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x483",
+        "x479",
+        "h15"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x35",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-053",
+     "gold_rid": "h0",
+     "key": "buffer[P65]",
+     "anomalies": [
+      "S39"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h2",
+      "h0",
+      "x478",
+      "x475",
+      "x362"
+     ],
+     "rank": 2,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h2",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h2",
+        "h0",
+        "x478"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h0",
+       "ees": true,
+       "plan_restored": true
+      },
+      "recency": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h1",
+        "x475",
+        "x359"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x61",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-055",
+     "gold_rid": "h12",
+     "key": "auto_rebook[P89]",
+     "anomalies": [
+      "T12"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h12",
+      "h11",
+      "h13",
+      "x453",
+      "x450"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h12",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h12",
+        "h11",
+        "h13"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x453",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x453",
+        "x450"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x195",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-056",
+     "gold_rid": "h8",
+     "key": "auto_rebook[P38]",
+     "anomalies": [
+      "T16"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h8",
+      "h7",
+      "x470",
+      "x468",
+      "x467"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h8",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h8",
+        "h7",
+        "x470"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x468",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x464",
+        "x468",
+        "x467"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x479",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s31-test-059",
+     "gold_rid": "h20",
+     "key": "buffer[P35]",
+     "anomalies": [
+      "S60"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h22",
+      "h20",
+      "h29",
+      "h26",
+      "h21"
+     ],
+     "rank": 2,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h22",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h22",
+        "h20",
+        "h29"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h21",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h29",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h26",
+        "h11",
+        "h8"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x351",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    }
+   ],
+   "paired": {
+    "predicted_minus_random": {
+     "n": 49,
+     "mean": 0.32653061224489793,
+     "ci95": [
+      0.14234693877551036,
+      0.5102040816326531
+     ]
+    },
+    "top3_minus_random3": {
+     "n": 49,
+     "mean": 0.5918367346938775,
+     "ci95": [
+      0.3877551020408163,
+      0.7760204081632671
+     ]
+    },
+    "predicted_minus_similar": {
+     "n": 49,
+     "mean": 0.4489795918367347,
+     "ci95": [
+      0.30612244897959184,
+      0.5918367346938775
+     ]
+    },
+    "predicted_minus_recency": {
+     "n": 49,
+     "mean": 0.40816326530612246,
+     "ci95": [
+      0.2857142857142857,
+      0.5510204081632653
+     ]
+    }
+   }
+  },
+  "travel/seed32": {
+   "summary": {
+    "n": 45,
+    "precision_at_1": 0.6222222222222222,
+    "precision_at_3": 0.8444444444444444,
+    "mrr": 0.7385185185185186,
+    "restore_predicted": 0.6222222222222222,
+    "restore_predicted_top3": 0.8444444444444444,
+    "restore_matched_random": 0.044444444444444446,
+    "restore_matched_random3": 0.08888888888888889,
+    "restore_similar_non_ancestor": 0.0,
+    "restore_recency": 0.044444444444444446,
+    "episodes": 59,
+    "no_corruption": 5,
+    "clean_plan_wrong": 9,
+    "no_incident": 0,
+    "incidents": 45,
+    "graph_sha": "85fd2626a810c230",
+    "fit_seconds": 12.097912788391113
+   },
+   "rows": [
+    {
+     "episode": "travel-s32-test-000",
+     "gold_rid": "h15",
+     "key": "buffer[P26]",
+     "anomalies": [
+      "S27",
+      "T21"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h16",
+      "h15",
+      "x114",
+      "x112",
+      "h18"
+     ],
+     "rank": 2,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h16",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h16",
+        "h15",
+        "x114"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x112",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x474",
+        "x477",
+        "h18"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x61",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-001",
+     "gold_rid": "h14",
+     "key": "buffer[P51]",
+     "anomalies": [
+      "S19",
+      "T83"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x469",
+      "x467",
+      "h15",
+      "h14",
+      "x325"
+     ],
+     "rank": 4,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x469",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x469",
+        "x467",
+        "h15"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h0",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h22",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h0",
+        "h3",
+        "h4"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x443",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-002",
+     "gold_rid": "h24",
+     "key": "buffer[P72]",
+     "anomalies": [
+      "S49",
+      "T28"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h25",
+      "h24",
+      "h12",
+      "h10",
+      "x426"
+     ],
+     "rank": 2,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h25",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h25",
+        "h24",
+        "h12"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h26",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x426",
+        "h9",
+        "h10"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x435",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-003",
+     "gold_rid": "h16",
+     "key": "auto_rebook[P33]",
+     "anomalies": [
+      "T89"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h16",
+      "h15",
+      "x476",
+      "x475",
+      "h18"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h16",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h16",
+        "h15",
+        "x476"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h18",
+        "x475",
+        "h3"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x455",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-005",
+     "gold_rid": "h22",
+     "key": "late_seating[R45]",
+     "anomalies": [
+      "B27",
+      "D27"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h22",
+      "h19",
+      "h18",
+      "h17",
+      "h14"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h22",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h22",
+        "h19",
+        "h18"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h0",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h22",
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random3": {
+       "rid": [
+        "h0",
+        "h20",
+        "h2"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x466",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-007",
+     "gold_rid": "h5",
+     "key": "auto_rebook[P69]",
+     "anomalies": [
+      "T39"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h5",
+      "h4",
+      "x88",
+      "x86",
+      "h14"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h5",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h5",
+        "h4",
+        "x88"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h4",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x86",
+        "h11",
+        "h14"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x309",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-008",
+     "gold_rid": "h7",
+     "key": "auto_rebook[P61]",
+     "anomalies": [
+      "T83"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h7",
+      "h6",
+      "h8",
+      "x482",
+      "x479"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h7",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h7",
+        "h6",
+        "h8"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x479",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h16",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x479",
+        "x482"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x148",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-009",
+     "gold_rid": "h5",
+     "key": "buffer[P73]",
+     "anomalies": [
+      "S97",
+      "T75"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h6",
+      "h5",
+      "x421",
+      "x420",
+      "h8"
+     ],
+     "rank": 2,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h6",
+        "h5",
+        "x421"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x479",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h8",
+        "x479",
+        "x476"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x258",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-011",
+     "gold_rid": "h1",
+     "key": "auto_rebook[P32]",
+     "anomalies": [
+      "T73"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h1",
+      "h0",
+      "x476",
+      "x474",
+      "x478"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h1",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h1",
+        "h0",
+        "x476"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x477",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x99",
+        "x474",
+        "x477"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x120",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-012",
+     "gold_rid": "h3",
+     "key": "late_seating[R52]",
+     "anomalies": [
+      "D71"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h3",
+      "h0",
+      "h2",
+      "h1"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h3",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h3",
+        "h0",
+        "h2"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h1",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h1"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x119",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-014",
+     "gold_rid": "h12",
+     "key": "auto_rebook[P47]",
+     "anomalies": [
+      "T72"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h12",
+      "h11",
+      "h10",
+      "h8",
+      "h18"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h12",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h12",
+        "h11",
+        "h10"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h15",
+        "h8",
+        "h18"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x164",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-015",
+     "gold_rid": "h3",
+     "key": "buffer[P82]",
+     "anomalies": [
+      "D25",
+      "S32"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h6",
+      "h3",
+      "x286",
+      "x284",
+      "h13"
+     ],
+     "rank": 2,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h6",
+        "h3",
+        "x286"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x284",
+        "h13",
+        "h4"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x452",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-016",
+     "gold_rid": "h1",
+     "key": "auto_rebook[P90]",
+     "anomalies": [
+      "T24"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h1",
+      "h0",
+      "h2",
+      "h7",
+      "h4"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h1",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h1",
+        "h0",
+        "h2"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h0",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h7",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x397",
+        "h4",
+        "x399"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x236",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-018",
+     "gold_rid": "h11",
+     "key": "auto_rebook[P22]",
+     "anomalies": [
+      "T80"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h11",
+      "h10",
+      "x145",
+      "x143",
+      "h8"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h11",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h11",
+        "h10",
+        "x145"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h16",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h8",
+        "x143",
+        "h5"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x433",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-019",
+     "gold_rid": "h20",
+     "key": "late_seating[R64]",
+     "anomalies": [
+      "D94"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x150",
+      "x147",
+      "x469",
+      "x467",
+      "h15"
+     ],
+     "rank": null,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x150",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x150",
+        "x147",
+        "x469"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "x467",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h23",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h15",
+        "x467",
+        "h14"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x401",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-020",
+     "gold_rid": "h13",
+     "key": "buffer[P53]",
+     "anomalies": [
+      "S13",
+      "T28"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h14",
+      "h13",
+      "x466",
+      "x464",
+      "h16"
+     ],
+     "rank": 2,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h14",
+        "h13",
+        "x466"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x466",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h16",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x464",
+        "h16"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-021",
+     "gold_rid": "h14",
+     "key": "late_seating[R58]",
+     "anomalies": [
+      "D30"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h14",
+      "h11",
+      "h13",
+      "h10",
+      "h7"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h14",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h14",
+        "h11",
+        "h13"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random3": {
+       "rid": [
+        "h1",
+        "h7",
+        "h0"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x483",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-022",
+     "gold_rid": "h6",
+     "key": "auto_rebook[P82]",
+     "anomalies": [
+      "T94"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h6",
+      "h5",
+      "x476",
+      "x475",
+      "x481"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h6",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h6",
+        "h5",
+        "x476"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x478",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x481",
+        "x478",
+        "x475"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x273",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-023",
+     "gold_rid": "h4",
+     "key": "auto_rebook[P47]",
+     "anomalies": [
+      "T42"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h4",
+      "h3",
+      "x480",
+      "x478",
+      "h10"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h4",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h4",
+        "h3",
+        "x480"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h10",
+        "h7",
+        "x478"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x433",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-024",
+     "gold_rid": "h6",
+     "key": "auto_rebook[P59]",
+     "anomalies": [
+      "T68"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h6",
+      "h5",
+      "x383",
+      "x381",
+      "h3"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h6",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h6",
+        "h5",
+        "x383"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h0",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h3",
+        "x381",
+        "h0"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x247",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-025",
+     "gold_rid": "h1",
+     "key": "auto_rebook[P89]",
+     "anomalies": [
+      "T33"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h1",
+      "h0",
+      "x481",
+      "x480",
+      "h9"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h1",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h1",
+        "h0",
+        "x481"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x481",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x480",
+        "h8",
+        "h5"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x32",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-026",
+     "gold_rid": "h4",
+     "key": "buffer[P40]",
+     "anomalies": [
+      "S95"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h2",
+      "h0",
+      "h20",
+      "h19",
+      "h16"
+     ],
+     "rank": null,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h2",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h2",
+        "h0",
+        "h20"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h4",
+       "ees": true,
+       "plan_restored": true
+      },
+      "recency": {
+       "rid": "h20",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h7",
+        "h5",
+        "h16"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x139",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-027",
+     "gold_rid": "h5",
+     "key": "auto_rebook[P56]",
+     "anomalies": [
+      "T22"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h5",
+      "h4",
+      "h10",
+      "h8",
+      "h15"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h5",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h5",
+        "h4",
+        "h10"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x450",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h12",
+        "h8",
+        "x450"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x276",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-028",
+     "gold_rid": "h10",
+     "key": "buffer[P91]",
+     "anomalies": [
+      "S40"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h17",
+      "h15",
+      "h18",
+      "h11",
+      "h10"
+     ],
+     "rank": 5,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h17",
+        "h15",
+        "h18"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h22",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h10",
+        "h11"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x457",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-029",
+     "gold_rid": "h11",
+     "key": "buffer[P53]",
+     "anomalies": [
+      "S86",
+      "T11"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h17",
+      "h15",
+      "h12",
+      "h11",
+      "h18"
+     ],
+     "rank": 4,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h17",
+        "h15",
+        "h12"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h11",
+        "h18"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x384",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-032",
+     "gold_rid": "h14",
+     "key": "buffer[P14]",
+     "anomalies": [
+      "D80",
+      "S40",
+      "T52"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h16",
+      "h15",
+      "h14",
+      "h12",
+      "h9"
+     ],
+     "rank": 3,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h16",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h16",
+        "h15",
+        "h14"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h25",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h13",
+        "h9",
+        "h12"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-033",
+     "gold_rid": "h6",
+     "key": "auto_rebook[P39]",
+     "anomalies": [
+      "T79"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h6",
+      "h5",
+      "x476",
+      "x474",
+      "x463"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h6",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h6",
+        "h5",
+        "x476"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x460",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h22",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x460",
+        "x474",
+        "x463"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x359",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-034",
+     "gold_rid": "h4",
+     "key": "buffer[P49]",
+     "anomalies": [
+      "S84",
+      "T63"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h5",
+      "h4",
+      "x26",
+      "x24",
+      "x444"
+     ],
+     "rank": 2,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h5",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h5",
+        "h4",
+        "x26"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x26",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x24",
+        "x444",
+        "x441"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x41",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-036",
+     "gold_rid": "h14",
+     "key": "late_seating[R84]",
+     "anomalies": [
+      "D14"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h14",
+      "h11",
+      "h21",
+      "h18",
+      "x475"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h14",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h14",
+        "h11",
+        "h21"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h21",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h18",
+        "x475",
+        "h15"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x167",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-038",
+     "gold_rid": "h10",
+     "key": "buffer[P55]",
+     "anomalies": [
+      "D25",
+      "S14",
+      "T16"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h13",
+      "h11",
+      "h10",
+      "h9",
+      "h7"
+     ],
+     "rank": 3,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h13",
+        "h11",
+        "h10"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h7",
+        "h6",
+        "h9"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-039",
+     "gold_rid": "h7",
+     "key": "late_seating[R40]",
+     "anomalies": [
+      "D42"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h7",
+      "h4",
+      "h17",
+      "h14",
+      "h2"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h7",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h7",
+        "h4",
+        "h17"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h4",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h2",
+        "h1",
+        "h14"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x155",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-040",
+     "gold_rid": "h4",
+     "key": "buffer[P19]",
+     "anomalies": [
+      "S33",
+      "T28"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h6",
+      "h5",
+      "h4",
+      "x483",
+      "x480"
+     ],
+     "rank": 3,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h6",
+        "h5",
+        "h4"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x483",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x483",
+        "x480",
+        "h7"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x439",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-042",
+     "gold_rid": "h11",
+     "key": "late_seating[R32]",
+     "anomalies": [
+      "D69"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h11",
+      "h8",
+      "x480",
+      "x479",
+      "h9"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h11",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h11",
+        "h8",
+        "x480"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x479",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h9",
+        "x479"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x169",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-043",
+     "gold_rid": "h6",
+     "key": "auto_rebook[P94]",
+     "anomalies": [
+      "T37"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h6",
+      "h5",
+      "x485",
+      "x483",
+      "h9"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h6",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h6",
+        "h5",
+        "x485"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x483",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h9",
+        "h8",
+        "x483"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x62",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-044",
+     "gold_rid": "h26",
+     "key": "auto_rebook[P96]",
+     "anomalies": [
+      "T66"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h26",
+      "h25",
+      "h27",
+      "h24",
+      "h21"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h26",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h26",
+        "h25",
+        "h27"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h25",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h29",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h24",
+        "h21"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x239",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-045",
+     "gold_rid": "h14",
+     "key": "buffer[P78]",
+     "anomalies": [
+      "S95"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h20",
+      "h18",
+      "h17",
+      "h15",
+      "h14"
+     ],
+     "rank": 5,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h20",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h20",
+        "h18",
+        "h17"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h28",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h15",
+        "h14"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "h7",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-048",
+     "gold_rid": "h12",
+     "key": "auto_rebook[P43]",
+     "anomalies": [
+      "S49",
+      "T98"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h12",
+      "h11",
+      "x470",
+      "x468",
+      "h14"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h12",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h12",
+        "h11",
+        "x470"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h6",
+        "h3",
+        "h14"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x221",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-049",
+     "gold_rid": "h21",
+     "key": "auto_rebook[P43]",
+     "anomalies": [
+      "T69"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h21",
+      "h20",
+      "h12",
+      "h10",
+      "h8"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h21",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h21",
+        "h20",
+        "h12"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h25",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h5",
+        "h10",
+        "h8"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-050",
+     "gold_rid": "h0",
+     "key": "buffer[P62]",
+     "anomalies": [
+      "S62"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h17",
+      "h15",
+      "h11",
+      "h8",
+      "h1"
+     ],
+     "rank": null,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h17",
+        "h15",
+        "h11"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h0",
+       "ees": true,
+       "plan_restored": true
+      },
+      "recency": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h0",
+        "h1",
+        "h8"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x366",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-052",
+     "gold_rid": "h11",
+     "key": "auto_rebook[P19]",
+     "anomalies": [
+      "T18"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h11",
+      "h10",
+      "h15",
+      "h13",
+      "x470"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h11",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h11",
+        "h10",
+        "h15"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h13",
+        "x467",
+        "x470"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x193",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-053",
+     "gold_rid": "h14",
+     "key": "auto_rebook[P86]",
+     "anomalies": [
+      "T45"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h14",
+      "h13",
+      "h5",
+      "h3",
+      "h19"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h14",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h14",
+        "h13",
+        "h5"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h19",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h12",
+        "h16",
+        "h11"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x456",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-056",
+     "gold_rid": "h9",
+     "key": "auto_rebook[P32]",
+     "anomalies": [
+      "T45"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h9",
+      "h8",
+      "x409",
+      "x408",
+      "x429"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h9",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h9",
+        "h8",
+        "x409"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "x426",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x429",
+        "x426",
+        "x408"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x166",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-057",
+     "gold_rid": "h9",
+     "key": "buffer[P82]",
+     "anomalies": [
+      "D85",
+      "S82",
+      "T14"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h11",
+      "h10",
+      "h9",
+      "h8",
+      "h5"
+     ],
+     "rank": 3,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h11",
+        "h10",
+        "h9"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h5",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h22",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h8",
+        "h5"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x196",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-058",
+     "gold_rid": "h7",
+     "key": "late_seating[R96]",
+     "anomalies": [
+      "D14"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h7",
+      "h5",
+      "h16",
+      "h14",
+      "h1"
+     ],
+     "rank": 1,
+     "n_path_objects": 5,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h7",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h7",
+        "h5",
+        "h16"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h0",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h14",
+        "h0",
+        "h1"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x439",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "travel-s32-test-059",
+     "gold_rid": "h19",
+     "key": "late_seating[R41]",
+     "anomalies": [
+      "D18"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h19",
+      "h16",
+      "h9",
+      "h7",
+      "h3"
+     ],
+     "rank": 1,
+     "n_path_objects": 6,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h19",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h19",
+        "h16",
+        "h9"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h5",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h20",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h5",
+        "h3",
+        "h4"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    }
+   ],
+   "paired": {
+    "predicted_minus_random": {
+     "n": 45,
+     "mean": 0.5777777777777777,
+     "ci95": [
+      0.4,
+      0.7333333333333333
+     ]
+    },
+    "top3_minus_random3": {
+     "n": 45,
+     "mean": 0.7555555555555555,
+     "ci95": [
+      0.5555555555555556,
+      0.9111111111111111
+     ]
+    },
+    "predicted_minus_similar": {
+     "n": 45,
+     "mean": 0.6222222222222222,
+     "ci95": [
+      0.4888888888888889,
+      0.7555555555555555
+     ]
+    },
+    "predicted_minus_recency": {
+     "n": 45,
+     "mean": 0.5777777777777777,
+     "ci95": [
+      0.4222222222222222,
+      0.7111111111111111
+     ]
+    }
+   }
+  },
+  "shopping32/seed30": {
+   "summary": {
+    "n": 5,
+    "precision_at_1": 0.2,
+    "precision_at_3": 0.4,
+    "mrr": 0.3,
+    "restore_predicted": 0.2,
+    "restore_predicted_top3": 0.4,
+    "restore_matched_random": 0.0,
+    "restore_matched_random3": 0.2,
+    "restore_similar_non_ancestor": 0.0,
+    "restore_recency": 0.0,
+    "episodes": 43,
+    "no_corruption": 24,
+    "clean_plan_wrong": 12,
+    "no_incident": 2,
+    "incidents": 5,
+    "graph_sha": "c2812448af5ac3fc",
+    "fit_seconds": 633.8416619300842
+   },
+   "rows": [
+    {
+     "episode": "shopping32-s30-test-002",
+     "gold_rid": "h9",
+     "key": "compat[camera|lens]",
+     "anomalies": [
+      "L40"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h14",
+      "h13",
+      "x455",
+      "h10",
+      "h6"
+     ],
+     "rank": null,
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h14",
+        "h13",
+        "x455"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h0",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h10",
+        "h6",
+        "h0"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x461",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s30-test-047",
+     "gold_rid": "h20",
+     "key": "auto_promo[global]",
+     "anomalies": [
+      "PR38"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h20",
+      "h19",
+      "h8",
+      "h23",
+      "h22"
+     ],
+     "rank": 1,
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h20",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h20",
+        "h19",
+        "h8"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h16",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h23",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h12",
+        "h22",
+        "h18"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x466",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s30-test-048",
+     "gold_rid": "h5",
+     "key": "compat[printer|cartridge]",
+     "anomalies": [
+      "L33"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h8",
+      "h6",
+      "x488",
+      "x486",
+      "x299"
+     ],
+     "rank": null,
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h8",
+        "h6",
+        "x488"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x486",
+        "x299",
+        "h10"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x310",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s30-test-052",
+     "gold_rid": "h0",
+     "key": "compat[phone|case]",
+     "anomalies": [
+      "L27",
+      "L96"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h2",
+      "h0",
+      "x305",
+      "x292",
+      "x290"
+     ],
+     "rank": 2,
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h2",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h2",
+        "h0",
+        "x305"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h12",
+        "x482",
+        "h14"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x264",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s30-test-053",
+     "gold_rid": "h0",
+     "key": "compat[camera|lens]",
+     "anomalies": [
+      "L46",
+      "L88"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x426",
+      "x419",
+      "x417",
+      "x414",
+      "x411"
+     ],
+     "rank": null,
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x426",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x426",
+        "x419",
+        "x417"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "x417",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h0",
+        "x482",
+        "x475"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x401",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    }
+   ],
+   "paired": {
+    "predicted_minus_random": {
+     "n": 5,
+     "mean": 0.2,
+     "ci95": [
+      0.0,
+      0.6
+     ]
+    },
+    "top3_minus_random3": {
+     "n": 5,
+     "mean": 0.2,
+     "ci95": [
+      -0.4,
+      0.8
+     ]
+    },
+    "predicted_minus_similar": {
+     "n": 5,
+     "mean": 0.2,
+     "ci95": [
+      0.0,
+      0.6
+     ]
+    },
+    "predicted_minus_recency": {
+     "n": 5,
+     "mean": 0.2,
+     "ci95": [
+      0.0,
+      0.6
+     ]
+    }
+   }
+  },
+  "shopping32/seed31": {
+   "summary": {
+    "n": 5,
+    "precision_at_1": 0.0,
+    "precision_at_3": 0.0,
+    "mrr": 0.0,
+    "restore_predicted": 0.0,
+    "restore_predicted_top3": 0.0,
+    "restore_matched_random": 0.0,
+    "restore_matched_random3": 0.0,
+    "restore_similar_non_ancestor": 0.0,
+    "restore_recency": 0.2,
+    "episodes": 47,
+    "no_corruption": 8,
+    "clean_plan_wrong": 34,
+    "no_incident": 0,
+    "incidents": 5,
+    "graph_sha": "82b5a050d518f167",
+    "fit_seconds": 395.2126557826996
+   },
+   "rows": [
+    {
+     "episode": "shopping32-s31-test-013",
+     "gold_rid": "h2",
+     "key": "compat[printer|cartridge]",
+     "anomalies": [
+      "L96"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x494",
+      "x490",
+      "x489",
+      "x486",
+      "x115"
+     ],
+     "rank": null,
+     "n_path_objects": 11,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x494",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x494",
+        "x490",
+        "x489"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h3",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h4",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h3",
+        "x115",
+        "x488"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x493",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s31-test-031",
+     "gold_rid": "h8",
+     "key": "compat[camera|bag]",
+     "anomalies": [
+      "L86"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x462",
+      "x460",
+      "x393",
+      "x391",
+      "x258"
+     ],
+     "rank": null,
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x462",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x462",
+        "x460",
+        "x393"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x391",
+        "h14",
+        "x258"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x420",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s31-test-036",
+     "gold_rid": "h7",
+     "key": "compat[printer|cartridge]",
+     "anomalies": [
+      "L22"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x487",
+      "x482",
+      "x480",
+      "x281",
+      "h10"
+     ],
+     "rank": null,
+     "n_path_objects": 11,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x487",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x487",
+        "x482",
+        "x480"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x458",
+        "h10",
+        "x281"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x485",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s31-test-050",
+     "gold_rid": "h7",
+     "key": "compat[phone|case]",
+     "anomalies": [
+      "L43"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x448",
+      "x447",
+      "x384",
+      "x381",
+      "x281"
+     ],
+     "rank": null,
+     "n_path_objects": 11,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x448",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x448",
+        "x447",
+        "x384"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "x447",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x484",
+        "x455",
+        "x381"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x421",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s31-test-051",
+     "gold_rid": "h11",
+     "key": "compat[camera|bag]",
+     "anomalies": [
+      "L92"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h8",
+      "h2",
+      "h0",
+      "x477",
+      "h10"
+     ],
+     "rank": null,
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h8",
+        "h2",
+        "h0"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h4",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h11",
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random3": {
+       "rid": [
+        "x477",
+        "h5",
+        "h10"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x420",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    }
+   ],
+   "paired": {
+    "predicted_minus_random": {
+     "n": 5,
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "top3_minus_random3": {
+     "n": 5,
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "predicted_minus_similar": {
+     "n": 5,
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "predicted_minus_recency": {
+     "n": 5,
+     "mean": -0.2,
+     "ci95": [
+      -0.6,
+      0.0
+     ]
+    }
+   }
+  }
+ }
+}
