@@ -385,6 +385,34 @@ graph 选中，actor 因而拿到原本缺失的 policy 证据（B 型正确、C
 reads 仍在 native 的 1.25 倍以内（P1 成立）；P2 的"配对差绝对值 ≤ 0.05"在上方向不成立，原因如上，
 不是干扰记录压低了 graph。full / bm25 / recency 三臂不受此机制影响。
 
+
+### 3.5 复核发现的标注伪影与 v2 重跑（2026-09-18 深夜）
+
+复核 prompt 文本发现：增广后外来记录的 rid 带 `x` 前缀、segment 号从 1001 起，而真实记录是 `h` 前缀、
+segment 0–8。这在 prompt 里把干扰记录标了出来，而且 segment 号与时间顺序相反（外来 segment 排在前面却号更大）。
+检查 travel_500 的 full/verbose 回复：63 个 cell 中只有 4 个引用了 `x` 记录、0 个引用 `seg1xxx`，说明 actor 基本
+没有利用这个标记；但它仍是审稿人可见的混杂。修正（`1e8cbff`）：验证通过后把全部记录按历史顺序统一重编号为
+`h0..hN`、segment 号顺序递增，required reads 同步映射；确定性方法不受影响（重编号后 graph / graph_select /
+bm25_k16 的 dev 结果与之前逐位一致）。
+
+v2 重跑（`results/real/hm3/scaling_v2/`）：Travel 与 Shopping32 的 100/500 档，cells graph_closed/compact、
+full/verbose（独立 `shards_v` 目录）、full/compact（仅 100 档）、bm25_k16/compact、recency_k16/compact；
+native 档不受影响，沿用 §3.3。v1 表保留为"带标注伪影的首轮"。
+
+### 3.6 针对 native 差距的 selection 修订：graph_seg
+
+round 3/4 与本轮 natsel 分析都指向同一件事：actor 拿到的 witness 越完整越好。`graph_seg` = graph_closed 的
+读取集合 ∪ 每条被选 witness 所在的整个 segment（产生该 witness 的 intervention 记录与其后全部效果记录）∪
+这些记录 referent 的 1-hop closure。dev seed 0 的一个 episode：graph_closed 6 条记录 / 14 个对象，graph_seg
+11 / 17，prompt 3.4k → 4.0k 字符。在 Travel native（compact + verbose）与 500 档（compact）上运行，
+预测：native 档相对 full/verbose 的差距缩小，500 档仍远高于 full。
+
+### 3.7 actor 层的 provenance 干预验证（`code/hm3/provenance_llm.py`）
+
+对 provenance v2 在 test seed 30 复现的每个事件，actor（graph_closed/compact）分别在污染历史、top-3 记录替换
+为干净版本、matched random-3 替换三种历史上各调用一次，报告三臂 EES 与配对差。这把"替换定位到的记录后错误
+消失"从确定性执行器推进到真实 actor。运行中，预算 $6。
+
 ## 4. backward provenance（dev，seeds 0/1/2，各 60 episode）
 
 smoke（seed 0，40 episode，实现修订前）：Travel 31 个事件，p@1 0.39、p@3 0.84、MRR 0.62；
