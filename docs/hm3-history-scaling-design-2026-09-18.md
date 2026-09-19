@@ -87,3 +87,18 @@ API（与 round 3/4 可比）：
 
 - 与 round 3/4 相比只改历史长度；selector、prompt、模型家族相同。
 - 反向 provenance 在独立设计页（`docs/hm3-provenance-design-2026-09-18.md`）。
+
+## 9. dev 校准修订（2026-09-18，test seeds 生成之前；理由如实记录）
+
+1. **外来 segment 的位置。** 初版把全部外来 segment 放在真实历史之前，导致 recency-K 在 500 条时
+   仍以 1.0 recall 命中全部必需记录（真实 witness 永远在末尾），失去作为 fixed-K 对照的意义。
+   修订：对每个外来 segment 单独用 parser 判断它是否为任何被 consult 的 key 产生 witness；
+   产生者放在真实历史之前，不产生者在真实 segment 之间随机位置插入（不插在最后一个真实 segment
+   之后）。A 克隆一律最前。§6 的断言不变，仍由它保证 est / prov / required reads 不变。
+   dev seeds 0 的 20 个 episode 上：Travel 四档丢弃率 0；Shopping 500 档 5%（其余 0）。
+2. **每个外来世界最多 8 个 segment。** 否则 500 条记录只来自 3 个外来世界，对象数不随长度增长。
+   修订后 Travel 500 档约 620 个对象、100 档约 145 个；Shopping 500 档约 265 个。
+3. **断言失败重试 5 次**（原 3 次）。
+4. A 的"隐含值不同于真值"比例：Travel 约 55%（37/67 keys），Shopping 约 5%（3/62）。Shopping 的
+   compat witness 需要替换后的 accessory 属性与 base 匹配，重新链接后的克隆很少满足，因此
+   A 在 Shopping 中主要是同对象的冗余旧记录而不是冲突记录。如实报告，不改构造。
