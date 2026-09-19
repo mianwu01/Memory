@@ -23,15 +23,27 @@ Same executor, only the read set changes. EES = executable exact success.
 | graph_select (learned skeleton) | 1.000 | 1.000 | 1.000 | 1.000 | 12.4 |
 | wrong_select 1 / 2 / 3 (re-wired skeletons) | 0.43 / 0.04 / 0.04 | same | same | same | 5.9 / 2.2 / 2.8 |
 | bm25_k16 | 0.90 | 0.32 | 0.04 | 0.04 | 21.2 |
-| recency_k16 | 0.94 | 0.71 | 0.48 | 0.37 | 21.3 |
-| learned graph (gated decisions) | 0.83 | 0.81 | 0.81 | 0.80 | 12.3 |
-| program_reg (reads everything) | 0.68 | 0.64 | 0.67 | 0.68 | 1125 |
-| knn (reads everything) | 0.32 | 0.33 | 0.29 | 0.37 | 1125 |
+| retrieval_k16 (lexical overlap) | 0.90 | 0.27 | 0.04 | 0.04 | 21.2 |
+| recency_k16 | 0.94 | 0.71 | 0.47 | 0.32 | 21.3 |
+| learned graph (gated decisions) | 0.87 ± 0.06 | 0.84 | 0.84 | 0.85 | 12.3 |
+| program_reg (reads everything) | 0.68 | 0.66 | 0.68 | 0.68 | 1125 |
+| knn (reads everything) | 0.32 | 0.39 | 0.33 | 0.32 | 1125 |
+| source_regime / exact_kv lookups | 0.04 / 0.00 | same | same | same | 3.5 / 1 |
 
-Preregistered predictions P1 (flat graph reads), P2 (stable graph EES), P3 (fixed-K retrieval loses
-required records: recall 0.97 → 0.63), P4 (full-history readers grow linearly) all hold. The
-selection ladder is three-seed with sd ≤ 0.05 except wrong_select_1 (0.26, seed-dependent re-wiring).
+All rows are three dev seeds (0/1/2), 60 episodes each. Preregistered predictions P1 (flat graph reads:
+11.4 → 12.3), P2 (stable graph EES: 0.87 → 0.85), P3 (fixed-K retrieval loses required records: recall
+0.97 → 0.64), P4 (full-history readers grow linearly: 53 → 1125 reads) all hold. Single-type conditions:
+conflicting witnesses (c100) are the only type that moves the learned graph (0.83); sd ≤ 0.06 except
+wrong_select_1 (0.26, seed-dependent re-wiring).
 Shopping and the test-seed panels are being completed by the second session.
+
+## Structure learning (E0 v2, controlled, five seeds × three noise levels)
+
+`results/e0v2/summary.md` (second session, completed 2026-09-18 20:22): regime-conditioned estimation
+recovers the gated read edges in 5/5 seeds at every noise level (C1 PASS); no pooled or additive arm reaches
+the bar in any seed (C2 PASS); every shuffled-regime control fails (C3 PASS); the honest baselines that also
+pass are the per-regime fits and the HC0 interaction model (C4), i.e. what is needed is conditioning on the
+access regime, not the specific estimator. E0a verdict: PASS.
 
 ## Layer 2 — real actor (DeepSeek-V4-Flash, thinking off, prompt v2, test seed 30, 63–64 episodes)
 
