@@ -29,7 +29,8 @@ from .provenance import (_run, anomalous_objects, baseline_rankings, controls, c
 
 
 def run(domain_name: str, seed: int, n_eval: int, out_dir: Path, model: str, budget_usd: float,
-        n_train: int = 200, train_seed_offset: int = 100, dry_run: bool = False):
+        n_train: int = 200, train_seed_offset: int = 100, dry_run: bool = False,
+        selection: str = "graph_seg", serialization: str = "verbose"):
     out_dir.mkdir(parents=True, exist_ok=True)
     domain = get_domain(domain_name)
     train = generate_split(domain, seed + train_seed_offset, "train", n_train)
@@ -49,7 +50,7 @@ def run(domain_name: str, seed: int, n_eval: int, out_dir: Path, model: str, bud
                 done.add(r["cell"]); spent += r["cost"]
     client = None if dry_run else Client(model)
     json.dump({"domain": domain_name, "seed": seed, "n_eval": n_eval, "model": model, "graph_sha": sha,
-               "arms": ["corrupted", "top3_replaced", "random3_replaced"], "selection": "graph_closed/compact",
+               "arms": ["clean", "corrupted", "top3_replaced", "random3_replaced"], "selection": f"{selection}/{serialization}",
                "prompt_version": llm_mod.PROMPT_VERSION, "budget_usd": budget_usd}, open(out_dir / "protocol.json", "w"), indent=1)
     n_inc = 0
     for ep in evals:
@@ -69,7 +70,7 @@ def run(domain_name: str, seed: int, n_eval: int, out_dir: Path, model: str, bud
         ranked = trace_loo(domain, g, bad, anomalies, structural, bad_txns)
         ctrl = controls(bad, bad_reads, ranked, path_objs, rng)
         _ = baseline_rankings(bad, anomalies)   # keeps the rng stream identical to provenance.run_domain
-        arms = {"corrupted": bad,
+        arms = {"clean": ep, "corrupted": bad,
                 "top3_replaced": replace_record(bad, ep, ranked[:3]),
                 "random3_replaced": replace_record(bad, ep, ctrl.get("matched_random3") or [])}
         for arm, epi in arms.items():
@@ -79,8 +80,8 @@ def run(domain_name: str, seed: int, n_eval: int, out_dir: Path, model: str, bud
             if spent >= budget_usd:
                 print(f"budget {budget_usd} reached at {spent:.3f}", flush=True)
                 return
-            sel = selector.select(domain, epi, "graph_closed")
-            messages = build_messages(domain, epi, sel, "compact")
+            sel = selector.select(domain, epi, selection)
+            messages = build_messages(domain, epi, sel, serialization)
             if dry_run:
                 rec = {"event": "cell", "cell": cell, "dry_run": True, "prompt_chars": sum(len(m["content"]) for m in messages)}
                 open(ledger, "a").write(json.dumps(rec) + "\n"); continue
@@ -118,15 +119,15 @@ def summarize(out_dir: Path) -> dict:
     by_arm = {}
     paired = []
     for e in eps:
-        arms = {a: cells.get(f"{r['cell'].split('/')[0]}/{e}/{a}") for r in cells.values() if r["episode"] == e for a in ("corrupted", "top3_replaced", "random3_replaced")}
+        arms = {a: cells.get(f"{r['cell'].split('/')[0]}/{e}/{a}") for r in cells.values() if r["episode"] == e for a in ("clean", "corrupted", "top3_replaced", "random3_replaced")}
         if all(arms.values()):
             paired.append({a: int(arms[a]["score"]["ees"]) for a in arms})
     out = {"n_paired": len(paired)}
     if paired:
-        for a in ("corrupted", "top3_replaced", "random3_replaced"):
+        for a in ("clean", "corrupted", "top3_replaced", "random3_replaced"):
             out[f"ees_{a}"] = float(np.mean([p[a] for p in paired]))
         rng = np.random.default_rng(0)
-        for a, b in (("top3_replaced", "corrupted"), ("top3_replaced", "random3_replaced")):
+        for a, b in (("top3_replaced", "corrupted"), ("top3_replaced", "random3_replaced"), ("clean", "corrupted"), ("top3_replaced", "clean")):
             d = np.array([p[a] - p[b] for p in paired], float)
             boots = [rng.choice(d, len(d)).mean() for _ in range(4000)]
             out[f"{a}_minus_{b}"] = {"mean": float(d.mean()), "ci95": [float(np.percentile(boots, 2.5)), float(np.percentile(boots, 97.5))]}
@@ -146,10 +147,13 @@ if __name__ == "__main__":
     ap.add_argument("--prompt", default="v2", choices=["v1", "v2"])
     ap.add_argument("--dry_run", action="store_true")
     ap.add_argument("--summarize", action="store_true")
+    ap.add_argument("--selection", default="graph_seg")
+    ap.add_argument("--serialization", default="verbose")
     a = ap.parse_args()
     llm_mod.PROMPT_VERSION = a.prompt
     if a.summarize:
         print(json.dumps(summarize(Path(a.out_dir)), indent=1))
     else:
         for d in a.domains:
-            run(d, a.seed, a.n_eval, Path(a.out_dir) / f"{d}_s{a.seed}", a.model, a.budget_usd, dry_run=a.dry_run)
+            run(d, a.seed, a.n_eval, Path(a.out_dir) / f"{d}_s{a.seed}", a.model, a.budget_usd, dry_run=a.dry_run,
+                selection=a.selection, serialization=a.serialization)
