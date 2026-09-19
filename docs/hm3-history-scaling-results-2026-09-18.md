@@ -425,6 +425,17 @@ selection 在此处付出 0.1–0.25 的 EES 换取 60–75% 的输入；历史�
 为干净版本、matched random-3 替换三种历史上各调用一次，报告三臂 EES 与配对差。这把"替换定位到的记录后错误
 消失"从确定性执行器推进到真实 actor。运行中，预算 $6。
 
+
+### 3.8 追加的 actor 层实验（2026-09-19 凌晨启动，`results/real/hm3/scaling_v2/`）
+
+1. **单类型干扰分解（Travel 100 条）**：`travel_a100 / b100 / c100 / d100`，cells graph_closed/compact 与
+   full/verbose。回答 full 的崩溃来自体积（D）、一致的重复 witness（B）、冲突 witness（C）还是同对象旧版本（A）。
+2. **program 选择臂**：`travel_native_prog`、`travel_500_prog`（program learner 的计划对象 + 1-hop + 其 segment），
+   与 graph_closed 在同一 actor 下比较，回应"为什么不是关系程序"。
+3. **第二个 test seed（31）**：`travel_native_s31`、`travel_500_s31`，cells graph_closed/compact、full/verbose、
+   bm25_k16/compact、recency_k16/compact，检验 seed 30 的结论在独立世界上是否复现。
+4. **actor 层 provenance 干预**（§3.7）中期：7 个配对事件，污染历史 EES 0.00，top-3 替换 0.29，random-3 替换 0.00。
+
 ## 4. backward provenance（dev，seeds 0/1/2，各 60 episode）
 
 smoke（seed 0，40 episode，实现修订前）：Travel 31 个事件，p@1 0.39、p@3 0.84、MRR 0.62；
