@@ -178,9 +178,13 @@ reading is robust to both; structure also yields intervention-validated provenan
 - Shopping three-seed deterministic panels: ladder done (graph_select 0.99 at all lengths, BM25 0.99 → 0.07), main
   panel being rerun with the augmentation fix; Travel test-seed panel 11/12 conditions done and consistent with dev
   (graph 0.88 → 0.89, BM25 0.92 → 0.03, recency 0.93 → 0.30).
-- Transfer to the original MemoryArena actor and the modern agent-memory systems (Mem0, A-Mem, LightMem): not run
-  (A-Mem installed, LightMem source-only, no embeddings endpoint for Mem0/dense). Present as future work or as a
-  small appendix if time permits.
+- Modern agent-memory systems: **A-Mem is running now** as a read-budget-matched selector arm on Travel and
+  Shopping at native and 100 records (each history record written as a note with A-Mem's own LLM note construction
+  and evolution, top-16 by its embedding search, same actor prompt as the other fixed-K arms, write-side LLM tokens
+  reported separately). LightMem is deferred: its pipeline rewrites records into extracted facts, so retrieved
+  items cannot be mapped back to record ids for a matched arm without a design decision. Mem0 and dense retrieval
+  are not run (no embeddings endpoint; a local embedder now works, so both are possible later). Transfer to the
+  original MemoryArena actor: not run.
 - Search and Formal history scaling: not run (Travel and Shopping only).
 
 ## 5. Related work and limitations

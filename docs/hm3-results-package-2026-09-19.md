@@ -143,5 +143,7 @@ it lexically but replacing it restores ≤ 0.08. Reported as a boundary.
   evaluation-side effect on c100 remains and is reported.
 - Assumption stated precisely: the current world's own witnesses are the most recent for the keys the task
   consults; for unconsulted keys foreign witnesses can be the latest.
-- Mem0 / dense not run (no embeddings endpoint; user decision). A-Mem installed, LightMem source-only
-  (Python < 3.12 required); both belong to the MemoryArena layer.
+- A-Mem is running as a read-budget-matched selector arm (Travel and Shopping, native and 100 records; own LLM
+  note construction, top-16 embedding search, same actor prompt; write tokens reported). LightMem deferred (its
+  extracted facts do not map back to record ids). Mem0 / dense not run (no embeddings endpoint; a local embedder
+  now works). Transfer to the original MemoryArena actor: not run.

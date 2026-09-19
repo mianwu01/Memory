@@ -177,8 +177,10 @@ prompt 逐字相同（图只读约 6 条记录，top-3 被排除），所以它�
    graph 臂在长历史下自身分数上升，来自同实体额外 witness 被图选中（逐 episode 核实）；首版 wrong graph
    继承 superset 规则的失败、测的是缺失的门控模型，已换成 selection ladder；Shopping 增广曾丢弃 27% episode，
    已用 fallback 修到 0 并重跑。
-5. **未做**：Mem0 / dense（端点无 embedding，用户决定不做）；A-Mem 已装、LightMem 只能源码接入；MemoryArena
-   原 actor 上的移植（第三层）尚未开始。
+5. **现代 memory 系统对照**：A-Mem 正在以"读取预算匹配的选择臂"运行（Travel 与 Shopping，native 与 100 条：每条
+   历史记录按 A-Mem 自己的 LLM note 构造与 evolution 写入，query 用其 embedding 检索 top-16，交给同一 actor prompt，
+   写入侧 LLM token 单独报告）。LightMem 暂缓：它把记录改写成抽取事实，检索结果无法映射回记录 id。Mem0 / dense
+   未跑（端点无 embedding；本地 embedder 现已可用）。MemoryArena 原 actor 上的移植（第三层）尚未开始。
 
 ## 6. 会议上建议展示的顺序
 
