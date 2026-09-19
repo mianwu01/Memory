@@ -187,6 +187,36 @@ reading is robust to both; structure also yields intervention-validated provenan
   original MemoryArena actor: not run.
 - Search and Formal history scaling: not run (Travel and Shopping only).
 
+
+### 4.8 Ablations: what is actually responsible for the gain — status: have (Travel actor unless noted)
+
+Each row changes one thing against the main comparison (graph_closed/compact vs full/verbose, 64 paired episodes).
+
+| variant | what it isolates | result |
+|---|---|---|
+| selector fitted only on native training data, evaluated on long histories | refitting the selector per condition | +0.27 at 100, +0.24 at 500 (main: +0.28, +0.24): the gain is not from refitting |
+| compact vs verbose serialization, same graph selection | serialization / compression | native −0.33 (compact) vs −0.19 (verbose); at 100/500 compact ≥ verbose: serialization moves native by 0.1 and does not create the long-history gain |
+| full history in compact vs verbose form | compression of the full context | +0.03 / +0.06 / −0.05 at native / 100 / 500: compressing full history does not rescue it |
+| whole-witness-segment selection (graph_seg) | closure / how much context around a witness | native gap narrows to −0.11 (verbose); 500 records unchanged (+0.25) |
+| three re-wired skeletons, same executor (deterministic ladder, three seeds) | topology vs any sparse structure | 0.43 / 0.04 / 0.04 vs 1.00 for the learned skeleton, at every length |
+| BM25-16, lexical-16, recency-16, same executor | retrieval instead of structure | 0.90 → 0.04, 0.90 → 0.04, 0.94 → 0.32 from native to 500 records |
+| relational program learner as the selector (actor) | graph vs another learned structure | native 0.20 vs 0.22; 500 records 0.27 vs 0.37 (−0.10 [−0.24, +0.05]) |
+| prompt v3: latest-record-wins rule stated to the actor | prompt design | full context stays at 0.08 on conflicting witnesses; 0.13 → 0.05 at 500 mixed |
+| single distractor types at 100 records | what makes long history hard | conflicting witnesses: full 0.08 vs graph 0.32; unrelated: 0.48 vs 0.27; duplicates 0.44 vs 0.35; stale 0.41 vs 0.36; unrelated at 500 records (240k tokens): 0.41 vs 0.33 |
+| gate fitted on native histories vs refitted per condition (deterministic) | training-side pollution of the gate | Travel 0.87 → 0.83 (native-fit) vs 0.87 → 0.85 (refit, on dev); Shopping refit collapses at 100 records (0.175 on seed 0) while native-fit stays 0.77–0.81 |
+| stronger backbone (DeepSeek-V4-Pro) | actor capacity | native −0.10 [−0.28, +0.08], 500 records +0.07 [−0.09, +0.22], full/verbose 0.38 → 0.17 |
+
+Reading for the paper: the gain survives freezing the selector, changing serialization, compressing full context, and stating the conflict rule; it disappears when the topology is re-wired or replaced by retrieval; it is produced by conflicting evidence, and a stronger actor shrinks both the native loss and the long-history gain.
+
+### 4.9 Case for the provenance figure — status: have
+
+`docs/hm3-case-travel-s30-2026-09-19.md`: the first incident on test seed 30 by the preregistered rule (episode
+travel-s30-test-000). The corrupted record is the provider's auto-rebook witness (`auto_rebook[P51]`); the auditor,
+given only the anomalous transfer object, ranks that record first; replacing it alone restores execution, while the
+matched random, most-similar non-ancestor and most-recent replacements do not. The document lists the full event
+history with the required witnesses marked, the clean and corrupted plans, the structural and leave-one-out rankings,
+the non-graph baselines' rankings on the same incident, and the actor-level arms.
+
 ## 5. Related work and limitations
 
 - Agent memory systems (retrieval, summaries, ledgers, Mem0/A-Mem/LightMem): store and retrieve content; no

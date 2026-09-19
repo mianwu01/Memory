@@ -32,6 +32,82 @@ logging.getLogger("chromadb").setLevel(logging.ERROR)
 logging.getLogger("agentic_memory").setLevel(logging.ERROR)
 
 WRITE_USAGE = {"calls": 0, "input_tokens": 0, "output_tokens": 0}
+_ACCOUNT = {"on": False}
+
+
+def _global_openai_patch():
+    """Every chat call from inside a memory system goes to the same endpoint with thinking
+    disabled, and its usage is accumulated while _ACCOUNT['on'] is set."""
+    from openai.resources.chat import completions as oc
+    if getattr(oc.Completions, "_hm3_patched", False):
+        return
+    orig = oc.Completions.create
+
+    def create(self, *args, **kwargs):
+        eb = dict(kwargs.get("extra_body") or {})
+        eb.setdefault("thinking", {"type": "disabled"}); eb.setdefault("reasoning_effort", "none")
+        kwargs["extra_body"] = eb
+        r = orig(self, *args, **kwargs)
+        if _ACCOUNT["on"] and getattr(r, "usage", None) is not None:
+            WRITE_USAGE["calls"] += 1
+            WRITE_USAGE["input_tokens"] += int(r.usage.prompt_tokens or 0)
+            WRITE_USAGE["output_tokens"] += int(r.usage.completion_tokens or 0)
+        return r
+
+    oc.Completions.create = create
+    oc.Completions._hm3_patched = True
+
+
+RID_RE = __import__("re").compile(r"\bh\d+\b")
+
+
+def _closure(ep, rids: List[str]) -> dict:
+    src = ep.I["object_id"]
+    rs = set(rids)
+    referents = {r["object_id"] for r in ep.H if r["rid"] in rs and r["object_id"] in ep.S0.objects}
+    closure = set(referents) | {src}
+    for oid in list(referents) + [src]:
+        for targets in ep.S0.get(oid).links.values():
+            closure.update(t for t in targets if t in ep.S0.objects)
+    order = {r["rid"]: i for i, r in enumerate(ep.H)}
+    return {"objects": sorted(closure), "records": sorted(rs, key=lambda r: order[r])}
+
+
+def mem0_select(domain, ep, k: int, model: str) -> dict:
+    """Mem0 OSS: each record added as a user message with fact extraction (infer=True), then
+    search; record ids are recovered from the memory texts (the note text starts with the id)."""
+    from mem0 import Memory
+    before = dict(WRITE_USAGE)
+    t0 = time.time()
+    cfg = {"llm": {"provider": "openai", "config": {"model": model, "temperature": 0.0, "max_tokens": 1000,
+                                                     "api_key": os.environ["OPENAI_API_KEY"],
+                                                     "openai_base_url": os.environ.get("OPENAI_BASE_URL")}},
+           "embedder": {"provider": "huggingface", "config": {"model": "all-MiniLM-L6-v2", "embedding_dims": 384}},
+           "vector_store": {"provider": "qdrant", "config": {"collection_name": "hm3_" + ep.id.replace("-", "_"),
+                                                             "embedding_model_dims": 384, "on_disk": False}}}
+    _ACCOUNT["on"] = True
+    try:
+        mem = Memory.from_config(cfg)
+        uid = ep.id
+        for r in ep.H:
+            mem.add(messages=[{"role": "user", "content": record_text(r)}], user_id=uid, infer=True)
+        res = mem.search(query_text(ep), filters={"user_id": uid}, limit=k)
+    finally:
+        _ACCOUNT["on"] = False
+    items = res.get("results", res) if isinstance(res, dict) else res
+    texts = [it.get("memory", "") for it in items]
+    valid = {r["rid"] for r in ep.H}
+    rids: List[str] = []
+    for t in texts:
+        for m in RID_RE.findall(t):
+            if m in valid and m not in rids:
+                rids.append(m)
+    rids = rids[:k]
+    sel = _closure(ep, rids)
+    cost = {kk: WRITE_USAGE[kk] - before[kk] for kk in WRITE_USAGE}
+    cost.update({"seconds": time.time() - t0, "n_notes": len(ep.H), "n_retrieved_items": len(texts),
+                 "n_recovered_ids": len(rids), "sample_items": texts[:3]})
+    return sel, cost
 
 
 def _patch_amem_controller(model: str):
@@ -122,10 +198,14 @@ def run(system: str, domain_name: str, seed: int, n_eval: int, ep_start: int, ep
                "serialization": serialization, "prompt_version": llm_mod.PROMPT_VERSION, "budget_usd": budget_usd,
                "write_llm": "same endpoint and model, thinking disabled; write tokens recorded per cell"},
               open(out_dir / "llm_protocol.json", "w"), indent=1)
+    _global_openai_patch()
     if system == "amem":
         _patch_amem_controller(model)
+    elif system == "mem0":
+        pass
     else:
         raise SystemExit(f"unknown system {system}")
+    select_fn = {"amem": amem_select, "mem0": mem0_select}[system]
     client = Client(model)
     sel_name = f"{system}_k{k}"
     for ep in evals:
@@ -135,7 +215,7 @@ def run(system: str, domain_name: str, seed: int, n_eval: int, ep_start: int, ep
         if spent >= budget_usd:
             print(f"budget {budget_usd} reached at {spent:.3f}", flush=True); return
         try:
-            sel, wcost = amem_select(domain, ep, k, model)
+            sel, wcost = select_fn(domain, ep, k, model)
         except Exception as exc:
             open(ledger, "a").write(json.dumps({"event": "infrastructure_failure", "cell": cell, "stage": "write", "error": f"{type(exc).__name__}: {str(exc)[:200]}"}) + "\n")
             print(f"{cell:48s} WRITE FAILURE {type(exc).__name__}", flush=True); continue
