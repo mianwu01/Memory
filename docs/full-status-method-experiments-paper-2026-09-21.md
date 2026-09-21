@@ -30,6 +30,38 @@ claims below.
 The remainder documents the earlier campaign and contains superseded interpretations;
 it must not be copied into a submission without the corrections above.
 
+## Reconciliation (2026-09-22, after merging the Codex audit branch): the active claim set
+
+Both records stand: §4 below is the run log of the read-intervention campaign with its tables frozen at full n
+(§4.9); the audit above and `yujia-alignment-results-2026-09-21.md` are the attribution controls that bound what
+those tables mean. The paper drafts (`paper-draft-method-2026-09-21.md`, `paper-draft-experiments-2026-09-20.md`)
+were rewritten on 9/22 under the audit's rules. What is claimed now:
+
+1. **Read interventions identify what a fixed policy depends on.** Randomised read gates plus PCMCI+ (G²) recover a
+   correct outcome-parent set in 11/12 fresh episodes at 3.8 records (audit §2B); adaptive deletion gives 2–3 records
+   in 14–28 measured replays (§4.1–4.2). Costs are reported as measured; the O(k log n) bound is withdrawn.
+2. **On HM3, discovery adds nothing to selection over the given instance links and the parser.** The complete-type-
+   graph control selects the same records as every recovered graph in 1,531/1,531 evaluations. Forward gains are
+   attributed to "instance links + parser" (graph_seg) or to the replay-fitted parser-free selector, never to
+   discovered type edges. Observation 1 replaces Proposition 1; the faithfulness failure is an instance, not a theorem.
+3. **Forward gains that survive the attribution rule (v1, three test seeds, full n):** links+parser − full history
+   +0.13 / +0.16 / +0.21 at 100 / c100 / 500 records; replay-fitted parser-free − full +0.11 under conflicting
+   witnesses, parity elsewhere, 0.03–0.17 below links+parser. Prompt v2 rows (+0.35 to +0.37) are reported with their
+   cap-hit rates (63–73 % of full-history cells truncated) and are not headlines; Shopping v2 +0.25 likewise.
+4. **Backward:** localisation by replay in a median of 1–2 replays with the parser-assisted structural prior
+   (stated as such) against 8–18 without it; parser-based provenance top-3 0.91–1.00 on Travel; Shopping fails the
+   parser-based test and passes localisation by replay.
+5. **The frontier is policy-specific** (actor vs executor overlap 0.26–0.48; the actor keys on the stay's own
+   transaction in 0.84 of episodes, the executor in 0.03).
+6. **Boundaries added by the audit:** on MemoryArena Progressive Search the actor fails the qualification gate
+   (15/30), PCMCI on the memory trajectories yields only self-loops, the discovered graph selects the same inputs as
+   an empty graph on 10/10 questions, and two source-reliance audits failed; on RoomEnv PCMCI-learned structure
+   matches full history under an 8-record budget and beats the complete graph by +5.4 pp on the small map only.
+   The "public task, original setting" question is therefore answered negatively for the current pipeline.
+
+Not decided by either session and left to Yujia: whether read interventions are the method or the validation
+instrument of the discovery pipeline. The drafts are written so that either reading works.
+
 给 Yujia / 组内的摘要（其余为英文，直接供论文用）：
 
 1. 9/20 会议的判断已执行：GRACE / PCMCI+ 跑同一批日志，恢复的图插进已有 pipeline，前向与后向数字与干预式骨架相同；CI 类方法在确定性写入上剪掉中介边、Shopping 上返回空图（这是 faithfulness 失效的实例）。交付页 `docs/yujia-causal-bridge-2026-09-20.md`。

@@ -1,9 +1,12 @@
 # 给 Yujia：方法重做后的一页（2026-09-22）
 
-> **状态修正：这是待论证的方法转向草案，不能视为 Yujia 已认可的新主线。**
-> 以下“观测分布不能识别”、通用 O(k log n)、Shopping v2 准确率及将
-> graph_seg 数字归给新方法的表述均暂停使用。最新定义与决定规则见
-> `structure-alignment-protocol-2026-09-21.md`；实际新增对照见 alignment 结果目录。
+> **状态（9/22 合并两路工作后）：** 本页的四条主张已按对齐审计（`yujia-alignment-results-2026-09-21.md`）
+> 收窄：(a) 在 HM3 上，任何恢复的类型图与"完整类型图 + 给定实例链接 + parser"选出相同记录（1,531/1,531），
+> 所以前向收益归于"链接 + parser"或重放拟合的 parser-free 选择器，不归于发现的边；(b) O(k log n) 撤回，只报实测
+> 重放次数；(c) 命题 1 降为 Observation 1（faithfulness 失效的一个实例）；(d) v2 prompt 的行附带截断率，不作标题；
+> (e) 随机读取门 + PCMCI（G²）在 12 个新 episode 上 11/12 选出正确父集合，这是"用成熟算法做干预式发现"的版本；
+> (f) 原生任务 Progressive Search 上 actor 资格未过、发现图与空图同输入、来源审计失败，作为边界如实报。
+> 读取干预是方法主体还是发现流程的验证工具，由你定；两份草稿按两种读法都能成立来写。
 
 上一页（`docs/yujia-causal-bridge-2026-09-20.md`）回答了"结构能否由成熟的 causal discovery 得到"。这一页回答审稿人会问的下一个问题："方法是什么，'causal' 落在哪里"。
 
@@ -21,7 +24,7 @@
 
 ## 四条主张与数字
 
-**1. 读取干预识别结构，观测检验不能。** 执行器 frontier 2–3 条记录，14 次重放（18 条候选）；类型投影对干预式骨架 precision 1.0（缺的一条边是没有隐藏策略、无需读取的 stay→activity）。同一批日志上 PCMCI+ recall 0.4、Shopping 上空图。**LLM 自己的重放**（多数票 k=3，187 个 episode，两种 prompt）恢复同样四条边，precision 1.0；LLM 的 frontier 与执行器只重叠 0.26–0.48——LLM 靠 stay 自己的 txn 记录（0.84 个/episode）而执行器靠 flight 干预记录（0.03）。frontier 是 actor-specific 的（图 `frontier_composition.pdf`）。
+**1. 读取干预识别策略依赖的记录；观测检验在这批日志上剪掉中介边。** 执行器 frontier 2–3 条记录，14 次重放（18 条候选）；类型投影对干预式骨架 precision 1.0（缺的一条边是没有隐藏策略、无需读取的 stay→activity）。同一批日志上 PCMCI+ recall 0.4、Shopping 上空图。**LLM 自己的重放**（多数票 k=3，187 个 episode，两种 prompt）恢复同样四条边，precision 1.0；LLM 的 frontier 与执行器只重叠 0.26–0.48——LLM 靠 stay 自己的 txn 记录（0.84 个/episode）而执行器靠 flight 干预记录（0.03）。frontier 是 actor-specific 的（图 `frontier_composition.pdf`）。
 
 **2. 读 frontier 让记忆随历史不增长，并抵御冲突证据。** 重放次数 15 → 22 → 27（18 → 100 → 500 条），frontier 大小 2.7 → 3.0 不变（dev 与 test seeds 一致，图 `replay_length.pdf`）。三个 test seed 的 actor 面板（v1，n = 190–192）：结构 − 全历史 +0.13 [+0.04, +0.21] / +0.16 [+0.08, +0.24] / +0.21 [+0.14, +0.29]（100 / 冲突 100 / 500），每个 seed 同号；token 4k 对 27k–123k。v2 prompt 三 seed 复制（9/22 完成）：+0.37 [+0.29, +0.46] / +0.35 [+0.27, +0.43]（冲突 100 / 500，n = 190），每个 seed 同号。parser-free 的重放拟合选择器 − 全历史：v1 冲突下 +0.11 [+0.04, +0.18]，其余持平；v2 下 +0.24 [+0.15, +0.33] / +0.16 [+0.08, +0.24]（冲突 100 / 500，seeds 31/32），但比 parser 版低 0.15–0.21；Shopping 上它是三臂中最好的（500 条：比全历史 +0.25 [+0.11, +0.39]，v2），把 Shopping 从"只有成本主张"变成准确率主张。
 

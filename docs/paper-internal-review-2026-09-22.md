@@ -50,3 +50,25 @@ experiments numbering (§5.2 identification, §5.3 forward, §5.4 backward, §5.
 12. **Style.** The drafts avoid the "X, not Y" construction except in three places: §5.2 ("in the affected set and
     not in the read frontier"; "rests on the intervention and not on the estimator") and §5.4 ("a boundary for the
     parser, not for the primitive"). Each carries content; rephrase at the writer's call.
+
+## Reconciliation with the Codex audit branch (merged 2026-09-22, commit 0723691)
+
+13. **Attribution.** The complete-type-graph control (1,531/1,531 identical inputs) means no forward result may be
+    attributed to discovered type edges. Both drafts now say "instance links + parser" for graph_seg/graph_select
+    and report the control in §5.2. The re-wired-skeleton ablation is kept as a topology check, not as evidence that
+    discovery helps.
+14. **Withdrawn statements.** Proposition 1 → Observation 1; the O(|F| log n) bound → measured counts; "exact for
+    the executor" → holds on HM3 because of the validator's witness layout; "frontier = skeleton" → precision-1.0
+    agreement of the type projection with the supervised template, with the mechanism reference (dinner → bundle)
+    named beside it.
+15. **Discovery step.** Randomised gates + PCMCI+ (G²) is presented as Procedure A (the established-algorithm
+    version); ddmin as Procedure B. The audit's 12-episode result is in §5.2; its spurious gate-to-gate edges (24 and
+    91) are stated.
+16. **v2 rows.** Kept with cap-hit rates in the table; the prose leads with v1. Shopping v2 +0.25 is no longer a
+    headline sentence.
+17. **New boundaries.** Progressive Search (actor gate 15/30, self-loop graph, discovered = empty on 10/10, source
+    audits failed), RoomEnv (learned = full under budget, +5.4 pp over complete on small only), component_key2 as a
+    non-discovery hand rule that beats the parser-free frontier on the executor at long histories.
+18. **Open for Yujia.** Method vs validation instrument; whether HM3 remains the carrier given item 13, or whether a
+    setting where learned dependencies distinguish valid from invalid read paths (the audit's decision rule) is
+    required before submission.

@@ -1,11 +1,12 @@
-# Paper draft — Method section (2026-09-21, for Yujia to cut)
+# Paper draft — Method section (2026-09-21; reconciled 2026-09-22 with the alignment audit; for Yujia to cut)
 
-Companion to `docs/paper-draft-experiments-2026-09-20.md` (experiments) and
-`docs/full-status-method-experiments-paper-2026-09-21.md` (status). Notation follows `causal_memory_formulation.tex`.
-Status after the alignment audit: this is an alternative read-intervention method,
-not an approved replacement for Yujia's requested structure-discovery pipeline.
-Empirical results must be attributed to the actual selector used. The protocol in
-`structure-alignment-protocol-2026-09-21.md` controls the active claim set.
+Companion to `docs/paper-draft-experiments-2026-09-20.md` (experiments), `docs/paper-draft-appendix-2026-09-22.md`
+and `docs/full-status-method-experiments-paper-2026-09-21.md` (status). Notation follows
+`causal_memory_formulation.tex`. Claim scope follows `docs/structure-alignment-protocol-2026-09-21.md`: given
+instance links are never called discovered; every empirical gain is attributed to the selector that produced it;
+mechanism and identifiability statements are limited to what is proved or measured. Whether this method replaces
+the observational discovery pipeline Yujia asked for on 9/20, or sits beside it as the interventional version of it,
+is her decision; the text is written so that either reading works.
 
 ## 3 Method: the memory frontier by read interventions
 
@@ -13,108 +14,110 @@ Empirical results must be attributed to the actual selector used. The protocol i
 
 An agent acts in episodes. In episode e it holds a history H = (m_1, …, m_n) of records written by earlier
 interventions and their consequences, observes the current state S_0 and a cue I (a change it must respond to), and
-emits a decision Y = π(S_0, I, R) where R ⊆ H is the set of records it reads. π is the policy: a deterministic executor
-in the controlled setting, a language model in the actor experiments. Correctness c(Y) ∈ {0,1} is scored against a
-reference (§5). The read set controls context visibility. A correctness-preserving
-subset for one episode is not automatically the distribution-level separating set
-in the causal-frontier lemma; redundancy, stochasticity and the conditioning set
-must be addressed before asserting an equivalence.
+emits a decision Y = π(S_0, I, R) where R ⊆ H is the set of records it reads. π is the policy: a deterministic
+executor in the controlled setting, a language model in the actor experiments. Correctness c(Y) ∈ {0,1} is scored
+against a reference (§5). In the formulation of §2, H holds the memory carriers and the read set R is the access
+regime at the decision step. A correctness-preserving subset for one episode is the object we identify; its relation
+to the distribution-level causal frontier of the lemma is stated in §3.6 and not assumed.
 
 ### 3.2 Reads are interventions
 
 The access regime is set by the memory system. At replay time it can be set freely: re-run π on the logged
-(S_0, I) with R = S for any S ⊆ H and score the result. This is the intervention do(g = 1_S) on the read gates, with
-an assignment chosen by the experimenter. Paired replays estimate effects of the
-specified visibility change on the fixed policy, provided the other inputs are
-held fixed and stochastic responses are sampled independently. They do not by
-themselves recover the write mechanism or hidden intent.
+(S_0, I) with R = S for any S ⊆ H and score the result. This is do(g = 1_S) on the read gates, with an assignment
+chosen by the experimenter and independent of everything in the log, so paired replays estimate the effect of a
+visibility change on the fixed policy's decision. They identify what the policy depends on among the visible records;
+they do not recover the process that wrote the records, and they do not recover hidden intent.
 
 **Definition 1 (sufficient, minimal, π-frontier).** S ⊆ H is *sufficient* for e if c(π(S_0, I, S)) = 1. It is
-*minimal* if no proper subset is sufficient. A minimal sufficient set is a *π-frontier* F^π_e.
+*minimal* if no proper subset is sufficient. A minimal sufficient set is a *π-frontier* F^π_e; it need not be unique.
 
 **Assumption 1 (monotone use).** If S is sufficient and S ⊆ T ⊆ H then T is sufficient.
 
-Assumption 1 must be checked, not inferred from deterministic execution: a later
-conflicting witness can overwrite the correct value without removing its key.
-Majority voting can reduce oracle noise; it does not repair non-monotonicity.
+Assumption 1 is a property of the policy and the data together. For the executor on HM3 it holds because the
+augmentation validator guarantees that the consulted witness is the latest record of its key, so adding records never
+overrides it; a later conflicting witness would break it. For a language model it is the statement that extra
+records do not hurt; its violation is measured in §5.5 with a voted oracle, and voting reduces oracle noise without
+repairing non-monotonicity.
 
-**Observation 1 (a deterministic-chain faithfulness failure).** For a chain
-a → b → c with w_b = f(w_a), w_c = g(w_b), both w_c ⟂ w_b | w_a and
-w_c ⟂ w_a | w_b hold. Thus this distribution can violate faithfulness to the
-chain. This is a standard counterexample, not a novel impossibility theorem for
-all observational estimators. It also does not prove that the current binary
-event indicators obey those exact functional equations. The observed PCMCI
-failures are empirical findings whose encoding and assumptions must be reported.
+**Observation 1 (a deterministic-chain faithfulness failure).** For a chain a → b → c with w_b = f(w_a) and
+w_c = g(w_b), both w_c ⟂ w_b | w_a and w_c ⟂ w_a | w_b hold, so the observational distribution can be unfaithful to
+the chain and a constraint-based test removes at least one of its edges. This is the standard counterexample, stated
+because §5.2 observes its pattern on the HM3 type-indicator logs (PCMCI+ keeps the chain head, routes the tail to the
+head at lag 2–3, and returns the empty graph on Shopping). It is not an impossibility result for observational
+estimators in general, and the binary write indicators do not literally obey these functional equations.
 
-**Algorithmic guarantee (exact deterministic oracle).** Starting from an accepted
-set, the implemented deletion algorithm terminates at an accepted 1-minimal set:
-no single record can be removed while preserving acceptance. Under monotonicity
-this also rules out every sufficient proper subset. It need not be the smallest
-cardinality set or a unique set. The previous general O(k log n) bound is
-withdrawn: a group-testing theorem does not establish that bound for this ddmin
-implementation with arbitrary or redundant sufficient sets. Report measured calls;
-the generic worst-case bound for this deletion procedure is quadratic. A noisy
-LLM needs fresh sufficiency and member-deletion validation before minimality is
-claimed.
+### 3.3 Discovery on interventional data
 
-Read interventions and observational structure discovery answer different
-questions. The former can validate a policy's reliance on visible records; the
-latter targets relations in the logged process. A failure of one CI estimator is
-not a reason to discard every observational approach.
+Two procedures produce a read set from replays. Both are run only on training episodes whose full read is correct;
+where the full read is wrong no sufficient set is defined by this algorithm (a coverage restriction, not an
+impossibility).
 
-### 3.3 Algorithm
+**Procedure A (randomised gates and an established discovery algorithm).** For a fixed episode and policy, draw T
+independent gate vectors g^(t) ∈ {0,1}^n, replay, and record c^(t). The trials form a panel (g^(t), c^(t+1)); run
+PCMCI+ (G² test) or GRACE on it and take the outcome's parent set as the read set. The gates are independent by
+construction, so the parents of c are the records whose visibility changes the decision, up to the test's power. The
+lag here is trial input to trial outcome, not the agent's own time axis; correctness labels come from the benchmark
+oracle at training time.
 
-**Algorithm 1 (discover).** For each training episode e with c(π_H) = 1: run `minimal_sufficient(H, S ↦ c(π_S))`
-(ddmin: try removing halves, then quarters, …; restart at the coarsest granularity after a success; stop when no
-single block can be removed). Output the accepted subset and replay count. It is
-1-minimal for an exact deterministic oracle and a minimal frontier only under
-the conditions stated above. For a language-model π the oracle is the majority
-of k calls at temperature 0 (k = 3 in the historical runs). Episodes with
-c(π_H) = 0 are skipped by this algorithm; under non-monotonicity a successful
-subset can still exist, so this is a coverage restriction, not impossibility.
+**Procedure B (adaptive deletion).** `minimal_sufficient(H, S ↦ c(π_S))` is ddmin: try removing halves, then
+quarters, …; restart at the coarsest granularity after a success; stop when no single block can be removed. With an
+exact oracle and a sufficient start it terminates at a 1-minimal sufficient set (no single record can be dropped);
+under Assumption 1 that set has no sufficient proper subset. It need not be the smallest or the unique such set. We
+report measured replay counts (14–28 per episode at 18–500 records, growing like log n in the data of §5.3); no
+general O(k log n) bound is claimed for this implementation, whose generic worst case is quadratic. For a
+language-model π the oracle is the majority of k = 3 calls at temperature 0.
 
-**Algorithm 2 (amortise).** Fit p_θ(m ∈ F | φ(m, e)) on the discovered sets, where φ is parser-free and readable
-from the record and the state: the typed path from the cue's object to the object the record's segment is keyed to;
-the record's kind and changed fields; the segment's signature (the multiset of kind:type:fields it contains); the
-relation of the record's object to the keyed object; the segment's recency among segments sharing its key, and among
-those sharing key and signature; the record's position in its segment. The projection of the positive anchor paths to
-type pairs is the predicted type-path template E_θ, not a demonstrated causal
-mechanism graph. At decision time, without replays: reach the objects from the
-cue's object over instance links whose type pair is in E_θ; read {m : p_θ ≥ τ} (record level) or the whole segment of
+Procedure A is the established-algorithm version and is what §5.2 reports as discovery; Procedure B is the cheaper
+deterministic alternative and the source of the frontier labels for the amortised selector.
+
+### 3.4 Amortise
+
+Fit p_θ(m ∈ F | φ(m, e)) on the discovered sets, where φ is parser-free and readable from the record and the state:
+the typed path from the cue's object to the object the record's segment is keyed to; the record's kind and changed
+fields; the segment's signature (the multiset of kind:type:fields it contains); the relation of the record's object to
+the keyed object; the segment's recency among segments sharing its key, and among those sharing key and signature; the
+record's position in its segment. The projection of the positive anchor paths to type pairs is a predicted type-path
+template E_θ; it is not a mechanism graph. At decision time, without replays: reach the objects from the cue's object
+over the *given* instance links whose type pair is in E_θ; read {m : p_θ ≥ τ} (record level) or the whole segment of
 any such record (segment level); show the reached objects, the read records' referents and their one-hop links.
 
-**Algorithm 3 (localise).** Given an anomalous decision on objects O in episode e with a suspect history H′, order
-candidate records by the structural trace (records keyed to objects on the typed paths from the cue to O, nearest
-first, most recent first) followed by history order; find by prefix doubling and binary search the shortest prefix
-whose replacement by its reference version restores the reference decision; return its last record.
-The logarithmic query bound requires a monotone restoration predicate. Interpreting
-that last record as the culprit additionally depends on the single-corruption setup;
-it is not a general guarantee for noisy policies or multiple interacting corruptions.
+### 3.5 Localise
 
-Both procedures use replay, but the historical localisation implementation uses
-the earlier parser-assisted structural trace as its ordering prior. Its result is
-not evidence that the replay-fitted selector learned that prior. Clean-reference
-replacement also requires a clean-reference/diff baseline.
+Given an anomalous decision on objects O in episode e with a suspect history H′, order candidate records by a prior
+(records keyed to objects on the typed paths from the cue to O, nearest first, most recent first; then history
+order); find by prefix doubling and binary search the shortest prefix whose replacement by its reference version
+restores the reference decision; return its last record. The logarithmic count holds when restoration is monotone in
+the prefix length, which is the single-corruption setting of §5.4; with several interacting corruptions the returned
+record is one cause among others. In the reported runs the prior is the parser-assisted structural trace, which is
+stated where the numbers are given; a clean-reference diff baseline is reported beside it.
 
-### 3.4 What is learned and what is assumed
+### 3.6 What is learned, what is assumed, and how gains are attributed
 
-- Learned from interventions the system performs: F^π_e per training episode (exact under Assumption 1), E_θ, p_θ.
-- Assumed: a replayable log (S_0, I, H per episode) and a correctness score for the replayed decision at training
-  time. Deployment needs neither: reads follow p_θ and E_θ.
-- Policy specificity: sufficient sets can differ across policies. Equality with a
-  world-model causal frontier has not been established. Executor-supervised gains
-  cannot be reported as gains from LLM-specific supervision.
-- Cost: report measured replay and selection costs. Prefix localisation is
-  logarithmic only when the restoration predicate is monotone in prefix length.
-- Failure modes stated: (i) noisy π makes the oracle noisy (vote; report disagreement); (ii) redundant witnesses make
-  the minimal set non-unique (p_θ pools over episodes; selection reads every high-probability record); (iii) p_θ can be
-  imprecise on histories built to contain same-key distractors (§5.3 reports the read/accuracy trade-off).
+- Learned from interventions the system performs: a sufficient read set per training episode (Procedure A or B), E_θ,
+  p_θ.
+- Assumed: a replayable log (S_0, I, H per episode) and a correctness score for replayed decisions at training time.
+  Deployment needs neither: reads follow p_θ and E_θ over the given links.
+- Never discovered: the instance links in S_0. Every selector in §5, including the parser-based one, reaches objects
+  over them. §5.2 therefore reports a complete-type-graph control: a selector that keeps the links and the parser and
+  drops the learned type filter. Where that control selects the same records, the gain is attributed to the links
+  and the parser, not to discovery.
+- Policy-specific: sufficient sets differ across policies (§5.5). Equality between the executor's frontier and the
+  world's causal frontier is checked, not assumed: the type projection of executor frontiers reproduces the
+  supervised template's edges at precision 1.0 (§5.2), where the template itself is a typed-path projection
+  (stay → bundle) and the simulator's mechanism has dinner → bundle; both references are reported.
+- Costs are measured: replays per training episode (§5.3), records and tokens read at decision time (§5.3),
+  replays per incident (§5.4).
+- Failure modes: (i) a noisy π makes the oracle noisy (vote; report disagreement); (ii) redundant witnesses make the
+  sufficient set non-unique (p_θ pools over episodes); (iii) p_θ is imprecise on histories built to contain same-key
+  distractors (§5.3); (iv) on a native task where the memory has no propagation structure the discovered graph
+  selects the same inputs as an empty one (§5.7).
 
-### 3.5 Relation to the controlled study and to the observational estimators
+### 3.7 Relation to the controlled study and to the observational estimators
 
-E0 evaluates regime-conditioned estimation under a controlled SCM. Conditioning
-and intervention are not generally equivalent operations; the HM3 event-kind
-encoding is also different from E0's access regime. GRACE and PCMCI remain
-candidate discovery components with explicitly reported assumptions and recovery
-metrics. Equivalence of their downstream selections is an interface observation;
-complete-type-graph controls determine whether the learned filtering contributes.
+The controlled study (E0) makes one point in a simulated SCM: conditioning on the access regime identifies the gated
+read edges where pooled estimators fail. Read interventions are the constructive form of that conditioning, with the
+regime chosen rather than observed, and Procedure A feeds the result to the same established algorithms. The
+observational estimators on the logs as written (pooled lagged regression, PCMCI+, GRACE over type write indicators)
+are kept as the comparison that Observation 1 anticipates; where their recovered graphs reach the same objects over
+the given links, the pipeline gives the same numbers, and the complete-graph control shows how much of that is the
+links.
