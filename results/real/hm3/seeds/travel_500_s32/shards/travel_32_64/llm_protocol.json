@@ -15,7 +15,7 @@
  "model": "deepseek-v4-flash",
  "n_train": 200,
  "train_seed_offset": 100,
- "budget_usd": 12.0,
+ "budget_usd": 100.0,
  "retry_policy": "one format-only repair; semantic failures terminal",
  "thinking": false,
  "prompt_version": "v1",

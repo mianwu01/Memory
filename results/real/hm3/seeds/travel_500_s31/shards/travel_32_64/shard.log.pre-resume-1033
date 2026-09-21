@@ -1,0 +1,143 @@
+selector fit frontier_exec on 200 episodes: 91.9s; ['flight->transfer', 'stay->bundle', 'stay->dinner', 'transfer->stay']
+travel/travel-s31-test-032/frontier_exec/verbose EES=0 legal=1 F1=0.67 in=27375 out=594 $0.074
+selector fit graph on 200 episodes: 1.1s
+travel/travel-s31-test-032/graph_seg/verbose     EES=1 legal=1 F1=1.00 in=2537 out=968 $0.090
+travel/travel-s31-test-032/full/verbose          EES=0 legal=1 F1=0.00 in=118368 out=168 $0.388
+travel/travel-s31-test-033/frontier_exec/verbose EES=0 legal=0 F1=0.67 in=17261 out=566 $0.437
+travel/travel-s31-test-033/graph_seg/verbose     EES=1 legal=1 F1=1.00 in=3787 out=672 $0.453
+travel/travel-s31-test-033/full/verbose          EES=0 legal=0 F1=0.80 in=255865 out=16521 $0.989
+travel/travel-s31-test-034/frontier_exec/verbose EES=0 legal=0 F1=0.50 in=9348 out=458 $1.017
+travel/travel-s31-test-034/graph_seg/verbose     EES=1 legal=1 F1=1.00 in=3358 out=451 $1.030
+travel/travel-s31-test-034/full/verbose          EES=0 legal=1 F1=0.50 in=121984 out=402 $1.339
+travel/travel-s31-test-035/frontier_exec/verbose EES=0 legal=0 F1=0.50 in=18289 out=807 $1.393
+travel/travel-s31-test-035/graph_seg/verbose     EES=0 legal=0 F1=0.50 in=2889 out=540 $1.405
+travel/travel-s31-test-035/full/verbose          EES=0 legal=0 F1=0.50 in=123606 out=898 $1.723
+travel/travel-s31-test-036/frontier_exec/verbose EES=0 legal=0 F1=0.67 in=15618 out=579 $1.768
+travel/travel-s31-test-036/graph_seg/verbose     EES=1 legal=1 F1=1.00 in=3104 out=440 $1.780
+travel/travel-s31-test-036/full/verbose          EES=0 legal=1 F1=0.67 in=126624 out=530 $2.102
+travel/travel-s31-test-037/frontier_exec/verbose EES=0 legal=0 F1=0.33 in=19567 out=672 $2.158
+travel/travel-s31-test-037/graph_seg/verbose     EES=0 legal=0 F1=0.40 in=4805 out=1204 $2.182
+travel/travel-s31-test-037/full/verbose          EES=0 legal=1 F1=0.67 in=267327 out=16492 $2.733
+travel/travel-s31-test-038/frontier_exec/verbose EES=0 legal=1 F1=1.00 in=12893 out=665 $2.772
+travel/travel-s31-test-038/graph_seg/verbose     EES=1 legal=1 F1=1.00 in=4246 out=628 $2.789
+travel/travel-s31-test-038/full/verbose          EES=0 legal=1 F1=0.86 in=121747 out=557 $3.099
+travel/travel-s31-test-039/frontier_exec/verbose EES=0 legal=1 F1=1.00 in=15882 out=2122 $3.160
+travel/travel-s31-test-039/graph_seg/verbose     EES=0 legal=1 F1=0.80 in=4122 out=511 $3.175
+travel/travel-s31-test-039/full/verbose          EES=0 legal=0 F1=0.86 in=123274 out=413 $3.488
+travel/travel-s31-test-040/frontier_exec/verbose EES=0 legal=1 F1=0.86 in=24003 out=586 $3.553
+travel/travel-s31-test-040/graph_seg/verbose     EES=0 legal=1 F1=0.67 in=3821 out=645 $3.569
+travel/travel-s31-test-040/full/verbose          EES=0 legal=1 F1=0.86 in=122942 out=691 $3.884
+travel/travel-s31-test-041/frontier_exec/verbose EES=1 legal=1 F1=1.00 in=8796 out=626 $3.912
+travel/travel-s31-test-041/graph_seg/verbose     EES=1 legal=1 F1=1.00 in=3814 out=495 $3.926
+travel/travel-s31-test-041/full/verbose          EES=0 legal=0 F1=0.67 in=117662 out=564 $4.226
+travel/travel-s31-test-042/frontier_exec/verbose EES=0 legal=1 F1=1.00 in=21954 out=594 $4.287
+travel/travel-s31-test-042/graph_seg/verbose     EES=0 legal=1 F1=0.80 in=4673 out=1374 $4.313
+travel/travel-s31-test-042/full/verbose          EES=0 legal=1 F1=1.00 in=119379 out=734 $4.618
+travel/travel-s31-test-043/frontier_exec/verbose EES=1 legal=1 F1=1.00 in=20164 out=555 $4.674
+travel/travel-s31-test-043/graph_seg/verbose     EES=0 legal=0 F1=0.86 in=5760 out=771 $4.696
+travel/travel-s31-test-043/full/verbose          EES=0 legal=1 F1=1.00 in=124616 out=1130 $5.019
+travel/travel-s31-test-044/frontier_exec/verbose EES=0 legal=1 F1=0.86 in=20860 out=694 $5.078
+travel/travel-s31-test-044/graph_seg/verbose     EES=1 legal=1 F1=1.00 in=3653 out=873 $5.096
+travel/travel-s31-test-044/full/verbose          EES=0 legal=1 F1=1.00 in=120227 out=1087 $5.408
+travel/travel-s31-test-045/frontier_exec/verbose EES=0 legal=1 F1=0.40 in=22319 out=478 $5.468
+travel/travel-s31-test-045/graph_seg/verbose     EES=1 legal=1 F1=1.00 in=4352 out=661 $5.486
+travel/travel-s31-test-045/full/verbose          EES=0 legal=1 F1=0.00 in=264411 out=16389 $6.034
+travel/travel-s31-test-046/frontier_exec/verbose EES=0 legal=0 F1=0.80 in=16779 out=723 $6.083
+travel/travel-s31-test-046/graph_seg/verbose     EES=1 legal=1 F1=1.00 in=3997 out=412 $6.097
+travel/travel-s31-test-046/full/verbose          EES=0 legal=0 F1=0.67 in=123385 out=657 $6.412
+travel/travel-s31-test-047/frontier_exec/verbose EES=0 legal=1 F1=0.80 in=10198 out=754 $6.445
+travel/travel-s31-test-047/graph_seg/verbose     EES=0 legal=1 F1=1.00 in=3361 out=583 $6.460
+travel/travel-s31-test-047/full/verbose          EES=0 legal=1 F1=0.00 in=261881 out=16389 $7.002
+travel/travel-s31-test-048/frontier_exec/verbose EES=0 legal=1 F1=1.00 in=15710 out=3101 $7.073
+travel/travel-s31-test-048/graph_seg/verbose     EES=0 legal=1 F1=0.80 in=3603 out=577 $7.087
+travel/travel-s31-test-048/full/verbose          EES=0 legal=1 F1=0.67 in=121754 out=408 $7.396
+travel/travel-s31-test-049/frontier_exec/verbose EES=0 legal=1 F1=0.80 in=10278 out=862 $7.430
+travel/travel-s31-test-049/graph_seg/verbose     EES=1 legal=1 F1=1.00 in=3980 out=528 $7.445
+travel/travel-s31-test-049/full/verbose          EES=0 legal=0 F1=0.67 in=121955 out=674 $7.757
+travel/travel-s31-test-050/frontier_exec/verbose EES=0 legal=1 F1=1.00 in=16618 out=422 $7.803
+travel/travel-s31-test-050/graph_seg/verbose     EES=0 legal=1 F1=0.80 in=6019 out=825 $7.826
+travel/travel-s31-test-050/full/verbose          EES=0 legal=1 F1=1.00 in=123071 out=407 $8.138
+travel/travel-s31-test-051/frontier_exec/verbose EES=1 legal=1 F1=1.00 in=19185 out=505 $8.191
+travel/travel-s31-test-051/graph_seg/verbose     EES=1 legal=1 F1=1.00 in=5423 out=1996 $8.224
+travel/travel-s31-test-051/full/verbose          EES=1 legal=1 F1=1.00 in=119086 out=691 $8.529
+travel/travel-s31-test-052/frontier_exec/verbose EES=1 legal=1 F1=1.00 in=19767 out=529 $8.584
+travel/travel-s31-test-052/graph_seg/verbose     EES=1 legal=1 F1=1.00 in=4685 out=992 $8.605
+travel/travel-s31-test-052/full/verbose          EES=0 legal=0 F1=0.67 in=121526 out=574 $8.915
+travel/travel-s31-test-053/frontier_exec/verbose EES=0 legal=0 F1=0.67 in=63559 out=16492 $9.186
+travel/travel-s31-test-053/graph_seg/verbose     EES=1 legal=1 F1=1.00 in=4171 out=1852 $9.215
+travel/travel-s31-test-053/full/verbose          EES=0 legal=0 F1=0.50 in=124533 out=516 $9.532
+travel/travel-s31-test-054/frontier_exec/verbose EES=0 legal=1 F1=0.89 in=11300 out=482 $9.565
+travel/travel-s31-test-054/graph_seg/verbose     EES=1 legal=1 F1=1.00 in=4763 out=927 $9.586
+travel/travel-s31-test-054/full/verbose          EES=0 legal=1 F1=0.86 in=119126 out=685 $9.891
+travel/travel-s31-test-055/frontier_exec/verbose EES=0 legal=1 F1=0.50 in=9788 out=7734 $9.993
+travel/travel-s31-test-055/graph_seg/verbose     EES=0 legal=1 F1=0.67 in=3367 out=724 $10.008
+travel/travel-s31-test-055/full/verbose          EES=0 legal=1 F1=0.40 in=121332 out=1154 $10.323
+travel/travel-s31-test-056/frontier_exec/verbose EES=0 legal=0 F1=0.80 in=15243 out=555 $10.367
+travel/travel-s31-test-056/graph_seg/verbose     EES=0 legal=0 F1=0.67 in=3834 out=572 $10.382
+travel/travel-s31-test-056/full/verbose          EES=0 legal=0 F1=0.50 in=122202 out=679 $10.694
+travel/travel-s31-test-057/frontier_exec/verbose EES=0 legal=1 F1=1.00 in=14350 out=1707 $10.747
+travel/travel-s31-test-057/graph_seg/verbose     EES=0 legal=0 F1=0.50 in=4086 out=532 $10.763
+travel/travel-s31-test-057/full/verbose          EES=0 legal=1 F1=1.00 in=123157 out=995 $11.081
+travel/travel-s31-test-058/frontier_exec/verbose EES=1 legal=1 F1=1.00 in=9344 out=511 $11.109
+travel/travel-s31-test-058/graph_seg/verbose     EES=0 legal=0 F1=0.67 in=4402 out=534 $11.125
+travel/travel-s31-test-058/full/verbose          EES=1 legal=1 F1=1.00 in=125692 out=440 $11.444
+travel/travel-s31-test-059/frontier_exec/verbose EES=0 legal=0 F1=0.50 in=74175 out=16519 $11.795
+travel/travel-s31-test-059/graph_seg/verbose     EES=0 legal=0 F1=0.67 in=4836 out=582 $11.813
+travel/travel-s31-test-059/full/verbose          EES=0 legal=0 F1=0.67 in=120683 out=485 $12.119
+budget 12.0 reached at 12.119; stopping
+Traceback (most recent call last):
+  File "/mnt/cpfs/epic-user/yangboxue-20260612/opsd/claude_persist/tmp/claude-20043/-mnt-cpfs-epic-user-yangboxue-20260612-opsd-Memory/aa111f6d-b918-45ce-bc18-326170fa9a1b/scratchpad/pylib2/numpy/_core/__init__.py", line 24, in <module>
+    from . import multiarray
+  File "/mnt/cpfs/epic-user/yangboxue-20260612/opsd/claude_persist/tmp/claude-20043/-mnt-cpfs-epic-user-yangboxue-20260612-opsd-Memory/aa111f6d-b918-45ce-bc18-326170fa9a1b/scratchpad/pylib2/numpy/_core/multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "/mnt/cpfs/epic-user/yangboxue-20260612/opsd/claude_persist/tmp/claude-20043/-mnt-cpfs-epic-user-yangboxue-20260612-opsd-Memory/aa111f6d-b918-45ce-bc18-326170fa9a1b/scratchpad/pylib2/numpy/_core/overrides.py", line 6, in <module>
+    from numpy._core._multiarray_umath import (
+ModuleNotFoundError: No module named 'numpy._core._multiarray_umath'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/cpfs/epic-user/yangboxue-20260612/opsd/Memory/code/hm3/llm.py", line 30, in <module>
+    from .learners import LearnedGraph, ProgramLearner, SourceUnion, all_reads
+  File "/mnt/cpfs/epic-user/yangboxue-20260612/opsd/Memory/code/hm3/learners.py", line 32, in <module>
+    import numpy as np
+  File "/mnt/cpfs/epic-user/yangboxue-20260612/opsd/claude_persist/tmp/claude-20043/-mnt-cpfs-epic-user-yangboxue-20260612-opsd-Memory/aa111f6d-b918-45ce-bc18-326170fa9a1b/scratchpad/pylib2/numpy/__init__.py", line 109, in <module>
+    from numpy.__config__ import show_config
+  File "/mnt/cpfs/epic-user/yangboxue-20260612/opsd/claude_persist/tmp/claude-20043/-mnt-cpfs-epic-user-yangboxue-20260612-opsd-Memory/aa111f6d-b918-45ce-bc18-326170fa9a1b/scratchpad/pylib2/numpy/__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "/mnt/cpfs/epic-user/yangboxue-20260612/opsd/claude_persist/tmp/claude-20043/-mnt-cpfs-epic-user-yangboxue-20260612-opsd-Memory/aa111f6d-b918-45ce-bc18-326170fa9a1b/scratchpad/pylib2/numpy/_core/__init__.py", line 85, in <module>
+    raise ImportError(msg) from exc
+ImportError: 
+
+IMPORTANT: PLEASE READ THIS FOR ADVICE ON HOW TO SOLVE THIS ISSUE!
+
+Importing the numpy C-extensions failed. This error can happen for
+many reasons, often due to issues with your setup or how NumPy was
+installed.
+The following compiled module files exist, but seem incompatible
+with with either python 'cpython-312' or the platform 'linux':
+
+  * _multiarray_umath.cpython-313-x86_64-linux-gnu.so
+
+We have compiled some common reasons and troubleshooting tips at:
+
+    https://numpy.org/devdocs/user/troubleshooting-importerror.html
+
+Please note and check the following:
+
+  * The Python version is: Python 3.12 from "/usr/local/bin/python3"
+  * The NumPy version is: "2.5.3"
+
+and make sure that they are the versions you expect.
+
+Please carefully study the information and documentation linked above.
+This is unlikely to be a NumPy issue but will be caused by a bad install
+or environment on your machine.
+
+Original error was: No module named 'numpy._core._multiarray_umath'
+
+selector fit frontier_exec on 200 episodes: 120.0s; ['flight->transfer', 'stay->bundle', 'stay->dinner', 'transfer->stay']
+selector fit graph on 200 episodes: 1.2s
+budget 12.0 reached at 12.119; stopping

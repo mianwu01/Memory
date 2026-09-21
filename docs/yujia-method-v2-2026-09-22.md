@@ -18,11 +18,11 @@
 
 **1. 读取干预识别结构，观测检验不能。** 执行器 frontier 2–3 条记录，14 次重放（18 条候选）；类型投影对干预式骨架 precision 1.0（缺的一条边是没有隐藏策略、无需读取的 stay→activity）。同一批日志上 PCMCI+ recall 0.4、Shopping 上空图。**LLM 自己的重放**（多数票 k=3，187 个 episode，两种 prompt）恢复同样四条边，precision 1.0；LLM 的 frontier 与执行器只重叠 0.26–0.48——LLM 靠 stay 自己的 txn 记录（0.84 个/episode）而执行器靠 flight 干预记录（0.03）。frontier 是 actor-specific 的（图 `frontier_composition.pdf`）。
 
-**2. 读 frontier 让记忆随历史不增长，并抵御冲突证据。** 重放次数 15 → 22 → 27（18 → 100 → 500 条），frontier 大小 2.7 → 3.0 不变（dev 与 test seeds 一致，图 `replay_length.pdf`）。三个 test seed 的 actor 面板（v1，n = 180–192）：结构 − 全历史 +0.13 [+0.04, +0.21] / +0.16 [+0.08, +0.24] / +0.22 [+0.13, +0.30]（100 / 冲突 100 / 500），每个 seed 同号；token 4k 对 27k–123k。parser-free 的重放拟合选择器 − 全历史：冲突下 +0.11 [+0.04, +0.18]，其余持平；Shopping 上它是三臂中最好的（500 条：比全历史 +0.25 [+0.11, +0.39]，v2），把 Shopping 从"只有成本主张"变成准确率主张。
+**2. 读 frontier 让记忆随历史不增长，并抵御冲突证据。** 重放次数 15 → 22 → 27（18 → 100 → 500 条），frontier 大小 2.7 → 3.0 不变（dev 与 test seeds 一致，图 `replay_length.pdf`）。三个 test seed 的 actor 面板（v1，n = 190–192）：结构 − 全历史 +0.13 [+0.04, +0.21] / +0.16 [+0.08, +0.24] / +0.21 [+0.14, +0.29]（100 / 冲突 100 / 500），每个 seed 同号；token 4k 对 27k–123k。v2 prompt 三 seed 复制（9/22 完成）：+0.37 [+0.29, +0.46] / +0.35 [+0.27, +0.43]（冲突 100 / 500，n = 190），每个 seed 同号。parser-free 的重放拟合选择器 − 全历史：v1 冲突下 +0.11 [+0.04, +0.18]，其余持平；v2 下 +0.24 [+0.15, +0.33] / +0.16 [+0.08, +0.24]（冲突 100 / 500，seeds 31/32），但比 parser 版低 0.15–0.21；Shopping 上它是三臂中最好的（500 条：比全历史 +0.25 [+0.11, +0.39]，v2），把 Shopping 从"只有成本主张"变成准确率主张。
 
 **3. 同一原语反向定位肇事记录。** Travel 四个长度：结构顺序中位数 1–2 次重放（均 2.5–3.6）；历史顺序 8 → 13 → 18（log n）；BM25 对异常 4–13。Shopping：native 上 BM25 与结构相当（3–4 vs 4），500 条上结构 2–6 vs 18。图 `replay_localise.pdf`。
 
-**4. 边界，如实写。** (a) 摊销是弱环：parser-free 模型在 Travel 500 条为达到 recall ≥ 0.96 要读 12–80 条（同 key 的 c 型干扰在分类特征上不可分），actor 层比 parser 版低 0.18；Shopping 不过度选择。(b) 从 LLM 自己的重放拟合的选择器（55–73 个含噪 episode）还不如执行器重放拟合的（200 个精确 episode）：0.16–0.21，负结果。(c) DeepSeek-V4-Flash 温度 0 三次同样调用在 7/12（v1）个 episode 上自相矛盾，所以 LLM oracle 必须投票；全历史通过率 29–39%，限制了可标注的 episode。(d) native 长度下读全历史更好（v2）。
+**4. 边界，如实写。** (a) 摊销是弱环：parser-free 模型在 Travel 500 条为达到 recall ≥ 0.96 要读 12–80 条（同 key 的 c 型干扰在分类特征上不可分），actor 层比 parser 版低 0.17；Shopping 不过度选择。(b) 从 LLM 自己的重放拟合的选择器（55–73 个含噪 episode）还不如执行器重放拟合的（200 个精确 episode）：0.16–0.21，负结果。(c) DeepSeek-V4-Flash 温度 0 三次同样调用在 7/12（v1）个 episode 上自相矛盾，所以 LLM oracle 必须投票；全历史通过率 29–39%，限制了可标注的 episode。(d) native 长度下读全历史更好（v2）。
 
 ## 措辞
 
@@ -30,4 +30,4 @@
 
 ## 到 9/25
 
-9/22：v2 prompt 的三 seed 复制（跑着）；表冻结；结果包与状态页对齐。9/22–23：方法节（已有草稿）、实验节（已有草稿，补三 seed 表）、边界节。9/24：内部审读、附录（协议、prompt、成本）。所有实验的入口：`docs/full-status-method-experiments-paper-2026-09-21.md`。
+9/22 已完成：v2 prompt 三 seed 复制、500 条格补齐、表冻结（状态页 §4.9）；实验节按新方法重写（Tables 1–9、消融表、边界节）；附录（协议、prompt、成本，`docs/paper-draft-appendix-2026-09-22.md`）；内审记录（`docs/paper-internal-review-2026-09-22.md`）。9/23–25：按内审条目做文字终稿。所有实验的入口：`docs/full-status-method-experiments-paper-2026-09-21.md`。

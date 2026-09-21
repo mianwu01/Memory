@@ -1,4 +1,4 @@
-# Causal memory: method, experiments, results and paper plan — the whole picture (2026-09-21, 03:00)
+# Causal memory: method, experiments, results and paper plan — the whole picture (2026-09-21, 03:00; tables frozen 2026-09-22 16:30)
 
 给 Yujia / 组内的摘要（其余为英文，直接供论文用）：
 
@@ -6,7 +6,7 @@
 2. 但"观测日志 → 成熟因果发现 → 闭包选择"作为方法不够 ICLR。今晚重新设计并实现了方法核心：**记忆系统对自己的读取做干预**（重放时屏蔽记录），用自适应消元在 O(k log n) 次重放内识别决策的 read frontier；不依赖 faithfulness；类型级 frontier 模型把重放摊销到测试时（parser-free）；后向追责用同一原语。`docs/method-design-read-interventions-2026-09-20.md`，代码 `code/hm3/replay*.py`。
 3. 今晚的新证据：执行器 frontier 2–3 条记录、14 次重放、类型投影对干预式骨架 precision 1.0；重放次数随 log n 增长而 frontier 不变（18→100→500 条：15→22→27）；用结构先验定位肇事记录中位数 1 次重放（BM25 需 5–9 次）；**LLM 自身**的 frontier 与执行器不同（覆盖 0.20–0.43），LLM 依赖 stay 的 txn 记录而执行器依赖 flight 干预记录——frontier 是 actor-specific 的；LLM 的非单调率 v1 12.5% / v2 4.8%（冲突证据效应在记录层面的直接测量）。
 4. 摊销模型（parser-free 选择器）目前 EES：Travel 0.94 → 0.79（native → 500），Shopping 0.85–0.86，与 key-precedent 选择相当、低于带 parser 的 graph_select（1.00）。这是方法里最弱的一环，如实报；重放验证的 frontier 本身是精确的。
-5. 到 9/25 的计划在 §7。
+5. 到 9/25 的计划在 §7。**9/22 16:30：所有实验格已跑满（v1 与 v2 三 seed 复制、500 条格补齐），表冻结（§4.9 末尾）；实验节、附录、内审记录已写（§8）。**
 
 ---
 
@@ -354,14 +354,30 @@ comparison over 180–192 episodes; `results/real/hm3/seeds/`, `panel_summary --
 | native | 0.42 | 0.40 | 0.38 | −0.02 [−0.11, +0.07] | −0.05 [−0.14, +0.04] | −0.03 [−0.11, +0.06] | 6.5k / 3.6k / 3.1k |
 | 100 mixed | 0.24 | 0.37 | 0.30 | **+0.13 [+0.04, +0.21]** | +0.07 [−0.02, +0.15] | −0.06 [−0.16, +0.04] | 26.8k / 4.0k / 5.6k |
 | 100 conflicting | 0.16 | 0.33 | 0.27 | **+0.16 [+0.08, +0.24]** | **+0.11 [+0.04, +0.18]**; value acc +0.22 [+0.16, +0.29] | −0.06 [−0.14, +0.02] | 26.8k / 4.0k / 6.0k |
-| 500 mixed | 0.15 | 0.37 | 0.19 | **+0.22 [+0.13, +0.30]** | +0.04 [−0.03, +0.11] | −0.18 [−0.26, −0.09] | 123k / 4.1k / 15.7k |
+| 500 mixed | 0.16 | 0.37 | 0.20 | **+0.21 [+0.14, +0.29]** | +0.04 [−0.02, +0.11] | −0.17 [−0.24, −0.09] | 123k / 4.1k / 15.7k |
 
-Per seed the structure − full effect is +0.20 / +0.32 (seed 31, c100 / 500), +0.10 / +0.16 (seed 32), +0.19 / +0.17
+Per seed the structure − full effect is +0.20 / +0.31 (seed 31, c100 / 500), +0.10 / +0.14 (seed 32), +0.19 / +0.17
 (seed 30): the sign holds on every seed and the pooled intervals exclude zero at 100, c100 and 500. The parser-free
 replay-fitted selector beats full history under conflicting witnesses on the pooled three seeds (+0.11 [+0.04,
-+0.18]) and is at parity elsewhere; it trails the parser-based structure by 0.03–0.06 at ≤100 records and by 0.18 at
-500, where it over-selects (15.7k tokens). (Six of the 500-record shards on seeds 31/32 are being completed; n = 180
-of 192 at that row.)
++0.18]) and is at parity elsewhere; it trails the parser-based structure by 0.03–0.06 at ≤100 records and by 0.17 at
+500, where it over-selects (15.7k tokens). (500-record shards completed 2026-09-22 with the budget lifted; n = 190 of
+192: episode `travel-s32-test-010` is dropped by the augmentation validator on every seed-32 condition, so seed-32
+augmented cells have 63 episodes by construction.)
+
+**Prompt v2 replication, Travel seeds 31/32 at c100 and 500 (completed 2026-09-22; pooled with seed 30 for full and
+structure, n = 190; the parser-free arm exists under v2 only on seeds 31/32, n = 127;
+`results/real/hm3/seeds/panel_summary_travel_2026-09-22.{md,json}` and the per-seed files beside it):**
+
+| history | full (cells at cap) | structure (parser) | frontier_exec (parser-free) | structure − full [95% CI] | frontier_exec − full | frontier_exec − structure | tokens: full / structure / exec |
+|---|---|---|---|---|---|---|---|
+| c100 | 0.14 (120/190) | 0.51 | 0.35 | **+0.37 [+0.29, +0.46]** | **+0.24 [+0.15, +0.33]**; affected F1 +0.37, value acc +0.34 | −0.21 [−0.31, −0.10] | 69k / 4.3k / 6.5k |
+| 500 | 0.11 (138/190) | 0.46 | 0.27 | **+0.35 [+0.27, +0.43]** | **+0.16 [+0.08, +0.24]**; affected F1 +0.19, value acc +0.19 | −0.15 [−0.26, −0.03] | 259k / 4.4k / 20k |
+
+Per seed (30 / 31 / 32): structure − full +0.22 / +0.50 / +0.40 at c100 and +0.44 / +0.33 / +0.29 at 500;
+frontier_exec − full (31 / 32) +0.28 / +0.19 at c100 and +0.17 / +0.14 at 500, every interval excluding zero. The v2
+rows of the seed-30 panel therefore replicate with the same sign on every seed and a larger pooled effect than v1;
+the parser-free arm beats full history under v2 at both lengths and stays 0.15–0.21 below the parser-based
+structure. **Tables frozen at this point (2026-09-22 16:30); every actor cell in the paper is at full n.**
 
 **Shopping, parser-free arm under prompt v2** (seed 30, 64 paired episodes; v1 rows in §4.7):
 
@@ -417,16 +433,17 @@ replay → minimal set → p_θ → read / trace).
 | done 9/22 | majority-vote LLM discovery to 187 episodes both prompts (§4.8); refit frontier_llm actor cells (§4.9, negative) | — |
 | done 9/22 | Shopping frontier_exec under v2 at 100 / 500 (§4.9) | — |
 | done 9/22 | figures (i)–(iv): `replay_length`, `replay_localise`, `frontier_composition` (LLM vs executor frontier by record kind: the LLM keys on the stay's own transaction in 0.84 of episodes where the executor does in 0.03), `method_schematic` — all in `results/real/hm3/figures/` | — |
-| 9/22 (running) | Travel seeds 31/32 under prompt v2 at c100 and 500 (full / structure / frontier_exec) to replicate the v2 rows | API |
-| 9/22 | freeze tables after the v2 seed replication lands; Yujia one-pager v2 written (`docs/yujia-method-v2-2026-09-22.md`) | — |
-| 9/22–23 | paper: method section (draft written 9/21: `docs/paper-draft-method-2026-09-21.md`), experiments (draft exists, add §4 rows), boundaries | — |
-| 9/24 | internal review pass; ablations table; appendix (protocols, prompts, costs) | — |
+| done 9/22 | Travel seeds 31/32 under prompt v2 at c100 and 500 (full / structure / frontier_exec); v1 500-record shards on seeds 31/32 run to completion with the budget lifted (§4.9) | — |
+| done 9/22 | tables frozen (§4.9); Yujia one-pager v2 updated with the final rows (`docs/yujia-method-v2-2026-09-22.md`) | — |
+| done 9/22 | paper: method section (`docs/paper-draft-method-2026-09-21.md`); experiments section rewritten around the method with Tables 1–9, the ablation table and a seven-paragraph boundaries section (`docs/paper-draft-experiments-2026-09-20.md`) | — |
+| done 9/22 | internal review pass (`docs/paper-internal-review-2026-09-22.md`: four fixes applied, eight items for the writer); appendix with protocols, prompts and costs (`docs/paper-draft-appendix-2026-09-22.md`) | — |
+| 9/23–25 | writer's pass over the three drafts (review items 5–12); figure numbering; final cut for Yujia | — |
 
 Not planned: KCI / kernel tests (low priority per 9/20); LightMem; Search/Formal scaling.
 
 ## 8. Files
 
-Method: `docs/method-design-read-interventions-2026-09-20.md`, paper text `docs/paper-draft-method-2026-09-21.md`, Yujia page `docs/yujia-method-v2-2026-09-22.md`; sweep module `code/hm3/replay_sweep.py`; collaborator tasks in `docs/bridge-plan-2026-09-19.md` §7.5; code `code/hm3/replay.py` (minimal_sufficient,
+Method: `docs/method-design-read-interventions-2026-09-20.md`, paper text `docs/paper-draft-method-2026-09-21.md`, experiments `docs/paper-draft-experiments-2026-09-20.md`, appendix `docs/paper-draft-appendix-2026-09-22.md`, review `docs/paper-internal-review-2026-09-22.md`, Yujia page `docs/yujia-method-v2-2026-09-22.md`; frozen actor panels `results/real/hm3/seeds/panel_summary_travel*_2026-09-22.{md,json}`; sweep module `code/hm3/replay_sweep.py`; collaborator tasks in `docs/bridge-plan-2026-09-19.md` §7.5; code `code/hm3/replay.py` (minimal_sufficient,
 ExecutorOracle, LLMOracle, discover, FrontierModel, FrontierSelect), `replay_length.py`, `replay_llm.py`,
 `replay_localise.py`; results `results/development/hm3/replay/`, `results/real/hm3/replay/`, `results/real/hm3/replay_llm/`.
 Evidence: `docs/hm3-results-package-2026-09-19.md`, `docs/yujia-causal-bridge-2026-09-20.md`,
