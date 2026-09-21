@@ -1,0 +1,23 @@
+{
+ "eval": {
+  "n": 16,
+  "dropped": 0,
+  "retries": 7,
+  "a_keys": 58,
+  "a_diff": 3,
+  "b": 442,
+  "c": 446,
+  "d": 453,
+  "records": 1600,
+  "objects": 1111,
+  "fail_reasons": {
+   "prov enforce_budget[global]": 5,
+   "est compat[phone|charger]": 1,
+   "prov strict_promo[PR89]": 1
+  },
+  "fallback_no_interleave": 1,
+  "mean_records": 100.0,
+  "mean_objects": 69.4375,
+  "drop_rate": 0.0
+ }
+}

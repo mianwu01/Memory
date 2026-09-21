@@ -1,0 +1,13 @@
+{
+ "system": "mem0_raw",
+ "domain": "shopping32",
+ "seed": 30,
+ "history": "native",
+ "k": 16,
+ "model": "deepseek-v4-flash",
+ "serialization": "compact",
+ "prompt_version": "v2",
+ "budget_usd": 20.0,
+ "max_tokens": 16384,
+ "write_llm": "same endpoint and model, thinking disabled; write tokens recorded per cell"
+}

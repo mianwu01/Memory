@@ -1,0 +1,151 @@
+{
+ "domain": "travel",
+ "seed": 1,
+ "length": 500,
+ "rows": [
+  {
+   "balanced": true,
+   "thr": 0.2,
+   "segment": false,
+   "ees": 0.8166666666666667,
+   "records": 22.783333333333335,
+   "frontier_recall": 0.9100574712643678,
+   "frontier_precision": 0.11533409684814355
+  },
+  {
+   "balanced": true,
+   "thr": 0.2,
+   "segment": true,
+   "ees": 0.8666666666666667,
+   "records": 49.15,
+   "frontier_recall": 0.9264367816091954,
+   "frontier_precision": 0.054987099177990634
+  },
+  {
+   "balanced": true,
+   "thr": 0.3,
+   "segment": false,
+   "ees": 0.8166666666666667,
+   "records": 17.35,
+   "frontier_recall": 0.9066091954022989,
+   "frontier_precision": 0.15596654413293304
+  },
+  {
+   "balanced": true,
+   "thr": 0.3,
+   "segment": true,
+   "ees": 0.8833333333333333,
+   "records": 34.45,
+   "frontier_recall": 0.9264367816091954,
+   "frontier_precision": 0.08192055260675031
+  },
+  {
+   "balanced": true,
+   "thr": 0.5,
+   "segment": false,
+   "ees": 0.7833333333333333,
+   "records": 13.666666666666666,
+   "frontier_recall": 0.9066091954022989,
+   "frontier_precision": 0.19985543567199915
+  },
+  {
+   "balanced": true,
+   "thr": 0.5,
+   "segment": true,
+   "ees": 0.8666666666666667,
+   "records": 27.1,
+   "frontier_recall": 0.9264367816091954,
+   "frontier_precision": 0.10382641608635328
+  },
+  {
+   "balanced": true,
+   "thr": 0.7,
+   "segment": false,
+   "ees": 0.7666666666666667,
+   "records": 9.9,
+   "frontier_recall": 0.8844827586206896,
+   "frontier_precision": 0.26982415966949436
+  },
+  {
+   "balanced": true,
+   "thr": 0.7,
+   "segment": true,
+   "ees": 0.8666666666666667,
+   "records": 21.1,
+   "frontier_recall": 0.9137931034482759,
+   "frontier_precision": 0.13342766553480745
+  },
+  {
+   "balanced": false,
+   "thr": 0.2,
+   "segment": false,
+   "ees": 0.55,
+   "records": 3.45,
+   "frontier_recall": 0.7232758620689655,
+   "frontier_precision": 0.6036398467432951
+  },
+  {
+   "balanced": false,
+   "thr": 0.2,
+   "segment": true,
+   "ees": 0.7333333333333333,
+   "records": 5.933333333333334,
+   "frontier_recall": 0.7827586206896552,
+   "frontier_precision": 0.38252178855627134
+  },
+  {
+   "balanced": false,
+   "thr": 0.3,
+   "segment": false,
+   "ees": 0.5333333333333333,
+   "records": 2.933333333333333,
+   "frontier_recall": 0.6959770114942528,
+   "frontier_precision": 0.6293103448275862
+  },
+  {
+   "balanced": false,
+   "thr": 0.3,
+   "segment": true,
+   "ees": 0.7333333333333333,
+   "records": 5.166666666666667,
+   "frontier_recall": 0.7741379310344827,
+   "frontier_precision": 0.41176792556102904
+  },
+  {
+   "balanced": false,
+   "thr": 0.5,
+   "segment": false,
+   "ees": 0.45,
+   "records": 1.95,
+   "frontier_recall": 0.571551724137931,
+   "frontier_precision": 0.5833333333333333
+  },
+  {
+   "balanced": false,
+   "thr": 0.5,
+   "segment": true,
+   "ees": 0.6,
+   "records": 3.55,
+   "frontier_recall": 0.6195402298850575,
+   "frontier_precision": 0.3759989053092501
+  },
+  {
+   "balanced": false,
+   "thr": 0.7,
+   "segment": false,
+   "ees": 0.4,
+   "records": 1.7,
+   "frontier_recall": 0.5025862068965516,
+   "frontier_precision": 0.528735632183908
+  },
+  {
+   "balanced": false,
+   "thr": 0.7,
+   "segment": true,
+   "ees": 0.5,
+   "records": 2.8833333333333333,
+   "frontier_recall": 0.5333333333333333,
+   "frontier_precision": 0.353735632183908
+  }
+ ]
+}

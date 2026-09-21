@@ -1,0 +1,32 @@
+{
+ "episodes": 24,
+ "full_ok": 7,
+ "cost": 9.325724500000002,
+ "frontier": 3.2857142857142856,
+ "executor_frontier": 2.4285714285714284,
+ "calls": 17.428571428571427,
+ "n_records": 20.0,
+ "executor_frontier_covered_by_llm": 0.4523809523809524,
+ "type_edges": [
+  "flight->transfer",
+  "stay->dinner",
+  "transfer->stay"
+ ],
+ "edge_support": {
+  "flight->transfer": 22,
+  "stay->dinner": 2,
+  "transfer->stay": 4
+ },
+ "vs_skeleton": {
+  "n": 3,
+  "n_ref": 5,
+  "tp": 3,
+  "precision": 1.0,
+  "recall": 0.6,
+  "missing": [
+   "stay->activity",
+   "stay->bundle"
+  ],
+  "extra": []
+ }
+}

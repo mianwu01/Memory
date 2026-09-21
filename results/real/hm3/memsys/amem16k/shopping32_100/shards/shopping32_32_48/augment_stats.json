@@ -1,0 +1,25 @@
+{
+ "eval": {
+  "n": 16,
+  "dropped": 0,
+  "retries": 20,
+  "a_keys": 52,
+  "a_diff": 4,
+  "b": 440,
+  "c": 447,
+  "d": 470,
+  "records": 1600,
+  "objects": 1170,
+  "fail_reasons": {
+   "prov strict_promo[PR23]": 5,
+   "prov strict_promo[PR31]": 5,
+   "prov strict_promo[PR46]": 5,
+   "prov strict_promo[PR61]": 4,
+   "est compat[camera|lens]": 1
+  },
+  "fallback_no_interleave": 4,
+  "mean_records": 100.0,
+  "mean_objects": 73.125,
+  "drop_rate": 0.0
+ }
+}

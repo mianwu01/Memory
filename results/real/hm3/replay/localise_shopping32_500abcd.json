@@ -1,0 +1,1707 @@
+{
+ "shopping32/seed30": {
+  "summary": {
+   "incidents": 16,
+   "structural": {
+    "hit": 1.0,
+    "calls_median": 4.0,
+    "calls_p90": 18.0,
+    "calls_mean": 8.3125
+   },
+   "bm25": {
+    "hit": 1.0,
+    "calls_median": 18.0,
+    "calls_p90": 18.0,
+    "calls_mean": 15.125
+   },
+   "history": {
+    "hit": 1.0,
+    "calls_median": 18.0,
+    "calls_p90": 18.0,
+    "calls_mean": 17.9375
+   },
+   "reads_then_history": {
+    "hit": 1.0,
+    "calls_median": 6.0,
+    "calls_p90": 18.0,
+    "calls_mean": 10.25
+   }
+  },
+  "rows": [
+   {
+    "episode": "shopping32-s30-test-001",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-002",
+    "gold": "h493",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h493",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h493",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h493",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h493",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-003",
+    "gold": "h492",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h492",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h492",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h492",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h492",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-010",
+    "gold": "h487",
+    "n_records": 500,
+    "n_reads": 10,
+    "structural": {
+     "found": "h487",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h487",
+     "hit": true,
+     "calls": 4
+    },
+    "history": {
+     "found": "h487",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h487",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-011",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-012",
+    "gold": "h491",
+    "n_records": 500,
+    "n_reads": 11,
+    "structural": {
+     "found": "h491",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h491",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h491",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h491",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-019",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 10,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-030",
+    "gold": "h489",
+    "n_records": 500,
+    "n_reads": 11,
+    "structural": {
+     "found": "h489",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h489",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h489",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h489",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-031",
+    "gold": "h330",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h330",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h330",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h330",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h330",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-034",
+    "gold": "h499",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-035",
+    "gold": "h499",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h499",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-039",
+    "gold": "h494",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h494",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h494",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h494",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h494",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-048",
+    "gold": "h454",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h454",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h454",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h454",
+     "hit": true,
+     "calls": 17
+    },
+    "reads_then_history": {
+     "found": "h454",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-052",
+    "gold": "h345",
+    "n_records": 500,
+    "n_reads": 11,
+    "structural": {
+     "found": "h345",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h345",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h345",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h345",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-053",
+    "gold": "h452",
+    "n_records": 500,
+    "n_reads": 11,
+    "structural": {
+     "found": "h452",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h452",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h452",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h452",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s30-test-054",
+    "gold": "h447",
+    "n_records": 500,
+    "n_reads": 13,
+    "structural": {
+     "found": "h447",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h447",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h447",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h447",
+     "hit": true,
+     "calls": 6
+    }
+   }
+  ]
+ },
+ "shopping32/seed31": {
+  "summary": {
+   "incidents": 23,
+   "structural": {
+    "hit": 1.0,
+    "calls_median": 6.0,
+    "calls_p90": 18.0,
+    "calls_mean": 9.434782608695652
+   },
+   "bm25": {
+    "hit": 1.0,
+    "calls_median": 18.0,
+    "calls_p90": 18.0,
+    "calls_mean": 17.304347826086957
+   },
+   "history": {
+    "hit": 1.0,
+    "calls_median": 18.0,
+    "calls_p90": 18.0,
+    "calls_mean": 18.0
+   },
+   "reads_then_history": {
+    "hit": 1.0,
+    "calls_median": 8.0,
+    "calls_p90": 18.0,
+    "calls_mean": 11.391304347826088
+   }
+  },
+  "rows": [
+   {
+    "episode": "shopping32-s31-test-000",
+    "gold": "h307",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h307",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h307",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h307",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h307",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-004",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 14,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 8
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-009",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-013",
+    "gold": "h304",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h304",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h304",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h304",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h304",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-019",
+    "gold": "h491",
+    "n_records": 500,
+    "n_reads": 12,
+    "structural": {
+     "found": "h491",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h491",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h491",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h491",
+     "hit": true,
+     "calls": 8
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-022",
+    "gold": "h437",
+    "n_records": 500,
+    "n_reads": 11,
+    "structural": {
+     "found": "h437",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h437",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h437",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h437",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-023",
+    "gold": "h499",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h499",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 8
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-024",
+    "gold": "h457",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h457",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h457",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h457",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h457",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-025",
+    "gold": "h499",
+    "n_records": 500,
+    "n_reads": 10,
+    "structural": {
+     "found": "h499",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 8
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-026",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-027",
+    "gold": "h382",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h382",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h382",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h382",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h382",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-029",
+    "gold": "h499",
+    "n_records": 500,
+    "n_reads": 13,
+    "structural": {
+     "found": "h499",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 8
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-031",
+    "gold": "h390",
+    "n_records": 500,
+    "n_reads": 12,
+    "structural": {
+     "found": "h390",
+     "hit": true,
+     "calls": 8
+    },
+    "bm25": {
+     "found": "h390",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h390",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h390",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-032",
+    "gold": "h457",
+    "n_records": 500,
+    "n_reads": 12,
+    "structural": {
+     "found": "h457",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h457",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h457",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h457",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-035",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 11,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 8
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-036",
+    "gold": "h404",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h404",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h404",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h404",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h404",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-040",
+    "gold": "h410",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h410",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h410",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h410",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h410",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-042",
+    "gold": "h449",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h449",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h449",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h449",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h449",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-046",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-050",
+    "gold": "h499",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-051",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 8
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-052",
+    "gold": "h444",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h444",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h444",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h444",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h444",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s31-test-054",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    }
+   }
+  ]
+ },
+ "shopping32/seed32": {
+  "summary": {
+   "incidents": 23,
+   "structural": {
+    "hit": 1.0,
+    "calls_median": 2.0,
+    "calls_p90": 18.0,
+    "calls_mean": 6.434782608695652
+   },
+   "bm25": {
+    "hit": 1.0,
+    "calls_median": 18.0,
+    "calls_p90": 18.0,
+    "calls_mean": 14.608695652173912
+   },
+   "history": {
+    "hit": 1.0,
+    "calls_median": 18.0,
+    "calls_p90": 18.0,
+    "calls_mean": 18.0
+   },
+   "reads_then_history": {
+    "hit": 1.0,
+    "calls_median": 6.0,
+    "calls_p90": 18.0,
+    "calls_mean": 8.521739130434783
+   }
+  },
+  "rows": [
+   {
+    "episode": "shopping32-s32-test-000",
+    "gold": "h452",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h452",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h452",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h452",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h452",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-001",
+    "gold": "h377",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h377",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h377",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h377",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h377",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-003",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-004",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-006",
+    "gold": "h499",
+    "n_records": 500,
+    "n_reads": 11,
+    "structural": {
+     "found": "h499",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 8
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-007",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-008",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-009",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 10,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 8
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-011",
+    "gold": "h494",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h494",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h494",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h494",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h494",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-021",
+    "gold": "h410",
+    "n_records": 500,
+    "n_reads": 13,
+    "structural": {
+     "found": "h410",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h410",
+     "hit": true,
+     "calls": 1
+    },
+    "history": {
+     "found": "h410",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h410",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-024",
+    "gold": "h462",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h462",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h462",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h462",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h462",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-029",
+    "gold": "h491",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h491",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h491",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h491",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h491",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-031",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-033",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 10,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-035",
+    "gold": "h442",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h442",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h442",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h442",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h442",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-037",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 10,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 8
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-046",
+    "gold": "h489",
+    "n_records": 500,
+    "n_reads": 10,
+    "structural": {
+     "found": "h489",
+     "hit": true,
+     "calls": 8
+    },
+    "bm25": {
+     "found": "h489",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h489",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h489",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-050",
+    "gold": "h350",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h350",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h350",
+     "hit": true,
+     "calls": 1
+    },
+    "history": {
+     "found": "h350",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h350",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-052",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-055",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 10,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-056",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-058",
+    "gold": "h385",
+    "n_records": 500,
+    "n_reads": 11,
+    "structural": {
+     "found": "h385",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h385",
+     "hit": true,
+     "calls": 6
+    },
+    "history": {
+     "found": "h385",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h385",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "shopping32-s32-test-059",
+    "gold": "h481",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h481",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h481",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h481",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h481",
+     "hit": true,
+     "calls": 6
+    }
+   }
+  ]
+ }
+}

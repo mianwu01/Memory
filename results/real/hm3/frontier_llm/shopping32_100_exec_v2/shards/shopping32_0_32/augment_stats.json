@@ -1,0 +1,61 @@
+{
+ "domain": "shopping32",
+ "history": "100:abcd",
+ "train": {
+  "n": 200,
+  "dropped": 0,
+  "retries": 62,
+  "a_keys": 593,
+  "a_diff": 41,
+  "b": 5659,
+  "c": 5686,
+  "d": 5878,
+  "records": 20000,
+  "objects": 14764,
+  "fail_reasons": {
+   "prov strict_promo[PR17]": 1,
+   "prov strict_promo[PR69]": 3,
+   "prov strict_promo[PR82]": 4,
+   "prov strict_promo[PR22]": 9,
+   "prov strict_promo[PR21]": 2,
+   "prov strict_promo[PR80]": 3,
+   "est compat[laptop|charger]": 1,
+   "prov strict_promo[PR88]": 2,
+   "prov enforce_budget[global]": 15,
+   "est compat[phone|case]": 2,
+   "prov strict_promo[PR78]": 4,
+   "prov strict_promo[PR62]": 1,
+   "prov strict_promo[PR12]": 5,
+   "prov strict_promo[PR85]": 2,
+   "prov compat[phone|case]": 1,
+   "prov strict_promo[PR55]": 2,
+   "prov strict_promo[PR20]": 5
+  },
+  "fallback_no_interleave": 9,
+  "mean_records": 100.0,
+  "mean_objects": 73.82,
+  "drop_rate": 0.0
+ },
+ "eval": {
+  "n": 32,
+  "dropped": 0,
+  "retries": 18,
+  "a_keys": 108,
+  "a_diff": 7,
+  "b": 892,
+  "c": 921,
+  "d": 933,
+  "records": 3200,
+  "objects": 2378,
+  "fail_reasons": {
+   "prov strict_promo[PR61]": 3,
+   "prov strict_promo[PR85]": 6,
+   "prov strict_promo[PR24]": 5,
+   "prov enforce_budget[global]": 4
+  },
+  "fallback_no_interleave": 2,
+  "mean_records": 100.0,
+  "mean_objects": 74.3125,
+  "drop_rate": 0.0
+ }
+}

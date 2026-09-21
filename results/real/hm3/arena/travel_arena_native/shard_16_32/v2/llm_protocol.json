@@ -1,0 +1,19 @@
+{
+ "domain": "travel_arena",
+ "seed": 30,
+ "history": "native",
+ "systems": [
+  "amem"
+ ],
+ "model": "deepseek-v4-flash",
+ "prompt_version": "v2",
+ "max_tokens": 16384,
+ "serialization": "verbose",
+ "memory_interface": "MemoryArena add_chunk/wrap_user_prompt, classes loaded from benchmarks/MemoryArena/memory/memory_systems unmodified",
+ "bm25_top_k": {
+  "bm25": 3,
+  "bm25_k16": 16
+ },
+ "amem_k": 5,
+ "budget_usd": 40.0
+}

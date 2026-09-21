@@ -1,5 +1,7 @@
 # HM3 history-length scaling 与 backward provenance：执行记录与结果（2026-09-18）
 
+> **2026-09-19 晚：** 本页 API（actor 层）各节的数字来自 4096 输出上限、prompt v2 的运行，已被 `docs/bridge-plan-2026-09-19.md` §3.3 与 `docs/hm3-results-package-2026-09-19.md` Layer 2 的 16k 双 prompt 面板取代（汇总命令 `hm3.panel_summary`）。确定性层各节不受影响。
+
 设计：[scaling](hm3-history-scaling-design-2026-09-18.md)、[provenance](hm3-provenance-design-2026-09-18.md)。
 本页只记录实际执行与结果；表格由 `python3 -m hm3.run_scaling --summarize <json>` 与
 `results/real/hm3/scaling/*/llm_summary.json` 生成后粘贴，不手改数字。

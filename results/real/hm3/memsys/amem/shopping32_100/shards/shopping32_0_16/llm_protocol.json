@@ -1,0 +1,12 @@
+{
+ "system": "amem",
+ "domain": "shopping32",
+ "seed": 30,
+ "history": "100:abcd",
+ "k": 16,
+ "model": "deepseek-v4-flash",
+ "serialization": "compact",
+ "prompt_version": "v2",
+ "budget_usd": 12.0,
+ "write_llm": "same endpoint and model, thinking disabled; write tokens recorded per cell"
+}

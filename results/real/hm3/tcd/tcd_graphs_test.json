@@ -1,0 +1,3180 @@
+{
+ "config": {
+  "domains": [
+   "travel",
+   "shopping32"
+  ],
+  "seeds": [
+   30,
+   31,
+   32
+  ],
+  "n_train": 200,
+  "max_lag": 3,
+  "alpha": 0.05
+ },
+ "runs": {
+  "travel/seed30": {
+   "types": [
+    "activity",
+    "bundle",
+    "dinner",
+    "flight",
+    "stay",
+    "transfer"
+   ],
+   "skeleton_type_edges": [
+    "flight->transfer",
+    "stay->activity",
+    "stay->bundle",
+    "stay->dinner",
+    "transfer->stay"
+   ],
+   "n_templates": 5,
+   "encodings": {
+    "event": {
+     "n_trials": 200,
+     "mean_T": 19.03,
+     "pooled": {
+      "estimator": "pooled_lagged_ridge_fdr",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_rows": 2836,
+      "n_trials": 200,
+      "edges": {
+       "bundle->activity@1": {
+        "coef": 0.7820241249704942,
+        "p": 0.0
+       },
+       "dinner->activity@1": {
+        "coef": -0.11326564231850256,
+        "p": 2.1760371282653068e-14
+       },
+       "flight->activity@1": {
+        "coef": -0.21791805768776484,
+        "p": 0.0
+       },
+       "stay->activity@1": {
+        "coef": -0.08413042286068872,
+        "p": 0.013196545392339942
+       },
+       "transfer->activity@1": {
+        "coef": -0.21790676230047268,
+        "p": 0.0
+       },
+       "activity->activity@2": {
+        "coef": 0.049595914168349964,
+        "p": 0.006849834243686903
+       },
+       "bundle->activity@2": {
+        "coef": 0.049596530953159856,
+        "p": 0.0007203772894219806
+       },
+       "dinner->activity@2": {
+        "coef": 0.04959866283061842,
+        "p": 0.00039854251208137903
+       },
+       "flight->activity@2": {
+        "coef": 0.049585552564892055,
+        "p": 0.02667635808419888
+       },
+       "stay->activity@2": {
+        "coef": 0.034557002172519447,
+        "p": 5.197513530674769e-09
+       },
+       "transfer->activity@2": {
+        "coef": -0.08413042285316408,
+        "p": 0.013196534666243265
+       },
+       "transfer->activity@3": {
+        "coef": 0.03455700217207891,
+        "p": 5.198475427903304e-09
+       },
+       "bundle->bundle@1": {
+        "coef": -0.17689815887851523,
+        "p": 6.061817714453355e-14
+       },
+       "dinner->bundle@1": {
+        "coef": 0.7184317244587461,
+        "p": 0.0
+       },
+       "flight->bundle@1": {
+        "coef": -0.1769119511344286,
+        "p": 0.0
+       },
+       "stay->bundle@1": {
+        "coef": -0.0685786051058308,
+        "p": 0.015072724025540163
+       },
+       "transfer->bundle@1": {
+        "coef": -0.17690201032814912,
+        "p": 0.0
+       },
+       "activity->bundle@2": {
+        "coef": 0.03971054307667998,
+        "p": 0.009189204770186477
+       },
+       "bundle->bundle@2": {
+        "coef": 0.03971100346655021,
+        "p": 0.0011226548750460363
+       },
+       "dinner->bundle@2": {
+        "coef": 0.03971003551758656,
+        "p": 0.0006469174411847245
+       },
+       "flight->bundle@2": {
+        "coef": 0.03970135752946646,
+        "p": 0.032769659305447174
+       },
+       "stay->bundle@2": {
+        "coef": 0.028886664555273,
+        "p": 4.263114750102659e-09
+       },
+       "transfer->bundle@2": {
+        "coef": -0.06857860508941727,
+        "p": 0.015072712211531503
+       },
+       "transfer->bundle@3": {
+        "coef": 0.02888666456840383,
+        "p": 4.263912112278945e-09
+       },
+       "bundle->dinner@1": {
+        "coef": -0.07692566613785701,
+        "p": 9.745814604222858e-07
+       },
+       "dinner->dinner@1": {
+        "coef": -0.07693067173978108,
+        "p": 0.0
+       },
+       "flight->dinner@1": {
+        "coef": -0.07693118869034166,
+        "p": 0.0
+       },
+       "stay->dinner@1": {
+        "coef": 0.42552072760427606,
+        "p": 0.0
+       },
+       "transfer->dinner@1": {
+        "coef": -0.07693094170100068,
+        "p": 4.5944292814681376e-10
+       },
+       "activity->dinner@2": {
+        "coef": -0.0718197571995347,
+        "p": 2.33901786828028e-12
+       },
+       "bundle->dinner@2": {
+        "coef": -0.07182136550562035,
+        "p": 0.0
+       },
+       "dinner->dinner@2": {
+        "coef": -0.07182052962765795,
+        "p": 0.0
+       },
+       "flight->dinner@2": {
+        "coef": -0.07182117148992972,
+        "p": 8.568084908233686e-09
+       },
+       "stay->dinner@2": {
+        "coef": -0.020435644573225886,
+        "p": 5.313962603281652e-10
+       },
+       "transfer->dinner@2": {
+        "coef": 0.425520727457414,
+        "p": 0.0
+       },
+       "activity->dinner@3": {
+        "coef": 0.030949209313433812,
+        "p": 0.012340141071916388
+       },
+       "bundle->dinner@3": {
+        "coef": 0.03094957953607036,
+        "p": 0.002885197251359717
+       },
+       "dinner->dinner@3": {
+        "coef": 0.030950744971789845,
+        "p": 0.00134130563356738
+       },
+       "stay->dinner@3": {
+        "coef": 0.030949431403740846,
+        "p": 0.002005249955688848
+       },
+       "transfer->dinner@3": {
+        "coef": -0.02043564461885694,
+        "p": 5.315070605860228e-10
+       },
+       "bundle->stay@1": {
+        "coef": -0.1975663080653547,
+        "p": 0.0
+       },
+       "dinner->stay@1": {
+        "coef": -0.1975788686295843,
+        "p": 0.0
+       },
+       "flight->stay@1": {
+        "coef": -0.19757971141112662,
+        "p": 0.0
+       },
+       "stay->stay@1": {
+        "coef": -0.07659453747247724,
+        "p": 0.0
+       },
+       "transfer->stay@1": {
+        "coef": 0.8023853838501154,
+        "p": 0.0
+       },
+       "activity->stay@2": {
+        "coef": 0.044341272096694695,
+        "p": 0.0
+       },
+       "bundle->stay@2": {
+        "coef": 0.04434265970918716,
+        "p": 0.0
+       },
+       "dinner->stay@2": {
+        "coef": 0.04434270540077989,
+        "p": 0.0
+       },
+       "flight->stay@2": {
+        "coef": 0.044377020099702236,
+        "p": 0.0
+       },
+       "stay->stay@2": {
+        "coef": 0.03225683822984138,
+        "p": 0.0
+       },
+       "transfer->stay@2": {
+        "coef": -0.07659453752252432,
+        "p": 0.0
+       },
+       "activity->stay@3": {
+        "coef": 0.020171217856358226,
+        "p": 0.0
+       },
+       "bundle->stay@3": {
+        "coef": 0.020171583280955474,
+        "p": 0.0
+       },
+       "dinner->stay@3": {
+        "coef": 0.020171475850645493,
+        "p": 0.0
+       },
+       "flight->stay@3": {
+        "coef": 0.020123086463541995,
+        "p": 0.0
+       },
+       "stay->stay@3": {
+        "coef": 0.02017175657789494,
+        "p": 0.0
+       },
+       "transfer->stay@3": {
+        "coef": 0.03225683822427072,
+        "p": 0.0
+       },
+       "bundle->transfer@1": {
+        "coef": -0.1975764292605291,
+        "p": 0.0
+       },
+       "dinner->transfer@1": {
+        "coef": -0.1975899713682594,
+        "p": 0.0
+       },
+       "flight->transfer@1": {
+        "coef": 0.80240811990247,
+        "p": 0.0
+       },
+       "stay->transfer@1": {
+        "coef": -0.07659479679599457,
+        "p": 0.0
+       },
+       "transfer->transfer@1": {
+        "coef": -0.19757971146567854,
+        "p": 0.0
+       },
+       "activity->transfer@2": {
+        "coef": 0.044352922168400255,
+        "p": 0.0
+       },
+       "bundle->transfer@2": {
+        "coef": 0.044353416153327885,
+        "p": 0.0
+       },
+       "dinner->transfer@2": {
+        "coef": 0.044352308950827535,
+        "p": 0.0
+       },
+       "flight->transfer@2": {
+        "coef": 0.04434159709727936,
+        "p": 0.0
+       },
+       "stay->transfer@2": {
+        "coef": 0.032261763214080474,
+        "p": 0.0
+       },
+       "transfer->transfer@2": {
+        "coef": -0.07659479682538617,
+        "p": 0.0
+       },
+       "activity->transfer@3": {
+        "coef": 0.02017048337678773,
+        "p": 0.0
+       },
+       "bundle->transfer@3": {
+        "coef": 0.02017084878247033,
+        "p": 0.0
+       },
+       "dinner->transfer@3": {
+        "coef": 0.020170741393187086,
+        "p": 0.0
+       },
+       "flight->transfer@3": {
+        "coef": 0.020122352239141605,
+        "p": 0.0
+       },
+       "stay->transfer@3": {
+        "coef": 0.02017102212269606,
+        "p": 0.0
+       },
+       "transfer->transfer@3": {
+        "coef": 0.03226176322036167,
+        "p": 0.0
+       }
+      },
+      "positive_type_edges": [
+       "activity->bundle",
+       "activity->dinner",
+       "activity->stay",
+       "activity->transfer",
+       "bundle->activity",
+       "bundle->dinner",
+       "bundle->stay",
+       "bundle->transfer",
+       "dinner->activity",
+       "dinner->bundle",
+       "dinner->stay",
+       "dinner->transfer",
+       "flight->activity",
+       "flight->bundle",
+       "flight->stay",
+       "flight->transfer",
+       "stay->activity",
+       "stay->bundle",
+       "stay->dinner",
+       "stay->transfer",
+       "transfer->activity",
+       "transfer->bundle",
+       "transfer->dinner",
+       "transfer->stay"
+      ],
+      "self_edges": [
+       "activity->activity@2",
+       "bundle->bundle@1",
+       "bundle->bundle@2",
+       "dinner->dinner@1",
+       "dinner->dinner@2",
+       "dinner->dinner@3",
+       "stay->stay@1",
+       "stay->stay@2",
+       "stay->stay@3",
+       "transfer->transfer@1",
+       "transfer->transfer@2",
+       "transfer->transfer@3"
+      ],
+      "vs_skeleton": {
+       "n": 24,
+       "n_ref": 5,
+       "tp": 5,
+       "precision": 0.20833333333333334,
+       "recall": 1.0,
+       "missing": [],
+       "extra": [
+        "activity->bundle",
+        "activity->dinner",
+        "activity->stay",
+        "activity->transfer",
+        "bundle->activity",
+        "bundle->dinner",
+        "bundle->stay",
+        "bundle->transfer",
+        "dinner->activity",
+        "dinner->bundle",
+        "dinner->stay",
+        "dinner->transfer",
+        "flight->activity",
+        "flight->bundle",
+        "flight->stay",
+        "stay->transfer",
+        "transfer->activity",
+        "transfer->bundle",
+        "transfer->dinner"
+       ]
+      }
+     },
+     "pcmci": {
+      "estimator": "pcmci_plus",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_trials": 200,
+      "edges": {
+       "activity->flight@1": {
+        "coef": 0.3501784054815306,
+        "p": 6.581317974410563e-76
+       },
+       "bundle->activity@1": {
+        "coef": 0.12078164647366427,
+        "p": 6.285343774196989e-10
+       },
+       "bundle->flight@1": {
+        "coef": 0.4331313348476431,
+        "p": 1.8032170301589086e-119
+       },
+       "bundle->transfer@1": {
+        "coef": 0.05059184479771848,
+        "p": 0.009834654350162092
+       },
+       "dinner->activity@1": {
+        "coef": 0.08483572821995161,
+        "p": 1.4585669386218022e-05
+       },
+       "dinner->bundle@1": {
+        "coef": 0.4383005915772494,
+        "p": 9.385006365796668e-123
+       },
+       "dinner->flight@1": {
+        "coef": 0.343481586669684,
+        "p": 6.018494146825665e-73
+       },
+       "flight->dinner@3": {
+        "coef": 0.7283804706619391,
+        "p": 0.0
+       },
+       "flight->flight@3": {
+        "coef": 0.238025097008808,
+        "p": 8.403226329361355e-35
+       },
+       "flight->transfer@1": {
+        "coef": 0.9131683264470029,
+        "p": 0.0
+       },
+       "transfer->stay@1": {
+        "coef": 1.0,
+        "p": 0.0
+       }
+      },
+      "positive_type_edges": [
+       "activity->flight",
+       "bundle->activity",
+       "bundle->flight",
+       "bundle->transfer",
+       "dinner->activity",
+       "dinner->bundle",
+       "dinner->flight",
+       "flight->dinner",
+       "flight->transfer",
+       "transfer->stay"
+      ],
+      "self_edges": [
+       "flight->flight@3"
+      ],
+      "vs_skeleton": {
+       "n": 10,
+       "n_ref": 5,
+       "tp": 2,
+       "precision": 0.2,
+       "recall": 0.4,
+       "missing": [
+        "stay->activity",
+        "stay->bundle",
+        "stay->dinner"
+       ],
+       "extra": [
+        "activity->flight",
+        "bundle->activity",
+        "bundle->flight",
+        "bundle->transfer",
+        "dinner->activity",
+        "dinner->bundle",
+        "dinner->flight",
+        "flight->dinner"
+       ]
+      }
+     }
+    },
+    "segment": {
+     "n_trials": 200,
+     "mean_T": 4.85,
+     "pooled": {
+      "estimator": "pooled_lagged_ridge_fdr",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_rows": 970,
+      "n_trials": 200,
+      "edges": {
+       "bundle->bundle@1": {
+        "coef": 0.2358096017907277,
+        "p": 0.00015285987179303184
+       },
+       "bundle->bundle@2": {
+        "coef": 0.21124306413586696,
+        "p": 0.0005191357175824418
+       },
+       "stay->dinner@1": {
+        "coef": 0.11328646626751038,
+        "p": 0.0001799404925453274
+       },
+       "transfer->dinner@1": {
+        "coef": 0.11328646609658222,
+        "p": 0.00017994719609659704
+       },
+       "stay->dinner@2": {
+        "coef": 0.113286466214646,
+        "p": 0.0001799424276465178
+       },
+       "transfer->dinner@2": {
+        "coef": 0.11328646623073269,
+        "p": 0.00017994274668509114
+       },
+       "stay->dinner@3": {
+        "coef": 0.11328646621180383,
+        "p": 0.00017993830326923366
+       },
+       "transfer->dinner@3": {
+        "coef": 0.1132864662308748,
+        "p": 0.0001799273725027195
+       },
+       "stay->flight@1": {
+        "coef": 0.14686494746521817,
+        "p": 0.0
+       },
+       "transfer->flight@1": {
+        "coef": 0.1468649472158461,
+        "p": 0.0
+       },
+       "activity->flight@2": {
+        "coef": -0.06704482955736105,
+        "p": 0.010415801432520189
+       },
+       "stay->flight@2": {
+        "coef": 0.14686494739331124,
+        "p": 0.0
+       },
+       "transfer->flight@2": {
+        "coef": 0.14686494741690126,
+        "p": 0.0
+       },
+       "stay->flight@3": {
+        "coef": 0.146864947412638,
+        "p": 0.0
+       },
+       "transfer->flight@3": {
+        "coef": 0.14686494744148604,
+        "p": 0.0
+       },
+       "flight->stay@1": {
+        "coef": 1.1242493276671095e-05,
+        "p": 0.0
+       },
+       "stay->stay@1": {
+        "coef": 0.14285309092517195,
+        "p": 0.0
+       },
+       "transfer->stay@1": {
+        "coef": 0.14285309067193452,
+        "p": 0.0
+       },
+       "dinner->stay@2": {
+        "coef": 1.1012186603692048e-06,
+        "p": 0.008134519405766483
+       },
+       "flight->stay@2": {
+        "coef": 9.481949739185286e-06,
+        "p": 0.0
+       },
+       "stay->stay@2": {
+        "coef": 0.14285309085337872,
+        "p": 0.0
+       },
+       "transfer->stay@2": {
+        "coef": 0.1428530908773098,
+        "p": 0.0
+       },
+       "flight->stay@3": {
+        "coef": 7.356095673234989e-06,
+        "p": 0.0
+       },
+       "stay->stay@3": {
+        "coef": 0.14285309087060227,
+        "p": 0.0
+       },
+       "transfer->stay@3": {
+        "coef": 0.14285309090007559,
+        "p": 0.0
+       },
+       "flight->transfer@1": {
+        "coef": 1.1242493276671095e-05,
+        "p": 0.0
+       },
+       "stay->transfer@1": {
+        "coef": 0.14285309092517195,
+        "p": 0.0
+       },
+       "transfer->transfer@1": {
+        "coef": 0.14285309067193452,
+        "p": 0.0
+       },
+       "dinner->transfer@2": {
+        "coef": 1.1012186603692048e-06,
+        "p": 0.008134519405766483
+       },
+       "flight->transfer@2": {
+        "coef": 9.481949739185286e-06,
+        "p": 0.0
+       },
+       "stay->transfer@2": {
+        "coef": 0.14285309085337872,
+        "p": 0.0
+       },
+       "transfer->transfer@2": {
+        "coef": 0.1428530908773098,
+        "p": 0.0
+       },
+       "flight->transfer@3": {
+        "coef": 7.356095673234989e-06,
+        "p": 0.0
+       },
+       "stay->transfer@3": {
+        "coef": 0.14285309087060227,
+        "p": 0.0
+       },
+       "transfer->transfer@3": {
+        "coef": 0.14285309090007559,
+        "p": 0.0
+       }
+      },
+      "positive_type_edges": [
+       "dinner->stay",
+       "dinner->transfer",
+       "flight->stay",
+       "flight->transfer",
+       "stay->dinner",
+       "stay->flight",
+       "stay->transfer",
+       "transfer->dinner",
+       "transfer->flight",
+       "transfer->stay"
+      ],
+      "self_edges": [
+       "bundle->bundle@1",
+       "bundle->bundle@2",
+       "stay->stay@1",
+       "stay->stay@2",
+       "stay->stay@3",
+       "transfer->transfer@1",
+       "transfer->transfer@2",
+       "transfer->transfer@3"
+      ],
+      "vs_skeleton": {
+       "n": 10,
+       "n_ref": 5,
+       "tp": 3,
+       "precision": 0.3,
+       "recall": 0.6,
+       "missing": [
+        "stay->activity",
+        "stay->bundle"
+       ],
+       "extra": [
+        "dinner->stay",
+        "dinner->transfer",
+        "flight->stay",
+        "stay->flight",
+        "stay->transfer",
+        "transfer->dinner",
+        "transfer->flight"
+       ]
+      }
+     },
+     "pcmci": {
+      "estimator": "pcmci_plus",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_trials": 200,
+      "edges": {
+       "activity->activity@2": {
+        "coef": 0.45238095238095216,
+        "p": 0.03020682571088984
+       }
+      },
+      "positive_type_edges": [],
+      "self_edges": [
+       "activity->activity@2"
+      ],
+      "vs_skeleton": {
+       "n": 0,
+       "n_ref": 5,
+       "tp": 0,
+       "precision": null,
+       "recall": 0.0,
+       "missing": [
+        "flight->transfer",
+        "stay->activity",
+        "stay->bundle",
+        "stay->dinner",
+        "transfer->stay"
+       ],
+       "extra": []
+      }
+     }
+    }
+   },
+   "seconds": 6.014508247375488
+  },
+  "travel/seed31": {
+   "types": [
+    "activity",
+    "bundle",
+    "dinner",
+    "flight",
+    "stay",
+    "transfer"
+   ],
+   "skeleton_type_edges": [
+    "flight->transfer",
+    "stay->activity",
+    "stay->bundle",
+    "stay->dinner",
+    "transfer->stay"
+   ],
+   "n_templates": 5,
+   "encodings": {
+    "event": {
+     "n_trials": 200,
+     "mean_T": 18.38,
+     "pooled": {
+      "estimator": "pooled_lagged_ridge_fdr",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_rows": 2730,
+      "n_trials": 200,
+      "edges": {
+       "bundle->activity@1": {
+        "coef": 0.7802510783121903,
+        "p": 0.0
+       },
+       "dinner->activity@1": {
+        "coef": -0.10672900962132204,
+        "p": 0.0
+       },
+       "flight->activity@1": {
+        "coef": -0.21970103828026666,
+        "p": 0.0
+       },
+       "stay->activity@1": {
+        "coef": -0.0849850930652778,
+        "p": 9.306895101257595e-07
+       },
+       "transfer->activity@1": {
+        "coef": -0.21969312097096605,
+        "p": 0.0
+       },
+       "activity->activity@2": {
+        "coef": 0.04971303864133603,
+        "p": 0.0034854071241352536
+       },
+       "bundle->activity@2": {
+        "coef": 0.04971349989698837,
+        "p": 2.4148218940256427e-05
+       },
+       "dinner->activity@2": {
+        "coef": 0.04971633110512386,
+        "p": 3.5306258463485563e-06
+       },
+       "flight->activity@2": {
+        "coef": 0.04970636429595032,
+        "p": 0.003300083147559141
+       },
+       "stay->activity@2": {
+        "coef": 0.035278675553669814,
+        "p": 2.4868995751603507e-14
+       },
+       "transfer->activity@2": {
+        "coef": -0.08498509307214874,
+        "p": 9.306863943958632e-07
+       },
+       "transfer->activity@3": {
+        "coef": 0.035278675546564386,
+        "p": 2.4868995751603507e-14
+       },
+       "bundle->bundle@1": {
+        "coef": -0.17525248977739238,
+        "p": 2.220446049250313e-16
+       },
+       "dinner->bundle@1": {
+        "coef": 0.7117600645430571,
+        "p": 0.0
+       },
+       "flight->bundle@1": {
+        "coef": -0.17526381446697314,
+        "p": 0.0
+       },
+       "stay->bundle@1": {
+        "coef": -0.06795336392161744,
+        "p": 1.1622147289669371e-05
+       },
+       "transfer->bundle@1": {
+        "coef": -0.17525726446743306,
+        "p": 0.0
+       },
+       "activity->bundle@2": {
+        "coef": 0.03934378415607398,
+        "p": 0.009782004426142965
+       },
+       "bundle->bundle@2": {
+        "coef": 0.03934413620527266,
+        "p": 0.00018769282075736804
+       },
+       "dinner->bundle@2": {
+        "coef": 0.0393437995268755,
+        "p": 4.098130482499407e-05
+       },
+       "flight->bundle@2": {
+        "coef": 0.03933821922396419,
+        "p": 0.00936473145168426
+       },
+       "stay->bundle@2": {
+        "coef": 0.028616557085115346,
+        "p": 4.680478227214735e-12
+       },
+       "transfer->bundle@2": {
+        "coef": -0.0679533639381873,
+        "p": 1.1622115868803462e-05
+       },
+       "transfer->bundle@3": {
+        "coef": 0.028616557036912127,
+        "p": 4.681366405634435e-12
+       },
+       "bundle->dinner@1": {
+        "coef": -0.07679849274907369,
+        "p": 3.377298440909726e-13
+       },
+       "dinner->dinner@1": {
+        "coef": -0.07680248698404668,
+        "p": 0.0
+       },
+       "flight->dinner@1": {
+        "coef": -0.07680303398664634,
+        "p": 0.0
+       },
+       "stay->dinner@1": {
+        "coef": 0.42577888882890846,
+        "p": 0.0
+       },
+       "transfer->dinner@1": {
+        "coef": -0.07680289494597048,
+        "p": 0.0
+       },
+       "activity->dinner@2": {
+        "coef": -0.07157931072917734,
+        "p": 0.0
+       },
+       "bundle->dinner@2": {
+        "coef": -0.071580501279918,
+        "p": 0.0
+       },
+       "dinner->dinner@2": {
+        "coef": -0.07158132935634143,
+        "p": 0.0
+       },
+       "flight->dinner@2": {
+        "coef": -0.07158118122819701,
+        "p": 0.0
+       },
+       "stay->dinner@2": {
+        "coef": -0.02088458601485854,
+        "p": 0.0
+       },
+       "transfer->dinner@2": {
+        "coef": 0.4257788889394689,
+        "p": 0.0
+       },
+       "activity->dinner@3": {
+        "coef": 0.029811311299056342,
+        "p": 0.00018641276576802923
+       },
+       "bundle->dinner@3": {
+        "coef": 0.029812483663647527,
+        "p": 1.1939419231055126e-08
+       },
+       "dinner->dinner@3": {
+        "coef": 0.029812038503791882,
+        "p": 2.3589308284499566e-10
+       },
+       "stay->dinner@3": {
+        "coef": 0.029812359247159748,
+        "p": 4.3798742410672276e-10
+       },
+       "transfer->dinner@3": {
+        "coef": -0.020884586013622197,
+        "p": 0.0
+       },
+       "bundle->stay@1": {
+        "coef": -0.19756731425205842,
+        "p": 0.0
+       },
+       "dinner->stay@1": {
+        "coef": -0.19757776511032432,
+        "p": 0.0
+       },
+       "flight->stay@1": {
+        "coef": -0.1975785490617703,
+        "p": 0.0
+       },
+       "stay->stay@1": {
+        "coef": -0.07660820106229238,
+        "p": 0.0
+       },
+       "transfer->stay@1": {
+        "coef": 0.8023973819944388,
+        "p": 0.0
+       },
+       "activity->stay@2": {
+        "coef": 0.04434715026927449,
+        "p": 0.0
+       },
+       "bundle->stay@2": {
+        "coef": 0.044349055067506526,
+        "p": 0.0
+       },
+       "dinner->stay@2": {
+        "coef": 0.044348699269150416,
+        "p": 0.0
+       },
+       "flight->stay@2": {
+        "coef": 0.04437232953216608,
+        "p": 0.0
+       },
+       "stay->stay@2": {
+        "coef": 0.032256519584436205,
+        "p": 0.0
+       },
+       "transfer->stay@2": {
+        "coef": -0.07660820108638333,
+        "p": 0.0
+       },
+       "activity->stay@3": {
+        "coef": 0.020164205195470686,
+        "p": 0.0
+       },
+       "bundle->stay@3": {
+        "coef": 0.020164535314080467,
+        "p": 0.0
+       },
+       "dinner->stay@3": {
+        "coef": 0.020164791599398768,
+        "p": 0.0
+       },
+       "flight->stay@3": {
+        "coef": 0.020150817043855795,
+        "p": 0.0
+       },
+       "stay->stay@3": {
+        "coef": 0.020164683921365167,
+        "p": 0.0
+       },
+       "transfer->stay@3": {
+        "coef": 0.03225651957870923,
+        "p": 0.0
+       },
+       "bundle->transfer@1": {
+        "coef": -0.1975743924728839,
+        "p": 0.0
+       },
+       "dinner->transfer@1": {
+        "coef": -0.19758514921795012,
+        "p": 0.0
+       },
+       "flight->transfer@1": {
+        "coef": 0.8024127776372971,
+        "p": 0.0
+       },
+       "stay->transfer@1": {
+        "coef": -0.07660834485031387,
+        "p": 0.0
+       },
+       "transfer->transfer@1": {
+        "coef": -0.19757854904538874,
+        "p": 0.0
+       },
+       "activity->transfer@2": {
+        "coef": 0.04435553575439144,
+        "p": 0.0
+       },
+       "bundle->transfer@2": {
+        "coef": 0.044355870857593516,
+        "p": 0.0
+       },
+       "dinner->transfer@2": {
+        "coef": 0.044355490309001766,
+        "p": 0.0
+       },
+       "flight->transfer@2": {
+        "coef": 0.04434797299028048,
+        "p": 0.0
+       },
+       "stay->transfer@2": {
+        "coef": 0.03225981708457937,
+        "p": 0.0
+       },
+       "transfer->transfer@2": {
+        "coef": -0.0766083449304169,
+        "p": 0.0
+       },
+       "activity->transfer@3": {
+        "coef": 0.02016370356878383,
+        "p": 0.0
+       },
+       "bundle->transfer@3": {
+        "coef": 0.020164033670113213,
+        "p": 0.0
+       },
+       "dinner->transfer@3": {
+        "coef": 0.020164289974758276,
+        "p": 0.0
+       },
+       "flight->transfer@3": {
+        "coef": 0.020150315476087144,
+        "p": 0.0
+       },
+       "stay->transfer@3": {
+        "coef": 0.02016418229183614,
+        "p": 0.0
+       },
+       "transfer->transfer@3": {
+        "coef": 0.03225981699804947,
+        "p": 0.0
+       }
+      },
+      "positive_type_edges": [
+       "activity->bundle",
+       "activity->dinner",
+       "activity->stay",
+       "activity->transfer",
+       "bundle->activity",
+       "bundle->dinner",
+       "bundle->stay",
+       "bundle->transfer",
+       "dinner->activity",
+       "dinner->bundle",
+       "dinner->stay",
+       "dinner->transfer",
+       "flight->activity",
+       "flight->bundle",
+       "flight->stay",
+       "flight->transfer",
+       "stay->activity",
+       "stay->bundle",
+       "stay->dinner",
+       "stay->transfer",
+       "transfer->activity",
+       "transfer->bundle",
+       "transfer->dinner",
+       "transfer->stay"
+      ],
+      "self_edges": [
+       "activity->activity@2",
+       "bundle->bundle@1",
+       "bundle->bundle@2",
+       "dinner->dinner@1",
+       "dinner->dinner@2",
+       "dinner->dinner@3",
+       "stay->stay@1",
+       "stay->stay@2",
+       "stay->stay@3",
+       "transfer->transfer@1",
+       "transfer->transfer@2",
+       "transfer->transfer@3"
+      ],
+      "vs_skeleton": {
+       "n": 24,
+       "n_ref": 5,
+       "tp": 5,
+       "precision": 0.20833333333333334,
+       "recall": 1.0,
+       "missing": [],
+       "extra": [
+        "activity->bundle",
+        "activity->dinner",
+        "activity->stay",
+        "activity->transfer",
+        "bundle->activity",
+        "bundle->dinner",
+        "bundle->stay",
+        "bundle->transfer",
+        "dinner->activity",
+        "dinner->bundle",
+        "dinner->stay",
+        "dinner->transfer",
+        "flight->activity",
+        "flight->bundle",
+        "flight->stay",
+        "stay->transfer",
+        "transfer->activity",
+        "transfer->bundle",
+        "transfer->dinner"
+       ]
+      }
+     },
+     "pcmci": {
+      "estimator": "pcmci_plus",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_trials": 200,
+      "edges": {
+       "activity->flight@1": {
+        "coef": 0.3246345962463756,
+        "p": 9.683881954779427e-62
+       },
+       "bundle->activity@1": {
+        "coef": 0.1553045947774714,
+        "p": 7.972450783156591e-15
+       },
+       "bundle->flight@1": {
+        "coef": 0.41642778361281957,
+        "p": 2.7361757514316174e-104
+       },
+       "bundle->transfer@1": {
+        "coef": 0.07479841435250154,
+        "p": 0.00019627812356240836
+       },
+       "dinner->activity@1": {
+        "coef": 0.11444337699126061,
+        "p": 1.141623564247693e-08
+       },
+       "dinner->bundle@1": {
+        "coef": 0.4177553443613158,
+        "p": 3.903903870298807e-105
+       },
+       "dinner->flight@1": {
+        "coef": 0.3352279890316293,
+        "p": 5.50300698730692e-66
+       },
+       "flight->dinner@3": {
+        "coef": 0.7279790035327636,
+        "p": 0.0
+       },
+       "flight->flight@3": {
+        "coef": 0.23761606845403793,
+        "p": 4.9328931576271497e-33
+       },
+       "flight->transfer@1": {
+        "coef": 0.9435236122555016,
+        "p": 0.0
+       },
+       "transfer->stay@1": {
+        "coef": 1.0,
+        "p": 0.0
+       }
+      },
+      "positive_type_edges": [
+       "activity->flight",
+       "bundle->activity",
+       "bundle->flight",
+       "bundle->transfer",
+       "dinner->activity",
+       "dinner->bundle",
+       "dinner->flight",
+       "flight->dinner",
+       "flight->transfer",
+       "transfer->stay"
+      ],
+      "self_edges": [
+       "flight->flight@3"
+      ],
+      "vs_skeleton": {
+       "n": 10,
+       "n_ref": 5,
+       "tp": 2,
+       "precision": 0.2,
+       "recall": 0.4,
+       "missing": [
+        "stay->activity",
+        "stay->bundle",
+        "stay->dinner"
+       ],
+       "extra": [
+        "activity->flight",
+        "bundle->activity",
+        "bundle->flight",
+        "bundle->transfer",
+        "dinner->activity",
+        "dinner->bundle",
+        "dinner->flight",
+        "flight->dinner"
+       ]
+      }
+     }
+    },
+    "segment": {
+     "n_trials": 200,
+     "mean_T": 4.73,
+     "pooled": {
+      "estimator": "pooled_lagged_ridge_fdr",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_rows": 946,
+      "n_trials": 200,
+      "edges": {
+       "bundle->bundle@1": {
+        "coef": 0.1763558477916415,
+        "p": 0.002786480277223724
+       },
+       "bundle->bundle@3": {
+        "coef": 0.27240238647882187,
+        "p": 2.0566848026870588e-06
+       },
+       "dinner->bundle@3": {
+        "coef": -0.14162058223621557,
+        "p": 0.006147590263943181
+       },
+       "stay->dinner@1": {
+        "coef": 0.07615489503552908,
+        "p": 0.002622071038346885
+       },
+       "transfer->dinner@1": {
+        "coef": 0.07615489503422168,
+        "p": 0.0026220592280059574
+       },
+       "stay->dinner@2": {
+        "coef": 0.07615489505997175,
+        "p": 0.002622086736317364
+       },
+       "transfer->dinner@2": {
+        "coef": 0.07615489504451034,
+        "p": 0.0026220607803351115
+       },
+       "stay->dinner@3": {
+        "coef": 0.07615489504780726,
+        "p": 0.0026221069478096215
+       },
+       "transfer->dinner@3": {
+        "coef": 0.07615489506110862,
+        "p": 0.0026222064191721017
+       },
+       "stay->flight@1": {
+        "coef": 0.13786551139787662,
+        "p": 0.0
+       },
+       "transfer->flight@1": {
+        "coef": 0.13786551139702397,
+        "p": 0.0
+       },
+       "stay->flight@2": {
+        "coef": 0.13786551145369685,
+        "p": 0.0
+       },
+       "transfer->flight@2": {
+        "coef": 0.13786551142891312,
+        "p": 0.0
+       },
+       "stay->flight@3": {
+        "coef": 0.13786551143311954,
+        "p": 0.0
+       },
+       "transfer->flight@3": {
+        "coef": 0.1378655114558569,
+        "p": 0.0
+       },
+       "flight->stay@1": {
+        "coef": 7.003495294727324e-06,
+        "p": 0.0
+       },
+       "stay->stay@1": {
+        "coef": 0.142854465612686,
+        "p": 0.0
+       },
+       "transfer->stay@1": {
+        "coef": 0.14285446561234494,
+        "p": 0.0
+       },
+       "flight->stay@2": {
+        "coef": 6.164300764055497e-06,
+        "p": 0.0
+       },
+       "stay->stay@2": {
+        "coef": 0.14285446567123472,
+        "p": 0.0
+       },
+       "transfer->stay@2": {
+        "coef": 0.14285446564599624,
+        "p": 0.0
+       },
+       "flight->stay@3": {
+        "coef": 5.620080722162912e-06,
+        "p": 0.0
+       },
+       "stay->stay@3": {
+        "coef": 0.14285446565088478,
+        "p": 0.0
+       },
+       "transfer->stay@3": {
+        "coef": 0.14285446567453164,
+        "p": 0.0
+       },
+       "flight->transfer@1": {
+        "coef": 7.003495294727324e-06,
+        "p": 0.0
+       },
+       "stay->transfer@1": {
+        "coef": 0.142854465612686,
+        "p": 0.0
+       },
+       "transfer->transfer@1": {
+        "coef": 0.14285446561234494,
+        "p": 0.0
+       },
+       "flight->transfer@2": {
+        "coef": 6.164300764055497e-06,
+        "p": 0.0
+       },
+       "stay->transfer@2": {
+        "coef": 0.14285446567123472,
+        "p": 0.0
+       },
+       "transfer->transfer@2": {
+        "coef": 0.14285446564599624,
+        "p": 0.0
+       },
+       "flight->transfer@3": {
+        "coef": 5.620080722162912e-06,
+        "p": 0.0
+       },
+       "stay->transfer@3": {
+        "coef": 0.14285446565088478,
+        "p": 0.0
+       },
+       "transfer->transfer@3": {
+        "coef": 0.14285446567453164,
+        "p": 0.0
+       }
+      },
+      "positive_type_edges": [
+       "flight->stay",
+       "flight->transfer",
+       "stay->dinner",
+       "stay->flight",
+       "stay->transfer",
+       "transfer->dinner",
+       "transfer->flight",
+       "transfer->stay"
+      ],
+      "self_edges": [
+       "bundle->bundle@1",
+       "bundle->bundle@3",
+       "stay->stay@1",
+       "stay->stay@2",
+       "stay->stay@3",
+       "transfer->transfer@1",
+       "transfer->transfer@2",
+       "transfer->transfer@3"
+      ],
+      "vs_skeleton": {
+       "n": 8,
+       "n_ref": 5,
+       "tp": 3,
+       "precision": 0.375,
+       "recall": 0.6,
+       "missing": [
+        "stay->activity",
+        "stay->bundle"
+       ],
+       "extra": [
+        "flight->stay",
+        "stay->flight",
+        "stay->transfer",
+        "transfer->dinner",
+        "transfer->flight"
+       ]
+      }
+     },
+     "pcmci": {
+      "estimator": "pcmci_plus",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_trials": 200,
+      "edges": {
+       "bundle->activity@3": {
+        "coef": 0.5916079783099616,
+        "p": 0.0014560707671118327
+       },
+       "dinner->dinner@2": {
+        "coef": -0.4580396958522336,
+        "p": 0.02130486773442435
+       }
+      },
+      "positive_type_edges": [
+       "bundle->activity"
+      ],
+      "self_edges": [
+       "dinner->dinner@2"
+      ],
+      "vs_skeleton": {
+       "n": 1,
+       "n_ref": 5,
+       "tp": 0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "missing": [
+        "flight->transfer",
+        "stay->activity",
+        "stay->bundle",
+        "stay->dinner",
+        "transfer->stay"
+       ],
+       "extra": [
+        "bundle->activity"
+       ]
+      }
+     }
+    }
+   },
+   "seconds": 2.524089813232422
+  },
+  "travel/seed32": {
+   "types": [
+    "activity",
+    "bundle",
+    "dinner",
+    "flight",
+    "stay",
+    "transfer"
+   ],
+   "skeleton_type_edges": [
+    "flight->transfer",
+    "stay->activity",
+    "stay->bundle",
+    "stay->dinner",
+    "transfer->stay"
+   ],
+   "n_templates": 5,
+   "encodings": {
+    "event": {
+     "n_trials": 200,
+     "mean_T": 18.705,
+     "pooled": {
+      "estimator": "pooled_lagged_ridge_fdr",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_rows": 2795,
+      "n_trials": 200,
+      "edges": {
+       "bundle->activity@1": {
+        "coef": 0.7549112159360583,
+        "p": 0.0
+       },
+       "dinner->activity@1": {
+        "coef": -0.11242495713178613,
+        "p": 0.0
+       },
+       "flight->activity@1": {
+        "coef": -0.24504515642798808,
+        "p": 0.0
+       },
+       "transfer->activity@1": {
+        "coef": -0.24498910196274082,
+        "p": 0.0
+       },
+       "dinner->activity@2": {
+        "coef": 0.027867864841873313,
+        "p": 0.022943985372005038
+       },
+       "stay->activity@2": {
+        "coef": 0.04525517507391896,
+        "p": 0.0
+       },
+       "activity->activity@3": {
+        "coef": 0.0635814475927674,
+        "p": 0.000435361839681514
+       },
+       "bundle->activity@3": {
+        "coef": 0.06298049105485859,
+        "p": 2.2664918231107833e-07
+       },
+       "dinner->activity@3": {
+        "coef": 0.06469713361578044,
+        "p": 1.2102893798271452e-08
+       },
+       "flight->activity@3": {
+        "coef": -0.14462776527824417,
+        "p": 7.528787184285513e-05
+       },
+       "stay->activity@3": {
+        "coef": 0.06264501529373945,
+        "p": 1.972903913571855e-07
+       },
+       "transfer->activity@3": {
+        "coef": 0.04525517508452026,
+        "p": 0.0
+       },
+       "bundle->bundle@1": {
+        "coef": -0.17137052780958584,
+        "p": 1.1441958491786863e-12
+       },
+       "dinner->bundle@1": {
+        "coef": 0.6959967684240667,
+        "p": 0.0
+       },
+       "flight->bundle@1": {
+        "coef": -0.17138164863023064,
+        "p": 0.0
+       },
+       "stay->bundle@1": {
+        "coef": -0.06644937579033439,
+        "p": 2.4160478076851177e-05
+       },
+       "transfer->bundle@1": {
+        "coef": -0.17137624782084515,
+        "p": 0.0
+       },
+       "activity->bundle@2": {
+        "coef": 0.03847257059769049,
+        "p": 0.00769842996109249
+       },
+       "bundle->bundle@2": {
+        "coef": 0.03847285172781767,
+        "p": 0.0006224324875645504
+       },
+       "dinner->bundle@2": {
+        "coef": 0.03847227855553115,
+        "p": 0.0003048629870867625
+       },
+       "flight->bundle@2": {
+        "coef": 0.03846800264150829,
+        "p": 0.01463848671008261
+       },
+       "stay->bundle@2": {
+        "coef": 0.02798264051705246,
+        "p": 8.29774693400509e-10
+       },
+       "transfer->bundle@2": {
+        "coef": -0.06644937577055998,
+        "p": 2.416047550601874e-05
+       },
+       "transfer->bundle@3": {
+        "coef": 0.02798264055832078,
+        "p": 8.296632270088367e-10
+       },
+       "bundle->dinner@1": {
+        "coef": -0.0553407122784364,
+        "p": 5.2650263224540694e-05
+       },
+       "dinner->dinner@1": {
+        "coef": -0.0553431117448433,
+        "p": 0.0
+       },
+       "flight->dinner@1": {
+        "coef": -0.05534109965006451,
+        "p": 0.0
+       },
+       "stay->dinner@1": {
+        "coef": 0.3372128848430265,
+        "p": 0.0
+       },
+       "transfer->dinner@1": {
+        "coef": -0.05539040419215624,
+        "p": 1.1295580026882135e-09
+       },
+       "activity->dinner@2": {
+        "coef": -0.04763698549213302,
+        "p": 7.792109402160463e-09
+       },
+       "bundle->dinner@2": {
+        "coef": -0.04681059513349339,
+        "p": 3.5482727867020003e-13
+       },
+       "dinner->dinner@2": {
+        "coef": -0.04886225090294971,
+        "p": 1.1102230246251565e-15
+       },
+       "flight->dinner@2": {
+        "coef": -0.04787837304773035,
+        "p": 1.0509625636423436e-07
+       },
+       "stay->dinner@2": {
+        "coef": -0.030227123429312996,
+        "p": 0.0
+       },
+       "transfer->dinner@2": {
+        "coef": 0.3372128848373741,
+        "p": 0.0
+       },
+       "dinner->dinner@3": {
+        "coef": -0.013643203953108696,
+        "p": 0.014964561767610851
+       },
+       "flight->dinner@3": {
+        "coef": 0.1957138676658019,
+        "p": 0.0
+       },
+       "transfer->dinner@3": {
+        "coef": -0.03022712334858113,
+        "p": 0.0
+       },
+       "bundle->stay@1": {
+        "coef": -0.19756787093524508,
+        "p": 0.0
+       },
+       "dinner->stay@1": {
+        "coef": -0.19757840143509142,
+        "p": 0.0
+       },
+       "flight->stay@1": {
+        "coef": -0.19757914055765013,
+        "p": 0.0
+       },
+       "stay->stay@1": {
+        "coef": -0.07660948166730108,
+        "p": 0.0
+       },
+       "transfer->stay@1": {
+        "coef": 0.8024006244259674,
+        "p": 0.0
+       },
+       "activity->stay@2": {
+        "coef": 0.04434930379296986,
+        "p": 0.0
+       },
+       "bundle->stay@2": {
+        "coef": 0.04435005210812193,
+        "p": 0.0
+       },
+       "dinner->stay@2": {
+        "coef": 0.04434961262317216,
+        "p": 0.0
+       },
+       "flight->stay@2": {
+        "coef": 0.044369553226339065,
+        "p": 0.0
+       },
+       "stay->stay@2": {
+        "coef": 0.03225668980519458,
+        "p": 0.0
+       },
+       "transfer->stay@2": {
+        "coef": -0.07660948160997805,
+        "p": 0.0
+       },
+       "activity->stay@3": {
+        "coef": 0.02016371902301728,
+        "p": 0.0
+       },
+       "bundle->stay@3": {
+        "coef": 0.020163902665544242,
+        "p": 0.0
+       },
+       "dinner->stay@3": {
+        "coef": 0.020164066531904723,
+        "p": 0.0
+       },
+       "flight->stay@3": {
+        "coef": 0.020153201859699266,
+        "p": 0.0
+       },
+       "stay->stay@3": {
+        "coef": 0.02016414997255822,
+        "p": 0.0
+       },
+       "transfer->stay@3": {
+        "coef": 0.03225668987529673,
+        "p": 0.0
+       },
+       "bundle->transfer@1": {
+        "coef": -0.19757377472799575,
+        "p": 0.0
+       },
+       "dinner->transfer@1": {
+        "coef": -0.19758462798884935,
+        "p": 0.0
+       },
+       "flight->transfer@1": {
+        "coef": 0.8024133274978276,
+        "p": 0.0
+       },
+       "stay->transfer@1": {
+        "coef": -0.07660950214712159,
+        "p": 0.0
+       },
+       "transfer->transfer@1": {
+        "coef": -0.19757914058136805,
+        "p": 0.0
+       },
+       "activity->transfer@2": {
+        "coef": 0.044355711927366315,
+        "p": 0.0
+       },
+       "bundle->transfer@2": {
+        "coef": 0.04435601511352871,
+        "p": 0.0
+       },
+       "dinner->transfer@2": {
+        "coef": 0.044355343402820324,
+        "p": 0.0
+       },
+       "flight->transfer@2": {
+        "coef": 0.04434918690457579,
+        "p": 0.0
+       },
+       "stay->transfer@2": {
+        "coef": 0.03225952690189615,
+        "p": 0.0
+       },
+       "transfer->transfer@2": {
+        "coef": -0.07660950206579287,
+        "p": 0.0
+       },
+       "activity->transfer@3": {
+        "coef": 0.0201632980250821,
+        "p": 0.0
+       },
+       "bundle->transfer@3": {
+        "coef": 0.02016325079925707,
+        "p": 0.0
+       },
+       "dinner->transfer@3": {
+        "coef": 0.020163744899193148,
+        "p": 0.0
+       },
+       "flight->transfer@3": {
+        "coef": 0.020152690461600287,
+        "p": 0.0
+       },
+       "stay->transfer@3": {
+        "coef": 0.020163771033580247,
+        "p": 0.0
+       },
+       "transfer->transfer@3": {
+        "coef": 0.03225952700672963,
+        "p": 0.0
+       }
+      },
+      "positive_type_edges": [
+       "activity->bundle",
+       "activity->stay",
+       "activity->transfer",
+       "bundle->activity",
+       "bundle->stay",
+       "bundle->transfer",
+       "dinner->activity",
+       "dinner->bundle",
+       "dinner->stay",
+       "dinner->transfer",
+       "flight->bundle",
+       "flight->dinner",
+       "flight->stay",
+       "flight->transfer",
+       "stay->activity",
+       "stay->bundle",
+       "stay->dinner",
+       "stay->transfer",
+       "transfer->activity",
+       "transfer->bundle",
+       "transfer->dinner",
+       "transfer->stay"
+      ],
+      "self_edges": [
+       "activity->activity@3",
+       "bundle->bundle@1",
+       "bundle->bundle@2",
+       "dinner->dinner@1",
+       "dinner->dinner@2",
+       "dinner->dinner@3",
+       "stay->stay@1",
+       "stay->stay@2",
+       "stay->stay@3",
+       "transfer->transfer@1",
+       "transfer->transfer@2",
+       "transfer->transfer@3"
+      ],
+      "vs_skeleton": {
+       "n": 22,
+       "n_ref": 5,
+       "tp": 5,
+       "precision": 0.22727272727272727,
+       "recall": 1.0,
+       "missing": [],
+       "extra": [
+        "activity->bundle",
+        "activity->stay",
+        "activity->transfer",
+        "bundle->activity",
+        "bundle->stay",
+        "bundle->transfer",
+        "dinner->activity",
+        "dinner->bundle",
+        "dinner->stay",
+        "dinner->transfer",
+        "flight->bundle",
+        "flight->dinner",
+        "flight->stay",
+        "stay->transfer",
+        "transfer->activity",
+        "transfer->bundle",
+        "transfer->dinner"
+       ]
+      }
+     },
+     "pcmci": {
+      "estimator": "pcmci_plus",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_trials": 200,
+      "edges": {
+       "activity->transfer@1": {
+        "coef": 0.057538523554028095,
+        "p": 0.0037422251908194462
+       },
+       "bundle->activity@1": {
+        "coef": 0.125883032458047,
+        "p": 1.9336213196684503e-10
+       },
+       "bundle->transfer@1": {
+        "coef": 0.06990364875994759,
+        "p": 0.0004247276269309867
+       },
+       "dinner->activity@1": {
+        "coef": 0.13052421446967055,
+        "p": 4.0226398979607996e-11
+       },
+       "dinner->bundle@1": {
+        "coef": 0.45045130831475566,
+        "p": 3.2459865148311163e-127
+       },
+       "dinner->transfer@1": {
+        "coef": 0.05051354152324758,
+        "p": 0.010922422461636523
+       },
+       "flight->dinner@3": {
+        "coef": 0.7415056456433612,
+        "p": 0.0
+       },
+       "flight->transfer@1": {
+        "coef": 0.748204822876245,
+        "p": 0.0
+       },
+       "transfer->stay@1": {
+        "coef": 0.9999999999999993,
+        "p": 0.0
+       }
+      },
+      "positive_type_edges": [
+       "activity->transfer",
+       "bundle->activity",
+       "bundle->transfer",
+       "dinner->activity",
+       "dinner->bundle",
+       "dinner->transfer",
+       "flight->dinner",
+       "flight->transfer",
+       "transfer->stay"
+      ],
+      "self_edges": [],
+      "vs_skeleton": {
+       "n": 9,
+       "n_ref": 5,
+       "tp": 2,
+       "precision": 0.2222222222222222,
+       "recall": 0.4,
+       "missing": [
+        "stay->activity",
+        "stay->bundle",
+        "stay->dinner"
+       ],
+       "extra": [
+        "activity->transfer",
+        "bundle->activity",
+        "bundle->transfer",
+        "dinner->activity",
+        "dinner->bundle",
+        "dinner->transfer",
+        "flight->dinner"
+       ]
+      }
+     }
+    },
+    "segment": {
+     "n_trials": 200,
+     "mean_T": 4.73,
+     "pooled": {
+      "estimator": "pooled_lagged_ridge_fdr",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_rows": 946,
+      "n_trials": 200,
+      "edges": {
+       "stay->activity@1": {
+        "coef": 0.040300925996291426,
+        "p": 0.006138678412040077
+       },
+       "transfer->activity@1": {
+        "coef": 0.04030092600430635,
+        "p": 0.006138772372450196
+       },
+       "stay->activity@2": {
+        "coef": 0.04030092598668489,
+        "p": 0.0061385711780712615
+       },
+       "transfer->activity@2": {
+        "coef": 0.040300925996632486,
+        "p": 0.006138680690685794
+       },
+       "stay->activity@3": {
+        "coef": 0.04030092598753754,
+        "p": 0.006138627812156239
+       },
+       "transfer->activity@3": {
+        "coef": 0.040300925987139635,
+        "p": 0.006138987473655488
+       },
+       "bundle->bundle@2": {
+        "coef": 0.2252187790008261,
+        "p": 0.00024982996481348607
+       },
+       "bundle->bundle@3": {
+        "coef": 0.18800372145894345,
+        "p": 0.0023263039233805127
+       },
+       "stay->dinner@1": {
+        "coef": 0.07385612879301107,
+        "p": 0.005075970577256506
+       },
+       "transfer->dinner@1": {
+        "coef": 0.07385612887077286,
+        "p": 0.0050760514372358845
+       },
+       "stay->dinner@2": {
+        "coef": 0.07385612878198344,
+        "p": 0.005075878248092636
+       },
+       "transfer->dinner@2": {
+        "coef": 0.073856128871995,
+        "p": 0.005075972492870395
+       },
+       "dinner->dinner@3": {
+        "coef": -0.14244351098169783,
+        "p": 0.019084025916101144
+       },
+       "stay->dinner@3": {
+        "coef": 0.0738561287976438,
+        "p": 0.005075927000042446
+       },
+       "transfer->dinner@3": {
+        "coef": 0.0738561287922721,
+        "p": 0.005076236661096356
+       },
+       "stay->flight@1": {
+        "coef": 0.13884423950651126,
+        "p": 0.0
+       },
+       "transfer->flight@1": {
+        "coef": 0.138844239622415,
+        "p": 0.0
+       },
+       "stay->flight@2": {
+        "coef": 0.13884423947916957,
+        "p": 0.0
+       },
+       "transfer->flight@2": {
+        "coef": 0.13884423961226844,
+        "p": 0.0
+       },
+       "stay->flight@3": {
+        "coef": 0.13884423950136693,
+        "p": 0.0
+       },
+       "transfer->flight@3": {
+        "coef": 0.13884423949389202,
+        "p": 0.0
+       },
+       "flight->stay@1": {
+        "coef": 9.066644298281676e-06,
+        "p": 0.0
+       },
+       "stay->stay@1": {
+        "coef": 0.1428540785605037,
+        "p": 0.0
+       },
+       "transfer->stay@1": {
+        "coef": 0.14285407867993172,
+        "p": 0.0
+       },
+       "dinner->stay@2": {
+        "coef": 8.51950160977305e-07,
+        "p": 0.02754801411020824
+       },
+       "flight->stay@2": {
+        "coef": 6.301318995951405e-06,
+        "p": 0.0
+       },
+       "stay->stay@2": {
+        "coef": 0.14285407853265042,
+        "p": 0.0
+       },
+       "transfer->stay@2": {
+        "coef": 0.1428540786695578,
+        "p": 0.0
+       },
+       "flight->stay@3": {
+        "coef": 5.7509008040274034e-06,
+        "p": 0.0
+       },
+       "stay->stay@3": {
+        "coef": 0.14285407855575727,
+        "p": 0.0
+       },
+       "transfer->stay@3": {
+        "coef": 0.14285407854799814,
+        "p": 0.0
+       },
+       "flight->transfer@1": {
+        "coef": 9.066644298281676e-06,
+        "p": 0.0
+       },
+       "stay->transfer@1": {
+        "coef": 0.1428540785605037,
+        "p": 0.0
+       },
+       "transfer->transfer@1": {
+        "coef": 0.14285407867993172,
+        "p": 0.0
+       },
+       "dinner->transfer@2": {
+        "coef": 8.51950160977305e-07,
+        "p": 0.02754801411020824
+       },
+       "flight->transfer@2": {
+        "coef": 6.301318995951405e-06,
+        "p": 0.0
+       },
+       "stay->transfer@2": {
+        "coef": 0.14285407853265042,
+        "p": 0.0
+       },
+       "transfer->transfer@2": {
+        "coef": 0.1428540786695578,
+        "p": 0.0
+       },
+       "flight->transfer@3": {
+        "coef": 5.7509008040274034e-06,
+        "p": 0.0
+       },
+       "stay->transfer@3": {
+        "coef": 0.14285407855575727,
+        "p": 0.0
+       },
+       "transfer->transfer@3": {
+        "coef": 0.14285407854799814,
+        "p": 0.0
+       }
+      },
+      "positive_type_edges": [
+       "dinner->stay",
+       "dinner->transfer",
+       "flight->stay",
+       "flight->transfer",
+       "stay->activity",
+       "stay->dinner",
+       "stay->flight",
+       "stay->transfer",
+       "transfer->activity",
+       "transfer->dinner",
+       "transfer->flight",
+       "transfer->stay"
+      ],
+      "self_edges": [
+       "bundle->bundle@2",
+       "bundle->bundle@3",
+       "dinner->dinner@3",
+       "stay->stay@1",
+       "stay->stay@2",
+       "stay->stay@3",
+       "transfer->transfer@1",
+       "transfer->transfer@2",
+       "transfer->transfer@3"
+      ],
+      "vs_skeleton": {
+       "n": 12,
+       "n_ref": 5,
+       "tp": 4,
+       "precision": 0.3333333333333333,
+       "recall": 0.8,
+       "missing": [
+        "stay->bundle"
+       ],
+       "extra": [
+        "dinner->stay",
+        "dinner->transfer",
+        "flight->stay",
+        "stay->flight",
+        "stay->transfer",
+        "transfer->activity",
+        "transfer->dinner",
+        "transfer->flight"
+       ]
+      }
+     },
+     "pcmci": {
+      "estimator": "pcmci_plus",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_trials": 200,
+      "edges": {
+       "flight->dinner@3": {
+        "coef": 0.7867957924694431,
+        "p": 0.000299140673488395
+       }
+      },
+      "positive_type_edges": [
+       "flight->dinner"
+      ],
+      "self_edges": [],
+      "vs_skeleton": {
+       "n": 1,
+       "n_ref": 5,
+       "tp": 0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "missing": [
+        "flight->transfer",
+        "stay->activity",
+        "stay->bundle",
+        "stay->dinner",
+        "transfer->stay"
+       ],
+       "extra": [
+        "flight->dinner"
+       ]
+      }
+     }
+    }
+   },
+   "seconds": 3.8732998371124268
+  },
+  "shopping32/seed30": {
+   "types": [
+    "cart",
+    "line",
+    "promo"
+   ],
+   "skeleton_type_edges": [
+    "cart->line",
+    "cart->promo",
+    "line->cart"
+   ],
+   "n_templates": 4,
+   "encodings": {
+    "event": {
+     "n_trials": 200,
+     "mean_T": 14.18,
+     "pooled": {
+      "estimator": "pooled_lagged_ridge_fdr",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_rows": 2005,
+      "n_trials": 200,
+      "edges": {
+       "cart->cart@1": {
+        "coef": -0.41358641314089795,
+        "p": 0.0
+       },
+       "line->cart@1": {
+        "coef": 0.30731924979328795,
+        "p": 0.0
+       },
+       "promo->cart@1": {
+        "coef": 0.2888025739996607,
+        "p": 0.0
+       },
+       "cart->cart@2": {
+        "coef": -0.27881567473540514,
+        "p": 0.0
+       },
+       "line->cart@2": {
+        "coef": 0.12706823986979998,
+        "p": 0.0
+       },
+       "promo->cart@2": {
+        "coef": 0.3342828454895894,
+        "p": 0.0
+       },
+       "cart->cart@3": {
+        "coef": 0.05506907981157383,
+        "p": 0.004422735340511075
+       },
+       "line->cart@3": {
+        "coef": 0.07076628226764115,
+        "p": 1.719208264638894e-08
+       },
+       "promo->cart@3": {
+        "coef": 0.05670004853851651,
+        "p": 0.005467554920566053
+       },
+       "cart->line@1": {
+        "coef": 0.6776500063129163,
+        "p": 0.0
+       },
+       "line->line@1": {
+        "coef": -0.1794394004885973,
+        "p": 0.0
+       },
+       "promo->line@1": {
+        "coef": -0.26313569700725736,
+        "p": 0.0
+       },
+       "cart->line@2": {
+        "coef": 0.341207051769004,
+        "p": 0.0
+       },
+       "line->line@2": {
+        "coef": -0.03758811541367635,
+        "p": 0.003429065912932572
+       },
+       "promo->line@2": {
+        "coef": -0.0685440277064373,
+        "p": 8.797922808501113e-06
+       },
+       "cart->line@3": {
+        "coef": 0.07277974355719152,
+        "p": 2.441804228614508e-05
+       },
+       "line->line@3": {
+        "coef": 0.06743857614787885,
+        "p": 1.6148571369001274e-09
+       },
+       "promo->line@3": {
+        "coef": 0.0948565889819406,
+        "p": 1.9272133400249913e-07
+       },
+       "cart->promo@1": {
+        "coef": -0.09739692698919811,
+        "p": 1.2729722609350347e-08
+       },
+       "line->promo@1": {
+        "coef": 0.03878735746286566,
+        "p": 0.012195018514597145
+       },
+       "promo->promo@1": {
+        "coef": 0.1409986883345482,
+        "p": 2.0459756777668758e-08
+       },
+       "cart->promo@2": {
+        "coef": 0.10427468795255379,
+        "p": 8.658775940695307e-08
+       },
+       "line->promo@2": {
+        "coef": 0.0771869179115896,
+        "p": 8.164665166177087e-08
+       },
+       "promo->promo@2": {
+        "coef": -0.0990724870848112,
+        "p": 9.461574634883618e-09
+       },
+       "cart->promo@3": {
+        "coef": 0.038817365977877216,
+        "p": 0.043442865931161645
+       },
+       "line->promo@3": {
+        "coef": 0.02846210356733536,
+        "p": 0.02199898693645075
+       }
+      },
+      "positive_type_edges": [
+       "cart->line",
+       "cart->promo",
+       "line->cart",
+       "line->promo",
+       "promo->cart",
+       "promo->line"
+      ],
+      "self_edges": [
+       "cart->cart@1",
+       "cart->cart@2",
+       "cart->cart@3",
+       "line->line@1",
+       "line->line@2",
+       "line->line@3",
+       "promo->promo@1",
+       "promo->promo@2"
+      ],
+      "vs_skeleton": {
+       "n": 6,
+       "n_ref": 3,
+       "tp": 3,
+       "precision": 0.5,
+       "recall": 1.0,
+       "missing": [],
+       "extra": [
+        "line->promo",
+        "promo->cart",
+        "promo->line"
+       ]
+      }
+     },
+     "pcmci": {
+      "estimator": "pcmci_plus",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_trials": 200,
+      "edges": {
+       "cart->cart@2": {
+        "coef": -0.11962878513446959,
+        "p": 1.2473541048507343e-06
+       },
+       "cart->line@1": {
+        "coef": 0.32758678233697225,
+        "p": 4.196296527707286e-42
+       },
+       "cart->line@2": {
+        "coef": 0.4279464391637347,
+        "p": 1.283475232700401e-73
+       },
+       "cart->promo@1": {
+        "coef": -0.1342836442059309,
+        "p": 5.1713475038611385e-08
+       },
+       "line->line@1": {
+        "coef": -0.22877250753343825,
+        "p": 8.47796707329952e-21
+       },
+       "line->promo@2": {
+        "coef": 0.08734077955339462,
+        "p": 0.0004151283572902772
+       },
+       "promo->cart@2": {
+        "coef": 0.3093386810205383,
+        "p": 1.5897483830389272e-37
+       },
+       "promo->line@2": {
+        "coef": -0.06256922198164294,
+        "p": 0.011515248167873611
+       },
+       "promo->promo@2": {
+        "coef": -0.05131844533146303,
+        "p": 0.038237017762192994
+       }
+      },
+      "positive_type_edges": [
+       "cart->line",
+       "line->promo",
+       "promo->cart"
+      ],
+      "self_edges": [
+       "cart->cart@2",
+       "line->line@1",
+       "promo->promo@2"
+      ],
+      "vs_skeleton": {
+       "n": 3,
+       "n_ref": 3,
+       "tp": 1,
+       "precision": 0.3333333333333333,
+       "recall": 0.3333333333333333,
+       "missing": [
+        "cart->promo",
+        "line->cart"
+       ],
+       "extra": [
+        "line->promo",
+        "promo->cart"
+       ]
+      }
+     }
+    },
+    "segment": {
+     "n_trials": 200,
+     "mean_T": 4.155,
+     "pooled": {
+      "estimator": "pooled_lagged_ridge_fdr",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_rows": 831,
+      "n_trials": 200,
+      "edges": {
+       "cart->cart@1": {
+        "coef": 0.14264181250521102,
+        "p": 0.0
+       },
+       "line->cart@1": {
+        "coef": 0.14264181255767436,
+        "p": 0.0
+       },
+       "cart->cart@2": {
+        "coef": 0.14264181258333578,
+        "p": 0.0
+       },
+       "line->cart@2": {
+        "coef": 0.1426418125269471,
+        "p": 0.0
+       },
+       "cart->cart@3": {
+        "coef": 0.14264181254775848,
+        "p": 0.0
+       },
+       "line->cart@3": {
+        "coef": 0.1426418125278632,
+        "p": 0.0
+       },
+       "cart->line@1": {
+        "coef": 0.14285691638120923,
+        "p": 0.0
+       },
+       "line->line@1": {
+        "coef": 0.14285691643414652,
+        "p": 0.0
+       },
+       "promo->line@1": {
+        "coef": 7.998843223845295e-07,
+        "p": 3.173098583886258e-08
+       },
+       "cart->line@2": {
+        "coef": 0.1428569164600104,
+        "p": 0.0
+       },
+       "line->line@2": {
+        "coef": 0.14285691640322382,
+        "p": 0.0
+       },
+       "promo->line@2": {
+        "coef": 7.812008056594724e-07,
+        "p": 9.61126289666936e-09
+       },
+       "cart->line@3": {
+        "coef": 0.1428569164241632,
+        "p": 0.0
+       },
+       "line->line@3": {
+        "coef": 0.14285691640404055,
+        "p": 0.0
+       },
+       "promo->line@3": {
+        "coef": 1.0868782492189782e-06,
+        "p": 8.881784197001252e-16
+       },
+       "cart->promo@1": {
+        "coef": 0.033787430167910436,
+        "p": 4.2269512712245216e-07
+       },
+       "line->promo@1": {
+        "coef": 0.03378743018008837,
+        "p": 4.226951251240507e-07
+       },
+       "cart->promo@2": {
+        "coef": 0.033787430185139466,
+        "p": 4.226951233476939e-07
+       },
+       "line->promo@2": {
+        "coef": 0.03378743017101388,
+        "p": 4.2269512756654137e-07
+       },
+       "cart->promo@3": {
+        "coef": 0.0337874301768704,
+        "p": 4.2269512645631835e-07
+       },
+       "line->promo@3": {
+        "coef": 0.03378743017255031,
+        "p": 4.2269512712245216e-07
+       }
+      },
+      "positive_type_edges": [
+       "cart->line",
+       "cart->promo",
+       "line->cart",
+       "line->promo",
+       "promo->line"
+      ],
+      "self_edges": [
+       "cart->cart@1",
+       "cart->cart@2",
+       "cart->cart@3",
+       "line->line@1",
+       "line->line@2",
+       "line->line@3"
+      ],
+      "vs_skeleton": {
+       "n": 5,
+       "n_ref": 3,
+       "tp": 3,
+       "precision": 0.6,
+       "recall": 1.0,
+       "missing": [],
+       "extra": [
+        "line->promo",
+        "promo->line"
+       ]
+      }
+     },
+     "pcmci": {
+      "estimator": "pcmci_plus",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_trials": 200,
+      "edges": {},
+      "positive_type_edges": [],
+      "self_edges": [],
+      "vs_skeleton": {
+       "n": 0,
+       "n_ref": 3,
+       "tp": 0,
+       "precision": null,
+       "recall": 0.0,
+       "missing": [
+        "cart->line",
+        "cart->promo",
+        "line->cart"
+       ],
+       "extra": []
+      }
+     }
+    }
+   },
+   "seconds": 11.386683464050293
+  },
+  "shopping32/seed31": {
+   "types": [
+    "cart",
+    "line",
+    "promo"
+   ],
+   "skeleton_type_edges": [
+    "cart->line",
+    "cart->promo",
+    "line->cart"
+   ],
+   "n_templates": 4,
+   "encodings": {
+    "event": {
+     "n_trials": 200,
+     "mean_T": 15.025,
+     "pooled": {
+      "estimator": "pooled_lagged_ridge_fdr",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_rows": 2134,
+      "n_trials": 200,
+      "edges": {
+       "cart->cart@1": {
+        "coef": -0.43017600251344845,
+        "p": 0.0
+       },
+       "line->cart@1": {
+        "coef": 0.327712134426271,
+        "p": 0.0
+       },
+       "promo->cart@1": {
+        "coef": 0.2697847412511507,
+        "p": 0.0
+       },
+       "cart->cart@2": {
+        "coef": -0.30045400777046893,
+        "p": 0.0
+       },
+       "line->cart@2": {
+        "coef": 0.16160380876564062,
+        "p": 0.0
+       },
+       "promo->cart@2": {
+        "coef": 0.30617107226030527,
+        "p": 0.0
+       },
+       "line->cart@3": {
+        "coef": 0.08566019233575162,
+        "p": 1.1832756996454918e-12
+       },
+       "promo->cart@3": {
+        "coef": 0.06837313314298399,
+        "p": 0.0005057457493491402
+       },
+       "cart->line@1": {
+        "coef": 0.6970986233038161,
+        "p": 0.0
+       },
+       "line->line@1": {
+        "coef": -0.18195543560005234,
+        "p": 0.0
+       },
+       "promo->line@1": {
+        "coef": -0.26817813077040853,
+        "p": 0.0
+       },
+       "cart->line@2": {
+        "coef": 0.3594409162997678,
+        "p": 0.0
+       },
+       "line->line@2": {
+        "coef": -0.04127274129614733,
+        "p": 0.0004527878281077591
+       },
+       "promo->line@2": {
+        "coef": -0.07120311804408175,
+        "p": 2.3987738553277183e-06
+       },
+       "cart->line@3": {
+        "coef": 0.0758111664252965,
+        "p": 1.9282254746233463e-06
+       },
+       "line->line@3": {
+        "coef": 0.051558365141204376,
+        "p": 7.085701572151493e-07
+       },
+       "promo->line@3": {
+        "coef": 0.11959552538553453,
+        "p": 2.7686741788102154e-12
+       },
+       "cart->promo@1": {
+        "coef": -0.10025595990133951,
+        "p": 7.581890670849134e-11
+       },
+       "promo->promo@1": {
+        "coef": 0.16505912632029407,
+        "p": 2.473576898864849e-13
+       },
+       "cart->promo@2": {
+        "coef": 0.10767928027807727,
+        "p": 1.1279031042477072e-09
+       },
+       "line->promo@2": {
+        "coef": 0.04633592726391811,
+        "p": 0.00039015300091516103
+       },
+       "promo->promo@2": {
+        "coef": -0.06830163863602934,
+        "p": 4.5291907996292124e-05
+       },
+       "cart->promo@3": {
+        "coef": 0.07756755365460322,
+        "p": 1.134078262721161e-05
+       },
+       "line->promo@3": {
+        "coef": 0.02944838247850612,
+        "p": 0.01052998126371496
+       }
+      },
+      "positive_type_edges": [
+       "cart->line",
+       "cart->promo",
+       "line->cart",
+       "line->promo",
+       "promo->cart",
+       "promo->line"
+      ],
+      "self_edges": [
+       "cart->cart@1",
+       "cart->cart@2",
+       "line->line@1",
+       "line->line@2",
+       "line->line@3",
+       "promo->promo@1",
+       "promo->promo@2"
+      ],
+      "vs_skeleton": {
+       "n": 6,
+       "n_ref": 3,
+       "tp": 3,
+       "precision": 0.5,
+       "recall": 1.0,
+       "missing": [],
+       "extra": [
+        "line->promo",
+        "promo->cart",
+        "promo->line"
+       ]
+      }
+     },
+     "pcmci": {
+      "estimator": "pcmci_plus",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_trials": 200,
+      "edges": {
+       "cart->cart@1": {
+        "coef": -0.50618515845466,
+        "p": 9.914879261088864e-118
+       },
+       "cart->cart@2": {
+        "coef": -0.2929056810979304,
+        "p": 6.3613403079366715e-37
+       },
+       "cart->cart@3": {
+        "coef": -0.06031667353434501,
+        "p": 0.010523120840596032
+       },
+       "cart->line@1": {
+        "coef": 0.5818460590454764,
+        "p": 1.1199687783892998e-163
+       },
+       "cart->line@2": {
+        "coef": 0.36899233280212185,
+        "p": 3.644191440827777e-59
+       },
+       "cart->line@3": {
+        "coef": 0.10426599837805031,
+        "p": 9.361810824405888e-06
+       },
+       "promo->cart@2": {
+        "coef": 0.07947785246506173,
+        "p": 0.0007357579158257033
+       },
+       "promo->promo@2": {
+        "coef": -0.08538838940831239,
+        "p": 0.0002824734317944077
+       }
+      },
+      "positive_type_edges": [
+       "cart->line",
+       "promo->cart"
+      ],
+      "self_edges": [
+       "cart->cart@1",
+       "cart->cart@2",
+       "cart->cart@3",
+       "promo->promo@2"
+      ],
+      "vs_skeleton": {
+       "n": 2,
+       "n_ref": 3,
+       "tp": 1,
+       "precision": 0.5,
+       "recall": 0.3333333333333333,
+       "missing": [
+        "cart->promo",
+        "line->cart"
+       ],
+       "extra": [
+        "promo->cart"
+       ]
+      }
+     }
+    },
+    "segment": {
+     "n_trials": 200,
+     "mean_T": 4.355,
+     "pooled": {
+      "estimator": "pooled_lagged_ridge_fdr",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_rows": 871,
+      "n_trials": 200,
+      "edges": {
+       "line->cart@1": {
+        "coef": 0.20115881654616513,
+        "p": 0.0
+       },
+       "line->cart@2": {
+        "coef": 0.2011588164962985,
+        "p": 0.0
+       },
+       "cart->cart@3": {
+        "coef": 0.20115881648766687,
+        "p": 0.0
+       },
+       "line->cart@3": {
+        "coef": 0.2011588164990149,
+        "p": 0.0
+       },
+       "cart->line@1": {
+        "coef": 0.0001012117773830784,
+        "p": 0.0
+       },
+       "line->line@1": {
+        "coef": 0.1999597718266946,
+        "p": 0.0
+       },
+       "cart->line@2": {
+        "coef": 0.00010112836640906175,
+        "p": 0.0
+       },
+       "line->line@2": {
+        "coef": 0.19995977177731114,
+        "p": 0.0
+       },
+       "cart->line@3": {
+        "coef": 0.19995977176859425,
+        "p": 0.0
+       },
+       "line->line@3": {
+        "coef": 0.19995977177945912,
+        "p": 0.0
+       },
+       "promo->promo@1": {
+        "coef": 0.20747018923475477,
+        "p": 0.0004905366682659285
+       }
+      },
+      "positive_type_edges": [
+       "cart->line",
+       "line->cart"
+      ],
+      "self_edges": [
+       "cart->cart@3",
+       "line->line@1",
+       "line->line@2",
+       "line->line@3",
+       "promo->promo@1"
+      ],
+      "vs_skeleton": {
+       "n": 2,
+       "n_ref": 3,
+       "tp": 2,
+       "precision": 1.0,
+       "recall": 0.6666666666666666,
+       "missing": [
+        "cart->promo"
+       ],
+       "extra": []
+      }
+     },
+     "pcmci": {
+      "estimator": "pcmci_plus",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_trials": 200,
+      "edges": {},
+      "positive_type_edges": [],
+      "self_edges": [],
+      "vs_skeleton": {
+       "n": 0,
+       "n_ref": 3,
+       "tp": 0,
+       "precision": null,
+       "recall": 0.0,
+       "missing": [
+        "cart->line",
+        "cart->promo",
+        "line->cart"
+       ],
+       "extra": []
+      }
+     }
+    }
+   },
+   "seconds": 15.15712285041809
+  },
+  "shopping32/seed32": {
+   "types": [
+    "cart",
+    "line",
+    "promo"
+   ],
+   "skeleton_type_edges": [
+    "cart->line",
+    "cart->promo",
+    "line->cart"
+   ],
+   "n_templates": 4,
+   "encodings": {
+    "event": {
+     "n_trials": 200,
+     "mean_T": 14.38,
+     "pooled": {
+      "estimator": "pooled_lagged_ridge_fdr",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_rows": 2039,
+      "n_trials": 200,
+      "edges": {
+       "cart->cart@1": {
+        "coef": -0.4335444456192761,
+        "p": 0.0
+       },
+       "line->cart@1": {
+        "coef": 0.2882562379177216,
+        "p": 0.0
+       },
+       "promo->cart@1": {
+        "coef": 0.32846402561957433,
+        "p": 0.0
+       },
+       "cart->cart@2": {
+        "coef": -0.2738437081178162,
+        "p": 0.0
+       },
+       "line->cart@2": {
+        "coef": 0.13555021343086793,
+        "p": 0.0
+       },
+       "promo->cart@2": {
+        "coef": 0.3214693127062489,
+        "p": 0.0
+       },
+       "cart->cart@3": {
+        "coef": 0.04451959765799529,
+        "p": 0.018281994675647173
+       },
+       "line->cart@3": {
+        "coef": 0.08726389864233397,
+        "p": 1.5523138330308939e-12
+       },
+       "promo->cart@3": {
+        "coef": 0.05139232165197427,
+        "p": 0.011866254443984925
+       },
+       "cart->line@1": {
+        "coef": 0.6907080729382855,
+        "p": 0.0
+       },
+       "line->line@1": {
+        "coef": -0.17978518484133588,
+        "p": 0.0
+       },
+       "promo->line@1": {
+        "coef": -0.2693584764413046,
+        "p": 0.0
+       },
+       "cart->line@2": {
+        "coef": 0.3372066245521381,
+        "p": 0.0
+       },
+       "line->line@2": {
+        "coef": -0.03067942769372678,
+        "p": 0.011458878949042406
+       },
+       "promo->line@2": {
+        "coef": -0.06496278515644605,
+        "p": 1.7054489734658063e-05
+       },
+       "cart->line@3": {
+        "coef": 0.06312427723730707,
+        "p": 0.00010057401952190403
+       },
+       "line->line@3": {
+        "coef": 0.056748947378025605,
+        "p": 7.935775769851716e-08
+       },
+       "promo->line@3": {
+        "coef": 0.1216911869966566,
+        "p": 5.49493783807975e-12
+       },
+       "cart->promo@1": {
+        "coef": -0.09049698199878975,
+        "p": 1.5251955476358603e-08
+       },
+       "line->promo@1": {
+        "coef": 0.058196054947543985,
+        "p": 5.315067024103115e-05
+       },
+       "promo->promo@1": {
+        "coef": 0.1075601910773969,
+        "p": 2.5712608371364354e-06
+       },
+       "cart->promo@2": {
+        "coef": 0.10330324944393965,
+        "p": 3.5265607545298394e-08
+       },
+       "line->promo@2": {
+        "coef": 0.061796218499978295,
+        "p": 7.792372599180197e-06
+       },
+       "promo->promo@2": {
+        "coef": -0.08984020386618852,
+        "p": 1.7459192869218043e-07
+       },
+       "cart->promo@3": {
+        "coef": 0.05902240074760812,
+        "p": 0.0013685771222540222
+       }
+      },
+      "positive_type_edges": [
+       "cart->line",
+       "cart->promo",
+       "line->cart",
+       "line->promo",
+       "promo->cart",
+       "promo->line"
+      ],
+      "self_edges": [
+       "cart->cart@1",
+       "cart->cart@2",
+       "cart->cart@3",
+       "line->line@1",
+       "line->line@2",
+       "line->line@3",
+       "promo->promo@1",
+       "promo->promo@2"
+      ],
+      "vs_skeleton": {
+       "n": 6,
+       "n_ref": 3,
+       "tp": 3,
+       "precision": 0.5,
+       "recall": 1.0,
+       "missing": [],
+       "extra": [
+        "line->promo",
+        "promo->cart",
+        "promo->line"
+       ]
+      }
+     },
+     "pcmci": {
+      "estimator": "pcmci_plus",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_trials": 200,
+      "edges": {
+       "cart->cart@1": {
+        "coef": -0.5257579366433169,
+        "p": 1.7362845913610298e-119
+       },
+       "cart->cart@2": {
+        "coef": -0.3130770441215026,
+        "p": 2.544288259975519e-39
+       },
+       "cart->line@1": {
+        "coef": 0.5817081789282761,
+        "p": 4.377898373398756e-152
+       },
+       "cart->line@2": {
+        "coef": 0.36808937369262235,
+        "p": 8.43293505555179e-55
+       },
+       "cart->promo@1": {
+        "coef": -0.13534616116158388,
+        "p": 2.7640538579730728e-08
+       },
+       "promo->cart@2": {
+        "coef": 0.14575370401318646,
+        "p": 2.108509589522561e-09
+       },
+       "promo->promo@2": {
+        "coef": -0.11345296872236892,
+        "p": 3.264412092379078e-06
+       }
+      },
+      "positive_type_edges": [
+       "cart->line",
+       "promo->cart"
+      ],
+      "self_edges": [
+       "cart->cart@1",
+       "cart->cart@2",
+       "promo->promo@2"
+      ],
+      "vs_skeleton": {
+       "n": 2,
+       "n_ref": 3,
+       "tp": 1,
+       "precision": 0.5,
+       "recall": 0.3333333333333333,
+       "missing": [
+        "cart->promo",
+        "line->cart"
+       ],
+       "extra": [
+        "promo->cart"
+       ]
+      }
+     }
+    },
+    "segment": {
+     "n_trials": 200,
+     "mean_T": 4.185,
+     "pooled": {
+      "estimator": "pooled_lagged_ridge_fdr",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_rows": 837,
+      "n_trials": 200,
+      "edges": {
+       "line->cart@1": {
+        "coef": 0.16663726120908454,
+        "p": 0.0
+       },
+       "cart->cart@2": {
+        "coef": 0.1666372611765452,
+        "p": 0.0
+       },
+       "line->cart@2": {
+        "coef": 0.16663726114087596,
+        "p": 0.0
+       },
+       "cart->cart@3": {
+        "coef": 0.16663726113966457,
+        "p": 0.0
+       },
+       "line->cart@3": {
+        "coef": 0.16663726116268618,
+        "p": 0.0
+       },
+       "cart->line@1": {
+        "coef": 0.00016647079033216272,
+        "p": 0.0
+       },
+       "line->line@1": {
+        "coef": 0.16663892130515937,
+        "p": 0.0
+       },
+       "cart->line@2": {
+        "coef": 0.16663892127250635,
+        "p": 0.0
+       },
+       "line->line@2": {
+        "coef": 0.166638921236695,
+        "p": 0.0
+       },
+       "cart->line@3": {
+        "coef": 0.16663892123551202,
+        "p": 0.0
+       },
+       "line->line@3": {
+        "coef": 0.16663892125859048,
+        "p": 0.0
+       }
+      },
+      "positive_type_edges": [
+       "cart->line",
+       "line->cart"
+      ],
+      "self_edges": [
+       "cart->cart@2",
+       "cart->cart@3",
+       "line->line@1",
+       "line->line@2",
+       "line->line@3"
+      ],
+      "vs_skeleton": {
+       "n": 2,
+       "n_ref": 3,
+       "tp": 2,
+       "precision": 1.0,
+       "recall": 0.6666666666666666,
+       "missing": [
+        "cart->promo"
+       ],
+       "extra": []
+      }
+     },
+     "pcmci": {
+      "estimator": "pcmci_plus",
+      "max_lag": 3,
+      "alpha": 0.05,
+      "n_trials": 200,
+      "edges": {},
+      "positive_type_edges": [],
+      "self_edges": [],
+      "vs_skeleton": {
+       "n": 0,
+       "n_ref": 3,
+       "tp": 0,
+       "precision": null,
+       "recall": 0.0,
+       "missing": [
+        "cart->line",
+        "cart->promo",
+        "line->cart"
+       ],
+       "extra": []
+      }
+     }
+    }
+   },
+   "seconds": 14.025227785110474
+  }
+ }
+}

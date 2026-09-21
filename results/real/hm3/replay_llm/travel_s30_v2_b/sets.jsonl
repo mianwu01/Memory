@@ -1,0 +1,24 @@
+{"episode": "travel-s130-train-048", "full_ok": true, "n": 15, "frontier": ["h6", "h7", "h9", "h11"], "frontier_first": ["h6", "h7", "h9", "h11"], "minimal_sets": [["h6", "h7", "h9", "h11"]], "calls": 28, "cost": 0.6882380000000001, "llm_calls": 26, "executor_frontier": ["h11", "h12"]}
+{"episode": "travel-s130-train-049", "full_ok": false, "n": 24, "frontier": null, "calls": 1, "cost": 0.0195205, "llm_calls": 1, "executor_frontier": ["h16", "h17"]}
+{"episode": "travel-s130-train-050", "full_ok": false, "n": 25, "frontier": null, "calls": 1, "cost": 0.043285, "llm_calls": 1, "executor_frontier": ["h20", "h21", "h23"]}
+{"episode": "travel-s130-train-051", "full_ok": false, "n": 17, "frontier": null, "calls": 1, "cost": 0.022095, "llm_calls": 1, "executor_frontier": ["h12", "h13"]}
+{"episode": "travel-s130-train-052", "full_ok": false, "n": 16, "frontier": null, "calls": 1, "cost": 0.0227375, "llm_calls": 1, "executor_frontier": ["h12", "h13"]}
+{"episode": "travel-s130-train-053", "full_ok": false, "n": 23, "frontier": null, "calls": 1, "cost": 0.0295825, "llm_calls": 1, "executor_frontier": ["h15", "h16", "h22"]}
+{"episode": "travel-s130-train-054", "full_ok": false, "n": 19, "frontier": null, "calls": 1, "cost": 0.0233025, "llm_calls": 1, "executor_frontier": ["h7", "h8"]}
+{"episode": "travel-s130-train-055", "full_ok": false, "n": 18, "frontier": null, "calls": 1, "cost": 0.0285275, "llm_calls": 1, "executor_frontier": ["h8", "h9", "h16", "h17"]}
+{"episode": "travel-s130-train-056", "full_ok": true, "n": 12, "frontier": ["h4", "h10", "h11"], "frontier_first": ["h4", "h10", "h11"], "minimal_sets": [["h4", "h10", "h11"]], "calls": 16, "cost": 0.25958, "llm_calls": 14, "executor_frontier": ["h8", "h9"]}
+{"episode": "travel-s130-train-057", "full_ok": false, "n": 26, "frontier": null, "calls": 1, "cost": 0.2259585, "llm_calls": 1, "executor_frontier": ["h7", "h8"]}
+{"episode": "travel-s130-train-058", "full_ok": true, "n": 26, "frontier": ["h9", "h10", "h12"], "frontier_first": ["h9", "h10", "h12"], "minimal_sets": [["h9", "h10", "h12"]], "calls": 15, "cost": 0.20613700000000001, "llm_calls": 13, "executor_frontier": ["h9", "h10", "h11"]}
+{"episode": "travel-s130-train-059", "full_ok": true, "n": 14, "frontier": ["h12"], "frontier_first": ["h12"], "minimal_sets": [["h12"]], "calls": 9, "cost": 0.31416750000000004, "llm_calls": 8, "executor_frontier": ["h11", "h12"]}
+{"episode": "travel-s130-train-060", "full_ok": false, "n": 26, "frontier": null, "calls": 1, "cost": 0.03445, "llm_calls": 1, "executor_frontier": ["h7", "h8", "h10"]}
+{"episode": "travel-s130-train-061", "full_ok": true, "n": 17, "frontier": ["h7", "h8", "h9", "h14", "h15", "h16"], "frontier_first": ["h7", "h8", "h9", "h14", "h15", "h16"], "minimal_sets": [["h7", "h8", "h9", "h14", "h15", "h16"]], "calls": 30, "cost": 0.8017995, "llm_calls": 28, "executor_frontier": ["h7", "h8", "h16"]}
+{"episode": "travel-s130-train-062", "full_ok": false, "n": 25, "frontier": null, "calls": 1, "cost": 0.0463275, "llm_calls": 1, "executor_frontier": ["h7", "h8", "h10"]}
+{"episode": "travel-s130-train-063", "full_ok": false, "n": 20, "frontier": null, "calls": 1, "cost": 0.22244350000000002, "llm_calls": 1, "executor_frontier": ["h7", "h8", "h9"]}
+{"episode": "travel-s130-train-064", "full_ok": false, "n": 24, "frontier": null, "calls": 1, "cost": 0.0501725, "llm_calls": 1, "executor_frontier": ["h0", "h1"]}
+{"episode": "travel-s130-train-065", "full_ok": false, "n": 17, "frontier": null, "calls": 1, "cost": 0.044715, "llm_calls": 1, "executor_frontier": ["h10", "h11"]}
+{"episode": "travel-s130-train-066", "full_ok": true, "n": 13, "frontier": ["h6", "h12"], "frontier_first": ["h6", "h12"], "minimal_sets": [["h6", "h12"]], "calls": 14, "cost": 0.424255, "llm_calls": 13, "executor_frontier": ["h5", "h6"]}
+{"episode": "travel-s130-train-067", "full_ok": false, "n": 29, "frontier": null, "calls": 1, "cost": 0.22321749999999999, "llm_calls": 1, "executor_frontier": ["h16", "h17"]}
+{"episode": "travel-s130-train-068", "full_ok": false, "n": 22, "frontier": null, "calls": 1, "cost": 0.03417, "llm_calls": 1, "executor_frontier": ["h15", "h17", "h18", "h20", "h21"]}
+{"episode": "travel-s130-train-069", "full_ok": false, "n": 13, "frontier": null, "calls": 1, "cost": 0.0240525, "llm_calls": 1, "executor_frontier": ["h5", "h6"]}
+{"episode": "travel-s130-train-070", "full_ok": false, "n": 8, "frontier": null, "calls": 1, "cost": 0.01458, "llm_calls": 1, "executor_frontier": ["h4", "h5"]}
+{"episode": "travel-s130-train-071", "full_ok": false, "n": 26, "frontier": null, "calls": 1, "cost": 0.22347250000000002, "llm_calls": 1, "executor_frontier": ["h18", "h19", "h21", "h22"]}

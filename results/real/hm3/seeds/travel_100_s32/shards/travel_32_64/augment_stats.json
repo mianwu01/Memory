@@ -1,0 +1,40 @@
+{
+ "domain": "travel",
+ "history": "100:abcd",
+ "train": {
+  "n": 200,
+  "dropped": 0,
+  "retries": 1,
+  "a_keys": 644,
+  "a_diff": 358,
+  "b": 5214,
+  "c": 5194,
+  "d": 5422,
+  "records": 20000,
+  "objects": 28316,
+  "fail_reasons": {
+   "est enforce_late[H96]": 1
+  },
+  "fallback_no_interleave": 0,
+  "mean_records": 100.0,
+  "mean_objects": 141.58,
+  "drop_rate": 0.0
+ },
+ "eval": {
+  "n": 32,
+  "dropped": 0,
+  "retries": 0,
+  "a_keys": 109,
+  "a_diff": 56,
+  "b": 822,
+  "c": 818,
+  "d": 857,
+  "records": 3200,
+  "objects": 4453,
+  "fail_reasons": {},
+  "fallback_no_interleave": 0,
+  "mean_records": 100.0,
+  "mean_objects": 139.15625,
+  "drop_rate": 0.0
+ }
+}

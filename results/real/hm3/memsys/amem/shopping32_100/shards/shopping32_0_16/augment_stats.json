@@ -1,0 +1,21 @@
+{
+ "eval": {
+  "n": 16,
+  "dropped": 0,
+  "retries": 3,
+  "a_keys": 56,
+  "a_diff": 5,
+  "b": 445,
+  "c": 456,
+  "d": 464,
+  "records": 1600,
+  "objects": 1236,
+  "fail_reasons": {
+   "prov strict_promo[PR61]": 3
+  },
+  "fallback_no_interleave": 0,
+  "mean_records": 100.0,
+  "mean_objects": 77.25,
+  "drop_rate": 0.0
+ }
+}

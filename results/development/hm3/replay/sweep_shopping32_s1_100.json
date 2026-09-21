@@ -1,0 +1,151 @@
+{
+ "domain": "shopping32",
+ "seed": 1,
+ "length": 100,
+ "rows": [
+  {
+   "balanced": true,
+   "thr": 0.2,
+   "segment": false,
+   "ees": 0.9166666666666666,
+   "records": 6.416666666666667,
+   "frontier_recall": 0.9754237288135593,
+   "frontier_precision": 0.37823306636865955
+  },
+  {
+   "balanced": true,
+   "thr": 0.2,
+   "segment": true,
+   "ees": 1.0,
+   "records": 11.85,
+   "frontier_recall": 1.0,
+   "frontier_precision": 0.21865537596568183
+  },
+  {
+   "balanced": true,
+   "thr": 0.3,
+   "segment": false,
+   "ees": 0.9166666666666666,
+   "records": 6.05,
+   "frontier_recall": 0.9754237288135593,
+   "frontier_precision": 0.4089319343556631
+  },
+  {
+   "balanced": true,
+   "thr": 0.3,
+   "segment": true,
+   "ees": 1.0,
+   "records": 11.366666666666667,
+   "frontier_recall": 1.0,
+   "frontier_precision": 0.22801140157295371
+  },
+  {
+   "balanced": true,
+   "thr": 0.5,
+   "segment": false,
+   "ees": 0.8833333333333333,
+   "records": 5.15,
+   "frontier_recall": 0.9415254237288135,
+   "frontier_precision": 0.46605461393596975
+  },
+  {
+   "balanced": true,
+   "thr": 0.5,
+   "segment": true,
+   "ees": 0.9833333333333333,
+   "records": 9.933333333333334,
+   "frontier_recall": 0.9830508474576272,
+   "frontier_precision": 0.2621586981756473
+  },
+  {
+   "balanced": true,
+   "thr": 0.7,
+   "segment": false,
+   "ees": 0.8666666666666667,
+   "records": 3.566666666666667,
+   "frontier_recall": 0.9330508474576271,
+   "frontier_precision": 0.6675948345439869
+  },
+  {
+   "balanced": true,
+   "thr": 0.7,
+   "segment": true,
+   "ees": 0.9833333333333333,
+   "records": 7.166666666666667,
+   "frontier_recall": 0.9830508474576272,
+   "frontier_precision": 0.35779212479112776
+  },
+  {
+   "balanced": false,
+   "thr": 0.2,
+   "segment": false,
+   "ees": 0.85,
+   "records": 2.5833333333333335,
+   "frontier_recall": 0.9127118644067795,
+   "frontier_precision": 0.8305084745762712
+  },
+  {
+   "balanced": false,
+   "thr": 0.2,
+   "segment": true,
+   "ees": 0.9333333333333333,
+   "records": 4.816666666666666,
+   "frontier_recall": 0.9338983050847458,
+   "frontier_precision": 0.47967446865751945
+  },
+  {
+   "balanced": false,
+   "thr": 0.3,
+   "segment": false,
+   "ees": 0.8333333333333334,
+   "records": 2.4,
+   "frontier_recall": 0.8929378531073445,
+   "frontier_precision": 0.8545197740112994
+  },
+  {
+   "balanced": false,
+   "thr": 0.3,
+   "segment": true,
+   "ees": 0.9333333333333333,
+   "records": 4.533333333333333,
+   "frontier_recall": 0.9338983050847458,
+   "frontier_precision": 0.5030400860909335
+  },
+  {
+   "balanced": false,
+   "thr": 0.5,
+   "segment": false,
+   "ees": 0.7333333333333333,
+   "records": 1.9166666666666667,
+   "frontier_recall": 0.765819209039548,
+   "frontier_precision": 0.8163841807909605
+  },
+  {
+   "balanced": false,
+   "thr": 0.5,
+   "segment": true,
+   "ees": 0.8666666666666667,
+   "records": 3.65,
+   "frontier_recall": 0.8152542372881356,
+   "frontier_precision": 0.47949959644874895
+  },
+  {
+   "balanced": false,
+   "thr": 0.7,
+   "segment": false,
+   "ees": 0.6666666666666666,
+   "records": 1.7833333333333334,
+   "frontier_recall": 0.7262711864406779,
+   "frontier_precision": 0.8135593220338984
+  },
+  {
+   "balanced": false,
+   "thr": 0.7,
+   "segment": true,
+   "ees": 0.85,
+   "records": 3.45,
+   "frontier_recall": 0.7983050847457628,
+   "frontier_precision": 0.4797013720742534
+  }
+ ]
+}

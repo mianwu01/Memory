@@ -73,31 +73,65 @@ def _closure(ep, rids: List[str]) -> dict:
     return {"objects": sorted(closure), "records": sorted(rs, key=lambda r: order[r])}
 
 
-def mem0_select(domain, ep, k: int, model: str) -> dict:
-    """Mem0 OSS: each record added as a user message with fact extraction (infer=True), then
-    search; record ids are recovered from the memory texts (the note text starts with the id)."""
+def mem0_select(domain, ep, k: int, model: str, infer: bool = True) -> dict:
+    """Mem0 OSS: each record added as a user message, then search.  infer=True runs Mem0's LLM fact
+    extraction and memory-update pipeline (with DeepSeek-V4-Flash it keeps 0-40 % of the records of an
+    episode and sometimes nothing: documented negative); infer=False (system 'mem0_raw') stores the
+    record verbatim and retrieves with Mem0's embedding search.  Record ids travel in the metadata."""
+    import shutil
+    import tempfile
+    # Mem0 also opens a process-wide local Qdrant under $MEM0_DIR/migrations_qdrant (default ~/.mem0), which
+    # only one process may hold: give every process its own MEM0_DIR before mem0 is first imported
+    if "MEM0_DIR" not in os.environ:
+        os.environ["MEM0_DIR"] = tempfile.mkdtemp(prefix="hm3_mem0_home_")
     from mem0 import Memory
     before = dict(WRITE_USAGE)
     t0 = time.time()
+    # Mem0's local Qdrant defaults to the persistent path /tmp/qdrant even with on_disk=False, so a
+    # collection from an earlier run of the same episode would be reused; every episode gets its own
+    # store directory, removed afterwards
+    store = tempfile.mkdtemp(prefix="hm3_mem0_")
     cfg = {"llm": {"provider": "openai", "config": {"model": model, "temperature": 0.0, "max_tokens": 1000,
                                                      "api_key": os.environ["OPENAI_API_KEY"],
                                                      "openai_base_url": os.environ.get("OPENAI_BASE_URL")}},
            "embedder": {"provider": "huggingface", "config": {"model": "all-MiniLM-L6-v2", "embedding_dims": 384}},
            "vector_store": {"provider": "qdrant", "config": {"collection_name": "hm3_" + ep.id.replace("-", "_"),
-                                                             "embedding_model_dims": 384, "on_disk": False}}}
+                                                             "embedding_model_dims": 384, "on_disk": False,
+                                                             "path": store}},
+           # Mem0 2.x also keeps a per-user message history (default ~/.mem0/history.db) and asks the LLM
+           # only for memories that are new relative to it; an earlier run of the same episode id would
+           # make every record "already seen" and the store stays empty -- isolate it per episode too
+           "history_db_path": os.path.join(store, "history.db")}
     _ACCOUNT["on"] = True
+    n_stored = None
     try:
         mem = Memory.from_config(cfg)
         uid = ep.id
         for r in ep.H:
-            mem.add(messages=[{"role": "user", "content": record_text(r)}], user_id=uid, infer=True)
+            # the record id travels in the metadata: Mem0's fact extraction rewrites the text and
+            # drops the "h17" token, so the id cannot be recovered from the memory text alone
+            mem.add(messages=[{"role": "user", "content": record_text(r)}], user_id=uid, infer=infer,
+                    metadata={"rid": r["rid"], "object_id": r["object_id"], "seg": r["seg"]})
         res = mem.search(query_text(ep), filters={"user_id": uid}, limit=k)
+        try:
+            allm = mem.get_all(filters={"user_id": uid})
+            allm = allm.get("results", allm) if isinstance(allm, dict) else allm
+            n_stored = len(allm)
+        except Exception:
+            n_stored = None
     finally:
         _ACCOUNT["on"] = False
+        shutil.rmtree(store, ignore_errors=True)
     items = res.get("results", res) if isinstance(res, dict) else res
     texts = [it.get("memory", "") for it in items]
     valid = {r["rid"] for r in ep.H}
     rids: List[str] = []
+    n_meta = 0
+    for it in items:
+        rid = (it.get("metadata") or {}).get("rid")
+        if rid in valid and rid not in rids:
+            rids.append(rid)
+            n_meta += 1
     for t in texts:
         for m in RID_RE.findall(t):
             if m in valid and m not in rids:
@@ -106,7 +140,8 @@ def mem0_select(domain, ep, k: int, model: str) -> dict:
     sel = _closure(ep, rids)
     cost = {kk: WRITE_USAGE[kk] - before[kk] for kk in WRITE_USAGE}
     cost.update({"seconds": time.time() - t0, "n_notes": len(ep.H), "n_retrieved_items": len(texts),
-                 "n_recovered_ids": len(rids), "sample_items": texts[:3]})
+                 "n_recovered_ids": len(rids), "n_recovered_from_metadata": n_meta, "n_stored_memories": n_stored,
+                 "sample_items": texts[:3]})
     return sel, cost
 
 
@@ -179,7 +214,7 @@ def amem_select(domain, ep, k: int, model: str) -> dict:
 
 def run(system: str, domain_name: str, seed: int, n_eval: int, ep_start: int, ep_end: Optional[int], history: Optional[str],
         k: int, model: str, out_dir: Path, budget_usd: float, serialization: str = "compact",
-        n_train: int = 200, train_seed_offset: int = 100):
+        n_train: int = 200, train_seed_offset: int = 100, max_tokens: int = 4096):
     out_dir.mkdir(parents=True, exist_ok=True)
     domain = get_domain(domain_name)
     evals = generate_split(domain, seed, "test", n_eval)[ep_start:ep_end]
@@ -196,16 +231,18 @@ def run(system: str, domain_name: str, seed: int, n_eval: int, ep_start: int, ep
                 done.add(r["cell"]); spent += r["cost"]
     json.dump({"system": system, "domain": domain_name, "seed": seed, "history": history or "native", "k": k, "model": model,
                "serialization": serialization, "prompt_version": llm_mod.PROMPT_VERSION, "budget_usd": budget_usd,
+               "max_tokens": max_tokens,
                "write_llm": "same endpoint and model, thinking disabled; write tokens recorded per cell"},
               open(out_dir / "llm_protocol.json", "w"), indent=1)
     _global_openai_patch()
     if system == "amem":
         _patch_amem_controller(model)
-    elif system == "mem0":
+    elif system in ("mem0", "mem0_raw"):
         pass
     else:
         raise SystemExit(f"unknown system {system}")
-    select_fn = {"amem": amem_select, "mem0": mem0_select}[system]
+    select_fn = {"amem": amem_select, "mem0": mem0_select,
+                 "mem0_raw": lambda d, e, kk, m: mem0_select(d, e, kk, m, infer=False)}[system]
     client = Client(model)
     sel_name = f"{system}_k{k}"
     for ep in evals:
@@ -221,13 +258,13 @@ def run(system: str, domain_name: str, seed: int, n_eval: int, ep_start: int, ep
             print(f"{cell:48s} WRITE FAILURE {type(exc).__name__}", flush=True); continue
         messages = build_messages(domain, ep, sel, serialization)
         try:
-            r = client.chat(messages)
+            r = client.chat(messages, max_tokens=max_tokens)
         except Exception as exc:
             open(ledger, "a").write(json.dumps({"event": "infrastructure_failure", "cell": cell, "stage": "actor", "error": str(exc)[:200]}) + "\n"); continue
         attempts = [r]; txns = parse_transactions(r["text"]); repair = False
         if txns is None:
             repair = True
-            r2 = client.chat(messages + [{"role": "assistant", "content": r["text"]},
+            r2 = client.chat(max_tokens=max_tokens, messages=messages + [{"role": "assistant", "content": r["text"]},
                                          {"role": "user", "content": "Return the final answer now as a fenced ```json block containing only the array of transactions."}])
             attempts.append(r2); txns = parse_transactions(r2["text"])
         score = score_plan(domain, ep, txns or [], sel)
@@ -264,7 +301,9 @@ if __name__ == "__main__":
     ap.add_argument("--prompt", default="v2", choices=["v1", "v2", "v3"])
     ap.add_argument("--out_dir", required=True)
     ap.add_argument("--budget_usd", type=float, default=10.0)
+    ap.add_argument("--max_tokens", type=int, default=4096, help="actor completion cap per attempt (A-Mem rounds before 2026-09-20 used 4096)")
     a = ap.parse_args()
     llm_mod.PROMPT_VERSION = a.prompt
     for d in a.domains:
-        run(a.system, d, a.seed, a.n_eval, a.ep_start, a.ep_end, a.history, a.k, a.model, Path(a.out_dir), a.budget_usd, a.serialization)
+        run(a.system, d, a.seed, a.n_eval, a.ep_start, a.ep_end, a.history, a.k, a.model, Path(a.out_dir), a.budget_usd, a.serialization,
+            max_tokens=a.max_tokens)

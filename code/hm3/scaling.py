@@ -814,8 +814,15 @@ class UnionBaggedGraph(BaggedGraph):
 def scaling_learners() -> List[Learner]:
     from .keysel import KeySelect
     from .tcd_logs import TCDSelect
-    return [KeySelect(1), KeySelect(2), KeySelect(3),
+    import os
+    graphs = os.environ.get("HM3_GRACE_GRAPHS")   # written by hm3.grace_logs; dev or test file per launch
+    grace_arms = [TCDSelect("parser", estimator=m, lag_aware=True, graphs_file=graphs)
+                  for m in ("grace_pcmci", "grace_pcmci_g2", "grace_open", "grace_open_x3", "grace_open_x10")] if graphs else []
+    from .replay import FrontierSelect
+    return [FrontierSelect(), FrontierSelect(threshold=0.5), FrontierSelect(fit_native=True), FrontierSelect(segment_level=True),
+            FrontierSelect(threshold=0.7), FrontierSelect(threshold=0.5, segment_level=True), KeySelect(1), KeySelect(2), KeySelect(3),
             TCDSelect("parser"), TCDSelect("key"), TCDSelect("parser", estimator="pcmci"), TCDSelect("key", estimator="pcmci"),
+            TCDSelect("parser", lag_aware=True), TCDSelect("parser", estimator="pcmci", lag_aware=True), *grace_arms,
             RetrievalTopK(8), RetrievalTopK(16), RetrievalTopK(16, mode="recency"), RetrievalTopK(16, mode="bm25"),
             SelectExecute(), SelectExecute(1), SelectExecute(2), SelectExecute(3),
             NativeFitGraph(), NativeFitGraph(pooled=True), ConflictAwareGraph(), ConflictAwareGraph(pooled=True), ConflictAwareGraph(indicator=True), UnionFitGraph(), UnionFitGraph(pooled=True), UnionConflictGraph(), SelectedGraph(), SelectedGraph(pooled=True), BaggedGraph(), NativeBaggedGraph(), UnionBaggedGraph()]

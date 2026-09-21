@@ -9463,6 +9463,122 @@
      ]
     }
    }
+  },
+  "shopping32/seed32": {
+   "summary": {
+    "n": 1,
+    "precision_at_1": 0.0,
+    "precision_at_3": 0.0,
+    "mrr": 0.0,
+    "restore_predicted": 0.0,
+    "restore_predicted_top3": 0.0,
+    "restore_matched_random": 0.0,
+    "restore_matched_random3": 0.0,
+    "restore_similar_non_ancestor": 0.0,
+    "restore_recency": 0.0,
+    "episodes": 45,
+    "no_corruption": 13,
+    "clean_plan_wrong": 29,
+    "no_incident": 2,
+    "incidents": 1,
+    "graph_sha": "6b52ea954f8d5248",
+    "fit_seconds": 353.87006735801697
+   },
+   "rows": [
+    {
+     "episode": "shopping32-s32-test-035",
+     "gold_rid": "h2",
+     "key": "compat[printer|cartridge]",
+     "anomalies": [
+      "L78"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h12",
+      "h9",
+      "x462",
+      "x455",
+      "x433"
+     ],
+     "rank": null,
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h12",
+        "h9",
+        "x462"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "x419",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x421",
+        "x419",
+        "x455"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x479",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    }
+   ],
+   "paired": {
+    "predicted_minus_random": {
+     "n": 1,
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "top3_minus_random3": {
+     "n": 1,
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "predicted_minus_similar": {
+     "n": 1,
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "predicted_minus_recency": {
+     "n": 1,
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   }
   }
  }
 }

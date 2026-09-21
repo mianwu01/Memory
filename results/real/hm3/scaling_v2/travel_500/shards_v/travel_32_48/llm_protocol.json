@@ -1,0 +1,28 @@
+{
+ "domains": [
+  "travel"
+ ],
+ "seed": 30,
+ "n_eval": 64,
+ "selections": [
+  "full"
+ ],
+ "serializations": [
+  "verbose"
+ ],
+ "model": "deepseek-v4-flash",
+ "n_train": 200,
+ "train_seed_offset": 100,
+ "budget_usd": 10.0,
+ "retry_policy": "one format-only repair; semantic failures terminal",
+ "thinking": false,
+ "prompt_version": "v2",
+ "history": "500:abcd",
+ "selector_history": "500:abcd",
+ "base_url": "https://www.autodl.art/api/v1",
+ "cost_rates_usd_per_million": {
+  "uncached_input": 2.5,
+  "cached_input": 0.25,
+  "output": 10.0
+ }
+}

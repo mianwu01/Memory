@@ -12595,6 +12595,1169 @@
      ]
     }
    }
+  },
+  "shopping32/seed30": {
+   "summary": {
+    "n": 5,
+    "precision_at_1": 0.2,
+    "precision_at_3": 0.4,
+    "mrr": 0.3,
+    "precision_at_1_structural": 0.2,
+    "precision_at_3_structural": 0.4,
+    "p1_recency": 0.0,
+    "p3_recency": 0.0,
+    "p1_bm25_anomaly": 0.0,
+    "p3_bm25_anomaly": 0.0,
+    "p1_source_heuristic": 0.0,
+    "p3_source_heuristic": 0.4,
+    "restore_predicted": 0.2,
+    "restore_predicted_top3": 0.4,
+    "restore_matched_random": 0.0,
+    "restore_matched_random3": 0.2,
+    "restore_similar_non_ancestor": 0.0,
+    "restore_recency": 0.0,
+    "restore_bl_recency": 0.0,
+    "restore_bl_bm25_anomaly": 0.0,
+    "restore_bl_source_heuristic": 0.0,
+    "episodes": 43,
+    "no_corruption": 24,
+    "clean_plan_wrong": 12,
+    "no_incident": 2,
+    "incidents": 5,
+    "graph_sha": "c2812448af5ac3fc",
+    "fit_seconds": 677.4501783847809
+   },
+   "rows": [
+    {
+     "episode": "shopping32-s30-test-002",
+     "gold_rid": "h9",
+     "key": "compat[camera|lens]",
+     "anomalies": [
+      "L40"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h14",
+      "h13",
+      "x455",
+      "h10",
+      "h6"
+     ],
+     "rank": null,
+     "structural": [
+      "h14",
+      "h13",
+      "x455",
+      "h10",
+      "h6"
+     ],
+     "rank_struct": null,
+     "baseline_rank": {
+      "recency": null,
+      "bm25_anomaly": null,
+      "source_heuristic": 3
+     },
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h14",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h14",
+        "h13",
+        "x455"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h0",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h10",
+        "h6",
+        "h0"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x461",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_bm25_anomaly": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_source_heuristic": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s30-test-047",
+     "gold_rid": "h20",
+     "key": "auto_promo[global]",
+     "anomalies": [
+      "PR38"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h20",
+      "h19",
+      "h8",
+      "h23",
+      "h22"
+     ],
+     "rank": 1,
+     "structural": [
+      "h20",
+      "h19",
+      "h8",
+      "h23",
+      "h22"
+     ],
+     "rank_struct": 1,
+     "baseline_rank": {
+      "recency": 4,
+      "bm25_anomaly": null,
+      "source_heuristic": null
+     },
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h20",
+       "ees": true,
+       "plan_restored": true
+      },
+      "predicted_top3": {
+       "rid": [
+        "h20",
+        "h19",
+        "h8"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h16",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h23",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h12",
+        "h22",
+        "h18"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x466",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_recency": {
+       "rid": "h23",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_bm25_anomaly": {
+       "rid": "h3",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_source_heuristic": {
+       "rid": "h21",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s30-test-048",
+     "gold_rid": "h5",
+     "key": "compat[printer|cartridge]",
+     "anomalies": [
+      "L33"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h8",
+      "h6",
+      "x488",
+      "x486",
+      "x299"
+     ],
+     "rank": null,
+     "structural": [
+      "h8",
+      "h6",
+      "x488",
+      "x486",
+      "x299"
+     ],
+     "rank_struct": null,
+     "baseline_rank": {
+      "recency": null,
+      "bm25_anomaly": null,
+      "source_heuristic": 2
+     },
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h8",
+        "h6",
+        "x488"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h6",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x486",
+        "x299",
+        "h10"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x310",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_recency": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_bm25_anomaly": {
+       "rid": "h2",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_source_heuristic": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s30-test-052",
+     "gold_rid": "h0",
+     "key": "compat[phone|case]",
+     "anomalies": [
+      "L27",
+      "L96"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h2",
+      "h0",
+      "x305",
+      "x292",
+      "x290"
+     ],
+     "rank": 2,
+     "structural": [
+      "h2",
+      "h0",
+      "x305",
+      "x292",
+      "x290"
+     ],
+     "rank_struct": 2,
+     "baseline_rank": {
+      "recency": null,
+      "bm25_anomaly": null,
+      "source_heuristic": null
+     },
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h2",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h2",
+        "h0",
+        "x305"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h12",
+        "x482",
+        "h14"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x264",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_recency": {
+       "rid": "h15",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_bm25_anomaly": {
+       "rid": "h4",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_source_heuristic": {
+       "rid": "h13",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s30-test-053",
+     "gold_rid": "h0",
+     "key": "compat[camera|lens]",
+     "anomalies": [
+      "L46",
+      "L88"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x426",
+      "x419",
+      "x417",
+      "x414",
+      "x411"
+     ],
+     "rank": null,
+     "structural": [
+      "x426",
+      "x419",
+      "x417",
+      "x414",
+      "x411"
+     ],
+     "rank_struct": null,
+     "baseline_rank": {
+      "recency": null,
+      "bm25_anomaly": null,
+      "source_heuristic": null
+     },
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x426",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x426",
+        "x419",
+        "x417"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "x417",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h0",
+        "x482",
+        "x475"
+       ],
+       "ees": true,
+       "plan_restored": true
+      },
+      "similar_non_ancestor": {
+       "rid": "x401",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_recency": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_bm25_anomaly": {
+       "rid": "h2",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_source_heuristic": {
+       "rid": "h7",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    }
+   ],
+   "paired": {
+    "predicted_minus_random": {
+     "n": 5,
+     "mean": 0.2,
+     "ci95": [
+      0.0,
+      0.6
+     ]
+    },
+    "top3_minus_random3": {
+     "n": 5,
+     "mean": 0.2,
+     "ci95": [
+      -0.4,
+      0.8
+     ]
+    },
+    "predicted_minus_similar": {
+     "n": 5,
+     "mean": 0.2,
+     "ci95": [
+      0.0,
+      0.6
+     ]
+    },
+    "predicted_minus_recency": {
+     "n": 5,
+     "mean": 0.2,
+     "ci95": [
+      0.0,
+      0.6
+     ]
+    }
+   }
+  },
+  "shopping32/seed31": {
+   "summary": {
+    "n": 5,
+    "precision_at_1": 0.0,
+    "precision_at_3": 0.0,
+    "mrr": 0.0,
+    "precision_at_1_structural": 0.0,
+    "precision_at_3_structural": 0.0,
+    "p1_recency": 0.2,
+    "p3_recency": 0.4,
+    "p1_bm25_anomaly": 0.0,
+    "p3_bm25_anomaly": 0.4,
+    "p1_source_heuristic": 0.2,
+    "p3_source_heuristic": 0.6,
+    "restore_predicted": 0.0,
+    "restore_predicted_top3": 0.0,
+    "restore_matched_random": 0.0,
+    "restore_matched_random3": 0.0,
+    "restore_similar_non_ancestor": 0.0,
+    "restore_recency": 0.2,
+    "restore_bl_recency": 0.2,
+    "restore_bl_bm25_anomaly": 0.0,
+    "restore_bl_source_heuristic": 0.2,
+    "episodes": 47,
+    "no_corruption": 8,
+    "clean_plan_wrong": 34,
+    "no_incident": 0,
+    "incidents": 5,
+    "graph_sha": "82b5a050d518f167",
+    "fit_seconds": 360.30600905418396
+   },
+   "rows": [
+    {
+     "episode": "shopping32-s31-test-013",
+     "gold_rid": "h2",
+     "key": "compat[printer|cartridge]",
+     "anomalies": [
+      "L96"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x494",
+      "x490",
+      "x489",
+      "x486",
+      "x115"
+     ],
+     "rank": null,
+     "structural": [
+      "x494",
+      "x490",
+      "x489",
+      "x486",
+      "x115"
+     ],
+     "rank_struct": null,
+     "baseline_rank": {
+      "recency": null,
+      "bm25_anomaly": null,
+      "source_heuristic": 2
+     },
+     "n_path_objects": 11,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x494",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x494",
+        "x490",
+        "x489"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h3",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h4",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "h3",
+        "x115",
+        "x488"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x493",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_recency": {
+       "rid": "h4",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_bm25_anomaly": {
+       "rid": "h0",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_source_heuristic": {
+       "rid": "h4",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s31-test-031",
+     "gold_rid": "h8",
+     "key": "compat[camera|bag]",
+     "anomalies": [
+      "L86"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x462",
+      "x460",
+      "x393",
+      "x391",
+      "x258"
+     ],
+     "rank": null,
+     "structural": [
+      "x462",
+      "x460",
+      "x393",
+      "x391",
+      "x258"
+     ],
+     "rank_struct": null,
+     "baseline_rank": {
+      "recency": null,
+      "bm25_anomaly": null,
+      "source_heuristic": 4
+     },
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x462",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x462",
+        "x460",
+        "x393"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h17",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x391",
+        "h14",
+        "x258"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x420",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_recency": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_bm25_anomaly": {
+       "rid": "h5",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_source_heuristic": {
+       "rid": "h18",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s31-test-036",
+     "gold_rid": "h7",
+     "key": "compat[printer|cartridge]",
+     "anomalies": [
+      "L22"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x281",
+      "x487",
+      "x482",
+      "x480",
+      "h10"
+     ],
+     "rank": null,
+     "structural": [
+      "x487",
+      "x482",
+      "x480",
+      "x281",
+      "h10"
+     ],
+     "rank_struct": null,
+     "baseline_rank": {
+      "recency": null,
+      "bm25_anomaly": null,
+      "source_heuristic": 4
+     },
+     "n_path_objects": 11,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x281",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x281",
+        "x487",
+        "x482"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x480",
+        "h10",
+        "x443"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x440",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_recency": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_bm25_anomaly": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_source_heuristic": {
+       "rid": "h11",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s31-test-050",
+     "gold_rid": "h7",
+     "key": "compat[phone|case]",
+     "anomalies": [
+      "L43"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x281",
+      "x448",
+      "x447",
+      "x384",
+      "x381"
+     ],
+     "rank": null,
+     "structural": [
+      "x448",
+      "x447",
+      "x384",
+      "x381",
+      "x281"
+     ],
+     "rank_struct": null,
+     "baseline_rank": {
+      "recency": 3,
+      "bm25_anomaly": 2,
+      "source_heuristic": 3
+     },
+     "n_path_objects": 11,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x281",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x281",
+        "x448",
+        "x447"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "x448",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x484",
+        "x455",
+        "x384"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x121",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_recency": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_bm25_anomaly": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_source_heuristic": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    },
+    {
+     "episode": "shopping32-s31-test-051",
+     "gold_rid": "h11",
+     "key": "compat[camera|bag]",
+     "anomalies": [
+      "L92"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "h8",
+      "h2",
+      "h0",
+      "x477",
+      "h10"
+     ],
+     "rank": null,
+     "structural": [
+      "h8",
+      "h2",
+      "h0",
+      "x477",
+      "h10"
+     ],
+     "rank_struct": null,
+     "baseline_rank": {
+      "recency": 1,
+      "bm25_anomaly": 2,
+      "source_heuristic": 1
+     },
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "h8",
+        "h2",
+        "h0"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h4",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h11",
+       "ees": true,
+       "plan_restored": true
+      },
+      "matched_random3": {
+       "rid": [
+        "x477",
+        "h5",
+        "h10"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x420",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_recency": {
+       "rid": "h11",
+       "ees": true,
+       "plan_restored": true
+      },
+      "bl_bm25_anomaly": {
+       "rid": "h8",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_source_heuristic": {
+       "rid": "h11",
+       "ees": true,
+       "plan_restored": true
+      }
+     }
+    }
+   ],
+   "paired": {
+    "predicted_minus_random": {
+     "n": 5,
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "top3_minus_random3": {
+     "n": 5,
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "predicted_minus_similar": {
+     "n": 5,
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "predicted_minus_recency": {
+     "n": 5,
+     "mean": -0.2,
+     "ci95": [
+      -0.6,
+      0.0
+     ]
+    }
+   }
+  },
+  "shopping32/seed32": {
+   "summary": {
+    "n": 1,
+    "precision_at_1": 0.0,
+    "precision_at_3": 0.0,
+    "mrr": 0.0,
+    "precision_at_1_structural": 0.0,
+    "precision_at_3_structural": 0.0,
+    "p1_recency": 0.0,
+    "p3_recency": 0.0,
+    "p1_bm25_anomaly": 0.0,
+    "p3_bm25_anomaly": 0.0,
+    "p1_source_heuristic": 0.0,
+    "p3_source_heuristic": 0.0,
+    "restore_predicted": 0.0,
+    "restore_predicted_top3": 0.0,
+    "restore_matched_random": 0.0,
+    "restore_matched_random3": 0.0,
+    "restore_similar_non_ancestor": 0.0,
+    "restore_recency": 0.0,
+    "restore_bl_recency": 0.0,
+    "restore_bl_bm25_anomaly": 0.0,
+    "restore_bl_source_heuristic": 0.0,
+    "episodes": 45,
+    "no_corruption": 13,
+    "clean_plan_wrong": 29,
+    "no_incident": 2,
+    "incidents": 1,
+    "graph_sha": "6b52ea954f8d5248",
+    "fit_seconds": 361.81630301475525
+   },
+   "rows": [
+    {
+     "episode": "shopping32-s32-test-035",
+     "gold_rid": "h2",
+     "key": "compat[printer|cartridge]",
+     "anomalies": [
+      "L78"
+     ],
+     "similar_kind": "non_ancestor",
+     "ranked": [
+      "x433",
+      "h12",
+      "h9",
+      "x462",
+      "x455"
+     ],
+     "rank": null,
+     "structural": [
+      "h12",
+      "h9",
+      "x462",
+      "x455",
+      "x433"
+     ],
+     "rank_struct": null,
+     "baseline_rank": {
+      "recency": null,
+      "bm25_anomaly": null,
+      "source_heuristic": 4
+     },
+     "n_path_objects": 12,
+     "n_records": 500,
+     "interventions": {
+      "predicted": {
+       "rid": "x433",
+       "ees": false,
+       "plan_restored": false
+      },
+      "predicted_top3": {
+       "rid": [
+        "x433",
+        "h12",
+        "h9"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random": {
+       "rid": "h9",
+       "ees": false,
+       "plan_restored": false
+      },
+      "recency": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "matched_random3": {
+       "rid": [
+        "x421",
+        "x419",
+        "x462"
+       ],
+       "ees": false,
+       "plan_restored": false
+      },
+      "similar_non_ancestor": {
+       "rid": "x194",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_recency": {
+       "rid": "h12",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_bm25_anomaly": {
+       "rid": "h0",
+       "ees": false,
+       "plan_restored": false
+      },
+      "bl_source_heuristic": {
+       "rid": "h10",
+       "ees": false,
+       "plan_restored": false
+      }
+     }
+    }
+   ],
+   "paired": {
+    "predicted_minus_random": {
+     "n": 1,
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "top3_minus_random3": {
+     "n": 1,
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "predicted_minus_similar": {
+     "n": 1,
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "predicted_minus_recency": {
+     "n": 1,
+     "mean": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   }
   }
  }
 }

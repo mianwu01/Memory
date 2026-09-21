@@ -30,7 +30,7 @@ from .provenance import (_run, anomalous_objects, baseline_rankings, controls, c
 
 def run(domain_name: str, seed: int, n_eval: int, out_dir: Path, model: str, budget_usd: float,
         n_train: int = 200, train_seed_offset: int = 100, dry_run: bool = False,
-        selection: str = "graph_seg", serialization: str = "verbose"):
+        selection: str = "graph_seg", serialization: str = "verbose", max_tokens: int = 4096):
     out_dir.mkdir(parents=True, exist_ok=True)
     domain = get_domain(domain_name)
     train = generate_split(domain, seed + train_seed_offset, "train", n_train)
@@ -49,7 +49,7 @@ def run(domain_name: str, seed: int, n_eval: int, out_dir: Path, model: str, bud
             if r.get("event") == "cell":
                 done.add(r["cell"]); spent += r["cost"]
     client = None if dry_run else Client(model)
-    json.dump({"domain": domain_name, "seed": seed, "n_eval": n_eval, "model": model, "graph_sha": sha,
+    json.dump({"domain": domain_name, "seed": seed, "n_eval": n_eval, "model": model, "graph_sha": sha, "max_tokens": max_tokens,
                "arms": ["clean", "corrupted", "top3_replaced", "random3_replaced"], "selection": f"{selection}/{serialization}",
                "prompt_version": llm_mod.PROMPT_VERSION, "budget_usd": budget_usd}, open(out_dir / "protocol.json", "w"), indent=1)
     n_inc = 0
@@ -86,14 +86,14 @@ def run(domain_name: str, seed: int, n_eval: int, out_dir: Path, model: str, bud
                 rec = {"event": "cell", "cell": cell, "dry_run": True, "prompt_chars": sum(len(m["content"]) for m in messages)}
                 open(ledger, "a").write(json.dumps(rec) + "\n"); continue
             try:
-                r = client.chat(messages)
+                r = client.chat(messages, max_tokens=max_tokens)
             except Exception as exc:
                 open(ledger, "a").write(json.dumps({"event": "infrastructure_failure", "cell": cell, "error": str(exc)[:200]}) + "\n")
                 continue
             txns = parse_transactions(r["text"])
             attempts = [r]
             if txns is None:
-                r2 = client.chat(messages + [{"role": "assistant", "content": r["text"]},
+                r2 = client.chat(max_tokens=max_tokens, messages=messages + [{"role": "assistant", "content": r["text"]},
                                              {"role": "user", "content": "Return the final answer now as a fenced ```json block containing only the array of transactions."}])
                 attempts.append(r2); txns = parse_transactions(r2["text"])
             score = score_plan(domain, epi, txns or [], sel)
@@ -149,6 +149,7 @@ if __name__ == "__main__":
     ap.add_argument("--summarize", action="store_true")
     ap.add_argument("--selection", default="graph_seg")
     ap.add_argument("--serialization", default="verbose")
+    ap.add_argument("--max_tokens", type=int, default=4096, help="actor completion cap (the 2026-09-19 runs used 4096)")
     a = ap.parse_args()
     llm_mod.PROMPT_VERSION = a.prompt
     if a.summarize:
@@ -156,4 +157,4 @@ if __name__ == "__main__":
     else:
         for d in a.domains:
             run(d, a.seed, a.n_eval, Path(a.out_dir) / f"{d}_s{a.seed}", a.model, a.budget_usd, dry_run=a.dry_run,
-                selection=a.selection, serialization=a.serialization)
+                selection=a.selection, serialization=a.serialization, max_tokens=a.max_tokens)

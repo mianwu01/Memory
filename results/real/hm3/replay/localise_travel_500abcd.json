@@ -1,0 +1,4463 @@
+{
+ "travel/seed30": {
+  "summary": {
+   "incidents": 57,
+   "structural": {
+    "hit": 1.0,
+    "calls_median": 1.0,
+    "calls_p90": 4.799999999999997,
+    "calls_mean": 2.824561403508772
+   },
+   "bm25": {
+    "hit": 1.0,
+    "calls_median": 18.0,
+    "calls_p90": 18.0,
+    "calls_mean": 13.56140350877193
+   },
+   "history": {
+    "hit": 1.0,
+    "calls_median": 18.0,
+    "calls_p90": 18.0,
+    "calls_mean": 18.0
+   },
+   "reads_then_history": {
+    "hit": 1.0,
+    "calls_median": 4.0,
+    "calls_p90": 6.0,
+    "calls_mean": 4.701754385964913
+   }
+  },
+  "rows": [
+   {
+    "episode": "travel-s30-test-000",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-001",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-002",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-003",
+    "gold": "h306",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h306",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h306",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h306",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h306",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s30-test-005",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-007",
+    "gold": "h423",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h423",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h423",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h423",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h423",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-008",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-009",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s30-test-010",
+    "gold": "h436",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h436",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h436",
+     "hit": true,
+     "calls": 4
+    },
+    "history": {
+     "found": "h436",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h436",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s30-test-011",
+    "gold": "h406",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h406",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h406",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h406",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h406",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s30-test-012",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-013",
+    "gold": "h328",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h328",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h328",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h328",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h328",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-014",
+    "gold": "h406",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h406",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h406",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h406",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h406",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-015",
+    "gold": "h369",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h369",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h369",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h369",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h369",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s30-test-016",
+    "gold": "h389",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h389",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h389",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h389",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h389",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s30-test-017",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-018",
+    "gold": "h377",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h377",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h377",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h377",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h377",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s30-test-019",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-020",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 4,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s30-test-021",
+    "gold": "h380",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h380",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h380",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h380",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h380",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-022",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-023",
+    "gold": "h498",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h498",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-024",
+    "gold": "h429",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h429",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h429",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h429",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h429",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s30-test-025",
+    "gold": "h387",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h387",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h387",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h387",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h387",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-026",
+    "gold": "h403",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h403",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h403",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h403",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h403",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s30-test-027",
+    "gold": "h498",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h498",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h498",
+     "hit": true,
+     "calls": 4
+    },
+    "history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-028",
+    "gold": "h426",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h426",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h426",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h426",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h426",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-029",
+    "gold": "h398",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h398",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h398",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h398",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h398",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s30-test-030",
+    "gold": "h301",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h301",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h301",
+     "hit": true,
+     "calls": 1
+    },
+    "history": {
+     "found": "h301",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h301",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s30-test-031",
+    "gold": "h379",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h379",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h379",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h379",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h379",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "travel-s30-test-032",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-033",
+    "gold": "h311",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h311",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h311",
+     "hit": true,
+     "calls": 4
+    },
+    "history": {
+     "found": "h311",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h311",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s30-test-034",
+    "gold": "h423",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h423",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h423",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h423",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h423",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-035",
+    "gold": "h498",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "travel-s30-test-036",
+    "gold": "h400",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h400",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h400",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h400",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h400",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-037",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-038",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-039",
+    "gold": "h339",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h339",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h339",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h339",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h339",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s30-test-040",
+    "gold": "h440",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h440",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h440",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h440",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h440",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-041",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-042",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-043",
+    "gold": "h412",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h412",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h412",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h412",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h412",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s30-test-044",
+    "gold": "h460",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h460",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h460",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h460",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h460",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-045",
+    "gold": "h498",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "travel-s30-test-047",
+    "gold": "h372",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h372",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h372",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h372",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h372",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-048",
+    "gold": "h462",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h462",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h462",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h462",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h462",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-049",
+    "gold": "h458",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h458",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h458",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h458",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h458",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-050",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-051",
+    "gold": "h427",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h427",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h427",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h427",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h427",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s30-test-052",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-053",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-054",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 1
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-055",
+    "gold": "h442",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h442",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h442",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h442",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h442",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-056",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s30-test-057",
+    "gold": "h421",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h421",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h421",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h421",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h421",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-058",
+    "gold": "h437",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h437",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h437",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h437",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h437",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s30-test-059",
+    "gold": "h318",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h318",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h318",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h318",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h318",
+     "hit": true,
+     "calls": 2
+    }
+   }
+  ]
+ },
+ "travel/seed31": {
+  "summary": {
+   "incidents": 57,
+   "structural": {
+    "hit": 1.0,
+    "calls_median": 1.0,
+    "calls_p90": 4.799999999999997,
+    "calls_mean": 2.3684210526315788
+   },
+   "bm25": {
+    "hit": 1.0,
+    "calls_median": 18.0,
+    "calls_p90": 18.0,
+    "calls_mean": 15.421052631578947
+   },
+   "history": {
+    "hit": 1.0,
+    "calls_median": 18.0,
+    "calls_p90": 18.0,
+    "calls_mean": 17.912280701754387
+   },
+   "reads_then_history": {
+    "hit": 1.0,
+    "calls_median": 6.0,
+    "calls_p90": 6.0,
+    "calls_mean": 4.614035087719298
+   }
+  },
+  "rows": [
+   {
+    "episode": "travel-s31-test-000",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-001",
+    "gold": "h498",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h498",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-003",
+    "gold": "h436",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h436",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h436",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h436",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h436",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s31-test-004",
+    "gold": "h391",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h391",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h391",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h391",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h391",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s31-test-005",
+    "gold": "h499",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h499",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-006",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-007",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s31-test-008",
+    "gold": "h454",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h454",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h454",
+     "hit": true,
+     "calls": 17
+    },
+    "history": {
+     "found": "h454",
+     "hit": true,
+     "calls": 17
+    },
+    "reads_then_history": {
+     "found": "h454",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s31-test-009",
+    "gold": "h499",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h499",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-010",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-011",
+    "gold": "h499",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h499",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-012",
+    "gold": "h415",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h415",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h415",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h415",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h415",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s31-test-013",
+    "gold": "h498",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h498",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h498",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-014",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-015",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-016",
+    "gold": "h419",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h419",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h419",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h419",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h419",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-017",
+    "gold": "h395",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h395",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h395",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h395",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h395",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s31-test-018",
+    "gold": "h446",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h446",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h446",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h446",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h446",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s31-test-019",
+    "gold": "h432",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h432",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h432",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h432",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h432",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s31-test-020",
+    "gold": "h358",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h358",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h358",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h358",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h358",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s31-test-021",
+    "gold": "h436",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h436",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h436",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h436",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h436",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s31-test-022",
+    "gold": "h451",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h451",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h451",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h451",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h451",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-023",
+    "gold": "h471",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h471",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h471",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h471",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h471",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-024",
+    "gold": "h361",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h361",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h361",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h361",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h361",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s31-test-025",
+    "gold": "h468",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h468",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h468",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h468",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h468",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s31-test-027",
+    "gold": "h377",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h377",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h377",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h377",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h377",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "travel-s31-test-028",
+    "gold": "h342",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h342",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h342",
+     "hit": true,
+     "calls": 1
+    },
+    "history": {
+     "found": "h342",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h342",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s31-test-029",
+    "gold": "h466",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h466",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h466",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h466",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h466",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s31-test-030",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-031",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-032",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 4,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s31-test-033",
+    "gold": "h498",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h498",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-034",
+    "gold": "h433",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h433",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h433",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h433",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h433",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s31-test-035",
+    "gold": "h475",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h475",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h475",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h475",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h475",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s31-test-036",
+    "gold": "h424",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h424",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h424",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h424",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h424",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-037",
+    "gold": "h409",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h409",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h409",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h409",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h409",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s31-test-038",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-039",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-040",
+    "gold": "h459",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h459",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h459",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h459",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h459",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s31-test-041",
+    "gold": "h498",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h498",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-042",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-043",
+    "gold": "h359",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h359",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h359",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h359",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h359",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-044",
+    "gold": "h442",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h442",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h442",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h442",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h442",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s31-test-045",
+    "gold": "h498",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h498",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-046",
+    "gold": "h195",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h195",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h195",
+     "hit": true,
+     "calls": 1
+    },
+    "history": {
+     "found": "h195",
+     "hit": true,
+     "calls": 16
+    },
+    "reads_then_history": {
+     "found": "h195",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s31-test-047",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s31-test-048",
+    "gold": "h499",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h499",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-049",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-050",
+    "gold": "h396",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h396",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h396",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h396",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h396",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s31-test-051",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-052",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-053",
+    "gold": "h275",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h275",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h275",
+     "hit": true,
+     "calls": 4
+    },
+    "history": {
+     "found": "h275",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h275",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s31-test-054",
+    "gold": "h392",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h392",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h392",
+     "hit": true,
+     "calls": 17
+    },
+    "history": {
+     "found": "h392",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h392",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s31-test-055",
+    "gold": "h497",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h497",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h497",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s31-test-056",
+    "gold": "h383",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h383",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h383",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h383",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h383",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s31-test-057",
+    "gold": "h161",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h161",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h161",
+     "hit": true,
+     "calls": 1
+    },
+    "history": {
+     "found": "h161",
+     "hit": true,
+     "calls": 16
+    },
+    "reads_then_history": {
+     "found": "h161",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s31-test-059",
+    "gold": "h429",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h429",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h429",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h429",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h429",
+     "hit": true,
+     "calls": 4
+    }
+   }
+  ]
+ },
+ "travel/seed32": {
+  "summary": {
+   "incidents": 54,
+   "structural": {
+    "hit": 1.0,
+    "calls_median": 2.0,
+    "calls_p90": 6.0,
+    "calls_mean": 3.7777777777777777
+   },
+   "bm25": {
+    "hit": 1.0,
+    "calls_median": 18.0,
+    "calls_p90": 18.0,
+    "calls_mean": 12.574074074074074
+   },
+   "history": {
+    "hit": 1.0,
+    "calls_median": 18.0,
+    "calls_p90": 18.0,
+    "calls_mean": 17.796296296296298
+   },
+   "reads_then_history": {
+    "hit": 1.0,
+    "calls_median": 4.0,
+    "calls_p90": 6.0,
+    "calls_mean": 4.7407407407407405
+   }
+  },
+  "rows": [
+   {
+    "episode": "travel-s32-test-000",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-001",
+    "gold": "h389",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h389",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h389",
+     "hit": true,
+     "calls": 1
+    },
+    "history": {
+     "found": "h389",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h389",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-002",
+    "gold": "h498",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h498",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 8
+    }
+   },
+   {
+    "episode": "travel-s32-test-003",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-004",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s32-test-005",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-007",
+    "gold": "h254",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h254",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h254",
+     "hit": true,
+     "calls": 16
+    },
+    "history": {
+     "found": "h254",
+     "hit": true,
+     "calls": 16
+    },
+    "reads_then_history": {
+     "found": "h254",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s32-test-008",
+    "gold": "h389",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h389",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h389",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h389",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h389",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s32-test-009",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-011",
+    "gold": "h277",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h277",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h277",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h277",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h277",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s32-test-012",
+    "gold": "h251",
+    "n_records": 500,
+    "n_reads": 4,
+    "structural": {
+     "found": "h251",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h251",
+     "hit": true,
+     "calls": 1
+    },
+    "history": {
+     "found": "h251",
+     "hit": true,
+     "calls": 16
+    },
+    "reads_then_history": {
+     "found": "h251",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s32-test-013",
+    "gold": "h285",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h285",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h285",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h285",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h285",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s32-test-014",
+    "gold": "h457",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h457",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h457",
+     "hit": true,
+     "calls": 4
+    },
+    "history": {
+     "found": "h457",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h457",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s32-test-015",
+    "gold": "h297",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h297",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h297",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h297",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h297",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s32-test-016",
+    "gold": "h385",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h385",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h385",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h385",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h385",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s32-test-017",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s32-test-018",
+    "gold": "h312",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h312",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h312",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h312",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h312",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s32-test-019",
+    "gold": "h465",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h465",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h465",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h465",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h465",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "travel-s32-test-020",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s32-test-021",
+    "gold": "h499",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h499",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-022",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-023",
+    "gold": "h499",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h499",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h499",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-024",
+    "gold": "h338",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h338",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h338",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h338",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h338",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "travel-s32-test-025",
+    "gold": "h361",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h361",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h361",
+     "hit": true,
+     "calls": 1
+    },
+    "history": {
+     "found": "h361",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h361",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s32-test-026",
+    "gold": "h288",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h288",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h288",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h288",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h288",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s32-test-027",
+    "gold": "h378",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h378",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h378",
+     "hit": true,
+     "calls": 1
+    },
+    "history": {
+     "found": "h378",
+     "hit": true,
+     "calls": 17
+    },
+    "reads_then_history": {
+     "found": "h378",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s32-test-028",
+    "gold": "h451",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h451",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h451",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h451",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h451",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-029",
+    "gold": "h436",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h436",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h436",
+     "hit": true,
+     "calls": 4
+    },
+    "history": {
+     "found": "h436",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h436",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s32-test-032",
+    "gold": "h414",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h414",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h414",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h414",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h414",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s32-test-033",
+    "gold": "h330",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h330",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h330",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h330",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h330",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s32-test-034",
+    "gold": "h428",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h428",
+     "hit": true,
+     "calls": 2
+    },
+    "bm25": {
+     "found": "h428",
+     "hit": true,
+     "calls": 4
+    },
+    "history": {
+     "found": "h428",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h428",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s32-test-036",
+    "gold": "h454",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h454",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h454",
+     "hit": true,
+     "calls": 17
+    },
+    "history": {
+     "found": "h454",
+     "hit": true,
+     "calls": 17
+    },
+    "reads_then_history": {
+     "found": "h454",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s32-test-037",
+    "gold": "h432",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h432",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h432",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h432",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h432",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "travel-s32-test-038",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-039",
+    "gold": "h344",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h344",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h344",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h344",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h344",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s32-test-040",
+    "gold": "h347",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h347",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h347",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h347",
+     "hit": true,
+     "calls": 17
+    },
+    "reads_then_history": {
+     "found": "h347",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s32-test-041",
+    "gold": "h495",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h495",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h495",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h495",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s32-test-042",
+    "gold": "h441",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h441",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h441",
+     "hit": true,
+     "calls": 1
+    },
+    "history": {
+     "found": "h441",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h441",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s32-test-043",
+    "gold": "h410",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h410",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h410",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h410",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h410",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s32-test-044",
+    "gold": "h482",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h482",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h482",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h482",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h482",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s32-test-045",
+    "gold": "h415",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h415",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h415",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h415",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h415",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s32-test-046",
+    "gold": "h436",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h436",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h436",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h436",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h436",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s32-test-047",
+    "gold": "h498",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "bm25": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h498",
+     "hit": true,
+     "calls": 18
+    }
+   },
+   {
+    "episode": "travel-s32-test-048",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-049",
+    "gold": "h438",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h438",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h438",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h438",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h438",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-050",
+    "gold": "h188",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h188",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h188",
+     "hit": true,
+     "calls": 1
+    },
+    "history": {
+     "found": "h188",
+     "hit": true,
+     "calls": 16
+    },
+    "reads_then_history": {
+     "found": "h188",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s32-test-052",
+    "gold": "h438",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h438",
+     "hit": true,
+     "calls": 4
+    },
+    "bm25": {
+     "found": "h438",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h438",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h438",
+     "hit": true,
+     "calls": 1
+    }
+   },
+   {
+    "episode": "travel-s32-test-053",
+    "gold": "h458",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h458",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h458",
+     "hit": true,
+     "calls": 2
+    },
+    "history": {
+     "found": "h458",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h458",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-054",
+    "gold": "h496",
+    "n_records": 500,
+    "n_reads": 7,
+    "structural": {
+     "found": "h496",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h496",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-055",
+    "gold": "h463",
+    "n_records": 500,
+    "n_reads": 9,
+    "structural": {
+     "found": "h463",
+     "hit": true,
+     "calls": 6
+    },
+    "bm25": {
+     "found": "h463",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h463",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h463",
+     "hit": true,
+     "calls": 6
+    }
+   },
+   {
+    "episode": "travel-s32-test-056",
+    "gold": "h383",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h383",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h383",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h383",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h383",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s32-test-057",
+    "gold": "h214",
+    "n_records": 500,
+    "n_reads": 5,
+    "structural": {
+     "found": "h214",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h214",
+     "hit": true,
+     "calls": 16
+    },
+    "history": {
+     "found": "h214",
+     "hit": true,
+     "calls": 16
+    },
+    "reads_then_history": {
+     "found": "h214",
+     "hit": true,
+     "calls": 2
+    }
+   },
+   {
+    "episode": "travel-s32-test-058",
+    "gold": "h333",
+    "n_records": 500,
+    "n_reads": 6,
+    "structural": {
+     "found": "h333",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h333",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h333",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h333",
+     "hit": true,
+     "calls": 4
+    }
+   },
+   {
+    "episode": "travel-s32-test-059",
+    "gold": "h350",
+    "n_records": 500,
+    "n_reads": 8,
+    "structural": {
+     "found": "h350",
+     "hit": true,
+     "calls": 1
+    },
+    "bm25": {
+     "found": "h350",
+     "hit": true,
+     "calls": 18
+    },
+    "history": {
+     "found": "h350",
+     "hit": true,
+     "calls": 18
+    },
+    "reads_then_history": {
+     "found": "h350",
+     "hit": true,
+     "calls": 4
+    }
+   }
+  ]
+ }
+}

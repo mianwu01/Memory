@@ -1,0 +1,19 @@
+{
+ "eval": {
+  "n": 16,
+  "dropped": 0,
+  "retries": 0,
+  "a_keys": 48,
+  "a_diff": 28,
+  "b": 436,
+  "c": 429,
+  "d": 449,
+  "records": 1600,
+  "objects": 2249,
+  "fail_reasons": {},
+  "fallback_no_interleave": 0,
+  "mean_records": 100.0,
+  "mean_objects": 140.5625,
+  "drop_rate": 0.0
+ }
+}

@@ -4,6 +4,9 @@ from .dgp_travel import TravelDomain
 def get_domain(name: str):
     if name == "travel":
         return TravelDomain()
+    if name == "travel_arena":
+        from .dgp_travel_arena import ArenaTravelDomain
+        return ArenaTravelDomain()
     if name == "shopping":
         from .dgp_shopping import ShoppingDomain
         return ShoppingDomain()

@@ -36,8 +36,12 @@ from .scaling import _tokens, augment_split, record_text
 
 # ------------------------------------------------------------------ artifact
 
-def graph_sha(g: LearnedGraph) -> str:
-    """SHA of the learned structure and of the per-template decision models."""
+def graph_sha(g) -> str:
+    """SHA of the learned structure and of the per-template decision models
+    (or, for an observational TCD graph, of its recovered type pairs and fitted edges)."""
+    if hasattr(g, "adj"):
+        blob = json.dumps([sorted(g.adj), (g.fit_result or {}).get("edges", {})], sort_keys=True, default=str)
+        return hashlib.sha256(blob.encode()).hexdigest()[:16]
     skel = sorted((k[0], list(k[1]), g.majority[k]) for k in g.skeleton)
     models = []
     for k in sorted(g.models, key=str):
@@ -123,10 +127,14 @@ def corrupt(domain, ep: Episode, rng: random.Random) -> Optional[Tuple[Episode, 
 
 # ------------------------------------------------------------------- tracing
 
-def _run(domain, g: LearnedGraph, ep: Episode) -> Tuple[List[dict], dict, dict]:
+def _run(domain, g, ep: Episode) -> Tuple[List[dict], dict, dict]:
     out = g.predict(domain, ep)
-    est = restricted_est(domain, ep.H, ep.S0, out["reads"]["records"])
-    txns, _info = plan_to_txns(domain, ep.S0, ep.I, out["plan"], est)
+    if out.get("txns") is not None:
+        # selection + runtime-history executor arms (tcd_select): transactions come back directly
+        txns = out["txns"]
+    else:
+        est = restricted_est(domain, ep.H, ep.S0, out["reads"]["records"])
+        txns, _info = plan_to_txns(domain, ep.S0, ep.I, out["plan"], est)
     return txns, out["reads"], score_plan(domain, ep, txns, out["reads"])
 
 
@@ -150,6 +158,12 @@ def trace(domain, g: LearnedGraph, ep: Episode, anomalies: List[str], reads: dic
         dist = hop_distances(ep.S0, a)
         frontier = [src]
         seen = {src}
+        if hasattr(g, "adj"):
+            # observational type graph: objects reachable from the source over instance links
+            # whose type pair is a recovered edge (same walk as the forward tcd_select)
+            from .tcd_logs import adjacency_reads
+            seen = set(adjacency_reads(ep, g.adj))
+            frontier = []
         while frontier:
             o = frontier.pop(0)
             if o not in ep.S0.objects:
@@ -293,16 +307,33 @@ def replace_record(ep_bad: Episode, ep_clean: Episode, rid) -> Episode:
 # ------------------------------------------------------------------- driver
 
 def run_domain(domain, seed: int, split: str, n_train: int, n_eval: int, train_seed_offset: int,
-               history: Optional[str] = None) -> dict:
+               history: Optional[str] = None, graph_kind: str = "learned") -> dict:
     train = generate_split(domain, seed + train_seed_offset, "train", n_train)
     evals = generate_split(domain, seed, split, n_eval)
+    train0 = train
     if history and history != "native":
         target, mix = history.split(":")
         train, _ = augment_split(domain, train, int(target), mix, f"train{seed}")
         evals, _ = augment_split(domain, evals, int(target), mix, f"{split}{seed}")
-    g = LearnedGraph()
     t0 = time.time()
-    g.fit(domain, train)
+    if graph_kind == "tcd" or graph_kind.startswith("grace") or graph_kind.endswith("_lag"):
+        # observational graphs on the native training logs (hm3.tcd_logs), used forward
+        # (tcd_select + runtime-history executor) and backward (adjacency walk in trace):
+        #   tcd            pooled lagged regression, one-hop reach
+        #   tcd_lag        the same with lag-aware reach
+        #   grace_<mode>   GRACE graphs precomputed by hm3.grace_logs ($HM3_GRACE_GRAPHS), lag-aware reach
+        import os
+        from .tcd_logs import TCDSelect
+        if graph_kind == "tcd":
+            g = TCDSelect("parser")
+        elif graph_kind == "tcd_lag":
+            g = TCDSelect("parser", lag_aware=True)
+        else:
+            g = TCDSelect("parser", estimator=graph_kind, lag_aware=True, graphs_file=os.environ["HM3_GRACE_GRAPHS"])
+        g.fit(domain, train0)
+    else:
+        g = LearnedGraph()
+        g.fit(domain, train)
     sha = graph_sha(g)
     rng = random.Random(seed * 7919 + 17)
     rows = []
@@ -349,6 +380,7 @@ def run_domain(domain, seed: int, split: str, n_train: int, n_eval: int, train_s
     summ = summarize_rows(rows)
     summ.update(counts)
     summ["graph_sha"] = sha
+    summ["graph_kind"] = graph_kind
     summ["fit_seconds"] = time.time() - t0
     return {"summary": summ, "rows": rows}
 
@@ -393,6 +425,8 @@ if __name__ == "__main__":
     ap.add_argument("--n_eval", type=int, default=60)
     ap.add_argument("--train_seed_offset", type=int, default=0)
     ap.add_argument("--history", default=None)
+    ap.add_argument("--graph", default="learned",
+                    help="learned | tcd | tcd_lag | grace_pcmci | grace_pcmci_g2 | grace_open | grace_open_x3 | grace_open_x10")
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
     results = {"config": vars(a), "runs": {}}
@@ -400,7 +434,7 @@ if __name__ == "__main__":
         domain = get_domain(dname)
         for seed in a.seeds:
             key = f"{dname}/seed{seed}"
-            res = run_domain(domain, seed, a.split, a.n_train, a.n_eval, a.train_seed_offset, a.history)
+            res = run_domain(domain, seed, a.split, a.n_train, a.n_eval, a.train_seed_offset, a.history, a.graph)
             res["paired"] = {"predicted_minus_random": paired_ci(res["rows"], "predicted", "matched_random"),
                              "top3_minus_random3": paired_ci(res["rows"], "predicted_top3", "matched_random3"),
                              "predicted_minus_similar": paired_ci(res["rows"], "predicted", "similar_non_ancestor"),

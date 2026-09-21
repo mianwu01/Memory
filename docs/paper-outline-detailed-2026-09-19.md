@@ -10,12 +10,13 @@ An agent's memory should be organized by the causal structure of how past inform
 decisions, and that structure is gated by access: a stored record matters only in the regime in which it is
 written, held, or read. Estimating dependencies conditioned on the access regime recovers gated read edges that
 pooled temporal discovery misses. The estimated structure then does two things a retriever, a ledger, or a
-full-context reader does not. Forward, it selects a read set whose size stays flat as the history grows, and it
-keeps a real LLM actor working when the history accumulates conflicting or stale evidence about the same entities,
-at one to three percent of the tokens. Backward, the same structure traces an anomalous action to the specific
+full-context reader does not. Forward, it selects a read set whose size stays flat as the history grows, so a real LLM actor reads one to
+three percent of the tokens at every history length, keeps working when the history holds conflicting evidence
+about the same entities, and leads full context once the history reaches hundreds of records. Backward, the same structure traces an anomalous action to the specific
 past record that caused it, and replacing that record with a clean version restores the action, while replacing
-matched controls does not. The advantage has a boundary: when the history is short enough to read in full, reading
-everything is still best, and in a domain whose objects are fully interconnected the structure adds little.
+matched controls does not. The advantage has boundaries: when the history is short enough to read in full, reading everything is as good
+or better; at a hundred records of consistent history a full-context actor matches the structure; and in a domain
+whose objects are fully interconnected the structure adds little.
 
 ## 1. Introduction
 
@@ -26,10 +27,12 @@ Paragraph goals and what supports each.
 | P1 | Long-lived agents must reuse past information selectively and must be able to trace memory-induced errors to their source. | motivation; MemoryArena/MINJA/AgentPoison settings | have |
 | P2 | Existing memory systems treat history as content to store and retrieve (retrieval, summaries, ledgers, modern agent memories); none represents *how* a past record reaches a future decision, so they cannot bound reads or attribute errors. | related-work positioning | have |
 | P3 | Thesis: memory is mediated long-lag dependence through a persistent variable, gated by write/hold/read regimes; what to remember is the causal frontier; the estimated structure serves both selection and provenance. | formulation (§2) | have |
-| P4 | Contributions: (a) formulation and identification of access-gated memory dependencies; (b) a benchmark with hidden mechanisms, non-idempotent repairs and controlled history growth where lookup provably fails the gate; (c) forward selection: flat reads, robustness to conflicting evidence, real-actor crossover; (d) backward provenance with intervention validation; (e) boundaries. | §3–§5 | have |
+| P4 | Contributions: (a) formulation and identification of access-gated memory dependencies; (a′) recovery of the propagation skeleton from an agent's own event logs by an off-the-shelf temporal estimator, and the variable definition under which it fails; (b) a benchmark with hidden mechanisms, non-idempotent repairs and controlled history growth where lookup provably fails the gate; (c) forward selection: flat reads at one to three percent of the tokens, a real-actor edge under conflicting evidence and at 500 records, and the crossover at short histories; (d) backward provenance with intervention validation; (e) boundaries. | §3–§5 | have |
 
-Main observation to state up front: full-context actors are robust to volume and fragile to conflict; structure-guided
-reading is robust to both; structure also yields intervention-validated provenance.
+Main observation to state up front: structure-guided reading costs one to three percent of the tokens at every history
+length, holds up under conflicting evidence where a full-context actor drops (0.29–0.33 vs 0.14 with a terminating
+prompt), and leads at hundreds of records; the same structure yields intervention-validated provenance. (The earlier
+numbers were inflated by an output-cap and prompt artifact; the effect is about two thirds of them; see §4.4.)
 
 ## 2. Setting and formulation (theory we actually have)
 
@@ -51,6 +54,9 @@ reading is robust to both; structure also yields intervention-validated provenan
   say "we show" for the lemma and "we demonstrate" for identification)*
 - Failure modes named as experimental arms: frozen-variable regime, selection, policy confounding, latent
   confounders. *(have: text; selection and confounding are stated boundaries, not experiments)*
+- **Setting mapping (2026-09-20).** Sample / variable / time step / regime / memory carrier / frontier for HM3, and
+  whether the variable set is the same across episodes, conditions, regimes and domains: `docs/hm3-formulation-mapping-2026-09-20.md` §1–§2,
+  with the setting-section sentences in §5.
 - **Causal vocabulary (settled 2026-09-19, see `docs/causal-vocabulary-and-estimators-2026-09-19.md`).** "Temporal
   causal process" is the modelling object. "Temporal causal graph" is used with an explicit definition: edges are
   propagation effects estimated from trajectories whose upstream change is a known intervention, gated by the access
@@ -65,6 +71,11 @@ reading is robust to both; structure also yields intervention-validated provenan
    pooled ridge, additive-regime, PCMCI+, pooled GRACE, HC0 interaction model, shuffled-regime controls. Per-regime
    GRACE gives the same recovery and is an appendix row; the estimator is not a contribution (E0 v2 criterion C4).
    *(have: `code/regime_grace.py`, `code/e0v2`)*
+2a. **Structure from the logs (added 2026-09-19).** The training histories as plain event logs (one binary variable per
+   object type, interventions exogenous, no links, no parser); pooled lagged regression with FDR recovers the full
+   type skeleton on 6/6 seeds in Travel and Shopping32 (recall 1.0), PCMCI+ recall 0.4; the MemoryArena-style
+   round-activation encoding degenerates to self-loops on the same data. The recovered graph drives selection
+   (EES 1.00, 12 reads, identical to the interventional skeleton) and provenance (§4.5). *(have: `code/hm3/tcd_logs.py`)*
 2. **Structure for an agent task (HM3 instantiation).** From training trajectories in which every episode is a
    known intervention on one source object with the observed propagation of changes, learn a typed-path skeleton
    (which linked objects change after which upstream change) with a regime-gated local decision per template, and a
@@ -130,26 +141,57 @@ reading is robust to both; structure also yields intervention-validated provenan
   for keys the task never consults (audited per episode; the augmentation itself never flips the oracles).
 - Figure: EES and reads versus history length, one line per arm.
 
-### 4.4 Real LLM actor (DeepSeek-V4-Flash, thinking off; Travel test seed 30 with seed 31 replication) — status: have
+### 4.4 Real LLM actor (DeepSeek-V4-Flash, thinking off; Travel test seed 30) — status: have, revised 2026-09-19
 
 - Type: the actor receives (history, state, intervention) under a selection × serialization cell and must emit the
-  repair transactions; 64 episodes per condition; paired bootstrap intervals on the same episodes.
-- Main result (graph_closed/compact minus full/verbose): native −0.33 [−0.47, −0.19]; 100 records +0.28
-  [+0.16, +0.41]; 500 records +0.24 [+0.10, +0.38]; seed 31: −0.34 and +0.22. Graph input 2.2–2.8k tokens at all
-  lengths; full 8k → 51k → 240k. BM25-16 and recency-16 are at or below full at long lengths. A selector frozen on
-  native training data gives the same conclusion (+0.27 / +0.24). Program-learner selection: native 0.20 ≈ graph
-  0.22; 500 records 0.27 vs graph 0.37 (n.s.). Stronger backbone (DeepSeek-V4-Pro): native −0.10 [−0.28, +0.08],
-  500 records +0.07 [−0.09, +0.22]. Whole-segment selection narrows the native gap to −0.11 (verbose).
-- Decomposition (100 records, one distractor type at a time, graph vs full): conflicting witnesses 0.32 vs 0.08
-  (+0.24 [+0.11, +0.37]); unrelated worlds 0.27 vs 0.48; at 500 unrelated records (240k tokens) 0.33 vs 0.41
-  (−0.10 [−0.24, +0.06]); agreeing duplicates 0.35 vs 0.44; stale versions 0.36 vs 0.41. Stating the
-  latest-record-wins rule in the prompt leaves full at 0.08.
-- Observation (the sentence for the abstract): a full-context actor survives pure volume and collapses under
-  conflicting evidence about the same entities; structure-guided reading resolves the conflict at read time and
-  stays at 0.3 or above at 1–3 % of the tokens; when the history is short enough to read, reading everything is
-  still best (crossover). Assumption to state: the current world's own witnesses are the most recent records for the keys the task consults (for other keys, foreign witnesses may be the latest, which is what perturbs a refitted gate).
-- Figures: crossover plot (EES vs history length for graph, full, BM25, recency, with token counts on a second axis);
-  decomposition bar chart.
+  repair transactions; 53–64 episodes per condition; paired bootstrap intervals on the same episodes; two prompts
+  (v1 plain, v2 ledger-first) and a 16,384-token output cap after the audit (`docs/bridge-plan-2026-09-19.md` §3.3;
+  one summary command `hm3.panel_summary`).
+- Audit: the first version of this table ran at a 4,096-token cap, where a truncated first attempt scored 0 after an
+  empty format repair (full history truncated in 56/64 and 58/63 cells at 100/500 records), and prompt v2's
+  policy-ledger step does not terminate over 100+ records (a repeated probe loops to the cap every time). Both factors
+  are now controlled.
+- Main result (graph_closed/compact minus full/verbose): native −0.33 [−0.47, −0.19] (v2); 100 records +0.05
+  [−0.09, +0.19] (v2) and +0.00 [−0.14, +0.14] (v1); 500 records +0.17 [+0.05, +0.30] (v2) and +0.13 [+0.00, +0.25]
+  (v1); conflicting witnesses only (c100) +0.13 [−0.02, +0.27] (v2) and +0.00 [−0.10, +0.10] (v1). Graph input
+  1.5–1.8k tokens and output 0.6–1.3k at all lengths; full 27k–70k at 100 and 123k–261k at 500 with 16k output when it
+  fails to terminate. BM25-16 and recency-16 are at 0.02–0.09 at long lengths.
+- Parser-free selection (records by same-key precedent, no domain parser) is at parity with the parser-based graph
+  at the actor level (+0.11 / −0.05 / +0.02 at 100 / 500 / c100) at 1.5× its input.
+- Same-serialization panel (verbose both sides, segment kept, 16k; the panel to quote, 2026-09-20): graph_seg/verbose
+  vs full/verbose under the terminating prompt v1: 100 records 0.33 vs 0.25 (+0.08 [−0.06, +0.22]); conflicting
+  witnesses 0.33 vs 0.14 (+0.19 [+0.06, +0.32]); 500 records 0.33 vs 0.16 (+0.17 [+0.03, +0.32]); native 0.48 vs
+  0.48 (v1) and 0.44 vs 0.66 (−0.23 [−0.39, −0.06], v2). Shopping32 (same serialization, terminating prompt v1, 16k): 100
+  records parity (0.48 vs 0.48–0.50); 500 records full 0.53 vs graph_closed/verbose 0.48 (−0.05) and graph_seg/verbose
+  0.34 (−0.19 [−0.34, −0.03]); the v2 gains there (+0.17 / +0.23) are the full arm's non-termination. Shopping supports
+  the cost claim only. Under v2 the same pairs are +0.18 / +0.22 / +0.44 (full does not terminate).
+  The compact witness-only arm understated the structure by 0.1–0.3.
+- Partial credit (v1, 16k, 500 records): value accuracy +0.17 [+0.03, +0.31], affected F1 +0.09 [+0.01, +0.17];
+  at 100 and c100 ≈ 0. Failure modes with the right records in context are execution errors (auto/txn protocol,
+  buffer arithmetic, collateral writes), so the actor band is bounded by the actor; the same-serialization
+  comparison (graph_seg/verbose vs full/verbose) is pending and replaces the compact-vs-verbose one.
+- Observation (the sentence for the abstract): structure-guided reading costs one to three percent of the tokens at
+  every length; under conflicting evidence about the same entities a full-context actor drops from 0.25 to 0.14 while
+  the structure stays at 0.29–0.33; at hundreds of records the structure leads; at a hundred records of consistent
+  history the two are at parity; when the history is short enough to read, reading everything is as good or better. The
+  witness must be given with the intervention that produced it, in the same form as the full history. A ledger-first
+  prompt helps the short structured context and breaks the long full context, so both prompts are reported.
+- Withdrawn from the main text (4,096-cap runs): the single-distractor decomposition, the prompt-v3 rule, the
+  V4-Pro and whole-segment rows, and the Shopping32 actor rows (Shopping32 16k rerun pending). They may appear in the
+  appendix labelled cap-limited.
+- Figures: cost plot (input/output tokens vs history length per arm) and EES vs history length with both prompts.
+
+### 4.4b Substrate: real entities and the benchmark's memory interface — status: have (2026-09-20)
+
+- Type: the Travel mechanism on MemoryArena's real flights, accommodations and restaurants (`travel_arena`), memory
+  routed through MemoryArena's own `add_chunk` / `wrap_user_prompt` classes unmodified (BM25 at its default top-3 and at
+  top-16, long-context, A-Mem at its default k = 5), ours behind the same interface; 64 episodes, 16k cap, both prompts.
+- Result (ours − long-context, v1 / v2): native +0.05 / +0.03 (n.s.); 100 records +0.31 / +0.30; conflicting +0.12 /
+  +0.27; 500 records +0.20 / +0.48; ours − BM25 top-16 +0.14 to +0.55; ours reads 3.8–4.8k tokens against 7k–269k.
+- Observation: the synthetic-panel pattern holds on real entities through the benchmark's interface, and the native-length
+  crossover does not appear there. Boundary: the task mechanism is ours; the entities, interface and baselines are the
+  benchmark's; this is not the original MemoryArena planning task.
+- Table: the substrate table in the results package.
 
 ### 4.5 Backward provenance through the same graph (Travel, reserved test seeds 30/31/32) — status: have
 
@@ -163,14 +205,18 @@ reading is robust to both; structure also yields intervention-validated provenan
   random-3 0.27 (its prompt is identical to the corrupted one, so it measures call-to-call variance); net effect
   +0.21 [+0.04, +0.37], replaced ≥ clean (+0.06 [−0.13, +0.25]).
 - Observation: the same structure that selects also attributes, and the attribution is behaviourally causal.
+- Same test with the observational graph (pooled TCD on the event logs, `hm3.provenance --graph tcd`): top-3
+  0.96–0.98 at native and 0.91–1.00 at 500 records, clean replacement restores at the same rates, controls 0–0.05
+  (`results/real/hm3/tcd/provenance/`). One graph, fitted from logs, forward and backward.
 - Figure: the case figure Yujia asked for — one incident with the write/hold/read/action events, what each selector
   read, the trace, and the effect of replacing each candidate record.
 
 ### 4.6 Boundaries and negative results — status: have
 
-- Shopping32: selection advantage at long histories holds after the augmentation fix (64 episodes: native −0.07
-  [−0.21, +0.08]; 100 records +0.25 [+0.11, +0.39]; 500 records +0.25 [+0.14, +0.38]; BM25 +0.19 / −0.03), so
-  Shopping joins Travel for the selection claim. Provenance fails there because 19 of 24 corruptions silence the
+- Shopping32 (revised 2026-09-20): the earlier +0.25 rows were output-cap truncation. With a terminating prompt and
+  the same serialization, a full-context actor matches the structure at 100 records and beats the segment-context
+  graph at 500 (0.53 vs 0.34, −0.19 [−0.34, −0.03]); the structure's accuracy advantage is Travel-specific and the
+  Shopping actor claim is cost only (7–11k vs 26k–103k input tokens). Provenance fails there because 19 of 24 corruptions silence the
   parser's witness for the key (BM25 finds the record lexically, replacing it restores ≤ 0.08). The re-wired-graph
   control is uninformative in Shopping (the cart is fully connected within two hops).
 - MINJA (8,400 tests, label-free): the structure arm selected no edges in 10/10 runs and the frequency heuristic
@@ -188,7 +234,7 @@ reading is robust to both; structure also yields intervention-validated provenan
 - Shopping three-seed deterministic panels: ladder done (graph_select 0.99 at all lengths, BM25 0.99 → 0.07), main
   panel being rerun with the augmentation fix; Travel test-seed panel 11/12 conditions done and consistent with dev
   (graph 0.88 → 0.89, BM25 0.92 → 0.03, recency 0.93 → 0.30).
-- Modern agent-memory systems: **A-Mem is running now** as a read-budget-matched selector arm on Travel and
+- Modern agent-memory systems: **A-Mem and Mem0 (raw mode) complete** on Travel and Shopping at native and 100 records (numbers in the package Boundaries and in the experiments draft §5.3). Earlier text kept for the record: A-Mem was run as a read-budget-matched selector arm on Travel and
   Shopping at native and 100 records (each history record written as a note with A-Mem's own LLM note construction
   and evolution, top-16 by its embedding search, same actor prompt as the other fixed-K arms, write-side LLM tokens
   reported separately). LightMem is deferred: its pipeline rewrites records into extracted facts, so retrieved
@@ -199,6 +245,8 @@ reading is robust to both; structure also yields intervention-validated provenan
 
 
 ### 4.8 Ablations: what is actually responsible for the gain — status: have (Travel actor unless noted)
+
+> Revised 2026-09-19: rows marked (4096) are output-cap-limited runs and are superseded by §4.4's 16k panels; the conflicting-witness rows no longer support a robustness claim.
 
 Each row changes one thing against the main comparison (graph_closed/compact vs full/verbose, 64 paired episodes).
 
@@ -218,7 +266,7 @@ Each row changes one thing against the main comparison (graph_closed/compact vs 
 
 Reading for the paper: the gain survives freezing the selector, changing serialization, compressing full context, and stating the conflict rule; it disappears when the topology is re-wired or replaced by retrieval; it is produced by conflicting evidence, and a stronger actor shrinks both the native loss and the long-history gain.
 
-### 4.9 Case for the provenance figure — status: have
+### 4.9 Case for the provenance figure — status: have (figure rendered 2026-09-20: `results/real/hm3/provenance/figures/case_travel_s30_test000.{pdf,svg,png}`, script `code/hm3/case_figure.py`; panels: history with required witnesses and the corrupted record, dependency path with hidden keys and outcomes, trace ranking with baselines and clean-replacement results)
 
 `docs/hm3-case-travel-s30-2026-09-19.md`: the first incident on test seed 30 by the preregistered rule (episode
 travel-s30-test-000). The corrupted record is the provider's auto-rebook witness (`auto_rebook[P51]`); the auditor,
@@ -235,7 +283,7 @@ the non-graph baselines' rankings on the same incident, and the actor-level arms
 - Causal representation learning: identification under nonstationarity and auxiliary variables; our regimes play the
   role of the auxiliary variable.
 - Memory poisoning and provenance (MINJA, AgentPoison): our backward pass is the provenance counterpart.
-- Limitations: generator-based evidence with a public-benchmark port pending; the recency assumption on the current
+- Limitations: generator-based mechanism (the entity vocabulary, memory interface and baselines of the substrate panel are MemoryArena's, the task is ours); the recency assumption on the current
   world's witnesses; domain dependence (Shopping); LLM call-to-call variance at native length; policy confounding
   and selection are stated, not tested.
 
@@ -253,3 +301,5 @@ the non-graph baselines' rankings on the same incident, and the actor-level arms
    at one to three percent of the tokens, with an honest crossover at short histories.
 5. We show that the same structure yields intervention-validated provenance from an anomalous action to its causal
    record.
+
+Figures for §4.3/4.4/4.4b: `results/real/hm3/figures/{scaling_travel,scaling_shopping32,substrate_travel_arena}.pdf` (2026-09-20). Experiments-section draft: `docs/paper-draft-experiments-2026-09-20.md`.

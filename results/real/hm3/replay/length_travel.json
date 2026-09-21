@@ -1,0 +1,83 @@
+{
+ "seed30/native": {
+  "episodes": 60,
+  "full_ok": 60,
+  "n_records": 18.766666666666666,
+  "frontier": 2.533333333333333,
+  "calls": 13.783333333333333,
+  "calls_p90": 22.0,
+  "seconds": 0.7814311981201172
+ },
+ "seed30/100:abcd": {
+  "episodes": 60,
+  "full_ok": 60,
+  "n_records": 100.0,
+  "frontier": 2.7333333333333334,
+  "calls": 19.9,
+  "calls_p90": 33.2,
+  "seconds": 4.347967863082886
+ },
+ "seed30/500:abcd": {
+  "episodes": 60,
+  "full_ok": 60,
+  "n_records": 500.0,
+  "frontier": 2.816666666666667,
+  "calls": 26.7,
+  "calls_p90": 40.100000000000016,
+  "seconds": 33.984007358551025
+ },
+ "seed31/native": {
+  "episodes": 60,
+  "full_ok": 60,
+  "n_records": 17.433333333333334,
+  "frontier": 2.4166666666666665,
+  "calls": 12.716666666666667,
+  "calls_p90": 21.1,
+  "seconds": 0.7059597969055176
+ },
+ "seed31/100:abcd": {
+  "episodes": 60,
+  "full_ok": 60,
+  "n_records": 100.0,
+  "frontier": 2.5166666666666666,
+  "calls": 17.783333333333335,
+  "calls_p90": 28.0,
+  "seconds": 4.0992591381073
+ },
+ "seed31/500:abcd": {
+  "episodes": 60,
+  "full_ok": 60,
+  "n_records": 500.0,
+  "frontier": 2.566666666666667,
+  "calls": 23.883333333333333,
+  "calls_p90": 46.1,
+  "seconds": 33.24533987045288
+ },
+ "seed32/native": {
+  "episodes": 60,
+  "full_ok": 60,
+  "n_records": 19.383333333333333,
+  "frontier": 2.5833333333333335,
+  "calls": 14.35,
+  "calls_p90": 25.1,
+  "seconds": 0.8254218101501465
+ },
+ "seed32/100:abcd": {
+  "episodes": 60,
+  "full_ok": 60,
+  "n_records": 100.0,
+  "frontier": 2.7666666666666666,
+  "calls": 20.3,
+  "calls_p90": 34.70000000000001,
+  "seconds": 4.701263666152954
+ },
+ "seed32/500:abcd": {
+  "episodes": 60,
+  "full_ok": 60,
+  "n_records": 500.0,
+  "frontier": 2.816666666666667,
+  "calls": 25.0,
+  "calls_p90": 40.2,
+  "seconds": 31.92933177947998
+ }
+}

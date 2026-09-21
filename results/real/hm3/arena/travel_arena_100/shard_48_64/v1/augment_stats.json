@@ -1,0 +1,17 @@
+{
+ "n": 16,
+ "dropped": 0,
+ "retries": 0,
+ "a_keys": 53,
+ "a_diff": 30,
+ "b": 406,
+ "c": 401,
+ "d": 429,
+ "records": 1600,
+ "objects": 2196,
+ "fail_reasons": {},
+ "fallback_no_interleave": 0,
+ "mean_records": 100.0,
+ "mean_objects": 137.25,
+ "drop_rate": 0.0
+}

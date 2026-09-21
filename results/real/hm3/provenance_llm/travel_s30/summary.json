@@ -1,0 +1,21 @@
+{
+ "n_paired": 11,
+ "ees_corrupted": 0.0,
+ "ees_top3_replaced": 0.18181818181818182,
+ "ees_random3_replaced": 0.09090909090909091,
+ "top3_replaced_minus_corrupted": {
+  "mean": 0.18181818181818182,
+  "ci95": [
+   0.0,
+   0.45454545454545453
+  ]
+ },
+ "top3_replaced_minus_random3_replaced": {
+  "mean": 0.09090909090909091,
+  "ci95": [
+   -0.18181818181818182,
+   0.36363636363636365
+  ]
+ },
+ "cost": 0.79235
+}

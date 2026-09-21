@@ -66,6 +66,8 @@ composite, and whether the store updates base-claim verdicts itself (automatic) 
 (evidence_effect records show counted/weight/reason for past publications). Composite claims are always your job.""",
 }
 
+OP_CARDS["travel_arena"] = OP_CARDS["travel"]   # same mechanism, MemoryArena's real entities
+
 SYSTEM_V2_SUFFIX = """
 Method (follow it literally):
 STEP A - POLICY LEDGER. For every entity whose policy matters here (each provider, hotel, restaurant, vendor, source
@@ -211,6 +213,40 @@ class Selector:
                 for targets in ep.S0.get(oid).links.values():
                     closure.update(t for t in targets if t in ep.S0.objects)
             return {"objects": sorted(objs | closure), "records": sorted(recs)}
+        if mode.startswith("graph_key"):
+            # parser-free selection: objects along the learned skeleton, records by same-key
+            # precedent (hm3.keysel), then the same referent + 1-hop closure as graph_closed
+            from .keysel import key_precedent_records
+            from .scaling import skeleton_reads
+            n_prec = int(mode[len("graph_key"):] or 2)
+            objs = set(skeleton_reads(domain, self.graph, ep)["objects"]) | {src}
+            recs = set(key_precedent_records(domain, ep, sorted(objs), n_prec))
+            referents = {r["object_id"] for r in ep.H if r["rid"] in recs and r["object_id"] in ep.S0.objects}
+            closure = set(referents)
+            for oid in referents:
+                for targets in ep.S0.get(oid).links.values():
+                    closure.update(t for t in targets if t in ep.S0.objects)
+            order = {r["rid"]: i for i, r in enumerate(ep.H)}
+            return {"objects": sorted(objs | closure), "records": sorted(recs, key=lambda r: order[r])}
+        if mode == "frontier_exec":
+            # parser-free selection by the conditional frontier model fitted on read-intervention replays of the
+            # deterministic executor over the selector's training logs (hm3.replay.FrontierSelect, segment level)
+            from .replay import FrontierSelect
+            if "frontier_exec" not in self._fitted:
+                t0 = time.time()
+                fs = FrontierSelect(segment_level=True)
+                fs.fit(domain, self.train)
+                print(f"selector fit frontier_exec on {len(self.train)} episodes: {time.time() - t0:.1f}s; {fs.stats['type_edges']}", flush=True)
+                self._fitted["frontier_exec"] = fs
+            return self._fitted["frontier_exec"].select(domain, ep)
+        if mode == "frontier_llm":
+            # parser-free selection by the conditional frontier model fitted on the actor's own read-intervention
+            # replays (hm3.replay_llm); model path in $HM3_FRONTIER_MODEL (pickle)
+            import os, pickle
+            from .replay import frontier_reads
+            if "frontier_llm" not in self._fitted:
+                self._fitted["frontier_llm"] = pickle.load(open(os.environ["HM3_FRONTIER_MODEL"], "rb"))
+            return frontier_reads(domain, ep, self._fitted["frontier_llm"])
         if mode == "graph_seg":
             # graph_closed plus the whole segment of every selected witness record: the
             # intervention that produced the witness and everything that followed it
@@ -354,7 +390,7 @@ def run(domains: List[str], seed: int, n_eval: int, selections: List[str], seria
         model: str, out_dir: Path, budget_usd: float, n_train: int = 200, train_seed_offset: int = 100,
         dry_run: bool = False, ep_start: int = 0, ep_end: Optional[int] = None,
         resume_from: Optional[List[str]] = None, thinking: bool = False, history: Optional[str] = None,
-        selector_history: Optional[str] = None):
+        selector_history: Optional[str] = None, max_tokens: int = 4096):
     out_dir.mkdir(parents=True, exist_ok=True)
     ledger_path = out_dir / "llm_ledger.jsonl"
     done = set()
@@ -374,6 +410,7 @@ def run(domains: List[str], seed: int, n_eval: int, selections: List[str], seria
                 "prompt_version": PROMPT_VERSION, "history": history or "native",
                 "selector_history": selector_history or history or "native",
                 "base_url": os.environ.get("OPENAI_BASE_URL", DEEPSEEK_BASE_URL),
+                "max_tokens": max_tokens,
                 "cost_rates_usd_per_million": COST_RATES_USD_PER_MILLION}
     json.dump(protocol, open(out_dir / "llm_protocol.json", "w"), indent=1)
     for dname in domains:
@@ -411,7 +448,7 @@ def run(domains: List[str], seed: int, n_eval: int, selections: List[str], seria
                         continue
                     attempts = []
                     try:
-                        r = client.chat(messages)
+                        r = client.chat(messages, max_tokens=max_tokens)
                     except Exception as exc:
                         rec = {"event": "infrastructure_failure", "cell": cell, "error": f"{type(exc).__name__}: {str(exc)[:200]}"}
                         with open(ledger_path, "a") as f:
@@ -424,7 +461,8 @@ def run(domains: List[str], seed: int, n_eval: int, selections: List[str], seria
                     if txns is None:
                         repair = True
                         r2 = client.chat(messages + [{"role": "assistant", "content": r["text"]},
-                                                     {"role": "user", "content": "Return the final answer now as a fenced ```json block containing only the array of transactions."}])
+                                                     {"role": "user", "content": "Return the final answer now as a fenced ```json block containing only the array of transactions."}],
+                                         max_tokens=max_tokens)
                         attempts.append(r2)
                         txns = parse_transactions(r2["text"])
                     parse_ok = txns is not None
@@ -438,7 +476,11 @@ def run(domains: List[str], seed: int, n_eval: int, selections: List[str], seria
                            "cost": sum(a["cost"] for a in attempts), "duration": sum(a["duration"] for a in attempts),
                            "n_attempts": len(attempts), "format_repair": repair, "parse_ok": parse_ok,
                            "finish_reason": attempts[-1]["finish_reason"], "returned_model": attempts[-1]["returned_model"],
+                           "finish_reasons": [a["finish_reason"] for a in attempts],
+                           "output_tokens_per_attempt": [a["output_tokens"] for a in attempts], "max_tokens": max_tokens,
                            "raw_reply": attempts[-1]["text"][:4000], "txns": txns,
+                           "raw_reply_first": (attempts[0]["text"][:2000] + " ...[cut]... " + attempts[0]["text"][-2000:])
+                           if len(attempts) > 1 and len(attempts[0]["text"]) > 4000 else attempts[0]["text"][:4000],
                            "score": {k: v for k, v in score.items() if k != "error"}, "error": score["error"]}
                     spent += rec["cost"]
                     with open(ledger_path, "a") as f:
@@ -508,6 +550,7 @@ if __name__ == "__main__":
     ap.add_argument("--history", default=None, help="e.g. 500:abcd (docs/hm3-history-scaling-design-2026-09-18.md)")
     ap.add_argument("--base_url", default=None)
     ap.add_argument("--selector_history", default=None, help="'native' fits the selector on native train histories")
+    ap.add_argument("--max_tokens", type=int, default=4096, help="completion cap per attempt (rounds 1-4 used 4096)")
     a = ap.parse_args()
     PROMPT_VERSION = a.prompt
     if a.base_url:
@@ -517,4 +560,4 @@ if __name__ == "__main__":
     else:
         run(a.domains, a.seed, a.n_eval, a.selections, a.serializations, a.model, Path(a.out_dir), a.budget_usd,
             dry_run=a.dry_run, ep_start=a.ep_start, ep_end=a.ep_end, resume_from=a.resume_from,
-            thinking=a.thinking, history=a.history, selector_history=a.selector_history)
+            thinking=a.thinking, history=a.history, selector_history=a.selector_history, max_tokens=a.max_tokens)

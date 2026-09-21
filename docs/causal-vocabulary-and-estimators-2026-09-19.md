@@ -5,7 +5,7 @@ Every claim below is checked against the code and results on branch `claude/hm3-
 
 ## 1. Short answer
 
-We do not contribute a causal-discovery algorithm and we do not discover structure from observational agent logs.
+We do not contribute a causal-discovery algorithm. Update 2026-09-19 evening: on HM3's own event logs an off-the-shelf pooled temporal estimator does recover the type-level propagation skeleton (see the added row below and `docs/bridge-plan-2026-09-19.md` §3.1); what it does not recover is the gating, and on the MemoryArena/MINJA logs it recovers nothing.
 We contribute (a) a formulation of memory as a gated temporal causal process with the causal-frontier lemma,
 (b) evidence that the access regime must be represented to recover gated memory edges, (c) a learned propagation
 structure for agent tasks estimated from **interventional** training trajectories and conditioned on the access
@@ -20,6 +20,7 @@ with the definition in §3 below; "causal discovery" as a contribution should no
 |---|---|---|---|
 | E0 (controlled SCM) | lagged edges x_i(t−l) → x_j(t) and whether each is gated by the access regime u_t | per-regime lagged regression (ridge, BH-FDR); an edge is reported if significant in any regime and flagged gated if its coefficient changes across regimes (`code/regime_grace.py::fit_regime_conditioned`); per-regime GRACE and an HC0 interaction model give the same result | temporal structure learning of the Granger / structural-VAR family under the SCM assumptions of the formulation; ground truth known, recovery measured against it |
 | HM3 (agent tasks) | a type-level skeleton of typed relational paths along which a change propagates, plus a regime-gated local decision per path template, plus a parser that attributes each hidden policy key to its latest outcome witness (`code/hm3/learners.py::LearnedGraph`) | supervised from training episodes in which every episode is a known intervention on one source object with the observed propagation of changes (S0 → S1); templates with support ≥ 2, decision trees on the gate features | structure learning from interventional data: edges are propagation effects of known interventions, gated by the event kind (source / auto / txn) and by regime estimates read from history |
+| HM3 logs, observational (added 2026-09-19) | type-level skeleton: which object type's write is followed by which type's write | pooled lagged regression with BH-FDR over one binary variable per object type, one row per record, user interventions exogenous (`code/hm3/tcd_logs.py`); PCMCI+ as the second estimator | observational temporal structure learning of the Granger family; recall 1.0 against the interventional skeleton on 6/6 seeds in Travel and Shopping32 (precision 0.2–0.5), PCMCI+ recall 0.4; the same graph drives selection (EES 1.00) and provenance (top-3 0.91–1.00); the round-activation encoding used in Travel implicit-v1 degenerates to self-loops on the same logs |
 | provenance | the records responsible for an anomalous action | backward walk on the same fitted skeleton, leave-one-record-out re-ranking, validation by replacing candidates with clean versions and re-running | interventional test of the attribution |
 | MINJA (observational logs) | record-exposure → anomalous-action edges with the trigger as regime | the E0 estimator on exposure indicators | no edges recovered in 10/10 runs under sparse exposure: reported as a boundary, no discovery claim |
 
@@ -34,8 +35,9 @@ version is not used.
 > indexed by time, its edges are propagation effects estimated from trajectories in which the upstream change is a
 > known intervention, its edges are gated by the access regime under which a record is written, held or read, and
 > its predictions are checked by intervention — recovery against a known ground truth in the controlled setting,
-> re-wired-topology controls in the agent tasks, and clean-replacement tests for provenance. We do not claim
-> identification from purely observational agent logs; our one attempt at it (MINJA) is a negative result.
+> re-wired-topology controls in the agent tasks, and clean-replacement tests for provenance. On our generated agent tasks the type-level skeleton is also recovered from the event logs alone by a pooled
+> temporal estimator; the gating is not. We do not claim identification from the observational logs of the
+> public benchmarks we tried (MemoryArena Travel, MINJA), where the same estimators return self-loops or nothing.
 
 ## 4. Why GRACE is not the estimator
 

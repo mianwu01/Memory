@@ -1,0 +1,102 @@
+{
+ "prompt": "v1",
+ "episodes": [
+  {
+   "episode": "travel-s130-train-000",
+   "ees": [
+    false,
+    true,
+    true
+   ]
+  },
+  {
+   "episode": "travel-s130-train-001",
+   "ees": [
+    false,
+    true,
+    true
+   ]
+  },
+  {
+   "episode": "travel-s130-train-002",
+   "ees": [
+    false,
+    false,
+    false
+   ]
+  },
+  {
+   "episode": "travel-s130-train-003",
+   "ees": [
+    true,
+    true,
+    false
+   ]
+  },
+  {
+   "episode": "travel-s130-train-004",
+   "ees": [
+    true,
+    true,
+    false
+   ]
+  },
+  {
+   "episode": "travel-s130-train-005",
+   "ees": [
+    false,
+    false,
+    false
+   ]
+  },
+  {
+   "episode": "travel-s130-train-006",
+   "ees": [
+    false,
+    false,
+    false
+   ]
+  },
+  {
+   "episode": "travel-s130-train-007",
+   "ees": [
+    false,
+    true,
+    true
+   ]
+  },
+  {
+   "episode": "travel-s130-train-008",
+   "ees": [
+    false,
+    true,
+    false
+   ]
+  },
+  {
+   "episode": "travel-s130-train-009",
+   "ees": [
+    false,
+    false,
+    false
+   ]
+  },
+  {
+   "episode": "travel-s130-train-010",
+   "ees": [
+    true,
+    false,
+    true
+   ]
+  },
+  {
+   "episode": "travel-s130-train-011",
+   "ees": [
+    false,
+    false,
+    false
+   ]
+  }
+ ],
+ "disagreement_rate": 0.5833333333333334
+}

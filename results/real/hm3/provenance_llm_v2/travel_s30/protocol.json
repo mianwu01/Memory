@@ -1,0 +1,16 @@
+{
+ "domain": "travel",
+ "seed": 30,
+ "n_eval": 60,
+ "model": "deepseek-v4-flash",
+ "graph_sha": "e1b6c6be977ee0e2",
+ "arms": [
+  "clean",
+  "corrupted",
+  "top3_replaced",
+  "random3_replaced"
+ ],
+ "selection": "graph_seg/verbose",
+ "prompt_version": "v2",
+ "budget_usd": 8.0
+}
