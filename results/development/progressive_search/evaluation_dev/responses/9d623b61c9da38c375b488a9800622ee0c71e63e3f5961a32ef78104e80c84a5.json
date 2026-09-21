@@ -1,0 +1,10 @@
+{
+  "case": 9,
+  "prompt_sha256": "9d623b61c9da38c375b488a9800622ee0c71e63e3f5961a32ef78104e80c84a5",
+  "extracted": "UNKNOWN",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied memory identifies Jan Jansz Weltevree as a Dutch sailor who naturalized in Joseon/Korea [85933], but it does not provide any documentary from 1990–2000 or an actor who portrayed him. The earlier related lookup for the relevant person also could not establish an identity [11997][85933], so there is insufficient evidence to name an actor.\nExact Answer: UNKNOWN\nConfidence: 88%"
+}

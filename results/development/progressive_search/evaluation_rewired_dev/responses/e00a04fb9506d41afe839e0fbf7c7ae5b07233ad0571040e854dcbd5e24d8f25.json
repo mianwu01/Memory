@@ -1,0 +1,10 @@
+{
+  "case": 5,
+  "prompt_sha256": "e00a04fb9506d41afe839e0fbf7c7ae5b07233ad0571040e854dcbd5e24d8f25",
+  "extracted": "UNKNOWN",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied memory only records a failed verification of the law-college/audition criterion. It found no supporting document that Martin Kabanza studied law or auditioned for another Mira Nair film before release [11846][12638][24319][21275][92945][34202][76602]. It also provides no evidence identifying Character X, the son’s broken foot, the actor’s birth year, or first-time fatherhood after age 40 [92755][42250]. Therefore the evidence is insufficient.\n\nExact Answer: UNKNOWN\n\nConfidence: 0%"
+}

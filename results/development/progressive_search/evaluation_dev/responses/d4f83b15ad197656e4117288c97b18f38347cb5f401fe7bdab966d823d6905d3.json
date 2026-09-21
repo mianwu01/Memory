@@ -1,0 +1,10 @@
+{
+  "case": 9,
+  "prompt_sha256": "d4f83b15ad197656e4117288c97b18f38347cb5f401fe7bdab966d823d6905d3",
+  "extracted": "UNKNOWN",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied memory does not specify the colonized/annexed country, the independence activist sent abroad, the destination country, the person who naturalized in the kingdom, the documentary, or any actor. It only notes that several colonized countries had multiple independence activists, leaving the earlier question under-specified [83594][42506][81007][86966][40066][26315]. Therefore the actor cannot be determined from the given evidence.\n\nExact Answer: UNKNOWN\n\nConfidence: 90%"
+}

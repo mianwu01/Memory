@@ -1,0 +1,13 @@
+{
+  "case": 9,
+  "repeat": 2,
+  "prompt_sha256": "2a93aa5735326fc7b46a6814efe7618837c8ef7e9875bd8a457efd20894c844a",
+  "extracted": "Joost Wolfswinkel",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: Korea was colonized and later annexed by Japan in 1910, and Korean independence emissaries were sent to the Netherlands in 1907 during the Hague Secret Emissary Affair [11997]. The first Dutch person to visit and naturalize in Korea was Jan Jansz Weltevree, also known as Pak Yon [85933]. A documentary about this history identifies Weltevree being played by Joost Wolfswinkel, then the Dutch ambassador in South Korea [17342].\n\nExact Answer: Joost Wolfswinkel\n\nConfidence: 90%",
+  "abstained_strict": false,
+  "abstained_prefix": false
+}

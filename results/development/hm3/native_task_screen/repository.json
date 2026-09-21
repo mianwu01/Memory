@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/ZexueHe/MemoryArena.git",
+  "checkout": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory/benchmarks/MemoryArena",
+  "commit": "6cd9de14b71915e39ac742a20dc33785e14b6aab",
+  "source_sha256": {
+    "run_shopping.py": "9efa3e92ff5bfc98cb9955a494c51c02099ddfa16b4842bbf1c3633424af95e4",
+    "agent/webshop.py": "b346bf2d7d4786770848c95c1159a87a00bea5cdb2724fd062c223311a7e1918",
+    "env/env_systems/webshop_env.py": "8dc933f5eb703679d16cc2d7a60c5616dc4d855538e883fa41adddde59d0c033",
+    "env/env_systems/web_shopping_env/runtime/runner/task_files.py": "1ed0b8e7d2ab825e69f7cc475f625b88a121e48ef3de3676c9c4dbec8fd40d8a",
+    "env/env_systems/web_shopping_env/runtime/runner/summary_build.py": "a12762ff8fb2fc961f315f839dfb1726534ad2fda2e7f5a330a573ef62192bcd",
+    "memory/memory_systems/long_context.py": "3e836759a650fd3dbe497ad5bc3c0962bf9fb1515407dbcd313eec5ab63ed5b6",
+    "env/env_systems/browsecomp_plus_env.py": "d74c1eabf7d5555915c2d07606c4e51784527c56d460a3def4c73270b80a82f6",
+    "agent/search.py": "de74f03af2dfc51ae000b861326a54df07f989e65d017f4491c831ed648843b6",
+    "env/env_systems/web_search_env/search_agent/openai_client.py": "c6c0b280b01c3ee6294eda2f2854bd752d5a106f6aef88380c39d9db956692c5"
+  }
+}

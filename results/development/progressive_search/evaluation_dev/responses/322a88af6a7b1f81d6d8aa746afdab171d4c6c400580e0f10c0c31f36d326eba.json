@@ -1,0 +1,10 @@
+{
+  "case": 2,
+  "prompt_sha256": "322a88af6a7b1f81d6d8aa746afdab171d4c6c400580e0f10c0c31f36d326eba",
+  "extracted": "Ethan Lybrand",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues match the “Little Big Shots” segment featuring Ethan Lybrand, a blind pianist. He had received a cornea transplant as a child from a teenage donor who died in a car accident, and on the show—by then a teenager—he thanked the donor’s family.  \nExact Answer: Ethan Lybrand  \nConfidence: 88%"
+}

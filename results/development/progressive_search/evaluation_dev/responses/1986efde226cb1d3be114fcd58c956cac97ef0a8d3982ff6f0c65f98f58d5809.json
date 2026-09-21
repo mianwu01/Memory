@@ -1,0 +1,10 @@
+{
+  "case": 6,
+  "prompt_sha256": "1986efde226cb1d3be114fcd58c956cac97ef0a8d3982ff6f0c65f98f58d5809",
+  "extracted": "Amherst College",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The retrieved Amherst article profiles Josh Harmon ’18 as a drummer during his time at Amherst [73276], and the stated details about a French major and a French Battalion Drum thesis match this specific 2010–2020 graduate profile. Amherst College was founded in 1821, within the required 1800–1850 range. The broader Middlebury result [57976] does not connect to the specific person/thesis clue.  \nExact Answer: Amherst College  \nConfidence: 75%"
+}

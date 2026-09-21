@@ -1,0 +1,11 @@
+{
+  "case": 0,
+  "repeat": 2,
+  "prompt_sha256": "2dcaba1a794a00b5951ba910c6184f46e979a0c85cac230a4e6b2cc4959e3b1d",
+  "extracted": "Kolade Olakunle Remi",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "deepseek-v4-flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues align with Nigerian actor Kunle Remi: a 2020 interview had him recount starting through an audition while at university, being a child of divorce, and owning a business; 2023 profiles describe him as a University of Ibadan graduate born in 1988 and the first child with three siblings.  \nExact Answer: Kolade Olakunle Remi  \nConfidence: 85%"
+}

@@ -1,0 +1,39 @@
+{
+  "validation_full": {
+    "correct": 0,
+    "n": 3,
+    "truncated": 0
+  },
+  "validation_frontier": {
+    "correct": 2,
+    "n": 3,
+    "truncated": 0
+  },
+  "validation_source_blocked": {
+    "correct": 1,
+    "n": 3,
+    "truncated": 0
+  },
+  "validation_minus_h390": {
+    "correct": 1,
+    "n": 3,
+    "truncated": 0
+  },
+  "validation_minus_h391": {
+    "correct": 0,
+    "n": 3,
+    "truncated": 0
+  },
+  "validation_minus_h498": {
+    "correct": 1,
+    "n": 3,
+    "truncated": 0
+  },
+  "calls": 39,
+  "frontier_records": [
+    "h390",
+    "h391",
+    "h498"
+  ],
+  "claim_scope": "Illustrative external-memory source-group reliance, conditional on this fixed policy and supplied source labels. No prevalence estimate, recovered hidden thought, general graph identification, or necessity of each frontier member in the original full history."
+}

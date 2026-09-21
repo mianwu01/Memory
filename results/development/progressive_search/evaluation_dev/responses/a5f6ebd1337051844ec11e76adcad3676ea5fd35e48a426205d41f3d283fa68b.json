@@ -1,0 +1,10 @@
+{
+  "case": 5,
+  "prompt_sha256": "a5f6ebd1337051844ec11e76adcad3676ea5fd35e48a426205d41f3d283fa68b",
+  "extracted": "UNKNOWN",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied evidence does not verify the key chain. It identifies *Queen of Katwe* as the candidate film, and a prior reasoning chain suggested Martin Kabanza/Brian Mutesi as the law-college actor, but the retrieved corpus contains no confirmation of his law education or audition history. Other retrieved cast biographies do not satisfy the law-college clue [42250][92755], and no retrieved evidence identifies Character X or the actor with the required birth/fatherhood facts [34202]. Therefore the information is insufficient.\n\nExact Answer: UNKNOWN\n\nConfidence: 0%"
+}

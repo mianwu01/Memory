@@ -1,0 +1,12 @@
+{
+  "case": "room-s6100-t50-mary",
+  "commit": "c7ee362aff94a369af70f13f2b4f853f6793ff4c",
+  "discovered_graph_supplied": false,
+  "document": "docs/observed-memory-next-protocol-2026-09-22.md",
+  "grouping": "5 actual environment steps",
+  "memory_native_k": 8,
+  "model": "deepseek-v4-flash",
+  "system": "mem0",
+  "thinking": "disabled",
+  "true_world_state_supplied": false
+}

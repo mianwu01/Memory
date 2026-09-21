@@ -1,0 +1,10 @@
+[
+  {
+    "job_id": "662d5ba16fbe81f200185b299dbd11b9372e8a8799eb342699b298e6c581fd33",
+    "prompt_sha256": "fa093d71d5119e77517784878cb10f8e67793a7e0bb2338bc6d199c14d260864",
+    "failure": "wrong_payload",
+    "public_evidence": "h0/h1: flight arrival after intervention 915, automatic transfer pickup after response 940, offset 25. h3 directly intervenes on transfer; current pickup 640 versus flight 630 is not a flight-response mechanism observation. Pre-response 1005/1060 also need not be policy equilibrium.",
+    "model_error": "Inferred next :40 schedule from initial/directly-intervened state pairs; output stay checkin 840 rather than 855.",
+    "action": "Keep response as failure; no semantic retry. Any generic prompt clarification waits for whole-panel gate decision."
+  }
+]

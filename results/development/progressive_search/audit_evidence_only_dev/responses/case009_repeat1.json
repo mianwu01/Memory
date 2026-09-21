@@ -1,0 +1,13 @@
+{
+  "case": 9,
+  "repeat": 1,
+  "prompt_sha256": "2a93aa5735326fc7b46a6814efe7618837c8ef7e9875bd8a457efd20894c844a",
+  "extracted": "Joost Wolfswinkel",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The country is Korea, annexed by Japan in the 20th century, and Korean emissaries were sent to the Netherlands to promote independence around 1907 [11997]. The Dutch visitor who naturalized in Korea was Jan Jansz Weltevree/Pak Yon [85933]. A documentary page about this subject identifies the person playing Weltevree as Joost Wolfswinkel [17342].\nExact Answer: Joost Wolfswinkel\nConfidence: 95%",
+  "abstained_strict": false,
+  "abstained_prefix": false
+}

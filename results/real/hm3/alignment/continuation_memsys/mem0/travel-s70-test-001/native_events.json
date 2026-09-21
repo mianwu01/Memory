@@ -1,0 +1,132 @@
+[
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "9a7c6a68-30d9-4dbb-884c-226e99d61a0e",
+          "memory": "Flight F31 (Lena, day 2) arrival was shifted to 18:00 (1080 minutes) on 2026-09-21."
+        },
+        {
+          "event": "ADD",
+          "id": "6a6bb058-511d-4d85-a40e-1c4d7450cddd",
+          "memory": "Reservation T35 pickup was shifted to 1100 minutes on 2026-09-21."
+        },
+        {
+          "event": "ADD",
+          "id": "4dc4b6fe-598e-4d34-a6d8-c10510371d4d",
+          "memory": "Reservation S64 check-in was shifted to 1140 minutes with a fee of 25 on 2026-09-21."
+        }
+      ]
+    },
+    "segment": 0,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "94d802fa-8138-4293-97c1-664d6171e31a",
+          "memory": "Flight F20 (Lena, day 1) arrival was shifted to 23:30 (1410 minutes) on 2026-09-21."
+        },
+        {
+          "event": "ADD",
+          "id": "a4230ab7-2902-4d45-90f2-4768fa6d649e",
+          "memory": "Reservation T41 pickup was shifted to 1430 minutes on 2026-09-21."
+        },
+        {
+          "event": "ADD",
+          "id": "5360c33f-76e4-48c4-a26b-6600227aafbb",
+          "memory": "Reservation S11 check-in was shifted to 1470 minutes with a fee of 25 on 2026-09-21."
+        },
+        {
+          "event": "ADD",
+          "id": "20fc9bd1-e9de-42b7-bf02-a54db40287a3",
+          "memory": "Reservation D84 start was shifted to 1515 minutes with a fee of 25 on 2026-09-21."
+        },
+        {
+          "event": "ADD",
+          "id": "0db73fee-7e16-42b1-81a0-5e7bd61158b5",
+          "memory": "Bundle B22 was rebooked with a fee of 30 on 2026-09-21."
+        }
+      ]
+    },
+    "segment": 1,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "fc453c6b-02e7-4cab-b5fb-0f9508351166",
+          "memory": "Flight F72 (Bob, day 1) arrival was shifted to 22:30 (1350 minutes) on 2026-09-21."
+        },
+        {
+          "event": "ADD",
+          "id": "eb9dd5ba-1eef-4e49-805e-54cfd04fbfeb",
+          "memory": "Reservation T27 pickup was shifted to 1370 minutes on 2026-09-21."
+        },
+        {
+          "event": "ADD",
+          "id": "c612dda4-ae5c-450d-98bf-687c0a81216f",
+          "memory": "Reservation S13 check-in was shifted to 1410 minutes with a fee of 25 on 2026-09-21."
+        },
+        {
+          "event": "ADD",
+          "id": "98403055-1945-4742-83e0-ebfe5af4736d",
+          "memory": "Reservation D44 start was shifted to 1455 minutes with a fee of 25 on 2026-09-21."
+        }
+      ]
+    },
+    "segment": 2,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "73346fa0-fb31-4d9f-9f11-5d5ca8dbf69a",
+          "memory": "Transfer T35 (Lena, day 2) pickup was shifted to 17:25 (1045 minutes) on 2026-09-21."
+        },
+        {
+          "event": "ADD",
+          "id": "18377fd0-07d4-4347-84fb-f9f55ab325e1",
+          "memory": "Reservation S64 check-in was shifted to 1085 minutes with a fee of 25 on 2026-09-21."
+        }
+      ]
+    },
+    "segment": 3,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "2fae3d0a-59a7-4901-b1a3-aa1a5c60a120",
+          "memory": "Flight F72 (Bob, day 1) arrival was shifted to 23:00 (1380 minutes) on 2026-09-21."
+        },
+        {
+          "event": "ADD",
+          "id": "bb9dcf00-c0cc-4664-a163-92b42b257588",
+          "memory": "Reservation T27 pickup was shifted to 1400 minutes on 2026-09-21."
+        },
+        {
+          "event": "ADD",
+          "id": "0c356eaa-c966-453c-9375-0dc0f1083503",
+          "memory": "Reservation S13 check-in was shifted to 1440 minutes with a fee of 25 on 2026-09-21."
+        },
+        {
+          "event": "ADD",
+          "id": "80b0e076-00e8-40b1-bfaa-1883717c56d1",
+          "memory": "Reservation D44 start was shifted to 1485 minutes with a fee of 25 on 2026-09-21."
+        }
+      ]
+    },
+    "segment": 4,
+    "stage": "add"
+  }
+]

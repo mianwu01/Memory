@@ -1,0 +1,180 @@
+{
+  "abstained_after_control": 85,
+  "all_metrics": {
+    "alert": {
+      "fn": 0,
+      "fp": 0,
+      "predicted": 171,
+      "reference_positive": 171,
+      "tp": 171
+    },
+    "learned_candidate": {
+      "fn": 0,
+      "fp": 36,
+      "predicted": 207,
+      "reference_positive": 171,
+      "tp": 171
+    },
+    "source_present": {
+      "fn": 0,
+      "fp": 1775,
+      "predicted": 1946,
+      "reference_positive": 171,
+      "tp": 171
+    },
+    "topology_candidate": {
+      "fn": 0,
+      "fp": 651,
+      "predicted": 822,
+      "reference_positive": 171,
+      "tp": 171
+    }
+  },
+  "all_queries": 528,
+  "authorized_sensor_reads": 1040,
+  "controller_on_normal": {
+    "abstain_tool_unavailable": 85,
+    "no_alert": 1639,
+    "sensor_answer": 84
+  },
+  "correct_after_control": 1723,
+  "episodes": [
+    {
+      "seed": 6000,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6001,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6002,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6003,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6004,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6005,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6006,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6007,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6008,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6009,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6010,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6011,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6012,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6013,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6014,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6015,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6016,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6017,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6018,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6019,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6020,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6021,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6022,
+      "source_scenarios": 88
+    },
+    {
+      "seed": 6023,
+      "source_scenarios": 88
+    }
+  ],
+  "limitations": [
+    "Controlled sensor extension, not native RoomEnv tool",
+    "Fixed deterministic decoder, not LLM audit",
+    "Finite group deletion and one phase perturbation reference, not all interventions",
+    "Same-query source scenarios are correlated; no independent-sample statistical claim",
+    "Graph narrows candidate causes; known transition-model provenance could also be informative"
+  ],
+  "normal_correct_metrics": {
+    "alert": {
+      "fn": 0,
+      "fp": 0,
+      "predicted": 169,
+      "reference_positive": 169,
+      "tp": 169
+    },
+    "learned_candidate": {
+      "fn": 0,
+      "fp": 26,
+      "predicted": 195,
+      "reference_positive": 169,
+      "tp": 169
+    },
+    "source_present": {
+      "fn": 0,
+      "fp": 1553,
+      "predicted": 1722,
+      "reference_positive": 169,
+      "tp": 169
+    },
+    "topology_candidate": {
+      "fn": 0,
+      "fp": 568,
+      "predicted": 737,
+      "reference_positive": 169,
+      "tp": 169
+    }
+  },
+  "normal_correct_queries": 452,
+  "normal_correct_scenarios": 1808,
+  "source_scenarios": 2112,
+  "wrong_after_control": 0
+}

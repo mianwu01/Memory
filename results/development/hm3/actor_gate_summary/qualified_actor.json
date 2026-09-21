@@ -1,0 +1,79 @@
+{
+  "qualified_at": 1790017928.870058,
+  "scope": "Development actor only; native task requires independent qualification",
+  "task_profile": {
+    "history_records": [
+      20,
+      15,
+      12,
+      14,
+      21,
+      12,
+      17,
+      7,
+      18,
+      16
+    ],
+    "oracle_action_counts": [
+      4,
+      1,
+      2,
+      2,
+      2,
+      1,
+      2,
+      1,
+      3,
+      2
+    ],
+    "empty_repair_tasks": 0,
+    "scope": "Synthetic short-history HM3 only; not long-history or native-agent qualification"
+  },
+  "requested_config": {
+    "endpoint": "https://www.autodl.art/api/v1",
+    "extra_body": {
+      "thinking": {
+        "type": "enabled"
+      }
+    },
+    "infrastructure_attempts": 3,
+    "max_tokens": 32768,
+    "model": "deepseek-v4-flash",
+    "pass_correct": 27,
+    "pass_stable": 9,
+    "prompt": "v1",
+    "prompt_suffix": "",
+    "repeats": 3,
+    "seed": 80,
+    "serialization": "verbose",
+    "source_hashes": {
+      "code/hm3/actor_gate.py": "b7fa05c371836ef89dbefa47351a032976e0c9e2b23bbe7494e4959580a30d97",
+      "code/hm3/core.py": "dd77e7023773d48eb8a5d8b7f049bbb06ad0e91b17383ff757151bf783d8d5f8",
+      "code/hm3/dgp_travel.py": "a9a050a8e87221ea9a7a2c2c257aeb5f99e8fff0d9c3d731e00816982350ee1f",
+      "code/hm3/generate.py": "9a9af4a6a7cec70bb959cb6754451809f251b133487195d47d6560d2de2f294a",
+      "code/hm3/llm.py": "fdb8a39b3f784f4e93434e01b08f6e9897093a25f2a7e532440689eb22586a2f",
+      "docs/actor-gates-protocol-2026-09-22.md": "de551d49505d338a759546cd72981d652300d6ff58f90162b3a5ae816f42ab08"
+    },
+    "split": "dev",
+    "tasks": 10,
+    "temperature": 0,
+    "timeout": 600,
+    "workers": 3
+  },
+  "raw_returned_models": [
+    "DeepSeek-V4-Flash-0731",
+    "deepseek-v4-flash-0731"
+  ],
+  "normalized_returned_models": [
+    "deepseek-v4-flash-0731"
+  ],
+  "model_identity_amendment": "docs/actor-gate-model-id-amendment-2026-09-22.md; post-run casefold only, original IDs retained",
+  "strict_literal_model_id_gate_passed": false,
+  "development_gate_passed": true,
+  "correct": 29,
+  "stable_cases": 9,
+  "manifest_sha256": "fbc2206b743dce39c6e92812a320f5d66959817351cac160381b8ccd45443c99",
+  "ledger_sha256": "b97a58ecd9b1c842fbb730572b997bf4c65e6a69a15385a19e5cab64ce70b6a2",
+  "native_task_gate_passed": false,
+  "discovery_permitted": false
+}

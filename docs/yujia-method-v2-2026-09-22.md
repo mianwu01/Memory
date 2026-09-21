@@ -1,5 +1,10 @@
 # 给 Yujia：方法重做后的一页（2026-09-22）
 
+> **状态修正：这是待论证的方法转向草案，不能视为 Yujia 已认可的新主线。**
+> 以下“观测分布不能识别”、通用 O(k log n)、Shopping v2 准确率及将
+> graph_seg 数字归给新方法的表述均暂停使用。最新定义与决定规则见
+> `structure-alignment-protocol-2026-09-21.md`；实际新增对照见 alignment 结果目录。
+
 上一页（`docs/yujia-causal-bridge-2026-09-20.md`）回答了"结构能否由成熟的 causal discovery 得到"。这一页回答审稿人会问的下一个问题："方法是什么，'causal' 落在哪里"。
 
 ## 一句话

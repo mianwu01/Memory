@@ -1,0 +1,8 @@
+{
+  "cached_memory_unchanged": true,
+  "fix": "reconstruct exactly the same episode in generator insertion order; assert semantic equality",
+  "old_actor_variant": "actor/ledger.jsonl (state-key-order variant)",
+  "primary_actor_variant": "actor_v2/ledger.jsonl (exact common framing)",
+  "reason": "sorted-key episode JSON changed shared state field ordering",
+  "retry_policy": "new changed actor input once per frozen repeat; no semantic retries"
+}

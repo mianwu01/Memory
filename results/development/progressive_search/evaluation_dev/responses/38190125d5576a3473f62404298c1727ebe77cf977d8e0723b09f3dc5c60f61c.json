@@ -1,0 +1,10 @@
+{
+  "case": 5,
+  "prompt_sha256": "38190125d5576a3473f62404298c1727ebe77cf977d8e0723b09f3dc5c60f61c",
+  "extracted": "Sardar Khan",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to *Gangs of Wasseypur*. Manoj Bajpayee, born in 1969, became a father for the first time after 40; he plays Sardar Khan, the father of the son who is injured and shown with a plaster cast.  \nExact Answer: Sardar Khan  \nConfidence: 70%"
+}

@@ -1,0 +1,12 @@
+{
+  "case": 5,
+  "repeat": 2,
+  "prompt_sha256": "b31889389c7df17a2d920e864b941197ce70b196901fba9460bed34994a74ee8",
+  "extracted": null,
+  "correct": false,
+  "finish_reason": "length",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "all_memory_retained": true,
+  "writers_complete": true
+}

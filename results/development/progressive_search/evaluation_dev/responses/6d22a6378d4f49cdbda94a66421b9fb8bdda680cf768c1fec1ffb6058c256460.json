@@ -1,0 +1,10 @@
+{
+  "case": 9,
+  "prompt_sha256": "6d22a6378d4f49cdbda94a66421b9fb8bdda680cf768c1fec1ffb6058c256460",
+  "extracted": null,
+  "correct": false,
+  "finish_reason": "length",
+  "returned_model": "deepseek-v4-flash-0731",
+  "reasoning_observed": true,
+  "answer": ""
+}

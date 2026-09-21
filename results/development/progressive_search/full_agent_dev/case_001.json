@@ -1,0 +1,27 @@
+{
+  "case": 1,
+  "extracted": "Tulsidas Balaram",
+  "correct": true,
+  "answer": "Explanation: The question chain resolves to **Tulsidas Balaram**. Indonesia's capital Jakarta hosted the 1962 Asian Games, and Indonesia is among the countries projected to exceed 300 million in population by 2050 (projected ~320 million) [15976][22453]. The India national football team won the gold medal at that event, and the corpus lists Tulsidas Balaram as a member of that gold-medal squad [37746]. Balaram was born in 1936 — 11 years (more than a decade) before India's independence in 1947 [17054][93861]. Six years before the 1962 gold, he made his international debut against Yugoslavia at the 1956 Melbourne Olympics, a match India lost (4–1 in the football semi-final), finishing fourth in that tournament [44448][17054][12484][7545]. He was instrumental in the 1962 Asian Games triumph, playing every match and scoring goals against Thailand and Japan [17054][81022]. In the same year (1962), he was conferred the Arjuna Award — India's second-highest sporting honour after the Major Dhyan Chand Khel Ratna [90980][29312][43513][17054][81022]. The 2023 date reference corresponds to his death on 16 February 2023, by which time his full name remained Tulsidas Balaram [17054][44448].\n\nExact Answer: Tulsidas Balaram\n\nConfidence: 90%",
+  "native_finish_reason": "stop",
+  "finish_reason": "stop",
+  "combined": [
+    {
+      "role": "assistant",
+      "content": "Explanation: The question chain resolves to **Tulsidas Balaram**. Indonesia's capital Jakarta hosted the 1962 Asian Games, and Indonesia is among the countries projected to exceed 300 million in population by 2050 (projected ~320 million) [15976][22453]. The India national football team won the gold medal at that event, and the corpus lists Tulsidas Balaram as a member of that gold-medal squad [37746]. Balaram was born in 1936 — 11 years (more than a decade) before India's independence in 1947 [17054][93861]. Six years before the 1962 gold, he made his international debut against Yugoslavia at the 1956 Melbourne Olympics, a match India lost (4–1 in the football semi-final), finishing fourth in that tournament [44448][17054][12484][7545]. He was instrumental in the 1962 Asian Games triumph, playing every match and scoring goals against Thailand and Japan [17054][81022]. In the same year (1962), he was conferred the Arjuna Award — India's second-highest sporting honour after the Major Dhyan Chand Khel Ratna [90980][29312][43513][17054][81022]. The 2023 date reference corresponds to his death on 16 February 2023, by which time his full name remained Tulsidas Balaram [17054][44448].\n\nExact Answer: Tulsidas Balaram\n\nConfidence: 90%"
+    }
+  ],
+  "source_reads": [],
+  "usage_native_loop": {
+    "input_tokens": 378834,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 1249,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 380083
+  },
+  "all_memory_retained": true
+}

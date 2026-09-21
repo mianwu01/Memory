@@ -1,0 +1,12 @@
+{
+  "case": 6,
+  "repeat": 0,
+  "prompt_sha256": "7c9709a9fcdb39d86ea0c36a630687ae51cedf901b3b7ead68885ec082e24ac8",
+  "extracted": "Amherst College",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "all_memory_retained": true,
+  "writers_complete": true
+}

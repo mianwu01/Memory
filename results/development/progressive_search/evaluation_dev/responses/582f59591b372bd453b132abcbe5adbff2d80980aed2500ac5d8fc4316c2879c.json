@@ -1,0 +1,10 @@
+{
+  "case": 3,
+  "prompt_sha256": "582f59591b372bd453b132abcbe5adbff2d80980aed2500ac5d8fc4316c2879c",
+  "extracted": "Manuelita",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to Manuel García Ferré and *The Adventures of Hijitus* [20521]. In the supplied evidence, the movie featuring a series character is *Manuelita*: Larguirucho appears as the school janitor and assistant teacher in a scene of that film [86904].\n\nExact Answer: Manuelita\n\nConfidence: 75%"
+}

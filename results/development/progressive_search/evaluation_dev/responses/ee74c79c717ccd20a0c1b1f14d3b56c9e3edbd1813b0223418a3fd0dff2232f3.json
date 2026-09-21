@@ -1,0 +1,10 @@
+{
+  "case": 6,
+  "prompt_sha256": "ee74c79c717ccd20a0c1b1f14d3b56c9e3edbd1813b0223418a3fd0dff2232f3",
+  "extracted": "New York University",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The person described is Bowen Yang. He worked as a writer for NBC’s *Saturday Night Live* before becoming a performer, graduated from New York University in 2013, majored in French after changing majors, and wrote a senior thesis about the French Revolutionary battalion drum. NYU was founded in 1831, fitting the 1800–1850 range.  \nExact Answer: New York University  \nConfidence: 88%"
+}

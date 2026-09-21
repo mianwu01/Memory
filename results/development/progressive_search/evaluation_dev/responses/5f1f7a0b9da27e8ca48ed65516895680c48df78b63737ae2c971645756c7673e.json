@@ -1,0 +1,10 @@
+{
+  "case": 4,
+  "prompt_sha256": "5f1f7a0b9da27e8ca48ed65516895680c48df78b63737ae2c971645756c7673e",
+  "extracted": "Vinod Khanna",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues match Vinod Khanna: born in 1946, one of eight children, a commerce graduate, expected by his family to join the family business; he disliked mathematics and was drawn to theatre/plays.\n\nExact Answer: Vinod Khanna\n\nConfidence: 85%"
+}

@@ -1,0 +1,9 @@
+{
+  "candidate_ids": [
+    "5a89beacac01bff15b5caf9de1ca6985ea7d0aaac236a2a8885c4d970e3f58b7",
+    "530f49bab07f48ffb3026ea6df54f359ad0c778c0bcc171a5bd7e144c4c05c36"
+  ],
+  "max_attempts_per_failed_job": 1,
+  "policy": "one retry of new infrastructure failures only; no semantic retries",
+  "scientific_protocol_changed": false
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "case": 0,
+    "native_final_reference": "Ihuoma Sonia Uche",
+    "official_reference": "Ihuoma Sonia Uche",
+    "normalized_equal": true
+  },
+  {
+    "case": 1,
+    "native_final_reference": "Tulsidas Balaram",
+    "official_reference": "Tulsidas Balaram",
+    "normalized_equal": true
+  },
+  {
+    "case": 2,
+    "native_final_reference": "Daniel Delos Santos (also written as John Daniel delos Santos)",
+    "official_reference": "John Daniel delos Santos",
+    "normalized_equal": false
+  },
+  {
+    "case": 3,
+    "native_final_reference": "Manuelita",
+    "official_reference": "Manuelita",
+    "normalized_equal": true
+  },
+  {
+    "case": 4,
+    "native_final_reference": "Govardhan Asrani",
+    "official_reference": "Govardhan Asrani",
+    "normalized_equal": true
+  },
+  {
+    "case": 5,
+    "native_final_reference": "Sardar Khan",
+    "official_reference": "Sardar Khan",
+    "normalized_equal": true
+  },
+  {
+    "case": 6,
+    "native_final_reference": "Amherst College",
+    "official_reference": "Amherst College",
+    "normalized_equal": true
+  },
+  {
+    "case": 7,
+    "native_final_reference": "Cory Monteith",
+    "official_reference": "Cory Monteith",
+    "normalized_equal": true
+  },
+  {
+    "case": 8,
+    "native_final_reference": "Poem: \"Namaste\" | Book: \"Almost Human\" by Thomas Centolella",
+    "official_reference": "Namaste, Almost Human",
+    "normalized_equal": false
+  },
+  {
+    "case": 9,
+    "native_final_reference": "Joost Wolfswinkel",
+    "official_reference": "Joost Wolfswinkel",
+    "normalized_equal": true
+  }
+]

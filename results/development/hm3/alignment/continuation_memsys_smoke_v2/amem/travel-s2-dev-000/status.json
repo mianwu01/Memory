@@ -1,0 +1,15 @@
+{
+  "episode": "travel-s2-dev-000",
+  "error_type": "RuntimeError",
+  "memory_calls": 14,
+  "seconds": 81.72671968117356,
+  "status": "invalid_execution",
+  "system": "amem",
+  "traceback": [
+    {
+      "file": "continuation_memsys.py",
+      "function": "run",
+      "line": 230
+    }
+  ]
+}

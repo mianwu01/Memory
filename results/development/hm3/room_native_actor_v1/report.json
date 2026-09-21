@@ -1,0 +1,215 @@
+{
+  "table": {
+    "enabled/mem0_native8": {
+      "correct": 0,
+      "completed": 12,
+      "expected": 12,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "correct": 0,
+          "completed": 3,
+          "answers": [
+            null,
+            null,
+            null
+          ]
+        },
+        "room-s6101-t50-mary": {
+          "correct": 0,
+          "completed": 3,
+          "answers": [
+            null,
+            null,
+            null
+          ]
+        },
+        "room-s6102-t50-mary": {
+          "correct": 0,
+          "completed": 3,
+          "answers": [
+            null,
+            null,
+            null
+          ]
+        },
+        "room-s6103-t50-mary": {
+          "correct": 0,
+          "completed": 3,
+          "answers": [
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "stable": 0,
+      "truncations": 0,
+      "thinking_observed": 12,
+      "input_tokens": 12864,
+      "output_tokens": 2980,
+      "reasoning_tokens": 2908,
+      "returned_models": {
+        "DeepSeek-V4-Flash-0731": 12
+      }
+    },
+    "disabled/mem0_native8": {
+      "correct": 0,
+      "completed": 12,
+      "expected": 12,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "correct": 0,
+          "completed": 3,
+          "answers": [
+            null,
+            null,
+            null
+          ]
+        },
+        "room-s6101-t50-mary": {
+          "correct": 0,
+          "completed": 3,
+          "answers": [
+            null,
+            null,
+            null
+          ]
+        },
+        "room-s6102-t50-mary": {
+          "correct": 0,
+          "completed": 3,
+          "answers": [
+            null,
+            null,
+            null
+          ]
+        },
+        "room-s6103-t50-mary": {
+          "correct": 0,
+          "completed": 3,
+          "answers": [
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "stable": 0,
+      "truncations": 0,
+      "thinking_observed": 0,
+      "input_tokens": 11916,
+      "output_tokens": 60,
+      "reasoning_tokens": 0,
+      "returned_models": {
+        "DeepSeek-V4-Flash-0731": 12
+      }
+    },
+    "enabled/amem_native8": {
+      "correct": 10,
+      "completed": 12,
+      "expected": 12,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "correct": 3,
+          "completed": 3,
+          "answers": [
+            "bathroom",
+            "bathroom",
+            "bathroom"
+          ]
+        },
+        "room-s6101-t50-mary": {
+          "correct": 3,
+          "completed": 3,
+          "answers": [
+            "kitchen",
+            "kitchen",
+            "kitchen"
+          ]
+        },
+        "room-s6102-t50-mary": {
+          "correct": 3,
+          "completed": 3,
+          "answers": [
+            "living",
+            "living",
+            "living"
+          ]
+        },
+        "room-s6103-t50-mary": {
+          "correct": 1,
+          "completed": 3,
+          "answers": [
+            "kitchen",
+            null,
+            null
+          ]
+        }
+      },
+      "stable": 3,
+      "truncations": 0,
+      "thinking_observed": 12,
+      "input_tokens": 91767,
+      "output_tokens": 132717,
+      "reasoning_tokens": 132629,
+      "returned_models": {
+        "DeepSeek-V4-Flash-0731": 11,
+        "deepseek-v4-flash-0731": 1
+      }
+    },
+    "disabled/amem_native8": {
+      "correct": 0,
+      "completed": 12,
+      "expected": 12,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "correct": 0,
+          "completed": 3,
+          "answers": [
+            "bedroom",
+            "bedroom",
+            "den"
+          ]
+        },
+        "room-s6101-t50-mary": {
+          "correct": 0,
+          "completed": 3,
+          "answers": [
+            null,
+            "garage",
+            null
+          ]
+        },
+        "room-s6102-t50-mary": {
+          "correct": 0,
+          "completed": 3,
+          "answers": [
+            null,
+            "kitchen",
+            "kitchen"
+          ]
+        },
+        "room-s6103-t50-mary": {
+          "correct": 0,
+          "completed": 3,
+          "answers": [
+            "bathroom",
+            "bathroom",
+            "bathroom"
+          ]
+        }
+      },
+      "stable": 0,
+      "truncations": 0,
+      "thinking_observed": 0,
+      "input_tokens": 90819,
+      "output_tokens": 80,
+      "reasoning_tokens": 0,
+      "returned_models": {
+        "DeepSeek-V4-Flash-0731": 12
+      }
+    }
+  },
+  "scope": "Four fixed controlled model-based memory questions; not a native unassisted LLM benchmark",
+  "source_policy": "living|kitchen wall stream externally restricted in the audit scenario; labels absent from actor prompt"
+}

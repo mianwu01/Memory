@@ -1,0 +1,85 @@
+{
+  "graphs": {
+    "rewired_17": [
+      [
+        false,
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        true
+      ],
+      [
+        false,
+        false,
+        true,
+        false
+      ]
+    ],
+    "rewired_29": [
+      [
+        false,
+        false,
+        true,
+        false
+      ],
+      [
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        true
+      ],
+      [
+        false,
+        true,
+        false,
+        false
+      ]
+    ],
+    "rewired_43": [
+      [
+        false,
+        false,
+        false,
+        true
+      ],
+      [
+        false,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false,
+        false
+      ]
+    ]
+  },
+  "source": "\"\"\"Repair degenerate label-permuted controls without altering the primary fit.\"\"\"\nimport argparse\nfrom concurrent.futures import ThreadPoolExecutor\nimport itertools\nimport json\nfrom pathlib import Path\nimport numpy as np\n\nfrom .collect import references\nfrom .discovery import trajectories\nfrom .runtime import API,save,score\nfrom .selection import ancestors,make_selection,rank_entries\n\n\ndef deranged_graphs():\n    choices=[p for p in itertools.permutations(range(4)) if all(i!=p[i] for i in range(4))]\n    used=set();output={}\n    for seed in [17,29,43]:\n        order=np.random.default_rng(seed).permutation(len(choices))\n        perm=next(choices[i] for i in order if choices[i] not in used);used.add(perm)\n        graph=np.zeros((4,4),dtype=bool)\n        for i,target in enumerate(perm):graph[i,target]=True\n        output[f'rewired_{seed}']=graph.tolist()\n    return output\n\n\ndef run(args):\n    base=Path(args.base);source=base/'dev_v2';out=base/'evaluation_rewired_dev';evaluation=base/'evaluation_dev'\n    original=json.loads((evaluation/'frozen_selections.json').read_text());bycase={r['case']:r for r in original}\n    graphs=deranged_graphs();assert len({json.dumps(g) for g in graphs.values()})==3\n    save(out/'config.json',dict(graphs=graphs,source=Path(__file__).read_text(),protocol=Path('docs/progressive-wrong-graph-amendment-2026-09-22.md').read_text(),reuse_protocol=Path('docs/progressive-reuse-control-amendment-2026-09-22.md').read_text()))\n    planned=[]\n    for tr in trajectories(source,0,10):\n        plan=bycase[tr['case']];ranking=sorted(range(len(tr['entries'])),key=lambda i:(-plan['bm25'][i],i))\n        methods={}\n        for name,graph in graphs.items():\n            allowed=ancestors(graph,plan['seed_topic'])\n            indices=[i for i in ranking if plan['entry_topics'][i] in allowed][:2]\n            methods[name]=make_selection(tr,indices)\n        answers=[f\"Subquery {e['session']+1}: {e['query']}\\n\\nPredicted Answer: {e['answer']}\" for e in tr['events']]\n        qrank,_=rank_entries(tr['final_question'],[e['query'] for e in tr['events']])\n        methods['last_answer_reuse']=make_selection(tr,[len(answers)-1],raw_entries=answers)\n        methods['question_answer_reuse']=make_selection(tr,qrank[:1],raw_entries=answers)\n        planned.append(dict(case=tr['case'],methods=methods))\n    save(out/'frozen_selections.json',planned)\n    existing={}\n    for path in list((evaluation/'responses').glob('*.json'))+list((source/'reader').glob('*repeat0.json')):\n        r=json.loads(path.read_text());existing[r['prompt_sha256']]=r\n    jobs={}\n    for plan in planned:\n        for d in plan['methods'].values():jobs.setdefault(d['prompt_sha256'],(plan['case'],d['request']))\n    api=API(out/'api',max_requests=60);refs=references()\n    def worker(item):\n        sha,(case,req)=item\n        if sha in existing:return sha,existing[sha]\n        response=api.call(f'evaluation/{sha}',req);ch=response.choices[0]\n        r=dict(case=case,prompt_sha256=sha,**score(ch.message.content or '',refs[case]),finish_reason=ch.finish_reason,returned_model=response.model,\n               reasoning_observed=bool(getattr(ch.message,'reasoning_content',None)),answer=ch.message.content or '')\n        save(out/'responses'/f'{sha}.json',r);return sha,r\n    with ThreadPoolExecutor(max_workers=3) as pool:results=dict(pool.map(worker,jobs.items()))\n    rows=[]\n    for plan in planned:\n        reference=bycase[plan['case']]['methods']['discovered']\n        for name,d in plan['methods'].items():\n            r=results[d['prompt_sha256']]\n            rows.append(dict(case=plan['case'],method=name,**{k:v for k,v in r.items() if k not in ('case','answer')},\n                content_tokens=d['content_tokens'],indices=d['indices'],token_residual_to_discovered=d['content_tokens']-reference['content_tokens'],\n                identical_to_discovered=d['prompt_sha256']==reference['prompt_sha256']))\n    save(out/'results.json',dict(rows=rows,graphs=graphs,distinct_inputs=len(jobs),reused_inputs=len(set(jobs)&set(existing)),source='Post-fit degenerate-control repair; primary results unchanged'))\n    print(json.dumps(dict(control_rows=len(rows),distinct_inputs=len(jobs),new_requests=len(set(jobs)-set(existing)))))\n\n\nif __name__=='__main__':\n    p=argparse.ArgumentParser();p.add_argument('--base',default='results/development/progressive_search');run(p.parse_args())\n",
+  "protocol": "# 错图退化修复（首次拟合后、补充对照调用前）\n\ndev PCMCI+主图恰为4个自环。原定17/29/43的节点标签置换保持图完全不变，\n因此原wrong_*行是退化置换对照，不能称真正错误结构。保留全部原行和输入。\n\n新增rewired_17/29/43：保持4边、各节点入度/出度1，将每个source的target\n改为非自身；从9个derangement中按固定seed17/29/43生成第一个未使用者，\n保证三张图彼此不同且与发现图不同。不是根据LLM结果选择错图。相同selector、\n预算和reader；只按完整请求哈希复用已经存在的响应，不新增独立样本标签。\n\n这属于结构控制实现的透明补充，不改变主图、topic_only、complete或发现\n结构停止条件。主方法与topic_only 10/10同输入的结论不受补充结果影响。\n",
+  "reuse_protocol": "# 补充更直接的历史答案复用对照（新增响应前）\n\n原answer_reuse按完整entry的BM25选择历史答案，可能受长tool trace影响，未\n必选中最接近最终问题的子问题。保留该已冻结行；额外运行两个简单、无需\n发现图的共享reader对照，全部10个固定case，不按结果换选择规则：\n\n- last_answer_reuse：仅给最后一次原生子问题的query+实际predicted answer。\n- question_answer_reuse：只对历史query字段做BM25，用最高者对应的实际答案；\n  平分取较早session，与原rank_entries实现一致。\n\n共用原reader、thinking、32768输出上限和原session时间戳，单条最多8192代理\ntokens。没有gold参与选择；只在独立评分时使用官方答案。完整输入相同则复用\n已有响应。这是增强基线的补充开发对照，不重写原表、不改变主结构停止结论。\n"
+}

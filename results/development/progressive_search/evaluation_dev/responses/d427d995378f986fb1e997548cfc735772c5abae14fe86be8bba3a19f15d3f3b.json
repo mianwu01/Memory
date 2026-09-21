@@ -1,0 +1,10 @@
+{
+  "case": 6,
+  "prompt_sha256": "d427d995378f986fb1e997548cfc735772c5abae14fe86be8bba3a19f15d3f3b",
+  "extracted": "Amherst College",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The man is Josh Harmon, an Amherst College graduate from the class of 2018. He studied French after switching majors many times and wrote his thesis on the French military tambour [73276]. He later worked as a newsletter writer for NBC’s “Today” show [61461]. Amherst College was established in 1821, which is within the 1800–1850 range [24389].\nExact Answer: Amherst College\nConfidence: 92%"
+}

@@ -1,0 +1,11 @@
+{
+  "case": 6,
+  "repeat": 2,
+  "prompt_sha256": "fefaae16f94d6be916ec90aad4dae8ba781ca4c4b13a3fc161fcd2c994151b65",
+  "extracted": "New York University",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied memory contains a prior analysis of this exact clue set. It matched the clues to Bowen Yang: a former writer for a major broadcasting network, graduated in the 2010s, switched majors before settling on French, wrote a thesis about a French battalion drum, and attended New York University, founded in 1831 (within the required 1800–1850 window). No document snippet in the trace explicitly confirms this, so the answer relies on that prior reasoning rather than a directly cited source.\n\nExact Answer: New York University\n\nConfidence: 75%"
+}

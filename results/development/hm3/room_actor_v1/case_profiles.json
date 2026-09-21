@@ -1,0 +1,142 @@
+[
+  {
+    "case": "room-s6100-t50-mary",
+    "decoder_beliefs": {
+      "full": [
+        "bathroom"
+      ],
+      "learned8": [
+        "bathroom"
+      ],
+      "neutral_blocked": [
+        "bathroom"
+      ],
+      "source_blocked": [
+        "bathroom",
+        "kitchen"
+      ],
+      "source_changed": [
+        "kitchen"
+      ],
+      "topology8": [
+        "bathroom",
+        "kitchen"
+      ]
+    },
+    "records": {
+      "full": 63,
+      "learned8": 8,
+      "neutral_blocked": 49,
+      "source_blocked": 56,
+      "source_changed": 63,
+      "topology8": 8
+    },
+    "truth": "bathroom"
+  },
+  {
+    "case": "room-s6101-t50-mary",
+    "decoder_beliefs": {
+      "full": [
+        "kitchen"
+      ],
+      "learned8": [
+        "kitchen"
+      ],
+      "neutral_blocked": [
+        "kitchen"
+      ],
+      "source_blocked": [
+        "bathroom",
+        "kitchen"
+      ],
+      "source_changed": [
+        "kitchen"
+      ],
+      "topology8": [
+        "bathroom",
+        "kitchen"
+      ]
+    },
+    "records": {
+      "full": 63,
+      "learned8": 8,
+      "neutral_blocked": 47,
+      "source_blocked": 54,
+      "source_changed": 63,
+      "topology8": 8
+    },
+    "truth": "kitchen"
+  },
+  {
+    "case": "room-s6102-t50-mary",
+    "decoder_beliefs": {
+      "full": [
+        "living"
+      ],
+      "learned8": [
+        "living"
+      ],
+      "neutral_blocked": [
+        "living"
+      ],
+      "source_blocked": [
+        "bedroom",
+        "living"
+      ],
+      "source_changed": [
+        "living"
+      ],
+      "topology8": [
+        "bedroom",
+        "living"
+      ]
+    },
+    "records": {
+      "full": 63,
+      "learned8": 8,
+      "neutral_blocked": 44,
+      "source_blocked": 60,
+      "source_changed": 63,
+      "topology8": 8
+    },
+    "truth": "living"
+  },
+  {
+    "case": "room-s6103-t50-mary",
+    "decoder_beliefs": {
+      "full": [
+        "bathroom",
+        "kitchen"
+      ],
+      "learned8": [
+        "bathroom",
+        "kitchen"
+      ],
+      "neutral_blocked": [
+        "bathroom",
+        "kitchen"
+      ],
+      "source_blocked": [
+        "bathroom",
+        "kitchen"
+      ],
+      "source_changed": [
+        "bathroom",
+        "kitchen"
+      ],
+      "topology8": [
+        "bathroom",
+        "kitchen"
+      ]
+    },
+    "records": {
+      "full": 54,
+      "learned8": 8,
+      "neutral_blocked": 42,
+      "source_blocked": 54,
+      "source_changed": 54,
+      "topology8": 8
+    },
+    "truth": "kitchen"
+  }
+]

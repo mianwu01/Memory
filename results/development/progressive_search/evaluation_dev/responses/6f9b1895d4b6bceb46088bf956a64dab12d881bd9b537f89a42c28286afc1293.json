@@ -1,0 +1,10 @@
+{
+  "case": 1,
+  "prompt_sha256": "6f9b1895d4b6bceb46088bf956a64dab12d881bd9b537f89a42c28286afc1293",
+  "extracted": "Tulsidas Balaram",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "deepseek-v4-flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: UN projections show that countries such as India and Indonesia will exceed 300 million in population by 2050 [63663][15976]. Jakarta hosted the 1962 Asian Games, where India’s national football team won gold [61503][89915][44448]. The personal clues—an international match lost in 1956, six years before the 1962 gold, an Arjuna Award (India’s second-highest sporting honour [43513]) in the same year, and birth before India’s independence—point to Tulsidas Balaram.\n\nExact Answer: Tulsidas Balaram\n\nConfidence: 85%"
+}

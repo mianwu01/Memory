@@ -1,0 +1,71 @@
+[
+  {
+    "allowed_beliefs": {
+      "sensor_available": [
+        "bathroom"
+      ],
+      "sensor_unavailable": [
+        "bathroom",
+        "kitchen"
+      ]
+    },
+    "case": "room-s6100-t50-mary",
+    "records": {
+      "sensor_available": 63,
+      "sensor_unavailable": 56
+    },
+    "truth": "bathroom"
+  },
+  {
+    "allowed_beliefs": {
+      "sensor_available": [
+        "kitchen"
+      ],
+      "sensor_unavailable": [
+        "bathroom",
+        "kitchen"
+      ]
+    },
+    "case": "room-s6101-t50-mary",
+    "records": {
+      "sensor_available": 63,
+      "sensor_unavailable": 54
+    },
+    "truth": "kitchen"
+  },
+  {
+    "allowed_beliefs": {
+      "sensor_available": [
+        "living"
+      ],
+      "sensor_unavailable": [
+        "bedroom",
+        "living"
+      ]
+    },
+    "case": "room-s6102-t50-mary",
+    "records": {
+      "sensor_available": 63,
+      "sensor_unavailable": 60
+    },
+    "truth": "living"
+  },
+  {
+    "allowed_beliefs": {
+      "sensor_available": [
+        "bathroom",
+        "kitchen"
+      ],
+      "sensor_unavailable": [
+        "bathroom",
+        "kitchen"
+      ]
+    },
+    "case": "room-s6103-t50-mary",
+    "records": {
+      "sensor_available": 54,
+      "sensor_unavailable": 54
+    },
+    "truth": "kitchen"
+  }
+]

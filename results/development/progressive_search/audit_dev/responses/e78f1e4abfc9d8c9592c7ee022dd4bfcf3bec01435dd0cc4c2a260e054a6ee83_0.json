@@ -1,0 +1,11 @@
+{
+  "case": 0,
+  "repeat": 0,
+  "prompt_sha256": "e78f1e4abfc9d8c9592c7ee022dd4bfcf3bec01435dd0cc4c2a260e054a6ee83",
+  "extracted": "Ihuoma Sonia Uche",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The individual is Ihuoma Sonia Uche. In the interview reproduced in her biography, she said she got into acting through an audition she found on Facebook while at “100 Level” (first year) at university, and that landing a role in *Complicated* was her “first gig” [63918]. The same profile describes her as an entrepreneur and quotes her saying “I am a child of divorce” [63918]. 2023 articles state that she attended the University of Abuja and graduated in 2018 [82844][62459], that she was born on 25 May 1995 [62459][82844], that rumours she had her first child were baseless because she was only playing a pregnant character in *The Beast in Him* [82844][62459], and that she is the firstborn among four sisters [82844][63918].\n\nExact Answer: Ihuoma Sonia Uche\n\nConfidence: 92%"
+}

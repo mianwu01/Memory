@@ -1,0 +1,10 @@
+{
+  "case": 2,
+  "prompt_sha256": "bb3e0e9642d65967be6f2f67eb2f531c8524c63c00df1d5b7fc6754811b01df6",
+  "extracted": "John Daniel delos Santos",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied memory identifies the child tissue recipient as John Daniel delos Santos. At age 8, he received one of teen donor AJ Perez’s donated corneas after AJ died in a vehicular accident in 2011 [62478][5784]. On October 27, 2020, then-17-year-old delos Santos appeared on “Eat Bulaga!”’s “Bawal Judgmental” segment and publicly thanked AJ and his family for the cornea donation [5784][58107]. The other cornea recipient was an adult, so the child recipient who appeared on TV was John Daniel delos Santos [62478][13127].\n\nExact Answer: John Daniel delos Santos\n\nConfidence: 90%"
+}

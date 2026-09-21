@@ -1,0 +1,10 @@
+{
+  "case": 0,
+  "prompt_sha256": "db14fe4eb8229ebd4ea0705654c7de384720f1d5e31a7196dcd2440885f5b4e6",
+  "extracted": "Ihuoma Sonia Uche",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to the Nollywood actress Ihuoma Sonia Uche, known as Sonia Uche. A 2023 biography lists her full name as “Ihuoma Sonia Uche” and says she attended the University of Abuja and graduated in 2018 [82844]; Abuja is Nigeria’s capital [74302]. The same article gives her birth date as 25 May 1995, says she was the firstborn among four sisters, and says rumors that she had her first child in 2022 were baseless—she was only playing a pregnant character [82844]. Another 2023 article describes her auditioning and landing her debut movie role in “Complicated” in her first year at university [63918], and she is described as an actress and entrepreneur [82844][62459].\n\nExact Answer: Ihuoma Sonia Uche\n\nConfidence: 90%"
+}

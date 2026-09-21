@@ -1,0 +1,10 @@
+{
+  "case": 1,
+  "prompt_sha256": "971d1d7df59221fa7e3b1c793b3be90d63e452dd3104a1fd361eb69fd20c12c1",
+  "extracted": "Tulsidas Balaram",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to Tulsidas Balaram. He was born in 1936, over a decade before India’s independence in 1947 [17054][93861]. His international debut was against Yugoslavia at the 1956 Melbourne Olympics, a match India lost and where India finished fourth [44448][7545][12484]. Six years later, in 1962, he was instrumental in India’s football gold at the Asian Games in Jakarta, playing every match and scoring against Thailand and Japan [81022][89915][17054]. That same year, 1962, he received India’s Arjuna Award [81022][17054].\n\nExact Answer: Tulsidas Balaram\n\nConfidence: 90%"
+}

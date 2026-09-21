@@ -1,0 +1,103 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "annotations": null,
+        "audio": null,
+        "content": "{\"keywords\":[\"sight\",\"wall\",\"garage\",\"bedroom\",\"den\",\"office\",\"horizontal\",\"vertical\"],\"context\":\"The content appears to be a structured data table listing locations (garage, bedroom, den, office) and attributes (sight, wall, horizontal, vertical) with associated counts, likely for organizing or categorizing spatial features in a facility or design context.\",\"tags\":[\"spatial data\",\"location classification\",\"design attributes\",\"data analysis\"]}",
+        "function_call": null,
+        "refusal": null,
+        "role": "assistant",
+        "tool_calls": null
+      },
+      "refs": null,
+      "service_tier": null
+    }
+  ],
+  "diagnostic_retry": true,
+  "event": "result",
+  "extra_body": {
+    "thinking": {
+      "type": "disabled"
+    }
+  },
+  "max_tokens": 16384,
+  "messages": [
+    {
+      "content": "You must respond with a JSON object.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a structured analysis of the following content by:\n            1. Identifying the most salient keywords (focus on nouns, verbs, and key concepts)\n            2. Extracting core themes and contextual elements\n            3. Creating relevant categorical tags\n\n            Format the response as a JSON object:\n            {\n                \"keywords\": [\n                    // several specific, distinct keywords that capture key concepts and terminology\n                    // Order from most to least important\n                    // Don't include keywords that are the name of the speaker or time\n                    // At least three keywords, but don't be too redundant.\n                ],\n                \"context\": \n                    // one sentence summarizing:\n                    // - Main topic/domain\n                    // - Key arguments/points\n                    // - Intended audience/purpose\n                ,\n                \"tags\": [\n                    // several broad categories/themes for classification\n                    // Include domain, format, and type tags\n                    // At least three tags, but don't be too redundant.\n                ]\n            }\n\n            Content for analysis:\n            [\n [\n  \"sight\",\n  41,\n  \"john\",\n  \"garage\"\n ],\n [\n  \"wall\",\n  44,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  44,\n  \"office|den|vertical\",\n  1\n ]\n]",
+      "role": "user"
+    }
+  ],
+  "model": "deepseek-v4-flash",
+  "request_hash": "6ed4c7b185b8998169ffc684af1923d927f8a1da77f7e8a22d4266bc098be5da",
+  "response_format": {
+    "json_schema": {
+      "name": "response",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "context": {
+            "type": "string"
+          },
+          "keywords": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "tags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "keywords",
+          "context",
+          "tags"
+        ],
+        "type": "object"
+      },
+      "strict": true
+    },
+    "type": "json_schema"
+  },
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "seconds": 2.860020950436592,
+  "source_case": "room-s6100-t50-mary",
+  "source_failure_call": 17,
+  "temperature": 0.7,
+  "usage": {
+    "completion_tokens": 96,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null
+    },
+    "input_tokens": 445,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 96,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 445,
+    "prompt_tokens": 445,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    },
+    "total_tokens": 541
+  }
+}

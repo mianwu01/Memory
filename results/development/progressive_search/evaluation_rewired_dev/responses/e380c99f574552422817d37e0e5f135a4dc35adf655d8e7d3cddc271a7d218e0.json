@@ -1,0 +1,10 @@
+{
+  "case": 6,
+  "prompt_sha256": "e380c99f574552422817d37e0e5f135a4dc35adf655d8e7d3cddc271a7d218e0",
+  "extracted": "Amherst College",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The person is Josh Harmon, an Amherst College graduate. An Amherst student profile describes him as a French major who “switched my major maybe 100 times” and wrote a thesis on the French military snare drum [73276]. A Business Insider as-told-to essay confirms he graduated from Amherst College in 2018 and worked as a writer for NBC’s “Today” show after joining NBC’s Page Program [61461]. Amherst College was founded in 1821, fitting the 1800–1850 range [24389].\n\nExact Answer: Amherst College\n\nConfidence: 92%"
+}

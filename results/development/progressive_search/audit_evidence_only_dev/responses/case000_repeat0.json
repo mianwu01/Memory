@@ -1,0 +1,13 @@
+{
+  "case": 0,
+  "repeat": 0,
+  "prompt_sha256": "7053e47fe7f5a2406fc31c90fcba170600ffd694769cebc6935ed4ca6453c808",
+  "extracted": "Meghann Fahy",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The birthdate retrieval points to Meghann Fahy, born April 25, 1990, which matches the stated 1986–1996 range and acting-career profile [5705].  \nExact Answer: Meghann Fahy  \nConfidence: 78%",
+  "abstained_strict": false,
+  "abstained_prefix": false
+}

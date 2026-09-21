@@ -1,0 +1,37 @@
+[
+  {
+    "result": {
+      "results": []
+    },
+    "segment": 0,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "b001c48a-a534-4400-b7f5-b0c6973253c9",
+          "memory": "Flight F87 (Hana, day 1) arrival was shifted from 13:45 to 21:45 (arrival time changed from 825 to 1305 minutes) with no fee."
+        },
+        {
+          "event": "ADD",
+          "id": "b710287f-1d31-4db5-8e40-72890c9d6b29",
+          "memory": "Reservation T69 pickup time was shifted from 14:45 to 22:35 (pickup changed from 885 to 1355 minutes) with no fee."
+        },
+        {
+          "event": "ADD",
+          "id": "51c38623-1849-4171-bea8-cd43075ccf17",
+          "memory": "Reservation S86 check-in time was shifted from 15:05 to 22:55 (check-in changed from 905 to 1375 minutes) and was marked as a late arrival, incurring a fee of 25."
+        },
+        {
+          "event": "ADD",
+          "id": "1bd3cc81-aff4-40fd-ac65-79e9706a3973",
+          "memory": "Reservation D88 start time was shifted from 22:45 to 23:45 (start changed from 1365 to 1425 minutes), incurring a fee of 25."
+        }
+      ]
+    },
+    "segment": 1,
+    "stage": "add"
+  }
+]

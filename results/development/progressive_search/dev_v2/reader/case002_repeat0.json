@@ -1,0 +1,12 @@
+{
+  "case": 2,
+  "repeat": 0,
+  "prompt_sha256": "f76703b3b0720d3c5855f8b74a13b5a176f7a055a32a061d86c0d40678bcfa60",
+  "extracted": "John Daniel delos Santos",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "all_memory_retained": true,
+  "writers_complete": true
+}

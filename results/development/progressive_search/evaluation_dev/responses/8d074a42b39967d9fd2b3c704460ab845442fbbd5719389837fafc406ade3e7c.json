@@ -1,0 +1,10 @@
+{
+  "case": 1,
+  "prompt_sha256": "8d074a42b39967d9fd2b3c704460ab845442fbbd5719389837fafc406ade3e7c",
+  "extracted": "Tulsidas Balaram",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "deepseek-v4-flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues map to the 1962 Asian Games in Jakarta: Jakarta is the capital of Indonesia, a country projected to exceed 300 million by 2050 [15976][63663], and the Asian Games are one of the largest multi-sport events [61503]. India’s football team won gold there [89915]. The supplied memory ties Tulsidas Balaram to that gold-medal run and to the relevant biographical details: his 1956 international debut was six years earlier, and he received the Arjuna Award, India’s second-highest sporting honour, in the same year [44448][43513]. He was born in 1936, over a decade before India’s 1947 independence.  \nExact Answer: Tulsidas Balaram  \nConfidence: 82%"
+}

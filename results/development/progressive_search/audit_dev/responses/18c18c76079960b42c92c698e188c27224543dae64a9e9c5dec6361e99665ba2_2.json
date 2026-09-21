@@ -1,0 +1,11 @@
+{
+  "case": 1,
+  "repeat": 2,
+  "prompt_sha256": "18c18c76079960b42c92c698e188c27224543dae64a9e9c5dec6361e99665ba2",
+  "extracted": "Tulsidas Balaram",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to Indian footballer Tulsidas Balaram: he was born in 1936, over a decade before India’s independence; his first international match was at the 1956 Melbourne Olympics, where India lost; in 1962 he was part of the Indian team that won football gold at the Asian Games in Jakarta; and he received the Arjuna Award in that same year. \nExact Answer: Tulsidas Balaram\nConfidence: 78%"
+}

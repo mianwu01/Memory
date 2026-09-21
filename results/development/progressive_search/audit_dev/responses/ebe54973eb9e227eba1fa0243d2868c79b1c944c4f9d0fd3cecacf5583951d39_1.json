@@ -1,0 +1,11 @@
+{
+  "case": 2,
+  "repeat": 1,
+  "prompt_sha256": "ebe54973eb9e227eba1fa0243d2868c79b1c944c4f9d0fd3cecacf5583951d39",
+  "extracted": "John Daniel delos Santos",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The late teen was Filipino actor AJ Perez, who died at age 18 in 2011 in a vehicular accident; he was the only fatality, while his father and the driver survived [98388]. His parents donated his corneas, which were given to two recipients [5784][92091]. On the “Eat Bulaga” segment “Bawal Judgemental” in 2020, then-teenager John Daniel delos Santos revealed he had received AJ Perez’s cornea and thanked AJ’s family [5784].\n\nExact Answer: John Daniel delos Santos\n\nConfidence: 95%"
+}

@@ -1,0 +1,11 @@
+{
+  "case": 1,
+  "repeat": 1,
+  "prompt_sha256": "cd556c0bf370cc132e2071b59ef68645a68567c901373dc100208703fcd5e90f",
+  "extracted": "Tulsidas Balaram",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The country in the chain is India, whose independence year is 1947 [93861]. Tulsidas Balaram was born in 1936 — more than a decade before independence [17054] — and was part of the India football team that won gold at the 1962 Asian Games in Jakarta [37746][89915]. Six years earlier, he made his international debut against Yugoslavia at the 1956 Melbourne Olympics, a match India lost 4–1 [17054][44448][12484]. He was instrumental in the 1962 gold, playing every match and scoring against Thailand and Japan [17054][81022], and received the Arjuna Award — India’s second-highest sporting honour — in that same year, 1962 [90980][17054].\n\nExact Answer: Tulsidas Balaram\n\nConfidence: 95%"
+}

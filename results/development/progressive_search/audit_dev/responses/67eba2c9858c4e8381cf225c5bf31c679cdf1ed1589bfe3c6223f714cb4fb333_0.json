@@ -1,0 +1,11 @@
+{
+  "case": 6,
+  "repeat": 0,
+  "prompt_sha256": "67eba2c9858c4e8381cf225c5bf31c679cdf1ed1589bfe3c6223f714cb4fb333",
+  "extracted": "Amherst College",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The Amherst College student newspaper profile “Marching to the Beat of His Own Drum” identifies Josh Harmon ’18 as an Amherst student who majored in French after switching majors many times and wrote a thesis on the French military drum [73276]. A Business Insider piece confirms that after graduating from Amherst in 2018, Harmon worked as a writer in NBC’s Page Program for the Today show [61461]. Amherst College was established in 1821, within the 1800–1850 window [24389]. Thus the college is Amherst College.  \nExact Answer: Amherst College  \nConfidence: 92%"
+}

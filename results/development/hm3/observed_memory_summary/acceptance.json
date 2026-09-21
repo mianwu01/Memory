@@ -1,0 +1,16 @@
+{
+  "mature_temporal_discovery_run": true,
+  "original_environment_time_preserved": true,
+  "learned_graph_changes_reader_inputs": true,
+  "small_controlled_utility_signal": true,
+  "medium_topology_superiority_supported": false,
+  "actor_scope": "Four development cases; repeated responses are not independent tasks",
+  "full_graph_recovery": false,
+  "learned_agent_memory_state_dynamics": false,
+  "held_out_actor_test_completed": false,
+  "native_memsys_same_interface_completed": true,
+  "native_memsys_equal_tokens": false,
+  "safety_scope": "Known source policy and shared-model-assisted gate in controlled environment",
+  "yujia_approval_of_narrower_research_object": "Not recorded",
+  "full_research_requirements_met": false
+}

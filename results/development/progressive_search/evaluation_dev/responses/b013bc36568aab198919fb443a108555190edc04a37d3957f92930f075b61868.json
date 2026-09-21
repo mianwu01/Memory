@@ -1,0 +1,10 @@
+{
+  "case": 7,
+  "prompt_sha256": "b013bc36568aab198919fb443a108555190edc04a37d3957f92930f075b61868",
+  "extracted": "Cory Monteith",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied chain converges on **Cory Monteith**. He worked as a taxicab driver [77808][32366]; made his TV debut in 2004 on *Stargate Atlantis* [32366]; starred in *Monte Carlo* (2011), which featured Disney Channel star Selena Gomez [30018][77808][54288]; and attended 16 schools, meaning more than 10 school switches, before dropping out at age 16 [32366]. The earlier subquery also records that the girlfriend/volleyball clue pointed to Monteith.\n\nExact Answer: Cory Monteith\n\nConfidence: 88%"
+}

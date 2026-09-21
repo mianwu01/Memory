@@ -1,0 +1,10 @@
+{
+  "case": 1,
+  "prompt_sha256": "072f11fefdc82f937750ae41be1204bb19fcfc52141cf22a09c5a63f4f895df3",
+  "extracted": "Tulsidas Balaram",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to the 1962 Asian Games in Jakarta [89915][37746], where the India national football team won the gold medal [89915][37746]. Tulsidas Balaram was part of that gold-medal squad and his honours list includes “Asian Games Gold medal: 1962” [17054][37746]. His international debut was against Yugoslavia at the 1956 Melbourne Olympics, a 4–1 loss, which was six years before the 1962 gold [44448][17054][12484][7545]. He was born in 1936, before India’s independence in 1947 [17054][93861], and he received the Arjuna Award in 1962 [17054][81022], India’s second-highest sporting award [90980][29312][43513].\n\nExact Answer: Tulsidas Balaram\n\nConfidence: 90%"
+}

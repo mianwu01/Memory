@@ -1,0 +1,11 @@
+{
+  "case": 0,
+  "repeat": 0,
+  "prompt_sha256": "a3fdeac8004fb0d60e7d8ea45c11a5d83b1f4f8b2a43233eef5f5e5af806a244",
+  "extracted": "Ihuoma Sonia Uche",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues converge on Nollywood actress **Ihuoma Sonia Uche**. Her biography quotes an exclusive interview in which she says she got into acting through an audition found on Facebook while in “100 Level” (first year) at university, and that two weeks later she was invited to play a role in *Complicated* — “That was my first gig” [63918]. In the same interview she states, “I am a child of divorce” [63918]. 2023 profiles identify her as an entrepreneur with a hair-extension business [62459][63918], state that she attended the University of Abuja and graduated in 2018 [82844][62459], give her birth year as 1995 [62459][82844], describe false fan speculation about her having a first child in 2022 [82844][62459], and identify her as the firstborn/eldest of four sisters with three siblings [82844][63918].\n\nExact Answer: Ihuoma Sonia Uche\n\nConfidence: 93%"
+}

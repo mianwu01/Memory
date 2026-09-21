@@ -1,0 +1,10 @@
+{
+  "case": 7,
+  "prompt_sha256": "942f24a4ed42cfb90883ee765dcd9e8c2b38af717a832ada8ab51ec3922d9d47",
+  "extracted": "Cory Monteith",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The memory identifies Cory Monteith as the actor who switched schools at least 10 times (attended 16 schools) [32366]. It also confirms he was a taxi driver [77808], made his TV debut in 2004 [32366], and starred in *Monte Carlo* with Disney Channel star Selena Gomez [30018][77808]. The memory does not mention his girlfriend playing volleyball, so that specific detail is not verified in the provided evidence, but the other criteria strongly point to Monteith.\n\nExact Answer: Cory Monteith\n\nConfidence: 90%"
+}

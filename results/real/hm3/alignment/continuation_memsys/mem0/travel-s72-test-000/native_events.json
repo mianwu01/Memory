@@ -1,0 +1,101 @@
+[
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "82f79190-6c44-4ee7-859b-b27b356ddb5d",
+          "memory": "Flight F33 (Nia, day 2) arrival was shifted to 21:30 (1290) via intervention."
+        },
+        {
+          "event": "ADD",
+          "id": "814edab0-9e85-4f47-b547-dfbf436809ea",
+          "memory": "Reservation T89 pickup was shifted to 1325 via auto operation."
+        },
+        {
+          "event": "ADD",
+          "id": "55c968f9-d767-4b27-a2f8-207177d2b0a7",
+          "memory": "Reservation S64 check-in was shifted to 1345 with a fee of 25."
+        },
+        {
+          "event": "ADD",
+          "id": "8c3b39c9-6dc1-4d64-8b29-35e9eaf9566b",
+          "memory": "Reservation D38 was cancelled with a fee of 40."
+        }
+      ]
+    },
+    "segment": 0,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "e7d8ef3c-847c-4cf1-a372-55788e8dc900",
+          "memory": "Flight F18 (Lena, day 2) arrival was shifted to 18:30 (1110) via intervention."
+        },
+        {
+          "event": "ADD",
+          "id": "65d69d2f-5f00-42cd-aa57-10325b1bf0fd",
+          "memory": "Reservation T93 pickup was shifted to 1130 with a fee of 25."
+        },
+        {
+          "event": "ADD",
+          "id": "9b581f83-1cc7-4cb2-9491-0af797d62ea8",
+          "memory": "Reservation S38 check-in was shifted to 1180 with a fee of 25."
+        },
+        {
+          "event": "ADD",
+          "id": "6929ba90-dbd7-4c4b-9d5c-276b6f3a6ddb",
+          "memory": "Reservation D79 was cancelled with a fee of 40."
+        },
+        {
+          "event": "ADD",
+          "id": "5e558b6b-a6c4-4ed1-b085-d6dc0b04f062",
+          "memory": "Bundle B39 was rebooked with a fee of 30."
+        }
+      ]
+    },
+    "segment": 1,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "b2a00a68-eceb-4fb8-8e40-dbe8ee4ce4c5",
+          "memory": "Flight F84 (Lena, day 1) arrival was shifted to 20:30 (1230) via intervention."
+        },
+        {
+          "event": "ADD",
+          "id": "455fc8d3-d12e-41e8-af2e-f06f4e9b99cf",
+          "memory": "Reservation T52 pickup was shifted to 1290 via auto operation."
+        },
+        {
+          "event": "ADD",
+          "id": "db4f2b03-f49f-4629-9350-920e20e7fe20",
+          "memory": "Reservation S13 check-in was shifted to 1340 with a fee of 25."
+        },
+        {
+          "event": "ADD",
+          "id": "721112a2-4e27-4e9c-87db-362267d91418",
+          "memory": "Reservation D96 start was shifted to 1395 with a fee of 25."
+        },
+        {
+          "event": "ADD",
+          "id": "3453e267-6dcf-444e-9b48-e0ff9223a858",
+          "memory": "Bundle B83 was rebooked with a fee of 30."
+        },
+        {
+          "event": "ADD",
+          "id": "3d2e88e3-00e1-4460-b0c3-02b7e3a654fb",
+          "memory": "Reservation A96 start was shifted to 1950 with a fee of 25."
+        }
+      ]
+    },
+    "segment": 2,
+    "stage": "add"
+  }
+]

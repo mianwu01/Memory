@@ -1,0 +1,11 @@
+{
+  "case": 0,
+  "repeat": 1,
+  "prompt_sha256": "cfe9a223ce4c46760261d7996699fac177c7b68eedb1ba90156b73ce1973438c",
+  "extracted": "Ihuoma Sonia Uche (Sonia Uche)",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The individual is Sonia Uche (full name Ihuoma Sonia Uche). In an exclusive interview reproduced in her biography, she stated she entered acting through an audition found on Facebook while in her first year at university, which led to her first role in *Complicated*, and she identified herself as “a child of divorce” [63918]. The 2023 biography article states she attended the University of Abuja and graduated in 2018, and was born on May 25, 1995 [82844][62459], placing her birth year in the 1986–1996 range. It also states that rumors of her having her first child in 2022 were proven baseless because she was merely playing a pregnant character in *The Beast in Him* [82844][62459]. The articles further describe her as the firstborn child with three siblings [82844][63918]. Her business ownership is corroborated by descriptions of her as an entrepreneur running Sonia Hair Extensions [62459].\n\nExact Answer: Ihuoma Sonia Uche (Sonia Uche)\n\nConfidence: 95%"
+}

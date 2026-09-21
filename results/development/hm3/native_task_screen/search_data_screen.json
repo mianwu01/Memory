@@ -1,0 +1,23 @@
+{
+  "tasks": 221,
+  "session_count_distribution": {
+    "4": 7,
+    "5": 30,
+    "6": 42,
+    "7": 45,
+    "8": 45,
+    "9": 20,
+    "10": 13,
+    "11": 11,
+    "12": 4,
+    "13": 1,
+    "14": 2,
+    "16": 1
+  },
+  "questions": 1641,
+  "all_answers_text": 1641,
+  "answer_exact_label": 1641,
+  "query_urls": 0,
+  "trajectory_observed": false,
+  "actual_write_transitions": null
+}

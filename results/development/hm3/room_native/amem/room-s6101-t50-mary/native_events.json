@@ -1,0 +1,409 @@
+[
+  {
+    "evolution_count": 0,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  0,\n  \"office|den|vertical\",\n  1\n ],\n [\n  \"wall\",\n  1,\n  \"bathroom|study|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  2,\n  \"living|kitchen|vertical\",\n  1\n ],\n [\n  \"sight\",\n  3,\n  \"mary\",\n  \"living\"\n ],\n [\n  \"wall\",\n  3,\n  \"living|kitchen|vertical\",\n  1\n ],\n [\n  \"sight\",\n  4,\n  \"john\",\n  \"bathroom\"\n ],\n [\n  \"sight\",\n  4,\n  \"mary\",\n  \"bathroom\"\n ],\n [\n  \"wall\",\n  4,\n  \"bathroom|study|horizontal\",\n  1\n ]\n]",
+      "context": "This data appears to track observations of walls in different rooms (living, kitchen, bedroom, den) with attributes of orientation (vertical/horizontal) and presence (0/1), possibly for a spatial analysis or home layout study, intended for an analytical or technical audience, including sight data of John in garage.",
+      "evolution_history": [],
+      "id": "1cf198a0-786a-4d1d-94f9-9c21898f62f3",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "sight",
+        "spatial layout",
+        "room types",
+        "orientation",
+        "occupant location"
+      ],
+      "last_accessed": "202609220509",
+      "links": [],
+      "retrieval_count": 0,
+      "tags": [
+        "spatial analysis",
+        "architectural layout",
+        "room classification",
+        "data structure",
+        "occupancy tracking",
+        "wall orientation",
+        "garage sightings"
+      ],
+      "timestamp": "202609010000"
+    },
+    "segment": 0,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 1,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"sight\",\n  5,\n  \"mary\",\n  \"living\"\n ],\n [\n  \"wall\",\n  5,\n  \"living|kitchen|vertical\",\n  0\n ],\n [\n  \"sight\",\n  6,\n  \"mary\",\n  \"kitchen\"\n ],\n [\n  \"wall\",\n  6,\n  \"living|kitchen|vertical\",\n  1\n ],\n [\n  \"wall\",\n  7,\n  \"living|kitchen|vertical\",\n  1\n ],\n [\n  \"wall\",\n  8,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"sight\",\n  9,\n  \"mary\",\n  \"bedroom\"\n ],\n [\n  \"wall\",\n  9,\n  \"bedroom|den|horizontal\",\n  1\n ]\n]",
+      "context": "This content lists wall instances with associated room types (bathroom, study, office, den) and orientation (horizontal or vertical), likely for architectural or interior design classification purposes, including sight data.",
+      "evolution_history": [],
+      "id": "72e51f01-9554-420d-b285-4c946f5bf1d9",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "sight",
+        "living",
+        "kitchen",
+        "bedroom",
+        "vertical",
+        "horizontal",
+        "den"
+      ],
+      "last_accessed": "202609220509",
+      "links": [
+        0
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "wall classification",
+        "room type orientation",
+        "architectural data",
+        "spatial analysis",
+        "occupancy tracking",
+        "garage sightings"
+      ],
+      "timestamp": "202609010100"
+    },
+    "segment": 1,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 2,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"sight\",\n  10,\n  \"mary\",\n  \"kitchen\"\n ],\n [\n  \"wall\",\n  10,\n  \"living|kitchen|vertical\",\n  0\n ],\n [\n  \"sight\",\n  11,\n  \"mary\",\n  \"living\"\n ],\n [\n  \"wall\",\n  11,\n  \"living|kitchen|vertical\",\n  1\n ],\n [\n  \"wall\",\n  12,\n  \"living|kitchen|vertical\",\n  1\n ],\n [\n  \"sight\",\n  13,\n  \"mary\",\n  \"living\"\n ],\n [\n  \"wall\",\n  13,\n  \"living|kitchen|vertical\",\n  1\n ],\n [\n  \"sight\",\n  14,\n  \"mary\",\n  \"bathroom\"\n ],\n [\n  \"wall\",\n  14,\n  \"bathroom|study|horizontal\",\n  1\n ]\n]",
+      "context": "This data appears to track the presence of a wall and sightings of a person (Mary) across different rooms (kitchen, living, bathroom) with attributes like orientation, possibly for spatial analysis or monitoring.",
+      "evolution_history": [],
+      "id": "8f56a533-4b2d-4ee8-a197-ecf6b28833f7",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "sight",
+        "kitchen",
+        "living",
+        "bathroom",
+        "vertical",
+        "horizontal"
+      ],
+      "last_accessed": "202609220509",
+      "links": [
+        0
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "spatial analysis",
+        "occupancy tracking",
+        "wall orientation",
+        "garage sightings"
+      ],
+      "timestamp": "202609010200"
+    },
+    "segment": 2,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 3,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  15,\n  \"bathroom|study|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  16,\n  \"office|den|vertical\",\n  1\n ],\n [\n  \"wall\",\n  17,\n  \"bathroom|study|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  18,\n  \"bathroom|study|horizontal\",\n  0\n ]\n]",
+      "context": "This content analyzes the spatial configuration of walls and individuals' sightlines across different rooms, including living, kitchen, bathroom, study, office, den, and garage, focusing on wall orientation (vertical/horizontal) and presence, likely for architectural or spatial reasoning purposes, targeting an audience interested in layout analysis and occupancy tracking.",
+      "evolution_history": [],
+      "id": "aa4a1204-6e50-4dfc-ad2c-8bbcf4cd5489",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "bathroom",
+        "study",
+        "horizontal",
+        "office",
+        "den",
+        "vertical"
+      ],
+      "last_accessed": "202609220510",
+      "links": [
+        0,
+        1,
+        2
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "spatial analysis",
+        "architectural layout",
+        "room classification",
+        "data structure",
+        "occupancy tracking",
+        "wall orientation"
+      ],
+      "timestamp": "202609010300"
+    },
+    "segment": 3,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 4,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  20,\n  \"bathroom|study|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  22,\n  \"bathroom|study|horizontal\",\n  1\n ],\n [\n  \"sight\",\n  24,\n  \"john\",\n  \"garage\"\n ]\n]",
+      "context": "This content appears to be a structured data representation of spatial or architectural elements, likely from a design or planning context, listing wall dimensions and associated locations like bathroom, study, and garage, with a reference to a person named John and a visual observation.",
+      "evolution_history": [],
+      "id": "1441922e-d101-42f2-a513-ea59939b3dd4",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "bathroom",
+        "study",
+        "horizontal",
+        "sight",
+        "garage"
+      ],
+      "last_accessed": "202609220510",
+      "links": [
+        0
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "spatial analysis",
+        "architectural layout",
+        "room classification",
+        "data structure",
+        "occupancy tracking",
+        "wall orientation"
+      ],
+      "timestamp": "202609010400"
+    },
+    "segment": 4,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 5,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  29,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  29,\n  \"office|den|vertical\",\n  0\n ]\n]",
+      "context": "This content is a data structure listing wall configurations with attributes of room type, orientation, and a numeric value, likely for a design or specification system, covering wall size 29.",
+      "evolution_history": [],
+      "id": "bb4118d1-dbe6-442c-ac5e-55657246d0d5",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "bedroom",
+        "den",
+        "horizontal",
+        "office",
+        "vertical"
+      ],
+      "last_accessed": "202609220510",
+      "links": [
+        0,
+        3,
+        4
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "wall classification",
+        "room type orientation",
+        "architectural data",
+        "wall size 29"
+      ],
+      "timestamp": "202609010500"
+    },
+    "segment": 5,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 6,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  30,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  30,\n  \"office|den|vertical\",\n  1\n ],\n [\n  \"wall\",\n  31,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  31,\n  \"office|den|vertical\",\n  0\n ],\n [\n  \"wall\",\n  32,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  32,\n  \"office|den|vertical\",\n  1\n ],\n [\n  \"wall\",\n  33,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  34,\n  \"bedroom|den|horizontal\",\n  0\n ]\n]",
+      "context": "This dataset contains structured records of walls in different room types (bedroom, den, office) with orientations (horizontal, vertical) and associated numeric values, likely representing counts or indices for analysis of spatial configurations, covering wall sizes 30-34.",
+      "evolution_history": [],
+      "id": "7bb6b995-6107-48b0-94a2-726fdaf467db",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "orientation",
+        "room type",
+        "horizontal",
+        "vertical",
+        "den",
+        "bedroom",
+        "office",
+        "index",
+        "count"
+      ],
+      "last_accessed": "202609220510",
+      "links": [
+        5,
+        0,
+        1,
+        2,
+        3
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "wall classification",
+        "room type orientation",
+        "architectural data",
+        "spatial analysis",
+        "wall orientation",
+        "wall size 30-34"
+      ],
+      "timestamp": "202609010600"
+    },
+    "segment": 6,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 7,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  35,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  35,\n  \"office|den|vertical\",\n  0\n ],\n [\n  \"wall\",\n  36,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  36,\n  \"office|den|vertical\",\n  1\n ],\n [\n  \"wall\",\n  37,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  37,\n  \"office|den|vertical\",\n  0\n ],\n [\n  \"wall\",\n  39,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  39,\n  \"office|den|vertical\",\n  0\n ]\n]",
+      "context": "This dataset analyzes wall measurements across different room types (bedroom/den/office) and orientations (horizontal/vertical), covering wall sizes 35-39, likely for architectural or interior design planning purposes. It also includes sightings of John in garage and wall instances in office/den vertical orientation, consistent with ongoing spatial tracking.",
+      "evolution_history": [],
+      "id": "48854720-58b0-4139-bd1f-937a7ef5d4ee",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "room type",
+        "orientation",
+        "den",
+        "bedroom",
+        "office",
+        "horizontal",
+        "vertical",
+        "size"
+      ],
+      "last_accessed": "202609220510",
+      "links": [
+        6,
+        5,
+        1,
+        0,
+        3
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "wall classification",
+        "room type orientation",
+        "architectural data",
+        "spatial analysis",
+        "wall orientation",
+        "garage sightings",
+        "wall size 35-39"
+      ],
+      "timestamp": "202609010700"
+    },
+    "segment": 7,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 8,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  40,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  40,\n  \"office|den|vertical\",\n  1\n ],\n [\n  \"wall\",\n  41,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  41,\n  \"office|den|vertical\",\n  0\n ],\n [\n  \"wall\",\n  42,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  42,\n  \"office|den|vertical\",\n  1\n ],\n [\n  \"wall\",\n  43,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  43,\n  \"office|den|vertical\",\n  0\n ]\n]",
+      "context": "This dataset analyzes wall measurements across different room types (bedroom/den/office) and orientations (horizontal/vertical), covering wall sizes 40-43, likely for architectural or interior design planning purposes. It also includes sightings of John in garage and wall instances in office/den vertical orientation, consistent with ongoing spatial tracking.",
+      "evolution_history": [],
+      "id": "e2c43c47-e5d0-4d4c-b29a-649e3dce1fa0",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "bedroom",
+        "den",
+        "office",
+        "horizontal",
+        "vertical"
+      ],
+      "last_accessed": "202609220510",
+      "links": [
+        7,
+        6,
+        5
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "wall classification",
+        "room type orientation",
+        "architectural data",
+        "spatial analysis",
+        "wall orientation",
+        "garage sightings",
+        "wall size 40-43"
+      ],
+      "timestamp": "202609010800"
+    },
+    "segment": 8,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 9,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"sight\",\n  46,\n  \"john\",\n  \"garage\"\n ],\n [\n  \"wall\",\n  47,\n  \"office|den|vertical\",\n  0\n ],\n [\n  \"sight\",\n  48,\n  \"john\",\n  \"garage\"\n ]\n]",
+      "context": "This content appears to be a structured data snippet, possibly from a spatial or architectural database, listing locations (garage, office, den) and a wall attribute (vertical), with repeated sight references and the name John, aimed at technical or analytical audiences.",
+      "evolution_history": [],
+      "id": "e6123365-4093-42f3-8073-d05ba549998b",
+      "importance_score": 1.0,
+      "keywords": [
+        "sight",
+        "garage",
+        "wall",
+        "office",
+        "den",
+        "vertical"
+      ],
+      "last_accessed": "202609220510",
+      "links": [
+        0,
+        8
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "garage sightings",
+        "john location"
+      ],
+      "timestamp": "202609010900"
+    },
+    "segment": 9,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 10,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  50,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  50,\n  \"office|den|vertical\",\n  1\n ]\n]",
+      "context": "This content describes two wall configurations with dimensions of 50 units, one in a bedroom or den with horizontal orientation and one in an office or den with vertical orientation, likely for design or layout purposes.",
+      "evolution_history": [],
+      "id": "d0ff22c7-2db0-40b0-9fc1-12a7ab4e9251",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "den",
+        "bedroom",
+        "office",
+        "horizontal",
+        "vertical"
+      ],
+      "last_accessed": "202609220510",
+      "links": [
+        8,
+        7,
+        5,
+        6
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "wall classification",
+        "room type orientation",
+        "architectural data",
+        "spatial analysis",
+        "wall orientation",
+        "garage sightings"
+      ],
+      "timestamp": "202609011000"
+    },
+    "segment": 10,
+    "stage": "add_note"
+  }
+]

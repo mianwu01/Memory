@@ -1,0 +1,13 @@
+{
+  "case": 1,
+  "repeat": 1,
+  "prompt_sha256": "995f9fccfcf5a007517629c734f82fe40a00bb463684a2988076d1514e8908f6",
+  "extracted": "Tulsidas Balaram",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The sportsperson is Tulsidas Balaram. He made his international debut against Yugoslavia at the 1956 Melbourne Olympics and, six years later, helped India win football gold at the 1962 Asian Games in Jakarta, Indonesia [44448]. Jakarta was Indonesia’s capital, and Indonesia’s population was projected to exceed 300 million by 2050 [2817][63663]. The Asian Games is described as the second-largest multi-sport event after the Olympics [61503]. Balaram was born in 1936, before India’s 1947 independence, and received the Arjuna Award in 1962, the same year as the gold medal [17054][81022].\nExact Answer: Tulsidas Balaram\nConfidence: 95%",
+  "abstained_strict": false,
+  "abstained_prefix": false
+}

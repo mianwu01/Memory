@@ -1,0 +1,94 @@
+{
+  "query": "Flight F31 (Lena, day 2) now arrives at 19:45.\n{\"object_id\": \"F31\", \"op\": \"shift_reservation\", \"payload\": {\"arrival\": 1185}}",
+  "result": {
+    "results": [
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:42:21.221581+00:00",
+        "hash": "eaafbeff782a666bc0a75b8cad0d6f9f",
+        "id": "9a7c6a68-30d9-4dbb-884c-226e99d61a0e",
+        "memory": "Flight F31 (Lena, day 2) arrival was shifted to 18:00 (1080 minutes) on 2026-09-21.",
+        "metadata": null,
+        "score": 0.9009368617165883,
+        "updated_at": "2026-09-21T16:42:21.221581+00:00",
+        "user_id": "travel-s70-test-001"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:42:27.807429+00:00",
+        "hash": "ed47b85ad8f2f4b7e4ca9068a109cd5e",
+        "id": "94d802fa-8138-4293-97c1-664d6171e31a",
+        "memory": "Flight F20 (Lena, day 1) arrival was shifted to 23:30 (1410 minutes) on 2026-09-21.",
+        "metadata": null,
+        "score": 0.849649345044367,
+        "updated_at": "2026-09-21T16:42:27.807429+00:00",
+        "user_id": "travel-s70-test-001"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:42:37.866064+00:00",
+        "hash": "b53dca002ec2c77a51b5bcc0699dbd7b",
+        "id": "73346fa0-fb31-4d9f-9f11-5d5ca8dbf69a",
+        "memory": "Transfer T35 (Lena, day 2) pickup was shifted to 17:25 (1045 minutes) on 2026-09-21.",
+        "metadata": null,
+        "score": 0.7244848671347631,
+        "updated_at": "2026-09-21T16:42:37.866064+00:00",
+        "user_id": "travel-s70-test-001"
+      },
+      {
+        "created_at": "2026-09-21T16:42:32.906338+00:00",
+        "hash": "c384dabb4ff6f804f07e78f00f05a430",
+        "id": "fc453c6b-02e7-4cab-b5fb-0f9508351166",
+        "memory": "Flight F72 (Bob, day 1) arrival was shifted to 22:30 (1350 minutes) on 2026-09-21.",
+        "metadata": null,
+        "score": 0.6909242597315993,
+        "updated_at": "2026-09-21T16:42:32.906338+00:00",
+        "user_id": "travel-s70-test-001"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:42:43.979308+00:00",
+        "hash": "f11e2d33081f7f34b0485547751525cf",
+        "id": "2fae3d0a-59a7-4901-b1a3-aa1a5c60a120",
+        "memory": "Flight F72 (Bob, day 1) arrival was shifted to 23:00 (1380 minutes) on 2026-09-21.",
+        "metadata": null,
+        "score": 0.683407137735983,
+        "updated_at": "2026-09-21T16:42:43.979308+00:00",
+        "user_id": "travel-s70-test-001"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:42:43.981916+00:00",
+        "hash": "fb096f4658b52d2b06c1e109cd8d2af4",
+        "id": "bb9dcf00-c0cc-4664-a163-92b42b257588",
+        "memory": "Reservation T27 pickup was shifted to 1400 minutes on 2026-09-21.",
+        "metadata": null,
+        "score": 0.3070082787496179,
+        "updated_at": "2026-09-21T16:42:43.981916+00:00",
+        "user_id": "travel-s70-test-001"
+      },
+      {
+        "created_at": "2026-09-21T16:42:32.908754+00:00",
+        "hash": "7c7a6a2e8a8d914e4491c9260245d6a1",
+        "id": "eb9dd5ba-1eef-4e49-805e-54cfd04fbfeb",
+        "memory": "Reservation T27 pickup was shifted to 1370 minutes on 2026-09-21.",
+        "metadata": null,
+        "score": 0.30171126654601216,
+        "updated_at": "2026-09-21T16:42:32.908754+00:00",
+        "user_id": "travel-s70-test-001"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:42:21.226866+00:00",
+        "hash": "62154fddd400e0f650197e55a886bceb",
+        "id": "4dc4b6fe-598e-4d34-a6d8-c10510371d4d",
+        "memory": "Reservation S64 check-in was shifted to 1140 minutes with a fee of 25 on 2026-09-21.",
+        "metadata": null,
+        "score": 0.27083300370609376,
+        "updated_at": "2026-09-21T16:42:21.226866+00:00",
+        "user_id": "travel-s70-test-001"
+      }
+    ]
+  },
+  "text": "Flight F31 (Lena, day 2) arrival was shifted to 18:00 (1080 minutes) on 2026-09-21.\nFlight F20 (Lena, day 1) arrival was shifted to 23:30 (1410 minutes) on 2026-09-21.\nTransfer T35 (Lena, day 2) pickup was shifted to 17:25 (1045 minutes) on 2026-09-21.\nFlight F72 (Bob, day 1) arrival was shifted to 22:30 (1350 minutes) on 2026-09-21.\nFlight F72 (Bob, day 1) arrival was shifted to 23:00 (1380 minutes) on 2026-09-21.\nReservation T27 pickup was shifted to 1400 minutes on 2026-09-21.\nReservation T27 pickup was shifted to 1370 minutes on 2026-09-21.\nReservation S64 check-in was shifted to 1140 minutes with a fee of 25 on 2026-09-21."
+}

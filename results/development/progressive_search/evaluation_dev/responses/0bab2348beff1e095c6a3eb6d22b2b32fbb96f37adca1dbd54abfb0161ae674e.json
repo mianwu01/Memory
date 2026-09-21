@@ -1,0 +1,10 @@
+{
+  "case": 3,
+  "prompt_sha256": "0bab2348beff1e095c6a3eb6d22b2b32fbb96f37adca1dbd54abfb0161ae674e",
+  "extracted": "Manuelita",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "deepseek-v4-flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The writer/producer is Manuel García Ferré, creator of *The Adventures of Hijitus* [60723][20521]. The movie clue points to *Manuelita*: in that 1999 film, Larguirucho from *The Adventures of Hijitus* appears in a scene as a school janitor/assistant teacher—essentially a cameo in his regular clothes, rather than as part of the film’s animal-centered setting [86904].\n\nExact Answer: Manuelita\n\nConfidence: 78%"
+}

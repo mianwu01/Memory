@@ -1,0 +1,13 @@
+{
+  "case": 6,
+  "repeat": 2,
+  "prompt_sha256": "9c0709ee8b61221ef1b57f8db7f2c84bcbf18fa47a4542156f2304e587c6ffff",
+  "extracted": "New York University",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to Bowen Yang: a former SNL/NBC writer who later became a cast member, a New York University graduate, a French major, and someone whose senior thesis was on a French Battalion Drum. NYU was founded in 1831. No specific memory document is available to cite for this identification.\nExact Answer: New York University\nConfidence: 85%",
+  "abstained_strict": false,
+  "abstained_prefix": false
+}

@@ -1,0 +1,2359 @@
+{
+  "ci_scope": "episode-paired, stratified by seed; conditional on evaluated seeds",
+  "controls": {
+    "shopping32/100": {
+      "complete/parser": {
+        "n": 192,
+        "ees": 0.9739583333333334,
+        "records": 9.65625,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/key2": {
+        "n": 192,
+        "ees": 0.9947916666666666,
+        "records": 35.848958333333336,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/parser": {
+        "n": 192,
+        "ees": 0.16145833333333334,
+        "records": 3.375,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/key2": {
+        "n": 192,
+        "ees": 0.7864583333333334,
+        "records": 9.859375,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/parser": {
+        "n": 192,
+        "ees": 0.9739583333333334,
+        "records": 9.65625,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/key2": {
+        "n": 192,
+        "ees": 0.9947916666666666,
+        "records": 35.848958333333336,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/parser": {
+        "n": 192,
+        "ees": 0.9739583333333334,
+        "records": 9.65625,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/key2": {
+        "n": 192,
+        "ees": 0.9947916666666666,
+        "records": 35.848958333333336,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/parser": {
+        "n": 192,
+        "ees": 0.16145833333333334,
+        "records": 3.375,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/key2": {
+        "n": 192,
+        "ees": 0.7864583333333334,
+        "records": 9.859375,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/parser": {
+        "n": 192,
+        "ees": 0.453125,
+        "records": 5.390625,
+        "same_complete_prompt_count": 64,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/key2": {
+        "n": 192,
+        "ees": 0.8489583333333334,
+        "records": 18.520833333333332,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/parser": {
+        "n": 192,
+        "ees": 0.9739583333333334,
+        "records": 9.65625,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/key2": {
+        "n": 192,
+        "ees": 0.9947916666666666,
+        "records": 35.848958333333336,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/parser": {
+        "n": 192,
+        "ees": 0.9635416666666666,
+        "records": 9.3125,
+        "same_complete_prompt_count": 64,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/key2": {
+        "n": 192,
+        "ees": 0.90625,
+        "records": 31.817708333333332,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/response2": {
+        "n": 192,
+        "ees": 0.953125,
+        "records": 25.833333333333332,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "full": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 100.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "bm25_16": {
+        "n": 192,
+        "ees": 0.5677083333333334,
+        "records": 16.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "recency_16": {
+        "n": 192,
+        "ees": 0.6822916666666666,
+        "records": 16.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/matched": {
+        "n": 192,
+        "ees": 0.4010416666666667,
+        "records": 9.65625,
+        "same_complete_prompt_count": 64,
+        "max_abs_token_residual": 20,
+        "exact_proxy_token_match_count": 175
+      },
+      "random_17/matched": {
+        "n": 192,
+        "ees": 0.09375,
+        "records": 9.65625,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 20,
+        "exact_proxy_token_match_count": 153
+      },
+      "permuted_29/matched": {
+        "n": 192,
+        "ees": 0.9739583333333334,
+        "records": 9.65625,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 192
+      },
+      "random_29/matched": {
+        "n": 192,
+        "ees": 0.08854166666666667,
+        "records": 9.65625,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 20,
+        "exact_proxy_token_match_count": 158
+      },
+      "permuted_43/matched": {
+        "n": 192,
+        "ees": 0.9270833333333334,
+        "records": 9.65625,
+        "same_complete_prompt_count": 138,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 192
+      },
+      "random_43/matched": {
+        "n": 192,
+        "ees": 0.09375,
+        "records": 9.65625,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 24,
+        "exact_proxy_token_match_count": 147
+      }
+    },
+    "shopping32/500": {
+      "complete/parser": {
+        "n": 192,
+        "ees": 0.9791666666666666,
+        "records": 9.682291666666666,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/key2": {
+        "n": 192,
+        "ees": 0.9479166666666666,
+        "records": 38.447916666666664,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/parser": {
+        "n": 192,
+        "ees": 0.16666666666666666,
+        "records": 3.3802083333333335,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/key2": {
+        "n": 192,
+        "ees": 0.7135416666666666,
+        "records": 9.609375,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/parser": {
+        "n": 192,
+        "ees": 0.9791666666666666,
+        "records": 9.682291666666666,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/key2": {
+        "n": 192,
+        "ees": 0.9479166666666666,
+        "records": 38.447916666666664,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/parser": {
+        "n": 192,
+        "ees": 0.9791666666666666,
+        "records": 9.682291666666666,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/key2": {
+        "n": 192,
+        "ees": 0.9479166666666666,
+        "records": 38.447916666666664,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/parser": {
+        "n": 192,
+        "ees": 0.16666666666666666,
+        "records": 3.3802083333333335,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/key2": {
+        "n": 192,
+        "ees": 0.7135416666666666,
+        "records": 9.609375,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/parser": {
+        "n": 192,
+        "ees": 0.4583333333333333,
+        "records": 5.458333333333333,
+        "same_complete_prompt_count": 64,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/key2": {
+        "n": 192,
+        "ees": 0.7916666666666666,
+        "records": 19.255208333333332,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/parser": {
+        "n": 192,
+        "ees": 0.9791666666666666,
+        "records": 9.682291666666666,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/key2": {
+        "n": 192,
+        "ees": 0.9479166666666666,
+        "records": 38.447916666666664,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/parser": {
+        "n": 192,
+        "ees": 0.9739583333333334,
+        "records": 9.338541666666666,
+        "same_complete_prompt_count": 64,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/key2": {
+        "n": 192,
+        "ees": 0.859375,
+        "records": 34.010416666666664,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/response2": {
+        "n": 192,
+        "ees": 0.8541666666666666,
+        "records": 26.947916666666668,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "full": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 500.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "bm25_16": {
+        "n": 192,
+        "ees": 0.052083333333333336,
+        "records": 16.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "recency_16": {
+        "n": 192,
+        "ees": 0.65625,
+        "records": 16.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/matched": {
+        "n": 192,
+        "ees": 0.40625,
+        "records": 9.682291666666666,
+        "same_complete_prompt_count": 64,
+        "max_abs_token_residual": 20,
+        "exact_proxy_token_match_count": 182
+      },
+      "random_17/matched": {
+        "n": 192,
+        "ees": 0.08854166666666667,
+        "records": 9.682291666666666,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 19,
+        "exact_proxy_token_match_count": 167
+      },
+      "permuted_29/matched": {
+        "n": 192,
+        "ees": 0.9791666666666666,
+        "records": 9.682291666666666,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 192
+      },
+      "random_29/matched": {
+        "n": 192,
+        "ees": 0.078125,
+        "records": 9.682291666666666,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 15,
+        "exact_proxy_token_match_count": 167
+      },
+      "permuted_43/matched": {
+        "n": 192,
+        "ees": 0.9583333333333334,
+        "records": 9.682291666666666,
+        "same_complete_prompt_count": 139,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 192
+      },
+      "random_43/matched": {
+        "n": 192,
+        "ees": 0.0625,
+        "records": 9.682291666666666,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 16,
+        "exact_proxy_token_match_count": 166
+      }
+    },
+    "shopping32/c100": {
+      "complete/parser": {
+        "n": 192,
+        "ees": 0.9791666666666666,
+        "records": 9.21875,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/key2": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 30.828125,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/parser": {
+        "n": 192,
+        "ees": 0.15625,
+        "records": 3.2864583333333335,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/key2": {
+        "n": 192,
+        "ees": 0.7552083333333334,
+        "records": 9.557291666666666,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/parser": {
+        "n": 192,
+        "ees": 0.9791666666666666,
+        "records": 9.21875,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/key2": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 30.828125,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/parser": {
+        "n": 192,
+        "ees": 0.9791666666666666,
+        "records": 9.21875,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/key2": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 30.828125,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/parser": {
+        "n": 192,
+        "ees": 0.15625,
+        "records": 3.2864583333333335,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/key2": {
+        "n": 192,
+        "ees": 0.7552083333333334,
+        "records": 9.557291666666666,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/parser": {
+        "n": 192,
+        "ees": 0.453125,
+        "records": 5.25,
+        "same_complete_prompt_count": 64,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/key2": {
+        "n": 192,
+        "ees": 0.8125,
+        "records": 16.567708333333332,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/parser": {
+        "n": 192,
+        "ees": 0.9791666666666666,
+        "records": 9.21875,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/key2": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 30.828125,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/parser": {
+        "n": 192,
+        "ees": 0.96875,
+        "records": 8.90625,
+        "same_complete_prompt_count": 64,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/key2": {
+        "n": 192,
+        "ees": 0.9166666666666666,
+        "records": 27.536458333333332,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/response2": {
+        "n": 192,
+        "ees": 0.921875,
+        "records": 23.25,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "full": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 100.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "bm25_16": {
+        "n": 192,
+        "ees": 0.5677083333333334,
+        "records": 16.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "recency_16": {
+        "n": 192,
+        "ees": 0.7135416666666666,
+        "records": 16.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/matched": {
+        "n": 192,
+        "ees": 0.4010416666666667,
+        "records": 9.21875,
+        "same_complete_prompt_count": 64,
+        "max_abs_token_residual": 26,
+        "exact_proxy_token_match_count": 156
+      },
+      "random_17/matched": {
+        "n": 192,
+        "ees": 0.057291666666666664,
+        "records": 9.21875,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 22,
+        "exact_proxy_token_match_count": 135
+      },
+      "permuted_29/matched": {
+        "n": 192,
+        "ees": 0.9791666666666666,
+        "records": 9.21875,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 192
+      },
+      "random_29/matched": {
+        "n": 192,
+        "ees": 0.0625,
+        "records": 9.21875,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 24,
+        "exact_proxy_token_match_count": 128
+      },
+      "permuted_43/matched": {
+        "n": 192,
+        "ees": 0.953125,
+        "records": 9.21875,
+        "same_complete_prompt_count": 142,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 192
+      },
+      "random_43/matched": {
+        "n": 192,
+        "ees": 0.0625,
+        "records": 9.21875,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 22,
+        "exact_proxy_token_match_count": 127
+      }
+    },
+    "shopping32/native": {
+      "complete/parser": {
+        "n": 192,
+        "ees": 0.9739583333333334,
+        "records": 6.869791666666667,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/key2": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 13.802083333333334,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/parser": {
+        "n": 192,
+        "ees": 0.16145833333333334,
+        "records": 2.7083333333333335,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/key2": {
+        "n": 192,
+        "ees": 0.828125,
+        "records": 8.479166666666666,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/parser": {
+        "n": 192,
+        "ees": 0.9739583333333334,
+        "records": 6.869791666666667,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/key2": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 13.802083333333334,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/parser": {
+        "n": 192,
+        "ees": 0.9739583333333334,
+        "records": 6.869791666666667,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/key2": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 13.802083333333334,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/parser": {
+        "n": 192,
+        "ees": 0.16145833333333334,
+        "records": 2.7083333333333335,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/key2": {
+        "n": 192,
+        "ees": 0.828125,
+        "records": 8.479166666666666,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/parser": {
+        "n": 192,
+        "ees": 0.453125,
+        "records": 4.052083333333333,
+        "same_complete_prompt_count": 64,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/key2": {
+        "n": 192,
+        "ees": 0.8802083333333334,
+        "records": 10.15625,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/parser": {
+        "n": 192,
+        "ees": 0.9739583333333334,
+        "records": 6.869791666666667,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/key2": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 13.802083333333334,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/parser": {
+        "n": 192,
+        "ees": 0.9583333333333334,
+        "records": 6.708333333333333,
+        "same_complete_prompt_count": 64,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/key2": {
+        "n": 192,
+        "ees": 0.984375,
+        "records": 13.109375,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/response2": {
+        "n": 192,
+        "ees": 0.9895833333333334,
+        "records": 13.6875,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "full": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 14.6875,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "bm25_16": {
+        "n": 192,
+        "ees": 0.984375,
+        "records": 13.765625,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "recency_16": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 13.765625,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/matched": {
+        "n": 192,
+        "ees": 0.7552083333333334,
+        "records": 6.869791666666667,
+        "same_complete_prompt_count": 93,
+        "max_abs_token_residual": 27,
+        "exact_proxy_token_match_count": 160
+      },
+      "random_17/matched": {
+        "n": 192,
+        "ees": 0.5833333333333334,
+        "records": 6.869791666666667,
+        "same_complete_prompt_count": 29,
+        "max_abs_token_residual": 27,
+        "exact_proxy_token_match_count": 114
+      },
+      "permuted_29/matched": {
+        "n": 192,
+        "ees": 0.9739583333333334,
+        "records": 6.869791666666667,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 192
+      },
+      "random_29/matched": {
+        "n": 192,
+        "ees": 0.6145833333333334,
+        "records": 6.869791666666667,
+        "same_complete_prompt_count": 24,
+        "max_abs_token_residual": 28,
+        "exact_proxy_token_match_count": 123
+      },
+      "permuted_43/matched": {
+        "n": 192,
+        "ees": 0.96875,
+        "records": 6.869791666666667,
+        "same_complete_prompt_count": 174,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 192
+      },
+      "random_43/matched": {
+        "n": 192,
+        "ees": 0.609375,
+        "records": 6.869791666666667,
+        "same_complete_prompt_count": 26,
+        "max_abs_token_residual": 25,
+        "exact_proxy_token_match_count": 123
+      }
+    },
+    "travel/100": {
+      "complete/parser": {
+        "n": 191,
+        "ees": 1.0,
+        "records": 6.382198952879581,
+        "same_complete_prompt_count": 191,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/key2": {
+        "n": 191,
+        "ees": 0.9424083769633508,
+        "records": 18.403141361256544,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/parser": {
+        "n": 191,
+        "ees": 0.03664921465968586,
+        "records": 0.1256544502617801,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/key2": {
+        "n": 191,
+        "ees": 0.04712041884816754,
+        "records": 0.3769633507853403,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/parser": {
+        "n": 191,
+        "ees": 1.0,
+        "records": 6.382198952879581,
+        "same_complete_prompt_count": 191,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/key2": {
+        "n": 191,
+        "ees": 0.9424083769633508,
+        "records": 18.403141361256544,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/parser": {
+        "n": 191,
+        "ees": 1.0,
+        "records": 6.382198952879581,
+        "same_complete_prompt_count": 128,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/key2": {
+        "n": 191,
+        "ees": 0.9424083769633508,
+        "records": 18.403141361256544,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/parser": {
+        "n": 191,
+        "ees": 1.0,
+        "records": 6.382198952879581,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/key2": {
+        "n": 191,
+        "ees": 0.9424083769633508,
+        "records": 18.403141361256544,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/parser": {
+        "n": 191,
+        "ees": 0.93717277486911,
+        "records": 5.69109947643979,
+        "same_complete_prompt_count": 129,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/key2": {
+        "n": 191,
+        "ees": 0.9057591623036649,
+        "records": 16.418848167539267,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/parser": {
+        "n": 191,
+        "ees": 0.05235602094240838,
+        "records": 0.23036649214659685,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/key2": {
+        "n": 191,
+        "ees": 0.05759162303664921,
+        "records": 0.7277486910994765,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/parser": {
+        "n": 191,
+        "ees": 1.0,
+        "records": 6.382198952879581,
+        "same_complete_prompt_count": 47,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/key2": {
+        "n": 191,
+        "ees": 0.9424083769633508,
+        "records": 18.403141361256544,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/response2": {
+        "n": 191,
+        "ees": 0.9319371727748691,
+        "records": 18.963350785340314,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "full": {
+        "n": 191,
+        "ees": 1.0,
+        "records": 100.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "bm25_16": {
+        "n": 191,
+        "ees": 0.031413612565445025,
+        "records": 16.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "recency_16": {
+        "n": 191,
+        "ees": 0.46596858638743455,
+        "records": 16.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/matched": {
+        "n": 191,
+        "ees": 0.837696335078534,
+        "records": 6.382198952879581,
+        "same_complete_prompt_count": 94,
+        "max_abs_token_residual": 2,
+        "exact_proxy_token_match_count": 190
+      },
+      "random_17/matched": {
+        "n": 191,
+        "ees": 0.06806282722513089,
+        "records": 6.382198952879581,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 4,
+        "exact_proxy_token_match_count": 186
+      },
+      "permuted_29/matched": {
+        "n": 191,
+        "ees": 0.06282722513089005,
+        "records": 6.382198952879581,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 4,
+        "exact_proxy_token_match_count": 182
+      },
+      "random_29/matched": {
+        "n": 191,
+        "ees": 0.05759162303664921,
+        "records": 6.382198952879581,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 4,
+        "exact_proxy_token_match_count": 181
+      },
+      "permuted_43/matched": {
+        "n": 191,
+        "ees": 1.0,
+        "records": 6.382198952879581,
+        "same_complete_prompt_count": 128,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 191
+      },
+      "random_43/matched": {
+        "n": 191,
+        "ees": 0.06806282722513089,
+        "records": 6.382198952879581,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 4,
+        "exact_proxy_token_match_count": 184
+      }
+    },
+    "travel/500": {
+      "complete/parser": {
+        "n": 190,
+        "ees": 1.0,
+        "records": 6.494736842105263,
+        "same_complete_prompt_count": 190,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/key2": {
+        "n": 190,
+        "ees": 0.7947368421052632,
+        "records": 19.63157894736842,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/parser": {
+        "n": 190,
+        "ees": 0.03684210526315789,
+        "records": 0.12631578947368421,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/key2": {
+        "n": 190,
+        "ees": 0.042105263157894736,
+        "records": 0.3736842105263158,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/parser": {
+        "n": 190,
+        "ees": 1.0,
+        "records": 6.494736842105263,
+        "same_complete_prompt_count": 190,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/key2": {
+        "n": 190,
+        "ees": 0.7947368421052632,
+        "records": 19.63157894736842,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/parser": {
+        "n": 190,
+        "ees": 1.0,
+        "records": 6.494736842105263,
+        "same_complete_prompt_count": 127,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/key2": {
+        "n": 190,
+        "ees": 0.7947368421052632,
+        "records": 19.63157894736842,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/parser": {
+        "n": 190,
+        "ees": 1.0,
+        "records": 6.494736842105263,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/key2": {
+        "n": 190,
+        "ees": 0.7947368421052632,
+        "records": 19.63157894736842,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/parser": {
+        "n": 190,
+        "ees": 0.9263157894736842,
+        "records": 5.7631578947368425,
+        "same_complete_prompt_count": 128,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/key2": {
+        "n": 190,
+        "ees": 0.7631578947368421,
+        "records": 17.45263157894737,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/parser": {
+        "n": 190,
+        "ees": 0.05263157894736842,
+        "records": 0.24736842105263157,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/key2": {
+        "n": 190,
+        "ees": 0.04736842105263158,
+        "records": 0.7578947368421053,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/parser": {
+        "n": 190,
+        "ees": 1.0,
+        "records": 6.494736842105263,
+        "same_complete_prompt_count": 46,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/key2": {
+        "n": 190,
+        "ees": 0.7947368421052632,
+        "records": 19.63157894736842,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/response2": {
+        "n": 190,
+        "ees": 0.8842105263157894,
+        "records": 20.678947368421053,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "full": {
+        "n": 190,
+        "ees": 1.0,
+        "records": 500.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "bm25_16": {
+        "n": 190,
+        "ees": 0.03684210526315789,
+        "records": 16.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "recency_16": {
+        "n": 190,
+        "ees": 0.26842105263157895,
+        "records": 16.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/matched": {
+        "n": 190,
+        "ees": 0.8105263157894737,
+        "records": 6.494736842105263,
+        "same_complete_prompt_count": 93,
+        "max_abs_token_residual": 4,
+        "exact_proxy_token_match_count": 188
+      },
+      "random_17/matched": {
+        "n": 190,
+        "ees": 0.042105263157894736,
+        "records": 6.494736842105263,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 5,
+        "exact_proxy_token_match_count": 184
+      },
+      "permuted_29/matched": {
+        "n": 190,
+        "ees": 0.06315789473684211,
+        "records": 6.494736842105263,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 7,
+        "exact_proxy_token_match_count": 180
+      },
+      "random_29/matched": {
+        "n": 190,
+        "ees": 0.03684210526315789,
+        "records": 6.494736842105263,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 7,
+        "exact_proxy_token_match_count": 180
+      },
+      "permuted_43/matched": {
+        "n": 190,
+        "ees": 1.0,
+        "records": 6.494736842105263,
+        "same_complete_prompt_count": 127,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 190
+      },
+      "random_43/matched": {
+        "n": 190,
+        "ees": 0.05789473684210526,
+        "records": 6.494736842105263,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 4,
+        "exact_proxy_token_match_count": 180
+      }
+    },
+    "travel/c100": {
+      "complete/parser": {
+        "n": 190,
+        "ees": 1.0,
+        "records": 6.373684210526315,
+        "same_complete_prompt_count": 190,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/key2": {
+        "n": 190,
+        "ees": 0.9157894736842105,
+        "records": 18.42105263157895,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/parser": {
+        "n": 190,
+        "ees": 0.03684210526315789,
+        "records": 0.11578947368421053,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/key2": {
+        "n": 190,
+        "ees": 0.042105263157894736,
+        "records": 0.34210526315789475,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/parser": {
+        "n": 190,
+        "ees": 1.0,
+        "records": 6.373684210526315,
+        "same_complete_prompt_count": 190,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/key2": {
+        "n": 190,
+        "ees": 0.9157894736842105,
+        "records": 18.42105263157895,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/parser": {
+        "n": 190,
+        "ees": 1.0,
+        "records": 6.373684210526315,
+        "same_complete_prompt_count": 127,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/key2": {
+        "n": 190,
+        "ees": 0.9157894736842105,
+        "records": 18.42105263157895,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/parser": {
+        "n": 190,
+        "ees": 1.0,
+        "records": 6.373684210526315,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/key2": {
+        "n": 190,
+        "ees": 0.9157894736842105,
+        "records": 18.42105263157895,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/parser": {
+        "n": 190,
+        "ees": 0.9263157894736842,
+        "records": 5.657894736842105,
+        "same_complete_prompt_count": 128,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/key2": {
+        "n": 190,
+        "ees": 0.8736842105263158,
+        "records": 16.436842105263157,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/parser": {
+        "n": 190,
+        "ees": 0.05263157894736842,
+        "records": 0.22105263157894736,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/key2": {
+        "n": 190,
+        "ees": 0.05789473684210526,
+        "records": 0.7,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/parser": {
+        "n": 190,
+        "ees": 1.0,
+        "records": 6.373684210526315,
+        "same_complete_prompt_count": 46,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/key2": {
+        "n": 190,
+        "ees": 0.9157894736842105,
+        "records": 18.42105263157895,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/response2": {
+        "n": 190,
+        "ees": 0.8842105263157894,
+        "records": 18.573684210526316,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "full": {
+        "n": 190,
+        "ees": 1.0,
+        "records": 100.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "bm25_16": {
+        "n": 190,
+        "ees": 0.03684210526315789,
+        "records": 16.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "recency_16": {
+        "n": 190,
+        "ees": 0.5526315789473685,
+        "records": 16.0,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/matched": {
+        "n": 190,
+        "ees": 0.8,
+        "records": 6.373684210526315,
+        "same_complete_prompt_count": 94,
+        "max_abs_token_residual": 4,
+        "exact_proxy_token_match_count": 188
+      },
+      "random_17/matched": {
+        "n": 190,
+        "ees": 0.04736842105263158,
+        "records": 6.373684210526315,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 6,
+        "exact_proxy_token_match_count": 181
+      },
+      "permuted_29/matched": {
+        "n": 190,
+        "ees": 0.05263157894736842,
+        "records": 6.373684210526315,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 6,
+        "exact_proxy_token_match_count": 181
+      },
+      "random_29/matched": {
+        "n": 190,
+        "ees": 0.042105263157894736,
+        "records": 6.373684210526315,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 6,
+        "exact_proxy_token_match_count": 181
+      },
+      "permuted_43/matched": {
+        "n": 190,
+        "ees": 1.0,
+        "records": 6.373684210526315,
+        "same_complete_prompt_count": 127,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 190
+      },
+      "random_43/matched": {
+        "n": 190,
+        "ees": 0.04736842105263158,
+        "records": 6.373684210526315,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 7,
+        "exact_proxy_token_match_count": 173
+      }
+    },
+    "travel/native": {
+      "complete/parser": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 5.588541666666667,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/key2": {
+        "n": 192,
+        "ees": 0.9947916666666666,
+        "records": 11.958333333333334,
+        "same_complete_prompt_count": 2,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/parser": {
+        "n": 192,
+        "ees": 0.052083333333333336,
+        "records": 0.11458333333333333,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "query_only/key2": {
+        "n": 192,
+        "ees": 0.052083333333333336,
+        "records": 0.3125,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/parser": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 5.588541666666667,
+        "same_complete_prompt_count": 192,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open/key2": {
+        "n": 192,
+        "ees": 0.9947916666666666,
+        "records": 11.958333333333334,
+        "same_complete_prompt_count": 2,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/parser": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 5.588541666666667,
+        "same_complete_prompt_count": 128,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_open_x3/key2": {
+        "n": 192,
+        "ees": 0.9947916666666666,
+        "records": 11.958333333333334,
+        "same_complete_prompt_count": 1,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/parser": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 5.588541666666667,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "grace_pcmci_g2/key2": {
+        "n": 192,
+        "ees": 0.9947916666666666,
+        "records": 11.958333333333334,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/parser": {
+        "n": 192,
+        "ees": 0.9375,
+        "records": 5.005208333333333,
+        "same_complete_prompt_count": 130,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/key2": {
+        "n": 192,
+        "ees": 0.9583333333333334,
+        "records": 10.911458333333334,
+        "same_complete_prompt_count": 2,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/parser": {
+        "n": 192,
+        "ees": 0.052083333333333336,
+        "records": 0.18229166666666666,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_29/key2": {
+        "n": 192,
+        "ees": 0.057291666666666664,
+        "records": 0.484375,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/parser": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 5.588541666666667,
+        "same_complete_prompt_count": 47,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_43/key2": {
+        "n": 192,
+        "ees": 0.9947916666666666,
+        "records": 11.958333333333334,
+        "same_complete_prompt_count": 1,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "complete/response2": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 12.260416666666666,
+        "same_complete_prompt_count": 2,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "full": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 18.333333333333332,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "bm25_16": {
+        "n": 192,
+        "ees": 0.921875,
+        "records": 14.9375,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "recency_16": {
+        "n": 192,
+        "ees": 0.9270833333333334,
+        "records": 14.9375,
+        "same_complete_prompt_count": 0,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 0
+      },
+      "permuted_17/matched": {
+        "n": 192,
+        "ees": 0.890625,
+        "records": 5.588541666666667,
+        "same_complete_prompt_count": 102,
+        "max_abs_token_residual": 3,
+        "exact_proxy_token_match_count": 189
+      },
+      "random_17/matched": {
+        "n": 192,
+        "ees": 0.2916666666666667,
+        "records": 5.588541666666667,
+        "same_complete_prompt_count": 11,
+        "max_abs_token_residual": 9,
+        "exact_proxy_token_match_count": 168
+      },
+      "permuted_29/matched": {
+        "n": 192,
+        "ees": 0.2552083333333333,
+        "records": 5.588541666666667,
+        "same_complete_prompt_count": 6,
+        "max_abs_token_residual": 9,
+        "exact_proxy_token_match_count": 162
+      },
+      "random_29/matched": {
+        "n": 192,
+        "ees": 0.25,
+        "records": 5.588541666666667,
+        "same_complete_prompt_count": 5,
+        "max_abs_token_residual": 9,
+        "exact_proxy_token_match_count": 160
+      },
+      "permuted_43/matched": {
+        "n": 192,
+        "ees": 1.0,
+        "records": 5.588541666666667,
+        "same_complete_prompt_count": 128,
+        "max_abs_token_residual": 0,
+        "exact_proxy_token_match_count": 192
+      },
+      "random_43/matched": {
+        "n": 192,
+        "ees": 0.23958333333333334,
+        "records": 5.588541666666667,
+        "same_complete_prompt_count": 2,
+        "max_abs_token_residual": 8,
+        "exact_proxy_token_match_count": 162
+      }
+    }
+  },
+  "reader": {
+    "shopping32/500": {
+      "means": {
+        "key2": {
+          "ees": 0.9583333333333334,
+          "n_records": 37.416666666666664
+        },
+        "response2": {
+          "ees": 0.8697916666666666,
+          "n_records": 26.776041666666668
+        },
+        "component2": {
+          "ees": 1.0,
+          "n_records": 30.697916666666668
+        }
+      },
+      "paired": {
+        "n": 192,
+        "difference": 0.041666666666666664,
+        "ci95": [
+          0.015625,
+          0.07291666666666667
+        ]
+      }
+    },
+    "shopping32/c100": {
+      "means": {
+        "key2": {
+          "ees": 1.0,
+          "n_records": 30.057291666666668
+        },
+        "response2": {
+          "ees": 0.9322916666666666,
+          "n_records": 23.088541666666668
+        },
+        "component2": {
+          "ees": 1.0,
+          "n_records": 27.317708333333332
+        }
+      },
+      "paired": {
+        "n": 192,
+        "difference": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "shopping32/native": {
+      "means": {
+        "key2": {
+          "ees": 0.9947916666666666,
+          "n_records": 13.364583333333334
+        },
+        "response2": {
+          "ees": 0.9947916666666666,
+          "n_records": 13.260416666666666
+        },
+        "component2": {
+          "ees": 0.9947916666666666,
+          "n_records": 13.401041666666666
+        }
+      },
+      "paired": {
+        "n": 192,
+        "difference": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "travel/500": {
+      "means": {
+        "key2": {
+          "ees": 0.8125,
+          "n_records": 20.145833333333332
+        },
+        "response2": {
+          "ees": 0.875,
+          "n_records": 21.026041666666668
+        },
+        "component2": {
+          "ees": 0.9010416666666666,
+          "n_records": 21.364583333333332
+        }
+      },
+      "paired": {
+        "n": 192,
+        "difference": 0.08854166666666667,
+        "ci95": [
+          0.046875,
+          0.13020833333333334
+        ]
+      }
+    },
+    "travel/c100": {
+      "means": {
+        "key2": {
+          "ees": 0.8802083333333334,
+          "n_records": 18.541666666666668
+        },
+        "response2": {
+          "ees": 0.8958333333333334,
+          "n_records": 18.770833333333332
+        },
+        "component2": {
+          "ees": 0.921875,
+          "n_records": 19.885416666666668
+        }
+      },
+      "paired": {
+        "n": 192,
+        "difference": 0.041666666666666664,
+        "ci95": [
+          0.010416666666666666,
+          0.07291666666666667
+        ]
+      }
+    },
+    "travel/native": {
+      "means": {
+        "key2": {
+          "ees": 1.0,
+          "n_records": 11.640625
+        },
+        "response2": {
+          "ees": 1.0,
+          "n_records": 11.880208333333334
+        },
+        "component2": {
+          "ees": 1.0,
+          "n_records": 11.869791666666666
+        }
+      },
+      "paired": {
+        "n": 192,
+        "difference": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "actor": {
+    "travel/500": {
+      "bm25_16": {
+        "n": 23,
+        "ees": 0.13043478260869565,
+        "truncated_first": 5,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.34782608695652173,
+          "ci95": [
+            -0.5217391304347826,
+            -0.17391304347826086
+          ]
+        }
+      },
+      "complete/key2": {
+        "n": 23,
+        "ees": 0.21739130434782608,
+        "truncated_first": 3,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.2608695652173913,
+          "ci95": [
+            -0.4782608695652174,
+            -0.043478260869565216
+          ]
+        }
+      },
+      "complete/parser": {
+        "n": 23,
+        "ees": 0.4782608695652174,
+        "truncated_first": 0,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "component2": {
+        "n": 23,
+        "ees": 0.30434782608695654,
+        "truncated_first": 0,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.17391304347826086,
+          "ci95": [
+            -0.391304347826087,
+            0.043478260869565216
+          ]
+        }
+      },
+      "full": {
+        "n": 23,
+        "ees": 0.30434782608695654,
+        "truncated_first": 4,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.17391304347826086,
+          "ci95": [
+            -0.391304347826087,
+            0.043478260869565216
+          ]
+        }
+      },
+      "grace_open_x3/parser": {
+        "n": 23,
+        "ees": 0.34782608695652173,
+        "truncated_first": 0,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.13043478260869565,
+          "ci95": [
+            -0.2608695652173913,
+            -0.043478260869565216
+          ]
+        }
+      },
+      "permuted_17/matched": {
+        "n": 23,
+        "ees": 0.30434782608695654,
+        "truncated_first": 1,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.17391304347826086,
+          "ci95": [
+            -0.30434782608695654,
+            -0.043478260869565216
+          ]
+        }
+      },
+      "permuted_29/matched": {
+        "n": 23,
+        "ees": 0.391304347826087,
+        "truncated_first": 1,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.08695652173913043,
+          "ci95": [
+            -0.30434782608695654,
+            0.08695652173913043
+          ]
+        }
+      },
+      "permuted_43/matched": {
+        "n": 23,
+        "ees": 0.34782608695652173,
+        "truncated_first": 0,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.13043478260869565,
+          "ci95": [
+            -0.2608695652173913,
+            -0.043478260869565216
+          ]
+        }
+      },
+      "query_only/parser": {
+        "n": 23,
+        "ees": 0.043478260869565216,
+        "truncated_first": 0,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.43478260869565216,
+          "ci95": [
+            -0.6086956521739131,
+            -0.2608695652173913
+          ]
+        }
+      },
+      "random_17/matched": {
+        "n": 23,
+        "ees": 0.17391304347826086,
+        "truncated_first": 4,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.30434782608695654,
+          "ci95": [
+            -0.4782608695652174,
+            -0.13043478260869565
+          ]
+        }
+      },
+      "recency_16": {
+        "n": 23,
+        "ees": 0.2608695652173913,
+        "truncated_first": 0,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.21739130434782608,
+          "ci95": [
+            -0.4782608695652174,
+            0.043478260869565216
+          ]
+        }
+      }
+    },
+    "travel/c100": {
+      "bm25_16": {
+        "n": 23,
+        "ees": 0.2608695652173913,
+        "truncated_first": 2,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.13043478260869565,
+          "ci95": [
+            -0.30434782608695654,
+            0.043478260869565216
+          ]
+        }
+      },
+      "complete/key2": {
+        "n": 23,
+        "ees": 0.34782608695652173,
+        "truncated_first": 0,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.043478260869565216,
+          "ci95": [
+            -0.2608695652173913,
+            0.17391304347826086
+          ]
+        }
+      },
+      "complete/parser": {
+        "n": 23,
+        "ees": 0.391304347826087,
+        "truncated_first": 1,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "component2": {
+        "n": 23,
+        "ees": 0.5652173913043478,
+        "truncated_first": 0,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": 0.17391304347826086,
+          "ci95": [
+            -0.043478260869565216,
+            0.391304347826087
+          ]
+        }
+      },
+      "full": {
+        "n": 23,
+        "ees": 0.21739130434782608,
+        "truncated_first": 4,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.17391304347826086,
+          "ci95": [
+            -0.391304347826087,
+            0.043478260869565216
+          ]
+        }
+      },
+      "grace_open_x3/parser": {
+        "n": 23,
+        "ees": 0.30434782608695654,
+        "truncated_first": 1,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.08695652173913043,
+          "ci95": [
+            -0.21739130434782608,
+            0.0
+          ]
+        }
+      },
+      "permuted_17/matched": {
+        "n": 23,
+        "ees": 0.30434782608695654,
+        "truncated_first": 1,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.08695652173913043,
+          "ci95": [
+            -0.21739130434782608,
+            0.043478260869565216
+          ]
+        }
+      },
+      "permuted_29/matched": {
+        "n": 23,
+        "ees": 0.391304347826087,
+        "truncated_first": 1,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": 0.0,
+          "ci95": [
+            -0.17391304347826086,
+            0.17391304347826086
+          ]
+        }
+      },
+      "permuted_43/matched": {
+        "n": 23,
+        "ees": 0.30434782608695654,
+        "truncated_first": 1,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.08695652173913043,
+          "ci95": [
+            -0.21739130434782608,
+            0.0
+          ]
+        }
+      },
+      "query_only/parser": {
+        "n": 23,
+        "ees": 0.0,
+        "truncated_first": 0,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.391304347826087,
+          "ci95": [
+            -0.5652173913043478,
+            -0.21739130434782608
+          ]
+        }
+      },
+      "random_17/matched": {
+        "n": 23,
+        "ees": 0.43478260869565216,
+        "truncated_first": 0,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": 0.043478260869565216,
+          "ci95": [
+            -0.21739130434782608,
+            0.30434782608695654
+          ]
+        }
+      },
+      "recency_16": {
+        "n": 23,
+        "ees": 0.30434782608695654,
+        "truncated_first": 0,
+        "paired_vs_complete": {
+          "n": 23,
+          "difference": -0.08695652173913043,
+          "ci95": [
+            -0.2608695652173913,
+            0.043478260869565216
+          ]
+        }
+      }
+    }
+  },
+  "controls_completion": {
+    "complete": true,
+    "cells": 24,
+    "requested_episode_conditions": 1536,
+    "evaluated_episode_conditions": 1531
+  },
+  "actor_component_comparisons": {
+    "travel/500": {
+      "complete/key2": {
+        "n": 23,
+        "difference": 0.08695652173913043,
+        "ci95": [
+          -0.08695652173913043,
+          0.30434782608695654
+        ]
+      },
+      "full": {
+        "n": 23,
+        "difference": 0.0,
+        "ci95": [
+          -0.21739130434782608,
+          0.21739130434782608
+        ]
+      }
+    },
+    "travel/c100": {
+      "complete/key2": {
+        "n": 23,
+        "difference": 0.21739130434782608,
+        "ci95": [
+          0.0,
+          0.43478260869565216
+        ]
+      },
+      "full": {
+        "n": 23,
+        "difference": 0.34782608695652173,
+        "ci95": [
+          0.13043478260869565,
+          0.5652173913043478
+        ]
+      }
+    }
+  },
+  "actor_accounting": {
+    "cost": 15.967019000000013,
+    "unique_completed": 430,
+    "infrastructure_failures": 0
+  },
+  "read_gate": {
+    "n": 12,
+    "mean_history_records": 18.25,
+    "unique_executor_replay_contexts": 16622,
+    "summed_episode_seconds": 210.12215866241604,
+    "methods": {
+      "pcmci_parcorr": {
+        "correct": 7,
+        "n": 12,
+        "mean_selected_records": 3.4166666666666665,
+        "macro_empirical_flip_precision": 0.9666666666666667,
+        "macro_empirical_flip_recall": 0.7569444444444445,
+        "random_correct": 9,
+        "random_n": 36,
+        "paired_vs_within_episode_random_mean": {
+          "n": 12,
+          "difference": 0.3333333333333334,
+          "ci95": [
+            0.11111111111111112,
+            0.5277777777777778
+          ]
+        },
+        "exact_proxy_token_matches": 30,
+        "max_abs_proxy_token_residual": 3,
+        "max_relative_proxy_token_residual": 0.009478672985781991,
+        "controls_identical_to_selected": 9,
+        "failed_episodes": [
+          "travel-s50-test-003",
+          "travel-s51-test-000",
+          "travel-s51-test-001",
+          "travel-s51-test-002",
+          "travel-s52-test-003"
+        ],
+        "spurious_lagged_edges_targeting_randomized_gates": 24
+      },
+      "grace_pcmci_g2": {
+        "correct": 11,
+        "n": 12,
+        "mean_selected_records": 3.8333333333333335,
+        "macro_empirical_flip_precision": 0.9583333333333334,
+        "macro_empirical_flip_recall": 0.7916666666666669,
+        "random_correct": 9,
+        "random_n": 36,
+        "paired_vs_within_episode_random_mean": {
+          "n": 12,
+          "difference": 0.6666666666666666,
+          "ci95": [
+            0.5000000000000001,
+            0.8055555555555557
+          ]
+        },
+        "exact_proxy_token_matches": 31,
+        "max_abs_proxy_token_residual": 11,
+        "max_relative_proxy_token_residual": 0.02576112412177986,
+        "controls_identical_to_selected": 8,
+        "failed_episodes": [
+          "travel-s50-test-003"
+        ],
+        "spurious_lagged_edges_targeting_randomized_gates": 91
+      }
+    }
+  },
+  "read_gate_attribution": {
+    "n": 12,
+    "correct": 11,
+    "full_read_correct": 12,
+    "empty_read_correct": 0,
+    "same_parents_as_grace": 12,
+    "all_skeleton_counts_reproduced": true
+  },
+  "audit_validation": {
+    "source_reliance_demo": {
+      "passed": false,
+      "conclusion": "Failed to establish LLM source dependence: baseline and all three interventions were correct 3/3.",
+      "raw_summary": {
+        "baseline": {
+          "n": 3,
+          "correct": 3,
+          "truncated": 0
+        },
+        "without_suspect": {
+          "n": 3,
+          "correct": 3,
+          "truncated": 0
+        },
+        "without_neutral": {
+          "n": 3,
+          "correct": 3,
+          "truncated": 0
+        },
+        "suspect_value_plus30": {
+          "n": 3,
+          "correct": 3,
+          "truncated": 0
+        },
+        "interpretation": "One controlled source-reliance example; source authorization is supplied, not inferred. Fresh validation may fail and must be reported. No claim of detecting lying, hidden thoughts, or the entire causal graph.",
+        "cost_upper_accounting": 0.1828925
+      }
+    },
+    "actor_source_audit": {
+      "passed": false,
+      "conclusion": "Failed independent validation: full context was correct 0/3, subset 2/3, and blocked source 1/3. No stable normal-correct-output audit demonstrated.",
+      "raw_summary": {
+        "validation_full": {
+          "correct": 0,
+          "n": 3,
+          "truncated": 0
+        },
+        "validation_frontier": {
+          "correct": 2,
+          "n": 3,
+          "truncated": 0
+        },
+        "validation_source_blocked": {
+          "correct": 1,
+          "n": 3,
+          "truncated": 0
+        },
+        "validation_minus_h390": {
+          "correct": 1,
+          "n": 3,
+          "truncated": 0
+        },
+        "validation_minus_h391": {
+          "correct": 0,
+          "n": 3,
+          "truncated": 0
+        },
+        "validation_minus_h498": {
+          "correct": 1,
+          "n": 3,
+          "truncated": 0
+        },
+        "calls": 39,
+        "frontier_records": [
+          "h390",
+          "h391",
+          "h498"
+        ],
+        "claim_scope": "Illustrative external-memory source-group reliance, conditional on this fixed policy and supplied source labels. No prevalence estimate, recovered hidden thought, general graph identification, or necessity of each frontier member in the original full history."
+      }
+    }
+  },
+  "all_recorded_accounting": {
+    "actor_source_audit": {
+      "ledger_rows": 39,
+      "accounting_dollars": 0.5104725000000001
+    },
+    "actor_v1_closed": {
+      "ledger_rows": 430,
+      "accounting_dollars": 15.967019000000013
+    },
+    "actor_v1_pilot": {
+      "ledger_rows": 301,
+      "accounting_dollars": 10.686795500000002
+    },
+    "source_reliance_demo": {
+      "ledger_rows": 12,
+      "accounting_dollars": 0.1828925
+    }
+  }
+}

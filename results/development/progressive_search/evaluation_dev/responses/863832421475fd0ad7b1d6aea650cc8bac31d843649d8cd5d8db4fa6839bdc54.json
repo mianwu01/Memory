@@ -1,0 +1,10 @@
+{
+  "case": 1,
+  "prompt_sha256": "863832421475fd0ad7b1d6aea650cc8bac31d843649d8cd5d8db4fa6839bdc54",
+  "extracted": "Tulsidas Balaram",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to the 1962 Asian Games in Jakarta, Indonesia—Indonesia’s capital, and a country whose 2050 population is projected above 300 million [15976][63663]. The Asian Games are described as the second-largest multi-sport event after the Olympics [61503]. At those Games, India’s football team won gold, beating South Korea 2–1 in the final [89915][44448]. The sportsperson matching the full profile is Tulsidas Balaram: he was part of that gold-winning Indian team and is tied to the Jakarta gold in his obituary [44448]; he lost his first international match in 1956, six years earlier; was born more than a decade before India’s independence; and received the Arjuna Award, India’s second-highest sporting honour, in 1962 [90980][29312][43513].\n\nExact Answer: Tulsidas Balaram\n\nConfidence: 85%"
+}

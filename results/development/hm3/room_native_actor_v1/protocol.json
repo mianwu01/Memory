@@ -1,0 +1,24 @@
+{
+  "attempts": 3,
+  "budget_scope": "Native top8 entries, not matched records or tokens",
+  "endpoint": "https://www.autodl.art/api/v1",
+  "max_tokens": 32768,
+  "model": "deepseek-v4-flash",
+  "protocol": "docs/observed-memory-next-protocol-2026-09-22.md",
+  "repeats": 3,
+  "seed": 82,
+  "seed_panel": [
+    6100,
+    6101,
+    6102,
+    6103
+  ],
+  "shuffle_seed": 2026092204,
+  "source_sha": "bf8dcb1d6b6258974bcc167395ee23f6f2e877473cc1fcb404f3abd06e4d8094",
+  "split": "dev",
+  "stage": "room_native_v1",
+  "tasks": 4,
+  "temperature": 0,
+  "timeout": 600,
+  "workers": 6
+}

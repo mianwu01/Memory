@@ -1,0 +1,11 @@
+{
+  "case": 2,
+  "repeat": 0,
+  "prompt_sha256": "ebe54973eb9e227eba1fa0243d2868c79b1c944c4f9d0fd3cecacf5583951d39",
+  "extracted": "John Daniel delos Santos",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The late teen was Filipino actor AJ Perez, who died at 18 in a vehicular accident on April 17, 2011; his father and the driver survived [98388]. His parents donated his corneas, which helped two recipients [5784][92091]. The child recipient later appeared on “Bawal Judgemental” in 2020 as a 17-year-old and identified himself as John Daniel delos Santos, expressing gratitude to AJ’s family [5784].\n\nExact Answer: John Daniel delos Santos\n\nConfidence: 96%"
+}

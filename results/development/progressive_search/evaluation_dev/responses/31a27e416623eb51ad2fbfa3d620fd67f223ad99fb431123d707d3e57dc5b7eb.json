@@ -1,0 +1,10 @@
+{
+  "case": 8,
+  "prompt_sha256": "31a27e416623eb51ad2fbfa3d620fd67f223ad99fb431123d707d3e57dc5b7eb",
+  "extracted": "“Namaste” by Thomas Centolella, from *Almost Human*",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The poem is “Namaste” by Thomas Centolella, and the book is *Almost Human*. “Namaste” is a one-word non-English (Sanskrit/Hindi) title [87839]. The poem’s final line is “almost human,” exactly two words matching the book title [87839]. *Almost Human* is identified as Centolella’s fourth book of poetry [57037][46705][52631], and it won Tupelo Press’s Dorset Prize, awarded by Edward Hirsch — a well-known author born in 1950 with a PhD in folklore [57037]. Tupelo Press is an independent literary press, and the book was published in 2017, within the 2010–2020 window [57037].\n\nExact Answer: “Namaste” by Thomas Centolella, from *Almost Human*\n\nConfidence: 90%"
+}

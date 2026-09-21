@@ -1,0 +1,11 @@
+{
+  "case": 6,
+  "repeat": 0,
+  "prompt_sha256": "49f65009719d276d7c6c7164d9071d8f3da0820a386025d68f2cd645368049b1",
+  "extracted": "Amherst College",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The person is Josh Harmon, who graduated in 2018 from Amherst College and wrote a thesis on the French military snare drum [73276]. A Business Insider account confirms he worked as a newsletter writer for NBC’s “Today” show before leaving to focus on content creation [61461]. Amherst College was established in 1821, within the 1800–1850 window [24389].\n\nExact Answer: Amherst College\n\nConfidence: 92%"
+}

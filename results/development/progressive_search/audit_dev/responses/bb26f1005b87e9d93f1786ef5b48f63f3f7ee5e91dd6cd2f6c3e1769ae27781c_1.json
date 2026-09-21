@@ -1,0 +1,11 @@
+{
+  "case": 0,
+  "repeat": 1,
+  "prompt_sha256": "bb26f1005b87e9d93f1786ef5b48f63f3f7ee5e91dd6cd2f6c3e1769ae27781c",
+  "extracted": "UNKNOWN",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied evidence does not identify anyone satisfying all of the constraints. Kristen Bell is a child of divorce but was born in 1980 and does not match the birth-range or sibling requirements [56024]. Halle Bailey had pregnancy/first-child speculation, but she was born in 2000 and the speculation proved true, not false [11809]. No retrieved material connects the 2020 interview details (audition, business ownership, child of divorce) with the 2023 article details (birth range, capital-city university, oldest of four, false first-child rumor).\n\nExact Answer: UNKNOWN\n\nConfidence: 0%"
+}

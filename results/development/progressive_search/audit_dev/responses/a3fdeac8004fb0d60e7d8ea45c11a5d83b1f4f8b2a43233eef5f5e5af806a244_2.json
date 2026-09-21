@@ -1,0 +1,11 @@
+{
+  "case": 0,
+  "repeat": 2,
+  "prompt_sha256": "a3fdeac8004fb0d60e7d8ea45c11a5d83b1f4f8b2a43233eef5f5e5af806a244",
+  "extracted": "Ihuoma Sonia Uche",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The facts converge on Nollywood actress Ihuoma Sonia Uche, known as Sonia Uche. Her reproduced interview states she got into acting through an audition while in her first year of university (“100 Level”), which became her “first gig” in *Complicated* [63918]. In the same interview she said, “I am a child of divorce” [63918]. 2023 articles list her full name as Ihuoma Sonia Uche, state she attended and graduated from the University of Abuja (located in Abuja, Nigeria’s capital), give her birth date as 25 May 1995, note she is a businesswoman with Sonia Hair Extensions, and mention false fan speculation that she had her first child in 2022 when she was only playing a pregnant role [82844][62459][63918][53537]. They also state she is the firstborn among four sisters, meaning she has three siblings [82844][63918]. The only minor caveat is that the explicit “owns a business” statement is corroborated in later 2023 profiles rather than in the interview text itself [62459].\n\nExact Answer: Ihuoma Sonia Uche\n\nConfidence: 85%"
+}

@@ -1,0 +1,8 @@
+{
+  "url": "https://openaipublic.blob.core.windows.net/simple-evals/browse_comp_test_set.csv",
+  "sha256": "7b24471cd5b3eb2a46830a14802b5c029ea62f488ff75a0f88af7923d1454abf",
+  "original_questions": 1266,
+  "mapped_tasks": 221,
+  "tasks": 221,
+  "mapping_rule": "Exact final question after whitespace normalization; no model judgement; do not expose gold to actor"
+}

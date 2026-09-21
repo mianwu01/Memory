@@ -1,0 +1,10 @@
+{
+  "case": 0,
+  "prompt_sha256": "b0d0524fee9cad0151fb7e67bbb69abb6fe1d6d51d285604bd3ef53364413ed5",
+  "extracted": "Sonia Uche",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to Sonia Uche: the 2023 article describes her as an actress/entrepreneur who runs a hair-extension business called Sonia Hair Extensions [62459], matching the “owned a business” clue. The other biographical details in the question (audition start, university in the capital city, being the oldest of four siblings, false first-child rumor) also align with her public biography.\n\nExact Answer: Sonia Uche\n\nConfidence: 88%"
+}

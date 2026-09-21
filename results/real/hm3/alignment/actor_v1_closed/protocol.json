@@ -1,0 +1,49 @@
+{
+  "base_url": "https://www.autodl.art/api/v1",
+  "model": "deepseek-v4-flash",
+  "graphs": "results/real/hm3/tcd/grace_graphs_test.json",
+  "domains": [
+    "travel"
+  ],
+  "seeds": [
+    30,
+    31,
+    32
+  ],
+  "conditions": [
+    "c100",
+    "500"
+  ],
+  "arms": [
+    "grace_open_x3/parser",
+    "complete/parser",
+    "query_only/parser",
+    "full",
+    "permuted_17/matched",
+    "permuted_29/matched",
+    "permuted_43/matched",
+    "random_17/matched",
+    "bm25_16",
+    "recency_16",
+    "complete/key2",
+    "component2"
+  ],
+  "n_eval": 8,
+  "max_tokens": 16384,
+  "state_context": "referent_closed",
+  "workers": 8,
+  "budget_usd": 30.0,
+  "dry_run": false,
+  "out": "results/real/hm3/alignment/actor_v1_closed",
+  "prompt": "v1",
+  "serialization": "verbose",
+  "temperature": 0,
+  "format_repair": "one; first and repair responses logged separately",
+  "sample_status": "prospective diagnostic panel, not the 64-episode main table",
+  "duplicates": "same episode and exact full messages share one call",
+  "rates": {
+    "uncached_input": 2.5,
+    "cached_input": 0.25,
+    "output": 10.0
+  }
+}

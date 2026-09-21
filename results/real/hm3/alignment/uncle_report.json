@@ -1,0 +1,327 @@
+{
+  "inputs": [
+    {
+      "path": "results/real/hm3/alignment/uncle_s60.json",
+      "config": {
+        "checkout": "/tmp/hm3-cd-alternatives-PuWnuZ/uncle",
+        "seed": 60,
+        "split": "test",
+        "episodes": 4,
+        "device": "cuda",
+        "reconstruction_epochs": 1000,
+        "joint_epochs": 2000,
+        "out": "results/real/hm3/alignment/uncle_s60.json"
+      },
+      "source_commit": "820da2a7690e8528ecf8d346cd44545624dfe85b"
+    },
+    {
+      "path": "results/real/hm3/alignment/uncle_s61.json",
+      "config": {
+        "checkout": "/tmp/hm3-cd-alternatives-PuWnuZ/uncle",
+        "seed": 61,
+        "split": "test",
+        "episodes": 4,
+        "device": "cuda",
+        "reconstruction_epochs": 1000,
+        "joint_epochs": 2000,
+        "out": "results/real/hm3/alignment/uncle_s61.json"
+      },
+      "source_commit": "820da2a7690e8528ecf8d346cd44545624dfe85b"
+    },
+    {
+      "path": "results/real/hm3/alignment/uncle_s62.json",
+      "config": {
+        "checkout": "/tmp/hm3-cd-alternatives-PuWnuZ/uncle",
+        "seed": 62,
+        "split": "test",
+        "episodes": 4,
+        "device": "cuda",
+        "reconstruction_epochs": 1000,
+        "joint_epochs": 2000,
+        "out": "results/real/hm3/alignment/uncle_s62.json"
+      },
+      "source_commit": "820da2a7690e8528ecf8d346cd44545624dfe85b"
+    }
+  ],
+  "n": 12,
+  "methods": {
+    "uncle_permutation": {
+      "macro_AP": 0.9008210679581201,
+      "topk": {
+        "2": {
+          "n": 12,
+          "correct": 2,
+          "random_correct": 2,
+          "random_n": 36,
+          "paired": {
+            "n": 12,
+            "difference": 0.11111111111111112,
+            "ci95": [
+              -0.08333333333333333,
+              0.3333333333333333
+            ]
+          },
+          "correct_by_seed": {
+            "60": 1,
+            "61": 0,
+            "62": 1
+          },
+          "max_abs_proxy_token_residual": 8,
+          "exact_proxy_token_matches": 31,
+          "coincident_controls": 2
+        },
+        "4": {
+          "n": 12,
+          "correct": 4,
+          "random_correct": 5,
+          "random_n": 36,
+          "paired": {
+            "n": 12,
+            "difference": 0.19444444444444445,
+            "ci95": [
+              -0.027777777777777766,
+              0.41666666666666674
+            ]
+          },
+          "correct_by_seed": {
+            "60": 2,
+            "61": 1,
+            "62": 1
+          },
+          "max_abs_proxy_token_residual": 1,
+          "exact_proxy_token_matches": 31,
+          "coincident_controls": 1
+        },
+        "8": {
+          "n": 12,
+          "correct": 11,
+          "random_correct": 16,
+          "random_n": 36,
+          "paired": {
+            "n": 12,
+            "difference": 0.47222222222222227,
+            "ci95": [
+              0.27777777777777785,
+              0.638888888888889
+            ]
+          },
+          "correct_by_seed": {
+            "60": 3,
+            "61": 4,
+            "62": 4
+          },
+          "max_abs_proxy_token_residual": 9,
+          "exact_proxy_token_matches": 34,
+          "coincident_controls": 3
+        }
+      }
+    },
+    "uncle_parameter": {
+      "macro_AP": 0.8599144494305291,
+      "topk": {
+        "2": {
+          "n": 12,
+          "correct": 3,
+          "random_correct": 5,
+          "random_n": 36,
+          "paired": {
+            "n": 12,
+            "difference": 0.11111111111111112,
+            "ci95": [
+              -0.19444444444444442,
+              0.4166666666666667
+            ]
+          },
+          "correct_by_seed": {
+            "60": 1,
+            "61": 1,
+            "62": 1
+          },
+          "max_abs_proxy_token_residual": 8,
+          "exact_proxy_token_matches": 30,
+          "coincident_controls": 4
+        },
+        "4": {
+          "n": 12,
+          "correct": 3,
+          "random_correct": 5,
+          "random_n": 36,
+          "paired": {
+            "n": 12,
+            "difference": 0.11111111111111112,
+            "ci95": [
+              -0.16666666666666666,
+              0.389583333333336
+            ]
+          },
+          "correct_by_seed": {
+            "60": 1,
+            "61": 1,
+            "62": 1
+          },
+          "max_abs_proxy_token_residual": 1,
+          "exact_proxy_token_matches": 29,
+          "coincident_controls": 0
+        },
+        "8": {
+          "n": 12,
+          "correct": 10,
+          "random_correct": 14,
+          "random_n": 36,
+          "paired": {
+            "n": 12,
+            "difference": 0.4444444444444444,
+            "ci95": [
+              0.13888888888888892,
+              0.7222222222222223
+            ]
+          },
+          "correct_by_seed": {
+            "60": 3,
+            "61": 4,
+            "62": 3
+          },
+          "max_abs_proxy_token_residual": 8,
+          "exact_proxy_token_matches": 33,
+          "coincident_controls": 0
+        }
+      }
+    }
+  },
+  "mean_history_records": 20.583333333333332,
+  "summed_episode_seconds": 1585.623801201582,
+  "pcmci_g2": {
+    "correct": 7,
+    "mean_records": 3.8333333333333335
+  },
+  "posthoc_reference_check": [
+    {
+      "episode": "travel-s60-test-000",
+      "full": true,
+      "empty": false
+    },
+    {
+      "episode": "travel-s60-test-001",
+      "full": true,
+      "empty": false
+    },
+    {
+      "episode": "travel-s60-test-002",
+      "full": true,
+      "empty": false
+    },
+    {
+      "episode": "travel-s60-test-003",
+      "full": true,
+      "empty": false
+    },
+    {
+      "episode": "travel-s61-test-000",
+      "full": true,
+      "empty": false
+    },
+    {
+      "episode": "travel-s61-test-001",
+      "full": true,
+      "empty": false
+    },
+    {
+      "episode": "travel-s61-test-002",
+      "full": true,
+      "empty": false
+    },
+    {
+      "episode": "travel-s61-test-003",
+      "full": true,
+      "empty": false
+    },
+    {
+      "episode": "travel-s62-test-000",
+      "full": true,
+      "empty": false
+    },
+    {
+      "episode": "travel-s62-test-001",
+      "full": true,
+      "empty": false
+    },
+    {
+      "episode": "travel-s62-test-002",
+      "full": true,
+      "empty": false
+    },
+    {
+      "episode": "travel-s62-test-003",
+      "full": true,
+      "empty": false
+    }
+  ],
+  "posthoc_equal_record_budget": {
+    "2": {
+      "pcmci_rank_correct": 2,
+      "n": 12,
+      "uncle_minus_pcmci_rank": {
+        "uncle_permutation": {
+          "n": 12,
+          "difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "uncle_parameter": {
+          "n": 12,
+          "difference": 0.08333333333333333,
+          "ci95": [
+            0.0,
+            0.25
+          ]
+        }
+      }
+    },
+    "4": {
+      "pcmci_rank_correct": 5,
+      "n": 12,
+      "uncle_minus_pcmci_rank": {
+        "uncle_permutation": {
+          "n": 12,
+          "difference": -0.08333333333333333,
+          "ci95": [
+            -0.3333333333333333,
+            0.16666666666666666
+          ]
+        },
+        "uncle_parameter": {
+          "n": 12,
+          "difference": -0.16666666666666666,
+          "ci95": [
+            -0.3333333333333333,
+            0.0
+          ]
+        }
+      }
+    },
+    "8": {
+      "pcmci_rank_correct": 11,
+      "n": 12,
+      "uncle_minus_pcmci_rank": {
+        "uncle_permutation": {
+          "n": 12,
+          "difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "uncle_parameter": {
+          "n": 12,
+          "difference": -0.08333333333333333,
+          "ci95": [
+            -0.25,
+            0.0
+          ]
+        }
+      }
+    }
+  }
+}

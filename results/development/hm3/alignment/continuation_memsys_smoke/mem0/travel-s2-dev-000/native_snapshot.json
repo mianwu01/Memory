@@ -1,0 +1,204 @@
+{
+  "results": [
+    {
+      "attributed_to": "assistant",
+      "created_at": "2026-09-21T16:36:57.510985+00:00",
+      "hash": "a79d2e4524d0cc0aebb412512b115efb",
+      "id": "00bf28e5-7f3c-41dc-ac20-969cc56bfb91",
+      "memory": "Reservation T37 pickup was shifted from 895 to 1035, with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:36:57.510985+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:10.799654+00:00",
+      "hash": "6b1fa9a71da570b749f9ac7bf6e4e7fa",
+      "id": "245626ee-9f5e-4ce5-bae2-a023c9ce0897",
+      "memory": "Reservation D16 start was shifted from 1260 to 1335, with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:10.799654+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:23.471510+00:00",
+      "hash": "01b237f47582deb43ec148112af4d827",
+      "id": "25859783-f73d-4699-bdea-b65b76e32835",
+      "memory": "Flight F46 (Mateo, day 1) arrival was shifted from 1200 to 1305 (21:45), with a fee of 0.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:23.471510+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:23.474065+00:00",
+      "hash": "31d023dc76f95b6604e531bc9f0ecf7a",
+      "id": "300e2ec6-c482-4ae3-be70-22a4b69ca992",
+      "memory": "Reservation T78 pickup was shifted from 1260 to 1365, with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:23.474065+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:33.656198+00:00",
+      "hash": "459eac6ddec3f7d2abc01a28eff2cf89",
+      "id": "3217d5c6-7383-45e9-965e-3816067290d1",
+      "memory": "Flight F33 (Omar, day 1) arrival was shifted from 810 to 1245 (20:45), with a fee of 0.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:33.656198+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:10.802262+00:00",
+      "hash": "6ea68021c43369915dedaefc00a50c49",
+      "id": "360257ad-4c0b-48f5-971b-3296b7fbfddb",
+      "memory": "Bundle B82 was rebooked with a fee of 30.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:10.802262+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:33.663452+00:00",
+      "hash": "29f1e2cd5b90a161bbcf235859615c12",
+      "id": "3d3569df-f8ce-4f4b-9ac5-7a4d82d73856",
+      "memory": "Reservation D29 start was shifted from 1335 to 1350, with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:33.663452+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:04.700886+00:00",
+      "hash": "4cd8c0a86b64b05b640e9e10347054f9",
+      "id": "3f8503ee-24cd-4398-9caa-2c30e62f0b8a",
+      "memory": "Reservation T22 pickup was shifted from 1240 to 1425, with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:04.700886+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:23.481405+00:00",
+      "hash": "0f8b5e77bbdb14ca9365f7145e03b7ef",
+      "id": "44e908ea-7a7e-4ca4-82d4-79f29cede6aa",
+      "memory": "Bundle B82 was rebooked from 1 to 2, with a fee of 30.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:23.481405+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:28.639779+00:00",
+      "hash": "546e484786dda11ae05185d94f515ead",
+      "id": "58d852ef-825d-4415-b2f6-84d0a92453e3",
+      "memory": "Reservation T40 pickup was shifted from 695 to 845, with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:28.639779+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:17.077580+00:00",
+      "hash": "dd54d68bb2f42f2b6cd4518dbb69b08c",
+      "id": "61d265be-c92e-4bc6-b15d-1745e4cc9353",
+      "memory": "Flight F17 (Bob, day 2) arrival was shifted from 1365 to 1170 (19:30), with a fee of 0.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:17.077580+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:04.706069+00:00",
+      "hash": "d68cc304e70df458c7876f5fce1d66ed",
+      "id": "634864a1-baef-4db8-a840-60c6be839838",
+      "memory": "Reservation D91 start was shifted from 1380 to 1500, with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:04.706069+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:28.637021+00:00",
+      "hash": "08d5748cebdc03a06ff0717d0fe89ad1",
+      "id": "701eb221-6516-46c0-8c4f-b0a8903267d2",
+      "memory": "Flight F33 (Omar, day 1) arrival was shifted from 630 to 810 (13:30), with a fee of 0.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:28.637021+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:10.793990+00:00",
+      "hash": "cf6aa6b7ccf8dec9374a93ddd40b4c51",
+      "id": "8d2cfd22-65af-4a20-ae44-18b6d6dac85f",
+      "memory": "Reservation T78 pickup was shifted from 1155 to 1260, with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:10.793990+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:28.642455+00:00",
+      "hash": "bc070c66e72bf34ddc26f47f34534989",
+      "id": "a247b36e-3e8d-4564-a2ba-bb64fb88ef65",
+      "memory": "Reservation S91 check-in was shifted from 715 to 865, with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:28.642455+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "assistant",
+      "created_at": "2026-09-21T16:36:57.513468+00:00",
+      "hash": "d83d45ef292b3449148451a48cd2f05c",
+      "id": "b15e6e5d-aa52-4351-8bbc-74cc5803b3eb",
+      "memory": "Reservation S81 check-in was shifted from 945 to 1085, with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:36:57.513468+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:17.082870+00:00",
+      "hash": "b7e579833a7d83a42e095dfcc49ad492",
+      "id": "b3690c47-5edf-4ff4-8dc9-431f45f1d489",
+      "memory": "Reservation S53 check-in was shifted from 1455 to 1260, with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:17.082870+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:33.658617+00:00",
+      "hash": "0edf5e7d7dbb3cd49083eda409241fd2",
+      "id": "b4abe4de-e294-4196-89a5-97f95c4e5069",
+      "memory": "Reservation T40 pickup was shifted from 845 to 1280, with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:33.658617+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:17.080343+00:00",
+      "hash": "2f926908a13b767852f14c2bc8706eee",
+      "id": "c1263d81-4edf-4855-ae2a-c1c1e27eeff2",
+      "memory": "Reservation T22 pickup was shifted from 1425 to 1230, with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:17.080343+00:00",
+      "user_id": "travel-s2-dev-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:37:10.790904+00:00",
+      "hash": "da42c2ff9299c82fedd69972e265de70",
+      "id": "c136fa4c-fa7f-4c77-ae59-68e9040e7226",
+      "memory": "Flight F46 (Mateo, day 1) arrival was shifted from 1080 to 1200 (20:00), with a fee of 0.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:37:10.790904+00:00",
+      "user_id": "travel-s2-dev-000"
+    }
+  ]
+}

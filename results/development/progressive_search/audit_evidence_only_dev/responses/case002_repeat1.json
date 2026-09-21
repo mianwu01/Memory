@@ -1,0 +1,13 @@
+{
+  "case": 2,
+  "repeat": 1,
+  "prompt_sha256": "e5bb4a0ad4f615761d9ed3e15a3261da98f0f3d2a059d5c12205c710e8327f55",
+  "extracted": "John Daniel delos Santos",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The late teen was AJ Perez, who died at 18 in a 2011 vehicular accident; his father and driver survived, and his parents donated his corneas to two recipients [98388][5784]. The former 8-year-old recipient later appeared on “Bawal Judgemental” in 2020 as 17-year-old John Daniel delos Santos and thanked AJ’s family [5784].\n\nExact Answer: John Daniel delos Santos\n\nConfidence: 99%",
+  "abstained_strict": false,
+  "abstained_prefix": false
+}

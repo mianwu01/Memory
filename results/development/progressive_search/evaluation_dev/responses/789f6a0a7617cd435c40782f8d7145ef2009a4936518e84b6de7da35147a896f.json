@@ -1,0 +1,10 @@
+{
+  "case": 2,
+  "prompt_sha256": "789f6a0a7617cd435c40782f8d7145ef2009a4936518e84b6de7da35147a896f",
+  "extracted": "John Daniel delos Santos",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The matching case is AJ Perez, an 18-year-old who died in a vehicular accident on April 17, 2011; his father and the van driver survived [62478][31584]. His corneas were donated, and one cornea was transplanted to 8-year-old John Daniel delos Santos [58107][13127]. The later TV-show appearance clue identifies that recipient as John Daniel delos Santos.\n\nExact Answer: John Daniel delos Santos\n\nConfidence: 80%"
+}

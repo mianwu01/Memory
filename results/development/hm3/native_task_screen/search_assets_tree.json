@@ -1,0 +1,104 @@
+[
+  {
+    "type": "file",
+    "oid": "bedc70c4bb5b42485392f3d4c4e61c7d0e8bca1f",
+    "size": 2700,
+    "path": ".gitattributes"
+  },
+  {
+    "type": "file",
+    "oid": "7b95401dc46245ac339fc25059d4a56d90b4cde5",
+    "size": 31,
+    "path": "README.md"
+  },
+  {
+    "type": "file",
+    "oid": "a0db15e9178f9362380ac423b180ca6545bef11e",
+    "size": 3618510,
+    "path": "browsecomp_all_jsons.jsonl"
+  },
+  {
+    "type": "file",
+    "oid": "fd04a0beb470bc39e7030572142290042723b09b",
+    "size": 1705112,
+    "lfs": {
+      "oid": "4de2f79c67d86af14e9ec07fb5e81472f047c073f10f9a0fd810302120229aab",
+      "size": 1705112,
+      "pointerSize": 132
+    },
+    "xetHash": "1ef32edf2a1f3ca6177540553125fc4cd8f49ca88dbc172ecee1a969d9b9d2ba",
+    "path": "query.pkl"
+  },
+  {
+    "type": "file",
+    "oid": "14e06d5ab4b567b5a172af565a64fe07a2988328",
+    "size": 153901101,
+    "lfs": {
+      "oid": "57c7b94af14d6d84445da99d207f52dd044f275c6d6142353c88b19e0d938956",
+      "size": 153901101,
+      "pointerSize": 134
+    },
+    "xetHash": "19bad896751783612f1d1a18fa3b8ffc15bfcba62f128fb0706eeb9c9c47170d",
+    "path": "shard0.index"
+  },
+  {
+    "type": "file",
+    "oid": "78754a2233d03d496fff8996517594127e58d5a3",
+    "size": 322889,
+    "path": "shard0_id_map.json"
+  },
+  {
+    "type": "file",
+    "oid": "94d270a93d565e84c8ed9653ef576959f8512117",
+    "size": 153901101,
+    "lfs": {
+      "oid": "d253728c07e641e0d9ec1dbf992a519db2c1cf4808cbf8167bf3bdc40df5c41f",
+      "size": 153901101,
+      "pointerSize": 134
+    },
+    "xetHash": "852d634511e45404dccb76472aa08f95d3e484ec9310790aacd3393ecc3c8194",
+    "path": "shard1.index"
+  },
+  {
+    "type": "file",
+    "oid": "a06cf06c48b7ef654a43afc08ed51fcbed7f875e",
+    "size": 322958,
+    "path": "shard1_id_map.json"
+  },
+  {
+    "type": "file",
+    "oid": "7fbaf57daae675c04b4d6137f840d3f7bcda5125",
+    "size": 153901101,
+    "lfs": {
+      "oid": "22726188a49f92bbcddf14bee9d00b3bb69d11eb01e5995b52c9c79a8d111ca9",
+      "size": 153901101,
+      "pointerSize": 134
+    },
+    "xetHash": "44d2846a28b82ba8cc4c1945c1ae79fa15316557bd85bd888b336fc5eaa4aac7",
+    "path": "shard2.index"
+  },
+  {
+    "type": "file",
+    "oid": "206b1a49a8decfa7a1b7c044450648ee81d1b3c8",
+    "size": 322866,
+    "path": "shard2_id_map.json"
+  },
+  {
+    "type": "file",
+    "oid": "1111e756fa87fdb4f9c68d7a2a0ff4ce6bab8f6d",
+    "size": 153894957,
+    "lfs": {
+      "oid": "652eb57c1c0ab498d7b53253ebdd21591be394e5d546650ca6027774ddc4845c",
+      "size": 153894957,
+      "pointerSize": 134
+    },
+    "xetHash": "b44a29bedb5f3fde01e4902c002425882e46c123e69d13d63df45fafd3205c79",
+    "path": "shard3.index"
+  },
+  {
+    "type": "file",
+    "oid": "32d0759968d832a8824aa53b6e13b1c481005d27",
+    "size": 322975,
+    "path": "shard3_id_map.json"
+  }
+]

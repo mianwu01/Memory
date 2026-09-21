@@ -1,0 +1,66 @@
+[
+  {
+    "allowed_beliefs": {},
+    "case": "room-s6100-t50-mary",
+    "records": {
+      "bm25_8": 8,
+      "complete8": 8,
+      "cyclic_wrong1_8": 8,
+      "cyclic_wrong2_8": 8,
+      "cyclic_wrong3_8": 8,
+      "ledger8": 8,
+      "query_only": 0,
+      "recency8": 8,
+      "table_sensitivity8": 8
+    },
+    "truth": "bathroom"
+  },
+  {
+    "allowed_beliefs": {},
+    "case": "room-s6101-t50-mary",
+    "records": {
+      "bm25_8": 8,
+      "complete8": 8,
+      "cyclic_wrong1_8": 8,
+      "cyclic_wrong2_8": 8,
+      "cyclic_wrong3_8": 8,
+      "ledger8": 8,
+      "query_only": 0,
+      "recency8": 8,
+      "table_sensitivity8": 8
+    },
+    "truth": "kitchen"
+  },
+  {
+    "allowed_beliefs": {},
+    "case": "room-s6102-t50-mary",
+    "records": {
+      "bm25_8": 8,
+      "complete8": 8,
+      "cyclic_wrong1_8": 8,
+      "cyclic_wrong2_8": 8,
+      "cyclic_wrong3_8": 8,
+      "ledger8": 8,
+      "query_only": 0,
+      "recency8": 8,
+      "table_sensitivity8": 8
+    },
+    "truth": "living"
+  },
+  {
+    "allowed_beliefs": {},
+    "case": "room-s6103-t50-mary",
+    "records": {
+      "bm25_8": 8,
+      "complete8": 8,
+      "cyclic_wrong1_8": 8,
+      "cyclic_wrong2_8": 8,
+      "cyclic_wrong3_8": 8,
+      "ledger8": 8,
+      "query_only": 0,
+      "recency8": 8,
+      "table_sensitivity8": 8
+    },
+    "truth": "kitchen"
+  }
+]

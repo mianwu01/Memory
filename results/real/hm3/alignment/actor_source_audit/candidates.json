@@ -1,0 +1,290 @@
+[
+  {
+    "domain": "travel",
+    "seed": 30,
+    "condition": "500",
+    "episode": "travel-s30-test-004",
+    "reads": {
+      "objects": [
+        "A12",
+        "A159",
+        "B126",
+        "B139",
+        "B48",
+        "D140",
+        "D159",
+        "D54",
+        "D84",
+        "F140",
+        "F159",
+        "F46",
+        "F85",
+        "S10",
+        "S140",
+        "S159",
+        "S35",
+        "T11",
+        "T140",
+        "T159",
+        "T95"
+      ],
+      "records": [
+        "h461",
+        "h463",
+        "h479",
+        "h482",
+        "h496",
+        "h497",
+        "h499"
+      ]
+    },
+    "prompt_sha256": "c9dce80a25bc910b57391f4a1266a86e7b65c4c374a59a5eadccfa04eeb2970b"
+  },
+  {
+    "domain": "travel",
+    "seed": 30,
+    "condition": "500",
+    "episode": "travel-s30-test-007",
+    "reads": {
+      "objects": [
+        "A17",
+        "A94",
+        "B37",
+        "B48",
+        "B86",
+        "D38",
+        "D51",
+        "D62",
+        "F29",
+        "F89",
+        "F98",
+        "S12",
+        "S18",
+        "S92",
+        "T16",
+        "T72",
+        "T82"
+      ],
+      "records": [
+        "h311",
+        "h314",
+        "h315",
+        "h422",
+        "h423",
+        "h424",
+        "h425"
+      ]
+    },
+    "prompt_sha256": "8e59a5badfe1d2441c2b5b6b653e888e5a690ca92c859db2fd72acf104ceeb22"
+  },
+  {
+    "domain": "travel",
+    "seed": 30,
+    "condition": "c100",
+    "episode": "travel-s30-test-001",
+    "reads": {
+      "objects": [
+        "A35",
+        "D45",
+        "F25",
+        "S58",
+        "T80"
+      ],
+      "records": [
+        "h54",
+        "h56",
+        "h96",
+        "h97",
+        "h99"
+      ]
+    },
+    "prompt_sha256": "2bf060fd704008c15908cf3637ae23a3351d4d063d06db1cfdbee3688de56b9b"
+  },
+  {
+    "domain": "travel",
+    "seed": 30,
+    "condition": "c100",
+    "episode": "travel-s30-test-004",
+    "reads": {
+      "objects": [
+        "A111",
+        "A12",
+        "B107",
+        "B110",
+        "B48",
+        "D111",
+        "D116",
+        "D54",
+        "D84",
+        "F111",
+        "F116",
+        "F46",
+        "F85",
+        "S10",
+        "S111",
+        "S116",
+        "S35",
+        "T11",
+        "T111",
+        "T116",
+        "T95"
+      ],
+      "records": [
+        "h73",
+        "h75",
+        "h90",
+        "h93",
+        "h96",
+        "h97",
+        "h99"
+      ]
+    },
+    "prompt_sha256": "3e1769ec116e6a4b54c7307a042e4749377947660d801c7ae2a28cfc97b010b9"
+  },
+  {
+    "domain": "travel",
+    "seed": 30,
+    "condition": "c100",
+    "episode": "travel-s30-test-007",
+    "reads": {
+      "objects": [
+        "A17",
+        "A94",
+        "B105",
+        "B37",
+        "B48",
+        "B86",
+        "D106",
+        "D38",
+        "D51",
+        "D62",
+        "F106",
+        "F29",
+        "F89",
+        "F98",
+        "S106",
+        "S12",
+        "S18",
+        "S92",
+        "T106",
+        "T16",
+        "T72",
+        "T82"
+      ],
+      "records": [
+        "h71",
+        "h74",
+        "h75",
+        "h85",
+        "h86",
+        "h87",
+        "h93",
+        "h96"
+      ]
+    },
+    "prompt_sha256": "584aa9f6d3aee877d60fe73312d7dedffb6011ea4f200d0642e5931ae2ed41aa"
+  },
+  {
+    "domain": "travel",
+    "seed": 31,
+    "condition": "500",
+    "episode": "travel-s31-test-002",
+    "reads": {
+      "objects": [
+        "A15",
+        "D141",
+        "D32",
+        "F141",
+        "F38",
+        "F72",
+        "S141",
+        "S20",
+        "S75",
+        "T141",
+        "T30",
+        "T76"
+      ],
+      "records": [
+        "h344",
+        "h346",
+        "h443",
+        "h446",
+        "h496",
+        "h497"
+      ]
+    },
+    "prompt_sha256": "2e1f7734797420a74a88d993ab14a28ed9c8c54c39be603fe559c27d1b835589"
+  },
+  {
+    "domain": "travel",
+    "seed": 31,
+    "condition": "500",
+    "episode": "travel-s31-test-004",
+    "reads": {
+      "objects": [
+        "A18",
+        "A26",
+        "B59",
+        "D53",
+        "D75",
+        "D89",
+        "F21",
+        "F24",
+        "F40",
+        "S11",
+        "S17",
+        "S60",
+        "T30",
+        "T54",
+        "T55"
+      ],
+      "records": [
+        "h390",
+        "h391",
+        "h392",
+        "h495",
+        "h498"
+      ]
+    },
+    "prompt_sha256": "82e831dd1c0ff14e04f5cc654e70e7f14d3ef24e8d190282fcca4c883a74a9fc"
+  },
+  {
+    "domain": "travel",
+    "seed": 31,
+    "condition": "500",
+    "episode": "travel-s31-test-005",
+    "reads": {
+      "objects": [
+        "A46",
+        "A71",
+        "B49",
+        "B75",
+        "B83",
+        "D79",
+        "D92",
+        "D97",
+        "F23",
+        "F25",
+        "F39",
+        "F53",
+        "S76",
+        "S77",
+        "S84",
+        "S95",
+        "T18",
+        "T43",
+        "T60",
+        "T79"
+      ],
+      "records": [
+        "h284",
+        "h285",
+        "h315",
+        "h317",
+        "h496",
+        "h499"
+      ]
+    },
+    "prompt_sha256": "dc20613cfe0baeae76d558d45677571a65ffc5c99783f775f7ff8b7c8c1aaf53"
+  }
+]

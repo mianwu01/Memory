@@ -1,0 +1,202 @@
+{
+  "incident_walls": {
+    "basement": [],
+    "bathroom": [
+      "bathroom|study|horizontal"
+    ],
+    "bedroom": [
+      "bedroom|den|horizontal"
+    ],
+    "den": [
+      "bedroom|den|horizontal",
+      "office|den|vertical"
+    ],
+    "garage": [],
+    "kitchen": [
+      "living|kitchen|vertical"
+    ],
+    "living": [
+      "living|kitchen|vertical"
+    ],
+    "office": [
+      "office|den|vertical"
+    ],
+    "study": [
+      "bathroom|study|horizontal"
+    ]
+  },
+  "patterns": {
+    "bathroom|study|horizontal": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "bedroom|den|horizontal": [
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "living|kitchen|vertical": [
+      1,
+      0,
+      0,
+      1,
+      1
+    ],
+    "office|den|vertical": [
+      0,
+      1
+    ]
+  },
+  "rooms": [
+    "basement",
+    "bathroom",
+    "bedroom",
+    "den",
+    "garage",
+    "kitchen",
+    "living",
+    "office",
+    "study"
+  ],
+  "transitions": [
+    {
+      "next_room": "den",
+      "room": "basement",
+      "wall_bits": []
+    },
+    {
+      "next_room": "living",
+      "room": "bathroom",
+      "wall_bits": [
+        0
+      ]
+    },
+    {
+      "next_room": "living",
+      "room": "bathroom",
+      "wall_bits": [
+        1
+      ]
+    },
+    {
+      "next_room": "kitchen",
+      "room": "bedroom",
+      "wall_bits": [
+        0
+      ]
+    },
+    {
+      "next_room": "kitchen",
+      "room": "bedroom",
+      "wall_bits": [
+        1
+      ]
+    },
+    {
+      "next_room": "bedroom",
+      "room": "den",
+      "wall_bits": [
+        0,
+        0
+      ]
+    },
+    {
+      "next_room": "bedroom",
+      "room": "den",
+      "wall_bits": [
+        0,
+        1
+      ]
+    },
+    {
+      "next_room": "office",
+      "room": "den",
+      "wall_bits": [
+        1,
+        0
+      ]
+    },
+    {
+      "next_room": "basement",
+      "room": "den",
+      "wall_bits": [
+        1,
+        1
+      ]
+    },
+    {
+      "next_room": "office",
+      "room": "garage",
+      "wall_bits": []
+    },
+    {
+      "next_room": "living",
+      "room": "kitchen",
+      "wall_bits": [
+        0
+      ]
+    },
+    {
+      "next_room": "bedroom",
+      "room": "kitchen",
+      "wall_bits": [
+        1
+      ]
+    },
+    {
+      "next_room": "kitchen",
+      "room": "living",
+      "wall_bits": [
+        0
+      ]
+    },
+    {
+      "next_room": "bathroom",
+      "room": "living",
+      "wall_bits": [
+        1
+      ]
+    },
+    {
+      "next_room": "kitchen",
+      "room": "office",
+      "wall_bits": [
+        0
+      ]
+    },
+    {
+      "next_room": "kitchen",
+      "room": "office",
+      "wall_bits": [
+        1
+      ]
+    },
+    {
+      "next_room": "bathroom",
+      "room": "study",
+      "wall_bits": [
+        0
+      ]
+    },
+    {
+      "next_room": "garage",
+      "room": "study",
+      "wall_bits": [
+        1
+      ]
+    }
+  ]
+}

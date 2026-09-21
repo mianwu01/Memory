@@ -1,0 +1,183 @@
+{
+  "source": "\"\"\"Post-run gold-literal coverage diagnostic; never used by selectors or actors.\"\"\"\nimport json\nfrom pathlib import Path\nfrom .collect import references\nfrom .corpus import Corpus\nfrom .discovery import trajectories\nfrom .runtime import normalize,save\nfrom .audit import document_ids\n\nbase=Path('results/development/progressive_search');corpus=Corpus('/tmp/hm3-progressive-search-20260922.sqlite');refs=references();rows=[]\nfor tr in trajectories(base/'dev_v2',0,10):\n    answer=normalize(refs[tr['case']]);visible=set();read_ids=set()\n    for event in tr['events']:\n        read_ids.update(document_ids(event))\n        for r in event['source_reads']:\n            docs=r.get('results',[]) if r['tool']=='search' else ([r['result']] if r.get('result') else [])\n            visible.update(d['docid'] for d in docs if answer in normalize(d['text']))\n    original=[]\n    for docid in sorted(read_ids):\n        text=corpus.db.execute('SELECT text FROM docs WHERE docid=?',(docid,)).fetchone()\n        if text and answer in normalize(text['text']):original.append(docid)\n    rows.append(dict(case=tr['case'],reference=refs[tr['case']],literal_in_final_memory=answer in normalize(tr['final_memory']),\n                     visible_matching_docids=sorted(visible),untruncated_matching_docids=original,unique_read_docs=len(read_ids),\n                     note='Literal occurrence is not sufficient evidence for all question constraints; multi-field/alias answers can be absent as contiguous text'))\nsave(base/'reference_literal_coverage.json',dict(source=Path(__file__).read_text(),rows=rows))\nfor r in rows:print(r['case'],r['literal_in_final_memory'],len(r['visible_matching_docids']),len(r['untruncated_matching_docids']),flush=True)\n",
+  "rows": [
+    {
+      "case": 0,
+      "reference": "Ihuoma Sonia Uche",
+      "literal_in_final_memory": true,
+      "visible_matching_docids": [
+        "53537",
+        "62459",
+        "63918",
+        "82844"
+      ],
+      "untruncated_matching_docids": [
+        "53537",
+        "62459",
+        "63918",
+        "82844"
+      ],
+      "unique_read_docs": 174,
+      "note": "Literal occurrence is not sufficient evidence for all question constraints; multi-field/alias answers can be absent as contiguous text"
+    },
+    {
+      "case": 1,
+      "reference": "Tulsidas Balaram",
+      "literal_in_final_memory": true,
+      "visible_matching_docids": [
+        "17054",
+        "37746",
+        "41334",
+        "44448",
+        "81022",
+        "89915"
+      ],
+      "untruncated_matching_docids": [
+        "17054",
+        "37746",
+        "41334",
+        "44448",
+        "64234",
+        "81022",
+        "89915",
+        "90311",
+        "98308"
+      ],
+      "unique_read_docs": 176,
+      "note": "Literal occurrence is not sufficient evidence for all question constraints; multi-field/alias answers can be absent as contiguous text"
+    },
+    {
+      "case": 2,
+      "reference": "John Daniel delos Santos",
+      "literal_in_final_memory": true,
+      "visible_matching_docids": [
+        "5784",
+        "62478"
+      ],
+      "untruncated_matching_docids": [
+        "5784",
+        "62478"
+      ],
+      "unique_read_docs": 25,
+      "note": "Literal occurrence is not sufficient evidence for all question constraints; multi-field/alias answers can be absent as contiguous text"
+    },
+    {
+      "case": 3,
+      "reference": "Manuelita",
+      "literal_in_final_memory": true,
+      "visible_matching_docids": [
+        "34974",
+        "60723",
+        "64801",
+        "86904"
+      ],
+      "untruncated_matching_docids": [
+        "34974",
+        "51609",
+        "60723",
+        "64801",
+        "86904"
+      ],
+      "unique_read_docs": 162,
+      "note": "Literal occurrence is not sufficient evidence for all question constraints; multi-field/alias answers can be absent as contiguous text"
+    },
+    {
+      "case": 4,
+      "reference": "Govardhan Asrani",
+      "literal_in_final_memory": false,
+      "visible_matching_docids": [],
+      "untruncated_matching_docids": [],
+      "unique_read_docs": 278,
+      "note": "Literal occurrence is not sufficient evidence for all question constraints; multi-field/alias answers can be absent as contiguous text"
+    },
+    {
+      "case": 5,
+      "reference": "Sardar Khan",
+      "literal_in_final_memory": true,
+      "visible_matching_docids": [
+        "46998"
+      ],
+      "untruncated_matching_docids": [
+        "46998"
+      ],
+      "unique_read_docs": 262,
+      "note": "Literal occurrence is not sufficient evidence for all question constraints; multi-field/alias answers can be absent as contiguous text"
+    },
+    {
+      "case": 6,
+      "reference": "Amherst College",
+      "literal_in_final_memory": true,
+      "visible_matching_docids": [
+        "24389",
+        "37777",
+        "61461",
+        "73276",
+        "75740"
+      ],
+      "untruncated_matching_docids": [
+        "226",
+        "24389",
+        "27320",
+        "37777",
+        "42385",
+        "61461",
+        "62166",
+        "66466",
+        "73276",
+        "75143",
+        "75740",
+        "80205",
+        "96790",
+        "97807"
+      ],
+      "unique_read_docs": 155,
+      "note": "Literal occurrence is not sufficient evidence for all question constraints; multi-field/alias answers can be absent as contiguous text"
+    },
+    {
+      "case": 7,
+      "reference": "Cory Monteith",
+      "literal_in_final_memory": true,
+      "visible_matching_docids": [
+        "30018",
+        "32366",
+        "44252",
+        "66325",
+        "93941"
+      ],
+      "untruncated_matching_docids": [
+        "206",
+        "30018",
+        "32366",
+        "44252",
+        "56292",
+        "6007",
+        "66325",
+        "93941"
+      ],
+      "unique_read_docs": 95,
+      "note": "Literal occurrence is not sufficient evidence for all question constraints; multi-field/alias answers can be absent as contiguous text"
+    },
+    {
+      "case": 8,
+      "reference": "Namaste, Almost Human",
+      "literal_in_final_memory": false,
+      "visible_matching_docids": [],
+      "untruncated_matching_docids": [],
+      "unique_read_docs": 177,
+      "note": "Literal occurrence is not sufficient evidence for all question constraints; multi-field/alias answers can be absent as contiguous text"
+    },
+    {
+      "case": 9,
+      "reference": "Joost Wolfswinkel",
+      "literal_in_final_memory": true,
+      "visible_matching_docids": [
+        "17342"
+      ],
+      "untruncated_matching_docids": [
+        "17342"
+      ],
+      "unique_read_docs": 205,
+      "note": "Literal occurrence is not sufficient evidence for all question constraints; multi-field/alias answers can be absent as contiguous text"
+    }
+  ]
+}

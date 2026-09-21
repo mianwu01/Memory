@@ -1,0 +1,80 @@
+[
+  {
+    "type": "directory",
+    "oid": "11d3d87e561eb3c50cf6926065ee52b9dc4a4c11",
+    "size": 0,
+    "path": "bundled_shopping"
+  },
+  {
+    "type": "directory",
+    "oid": "b98c1061a26fb0083f07df48f5975fcf550600f7",
+    "size": 0,
+    "path": "formal_reasoning_math"
+  },
+  {
+    "type": "directory",
+    "oid": "34deeeda6189a77a9efff032102170dbc18e1a60",
+    "size": 0,
+    "path": "formal_reasoning_phys"
+  },
+  {
+    "type": "directory",
+    "oid": "8167c3f01f04c07ecc4ddaa6b7457278b8115442",
+    "size": 0,
+    "path": "group_travel_planner"
+  },
+  {
+    "type": "directory",
+    "oid": "1d26e7d27840234daef8f1741f151150d524b7ef",
+    "size": 0,
+    "path": "progressive_search"
+  },
+  {
+    "type": "file",
+    "oid": "80b81ac2a2712a99b44e4cb4b19076e4d73e2a07",
+    "size": 6148,
+    "path": ".DS_Store"
+  },
+  {
+    "type": "file",
+    "oid": "bed0738c7eeb449bca98b5d2f33c89a1ee56349a",
+    "size": 2504,
+    "path": ".gitattributes"
+  },
+  {
+    "type": "file",
+    "oid": "4ad026bd4f6466b9583855d4bbe35146d0bca6e8",
+    "size": 4762,
+    "path": "README.md"
+  },
+  {
+    "type": "file",
+    "oid": "5fc6b362fc68cc0724e8d3b5147f550408d2aba8",
+    "size": 1601723,
+    "path": "bundled_shopping/data.jsonl"
+  },
+  {
+    "type": "file",
+    "oid": "17c7889589c7820b4e51c953a26fc7f7b5690db8",
+    "size": 829228,
+    "path": "formal_reasoning_math/data.jsonl"
+  },
+  {
+    "type": "file",
+    "oid": "d8bee38750da6699e136a11f33c69eaa673b964c",
+    "size": 87070,
+    "path": "formal_reasoning_phys/data.jsonl"
+  },
+  {
+    "type": "file",
+    "oid": "e3953b64b9559f6343f0e55170238a6260e5e4ff",
+    "size": 6165901,
+    "path": "group_travel_planner/data.jsonl"
+  },
+  {
+    "type": "file",
+    "oid": "625bba3fbc13273f2c181f1589ef957d64dc827f",
+    "size": 3618343,
+    "path": "progressive_search/data.jsonl"
+  }
+]

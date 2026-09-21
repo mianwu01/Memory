@@ -1,0 +1,10 @@
+{
+  "case": 0,
+  "prompt_sha256": "0a0a01b18a1d704d95977424878ee04621be6b38a9d1f06bb8ddec6756835197",
+  "extracted": "Ihuoma Sonia Uche",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The individual matching the audition/first-year/first-gig clues is Sonia Uche [63918]. Her profile lists her full name as Ihuoma Sonia Uche, describes her as an actress and entrepreneur/businesswoman, gives her education as University of Abuja, and notes she is the first child with three siblings [62459][53537].  \nExact Answer: Ihuoma Sonia Uche  \nConfidence: 85%"
+}

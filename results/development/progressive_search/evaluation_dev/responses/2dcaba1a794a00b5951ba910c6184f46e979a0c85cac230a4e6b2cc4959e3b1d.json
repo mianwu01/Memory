@@ -1,0 +1,10 @@
+{
+  "case": 0,
+  "prompt_sha256": "2dcaba1a794a00b5951ba910c6184f46e979a0c85cac230a4e6b2cc4959e3b1d",
+  "extracted": "Patricia Njeri Kihoro",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to Kenyan actress/media personality Patricia Kihoro: she is a University of Nairobi graduate, born in 1988, began her entertainment career after an audition while in her first year at university, is an entrepreneur/restaurant owner, has spoken about being a child of divorce, is the firstborn of four siblings, and has denied false child rumors. No document IDs were available.\n\nExact Answer: Patricia Njeri Kihoro\n\nConfidence: 70%"
+}

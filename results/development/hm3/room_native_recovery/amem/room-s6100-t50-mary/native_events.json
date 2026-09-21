@@ -1,0 +1,414 @@
+[
+  {
+    "evolution_count": 0,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  0,\n  \"office|den|vertical\",\n  1\n ],\n [\n  \"sight\",\n  1,\n  \"john\",\n  \"bathroom\"\n ],\n [\n  \"wall\",\n  1,\n  \"bathroom|study|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  2,\n  \"office|den|vertical\",\n  1\n ],\n [\n  \"wall\",\n  3,\n  \"living|kitchen|vertical\",\n  1\n ],\n [\n  \"wall\",\n  4,\n  \"office|den|vertical\",\n  1\n ]\n]",
+      "context": "This memory records wall specifications for lengths 0-4, with vertical walls in office/den and living/kitchen, and a sight observation of John in the bathroom. It is related to a new memory at length 50, continuing the pattern.",
+      "evolution_history": [],
+      "id": "4daf75aa-db21-4445-a8d3-3dfa471bff57",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "office",
+        "den",
+        "vertical",
+        "bathroom",
+        "study",
+        "horizontal",
+        "living",
+        "kitchen",
+        "sight"
+      ],
+      "last_accessed": "202609220518",
+      "links": [],
+      "retrieval_count": 0,
+      "tags": [
+        "wall orientation",
+        "room layout",
+        "architecture",
+        "interior design",
+        "spatial analysis",
+        "data structure",
+        "sight observation"
+      ],
+      "timestamp": "202609010000"
+    },
+    "segment": 0,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 1,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  5,\n  \"living|kitchen|vertical\",\n  0\n ],\n [\n  \"sight\",\n  6,\n  \"mary\",\n  \"kitchen\"\n ],\n [\n  \"wall\",\n  6,\n  \"living|kitchen|vertical\",\n  0\n ],\n [\n  \"wall\",\n  7,\n  \"living|kitchen|vertical\",\n  1\n ],\n [\n  \"wall\",\n  8,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  9,\n  \"bedroom|den|horizontal\",\n  1\n ]\n]",
+      "context": "This content is a structured data array describing wall placements and sight observations in various rooms (bedroom/den, living/kitchen) with attributes like orientation (horizontal/vertical) and a binary indicator, likely for a spatial or architectural analysis system. It includes a sequence of wall entries with identifiers 15-19 and a sight observation of Mary in the bedroom, indicating a pattern of horizontal walls in bedroom/den and vertical walls in living/kitchen. The sighting of Mary in the bedroom and the wall configurations suggest a consistent spatial mapping across rooms.",
+      "evolution_history": [],
+      "id": "d65abbd8-9dbc-4c0e-a072-15bb7bcc8017",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "living",
+        "kitchen",
+        "vertical",
+        "bedroom",
+        "den",
+        "horizontal",
+        "sight"
+      ],
+      "last_accessed": "202609220518",
+      "links": [
+        0
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "spatial analysis",
+        "wall orientation",
+        "room layout"
+      ],
+      "timestamp": "202609010100"
+    },
+    "segment": 1,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 2,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  10,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  11,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"sight\",\n  12,\n  \"mary\",\n  \"kitchen\"\n ],\n [\n  \"wall\",\n  12,\n  \"living|kitchen|vertical\",\n  1\n ],\n [\n  \"wall\",\n  13,\n  \"living|kitchen|vertical\",\n  1\n ],\n [\n  \"wall\",\n  14,\n  \"bedroom|den|horizontal\",\n  0\n ]\n]",
+      "context": "This memory records wall specifications for lengths 10-14, with horizontal walls in bedroom/den and vertical walls in living/kitchen, and a sight observation of Mary in the kitchen.",
+      "evolution_history": [],
+      "id": "9407c233-9674-4c7f-a245-7810ef7ab301",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "horizontal",
+        "vertical",
+        "bedroom",
+        "den",
+        "living",
+        "kitchen",
+        "sight",
+        "mary"
+      ],
+      "last_accessed": "202609220518",
+      "links": [
+        1
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "wall orientation",
+        "room layout",
+        "architecture",
+        "interior design",
+        "spatial analysis",
+        "data structure",
+        "sight observation"
+      ],
+      "timestamp": "202609010200"
+    },
+    "segment": 2,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 3,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"sight\",\n  15,\n  \"mary\",\n  \"bedroom\"\n ],\n [\n  \"wall\",\n  15,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  16,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  17,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  18,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  19,\n  \"bedroom|den|horizontal\",\n  1\n ]\n]",
+      "context": "This content is a structured data array describing wall placements and sight observations in various rooms (bedroom/den, living/kitchen) with attributes like orientation (horizontal/vertical) and a binary indicator, likely for a spatial or architectural analysis system. It includes a sequence of wall entries with identifiers 10-14 and a sight observation of Mary in the kitchen, indicating a pattern of horizontal walls in bedroom/den and vertical walls in living/kitchen. The sighting of Mary in the kitchen and the wall configurations suggest a consistent spatial mapping across rooms.",
+      "evolution_history": [],
+      "id": "36bdf76c-9f87-4ff0-ba27-317dadf28089",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "bedroom",
+        "den",
+        "horizontal",
+        "sight"
+      ],
+      "last_accessed": "202609220518",
+      "links": [
+        2,
+        1
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "architecture",
+        "interior design",
+        "room layout",
+        "spatial analysis",
+        "data structure",
+        "wall orientation"
+      ],
+      "timestamp": "202609010300"
+    },
+    "segment": 3,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 4,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  20,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  21,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  22,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"sight\",\n  23,\n  \"mary\",\n  \"bedroom\"\n ],\n [\n  \"wall\",\n  23,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  24,\n  \"bedroom|den|horizontal\",\n  0\n ]\n]",
+      "context": "This memory records wall specifications for lengths 20-24, with horizontal walls in bedroom/den and a sight observation of Mary in the bedroom, consistent with the spatial mapping pattern. It is related to a new memory at length 50, continuing the sequence.",
+      "evolution_history": [],
+      "id": "a0d5f503-304d-4d16-b5c8-b50fd890a703",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "bedroom",
+        "den",
+        "horizontal",
+        "sight",
+        "mary"
+      ],
+      "last_accessed": "202609220518",
+      "links": [
+        2,
+        3
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "wall orientation",
+        "room layout",
+        "architecture",
+        "interior design",
+        "spatial analysis",
+        "data structure",
+        "sight observation"
+      ],
+      "timestamp": "202609010400"
+    },
+    "segment": 4,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 5,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"sight\",\n  25,\n  \"mary\",\n  \"bedroom\"\n ],\n [\n  \"wall\",\n  25,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  26,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  27,\n  \"living|kitchen|vertical\",\n  1\n ],\n [\n  \"wall\",\n  28,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  29,\n  \"bedroom|den|horizontal\",\n  0\n ]\n]",
+      "context": "This data appears to be a structured log or annotation set tracking wall locations and orientations across rooms (bedroom, den, living, kitchen), possibly for a spatial analysis or mapping task, with sight-related metadata and room classifications for a technical or research audience.",
+      "evolution_history": [],
+      "id": "3e3cc626-35d5-49a0-8c48-74470aa8f201",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "bedroom",
+        "den",
+        "horizontal",
+        "living",
+        "kitchen",
+        "vertical",
+        "sight",
+        "mary"
+      ],
+      "last_accessed": "202609220518",
+      "links": [
+        2,
+        4
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "spatial analysis",
+        "wall orientation",
+        "room layout",
+        "architecture",
+        "interior design",
+        "data structure"
+      ],
+      "timestamp": "202609010500"
+    },
+    "segment": 5,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 6,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  30,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  31,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  32,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  33,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  33,\n  \"office|den|vertical\",\n  0\n ],\n [\n  \"wall\",\n  34,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  34,\n  \"office|den|vertical\",\n  1\n ]\n]",
+      "context": "This memory records wall specifications for lengths 30-34, with horizontal walls in bedroom/den and vertical walls in office/den, extending the pattern from earlier walls (0-4). It is related to a new memory at length 50, continuing the sequence.",
+      "evolution_history": [],
+      "id": "696be265-39e9-45ea-9267-495e61ae154a",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "horizontal",
+        "vertical",
+        "bedroom",
+        "den",
+        "office"
+      ],
+      "last_accessed": "202609220518",
+      "links": [
+        2,
+        4
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "wall orientation",
+        "room layout",
+        "architecture",
+        "interior design",
+        "spatial analysis",
+        "data structure"
+      ],
+      "timestamp": "202609010600"
+    },
+    "segment": 6,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 7,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  35,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  35,\n  \"office|den|vertical\",\n  0\n ],\n [\n  \"wall\",\n  37,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  37,\n  \"office|den|vertical\",\n  0\n ],\n [\n  \"wall\",\n  38,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  38,\n  \"office|den|vertical\",\n  1\n ]\n]",
+      "context": "This memory records wall specifications for lengths 35-38, with horizontal walls in bedroom/den and vertical walls in office/den, continuing the pattern from earlier walls. It is related to a new memory at length 50, extending the sequence.",
+      "evolution_history": [],
+      "id": "76f6411d-1334-4a37-a727-184e11d06c69",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "bedroom",
+        "den",
+        "office",
+        "horizontal",
+        "vertical"
+      ],
+      "last_accessed": "202609220518",
+      "links": [
+        6,
+        4,
+        2,
+        0,
+        3
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "wall orientation",
+        "room layout",
+        "architecture",
+        "interior design",
+        "spatial analysis",
+        "data structure"
+      ],
+      "timestamp": "202609010700"
+    },
+    "segment": 7,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 8,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"sight\",\n  41,\n  \"john\",\n  \"garage\"\n ],\n [\n  \"wall\",\n  44,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  44,\n  \"office|den|vertical\",\n  1\n ]\n]",
+      "context": "The content appears to be a structured data table listing locations (garage, bedroom, den, office) and attributes (sight, wall, horizontal, vertical) with associated counts, likely for organizing or categorizing spatial features in a facility or design context.",
+      "evolution_history": [],
+      "id": "413a0b93-b084-4e4c-803a-1eb14ee48f22",
+      "importance_score": 1.0,
+      "keywords": [
+        "sight",
+        "wall",
+        "garage",
+        "bedroom",
+        "den",
+        "office",
+        "horizontal",
+        "vertical"
+      ],
+      "last_accessed": "202609220518",
+      "links": [
+        2,
+        4,
+        6,
+        7
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "spatial analysis",
+        "wall orientation",
+        "room layout",
+        "architecture",
+        "interior design"
+      ],
+      "timestamp": "202609010800"
+    },
+    "segment": 8,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 9,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  45,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  45,\n  \"office|den|vertical\",\n  0\n ],\n [\n  \"wall\",\n  46,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  47,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  47,\n  \"office|den|vertical\",\n  0\n ],\n [\n  \"wall\",\n  48,\n  \"bedroom|den|horizontal\",\n  0\n ],\n [\n  \"wall\",\n  48,\n  \"office|den|vertical\",\n  1\n ],\n [\n  \"wall\",\n  49,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  49,\n  \"office|den|vertical\",\n  0\n ]\n]",
+      "context": "This is a data table listing wall dimensions with lengths around 45-49, categorized by room type (bedroom, den, office) and orientation (horizontal or vertical), likely for architectural or interior design planning purposes. It is related to a new memory at length 50, extending the sequence.",
+      "evolution_history": [],
+      "id": "0813cd3a-46d3-4a16-9d51-f2ba88bafeea",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "length",
+        "bedroom",
+        "den",
+        "office",
+        "orientation",
+        "horizontal",
+        "vertical",
+        "quantity"
+      ],
+      "last_accessed": "202609220518",
+      "links": [
+        6,
+        7
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "wall orientation",
+        "room layout",
+        "architecture",
+        "interior design",
+        "spatial analysis",
+        "data structure"
+      ],
+      "timestamp": "202609010900"
+    },
+    "segment": 9,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 10,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n [\n  \"wall\",\n  50,\n  \"bedroom|den|horizontal\",\n  1\n ],\n [\n  \"wall\",\n  50,\n  \"office|den|vertical\",\n  1\n ]\n]",
+      "context": "This content lists wall-mounted fixtures with dimensions of 50 units, specifying their placement in either a bedroom or den and their orientation as horizontal or vertical, likely for a design or architectural purpose.",
+      "evolution_history": [],
+      "id": "ac951801-fd02-4cc2-8dc6-8b0d1d685823",
+      "importance_score": 1.0,
+      "keywords": [
+        "wall",
+        "bedroom",
+        "den",
+        "office",
+        "horizontal",
+        "vertical"
+      ],
+      "last_accessed": "202609220518",
+      "links": [
+        7,
+        6,
+        9
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "wall orientation",
+        "room layout",
+        "architecture",
+        "interior design",
+        "spatial analysis",
+        "data structure"
+      ],
+      "timestamp": "202609011000"
+    },
+    "segment": 10,
+    "stage": "add_note"
+  }
+]

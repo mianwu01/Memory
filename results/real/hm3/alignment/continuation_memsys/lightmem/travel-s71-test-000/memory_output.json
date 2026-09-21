@@ -1,0 +1,5 @@
+{
+  "query": "Flight F92 (Lena, day 1) now arrives at 23:30.\n{\"object_id\": \"F92\", \"op\": \"shift_reservation\", \"payload\": {\"arrival\": 1410}}",
+  "result": [],
+  "text": ""
+}

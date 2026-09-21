@@ -1,0 +1,10 @@
+{
+  "case": 6,
+  "prompt_sha256": "51f168f130d69aefe2b58dd686f8c03f91c821d8ba5ec5a2d9e127429944e6ab",
+  "extracted": "Amherst College",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The Amherst College profile “Marching to the Beat of His Own Drum” identifies Josh Harmon ’18, who majored in French after joking he “switched my major maybe 100 times” and wrote a thesis on the French military snare drum, the “French military tambour” [73276]. A Business Insider account confirms Harmon graduated from Amherst College in 2018 and worked as a writer for NBC’s “Today” show after joining the NBC Page Program [61461]. Amherst College was established in 1821, within the 1800–1850 range [24389]. Therefore, the college he graduated from is Amherst College.\n\nExact Answer: Amherst College\n\nConfidence: 92%"
+}

@@ -1,0 +1,13 @@
+{
+  "case": 0,
+  "repeat": 1,
+  "prompt_sha256": "7053e47fe7f5a2406fc31c90fcba170600ffd694769cebc6935ed4ca6453c808",
+  "extracted": "UNKNOWN",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied search excerpts do not contain a profile that matches all of the clues together. They only include possible age-range candidates, such as Meghann Fahy (b. 1990) [5705], but no document confirms the audition, business ownership, divorce, university, sibling, and false child-rumor details for any one individual.\n\nExact Answer: UNKNOWN\n\nConfidence: 85%",
+  "abstained_strict": true,
+  "abstained_prefix": true
+}

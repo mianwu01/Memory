@@ -1,0 +1,16 @@
+{
+  "attempts": 3,
+  "endpoint": "https://www.autodl.art/api/v1",
+  "max_tokens": 32768,
+  "model": "deepseek-v4-flash",
+  "protocol": "docs/observed-memory-next-protocol-2026-09-22.md",
+  "repeats": 3,
+  "seed": 82,
+  "shuffle_seed": 2026092202,
+  "source_hash": "f9fcb26d97d16c1bb67d3e34379d1cf827606f164c4e6461056b14080fd15609",
+  "split": "dev",
+  "tasks": 4,
+  "temperature": 0,
+  "timeout": 600,
+  "workers": 6
+}

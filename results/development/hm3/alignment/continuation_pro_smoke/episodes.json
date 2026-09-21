@@ -1,0 +1,2011 @@
+[
+  {
+    "A": [
+      {
+        "expected_revision": 0,
+        "object_id": "T77",
+        "op": "shift_reservation",
+        "payload": {
+          "pickup": 1340
+        }
+      },
+      {
+        "expected_revision": 0,
+        "object_id": "S96",
+        "op": "shift_reservation",
+        "payload": {
+          "checkin": 1370
+        }
+      },
+      {
+        "expected_revision": 0,
+        "object_id": "D55",
+        "op": "shift_reservation",
+        "payload": {
+          "start": 1425
+        }
+      },
+      {
+        "expected_revision": 0,
+        "object_id": "B96",
+        "op": "rebook_bundle",
+        "payload": {}
+      }
+    ],
+    "H": [
+      {
+        "delta": {
+          "arrival": [
+            855,
+            975
+          ]
+        },
+        "fee": 0,
+        "kind": "intervention",
+        "object_id": "F95",
+        "op": "shift_reservation",
+        "payload": {
+          "arrival": 975
+        },
+        "query": "Flight F95 (Bob, day 1) now arrives at 16:15.",
+        "rev": 1,
+        "rid": "h0",
+        "seg": 0
+      },
+      {
+        "delta": {
+          "pickup": [
+            895,
+            1035
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "T37",
+        "op": "shift_reservation",
+        "payload": {
+          "pickup": 1035
+        },
+        "rev": 1,
+        "rid": "h1",
+        "seg": 0
+      },
+      {
+        "delta": {
+          "checkin": [
+            945,
+            1085
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "S81",
+        "op": "shift_reservation",
+        "payload": {
+          "checkin": 1085
+        },
+        "rev": 1,
+        "rid": "h2",
+        "seg": 0
+      },
+      {
+        "delta": {
+          "arrival": [
+            1185,
+            1365
+          ]
+        },
+        "fee": 0,
+        "kind": "intervention",
+        "object_id": "F17",
+        "op": "shift_reservation",
+        "payload": {
+          "arrival": 1365
+        },
+        "query": "Flight F17 (Bob, day 2) now arrives at 22:45.",
+        "rev": 1,
+        "rid": "h3",
+        "seg": 1
+      },
+      {
+        "delta": {
+          "pickup": [
+            1240,
+            1425
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "T22",
+        "op": "shift_reservation",
+        "payload": {
+          "pickup": 1425
+        },
+        "rev": 1,
+        "rid": "h4",
+        "seg": 1
+      },
+      {
+        "delta": {
+          "checkin": [
+            1270,
+            1455
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "S53",
+        "op": "shift_reservation",
+        "payload": {
+          "checkin": 1455
+        },
+        "rev": 1,
+        "rid": "h5",
+        "seg": 1
+      },
+      {
+        "delta": {
+          "start": [
+            1380,
+            1500
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "D91",
+        "op": "shift_reservation",
+        "payload": {
+          "start": 1500
+        },
+        "rev": 1,
+        "rid": "h6",
+        "seg": 1
+      },
+      {
+        "delta": {
+          "arrival": [
+            1080,
+            1200
+          ]
+        },
+        "fee": 0,
+        "kind": "intervention",
+        "object_id": "F46",
+        "op": "shift_reservation",
+        "payload": {
+          "arrival": 1200
+        },
+        "query": "Flight F46 (Mateo, day 1) now arrives at 20:00.",
+        "rev": 1,
+        "rid": "h7",
+        "seg": 2
+      },
+      {
+        "delta": {
+          "pickup": [
+            1155,
+            1260
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "T78",
+        "op": "shift_reservation",
+        "payload": {
+          "pickup": 1260
+        },
+        "rev": 1,
+        "rid": "h8",
+        "seg": 2
+      },
+      {
+        "delta": {
+          "checkin": [
+            1175,
+            1280
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "S13",
+        "op": "shift_reservation",
+        "payload": {
+          "checkin": 1280
+        },
+        "rev": 1,
+        "rid": "h9",
+        "seg": 2
+      },
+      {
+        "delta": {
+          "start": [
+            1260,
+            1335
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "D16",
+        "op": "shift_reservation",
+        "payload": {
+          "start": 1335
+        },
+        "rev": 1,
+        "rid": "h10",
+        "seg": 2
+      },
+      {
+        "delta": {
+          "rebooked": [
+            0,
+            1
+          ]
+        },
+        "fee": 30,
+        "kind": "txn",
+        "object_id": "B82",
+        "op": "rebook_bundle",
+        "payload": {},
+        "rev": 1,
+        "rid": "h11",
+        "seg": 2
+      },
+      {
+        "delta": {
+          "arrival": [
+            1365,
+            1170
+          ]
+        },
+        "fee": 0,
+        "kind": "intervention",
+        "object_id": "F17",
+        "op": "shift_reservation",
+        "payload": {
+          "arrival": 1170
+        },
+        "query": "Flight F17 (Bob, day 2) now arrives at 19:30.",
+        "rev": 2,
+        "rid": "h12",
+        "seg": 3
+      },
+      {
+        "delta": {
+          "pickup": [
+            1425,
+            1230
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "T22",
+        "op": "shift_reservation",
+        "payload": {
+          "pickup": 1230
+        },
+        "rev": 2,
+        "rid": "h13",
+        "seg": 3
+      },
+      {
+        "delta": {
+          "checkin": [
+            1455,
+            1260
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "S53",
+        "op": "shift_reservation",
+        "payload": {
+          "checkin": 1260
+        },
+        "rev": 2,
+        "rid": "h14",
+        "seg": 3
+      },
+      {
+        "delta": {
+          "arrival": [
+            1200,
+            1305
+          ]
+        },
+        "fee": 0,
+        "kind": "intervention",
+        "object_id": "F46",
+        "op": "shift_reservation",
+        "payload": {
+          "arrival": 1305
+        },
+        "query": "Flight F46 (Mateo, day 1) now arrives at 21:45.",
+        "rev": 2,
+        "rid": "h15",
+        "seg": 4
+      },
+      {
+        "delta": {
+          "pickup": [
+            1260,
+            1365
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "T78",
+        "op": "shift_reservation",
+        "payload": {
+          "pickup": 1365
+        },
+        "rev": 2,
+        "rid": "h16",
+        "seg": 4
+      },
+      {
+        "delta": {
+          "checkin": [
+            1280,
+            1385
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "S13",
+        "op": "shift_reservation",
+        "payload": {
+          "checkin": 1385
+        },
+        "rev": 2,
+        "rid": "h17",
+        "seg": 4
+      },
+      {
+        "delta": {
+          "start": [
+            1335,
+            1440
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "D16",
+        "op": "shift_reservation",
+        "payload": {
+          "start": 1440
+        },
+        "rev": 2,
+        "rid": "h18",
+        "seg": 4
+      },
+      {
+        "delta": {
+          "rebooked": [
+            1,
+            2
+          ]
+        },
+        "fee": 30,
+        "kind": "txn",
+        "object_id": "B82",
+        "op": "rebook_bundle",
+        "payload": {},
+        "rev": 2,
+        "rid": "h19",
+        "seg": 4
+      },
+      {
+        "delta": {
+          "arrival": [
+            630,
+            810
+          ]
+        },
+        "fee": 0,
+        "kind": "intervention",
+        "object_id": "F33",
+        "op": "shift_reservation",
+        "payload": {
+          "arrival": 810
+        },
+        "query": "Flight F33 (Omar, day 1) now arrives at 13:30.",
+        "rev": 1,
+        "rid": "h20",
+        "seg": 5
+      },
+      {
+        "delta": {
+          "pickup": [
+            695,
+            845
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "T40",
+        "op": "shift_reservation",
+        "payload": {
+          "pickup": 845
+        },
+        "rev": 1,
+        "rid": "h21",
+        "seg": 5
+      },
+      {
+        "delta": {
+          "checkin": [
+            715,
+            865
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "S91",
+        "op": "shift_reservation",
+        "payload": {
+          "checkin": 865
+        },
+        "rev": 1,
+        "rid": "h22",
+        "seg": 5
+      },
+      {
+        "delta": {
+          "arrival": [
+            810,
+            1245
+          ]
+        },
+        "fee": 0,
+        "kind": "intervention",
+        "object_id": "F33",
+        "op": "shift_reservation",
+        "payload": {
+          "arrival": 1245
+        },
+        "query": "Flight F33 (Omar, day 1) now arrives at 20:45.",
+        "rev": 2,
+        "rid": "h23",
+        "seg": 6
+      },
+      {
+        "delta": {
+          "pickup": [
+            845,
+            1280
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "T40",
+        "op": "shift_reservation",
+        "payload": {
+          "pickup": 1280
+        },
+        "rev": 2,
+        "rid": "h24",
+        "seg": 6
+      },
+      {
+        "delta": {
+          "checkin": [
+            865,
+            1300
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "S91",
+        "op": "shift_reservation",
+        "payload": {
+          "checkin": 1300
+        },
+        "rev": 2,
+        "rid": "h25",
+        "seg": 6
+      },
+      {
+        "delta": {
+          "start": [
+            1335,
+            1350
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "D29",
+        "op": "shift_reservation",
+        "payload": {
+          "start": 1350
+        },
+        "rev": 1,
+        "rid": "h26",
+        "seg": 6
+      }
+    ],
+    "I": {
+      "object_id": "F81",
+      "op": "shift_reservation",
+      "payload": {
+        "arrival": 1305
+      }
+    },
+    "R": [
+      {
+        "delta": {
+          "arrival": [
+            675,
+            1305
+          ]
+        },
+        "fee": 0,
+        "kind": "intervention",
+        "object_id": "F81",
+        "op": "shift_reservation",
+        "rev": 1,
+        "token": 0
+      },
+      {
+        "delta": {
+          "pickup": [
+            700,
+            1340
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "T77",
+        "op": "shift_reservation",
+        "rev": 1,
+        "token": 1
+      },
+      {
+        "delta": {
+          "checkin": [
+            730,
+            1370
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "S96",
+        "op": "shift_reservation",
+        "rev": 1,
+        "token": 1
+      },
+      {
+        "delta": {
+          "start": [
+            1200,
+            1425
+          ]
+        },
+        "fee": 25,
+        "kind": "txn",
+        "object_id": "D55",
+        "op": "shift_reservation",
+        "rev": 1,
+        "token": 1
+      },
+      {
+        "delta": {
+          "rebooked": [
+            0,
+            1
+          ]
+        },
+        "fee": 30,
+        "kind": "txn",
+        "object_id": "B96",
+        "op": "rebook_bundle",
+        "rev": 1,
+        "token": 1
+      }
+    ],
+    "S0": {
+      "fees": 510,
+      "meta": {
+        "days": 2,
+        "trip": "TRIP15"
+      },
+      "objects": {
+        "A10": {
+          "fields": {
+            "day": 1,
+            "min_rest": 600,
+            "start": 2070,
+            "traveler": "Bob"
+          },
+          "id": "A10",
+          "links": {
+            "stay": [
+              "S81"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "activity"
+        },
+        "A17": {
+          "fields": {
+            "day": 2,
+            "min_rest": 600,
+            "start": 2040,
+            "traveler": "Mateo"
+          },
+          "id": "A17",
+          "links": {
+            "stay": [
+              "S96"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "activity"
+        },
+        "A24": {
+          "fields": {
+            "day": 2,
+            "min_rest": 480,
+            "start": 1995,
+            "traveler": "Omar"
+          },
+          "id": "A24",
+          "links": {
+            "stay": [
+              "S38"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "activity"
+        },
+        "A49": {
+          "fields": {
+            "day": 1,
+            "min_rest": 600,
+            "start": 2055,
+            "traveler": "Mateo"
+          },
+          "id": "A49",
+          "links": {
+            "stay": [
+              "S13"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "activity"
+        },
+        "A62": {
+          "fields": {
+            "day": 2,
+            "min_rest": 600,
+            "start": 2085,
+            "traveler": "Bob"
+          },
+          "id": "A62",
+          "links": {
+            "stay": [
+              "S53"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "activity"
+        },
+        "A85": {
+          "fields": {
+            "day": 1,
+            "min_rest": 600,
+            "start": 2025,
+            "traveler": "Omar"
+          },
+          "id": "A85",
+          "links": {
+            "stay": [
+              "S91"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "activity"
+        },
+        "B82": {
+          "fields": {
+            "day": 1,
+            "rebooked": 2,
+            "traveler": "Mateo",
+            "vendor": "V75"
+          },
+          "id": "B82",
+          "links": {
+            "dinner": [
+              "D16"
+            ],
+            "stay": [
+              "S13"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "bundle"
+        },
+        "B96": {
+          "fields": {
+            "day": 2,
+            "rebooked": 0,
+            "traveler": "Mateo",
+            "vendor": "V75"
+          },
+          "id": "B96",
+          "links": {
+            "dinner": [
+              "D55"
+            ],
+            "stay": [
+              "S96"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "bundle"
+        },
+        "D16": {
+          "fields": {
+            "day": 1,
+            "restaurant": "R30",
+            "start": 1440,
+            "traveler": "Mateo"
+          },
+          "id": "D16",
+          "links": {
+            "bundle": [
+              "B82"
+            ],
+            "stay": [
+              "S13"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "dinner"
+        },
+        "D29": {
+          "fields": {
+            "day": 1,
+            "restaurant": "R65",
+            "start": 1350,
+            "traveler": "Omar"
+          },
+          "id": "D29",
+          "links": {
+            "stay": [
+              "S91"
+            ]
+          },
+          "locked": false,
+          "revision": 1,
+          "status": "active",
+          "type": "dinner"
+        },
+        "D49": {
+          "fields": {
+            "day": 1,
+            "restaurant": "R65",
+            "start": 1290,
+            "traveler": "Bob"
+          },
+          "id": "D49",
+          "links": {
+            "stay": [
+              "S81"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "dinner"
+        },
+        "D55": {
+          "fields": {
+            "day": 2,
+            "restaurant": "R65",
+            "start": 1200,
+            "traveler": "Mateo"
+          },
+          "id": "D55",
+          "links": {
+            "bundle": [
+              "B96"
+            ],
+            "stay": [
+              "S96"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "dinner"
+        },
+        "D75": {
+          "fields": {
+            "day": 2,
+            "restaurant": "R65",
+            "start": 1320,
+            "traveler": "Omar"
+          },
+          "id": "D75",
+          "links": {
+            "stay": [
+              "S38"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "dinner"
+        },
+        "D91": {
+          "fields": {
+            "day": 2,
+            "restaurant": "R30",
+            "start": 1500,
+            "traveler": "Bob"
+          },
+          "id": "D91",
+          "links": {
+            "stay": [
+              "S53"
+            ]
+          },
+          "locked": false,
+          "revision": 1,
+          "status": "active",
+          "type": "dinner"
+        },
+        "F17": {
+          "fields": {
+            "arrival": 1170,
+            "day": 2,
+            "traveler": "Bob"
+          },
+          "id": "F17",
+          "links": {
+            "transfer": [
+              "T22"
+            ]
+          },
+          "locked": true,
+          "revision": 2,
+          "status": "active",
+          "type": "flight"
+        },
+        "F33": {
+          "fields": {
+            "arrival": 1245,
+            "day": 1,
+            "traveler": "Omar"
+          },
+          "id": "F33",
+          "links": {
+            "transfer": [
+              "T40"
+            ]
+          },
+          "locked": true,
+          "revision": 2,
+          "status": "active",
+          "type": "flight"
+        },
+        "F45": {
+          "fields": {
+            "arrival": 795,
+            "day": 2,
+            "traveler": "Omar"
+          },
+          "id": "F45",
+          "links": {
+            "transfer": [
+              "T41"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "flight"
+        },
+        "F46": {
+          "fields": {
+            "arrival": 1305,
+            "day": 1,
+            "traveler": "Mateo"
+          },
+          "id": "F46",
+          "links": {
+            "transfer": [
+              "T78"
+            ]
+          },
+          "locked": true,
+          "revision": 2,
+          "status": "active",
+          "type": "flight"
+        },
+        "F81": {
+          "fields": {
+            "arrival": 675,
+            "day": 2,
+            "traveler": "Mateo"
+          },
+          "id": "F81",
+          "links": {
+            "transfer": [
+              "T77"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "flight"
+        },
+        "F95": {
+          "fields": {
+            "arrival": 975,
+            "day": 1,
+            "traveler": "Bob"
+          },
+          "id": "F95",
+          "links": {
+            "transfer": [
+              "T37"
+            ]
+          },
+          "locked": true,
+          "revision": 1,
+          "status": "active",
+          "type": "flight"
+        },
+        "S13": {
+          "fields": {
+            "checkin": 1385,
+            "day": 1,
+            "hotel": "H46",
+            "late_arrival": 0,
+            "late_cutoff": 1320,
+            "traveler": "Mateo"
+          },
+          "id": "S13",
+          "links": {
+            "activity": [
+              "A49"
+            ],
+            "bundle": [
+              "B82"
+            ],
+            "dinner": [
+              "D16"
+            ],
+            "transfer": [
+              "T78"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "stay"
+        },
+        "S38": {
+          "fields": {
+            "checkin": 895,
+            "day": 2,
+            "hotel": "H38",
+            "late_arrival": 0,
+            "late_cutoff": 1260,
+            "traveler": "Omar"
+          },
+          "id": "S38",
+          "links": {
+            "activity": [
+              "A24"
+            ],
+            "dinner": [
+              "D75"
+            ],
+            "transfer": [
+              "T41"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "stay"
+        },
+        "S53": {
+          "fields": {
+            "checkin": 1260,
+            "day": 2,
+            "hotel": "H38",
+            "late_arrival": 0,
+            "late_cutoff": 1230,
+            "traveler": "Bob"
+          },
+          "id": "S53",
+          "links": {
+            "activity": [
+              "A62"
+            ],
+            "dinner": [
+              "D91"
+            ],
+            "transfer": [
+              "T22"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "stay"
+        },
+        "S81": {
+          "fields": {
+            "checkin": 1085,
+            "day": 1,
+            "hotel": "H88",
+            "late_arrival": 0,
+            "late_cutoff": 1350,
+            "traveler": "Bob"
+          },
+          "id": "S81",
+          "links": {
+            "activity": [
+              "A10"
+            ],
+            "dinner": [
+              "D49"
+            ],
+            "transfer": [
+              "T37"
+            ]
+          },
+          "locked": false,
+          "revision": 1,
+          "status": "active",
+          "type": "stay"
+        },
+        "S91": {
+          "fields": {
+            "checkin": 1300,
+            "day": 1,
+            "hotel": "H88",
+            "late_arrival": 0,
+            "late_cutoff": 1380,
+            "traveler": "Omar"
+          },
+          "id": "S91",
+          "links": {
+            "activity": [
+              "A85"
+            ],
+            "dinner": [
+              "D29"
+            ],
+            "transfer": [
+              "T40"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "stay"
+        },
+        "S96": {
+          "fields": {
+            "checkin": 730,
+            "day": 2,
+            "hotel": "H46",
+            "late_arrival": 0,
+            "late_cutoff": 1320,
+            "traveler": "Mateo"
+          },
+          "id": "S96",
+          "links": {
+            "activity": [
+              "A17"
+            ],
+            "bundle": [
+              "B96"
+            ],
+            "dinner": [
+              "D55"
+            ],
+            "transfer": [
+              "T77"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "stay"
+        },
+        "T22": {
+          "fields": {
+            "day": 2,
+            "pickup": 1230,
+            "provider": "P80",
+            "ride": 30,
+            "traveler": "Bob"
+          },
+          "id": "T22",
+          "links": {
+            "flight": [
+              "F17"
+            ],
+            "stay": [
+              "S53"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "transfer"
+        },
+        "T37": {
+          "fields": {
+            "day": 1,
+            "pickup": 1035,
+            "provider": "P80",
+            "ride": 50,
+            "traveler": "Bob"
+          },
+          "id": "T37",
+          "links": {
+            "flight": [
+              "F95"
+            ],
+            "stay": [
+              "S81"
+            ]
+          },
+          "locked": false,
+          "revision": 1,
+          "status": "active",
+          "type": "transfer"
+        },
+        "T40": {
+          "fields": {
+            "day": 1,
+            "pickup": 1280,
+            "provider": "P16",
+            "ride": 20,
+            "traveler": "Omar"
+          },
+          "id": "T40",
+          "links": {
+            "flight": [
+              "F33"
+            ],
+            "stay": [
+              "S91"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "transfer"
+        },
+        "T41": {
+          "fields": {
+            "day": 2,
+            "pickup": 855,
+            "provider": "P80",
+            "ride": 40,
+            "traveler": "Omar"
+          },
+          "id": "T41",
+          "links": {
+            "flight": [
+              "F45"
+            ],
+            "stay": [
+              "S38"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "transfer"
+        },
+        "T77": {
+          "fields": {
+            "day": 2,
+            "pickup": 700,
+            "provider": "P16",
+            "ride": 30,
+            "traveler": "Mateo"
+          },
+          "id": "T77",
+          "links": {
+            "flight": [
+              "F81"
+            ],
+            "stay": [
+              "S96"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "transfer"
+        },
+        "T78": {
+          "fields": {
+            "day": 1,
+            "pickup": 1365,
+            "provider": "P80",
+            "ride": 20,
+            "traveler": "Mateo"
+          },
+          "id": "T78",
+          "links": {
+            "flight": [
+              "F46"
+            ],
+            "stay": [
+              "S13"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "transfer"
+        }
+      },
+      "tokens": 60
+    },
+    "S1": {
+      "fees": 615,
+      "meta": {
+        "days": 2,
+        "trip": "TRIP15"
+      },
+      "objects": {
+        "A10": {
+          "fields": {
+            "day": 1,
+            "min_rest": 600,
+            "start": 2070,
+            "traveler": "Bob"
+          },
+          "id": "A10",
+          "links": {
+            "stay": [
+              "S81"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "activity"
+        },
+        "A17": {
+          "fields": {
+            "day": 2,
+            "min_rest": 600,
+            "start": 2040,
+            "traveler": "Mateo"
+          },
+          "id": "A17",
+          "links": {
+            "stay": [
+              "S96"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "activity"
+        },
+        "A24": {
+          "fields": {
+            "day": 2,
+            "min_rest": 480,
+            "start": 1995,
+            "traveler": "Omar"
+          },
+          "id": "A24",
+          "links": {
+            "stay": [
+              "S38"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "activity"
+        },
+        "A49": {
+          "fields": {
+            "day": 1,
+            "min_rest": 600,
+            "start": 2055,
+            "traveler": "Mateo"
+          },
+          "id": "A49",
+          "links": {
+            "stay": [
+              "S13"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "activity"
+        },
+        "A62": {
+          "fields": {
+            "day": 2,
+            "min_rest": 600,
+            "start": 2085,
+            "traveler": "Bob"
+          },
+          "id": "A62",
+          "links": {
+            "stay": [
+              "S53"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "activity"
+        },
+        "A85": {
+          "fields": {
+            "day": 1,
+            "min_rest": 600,
+            "start": 2025,
+            "traveler": "Omar"
+          },
+          "id": "A85",
+          "links": {
+            "stay": [
+              "S91"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "activity"
+        },
+        "B82": {
+          "fields": {
+            "day": 1,
+            "rebooked": 2,
+            "traveler": "Mateo",
+            "vendor": "V75"
+          },
+          "id": "B82",
+          "links": {
+            "dinner": [
+              "D16"
+            ],
+            "stay": [
+              "S13"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "bundle"
+        },
+        "B96": {
+          "fields": {
+            "day": 2,
+            "rebooked": 1,
+            "traveler": "Mateo",
+            "vendor": "V75"
+          },
+          "id": "B96",
+          "links": {
+            "dinner": [
+              "D55"
+            ],
+            "stay": [
+              "S96"
+            ]
+          },
+          "locked": false,
+          "revision": 1,
+          "status": "active",
+          "type": "bundle"
+        },
+        "D16": {
+          "fields": {
+            "day": 1,
+            "restaurant": "R30",
+            "start": 1440,
+            "traveler": "Mateo"
+          },
+          "id": "D16",
+          "links": {
+            "bundle": [
+              "B82"
+            ],
+            "stay": [
+              "S13"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "dinner"
+        },
+        "D29": {
+          "fields": {
+            "day": 1,
+            "restaurant": "R65",
+            "start": 1350,
+            "traveler": "Omar"
+          },
+          "id": "D29",
+          "links": {
+            "stay": [
+              "S91"
+            ]
+          },
+          "locked": false,
+          "revision": 1,
+          "status": "active",
+          "type": "dinner"
+        },
+        "D49": {
+          "fields": {
+            "day": 1,
+            "restaurant": "R65",
+            "start": 1290,
+            "traveler": "Bob"
+          },
+          "id": "D49",
+          "links": {
+            "stay": [
+              "S81"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "dinner"
+        },
+        "D55": {
+          "fields": {
+            "day": 2,
+            "restaurant": "R65",
+            "start": 1425,
+            "traveler": "Mateo"
+          },
+          "id": "D55",
+          "links": {
+            "bundle": [
+              "B96"
+            ],
+            "stay": [
+              "S96"
+            ]
+          },
+          "locked": false,
+          "revision": 1,
+          "status": "active",
+          "type": "dinner"
+        },
+        "D75": {
+          "fields": {
+            "day": 2,
+            "restaurant": "R65",
+            "start": 1320,
+            "traveler": "Omar"
+          },
+          "id": "D75",
+          "links": {
+            "stay": [
+              "S38"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "dinner"
+        },
+        "D91": {
+          "fields": {
+            "day": 2,
+            "restaurant": "R30",
+            "start": 1500,
+            "traveler": "Bob"
+          },
+          "id": "D91",
+          "links": {
+            "stay": [
+              "S53"
+            ]
+          },
+          "locked": false,
+          "revision": 1,
+          "status": "active",
+          "type": "dinner"
+        },
+        "F17": {
+          "fields": {
+            "arrival": 1170,
+            "day": 2,
+            "traveler": "Bob"
+          },
+          "id": "F17",
+          "links": {
+            "transfer": [
+              "T22"
+            ]
+          },
+          "locked": true,
+          "revision": 2,
+          "status": "active",
+          "type": "flight"
+        },
+        "F33": {
+          "fields": {
+            "arrival": 1245,
+            "day": 1,
+            "traveler": "Omar"
+          },
+          "id": "F33",
+          "links": {
+            "transfer": [
+              "T40"
+            ]
+          },
+          "locked": true,
+          "revision": 2,
+          "status": "active",
+          "type": "flight"
+        },
+        "F45": {
+          "fields": {
+            "arrival": 795,
+            "day": 2,
+            "traveler": "Omar"
+          },
+          "id": "F45",
+          "links": {
+            "transfer": [
+              "T41"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "flight"
+        },
+        "F46": {
+          "fields": {
+            "arrival": 1305,
+            "day": 1,
+            "traveler": "Mateo"
+          },
+          "id": "F46",
+          "links": {
+            "transfer": [
+              "T78"
+            ]
+          },
+          "locked": true,
+          "revision": 2,
+          "status": "active",
+          "type": "flight"
+        },
+        "F81": {
+          "fields": {
+            "arrival": 1305,
+            "day": 2,
+            "traveler": "Mateo"
+          },
+          "id": "F81",
+          "links": {
+            "transfer": [
+              "T77"
+            ]
+          },
+          "locked": true,
+          "revision": 1,
+          "status": "active",
+          "type": "flight"
+        },
+        "F95": {
+          "fields": {
+            "arrival": 975,
+            "day": 1,
+            "traveler": "Bob"
+          },
+          "id": "F95",
+          "links": {
+            "transfer": [
+              "T37"
+            ]
+          },
+          "locked": true,
+          "revision": 1,
+          "status": "active",
+          "type": "flight"
+        },
+        "S13": {
+          "fields": {
+            "checkin": 1385,
+            "day": 1,
+            "hotel": "H46",
+            "late_arrival": 0,
+            "late_cutoff": 1320,
+            "traveler": "Mateo"
+          },
+          "id": "S13",
+          "links": {
+            "activity": [
+              "A49"
+            ],
+            "bundle": [
+              "B82"
+            ],
+            "dinner": [
+              "D16"
+            ],
+            "transfer": [
+              "T78"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "stay"
+        },
+        "S38": {
+          "fields": {
+            "checkin": 895,
+            "day": 2,
+            "hotel": "H38",
+            "late_arrival": 0,
+            "late_cutoff": 1260,
+            "traveler": "Omar"
+          },
+          "id": "S38",
+          "links": {
+            "activity": [
+              "A24"
+            ],
+            "dinner": [
+              "D75"
+            ],
+            "transfer": [
+              "T41"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "stay"
+        },
+        "S53": {
+          "fields": {
+            "checkin": 1260,
+            "day": 2,
+            "hotel": "H38",
+            "late_arrival": 0,
+            "late_cutoff": 1230,
+            "traveler": "Bob"
+          },
+          "id": "S53",
+          "links": {
+            "activity": [
+              "A62"
+            ],
+            "dinner": [
+              "D91"
+            ],
+            "transfer": [
+              "T22"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "stay"
+        },
+        "S81": {
+          "fields": {
+            "checkin": 1085,
+            "day": 1,
+            "hotel": "H88",
+            "late_arrival": 0,
+            "late_cutoff": 1350,
+            "traveler": "Bob"
+          },
+          "id": "S81",
+          "links": {
+            "activity": [
+              "A10"
+            ],
+            "dinner": [
+              "D49"
+            ],
+            "transfer": [
+              "T37"
+            ]
+          },
+          "locked": false,
+          "revision": 1,
+          "status": "active",
+          "type": "stay"
+        },
+        "S91": {
+          "fields": {
+            "checkin": 1300,
+            "day": 1,
+            "hotel": "H88",
+            "late_arrival": 0,
+            "late_cutoff": 1380,
+            "traveler": "Omar"
+          },
+          "id": "S91",
+          "links": {
+            "activity": [
+              "A85"
+            ],
+            "dinner": [
+              "D29"
+            ],
+            "transfer": [
+              "T40"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "stay"
+        },
+        "S96": {
+          "fields": {
+            "checkin": 1370,
+            "day": 2,
+            "hotel": "H46",
+            "late_arrival": 0,
+            "late_cutoff": 1320,
+            "traveler": "Mateo"
+          },
+          "id": "S96",
+          "links": {
+            "activity": [
+              "A17"
+            ],
+            "bundle": [
+              "B96"
+            ],
+            "dinner": [
+              "D55"
+            ],
+            "transfer": [
+              "T77"
+            ]
+          },
+          "locked": false,
+          "revision": 1,
+          "status": "active",
+          "type": "stay"
+        },
+        "T22": {
+          "fields": {
+            "day": 2,
+            "pickup": 1230,
+            "provider": "P80",
+            "ride": 30,
+            "traveler": "Bob"
+          },
+          "id": "T22",
+          "links": {
+            "flight": [
+              "F17"
+            ],
+            "stay": [
+              "S53"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "transfer"
+        },
+        "T37": {
+          "fields": {
+            "day": 1,
+            "pickup": 1035,
+            "provider": "P80",
+            "ride": 50,
+            "traveler": "Bob"
+          },
+          "id": "T37",
+          "links": {
+            "flight": [
+              "F95"
+            ],
+            "stay": [
+              "S81"
+            ]
+          },
+          "locked": false,
+          "revision": 1,
+          "status": "active",
+          "type": "transfer"
+        },
+        "T40": {
+          "fields": {
+            "day": 1,
+            "pickup": 1280,
+            "provider": "P16",
+            "ride": 20,
+            "traveler": "Omar"
+          },
+          "id": "T40",
+          "links": {
+            "flight": [
+              "F33"
+            ],
+            "stay": [
+              "S91"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "transfer"
+        },
+        "T41": {
+          "fields": {
+            "day": 2,
+            "pickup": 855,
+            "provider": "P80",
+            "ride": 40,
+            "traveler": "Omar"
+          },
+          "id": "T41",
+          "links": {
+            "flight": [
+              "F45"
+            ],
+            "stay": [
+              "S38"
+            ]
+          },
+          "locked": true,
+          "revision": 0,
+          "status": "active",
+          "type": "transfer"
+        },
+        "T77": {
+          "fields": {
+            "day": 2,
+            "pickup": 1340,
+            "provider": "P16",
+            "ride": 30,
+            "traveler": "Mateo"
+          },
+          "id": "T77",
+          "links": {
+            "flight": [
+              "F81"
+            ],
+            "stay": [
+              "S96"
+            ]
+          },
+          "locked": false,
+          "revision": 1,
+          "status": "active",
+          "type": "transfer"
+        },
+        "T78": {
+          "fields": {
+            "day": 1,
+            "pickup": 1365,
+            "provider": "P80",
+            "ride": 20,
+            "traveler": "Mateo"
+          },
+          "id": "T78",
+          "links": {
+            "flight": [
+              "F46"
+            ],
+            "stay": [
+              "S13"
+            ]
+          },
+          "locked": false,
+          "revision": 2,
+          "status": "active",
+          "type": "transfer"
+        }
+      },
+      "tokens": 56
+    },
+    "affected": [
+      "T77",
+      "S96",
+      "D55",
+      "B96"
+    ],
+    "auto_affected": [],
+    "domain": "travel",
+    "id": "travel-s2-dev-000",
+    "n_prior_segments": 7,
+    "params": {
+      "auto_rebook": {
+        "P16": 0,
+        "P59": 1,
+        "P80": 0
+      },
+      "buffer": {
+        "P16": 35,
+        "P59": 30,
+        "P80": 60
+      },
+      "enforce_late": {
+        "H38": 0,
+        "H46": 0,
+        "H88": 0
+      },
+      "late_seating": {
+        "R30": 1,
+        "R65": 1
+      },
+      "linked": {
+        "V75": 1,
+        "V80": 1
+      }
+    },
+    "query": "Flight F81 (Mateo, day 2) now arrives at 21:45.",
+    "relevant_params": [
+      "buffer[P16]",
+      "auto_rebook[P16]",
+      "enforce_late[H46]",
+      "late_seating[R65]",
+      "linked[V75]"
+    ],
+    "required_reads": {
+      "objects": [
+        "F81",
+        "T77",
+        "S96",
+        "D55",
+        "B96",
+        "A17"
+      ],
+      "records": [
+        "h15",
+        "h17",
+        "h18",
+        "h19",
+        "h23",
+        "h24",
+        "h26"
+      ]
+    },
+    "seed": 2,
+    "split": "dev",
+    "topology_hash": "d68957f874410b1b"
+  }
+]

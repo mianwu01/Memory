@@ -1,0 +1,154 @@
+{
+  "results": [
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:48:47.918719+00:00",
+      "hash": "753854c574095a3dbaee161f76e15d62",
+      "id": "3453e267-6dcf-444e-9b48-e0ff9223a858",
+      "memory": "Bundle B83 was rebooked with a fee of 30.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:47.918719+00:00",
+      "user_id": "travel-s72-test-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:48:47.921244+00:00",
+      "hash": "b0959f5610372e3512e1682c4c831c66",
+      "id": "3d2e88e3-00e1-4460-b0c3-02b7e3a654fb",
+      "memory": "Reservation A96 start was shifted to 1950 with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:47.921244+00:00",
+      "user_id": "travel-s72-test-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:48:47.911269+00:00",
+      "hash": "8908b666aacd83a064eeae26772e551a",
+      "id": "455fc8d3-d12e-41e8-af2e-f06f4e9b99cf",
+      "memory": "Reservation T52 pickup was shifted to 1290 via auto operation.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:47.911269+00:00",
+      "user_id": "travel-s72-test-000"
+    },
+    {
+      "attributed_to": "assistant",
+      "created_at": "2026-09-21T16:48:35.371824+00:00",
+      "hash": "75c7c8b7504d452ff81d37f90910ed92",
+      "id": "55c968f9-d767-4b27-a2f8-207177d2b0a7",
+      "memory": "Reservation S64 check-in was shifted to 1345 with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:35.371824+00:00",
+      "user_id": "travel-s72-test-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:48:41.788854+00:00",
+      "hash": "c8cd966c26cf6dc61e08f3cc98f4d6ce",
+      "id": "5e558b6b-a6c4-4ed1-b085-d6dc0b04f062",
+      "memory": "Bundle B39 was rebooked with a fee of 30.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:41.788854+00:00",
+      "user_id": "travel-s72-test-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:48:41.781576+00:00",
+      "hash": "8850a9ee82d70e248ab863be0e937de6",
+      "id": "65d69d2f-5f00-42cd-aa57-10325b1bf0fd",
+      "memory": "Reservation T93 pickup was shifted to 1130 with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:41.781576+00:00",
+      "user_id": "travel-s72-test-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:48:41.786345+00:00",
+      "hash": "3efc22c2ac256129cd4af7f5e132a3f5",
+      "id": "6929ba90-dbd7-4c4b-9d5c-276b6f3a6ddb",
+      "memory": "Reservation D79 was cancelled with a fee of 40.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:41.786345+00:00",
+      "user_id": "travel-s72-test-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:48:47.916356+00:00",
+      "hash": "a88821ae9b19e16858c6f15b1fb60fbd",
+      "id": "721112a2-4e27-4e9c-87db-362267d91418",
+      "memory": "Reservation D96 start was shifted to 1395 with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:47.916356+00:00",
+      "user_id": "travel-s72-test-000"
+    },
+    {
+      "attributed_to": "assistant",
+      "created_at": "2026-09-21T16:48:35.369192+00:00",
+      "hash": "ffbd65f182326d6c4b67af24b10c378b",
+      "id": "814edab0-9e85-4f47-b547-dfbf436809ea",
+      "memory": "Reservation T89 pickup was shifted to 1325 via auto operation.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:35.369192+00:00",
+      "user_id": "travel-s72-test-000"
+    },
+    {
+      "attributed_to": "assistant",
+      "created_at": "2026-09-21T16:48:35.366682+00:00",
+      "hash": "5ca21a84c18fec5d7aca5aef932498ae",
+      "id": "82f79190-6c44-4ee7-859b-b27b356ddb5d",
+      "memory": "Flight F33 (Nia, day 2) arrival was shifted to 21:30 (1290) via intervention.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:35.366682+00:00",
+      "user_id": "travel-s72-test-000"
+    },
+    {
+      "attributed_to": "assistant",
+      "created_at": "2026-09-21T16:48:35.374330+00:00",
+      "hash": "71d594a4c3baf4b7273a250b671400ee",
+      "id": "8c3b39c9-6dc1-4d64-8b29-35e9eaf9566b",
+      "memory": "Reservation D38 was cancelled with a fee of 40.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:35.374330+00:00",
+      "user_id": "travel-s72-test-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:48:41.784058+00:00",
+      "hash": "b9756da881f642683e002c4ada5023e4",
+      "id": "9b581f83-1cc7-4cb2-9491-0af797d62ea8",
+      "memory": "Reservation S38 check-in was shifted to 1180 with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:41.784058+00:00",
+      "user_id": "travel-s72-test-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:48:47.908759+00:00",
+      "hash": "4a3ae6795125e3fc9bf8fffc0ea79d59",
+      "id": "b2a00a68-eceb-4fb8-8e40-dbe8ee4ce4c5",
+      "memory": "Flight F84 (Lena, day 1) arrival was shifted to 20:30 (1230) via intervention.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:47.908759+00:00",
+      "user_id": "travel-s72-test-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:48:47.913815+00:00",
+      "hash": "3c8e46f853f888f2bb4f349658da44db",
+      "id": "db4f2b03-f49f-4629-9350-920e20e7fe20",
+      "memory": "Reservation S13 check-in was shifted to 1340 with a fee of 25.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:47.913815+00:00",
+      "user_id": "travel-s72-test-000"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:48:41.778985+00:00",
+      "hash": "0f09bdc8debcc9115883b2139cc9a531",
+      "id": "e7d8ef3c-847c-4cf1-a372-55788e8dc900",
+      "memory": "Flight F18 (Lena, day 2) arrival was shifted to 18:30 (1110) via intervention.",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:48:41.778985+00:00",
+      "user_id": "travel-s72-test-000"
+    }
+  ]
+}

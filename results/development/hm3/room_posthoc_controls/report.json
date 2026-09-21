@@ -1,0 +1,644 @@
+{
+  "medium": {
+    "scope": "Post-hoc comparisons on previously evaluated trajectories; no new training or LLM calls",
+    "sensitivity_edges": [
+      {
+        "object": "david",
+        "room": "closet",
+        "walls": [
+          "closet|foyer|vertical"
+        ]
+      },
+      {
+        "object": "david",
+        "room": "deck",
+        "walls": [
+          "deck|patio|vertical"
+        ]
+      },
+      {
+        "object": "david",
+        "room": "foyer",
+        "walls": [
+          "foyer|hallway|vertical"
+        ]
+      },
+      {
+        "object": "david",
+        "room": "garage",
+        "walls": [
+          "garage|basement|vertical"
+        ]
+      },
+      {
+        "object": "david",
+        "room": "guest",
+        "walls": [
+          "garage|guest|horizontal",
+          "guest|master|vertical"
+        ]
+      },
+      {
+        "object": "david",
+        "room": "master",
+        "walls": [
+          "master|laundry|vertical"
+        ]
+      },
+      {
+        "object": "john",
+        "room": "basement",
+        "walls": [
+          "bathroom|basement|horizontal",
+          "garage|basement|vertical"
+        ]
+      },
+      {
+        "object": "john",
+        "room": "den",
+        "walls": [
+          "living|den|horizontal"
+        ]
+      },
+      {
+        "object": "john",
+        "room": "guest",
+        "walls": [
+          "garage|guest|horizontal"
+        ]
+      },
+      {
+        "object": "john",
+        "room": "patio",
+        "walls": [
+          "closet|patio|horizontal",
+          "deck|patio|vertical"
+        ]
+      },
+      {
+        "object": "lisa",
+        "room": "closet",
+        "walls": [
+          "closet|patio|horizontal"
+        ]
+      },
+      {
+        "object": "lisa",
+        "room": "garage",
+        "walls": [
+          "garage|guest|horizontal"
+        ]
+      },
+      {
+        "object": "lisa",
+        "room": "patio",
+        "walls": [
+          "closet|patio|horizontal"
+        ]
+      },
+      {
+        "object": "mary",
+        "room": "bathroom",
+        "walls": [
+          "bathroom|basement|horizontal"
+        ]
+      },
+      {
+        "object": "mary",
+        "room": "closet",
+        "walls": [
+          "closet|patio|horizontal"
+        ]
+      },
+      {
+        "object": "mary",
+        "room": "garage",
+        "walls": [
+          "garage|guest|horizontal"
+        ]
+      },
+      {
+        "object": "mary",
+        "room": "living",
+        "walls": [
+          "living|den|horizontal"
+        ]
+      },
+      {
+        "object": "mary",
+        "room": "patio",
+        "walls": [
+          "closet|patio|horizontal",
+          "deck|patio|vertical"
+        ]
+      },
+      {
+        "object": "michael",
+        "room": "basement",
+        "walls": [
+          "bathroom|basement|horizontal",
+          "garage|basement|vertical"
+        ]
+      },
+      {
+        "object": "michael",
+        "room": "den",
+        "walls": [
+          "living|den|horizontal"
+        ]
+      },
+      {
+        "object": "michael",
+        "room": "family",
+        "walls": [
+          "dining|family|vertical"
+        ]
+      },
+      {
+        "object": "michael",
+        "room": "foyer",
+        "walls": [
+          "closet|foyer|vertical"
+        ]
+      },
+      {
+        "object": "michael",
+        "room": "hallway",
+        "walls": [
+          "foyer|hallway|vertical"
+        ]
+      },
+      {
+        "object": "michael",
+        "room": "laundry",
+        "walls": [
+          "master|laundry|vertical"
+        ]
+      },
+      {
+        "object": "michael",
+        "room": "master",
+        "walls": [
+          "guest|master|vertical"
+        ]
+      },
+      {
+        "object": "michael",
+        "room": "patio",
+        "walls": [
+          "deck|patio|vertical"
+        ]
+      },
+      {
+        "object": "michael",
+        "room": "porch",
+        "walls": [
+          "hallway|porch|vertical"
+        ]
+      },
+      {
+        "object": "sarah",
+        "room": "closet",
+        "walls": [
+          "closet|foyer|vertical"
+        ]
+      },
+      {
+        "object": "sarah",
+        "room": "deck",
+        "walls": [
+          "deck|patio|vertical"
+        ]
+      },
+      {
+        "object": "sarah",
+        "room": "foyer",
+        "walls": [
+          "closet|foyer|vertical"
+        ]
+      },
+      {
+        "object": "sarah",
+        "room": "garage",
+        "walls": [
+          "garage|basement|vertical"
+        ]
+      },
+      {
+        "object": "sarah",
+        "room": "guest",
+        "walls": [
+          "guest|master|vertical"
+        ]
+      },
+      {
+        "object": "sarah",
+        "room": "hallway",
+        "walls": [
+          "foyer|hallway|vertical"
+        ]
+      },
+      {
+        "object": "sarah",
+        "room": "laundry",
+        "walls": [
+          "master|laundry|vertical"
+        ]
+      },
+      {
+        "object": "sarah",
+        "room": "master",
+        "walls": [
+          "guest|master|vertical",
+          "master|laundry|vertical"
+        ]
+      },
+      {
+        "object": "sarah",
+        "room": "porch",
+        "walls": [
+          "hallway|porch|vertical"
+        ]
+      }
+    ],
+    "table": {
+      "cyclic_wrong1": {
+        "episode_scores": {
+          "5100": 0.41818181818181793,
+          "5101": 0.4021212121212119,
+          "5102": 0.4396969696969694,
+          "5103": 0.7787878787878788,
+          "5104": 0.6945454545454544,
+          "5105": 0.37090909090909063,
+          "5106": 0.37454545454545435,
+          "5107": 0.28727272727272707,
+          "5108": 0.3890909090909089,
+          "5109": 0.44727272727272704,
+          "5110": 0.5054545454545452,
+          "5111": 0.5781818181818181,
+          "5112": 0.5781818181818181,
+          "5113": 0.3486868686868683,
+          "5114": 0.4909090909090906,
+          "5115": 0.5636363636363635,
+          "5116": 0.4036363636363634,
+          "5117": 0.4987373737373736,
+          "5118": 0.5927272727272725,
+          "5119": 0.5385353535353534,
+          "5120": 0.6060606060606059,
+          "5121": 0.31636363636363607,
+          "5122": 0.28727272727272707,
+          "5123": 0.447272727272727
+        },
+        "learned_minus_control": {
+          "difference": 0.01307870370370393,
+          "episode_bootstrap_95": [
+            0.00015782828282852554,
+            0.029019360269360455
+          ],
+          "episodes": 24,
+          "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+        },
+        "queries": 1584,
+        "same_as_learned": 1536,
+        "score": 0.47325336700336385
+      },
+      "cyclic_wrong2": {
+        "episode_scores": {
+          "5100": 0.41818181818181793,
+          "5101": 0.4021212121212119,
+          "5102": 0.4396969696969694,
+          "5103": 0.7787878787878788,
+          "5104": 0.6945454545454544,
+          "5105": 0.3810101010101008,
+          "5106": 0.37454545454545435,
+          "5107": 0.28727272727272707,
+          "5108": 0.3890909090909089,
+          "5109": 0.44727272727272704,
+          "5110": 0.5054545454545452,
+          "5111": 0.5781818181818181,
+          "5112": 0.5781818181818181,
+          "5113": 0.3486868686868683,
+          "5114": 0.4909090909090906,
+          "5115": 0.5636363636363635,
+          "5116": 0.4036363636363634,
+          "5117": 0.5012626262626261,
+          "5118": 0.5927272727272725,
+          "5119": 0.5317171717171716,
+          "5120": 0.6060606060606059,
+          "5121": 0.31636363636363607,
+          "5122": 0.28727272727272707,
+          "5123": 0.447272727272727
+        },
+        "learned_minus_control": {
+          "difference": 0.012836700336700563,
+          "episode_bootstrap_95": [
+            0.00015782828282852554,
+            0.028409090909091123
+          ],
+          "episodes": 24,
+          "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+        },
+        "queries": 1584,
+        "same_as_learned": 1532,
+        "score": 0.4734953703703677
+      },
+      "cyclic_wrong3": {
+        "episode_scores": {
+          "5100": 0.41818181818181793,
+          "5101": 0.3793939393939392,
+          "5102": 0.4396969696969694,
+          "5103": 0.7787878787878788,
+          "5104": 0.6945454545454544,
+          "5105": 0.37090909090909063,
+          "5106": 0.37454545454545435,
+          "5107": 0.28727272727272707,
+          "5108": 0.3890909090909089,
+          "5109": 0.44727272727272704,
+          "5110": 0.5054545454545452,
+          "5111": 0.5781818181818181,
+          "5112": 0.5781818181818181,
+          "5113": 0.3486868686868683,
+          "5114": 0.4909090909090906,
+          "5115": 0.5636363636363635,
+          "5116": 0.4036363636363634,
+          "5117": 0.5017676767676764,
+          "5118": 0.5927272727272725,
+          "5119": 0.5296969696969697,
+          "5120": 0.6060606060606059,
+          "5121": 0.31636363636363607,
+          "5122": 0.28727272727272707,
+          "5123": 0.447272727272727
+        },
+        "learned_minus_control": {
+          "difference": 0.014267676767676998,
+          "episode_bootstrap_95": [
+            0.0011047979797982218,
+            0.03049242424242442
+          ],
+          "episodes": 24,
+          "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+        },
+        "queries": 1584,
+        "same_as_learned": 1533,
+        "score": 0.472064393939391
+      },
+      "table_sensitivity": {
+        "episode_scores": {
+          "5100": 0.41818181818181793,
+          "5101": 0.5043939393939392,
+          "5102": 0.4396969696969694,
+          "5103": 0.8545454545454545,
+          "5104": 0.6945454545454544,
+          "5105": 0.44161616161616135,
+          "5106": 0.37454545454545435,
+          "5107": 0.28727272727272707,
+          "5108": 0.3890909090909089,
+          "5109": 0.44727272727272704,
+          "5110": 0.5054545454545452,
+          "5111": 0.5781818181818181,
+          "5112": 0.5781818181818181,
+          "5113": 0.3890909090909088,
+          "5114": 0.4909090909090906,
+          "5115": 0.5636363636363635,
+          "5116": 0.4036363636363634,
+          "5117": 0.5148989898989897,
+          "5118": 0.5927272727272725,
+          "5119": 0.6052020202020201,
+          "5120": 0.6363636363636362,
+          "5121": 0.31636363636363607,
+          "5122": 0.28727272727272707,
+          "5123": 0.447272727272727
+        },
+        "learned_minus_control": {
+          "difference": -0.003682659932659711,
+          "episode_bootstrap_95": [
+            -0.017887205387205157,
+            0.01159511784511806
+          ],
+          "episodes": 24,
+          "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+        },
+        "queries": 1584,
+        "same_as_learned": 1511,
+        "score": 0.49001473063972745
+      }
+    }
+  },
+  "small": {
+    "scope": "Post-hoc comparisons on previously evaluated trajectories; no new training or LLM calls",
+    "sensitivity_edges": [
+      {
+        "object": "john",
+        "room": "bathroom",
+        "walls": [
+          "bathroom|study|horizontal"
+        ]
+      },
+      {
+        "object": "john",
+        "room": "den",
+        "walls": [
+          "office|den|vertical"
+        ]
+      },
+      {
+        "object": "john",
+        "room": "kitchen",
+        "walls": [
+          "living|kitchen|vertical"
+        ]
+      },
+      {
+        "object": "mary",
+        "room": "den",
+        "walls": [
+          "bedroom|den|horizontal",
+          "office|den|vertical"
+        ]
+      },
+      {
+        "object": "mary",
+        "room": "kitchen",
+        "walls": [
+          "living|kitchen|vertical"
+        ]
+      },
+      {
+        "object": "mary",
+        "room": "living",
+        "walls": [
+          "living|kitchen|vertical"
+        ]
+      },
+      {
+        "object": "mary",
+        "room": "study",
+        "walls": [
+          "bathroom|study|horizontal"
+        ]
+      }
+    ],
+    "table": {
+      "cyclic_wrong1": {
+        "episode_scores": {
+          "5000": 0.7247474747474748,
+          "5001": 0.7323232323232323,
+          "5002": 0.6565656565656566,
+          "5003": 0.7196969696969696,
+          "5004": 0.75,
+          "5005": 0.6742424242424242,
+          "5006": 0.5984848484848485,
+          "5007": 0.7196969696969697,
+          "5008": 0.5126262626262625,
+          "5009": 0.696969696969697,
+          "5010": 0.7323232323232323,
+          "5011": 0.6818181818181818,
+          "5012": 0.7777777777777778,
+          "5013": 0.7777777777777778,
+          "5014": 0.7550505050505051,
+          "5015": 0.6792929292929293,
+          "5016": 0.8409090909090909,
+          "5017": 0.6515151515151515,
+          "5018": 0.7727272727272727,
+          "5019": 0.553030303030303,
+          "5020": 0.7954545454545454,
+          "5021": 0.6792929292929293,
+          "5022": 0.8005050505050505,
+          "5023": 0.7828282828282828
+        },
+        "learned_minus_control": {
+          "difference": 0.16287878787878793,
+          "episode_bootstrap_95": [
+            0.13541666666666669,
+            0.18844696969696972
+          ],
+          "episodes": 24,
+          "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+        },
+        "queries": 528,
+        "same_as_learned": 285,
+        "score": 0.7110690235690229
+      },
+      "cyclic_wrong2": {
+        "episode_scores": {
+          "5000": 0.6792929292929293,
+          "5001": 0.7323232323232323,
+          "5002": 0.6792929292929293,
+          "5003": 0.7159090909090909,
+          "5004": 0.75,
+          "5005": 0.6742424242424242,
+          "5006": 0.6212121212121212,
+          "5007": 0.7424242424242425,
+          "5008": 0.5580808080808081,
+          "5009": 0.696969696969697,
+          "5010": 0.7323232323232323,
+          "5011": 0.7272727272727273,
+          "5012": 0.7777777777777778,
+          "5013": 0.7777777777777778,
+          "5014": 0.7777777777777778,
+          "5015": 0.6792929292929293,
+          "5016": 0.8409090909090909,
+          "5017": 0.6742424242424242,
+          "5018": 0.7954545454545454,
+          "5019": 0.553030303030303,
+          "5020": 0.7954545454545454,
+          "5021": 0.6792929292929293,
+          "5022": 0.8005050505050505,
+          "5023": 0.76010101010101
+        },
+        "learned_minus_control": {
+          "difference": 0.15640782828282832,
+          "episode_bootstrap_95": [
+            0.13083964646464646,
+            0.17834595959595956
+          ],
+          "episodes": 24,
+          "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+        },
+        "queries": 528,
+        "same_as_learned": 288,
+        "score": 0.7175399831649827
+      },
+      "cyclic_wrong3": {
+        "episode_scores": {
+          "5000": 0.702020202020202,
+          "5001": 0.7550505050505051,
+          "5002": 0.6792929292929293,
+          "5003": 0.7310606060606062,
+          "5004": 0.75,
+          "5005": 0.6742424242424242,
+          "5006": 0.5984848484848485,
+          "5007": 0.7424242424242425,
+          "5008": 0.48989898989898994,
+          "5009": 0.696969696969697,
+          "5010": 0.7323232323232323,
+          "5011": 0.7045454545454546,
+          "5012": 0.7777777777777778,
+          "5013": 0.8232323232323232,
+          "5014": 0.7777777777777778,
+          "5015": 0.6565656565656566,
+          "5016": 0.8409090909090909,
+          "5017": 0.6515151515151515,
+          "5018": 0.75,
+          "5019": 0.553030303030303,
+          "5020": 0.8636363636363636,
+          "5021": 0.702020202020202,
+          "5022": 0.8005050505050505,
+          "5023": 0.8055555555555555
+        },
+        "learned_minus_control": {
+          "difference": 0.15482954545454547,
+          "episode_bootstrap_95": [
+            0.1278409090909091,
+            0.17992424242424243
+          ],
+          "episodes": 24,
+          "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+        },
+        "queries": 528,
+        "same_as_learned": 287,
+        "score": 0.7191182659932653
+      },
+      "table_sensitivity": {
+        "episode_scores": {
+          "5000": 0.8383838383838383,
+          "5001": 0.9595959595959596,
+          "5002": 0.8383838383838383,
+          "5003": 0.8939393939393938,
+          "5004": 0.9545454545454546,
+          "5005": 0.6742424242424242,
+          "5006": 0.7575757575757577,
+          "5007": 0.8787878787878789,
+          "5008": 0.7171717171717171,
+          "5009": 0.8787878787878789,
+          "5010": 0.7550505050505051,
+          "5011": 0.9772727272727273,
+          "5012": 0.9141414141414141,
+          "5013": 0.9595959595959596,
+          "5014": 0.9595959595959596,
+          "5015": 0.8383838383838383,
+          "5016": 1.0,
+          "5017": 0.8787878787878788,
+          "5018": 0.9772727272727273,
+          "5019": 0.7575757575757575,
+          "5020": 1.0,
+          "5021": 0.8383838383838383,
+          "5022": 0.8232323232323232,
+          "5023": 0.9191919191919191
+        },
+        "learned_minus_control": {
+          "difference": -0.0006313131313131076,
+          "episode_bootstrap_95": [
+            -0.0018939393939393738,
+            3.700743415417188e-17
+          ],
+          "episodes": 24,
+          "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+        },
+        "queries": 528,
+        "same_as_learned": 523,
+        "score": 0.8745791245791238
+      }
+    }
+  }
+}

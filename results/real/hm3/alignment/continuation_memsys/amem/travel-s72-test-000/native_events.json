@@ -1,0 +1,122 @@
+[
+  {
+    "evolution_count": 0,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    1035,\n    1290\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F33\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 1290\n  },\n  \"query\": \"Flight F33 (Nia, day 2) now arrives at 21:30.\",\n  \"rev\": 1,\n  \"rid\": \"h0\",\n  \"seg\": 0\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    1110,\n    1325\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"auto\",\n  \"object_id\": \"T89\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1325\n  },\n  \"rev\": 1,\n  \"rid\": \"h1\",\n  \"seg\": 0\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    1130,\n    1345\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S64\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1345\n  },\n  \"rev\": 1,\n  \"rid\": \"h2\",\n  \"seg\": 0\n },\n {\n  \"delta\": {\n   \"status\": [\n    \"active\",\n    \"cancelled\"\n   ]\n  },\n  \"fee\": 40,\n  \"kind\": \"txn\",\n  \"object_id\": \"D38\",\n  \"op\": \"cancel_reservation\",\n  \"payload\": {},\n  \"rev\": 1,\n  \"rid\": \"h3\",\n  \"seg\": 0\n }\n]",
+      "context": "This content logs a sequence of reservation modifications within a travel or booking system, including flight arrival changes, pickup and check-in time shifts, cancellations, and bundle rebooking, with associated fees and revision tracking for system-level or operational review.",
+      "evolution_history": [],
+      "id": "dc42b52c-b6c6-4fa2-b905-f2eed2ed02c7",
+      "importance_score": 1.0,
+      "keywords": [
+        "shift_reservation",
+        "cancel_reservation",
+        "fee",
+        "arrival",
+        "pickup",
+        "checkin",
+        "status",
+        "reservation"
+      ],
+      "last_accessed": "202609220054",
+      "links": [],
+      "retrieval_count": 0,
+      "tags": [
+        "travel",
+        "reservation management",
+        "booking system",
+        "data log",
+        "operations",
+        "transaction fees",
+        "rebooking",
+        "time shift"
+      ],
+      "timestamp": "202609010000"
+    },
+    "segment": 0,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 1,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    735,\n    1110\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F18\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 1110\n  },\n  \"query\": \"Flight F18 (Lena, day 2) now arrives at 18:30.\",\n  \"rev\": 1,\n  \"rid\": \"h4\",\n  \"seg\": 1\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    765,\n    1130\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T93\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1130\n  },\n  \"rev\": 1,\n  \"rid\": \"h5\",\n  \"seg\": 1\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    815,\n    1180\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S38\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1180\n  },\n  \"rev\": 1,\n  \"rid\": \"h6\",\n  \"seg\": 1\n },\n {\n  \"delta\": {\n   \"status\": [\n    \"active\",\n    \"cancelled\"\n   ]\n  },\n  \"fee\": 40,\n  \"kind\": \"txn\",\n  \"object_id\": \"D79\",\n  \"op\": \"cancel_reservation\",\n  \"payload\": {},\n  \"rev\": 1,\n  \"rid\": \"h7\",\n  \"seg\": 1\n },\n {\n  \"delta\": {\n   \"rebooked\": [\n    0,\n    1\n   ]\n  },\n  \"fee\": 30,\n  \"kind\": \"txn\",\n  \"object_id\": \"B39\",\n  \"op\": \"rebook_bundle\",\n  \"payload\": {},\n  \"rev\": 1,\n  \"rid\": \"h8\",\n  \"seg\": 1\n }\n]",
+      "context": "The content is a sequence of reservation system operations including shifting flight, transfer, and stay times, cancelling a reservation, and rebooking a bundle, showing transaction fees and state changes for an audience of system integrators or developers working with travel or booking APIs.",
+      "evolution_history": [],
+      "id": "ec358214-0f48-4d6f-b32a-cba2f8ee00ca",
+      "importance_score": 1.0,
+      "keywords": [
+        "shift_reservation",
+        "cancel_reservation",
+        "rebook_bundle",
+        "transaction",
+        "fee",
+        "delta",
+        "reservation status",
+        "arrival",
+        "pickup",
+        "checkin"
+      ],
+      "last_accessed": "202609220055",
+      "links": [
+        0
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "travel",
+        "reservation management",
+        "booking system",
+        "data log",
+        "operations",
+        "transaction fees",
+        "rebooking",
+        "time shift"
+      ],
+      "timestamp": "202609010100"
+    },
+    "segment": 1,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 2,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    990,\n    1230\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F84\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 1230\n  },\n  \"query\": \"Flight F84 (Lena, day 1) now arrives at 20:30.\",\n  \"rev\": 1,\n  \"rid\": \"h9\",\n  \"seg\": 2\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    1005,\n    1290\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"auto\",\n  \"object_id\": \"T52\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1290\n  },\n  \"rev\": 1,\n  \"rid\": \"h10\",\n  \"seg\": 2\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    1055,\n    1340\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S13\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1340\n  },\n  \"rev\": 1,\n  \"rid\": \"h11\",\n  \"seg\": 2\n },\n {\n  \"delta\": {\n   \"start\": [\n    1200,\n    1395\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"D96\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"start\": 1395\n  },\n  \"rev\": 1,\n  \"rid\": \"h12\",\n  \"seg\": 2\n },\n {\n  \"delta\": {\n   \"rebooked\": [\n    0,\n    1\n   ]\n  },\n  \"fee\": 30,\n  \"kind\": \"txn\",\n  \"object_id\": \"B83\",\n  \"op\": \"rebook_bundle\",\n  \"payload\": {},\n  \"rev\": 1,\n  \"rid\": \"h13\",\n  \"seg\": 2\n },\n {\n  \"delta\": {\n   \"start\": [\n    1935,\n    1950\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"A96\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"start\": 1950\n  },\n  \"rev\": 1,\n  \"rid\": \"h14\",\n  \"seg\": 2\n }\n]",
+      "context": "This content is a log of reservation system operations showing automated and manual changes to flight, transport, stay, and bundle reservations, including time shifts and rebooking with associated fees, likely intended for system debugging or itinerary management.",
+      "evolution_history": [],
+      "id": "8ed9758d-9297-4b47-8b64-737eafd7bc70",
+      "importance_score": 1.0,
+      "keywords": [
+        "shift_reservation",
+        "rebook_bundle",
+        "arrival",
+        "pickup",
+        "checkin",
+        "fee",
+        "transaction",
+        "intervention",
+        "reservation",
+        "delta"
+      ],
+      "last_accessed": "202609220055",
+      "links": [
+        1,
+        0
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "travel",
+        "reservation management",
+        "booking system",
+        "data log",
+        "operations",
+        "transaction fees",
+        "rebooking",
+        "time shift"
+      ],
+      "timestamp": "202609010200"
+    },
+    "segment": 2,
+    "stage": "add_note"
+  }
+]

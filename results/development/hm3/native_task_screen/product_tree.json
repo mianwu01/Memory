@@ -1,0 +1,1226 @@
+[
+  {
+    "type": "directory",
+    "oid": "222bb938fe7fe2480346e31fa5beba4d8400b11e",
+    "size": 0,
+    "path": "product_catalog"
+  },
+  {
+    "type": "directory",
+    "oid": "17a0d8054f3376ed41692d0b990c74863ad1517e",
+    "size": 0,
+    "path": "search_engine"
+  },
+  {
+    "type": "directory",
+    "oid": "865d67d0891a65571046201e2515390624865585",
+    "size": 0,
+    "path": "search_engine/indexes-full"
+  },
+  {
+    "type": "directory",
+    "oid": "eb607df2c655cccff46f27619e32a079c96c8383",
+    "size": 0,
+    "path": "search_engine/indexes_1275"
+  },
+  {
+    "type": "directory",
+    "oid": "96d81a7224b316de997a80f8bb80932779cf645b",
+    "size": 0,
+    "path": "search_engine/indexes_1k"
+  },
+  {
+    "type": "directory",
+    "oid": "6d94d04055e30ec05205905f248733f6a5aedc4d",
+    "size": 0,
+    "path": "search_engine/resources-full"
+  },
+  {
+    "type": "directory",
+    "oid": "38af51a7e837d1809d905b9ad111ae5ee739b45d",
+    "size": 0,
+    "path": "search_engine/resources_1275"
+  },
+  {
+    "type": "directory",
+    "oid": "90bab86af2a79c469b699cf6a9154e3fffbb6fe0",
+    "size": 0,
+    "path": "search_engine/resources_1k"
+  },
+  {
+    "type": "file",
+    "oid": "30f91b41aee59ab5c67deab310a3936a21cbcb71",
+    "size": 7608,
+    "path": ".gitattributes"
+  },
+  {
+    "type": "file",
+    "oid": "04c04cb3d2773c8245c522215d460307b54bd62c",
+    "size": 41160,
+    "path": "domain_data.json"
+  },
+  {
+    "type": "file",
+    "oid": "b2ab7479b9798e0b62ea394e065f3d506875f090",
+    "size": 5137548,
+    "path": "items_human_ins.json"
+  },
+  {
+    "type": "file",
+    "oid": "2a4c1912d114022f6101d22d7558ad75521dae83",
+    "size": 186295270,
+    "lfs": {
+      "oid": "1d36af476bdb8f82a5da62bd8acdabe54cd8de2fa84010d37da5c4890feb447e",
+      "size": 186295270,
+      "pointerSize": 134
+    },
+    "xetHash": "33c7ec08a0c31bb0715b888f3990e1d84da7dae7fd967a561b9f1089eec0e94d",
+    "path": "items_ins_v2.json"
+  },
+  {
+    "type": "file",
+    "oid": "8de5b9853120915568a8c5df0cceffc312e9d4a9",
+    "size": 5479720229,
+    "lfs": {
+      "oid": "2ef591d65df3af89e972ab72468eb82cbf124d876552d9f3678667edd620a6c8",
+      "size": 5479720229,
+      "pointerSize": 135
+    },
+    "xetHash": "9e49f3e4f0394374731dd8204649a3b35b8fa5a8df0cc34d4a8c263bb7be3e2f",
+    "path": "items_shuffle.json"
+  },
+  {
+    "type": "file",
+    "oid": "1f8ffd1cee2238fdb089d22e93d075100c4eecbb",
+    "size": 45908213,
+    "lfs": {
+      "oid": "27a57883fa7009a44d0bd361fdbe74a94916a59fd874e3ea02195f1f2dfe3d72",
+      "size": 45908213,
+      "pointerSize": 133
+    },
+    "xetHash": "30fdc5f5e73fb9f926f14e8c6e26594085606707e05d1d2a5405614892ac94f0",
+    "path": "product_catalog/beauty_personal_care_foot_hand_nail_care.json"
+  },
+  {
+    "type": "file",
+    "oid": "f54ca61f284c43d2bb2bc9c9cde33033b0d8168b",
+    "size": 46606053,
+    "lfs": {
+      "oid": "c9a9be86fa346c3c927daa9b65188fd6b8475129f4b44db19f84f576f0d7a3c5",
+      "size": 46606053,
+      "pointerSize": 133
+    },
+    "xetHash": "73c95c1aeabbd06d133c6ee9c3f94b680afd30647cbafa97f42e86619033d937",
+    "path": "product_catalog/beauty_personal_care_fragrance.json"
+  },
+  {
+    "type": "file",
+    "oid": "60cd37bc57f12a278c603a01f07902bd8aa992d1",
+    "size": 273442816,
+    "lfs": {
+      "oid": "54bbfe29c97ce96f814a6cd65882a0d25a1ccbefcf935e72f2f4ac9afe98d845",
+      "size": 273442816,
+      "pointerSize": 134
+    },
+    "xetHash": "f34db02725ed721a975c783657bdc545de443dba8d44f0e7d603a5d4739ead90",
+    "path": "product_catalog/beauty_personal_care_hair_care.json"
+  },
+  {
+    "type": "file",
+    "oid": "84a2562b8bd79d4335c430bab75df5f8ff5c7d7f",
+    "size": 102149094,
+    "lfs": {
+      "oid": "69ba432f43d6a6b49bce9dae61dfdba080bd42efa30f438a2a6e46ccd8563061",
+      "size": 102149094,
+      "pointerSize": 134
+    },
+    "xetHash": "b3acee34d1169e704fbb3c64e2a823cc75f8ad2e15e1fee2325a609e53a761a4",
+    "path": "product_catalog/beauty_personal_care_makeup.json"
+  },
+  {
+    "type": "file",
+    "oid": "dd76e1270204e27c33147e7534e134b7a106f77d",
+    "size": 137355750,
+    "lfs": {
+      "oid": "79fd80a1059f7f33f5f818a1a1ff3905a2014eb7dc4de35d61b6e01f5cc480cf",
+      "size": 137355750,
+      "pointerSize": 134
+    },
+    "xetHash": "1a45084253995a3cefdd53f3060dd8916c4f97b76fa2e0a06faea859115f9a54",
+    "path": "product_catalog/beauty_personal_care_oral_care.json"
+  },
+  {
+    "type": "file",
+    "oid": "b25ddfb63622b6c62666a6ebe0396ac50553ff1f",
+    "size": 94380764,
+    "lfs": {
+      "oid": "f0260ff811cfe9bcd5061741c372d7e59d0c94e4729d22c6fd5fc074ef223a05",
+      "size": 94380764,
+      "pointerSize": 133
+    },
+    "xetHash": "39900b924dc96cb046698e15e7f7894f8e7256f6d0d7151f7c16a6b70193897a",
+    "path": "product_catalog/beauty_personal_care_personal_care.json"
+  },
+  {
+    "type": "file",
+    "oid": "57f2869609e736fac4529deccc572fd231510760",
+    "size": 34476736,
+    "lfs": {
+      "oid": "421cf96af1bdfdc6410b3299d6f65881451a30a40df9750664eb601014c70b66",
+      "size": 34476736,
+      "pointerSize": 133
+    },
+    "xetHash": "1af6a8e93b0402c485869bee468a214a5770f6c76472e9cb576b1b31e7119642",
+    "path": "product_catalog/beauty_personal_care_salon_spa_equipment.json"
+  },
+  {
+    "type": "file",
+    "oid": "f8ceec6ac0ba69376b6402a6647fe04a41f65522",
+    "size": 41300488,
+    "lfs": {
+      "oid": "6fa94bd0687bb18ed6f2519c35cf85795cfa7c6fece1454b24716b2eea0b2265",
+      "size": 41300488,
+      "pointerSize": 133
+    },
+    "xetHash": "e660f044b006f99d8d9308f5ca993f2d40c02c1d7bc490e3df9e6b1f07a7db65",
+    "path": "product_catalog/beauty_personal_care_shave_hair_removal.json"
+  },
+  {
+    "type": "file",
+    "oid": "1c0a6ca112ae1178f1aec04c7ae0760a3fa2a9fe",
+    "size": 151355209,
+    "lfs": {
+      "oid": "a9ec8061bdb215f8eaf52072db07cc0c93a54da500e96446160d72401c207bfb",
+      "size": 151355209,
+      "pointerSize": 134
+    },
+    "xetHash": "b39c4d3d0df190ba694ee065b4522cbfb9244d9ed07b5ee9a940065e95575934",
+    "path": "product_catalog/beauty_personal_care_skin_care.json"
+  },
+  {
+    "type": "file",
+    "oid": "4c4929124c270637f372321bb7fa5d0cc0392d73",
+    "size": 192513166,
+    "lfs": {
+      "oid": "5f4fc9e43627abec8ef49438d8b6837083e046fff154090e2b1f0797f65f344c",
+      "size": 192513166,
+      "pointerSize": 134
+    },
+    "xetHash": "f7aeaba581e1d06ccb8e345898709d1edd39bea4be95a85c4705b33ba06f3a6a",
+    "path": "product_catalog/beauty_personal_care_tools_accessories.json"
+  },
+  {
+    "type": "file",
+    "oid": "67d1d620e8eeeca7f38247b292e71670c4df7c92",
+    "size": 358714,
+    "path": "product_catalog/clothing_shoes_jewelry_baby.json"
+  },
+  {
+    "type": "file",
+    "oid": "5732c5091b8fb427e2faefbae32a408684a48ba1",
+    "size": 1068682,
+    "path": "product_catalog/clothing_shoes_jewelry_boys.json"
+  },
+  {
+    "type": "file",
+    "oid": "b05587ef1c609cde830f0995b4cc5320dce7c5e9",
+    "size": 887888,
+    "path": "product_catalog/clothing_shoes_jewelry_costumes_accessories.json"
+  },
+  {
+    "type": "file",
+    "oid": "5914536f0e6cdca62060c15444c3fdeb45771ffb",
+    "size": 2254258,
+    "path": "product_catalog/clothing_shoes_jewelry_girls.json"
+  },
+  {
+    "type": "file",
+    "oid": "769d1963e105f8de1cecfee2796d0d890903dbd7",
+    "size": 154298,
+    "path": "product_catalog/clothing_shoes_jewelry_luggage_travel_gear.json"
+  },
+  {
+    "type": "file",
+    "oid": "3644380c0270da12dfbe01cf35b3f80f72cac80d",
+    "size": 605728194,
+    "lfs": {
+      "oid": "f1a560c67099b095f791bd31151deaa89fefdb0f1d1bd9adfc07ad508c67036d",
+      "size": 605728194,
+      "pointerSize": 134
+    },
+    "xetHash": "5b197b3d8eb1024ce6aa67454649f038a1da84411572eede2ad1078f1c4343c0",
+    "path": "product_catalog/clothing_shoes_jewelry_men.json"
+  },
+  {
+    "type": "file",
+    "oid": "818f44adc5c6cb686f3476e75dda71d7386f7e5c",
+    "size": 226301274,
+    "lfs": {
+      "oid": "9d3b19b4269265df877c88934cd5d0fc67becf21332fdd771b4716fc26a914ae",
+      "size": 226301274,
+      "pointerSize": 134
+    },
+    "xetHash": "08b221687d81fccc1691fefcf74f60a20ee0ac9579a8aef63259826367efa8e7",
+    "path": "product_catalog/clothing_shoes_jewelry_novelty_more.json"
+  },
+  {
+    "type": "file",
+    "oid": "8d5b34f5776f5065101185b62270167082948815",
+    "size": 1938706,
+    "path": "product_catalog/clothing_shoes_jewelry_shoe_jewelry_watch_accessories.json"
+  },
+  {
+    "type": "file",
+    "oid": "9bafca2ebb38cc8dd7884431ab69f2126b65f563",
+    "size": 28605375,
+    "lfs": {
+      "oid": "3df0acff1ec3cbb2bafb25509ce55d2b3b7564c202c7649a117e1cf58089ed75",
+      "size": 28605375,
+      "pointerSize": 133
+    },
+    "xetHash": "8effee375d41c61149bce2a551939b90171fd5d0c739e18c3570ae65c5feb2f4",
+    "path": "product_catalog/clothing_shoes_jewelry_sport_specific_clothing.json"
+  },
+  {
+    "type": "file",
+    "oid": "71adbd756db3843b9dffb910de877a46e7750398",
+    "size": 564270,
+    "path": "product_catalog/clothing_shoes_jewelry_uniforms_work_safety.json"
+  },
+  {
+    "type": "file",
+    "oid": "b9242cfa36d1215f1de4de01ee72478e68526589",
+    "size": 835756126,
+    "lfs": {
+      "oid": "ffcf40aafad7776f6a11e6f9f4881df5430fef95b2d9939ef8957df823d12c27",
+      "size": 835756126,
+      "pointerSize": 134
+    },
+    "xetHash": "0e4c366051f0412834e8a8847f298155953380dd27350c132339197587854f07",
+    "path": "product_catalog/clothing_shoes_jewelry_women.json"
+  },
+  {
+    "type": "file",
+    "oid": "f04f32655e17234a98f51129ec8a44391da2549c",
+    "size": 137828642,
+    "lfs": {
+      "oid": "fec19c832dea66316ec8ad389c114eaaf9f0bb45933cd64250d78965c46be1d3",
+      "size": 137828642,
+      "pointerSize": 134
+    },
+    "xetHash": "72881cebb27a9d6e6fad74fa64e57d4f984df42d43286a2e8a4d3d64b6d54161",
+    "path": "product_catalog/electronics_accessories_supplies.json"
+  },
+  {
+    "type": "file",
+    "oid": "e6fb2d12df86ea0057f0a7f96cb902037c22203b",
+    "size": 218239874,
+    "lfs": {
+      "oid": "72617bd4816c45ad59f486fcc5f917512fd5889a8c7a7827e8576a1dfb5f374b",
+      "size": 218239874,
+      "pointerSize": 134
+    },
+    "xetHash": "b095e3119f4557d8bbe833d445b305986090b6991b273d4525f263398de87158",
+    "path": "product_catalog/electronics_camera_photo.json"
+  },
+  {
+    "type": "file",
+    "oid": "2c8d3555db1c413f5b633e6e9907f834e3cdbc04",
+    "size": 38714290,
+    "lfs": {
+      "oid": "175416a0acf9fc31370ccf5870e12b43a9eb5ddae71bb52e80bcd6b09d4176e2",
+      "size": 38714290,
+      "pointerSize": 133
+    },
+    "xetHash": "4964f6d4c3af492e5602d808d95b038b0585b155543afe5c48baa48c872e5df0",
+    "path": "product_catalog/electronics_car_vehicle_electronics.json"
+  },
+  {
+    "type": "file",
+    "oid": "c3544f9f941c1292bc7625311e453f9b741ef8f9",
+    "size": 199908181,
+    "lfs": {
+      "oid": "d2a1ab2110e92f9d53f5520e884dbec25a6965578e01d5d9af69ed5799f09e0a",
+      "size": 199908181,
+      "pointerSize": 134
+    },
+    "xetHash": "e7ad57880d6504f7b6d976b7d4ba216d9f3a33b7907f6daddc7defe0ee18c6f5",
+    "path": "product_catalog/electronics_computers_accessories.json"
+  },
+  {
+    "type": "file",
+    "oid": "8d9f7c3b574fb1671e100e247bcd9ce7a9498482",
+    "size": 228110,
+    "path": "product_catalog/electronics_ebook_readers_accessories.json"
+  },
+  {
+    "type": "file",
+    "oid": "7d16c92d7279c237fe5527e1a7255fc049be0a9d",
+    "size": 927816,
+    "path": "product_catalog/electronics_electronics_warranties.json"
+  },
+  {
+    "type": "file",
+    "oid": "d3b7fd9f4fd3d82889d8814680d40e0e1e698912",
+    "size": 5460504,
+    "path": "product_catalog/electronics_gps_finders_accessories.json"
+  },
+  {
+    "type": "file",
+    "oid": "2fa218b5719e2ab4031a9462a5faa09c99464fc0",
+    "size": 48581386,
+    "lfs": {
+      "oid": "e97749541a3ff3b3da0c50d44dd085d283a2ba2746dfea334d3d621c08fe421f",
+      "size": 48581386,
+      "pointerSize": 133
+    },
+    "xetHash": "70d78341f7237418e556ed224b90a1188386d991e15f8f38def80637b2d43513",
+    "path": "product_catalog/electronics_headphones.json"
+  },
+  {
+    "type": "file",
+    "oid": "c10362da5bf588e84ca482ab6b4320c7ee766997",
+    "size": 72559979,
+    "lfs": {
+      "oid": "af42e843081209e4193b3b0d94f407bb7356cb543436008a94087865b989c3fb",
+      "size": 72559979,
+      "pointerSize": 133
+    },
+    "xetHash": "c51a54f0327682138828f199043e4a53d543ab14f189863257f36f4026133e79",
+    "path": "product_catalog/electronics_home_audio.json"
+  },
+  {
+    "type": "file",
+    "oid": "d78ad9151359cf3dc19619ac71e9ca86a50f6054",
+    "size": 1125594,
+    "path": "product_catalog/electronics_household_batteries_chargers_accessories.json"
+  },
+  {
+    "type": "file",
+    "oid": "56e5a8e2aa2ebde35289801b66413ec3d4e564b0",
+    "size": 51830599,
+    "lfs": {
+      "oid": "7da3aeefbe5308170d50ee442468ca190eff77a8ddd502060905f9c8bc940a13",
+      "size": 51830599,
+      "pointerSize": 133
+    },
+    "xetHash": "0b390155aa3acc69d7b866c2de01ddbbb791ed07ee5e452ccfed7e1c74c73458",
+    "path": "product_catalog/electronics_portable_audio_video.json"
+  },
+  {
+    "type": "file",
+    "oid": "615eb54c1b576614a76cdff80611747cfcfe7d40",
+    "size": 13209096,
+    "lfs": {
+      "oid": "c463986a3ecabe4dd4c6efba90a4539b412719f660ac5c894c0f980210b77516",
+      "size": 13209096,
+      "pointerSize": 133
+    },
+    "xetHash": "471f5f45027903b9a6307f0cb3af990de5d4fee5b9df02aff9c22cd8baf7d3d1",
+    "path": "product_catalog/electronics_power_accessories.json"
+  },
+  {
+    "type": "file",
+    "oid": "6fc2f784146f3591db13714dd1ebaf6baea51773",
+    "size": 16345376,
+    "lfs": {
+      "oid": "7377a36ba21699a50411931b2e71a9374d1926bf3148bb371a5bdb5c2c55413d",
+      "size": 16345376,
+      "pointerSize": 133
+    },
+    "xetHash": "aab704effbd067b9cde06bdb62e35a3bc3cd17b2ec109884c9004ea3812f7430",
+    "path": "product_catalog/electronics_security_surveillance.json"
+  },
+  {
+    "type": "file",
+    "oid": "ed0a4285fd72df8c88172d67d8da85c64e21e873",
+    "size": 67063983,
+    "lfs": {
+      "oid": "6e2013029a964189c3ad7d86fb8d254b142350faee340e9689778c99eb777936",
+      "size": 67063983,
+      "pointerSize": 133
+    },
+    "xetHash": "5694eed1a2685b5f6cac93f998efa7e60fc65664db08957a7fc12d1cc39369be",
+    "path": "product_catalog/electronics_television_video.json"
+  },
+  {
+    "type": "file",
+    "oid": "a7c03ae3e0ba1c75edbfe1b6cb044519d878e7d1",
+    "size": 6313,
+    "path": "product_catalog/electronics_video_game_consoles_accessories.json"
+  },
+  {
+    "type": "file",
+    "oid": "d81df66dbd0b9aeb1485631f49fa05c2f7516dbe",
+    "size": 30650860,
+    "lfs": {
+      "oid": "e1c8e231871bfd974c2a68a9eb8e11d6b00928f08f4ca008bcf719130ce8ffda",
+      "size": 30650860,
+      "pointerSize": 133
+    },
+    "xetHash": "6eeda6675e476151f6098d4f739b2d7b8f7a52f088e55c8b5d49ae367128322f",
+    "path": "product_catalog/electronics_video_projectors.json"
+  },
+  {
+    "type": "file",
+    "oid": "01eb144699067dcacde9ab345baa2d6eb9993d6c",
+    "size": 10779172,
+    "lfs": {
+      "oid": "1e6bd736eae4f91711b40fcfd747b237253f07cd57163301586a6678f5e4b882",
+      "size": 10779172,
+      "pointerSize": 133
+    },
+    "xetHash": "e9e15e17fd2ce8ba906a9bde31c07438adb9c8afbc9db182f32152025196f47c",
+    "path": "product_catalog/electronics_wearable_technology.json"
+  },
+  {
+    "type": "file",
+    "oid": "ee164c6269027961df952bfb1ff2599bdbd2a798",
+    "size": 2952363,
+    "path": "product_catalog/grocery_gourmet_food_alcoholic_beverages.json"
+  },
+  {
+    "type": "file",
+    "oid": "d1eb97431c791b0bd1393acc406f5a88769271b7",
+    "size": 61377449,
+    "lfs": {
+      "oid": "f94075dd87da1cc5abadf5feb4d476e572a61453ea6c7daf21f77c08d6b663f3",
+      "size": 61377449,
+      "pointerSize": 133
+    },
+    "xetHash": "4b85a19d7a366746d4befa4f6bbdb961642fc05216e492c6b54cc3048ff9c66f",
+    "path": "product_catalog/grocery_gourmet_food_beverages.json"
+  },
+  {
+    "type": "file",
+    "oid": "fd6c70c32fe20453302afb76d8136e35eaa66153",
+    "size": 27685700,
+    "lfs": {
+      "oid": "d7882e118f595a6ff8ef50f0b5f88578db05435b631c209b1498b4c8860e0020",
+      "size": 27685700,
+      "pointerSize": 133
+    },
+    "xetHash": "4cfecde7f98148cf0039e9f746ff48707a04a2bffe30126a8948cb1c5e72336a",
+    "path": "product_catalog/grocery_gourmet_food_breads_bakery.json"
+  },
+  {
+    "type": "file",
+    "oid": "9a4dac2218f3add9fca32504ae36a8bdd574bfd1",
+    "size": 9744974,
+    "path": "product_catalog/grocery_gourmet_food_breakfast_foods.json"
+  },
+  {
+    "type": "file",
+    "oid": "21118dd10aecd194821877c70cea909d7145bd7a",
+    "size": 14167294,
+    "lfs": {
+      "oid": "bf01797ee9af8f98aed22c8a6897ea2f64c7edb216d1d52971fa9bcdb626cdd1",
+      "size": 14167294,
+      "pointerSize": 133
+    },
+    "xetHash": "fdcd01dd503fb808a64e169528e7ff29d4c451be4fc9b1c66bb9a04d3c35abb7",
+    "path": "product_catalog/grocery_gourmet_food_dairy_cheese_eggs.json"
+  },
+  {
+    "type": "file",
+    "oid": "eb6317766e9123ef4d74735c9b066345206b7461",
+    "size": 2971968,
+    "path": "product_catalog/grocery_gourmet_food_deli_prepared_foods.json"
+  },
+  {
+    "type": "file",
+    "oid": "57928185a2441c6877d0a3a728a113b93ce8f0ed",
+    "size": 27883703,
+    "lfs": {
+      "oid": "8086babc9227ed79aa57f5ea3da42b45c6da0aa755c111e662f0d2d937236212",
+      "size": 27883703,
+      "pointerSize": 133
+    },
+    "xetHash": "c84ccae5be6b4e66ce5cea410a4126cbfbec4f1612e25f1833af6b689328a36b",
+    "path": "product_catalog/grocery_gourmet_food_food_beverage_gifts.json"
+  },
+  {
+    "type": "file",
+    "oid": "01182391026f92fc9f77800d08641aacf20cbca3",
+    "size": 1277663,
+    "path": "product_catalog/grocery_gourmet_food_fresh_flowers_live_indoor_plants.json"
+  },
+  {
+    "type": "file",
+    "oid": "17a1a4bdd04a23e127b29a74167477042a3810c3",
+    "size": 1948281,
+    "path": "product_catalog/grocery_gourmet_food_fresh_meal_kits.json"
+  },
+  {
+    "type": "file",
+    "oid": "ff9673824cb4e6a7028296fe8e805170eca892ae",
+    "size": 11213486,
+    "lfs": {
+      "oid": "9c8101b2c0bcab32aa9c8b86a2df3a583627ade5038f1f661bcd4e21037dbc19",
+      "size": 11213486,
+      "pointerSize": 133
+    },
+    "xetHash": "e14fd14806d3601515c73dc35023b428941d5706263d5e05f078fb2d41015e1a",
+    "path": "product_catalog/grocery_gourmet_food_frozen.json"
+  },
+  {
+    "type": "file",
+    "oid": "4c34840d65384245b70353e58fede9a9cc18ce57",
+    "size": 4367539,
+    "path": "product_catalog/grocery_gourmet_food_home_brewing_winemaking.json"
+  },
+  {
+    "type": "file",
+    "oid": "a0b492452ca7edd0ed337d2d3899267319647b35",
+    "size": 5636629,
+    "path": "product_catalog/grocery_gourmet_food_meat_seafood.json"
+  },
+  {
+    "type": "file",
+    "oid": "634ef01cab96f9d1367fcdd3ba711320bdf221b2",
+    "size": 1918223,
+    "path": "product_catalog/grocery_gourmet_food_meat_substitutes.json"
+  },
+  {
+    "type": "file",
+    "oid": "15a23abc3f0e84c904455b45233c78bcdadf3c90",
+    "size": 127178162,
+    "lfs": {
+      "oid": "a3bb542eb34f8afc057603e88be1660811662edb344c6cd112ab9691d9661d39",
+      "size": 127178162,
+      "pointerSize": 134
+    },
+    "xetHash": "5c69484690f3b5639723023fc285ea79dbe5c2047b0ee2a62ee8efd0f3517b19",
+    "path": "product_catalog/grocery_gourmet_food_pantry_staples.json"
+  },
+  {
+    "type": "file",
+    "oid": "479c56395706ad08753d392130712eebcd7aca6f",
+    "size": 8843930,
+    "path": "product_catalog/grocery_gourmet_food_produce.json"
+  },
+  {
+    "type": "file",
+    "oid": "2fc103492e80a96d195b1db56994e312f582c984",
+    "size": 109366395,
+    "lfs": {
+      "oid": "e6c2af1123fc384011ff852d819ce206e7c675361dd4ef8cc6c976ce7421703a",
+      "size": 109366395,
+      "pointerSize": 134
+    },
+    "xetHash": "31a94e7c3c5b59a32b2ed92666559a5d18de04873341800bd9b970332b0a580e",
+    "path": "product_catalog/grocery_gourmet_food_snacks_sweets.json"
+  },
+  {
+    "type": "file",
+    "oid": "0bb9c8f3e63a5cd73ac0aec341fe71a5be190b0c",
+    "size": 11100002,
+    "lfs": {
+      "oid": "e122c2f688a28cb449d06f26cd8b4c94b4f78280cca57e0fd2a159eba08780c6",
+      "size": 11100002,
+      "pointerSize": 133
+    },
+    "xetHash": "9a61f16672c8ce6ee5b0ae88fb1005776646c7f58839b49b1e59eb58fadf0ff6",
+    "path": "product_catalog/home_kitchen_bath.json"
+  },
+  {
+    "type": "file",
+    "oid": "f2cdadb433d516bfc73cef754b0b85bd8a509d71",
+    "size": 115150294,
+    "lfs": {
+      "oid": "4e5099dc31ece2d0785117032abfc25330f7df607dc927a5dbd7e01a2102fa46",
+      "size": 115150294,
+      "pointerSize": 134
+    },
+    "xetHash": "ab20df86cce08ac96c3fc979aafbf8e5758cab0f1f937e5860c4e66ae852f6f2",
+    "path": "product_catalog/home_kitchen_bedding.json"
+  },
+  {
+    "type": "file",
+    "oid": "f68b304c00c97071d7a38c51f935fd2b21b69b82",
+    "size": 829527,
+    "path": "product_catalog/home_kitchen_event_party_supplies.json"
+  },
+  {
+    "type": "file",
+    "oid": "a2efd906117e02f55a3fb61e45b63b2170aff555",
+    "size": 638324718,
+    "lfs": {
+      "oid": "58331ca0e4dd1faf958f20abc26b8d0cfd660504d08906af8c35a53b3cb3a4c1",
+      "size": 638324718,
+      "pointerSize": 134
+    },
+    "xetHash": "a2a3bdc2b4854e78b55cd8f8c430fe4a2f8085eab244dc814e35dfa38c01f74e",
+    "path": "product_catalog/home_kitchen_furniture.json"
+  },
+  {
+    "type": "file",
+    "oid": "fe59eb17e1e7361dbdf7bf9a84ec430129f66362",
+    "size": 5439756,
+    "path": "product_catalog/home_kitchen_heating_cooling_air_quality.json"
+  },
+  {
+    "type": "file",
+    "oid": "5975cf13df9c5d39b50083548ecf0b44f2eb5667",
+    "size": 222215097,
+    "lfs": {
+      "oid": "cc5b84ec2d11e6561d068128e583644d5c034171656c342aa7d45225a85d5980",
+      "size": 222215097,
+      "pointerSize": 134
+    },
+    "xetHash": "593793c5f611a1574494882574786b232230e19928618ab2599fc28b38360c3f",
+    "path": "product_catalog/home_kitchen_home_d_cor_products.json"
+  },
+  {
+    "type": "file",
+    "oid": "1b29dd2b4dcfd7288e42a1d2560520a7a4c47ea4",
+    "size": 207394,
+    "path": "product_catalog/home_kitchen_irons_steamers.json"
+  },
+  {
+    "type": "file",
+    "oid": "9b7990a8233dcdf253a4bfc5fff15d3e9164241c",
+    "size": 13487,
+    "path": "product_catalog/home_kitchen_kids_home_store.json"
+  },
+  {
+    "type": "file",
+    "oid": "5db1b7623f44cdc53ae86cf3c43422281a7c1c9c",
+    "size": 44534970,
+    "lfs": {
+      "oid": "90478ef41a49505c0ed2063a9892588903cc6d42c3c830b1ed6db85edd05ab42",
+      "size": 44534970,
+      "pointerSize": 133
+    },
+    "xetHash": "026e16f11b4819ab72be334cef0ecfb6516d85242c335a5a7de95fff733a490c",
+    "path": "product_catalog/home_kitchen_kitchen_dining.json"
+  },
+  {
+    "type": "file",
+    "oid": "f4309214d8ec21770f3678a99dace817d24f7c17",
+    "size": 1306994,
+    "path": "product_catalog/home_kitchen_seasonal_d_cor.json"
+  },
+  {
+    "type": "file",
+    "oid": "3fffeaea77130a7ad9a79d007155cfe7fccc9977",
+    "size": 48670044,
+    "lfs": {
+      "oid": "6c1830243d1631b09fbea409b77f82f7198243229ade49459ca8f8d7150983d6",
+      "size": 48670044,
+      "pointerSize": 133
+    },
+    "xetHash": "5198a67581f435f1268122e30c7d1e9e8fa2dfd2b42c79098895283060cd5f66",
+    "path": "product_catalog/home_kitchen_storage_organization.json"
+  },
+  {
+    "type": "file",
+    "oid": "272bf1592f382a619dbdc34a9f40daaaf20531ce",
+    "size": 486061,
+    "path": "product_catalog/home_kitchen_vacuums_floor_care.json"
+  },
+  {
+    "type": "file",
+    "oid": "82eaf3235d94dcd8fbba40865496732af571c3b1",
+    "size": 40612749,
+    "lfs": {
+      "oid": "66fe5b916e26e2d5e4beae7ea676eeba7aa0502944a78ef302fa70339ef83975",
+      "size": 40612749,
+      "pointerSize": 133
+    },
+    "xetHash": "e10b435ae32fc425056c37ede651387b17489affac47badb3923e2fca342a8f6",
+    "path": "product_catalog/home_kitchen_wall_art.json"
+  },
+  {
+    "type": "file",
+    "oid": "3985cd81a0276bf87b637c2949a04bdf89937e4b",
+    "size": 1322,
+    "path": "search_engine/convert_product_file_format.py"
+  },
+  {
+    "type": "file",
+    "oid": "9153beb8a7f92af77035e4726f56d195839f51be",
+    "size": 663,
+    "path": "search_engine/indexes-full/_0.fdm"
+  },
+  {
+    "type": "file",
+    "oid": "8e06339ed2170528e66448f26279f99eeb4dbc10",
+    "size": 675297212,
+    "lfs": {
+      "oid": "3a162ffaf1fe707396909093eb2bb88790e61234d07b195651e52c529099724b",
+      "size": 675297212,
+      "pointerSize": 134
+    },
+    "xetHash": "b67dbc632d122f57a2164d9ee92bc0f0a71efcc3c0e897120136b51db588cf12",
+    "path": "search_engine/indexes-full/_0.fdt"
+  },
+  {
+    "type": "file",
+    "oid": "ced919cb73be93f4e23615ddb49953d46eec31e1",
+    "size": 42252,
+    "path": "search_engine/indexes-full/_0.fdx"
+  },
+  {
+    "type": "file",
+    "oid": "70659b1d80823cdb2f1db732f48033690c611e5f",
+    "size": 334,
+    "path": "search_engine/indexes-full/_0.fnm"
+  },
+  {
+    "type": "file",
+    "oid": "f10697c285823261ff7590550d17d0c5d175439e",
+    "size": 1181435,
+    "lfs": {
+      "oid": "727ce5c269dce9ad8e1cdd917ec4e719ddc6787d015d0173c15857529b65b138",
+      "size": 1181435,
+      "pointerSize": 132
+    },
+    "xetHash": "0815adeb97dd4df4cf1cf3df59146d445310600314c0eabdcbc7a7a681c8becd",
+    "path": "search_engine/indexes-full/_0.nvd"
+  },
+  {
+    "type": "file",
+    "oid": "0c823babccf39f7f06dad640b2641e03fcc441e6",
+    "size": 103,
+    "path": "search_engine/indexes-full/_0.nvm"
+  },
+  {
+    "type": "file",
+    "oid": "428391572beaf1d9ad88cf51375e8e41225294df",
+    "size": 601,
+    "path": "search_engine/indexes-full/_0.si"
+  },
+  {
+    "type": "file",
+    "oid": "078c45996375e6c10d3892caa49e873d4dfb8b18",
+    "size": 538517418,
+    "lfs": {
+      "oid": "7e89890398a3b99707ef93fd9cd43f8cf1d5d79bc2f604e3473b4e6aac0efa87",
+      "size": 538517418,
+      "pointerSize": 134
+    },
+    "xetHash": "9d5372e209f00a84ea624ad491b3449159d1c0a1cb80e383872be1c5e6407347",
+    "path": "search_engine/indexes-full/_0.tvd"
+  },
+  {
+    "type": "file",
+    "oid": "648651d9cc88dca18cb7e4072f0a329d3ef0e528",
+    "size": 3272,
+    "path": "search_engine/indexes-full/_0.tvm"
+  },
+  {
+    "type": "file",
+    "oid": "35b2bd45ca7059c2371f8de0e1ea2574febb8cfd",
+    "size": 228027,
+    "lfs": {
+      "oid": "b018cdffc261611edb3169bd0dff1853a2c65a72bea1ecceb0b94c6548a094a9",
+      "size": 228027,
+      "pointerSize": 131
+    },
+    "xetHash": "5653243b18a38e132212e442ce6ebcc8b6cdcdeb563f2b77821862a2cba907e5",
+    "path": "search_engine/indexes-full/_0.tvx"
+  },
+  {
+    "type": "file",
+    "oid": "50046b06f1fbfdfb0d833b221824220ff948ea6a",
+    "size": 9771141,
+    "lfs": {
+      "oid": "53deec569e1444144dc2f63d9efb2f2a042bf476280097a5bc536110b285a892",
+      "size": 9771141,
+      "pointerSize": 132
+    },
+    "xetHash": "2bc6cf1583231f6baa6d3b266676312bc3ecc6dfe706a10372803e74535ed4a0",
+    "path": "search_engine/indexes-full/_0_Lucene80_0.dvd"
+  },
+  {
+    "type": "file",
+    "oid": "deb0970aa068469840534b3d9940948d74fbdc41",
+    "size": 272,
+    "path": "search_engine/indexes-full/_0_Lucene80_0.dvm"
+  },
+  {
+    "type": "file",
+    "oid": "8337a0dd33da1b4394d8c20d809cd7c9839ea58a",
+    "size": 133194280,
+    "lfs": {
+      "oid": "c27aa6f15407f7d89f2ae2374ea63c13a758015bc001c93f87946dc5806add7d",
+      "size": 133194280,
+      "pointerSize": 134
+    },
+    "xetHash": "9e409ff0718d6758a7e2008c7e68edf161e4e28c23768cd6cf95af0035ecc8fd",
+    "path": "search_engine/indexes-full/_0_Lucene84_0.doc"
+  },
+  {
+    "type": "file",
+    "oid": "279aac959a63b4f28fdbe5afc245ad7192334e91",
+    "size": 141375987,
+    "lfs": {
+      "oid": "9f4ac923e2f7e2c5f38897bcba62240f5b73f4503153a5aef143994617380247",
+      "size": 141375987,
+      "pointerSize": 134
+    },
+    "xetHash": "8c9c9ad75d89c933bf3cf6cfb186803abbd1044f48b467293a2aa905df0265ac",
+    "path": "search_engine/indexes-full/_0_Lucene84_0.pos"
+  },
+  {
+    "type": "file",
+    "oid": "1a9aafb302373be4d68c5b1cc493943fdb9a71c5",
+    "size": 21732234,
+    "lfs": {
+      "oid": "fb0fb82f26d5347a9b88195f691376ff30e7d462b52e2ab973d7d149826aeae1",
+      "size": 21732234,
+      "pointerSize": 133
+    },
+    "xetHash": "529125b418b0a0060208b0090791660f7dec86efa861f72c9bdc7a3d1cca6a29",
+    "path": "search_engine/indexes-full/_0_Lucene84_0.tim"
+  },
+  {
+    "type": "file",
+    "oid": "81e4f4c2e38eaa568dcf50198ee67300fcab1e29",
+    "size": 577296,
+    "lfs": {
+      "oid": "a9ac850e494e13b4319f075f91254ee41dff42ebe09b61a46442567cfa725441",
+      "size": 577296,
+      "pointerSize": 131
+    },
+    "xetHash": "dcb999c3c55cb1599c7ef7554ae7b311ce2456be43728a3be10b96a24ab95cbf",
+    "path": "search_engine/indexes-full/_0_Lucene84_0.tip"
+  },
+  {
+    "type": "file",
+    "oid": "2fae69e2a63575414daae95e8c0dab4255c84168",
+    "size": 318,
+    "path": "search_engine/indexes-full/_0_Lucene84_0.tmd"
+  },
+  {
+    "type": "file",
+    "oid": "c4d5331477335fbd2dd5f86f29f4c3ff04c18bd6",
+    "size": 154,
+    "path": "search_engine/indexes-full/segments_1"
+  },
+  {
+    "type": "file",
+    "oid": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "size": 0,
+    "path": "search_engine/indexes-full/write.lock"
+  },
+  {
+    "type": "file",
+    "oid": "4322fee1ae7a833e4a57042add6a0361cf2b03dc",
+    "size": 158,
+    "path": "search_engine/indexes_1275/_0.fdm"
+  },
+  {
+    "type": "file",
+    "oid": "5f807217c36f8fba30e3b262d3b128eb4d339c25",
+    "size": 732777,
+    "lfs": {
+      "oid": "b1c0fd1d94fdcd68cc446e3a7a238840ffeb926e361d463c51190de804a2f90d",
+      "size": 732777,
+      "pointerSize": 131
+    },
+    "xetHash": "1a745618e2965f1b552dec4fd45677ca6f1ae68727642c53d99fa75792e6fc65",
+    "path": "search_engine/indexes_1275/_0.fdt"
+  },
+  {
+    "type": "file",
+    "oid": "85b48cd93e4780fd86f0caf907bf52715339cbb4",
+    "size": 118,
+    "path": "search_engine/indexes_1275/_0.fdx"
+  },
+  {
+    "type": "file",
+    "oid": "4615f710f9ca6e277c310652d30dcbd8df4cf642",
+    "size": 334,
+    "path": "search_engine/indexes_1275/_0.fnm"
+  },
+  {
+    "type": "file",
+    "oid": "9d659e3b4ce580209d97c8574ae75b2ef9a83e83",
+    "size": 1334,
+    "path": "search_engine/indexes_1275/_0.nvd"
+  },
+  {
+    "type": "file",
+    "oid": "7244508a9d7e3fc9d240ddb84f5870d0f8a44c6b",
+    "size": 103,
+    "path": "search_engine/indexes_1275/_0.nvm"
+  },
+  {
+    "type": "file",
+    "oid": "601717643db893956266c30b9ab548c982bd42e1",
+    "size": 601,
+    "path": "search_engine/indexes_1275/_0.si"
+  },
+  {
+    "type": "file",
+    "oid": "d3a0cdd9a0d8f69b3a4e536453cc79b3615305da",
+    "size": 583542,
+    "lfs": {
+      "oid": "751b6eab5e5863415d12114a60ca822e994f5a6bf95b35ede657191437602124",
+      "size": 583542,
+      "pointerSize": 131
+    },
+    "xetHash": "efb5bd7167f64fdfc7af27ee7a298974c7798d982984190f0d41763a1369fd2b",
+    "path": "search_engine/indexes_1275/_0.tvd"
+  },
+  {
+    "type": "file",
+    "oid": "20b31c10f26d0788260c6ca2a36094056c4e5e43",
+    "size": 162,
+    "path": "search_engine/indexes_1275/_0.tvm"
+  },
+  {
+    "type": "file",
+    "oid": "bdb71caf241f6c2f019cabeefe24e9525c50bb80",
+    "size": 327,
+    "path": "search_engine/indexes_1275/_0.tvx"
+  },
+  {
+    "type": "file",
+    "oid": "0d7f81bfad4af83353aaffbfdc41efe249b0f6a8",
+    "size": 11177,
+    "path": "search_engine/indexes_1275/_0_Lucene80_0.dvd"
+  },
+  {
+    "type": "file",
+    "oid": "4f36333248eac21fcb084d2e18802840f8140860",
+    "size": 250,
+    "path": "search_engine/indexes_1275/_0_Lucene80_0.dvm"
+  },
+  {
+    "type": "file",
+    "oid": "58c3fa1e7e78fc046a59251f55ab53f257788a44",
+    "size": 124213,
+    "lfs": {
+      "oid": "caba0132a9d3d8318bfc6881ae058fa78e03312afe9e7a2745e6158046591577",
+      "size": 124213,
+      "pointerSize": 131
+    },
+    "xetHash": "b82409d7d1e7561d3d25c974c592c925a176ed3d75a8bfa8c4dea2b3f324a363",
+    "path": "search_engine/indexes_1275/_0_Lucene84_0.doc"
+  },
+  {
+    "type": "file",
+    "oid": "aefa69a82ae02a0c79b69c7608087e6995a11521",
+    "size": 168266,
+    "lfs": {
+      "oid": "9d93e12e32779cf749763b30325d79310d23fba57c1449a15e9d82675069bbe6",
+      "size": 168266,
+      "pointerSize": 131
+    },
+    "xetHash": "57985388051b07e1533afb747ec507b68df0eef52465febd69463123a58fa71f",
+    "path": "search_engine/indexes_1275/_0_Lucene84_0.pos"
+  },
+  {
+    "type": "file",
+    "oid": "b9509749aa0f31cc2ada134c83b97add632197b3",
+    "size": 144091,
+    "lfs": {
+      "oid": "c4b8a4b04dd45ee299d4bab00c82d68db1257bb8e9bf11d0022c441ba4fe5dd3",
+      "size": 144091,
+      "pointerSize": 131
+    },
+    "xetHash": "8b5e3dfdcb87b7f9bdc96f04d339ff0f21e16642b6766bf323e98e28e3c10c90",
+    "path": "search_engine/indexes_1275/_0_Lucene84_0.tim"
+  },
+  {
+    "type": "file",
+    "oid": "1cccb4b7ce1005c910142ff4c9160461acacc7c6",
+    "size": 3414,
+    "path": "search_engine/indexes_1275/_0_Lucene84_0.tip"
+  },
+  {
+    "type": "file",
+    "oid": "915edb6f0fb2635d82d2f3c00ec0e2a093624ec9",
+    "size": 276,
+    "path": "search_engine/indexes_1275/_0_Lucene84_0.tmd"
+  },
+  {
+    "type": "file",
+    "oid": "19d1c38c6e7d98d0f5aae6e1ecfc967a580bf961",
+    "size": 154,
+    "path": "search_engine/indexes_1275/segments_1"
+  },
+  {
+    "type": "file",
+    "oid": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "size": 0,
+    "path": "search_engine/indexes_1275/write.lock"
+  },
+  {
+    "type": "file",
+    "oid": "8abc8d69e238619021378f820e7d83e333324b3c",
+    "size": 158,
+    "path": "search_engine/indexes_1k/_3.fdm"
+  },
+  {
+    "type": "file",
+    "oid": "930606c80d9811729d8a981a4f47fc796b668afe",
+    "size": 554191,
+    "lfs": {
+      "oid": "3282819d0fd35817f3cdb11179f0eda124cd5b3543babd7447cb7fea5d57d330",
+      "size": 554191,
+      "pointerSize": 131
+    },
+    "xetHash": "5598d55c1f7beae1235859a0dbf16b321eb133961ae0b174bcf621218be79a70",
+    "path": "search_engine/indexes_1k/_3.fdt"
+  },
+  {
+    "type": "file",
+    "oid": "7344307686720b15f457f80ee844481b89f0eb14",
+    "size": 106,
+    "path": "search_engine/indexes_1k/_3.fdx"
+  },
+  {
+    "type": "file",
+    "oid": "02920011530536aec4747ef2a5470c15656dcdf9",
+    "size": 334,
+    "path": "search_engine/indexes_1k/_3.fnm"
+  },
+  {
+    "type": "file",
+    "oid": "1fb9150ba62f06a2efb875358dd62fa9714e8bdb",
+    "size": 1059,
+    "path": "search_engine/indexes_1k/_3.nvd"
+  },
+  {
+    "type": "file",
+    "oid": "1e9fc8e8132657134c1ec2e289113b2b0d6e4433",
+    "size": 103,
+    "path": "search_engine/indexes_1k/_3.nvm"
+  },
+  {
+    "type": "file",
+    "oid": "4b13d881731bc132a9ecae08a1a960ed8de08e2d",
+    "size": 601,
+    "path": "search_engine/indexes_1k/_3.si"
+  },
+  {
+    "type": "file",
+    "oid": "c4570536dd333c498902afd43cfe1f5875f63f5c",
+    "size": 439995,
+    "lfs": {
+      "oid": "b29467b92b3e8809c0e349510a67ef6178ceb3e99f08a92339e52d9b92c3b7bf",
+      "size": 439995,
+      "pointerSize": 131
+    },
+    "xetHash": "440647ddad9801611b1865bc3c76ba179c07d14aff5629cb4e4f0f1b9be1286b",
+    "path": "search_engine/indexes_1k/_3.tvd"
+  },
+  {
+    "type": "file",
+    "oid": "c2aa056c4a685c1268db7dc1f0f81a39b37e9507",
+    "size": 162,
+    "path": "search_engine/indexes_1k/_3.tvm"
+  },
+  {
+    "type": "file",
+    "oid": "96b8e0eb64ce166b576a7835899c993949dcb13c",
+    "size": 264,
+    "path": "search_engine/indexes_1k/_3.tvx"
+  },
+  {
+    "type": "file",
+    "oid": "450dd414ae7ee5e26cff2f47df810cde8b9963eb",
+    "size": 8857,
+    "path": "search_engine/indexes_1k/_3_Lucene80_0.dvd"
+  },
+  {
+    "type": "file",
+    "oid": "95ff195ce4d63700f81c6e8fb23d332485bb4d2a",
+    "size": 250,
+    "path": "search_engine/indexes_1k/_3_Lucene80_0.dvm"
+  },
+  {
+    "type": "file",
+    "oid": "b86c87fe84149ded9b09065664df4a6f035799ca",
+    "size": 91917,
+    "path": "search_engine/indexes_1k/_3_Lucene84_0.doc"
+  },
+  {
+    "type": "file",
+    "oid": "a02c17790726410da82be0ac6a6e691c13db4017",
+    "size": 126225,
+    "lfs": {
+      "oid": "a26abcd9d0d6b1cc428aa84526c4c5073508b729991cdf431acbc1a5ae9d5d6e",
+      "size": 126225,
+      "pointerSize": 131
+    },
+    "xetHash": "d3c8fbea9380bcf762b016dd13c087c136f20f44e648e8ccfa2c94eaaa3089e0",
+    "path": "search_engine/indexes_1k/_3_Lucene84_0.pos"
+  },
+  {
+    "type": "file",
+    "oid": "abd00aa08b7cfbdd1d7bd5baa9abf8e8daf91a4a",
+    "size": 126959,
+    "lfs": {
+      "oid": "f1f68d20d70e3b9352c100f3eee80a4cc00f4f326f778f27460f016bbe7525fc",
+      "size": 126959,
+      "pointerSize": 131
+    },
+    "xetHash": "928055a62de11fd0ea3d1e706de51a660fe4a2ec52f04da9351a1f1a5df74780",
+    "path": "search_engine/indexes_1k/_3_Lucene84_0.tim"
+  },
+  {
+    "type": "file",
+    "oid": "3c4b0b1a2504ce101f549a5a6ac0350eca7b2d85",
+    "size": 3151,
+    "path": "search_engine/indexes_1k/_3_Lucene84_0.tip"
+  },
+  {
+    "type": "file",
+    "oid": "2bf120a1c80e939ce0b43d20a1dbd3699683b1b7",
+    "size": 276,
+    "path": "search_engine/indexes_1k/_3_Lucene84_0.tmd"
+  },
+  {
+    "type": "file",
+    "oid": "362814cc2aebffb1fe6866ac5472a241140119f0",
+    "size": 154,
+    "path": "search_engine/indexes_1k/segments_4"
+  },
+  {
+    "type": "file",
+    "oid": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "size": 0,
+    "path": "search_engine/indexes_1k/write.lock"
+  },
+  {
+    "type": "file",
+    "oid": "41c0b2da28e6a609f5fb585ba320d7e4b888a4d7",
+    "size": 331,
+    "path": "search_engine/lucene_searcher.py"
+  },
+  {
+    "type": "file",
+    "oid": "629b4601dacfd8f820c9f22f6d268e5444aee15b",
+    "size": 1034938202,
+    "lfs": {
+      "oid": "382a1881300af9ec9db334b9abf5f900d527a6b50061826dfa7141f12344a697",
+      "size": 1034938202,
+      "pointerSize": 135
+    },
+    "xetHash": "909296df136bcc9e982b31186cf0bc83fe02fc1230821d88c223c71cf29313cf",
+    "path": "search_engine/resources-full/documents.jsonl"
+  },
+  {
+    "type": "file",
+    "oid": "245f1f2790dcbfd5672f1ab7eb11945c13fb78b9",
+    "size": 1132764,
+    "path": "search_engine/resources_1275/documents.jsonl"
+  },
+  {
+    "type": "file",
+    "oid": "bb2b0e9ba1123f8229393b6478e5e658d8459d70",
+    "size": 846200,
+    "path": "search_engine/resources_1k/documents.jsonl"
+  },
+  {
+    "type": "file",
+    "oid": "beee1e73eaeb1fc252319bed5e3ec390f430f3bf",
+    "size": 1133,
+    "path": "search_engine/run_indexing.sh"
+  }
+]

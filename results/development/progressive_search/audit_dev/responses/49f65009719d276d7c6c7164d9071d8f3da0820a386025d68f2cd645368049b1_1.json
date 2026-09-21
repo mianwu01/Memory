@@ -1,0 +1,11 @@
+{
+  "case": 6,
+  "repeat": 1,
+  "prompt_sha256": "49f65009719d276d7c6c7164d9071d8f3da0820a386025d68f2cd645368049b1",
+  "extracted": "Amherst College",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "deepseek-v4-flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The evidence identifies Josh Harmon as the person: he was a French major who joked he “switched my major maybe 100 times” and wrote a thesis on the French military snare drum/tambour [73276]. After graduating in 2018, he worked at NBC’s “Today” show as a newsletter writer [61461]. The college he graduated from was established in 1821 [24389], placing it in the 1800–1850 window.  \nExact Answer: Amherst College  \nConfidence: 92%"
+}

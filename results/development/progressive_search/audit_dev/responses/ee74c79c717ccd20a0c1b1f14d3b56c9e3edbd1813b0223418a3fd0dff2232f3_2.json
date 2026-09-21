@@ -1,0 +1,11 @@
+{
+  "case": 6,
+  "repeat": 2,
+  "prompt_sha256": "ee74c79c717ccd20a0c1b1f14d3b56c9e3edbd1813b0223418a3fd0dff2232f3",
+  "extracted": "New York University (NYU)",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to Bowen Yang, who was an SNL/NBC writer before becoming a cast member. He graduated from New York University, founded in 1831, with a French major; his senior thesis was about the French Battalion Drum.\n\nExact Answer: New York University (NYU)\n\nConfidence: 90%"
+}
