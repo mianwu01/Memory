@@ -1,0 +1,10 @@
+{
+  "case": 7,
+  "prompt_sha256": "74f33be25974f75c50174f79dd050361205f244b27e75329bc5c9967f867b70f",
+  "extracted": "Cory Monteith",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The documented clues converge on Cory Monteith: he worked as a taxicab driver before acting [32366][77808], made his TV debut in *Stargate Atlantis* in 2004 [32366], appeared in *Monte Carlo* with Disney Channel star Selena Gomez [30018][77808], and attended 16 schools, i.e., more than 10 school switches [32366].  \nExact Answer: Cory Monteith  \nConfidence: 90%"
+}

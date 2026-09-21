@@ -1,0 +1,87 @@
+[
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/amem/travel-s70-test-000/memory_calls.jsonl",
+    "calls": 4,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/amem/travel-s70-test-001/memory_calls.jsonl",
+    "calls": 10,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/amem/travel-s71-test-000/memory_calls.jsonl",
+    "calls": 14,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/amem/travel-s71-test-001/memory_calls.jsonl",
+    "calls": 10,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/amem/travel-s72-test-000/memory_calls.jsonl",
+    "calls": 2,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/lightmem/travel-s70-test-000/memory_calls.jsonl",
+    "calls": 2,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/lightmem/travel-s70-test-001/memory_calls.jsonl",
+    "calls": 5,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/lightmem/travel-s71-test-000/memory_calls.jsonl",
+    "calls": 7,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/lightmem/travel-s71-test-001/memory_calls.jsonl",
+    "calls": 5,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/lightmem/travel-s72-test-000/memory_calls.jsonl",
+    "calls": 1,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/lightmem/travel-s72-test-001/memory_calls.jsonl",
+    "calls": 4,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/mem0/travel-s70-test-000/memory_calls.jsonl",
+    "calls": 2,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/mem0/travel-s70-test-001/memory_calls.jsonl",
+    "calls": 5,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/mem0/travel-s71-test-000/memory_calls.jsonl",
+    "calls": 7,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/mem0/travel-s71-test-001/memory_calls.jsonl",
+    "calls": 5,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/mem0/travel-s72-test-000/memory_calls.jsonl",
+    "calls": 3,
+    "invalid_json_calls": []
+  },
+  {
+    "path": "results/real/hm3/alignment/continuation_memsys/mem0/travel-s72-test-001/memory_calls.jsonl",
+    "calls": 4,
+    "invalid_json_calls": []
+  }
+]

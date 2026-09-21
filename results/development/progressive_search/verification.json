@@ -1,0 +1,35 @@
+{
+  "responses": 817,
+  "attempts": 822,
+  "unique_recorded_api_inputs": 744,
+  "returned_models": {
+    "DeepSeek-V4-Flash-0731": 757,
+    "deepseek-v4-flash-0731": 60
+  },
+  "unresolved_intents": [
+    {
+      "ledger": "results/development/progressive_search/dev_v1/api/ledger.jsonl",
+      "job": "collect/case1/session1/turn3",
+      "attempt": 0
+    },
+    {
+      "ledger": "results/development/progressive_search/dev_v1/api/ledger.jsonl",
+      "job": "collect/case0/session2/turn2",
+      "attempt": 0
+    }
+  ],
+  "required_result_rows": {
+    "evaluation_dev/results.json": 160,
+    "evaluation_rewired_dev/results.json": 50,
+    "audit_dev/results.json": 105,
+    "audit_evidence_only_dev/results.json": 15
+  },
+  "preservation": {
+    "checked": 702,
+    "changed": []
+  },
+  "new_files_scanned": 1053,
+  "credential_match_files": [],
+  "errors": [],
+  "note": "The two abandoned v1 intents can have unknown charges; all frozen required evaluations must be complete separately."
+}

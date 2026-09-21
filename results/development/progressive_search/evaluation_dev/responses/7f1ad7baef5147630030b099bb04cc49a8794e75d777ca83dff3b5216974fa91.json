@@ -1,0 +1,10 @@
+{
+  "case": 0,
+  "prompt_sha256": "7f1ad7baef5147630030b099bb04cc49a8794e75d777ca83dff3b5216974fa91",
+  "extracted": "Ihuoma Sonia Uche",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied 2023 articles identify the individual as Nollywood actress Ihuoma Sonia Uche, born 25 May 1995 and a graduate of the University of Abuja, Nigeria’s capital [82844][62459][53537]. They also describe her as the eldest/first child among four sisters, with three siblings [82844][63918][62459], and state that rumours about her having her first child were proven false because she was only playing a pregnant character in The Beast in Him [82844][62459]. These details match the question.  \nExact Answer: Ihuoma Sonia Uche  \nConfidence: 92%"
+}

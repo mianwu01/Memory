@@ -1,0 +1,752 @@
+[
+  {
+    "allowed_beliefs": [
+      "bathroom"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6100-t50-mary",
+    "job_id": "05b7f55281a4768cb019c1d029e6f32841d778e54da09bb2aec85ada429edb9d",
+    "mode": "enabled",
+    "prompt_sha256": "2cc0e5bd99dc570fb75748919453e1e7f9f4890585fc79d61452eec5e905a6ce",
+    "records": 63,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "05b7f55281a4768cb019c1d029e6f32841d778e54da09bb2aec85ada429edb9d",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6100-t50-mary",
+    "job_id": "b7c3bbf8bda9bf0fa168877bd3ec78d51740ef071dacf8a23fd972ea9431d4c8",
+    "mode": "enabled",
+    "prompt_sha256": "2cc0e5bd99dc570fb75748919453e1e7f9f4890585fc79d61452eec5e905a6ce",
+    "records": 63,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "b7c3bbf8bda9bf0fa168877bd3ec78d51740ef071dacf8a23fd972ea9431d4c8",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6100-t50-mary",
+    "job_id": "d401b917f6d0bc26329d2326aa36b6cbb059b77b67455c6a90935a242f9c048a",
+    "mode": "enabled",
+    "prompt_sha256": "2cc0e5bd99dc570fb75748919453e1e7f9f4890585fc79d61452eec5e905a6ce",
+    "records": 63,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "d401b917f6d0bc26329d2326aa36b6cbb059b77b67455c6a90935a242f9c048a",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6100-t50-mary",
+    "job_id": "8f1c2167e93d0af9a4582da854da3bb50641ab5a0173e2a88b369db593a7c892",
+    "mode": "disabled",
+    "prompt_sha256": "2cc0e5bd99dc570fb75748919453e1e7f9f4890585fc79d61452eec5e905a6ce",
+    "records": 63,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "8f1c2167e93d0af9a4582da854da3bb50641ab5a0173e2a88b369db593a7c892",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6100-t50-mary",
+    "job_id": "04bcf8be95333ad6ee94aaab0cf345b33f1a108b8439e732931ab36fa7dd2cde",
+    "mode": "disabled",
+    "prompt_sha256": "2cc0e5bd99dc570fb75748919453e1e7f9f4890585fc79d61452eec5e905a6ce",
+    "records": 63,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "04bcf8be95333ad6ee94aaab0cf345b33f1a108b8439e732931ab36fa7dd2cde",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6100-t50-mary",
+    "job_id": "516092a437574dc3987017dddf4cb8a562bc84aceb1b8c6285d201752a1f209d",
+    "mode": "disabled",
+    "prompt_sha256": "2cc0e5bd99dc570fb75748919453e1e7f9f4890585fc79d61452eec5e905a6ce",
+    "records": 63,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "516092a437574dc3987017dddf4cb8a562bc84aceb1b8c6285d201752a1f209d",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6100-t50-mary",
+    "job_id": "5a2115abdb3ee6aeff7032b6ec5d8c6a6e6069b76a2b9b085dbb46007fc9e5e4",
+    "mode": "enabled",
+    "prompt_sha256": "1d7ebdd8156ec044b2f55d49823d84b70d6a96fb9d6a7676ed51cc75e7a1c701",
+    "records": 56,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "5a2115abdb3ee6aeff7032b6ec5d8c6a6e6069b76a2b9b085dbb46007fc9e5e4",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6100-t50-mary",
+    "job_id": "7d8fa1fee92ec6b45cf6de9907c168c091dd13579ef1c4296f6592bc6a2a6cad",
+    "mode": "enabled",
+    "prompt_sha256": "1d7ebdd8156ec044b2f55d49823d84b70d6a96fb9d6a7676ed51cc75e7a1c701",
+    "records": 56,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "7d8fa1fee92ec6b45cf6de9907c168c091dd13579ef1c4296f6592bc6a2a6cad",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6100-t50-mary",
+    "job_id": "cafdc554b8db3774f03a09bfcfe144e39ab045c78f4838b3de26dad6063fd61e",
+    "mode": "enabled",
+    "prompt_sha256": "1d7ebdd8156ec044b2f55d49823d84b70d6a96fb9d6a7676ed51cc75e7a1c701",
+    "records": 56,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "cafdc554b8db3774f03a09bfcfe144e39ab045c78f4838b3de26dad6063fd61e",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6100-t50-mary",
+    "job_id": "08da8b360c9d5ef5d225beb3cf7832265a3d0c389dc75cf8209ca95f22cec81e",
+    "mode": "disabled",
+    "prompt_sha256": "1d7ebdd8156ec044b2f55d49823d84b70d6a96fb9d6a7676ed51cc75e7a1c701",
+    "records": 56,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "08da8b360c9d5ef5d225beb3cf7832265a3d0c389dc75cf8209ca95f22cec81e",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6100-t50-mary",
+    "job_id": "91d206fa54db43efae048b7396557ccc30be7ccb246c9beb1a3fdd4a938b2c7b",
+    "mode": "disabled",
+    "prompt_sha256": "1d7ebdd8156ec044b2f55d49823d84b70d6a96fb9d6a7676ed51cc75e7a1c701",
+    "records": 56,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "91d206fa54db43efae048b7396557ccc30be7ccb246c9beb1a3fdd4a938b2c7b",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6100-t50-mary",
+    "job_id": "6c9282ccc5c35d4ffe583fe7f07797dc9d5e4cb1214cbed3de946f4f7de82728",
+    "mode": "disabled",
+    "prompt_sha256": "1d7ebdd8156ec044b2f55d49823d84b70d6a96fb9d6a7676ed51cc75e7a1c701",
+    "records": 56,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "6c9282ccc5c35d4ffe583fe7f07797dc9d5e4cb1214cbed3de946f4f7de82728",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "kitchen"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6101-t50-mary",
+    "job_id": "3a9f2afa9a43e92addbccb7ef45a7fd9ffa51f726c66d9c0e048d932b2193be9",
+    "mode": "enabled",
+    "prompt_sha256": "e705656245dac2fe9b4f9cd15753dabf24792b4771cdc39fb8bb9da0b8fbb8dc",
+    "records": 63,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "3a9f2afa9a43e92addbccb7ef45a7fd9ffa51f726c66d9c0e048d932b2193be9",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "kitchen"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6101-t50-mary",
+    "job_id": "d9a107fcc4dbe660249b5c092af53240e5be5424b3eee8a3e734c2efa0154274",
+    "mode": "enabled",
+    "prompt_sha256": "e705656245dac2fe9b4f9cd15753dabf24792b4771cdc39fb8bb9da0b8fbb8dc",
+    "records": 63,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "d9a107fcc4dbe660249b5c092af53240e5be5424b3eee8a3e734c2efa0154274",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "kitchen"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6101-t50-mary",
+    "job_id": "05cecee5717723dffa3ad0e473f449b34632d7ebca5228651208a381e908f9a3",
+    "mode": "enabled",
+    "prompt_sha256": "e705656245dac2fe9b4f9cd15753dabf24792b4771cdc39fb8bb9da0b8fbb8dc",
+    "records": 63,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "05cecee5717723dffa3ad0e473f449b34632d7ebca5228651208a381e908f9a3",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "kitchen"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6101-t50-mary",
+    "job_id": "4d937bd54dc7a44574bfbbab56f9018ceeac9b8457077b0385f22fe4be73db0c",
+    "mode": "disabled",
+    "prompt_sha256": "e705656245dac2fe9b4f9cd15753dabf24792b4771cdc39fb8bb9da0b8fbb8dc",
+    "records": 63,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "4d937bd54dc7a44574bfbbab56f9018ceeac9b8457077b0385f22fe4be73db0c",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "kitchen"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6101-t50-mary",
+    "job_id": "06205855945f04ec550f1147ed215fd08db99c169c7044aa5798f197823e2ce0",
+    "mode": "disabled",
+    "prompt_sha256": "e705656245dac2fe9b4f9cd15753dabf24792b4771cdc39fb8bb9da0b8fbb8dc",
+    "records": 63,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "06205855945f04ec550f1147ed215fd08db99c169c7044aa5798f197823e2ce0",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "kitchen"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6101-t50-mary",
+    "job_id": "80a481e0368ada76af6af9a91d425b536339455c5b0f5a7e64384e79e74416b6",
+    "mode": "disabled",
+    "prompt_sha256": "e705656245dac2fe9b4f9cd15753dabf24792b4771cdc39fb8bb9da0b8fbb8dc",
+    "records": 63,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "80a481e0368ada76af6af9a91d425b536339455c5b0f5a7e64384e79e74416b6",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6101-t50-mary",
+    "job_id": "458feeb846d95a51f098e3c746d412c66bdfd7c74bbff1d3981e45a5f2a67d64",
+    "mode": "enabled",
+    "prompt_sha256": "a6f55417abcb5061c1205544857157d9120e67025f299ad69c31ffd7ba2cc804",
+    "records": 54,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "458feeb846d95a51f098e3c746d412c66bdfd7c74bbff1d3981e45a5f2a67d64",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6101-t50-mary",
+    "job_id": "67d5baf486091e4351f08bde701236a32f13c0f50a60685569852ff29d1b80bc",
+    "mode": "enabled",
+    "prompt_sha256": "a6f55417abcb5061c1205544857157d9120e67025f299ad69c31ffd7ba2cc804",
+    "records": 54,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "67d5baf486091e4351f08bde701236a32f13c0f50a60685569852ff29d1b80bc",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6101-t50-mary",
+    "job_id": "b87cdc309e5645ce57483facfe9f3383a2c8eaf16a54d2946fc8d8ba085645a0",
+    "mode": "enabled",
+    "prompt_sha256": "a6f55417abcb5061c1205544857157d9120e67025f299ad69c31ffd7ba2cc804",
+    "records": 54,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "b87cdc309e5645ce57483facfe9f3383a2c8eaf16a54d2946fc8d8ba085645a0",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6101-t50-mary",
+    "job_id": "27bf321085a0c4c82fc191f99008b599623d3c516bb972dceda37143b89f4ec8",
+    "mode": "disabled",
+    "prompt_sha256": "a6f55417abcb5061c1205544857157d9120e67025f299ad69c31ffd7ba2cc804",
+    "records": 54,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "27bf321085a0c4c82fc191f99008b599623d3c516bb972dceda37143b89f4ec8",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6101-t50-mary",
+    "job_id": "203f4b20db6c879010a6a57a41d4a6460e52f846ab1450f0c23d54f7dc8a9d9e",
+    "mode": "disabled",
+    "prompt_sha256": "a6f55417abcb5061c1205544857157d9120e67025f299ad69c31ffd7ba2cc804",
+    "records": 54,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "203f4b20db6c879010a6a57a41d4a6460e52f846ab1450f0c23d54f7dc8a9d9e",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6101-t50-mary",
+    "job_id": "76f5b2d67c58e7875e4b7ce28a937b23485bf1643fed5e4f610d0c04ebf4789b",
+    "mode": "disabled",
+    "prompt_sha256": "a6f55417abcb5061c1205544857157d9120e67025f299ad69c31ffd7ba2cc804",
+    "records": 54,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "76f5b2d67c58e7875e4b7ce28a937b23485bf1643fed5e4f610d0c04ebf4789b",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "living"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6102-t50-mary",
+    "job_id": "9809575441d61c60857138f8a83b34d483017c60378dca20180f70e363b3e525",
+    "mode": "enabled",
+    "prompt_sha256": "f49144057a3611a7239c12dd87d9c9998bda7729f5ad35bc4a4a80ab39f101e2",
+    "records": 63,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "9809575441d61c60857138f8a83b34d483017c60378dca20180f70e363b3e525",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "living"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6102-t50-mary",
+    "job_id": "074d8fb9c37c9e5b14c5d4240c6c08b4243c295dbcf30e6c2e620c360a038012",
+    "mode": "enabled",
+    "prompt_sha256": "f49144057a3611a7239c12dd87d9c9998bda7729f5ad35bc4a4a80ab39f101e2",
+    "records": 63,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "074d8fb9c37c9e5b14c5d4240c6c08b4243c295dbcf30e6c2e620c360a038012",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "living"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6102-t50-mary",
+    "job_id": "a80a41fd694cee99759119d5db871c5750072dbdab047b776230b3bb101bc5d8",
+    "mode": "enabled",
+    "prompt_sha256": "f49144057a3611a7239c12dd87d9c9998bda7729f5ad35bc4a4a80ab39f101e2",
+    "records": 63,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "a80a41fd694cee99759119d5db871c5750072dbdab047b776230b3bb101bc5d8",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "living"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6102-t50-mary",
+    "job_id": "3db10401573c5fa9baf1a4cb024e76a7bba42efd46c21dd06643ec9372db1bba",
+    "mode": "disabled",
+    "prompt_sha256": "f49144057a3611a7239c12dd87d9c9998bda7729f5ad35bc4a4a80ab39f101e2",
+    "records": 63,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "3db10401573c5fa9baf1a4cb024e76a7bba42efd46c21dd06643ec9372db1bba",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "living"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6102-t50-mary",
+    "job_id": "f178791b8dc5aea53362ee0796d91135a99ad1e1c3c02af8407bdc9a9bd4c35b",
+    "mode": "disabled",
+    "prompt_sha256": "f49144057a3611a7239c12dd87d9c9998bda7729f5ad35bc4a4a80ab39f101e2",
+    "records": 63,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "f178791b8dc5aea53362ee0796d91135a99ad1e1c3c02af8407bdc9a9bd4c35b",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "living"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6102-t50-mary",
+    "job_id": "50030510b2e3679be817f52a3196f6c93a56dfd1cb20770c18d8179371fe1746",
+    "mode": "disabled",
+    "prompt_sha256": "f49144057a3611a7239c12dd87d9c9998bda7729f5ad35bc4a4a80ab39f101e2",
+    "records": 63,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "50030510b2e3679be817f52a3196f6c93a56dfd1cb20770c18d8179371fe1746",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bedroom",
+      "living"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6102-t50-mary",
+    "job_id": "7b6cf6c7b2f2084cf52c3bfbc58dc0a3b1dd4e7eabce939cf77ae0215979bac8",
+    "mode": "enabled",
+    "prompt_sha256": "da32993c28eb4079e37c5786aa96327f9a1a0f48cdbbfd2a4acf2300e7e4c569",
+    "records": 60,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "7b6cf6c7b2f2084cf52c3bfbc58dc0a3b1dd4e7eabce939cf77ae0215979bac8",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bedroom",
+      "living"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6102-t50-mary",
+    "job_id": "75006b69d7c215d592abcac7e7acffb97703cb2c14187dff46b056e1797d798a",
+    "mode": "enabled",
+    "prompt_sha256": "da32993c28eb4079e37c5786aa96327f9a1a0f48cdbbfd2a4acf2300e7e4c569",
+    "records": 60,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "75006b69d7c215d592abcac7e7acffb97703cb2c14187dff46b056e1797d798a",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bedroom",
+      "living"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6102-t50-mary",
+    "job_id": "b114ac94be0c733c1e3bc83b4a89822dd03c760a1dfdef92d6f4259453052087",
+    "mode": "enabled",
+    "prompt_sha256": "da32993c28eb4079e37c5786aa96327f9a1a0f48cdbbfd2a4acf2300e7e4c569",
+    "records": 60,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "b114ac94be0c733c1e3bc83b4a89822dd03c760a1dfdef92d6f4259453052087",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bedroom",
+      "living"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6102-t50-mary",
+    "job_id": "66c97006dea8bf477d51dce89f2e9f7313ba00964760a72909301d695a8214b8",
+    "mode": "disabled",
+    "prompt_sha256": "da32993c28eb4079e37c5786aa96327f9a1a0f48cdbbfd2a4acf2300e7e4c569",
+    "records": 60,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "66c97006dea8bf477d51dce89f2e9f7313ba00964760a72909301d695a8214b8",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bedroom",
+      "living"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6102-t50-mary",
+    "job_id": "729f066a6cee49d6af122531632fb41214b45e2acadcaa2c7642b9a38620954c",
+    "mode": "disabled",
+    "prompt_sha256": "da32993c28eb4079e37c5786aa96327f9a1a0f48cdbbfd2a4acf2300e7e4c569",
+    "records": 60,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "729f066a6cee49d6af122531632fb41214b45e2acadcaa2c7642b9a38620954c",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bedroom",
+      "living"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6102-t50-mary",
+    "job_id": "559104f9e511e2d6a51ed73f81fa918c8e190a21940ad6d72845b62d4eb051d7",
+    "mode": "disabled",
+    "prompt_sha256": "da32993c28eb4079e37c5786aa96327f9a1a0f48cdbbfd2a4acf2300e7e4c569",
+    "records": 60,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "559104f9e511e2d6a51ed73f81fa918c8e190a21940ad6d72845b62d4eb051d7",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6103-t50-mary",
+    "job_id": "750bf4fb4e5d46cc7abd465877d1c6e27fb8710a61fed69fd509624bdf22d892",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "750bf4fb4e5d46cc7abd465877d1c6e27fb8710a61fed69fd509624bdf22d892",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6103-t50-mary",
+    "job_id": "707c5688a8a711a98d8d6d8e0974d368d89ba05e1f0469f2a6b37c2a84680bb9",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "707c5688a8a711a98d8d6d8e0974d368d89ba05e1f0469f2a6b37c2a84680bb9",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6103-t50-mary",
+    "job_id": "a198073c3d8bc1dcf27ed204f8a4eebb4139e45b83ddba5f7f472d1ff7753cef",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "a198073c3d8bc1dcf27ed204f8a4eebb4139e45b83ddba5f7f472d1ff7753cef",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6103-t50-mary",
+    "job_id": "68137cd934976d5806c16af3f3fecea2110882b87403c6ee254de8dbabab0b3f",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "68137cd934976d5806c16af3f3fecea2110882b87403c6ee254de8dbabab0b3f",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6103-t50-mary",
+    "job_id": "a96bae6c0809d3db332e6ec0d2fba3a8afbc5785ef8aa844b05ff7e5ead9abe1",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "a96bae6c0809d3db332e6ec0d2fba3a8afbc5785ef8aa844b05ff7e5ead9abe1",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_available",
+    "case": "room-s6103-t50-mary",
+    "job_id": "583d24078aa0ecad1ec372d4d82668fc8b15723037607bd023406cd16d4684b0",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "583d24078aa0ecad1ec372d4d82668fc8b15723037607bd023406cd16d4684b0",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6103-t50-mary",
+    "job_id": "b346bd95a4d81ea1c5d7780e2d3d4040c3a5e725085568b3b4d7f70a1bbfeb06",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "b346bd95a4d81ea1c5d7780e2d3d4040c3a5e725085568b3b4d7f70a1bbfeb06",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6103-t50-mary",
+    "job_id": "51f1f38f007ce459e5cf384ea8042d490264bdc8359c79e02a24122514ce23e4",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "51f1f38f007ce459e5cf384ea8042d490264bdc8359c79e02a24122514ce23e4",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6103-t50-mary",
+    "job_id": "d2dc28789ea65fb9bb8113f0dfaf147a03ce4b84959ada0dba6aeddfb6bcd0fe",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "d2dc28789ea65fb9bb8113f0dfaf147a03ce4b84959ada0dba6aeddfb6bcd0fe",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6103-t50-mary",
+    "job_id": "1f1b6d20e0ccd9b3414ea0e2d7f2439663c390f2d6b333e60465a3bad6597bc9",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 0,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "1f1b6d20e0ccd9b3414ea0e2d7f2439663c390f2d6b333e60465a3bad6597bc9",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6103-t50-mary",
+    "job_id": "0511f39cd6a415494bad1f3f1c9663430840ed444a75496804f65534ba8026da",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 1,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "0511f39cd6a415494bad1f3f1c9663430840ed444a75496804f65534ba8026da",
+    "reused": false
+  },
+  {
+    "allowed_beliefs": [
+      "bathroom",
+      "kitchen"
+    ],
+    "arm": "sensor_unavailable",
+    "case": "room-s6103-t50-mary",
+    "job_id": "c81062b0148f5e946e44c5577e27f7931cbf59f77eb04e7ab7ece0dbb2e35b69",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 2,
+    "response_directory": "results/development/hm3/room_controller_v1",
+    "response_job_id": "c81062b0148f5e946e44c5577e27f7931cbf59f77eb04e7ab7ece0dbb2e35b69",
+    "reused": false
+  }
+]

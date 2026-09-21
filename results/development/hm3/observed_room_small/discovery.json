@@ -1,0 +1,193 @@
+{
+  "actual_time_lag": 1,
+  "candidates": [
+    "bathroom|study|horizontal",
+    "bedroom|den|horizontal",
+    "living|kitchen|vertical",
+    "office|den|vertical",
+    "john",
+    "mary"
+  ],
+  "context_counts": {
+    "john/basement": 8,
+    "john/bathroom": 105,
+    "john/bedroom": 8,
+    "john/den": 7,
+    "john/garage": 3675,
+    "john/kitchen": 13,
+    "john/living": 10,
+    "john/office": 88,
+    "john/study": 3702,
+    "mary/basement": 17,
+    "mary/bathroom": 1490,
+    "mary/bedroom": 1516,
+    "mary/den": 23,
+    "mary/garage": 10,
+    "mary/kitchen": 2282,
+    "mary/living": 2247,
+    "mary/office": 20,
+    "mary/study": 11
+  },
+  "edges": [
+    {
+      "n": 105,
+      "object": "john",
+      "p": 1.1445386598896834e-30,
+      "room": "bathroom",
+      "source": "bathroom|study|horizontal",
+      "statistic": 132.53188026693252
+    },
+    {
+      "n": 2282,
+      "object": "mary",
+      "p": 0.0,
+      "room": "kitchen",
+      "source": "living|kitchen|vertical",
+      "statistic": 2907.3982928422265
+    },
+    {
+      "n": 2247,
+      "object": "mary",
+      "p": 0.0,
+      "room": "living",
+      "source": "living|kitchen|vertical",
+      "statistic": 2862.739129951291
+    }
+  ],
+  "interpretation": "Context-conditioned world dynamics, not hidden thought or agent-state graph",
+  "raw_tests": [
+    {
+      "n": 105,
+      "object": "john",
+      "p": 1.1445386598896834e-30,
+      "room": "bathroom",
+      "source": "bathroom|study|horizontal",
+      "statistic": 132.53188026693252
+    },
+    {
+      "n": 105,
+      "object": "john",
+      "p": 0.37099864122986126,
+      "room": "bathroom",
+      "source": "bedroom|den|horizontal",
+      "statistic": 0.8003168909501
+    },
+    {
+      "n": 105,
+      "object": "john",
+      "p": 0.2357121630595041,
+      "room": "bathroom",
+      "source": "living|kitchen|vertical",
+      "statistic": 1.4060563697179589
+    },
+    {
+      "n": 105,
+      "object": "john",
+      "p": 0.7670167760327246,
+      "room": "bathroom",
+      "source": "office|den|vertical",
+      "statistic": 0.0877814366840397
+    },
+    {
+      "n": 105,
+      "object": "john",
+      "p": 0.296054290236034,
+      "room": "bathroom",
+      "source": "mary",
+      "statistic": 8.431883548365875
+    },
+    {
+      "n": 2282,
+      "object": "mary",
+      "p": 0.5459275031530748,
+      "room": "kitchen",
+      "source": "bathroom|study|horizontal",
+      "statistic": 0.364663649560498
+    },
+    {
+      "n": 2282,
+      "object": "mary",
+      "p": 0.9242809519271925,
+      "room": "kitchen",
+      "source": "bedroom|den|horizontal",
+      "statistic": 0.009033104960053606
+    },
+    {
+      "n": 2282,
+      "object": "mary",
+      "p": 0.0,
+      "room": "kitchen",
+      "source": "living|kitchen|vertical",
+      "statistic": 2907.3982928422265
+    },
+    {
+      "n": 2282,
+      "object": "mary",
+      "p": 0.9049459830871299,
+      "room": "kitchen",
+      "source": "office|den|vertical",
+      "statistic": 0.014260121588449692
+    },
+    {
+      "n": 2282,
+      "object": "mary",
+      "p": 0.1716378267797985,
+      "room": "kitchen",
+      "source": "john",
+      "statistic": 6.393313833037428
+    },
+    {
+      "n": 2247,
+      "object": "mary",
+      "p": 0.6332992797194252,
+      "room": "living",
+      "source": "bathroom|study|horizontal",
+      "statistic": 0.22761320043991873
+    },
+    {
+      "n": 2247,
+      "object": "mary",
+      "p": 0.9083200916457351,
+      "room": "living",
+      "source": "bedroom|den|horizontal",
+      "statistic": 0.013261305870855722
+    },
+    {
+      "n": 2247,
+      "object": "mary",
+      "p": 0.0,
+      "room": "living",
+      "source": "living|kitchen|vertical",
+      "statistic": 2862.739129951291
+    },
+    {
+      "n": 2247,
+      "object": "mary",
+      "p": 0.9768135897736475,
+      "room": "living",
+      "source": "office|den|vertical",
+      "statistic": 0.0008447130148852011
+    },
+    {
+      "n": 2247,
+      "object": "mary",
+      "p": 0.8922717871649972,
+      "room": "living",
+      "source": "john",
+      "statistic": 1.6730946565549996
+    }
+  ],
+  "rooms": [
+    "basement",
+    "bathroom",
+    "bedroom",
+    "den",
+    "garage",
+    "kitchen",
+    "living",
+    "office",
+    "study"
+  ],
+  "train_steps": 7680,
+  "train_trajectories": 64
+}

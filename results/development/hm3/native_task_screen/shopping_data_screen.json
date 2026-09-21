@@ -1,0 +1,13 @@
+{
+  "tasks": 150,
+  "session_count_distribution": {
+    "6": 150
+  },
+  "questions": 900,
+  "query_compatibility_notes": 750,
+  "query_previous_ground_truth": 750,
+  "query_available_options": 900,
+  "direct_target_id_mentions": 0,
+  "trajectory_observed": false,
+  "actual_write_transitions": null
+}

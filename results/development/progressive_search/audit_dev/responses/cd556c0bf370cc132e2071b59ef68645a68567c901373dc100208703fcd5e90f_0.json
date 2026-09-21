@@ -1,0 +1,11 @@
+{
+  "case": 1,
+  "repeat": 0,
+  "prompt_sha256": "cd556c0bf370cc132e2071b59ef68645a68567c901373dc100208703fcd5e90f",
+  "extracted": "Tulsidas Balaram",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The sportsperson is Tulsidas Balaram of India. India is the country with a 2050 population projected above 300 million [15976][63663]; its capital New Delhi hosted the Asian Games [61503][64965], and India’s national football team won Asian Games gold in 1962 [89915][37746]. Balaram was born in 1936, more than a decade before India’s 1947 independence [17054][93861], made his international debut against Yugoslavia at the 1956 Melbourne Olympics — a match India lost — and then played a key role in India’s 1962 Asian Games gold, scoring during the tournament [17054][44448][81022]. He received the Arjuna Award, India’s second-highest sporting honour, in the same year, 1962 [90980][29312][43513].\n\nExact Answer: Tulsidas Balaram\n\nConfidence: 90%"
+}

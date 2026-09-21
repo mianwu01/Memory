@@ -1,0 +1,44 @@
+{
+  "actor_config": {
+    "alpha": 0.05,
+    "endpoint": "https://www.autodl.art/api/v1",
+    "episodes_per_seed": 2,
+    "extra_body": {
+      "reasoning_effort": "none",
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "format_retries": 0,
+    "infrastructure_retries": 0,
+    "keep": 0.8,
+    "mask_seed": 20260922,
+    "max_requests": 1200,
+    "max_tokens": 16384,
+    "model": "DeepSeek-V4-Pro",
+    "repeats": 3,
+    "seed_panel": [
+      70,
+      71,
+      72
+    ],
+    "temperature": 0,
+    "test": "Gsquared",
+    "timeout_seconds": 300,
+    "top_k_segments": 2,
+    "trials": 128,
+    "unit": "episode; repeated API calls averaged within episode"
+  },
+  "adaptation": "native returned memory text, no raw-record recovery",
+  "commit": "c7ee362aff94a369af70f13f2b4f853f6793ff4c",
+  "episode": "travel-s72-test-001",
+  "hashes": {
+    "continuation_actor.py": "70c3ff566d20fdf0a409d5f83acadabf414a182b3610353e4799fcb52d3c1adb",
+    "continuation_memsys.py": "1a85b926163aa9ca2072d6c4b30a7c6bb7550a31ba536ac4dc7604336dceacef"
+  },
+  "ingestion": "one public history segment per write",
+  "model": "DeepSeek-V4-Pro",
+  "retrieval_k": 8,
+  "source": "/mnt/dolphinfs/ssd_pool/docker/user/hadoop-nlp-hl02/hadoop-aipnlp/3A/multimodal/yangboxue/tts-sft/external/Memory-hm3-handoff-2026-09-18/.tmp/continuation_deps/benchmarks/mem0",
+  "system": "mem0"
+}

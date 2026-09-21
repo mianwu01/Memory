@@ -1,0 +1,11 @@
+{
+  "case": 2,
+  "repeat": 2,
+  "prompt_sha256": "ebe54973eb9e227eba1fa0243d2868c79b1c944c4f9d0fd3cecacf5583951d39",
+  "extracted": "John Daniel delos Santos",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues identify late Filipino teen actor AJ Perez, who died at 18 in a 2011 vehicular accident; his father and the driver survived, and his parents donated his corneas [98388]. One cornea went to an 8-year-old boy later identified as John Daniel delos Santos, who received it in 2011 [92091]. Before 2023, he appeared on the “Eat Bulaga” segment “Bawal Judgemental,” revealed he was the recipient, and thanked AJ Perez’s family [5784].\n\nExact Answer: John Daniel delos Santos\n\nConfidence: 95%"
+}

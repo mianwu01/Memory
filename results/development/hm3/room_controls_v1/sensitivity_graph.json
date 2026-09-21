@@ -1,0 +1,52 @@
+[
+  {
+    "object": "john",
+    "room": "bathroom",
+    "walls": [
+      "bathroom|study|horizontal"
+    ]
+  },
+  {
+    "object": "john",
+    "room": "den",
+    "walls": [
+      "office|den|vertical"
+    ]
+  },
+  {
+    "object": "john",
+    "room": "kitchen",
+    "walls": [
+      "living|kitchen|vertical"
+    ]
+  },
+  {
+    "object": "mary",
+    "room": "den",
+    "walls": [
+      "bedroom|den|horizontal",
+      "office|den|vertical"
+    ]
+  },
+  {
+    "object": "mary",
+    "room": "kitchen",
+    "walls": [
+      "living|kitchen|vertical"
+    ]
+  },
+  {
+    "object": "mary",
+    "room": "living",
+    "walls": [
+      "living|kitchen|vertical"
+    ]
+  },
+  {
+    "object": "mary",
+    "room": "study",
+    "walls": [
+      "bathroom|study|horizontal"
+    ]
+  }
+]

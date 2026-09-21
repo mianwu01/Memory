@@ -1,0 +1,96 @@
+{
+  "query": "Flight F81 (Mateo, day 2) now arrives at 21:45.\n{\"object_id\": \"F81\", \"op\": \"shift_reservation\", \"payload\": {\"arrival\": 1305}}",
+  "result": {
+    "results": [
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:37:10.790904+00:00",
+        "hash": "da42c2ff9299c82fedd69972e265de70",
+        "id": "c136fa4c-fa7f-4c77-ae59-68e9040e7226",
+        "memory": "Flight F46 (Mateo, day 1) arrival was shifted from 1080 to 1200 (20:00), with a fee of 0.",
+        "metadata": null,
+        "score": 0.8256274617762143,
+        "updated_at": "2026-09-21T16:37:10.790904+00:00",
+        "user_id": "travel-s2-dev-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:37:23.471510+00:00",
+        "hash": "01b237f47582deb43ec148112af4d827",
+        "id": "25859783-f73d-4699-bdea-b65b76e32835",
+        "memory": "Flight F46 (Mateo, day 1) arrival was shifted from 1200 to 1305 (21:45), with a fee of 0.",
+        "metadata": null,
+        "score": 0.8239681381982991,
+        "updated_at": "2026-09-21T16:37:23.471510+00:00",
+        "user_id": "travel-s2-dev-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:37:04.698195+00:00",
+        "hash": "aa71eed6327eeea33818a66c2d0986ac",
+        "id": "f23e4d6d-b52c-4831-a34a-155cb8addb45",
+        "memory": "Flight F17 (Bob, day 2) arrival was shifted from 1185 to 1365 (22:45), with a fee of 0.",
+        "metadata": null,
+        "score": 0.7523635152206991,
+        "updated_at": "2026-09-21T16:37:04.698195+00:00",
+        "user_id": "travel-s2-dev-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:37:17.077580+00:00",
+        "hash": "dd54d68bb2f42f2b6cd4518dbb69b08c",
+        "id": "61d265be-c92e-4bc6-b15d-1745e4cc9353",
+        "memory": "Flight F17 (Bob, day 2) arrival was shifted from 1365 to 1170 (19:30), with a fee of 0.",
+        "metadata": null,
+        "score": 0.7453407922824369,
+        "updated_at": "2026-09-21T16:37:17.077580+00:00",
+        "user_id": "travel-s2-dev-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:37:28.637021+00:00",
+        "hash": "08d5748cebdc03a06ff0717d0fe89ad1",
+        "id": "701eb221-6516-46c0-8c4f-b0a8903267d2",
+        "memory": "Flight F33 (Omar, day 1) arrival was shifted from 630 to 810 (13:30), with a fee of 0.",
+        "metadata": null,
+        "score": 0.644850874827431,
+        "updated_at": "2026-09-21T16:37:28.637021+00:00",
+        "user_id": "travel-s2-dev-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:37:33.656198+00:00",
+        "hash": "459eac6ddec3f7d2abc01a28eff2cf89",
+        "id": "3217d5c6-7383-45e9-965e-3816067290d1",
+        "memory": "Flight F33 (Omar, day 1) arrival was shifted from 810 to 1245 (20:45), with a fee of 0.",
+        "metadata": null,
+        "score": 0.6403654643712723,
+        "updated_at": "2026-09-21T16:37:33.656198+00:00",
+        "user_id": "travel-s2-dev-000"
+      },
+      {
+        "attributed_to": "assistant",
+        "created_at": "2026-09-21T16:36:57.508363+00:00",
+        "hash": "0ead86dbb08f64dfa6b81731c1e0b578",
+        "id": "da6653c2-ca17-47f7-9672-d2493d1b5a92",
+        "memory": "Flight F95 (Bob, day 1) arrival was shifted from 855 to 975 (16:15), with a fee of 0.",
+        "metadata": null,
+        "score": 0.6230563702747467,
+        "updated_at": "2026-09-21T16:36:57.508363+00:00",
+        "user_id": "travel-s2-dev-000"
+      },
+      {
+        "attributed_to": "assistant",
+        "created_at": "2026-09-21T16:36:57.513468+00:00",
+        "hash": "d83d45ef292b3449148451a48cd2f05c",
+        "id": "b15e6e5d-aa52-4351-8bbc-74cc5803b3eb",
+        "memory": "Reservation S81 check-in was shifted from 945 to 1085, with a fee of 25.",
+        "metadata": null,
+        "score": 0.2732415164515805,
+        "updated_at": "2026-09-21T16:36:57.513468+00:00",
+        "user_id": "travel-s2-dev-000"
+      }
+    ]
+  },
+  "text": "Flight F46 (Mateo, day 1) arrival was shifted from 1080 to 1200 (20:00), with a fee of 0.\nFlight F46 (Mateo, day 1) arrival was shifted from 1200 to 1305 (21:45), with a fee of 0.\nFlight F17 (Bob, day 2) arrival was shifted from 1185 to 1365 (22:45), with a fee of 0.\nFlight F17 (Bob, day 2) arrival was shifted from 1365 to 1170 (19:30), with a fee of 0.\nFlight F33 (Omar, day 1) arrival was shifted from 630 to 810 (13:30), with a fee of 0.\nFlight F33 (Omar, day 1) arrival was shifted from 810 to 1245 (20:45), with a fee of 0.\nFlight F95 (Bob, day 1) arrival was shifted from 855 to 975 (16:15), with a fee of 0.\nReservation S81 check-in was shifted from 945 to 1085, with a fee of 25."
+}

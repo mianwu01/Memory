@@ -1,0 +1,135 @@
+[
+  {
+    "case": "room-s6100-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 3,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6100-t50-mary",
+    "returned": 0,
+    "source": "living|kitchen|vertical",
+    "time": 5,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6100-t50-mary",
+    "returned": 0,
+    "source": "living|kitchen|vertical",
+    "time": 6,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6100-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 7,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6100-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 12,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6100-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 13,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6100-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 27,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6101-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 2,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6101-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 3,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6101-t50-mary",
+    "returned": 0,
+    "source": "living|kitchen|vertical",
+    "time": 5,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6101-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 6,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6101-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 7,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6101-t50-mary",
+    "returned": 0,
+    "source": "living|kitchen|vertical",
+    "time": 10,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6101-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 11,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6101-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 12,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6101-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 13,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6102-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 21,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6102-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 22,
+    "tool": "authorized_historical_sensor"
+  },
+  {
+    "case": "room-s6102-t50-mary",
+    "returned": 1,
+    "source": "living|kitchen|vertical",
+    "time": 23,
+    "tool": "authorized_historical_sensor"
+  }
+]

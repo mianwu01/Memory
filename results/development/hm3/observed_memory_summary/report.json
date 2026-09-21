@@ -1,0 +1,3917 @@
+{
+  "hm3_gate": {
+    "scope": "Fixed four-case development diagnostic; no causal-discovery benefit claim",
+    "table": {
+      "enabled/full": {
+        "correct": 8,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "travel-s82-dev-000": {
+            "correct": 3,
+            "completed": 3
+          },
+          "travel-s82-dev-001": {
+            "correct": 3,
+            "completed": 3
+          },
+          "travel-s82-dev-002": {
+            "correct": 2,
+            "completed": 3
+          },
+          "travel-s82-dev-003": {
+            "correct": 0,
+            "completed": 3
+          }
+        },
+        "stable": 2,
+        "truncated": 1,
+        "thinking_observed": 12,
+        "models": {
+          "deepseek-v4-flash-0731": 4,
+          "DeepSeek-V4-Flash-0731": 8
+        },
+        "input_tokens": 84654,
+        "output_tokens": 312987,
+        "reasoning_tokens": 309404,
+        "errors": {
+          "null": 4
+        }
+      },
+      "disabled/full": {
+        "correct": 6,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "travel-s82-dev-000": {
+            "correct": 2,
+            "completed": 3
+          },
+          "travel-s82-dev-001": {
+            "correct": 2,
+            "completed": 3
+          },
+          "travel-s82-dev-002": {
+            "correct": 1,
+            "completed": 3
+          },
+          "travel-s82-dev-003": {
+            "correct": 1,
+            "completed": 3
+          }
+        },
+        "stable": 0,
+        "truncated": 1,
+        "thinking_observed": 0,
+        "models": {
+          "DeepSeek-V4-Flash-0731": 12
+        },
+        "input_tokens": 83706,
+        "output_tokens": 51619,
+        "reasoning_tokens": 0,
+        "errors": {
+          "null": 6
+        }
+      },
+      "enabled/no_history": {
+        "correct": 3,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "travel-s82-dev-000": {
+            "correct": 3,
+            "completed": 3
+          },
+          "travel-s82-dev-001": {
+            "correct": 0,
+            "completed": 3
+          },
+          "travel-s82-dev-002": {
+            "correct": 0,
+            "completed": 3
+          },
+          "travel-s82-dev-003": {
+            "correct": 0,
+            "completed": 3
+          }
+        },
+        "stable": 1,
+        "truncated": 2,
+        "thinking_observed": 12,
+        "models": {
+          "DeepSeek-V4-Flash-0731": 6,
+          "deepseek-v4-flash-0731": 6
+        },
+        "input_tokens": 58017,
+        "output_tokens": 329095,
+        "reasoning_tokens": 326027,
+        "errors": {
+          "null": 9
+        }
+      },
+      "disabled/no_history": {
+        "correct": 5,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "travel-s82-dev-000": {
+            "correct": 0,
+            "completed": 3
+          },
+          "travel-s82-dev-001": {
+            "correct": 3,
+            "completed": 3
+          },
+          "travel-s82-dev-002": {
+            "correct": 1,
+            "completed": 3
+          },
+          "travel-s82-dev-003": {
+            "correct": 1,
+            "completed": 3
+          }
+        },
+        "stable": 1,
+        "truncated": 0,
+        "thinking_observed": 0,
+        "models": {
+          "DeepSeek-V4-Flash-0731": 12
+        },
+        "input_tokens": 57069,
+        "output_tokens": 13814,
+        "reasoning_tokens": 0,
+        "errors": {
+          "stale revision on T86: expected 0 actual 1": 2,
+          "null": 5
+        }
+      },
+      "enabled/policy_oracle": {
+        "correct": 11,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "travel-s82-dev-000": {
+            "correct": 3,
+            "completed": 3
+          },
+          "travel-s82-dev-001": {
+            "correct": 3,
+            "completed": 3
+          },
+          "travel-s82-dev-002": {
+            "correct": 2,
+            "completed": 3
+          },
+          "travel-s82-dev-003": {
+            "correct": 3,
+            "completed": 3
+          }
+        },
+        "stable": 3,
+        "truncated": 0,
+        "thinking_observed": 12,
+        "models": {
+          "deepseek-v4-flash-0731": 2,
+          "DeepSeek-V4-Flash-0731": 10
+        },
+        "input_tokens": 59799,
+        "output_tokens": 231141,
+        "reasoning_tokens": 227498,
+        "errors": {
+          "stale revision on T66: expected 0 actual 1": 1
+        }
+      },
+      "disabled/policy_oracle": {
+        "correct": 2,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "travel-s82-dev-000": {
+            "correct": 0,
+            "completed": 3
+          },
+          "travel-s82-dev-001": {
+            "correct": 1,
+            "completed": 3
+          },
+          "travel-s82-dev-002": {
+            "correct": 1,
+            "completed": 3
+          },
+          "travel-s82-dev-003": {
+            "correct": 0,
+            "completed": 3
+          }
+        },
+        "stable": 0,
+        "truncated": 0,
+        "thinking_observed": 0,
+        "models": {
+          "DeepSeek-V4-Flash-0731": 12
+        },
+        "input_tokens": 58851,
+        "output_tokens": 7076,
+        "reasoning_tokens": 0,
+        "errors": {
+          "stale revision on T86: expected 0 actual 1": 3,
+          "null": 7
+        }
+      }
+    },
+    "actor_and_memory_gate_passed": false,
+    "all_attempts": 72,
+    "old_results_reused": 0
+  },
+  "small": {
+    "table": {
+      "complete@16": {
+        "queries": 528,
+        "records": 15.628787878787879,
+        "same_as_learned": 67,
+        "score": 0.8707912457912458
+      },
+      "complete@8": {
+        "queries": 528,
+        "records": 7.981060606060606,
+        "same_as_learned": 56,
+        "score": 0.8067129629629629
+      },
+      "full@16": {
+        "queries": 528,
+        "records": 65.60227272727273,
+        "same_as_learned": 3,
+        "score": 0.8745791245791246
+      },
+      "full@8": {
+        "queries": 528,
+        "records": 65.60227272727273,
+        "same_as_learned": 0,
+        "score": 0.8745791245791246
+      },
+      "learned@16": {
+        "queries": 528,
+        "records": 15.628787878787879,
+        "same_as_learned": 528,
+        "score": 0.874263468013468
+      },
+      "learned@8": {
+        "queries": 528,
+        "records": 7.981060606060606,
+        "same_as_learned": 528,
+        "score": 0.8739478114478114
+      },
+      "ledger@16": {
+        "queries": 528,
+        "records": 15.628787878787879,
+        "same_as_learned": 332,
+        "score": 0.7937710437710437
+      },
+      "ledger@8": {
+        "queries": 528,
+        "records": 7.981060606060606,
+        "same_as_learned": 314,
+        "score": 0.7536826599326598
+      },
+      "random@16": {
+        "queries": 528,
+        "records": 15.628787878787879,
+        "same_as_learned": 9,
+        "score": 0.6703493265993266
+      },
+      "random@8": {
+        "queries": 528,
+        "records": 7.981060606060606,
+        "same_as_learned": 3,
+        "score": 0.4943181818181818
+      },
+      "recency@16": {
+        "queries": 528,
+        "records": 15.628787878787879,
+        "same_as_learned": 5,
+        "score": 0.6295244107744108
+      },
+      "recency@8": {
+        "queries": 528,
+        "records": 7.981060606060606,
+        "same_as_learned": 34,
+        "score": 0.4891624579124579
+      },
+      "topology@16": {
+        "queries": 528,
+        "records": 15.628787878787879,
+        "same_as_learned": 141,
+        "score": 0.8745791245791246
+      },
+      "topology@8": {
+        "queries": 528,
+        "records": 7.981060606060606,
+        "same_as_learned": 124,
+        "score": 0.8199705387205386
+      },
+      "wrong_17@16": {
+        "queries": 528,
+        "records": 15.628787878787879,
+        "same_as_learned": 302,
+        "score": 0.7543139730639731
+      },
+      "wrong_17@8": {
+        "queries": 528,
+        "records": 7.981060606060606,
+        "same_as_learned": 299,
+        "score": 0.7266940235690235
+      },
+      "wrong_29@16": {
+        "queries": 528,
+        "records": 15.628787878787879,
+        "same_as_learned": 294,
+        "score": 0.7495791245791246
+      },
+      "wrong_29@8": {
+        "queries": 528,
+        "records": 7.981060606060606,
+        "same_as_learned": 287,
+        "score": 0.7191182659932659
+      },
+      "wrong_43@16": {
+        "queries": 528,
+        "records": 15.628787878787879,
+        "same_as_learned": 295,
+        "score": 0.7486321548821548
+      },
+      "wrong_43@8": {
+        "queries": 528,
+        "records": 7.981060606060606,
+        "same_as_learned": 288,
+        "score": 0.7200652356902356
+      }
+    },
+    "structure": {
+      "false_negative": 4,
+      "false_positive": 0,
+      "predicted": [
+        [
+          "john",
+          "bathroom",
+          "bathroom|study|horizontal"
+        ],
+        [
+          "mary",
+          "kitchen",
+          "living|kitchen|vertical"
+        ],
+        [
+          "mary",
+          "living",
+          "living|kitchen|vertical"
+        ]
+      ],
+      "reference": [
+        [
+          "john",
+          "bathroom",
+          "bathroom|study|horizontal"
+        ],
+        [
+          "john",
+          "den",
+          "office|den|vertical"
+        ],
+        [
+          "john",
+          "kitchen",
+          "living|kitchen|vertical"
+        ],
+        [
+          "mary",
+          "den",
+          "bedroom|den|horizontal"
+        ],
+        [
+          "mary",
+          "den",
+          "office|den|vertical"
+        ],
+        [
+          "mary",
+          "kitchen",
+          "living|kitchen|vertical"
+        ],
+        [
+          "mary",
+          "living",
+          "living|kitchen|vertical"
+        ]
+      ],
+      "reference_contexts": 1904,
+      "reference_is_finite_support": true,
+      "true_positive": 3
+    },
+    "comparisons": {
+      "full@8": {
+        "episodes": 24,
+        "difference": -0.0006313131313131262,
+        "episode_bootstrap_95": [
+          -0.0018939393939393784,
+          0.0
+        ],
+        "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+      },
+      "topology@8": {
+        "episodes": 24,
+        "difference": 0.05397727272727274,
+        "episode_bootstrap_95": [
+          0.0331439393939394,
+          0.07670454545454547
+        ],
+        "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+      },
+      "complete@8": {
+        "episodes": 24,
+        "difference": 0.06723484848484851,
+        "episode_bootstrap_95": [
+          0.04071969696969699,
+          0.0956439393939394
+        ],
+        "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+      },
+      "ledger@8": {
+        "episodes": 24,
+        "difference": 0.12026515151515153,
+        "episode_bootstrap_95": [
+          0.09753787878787878,
+          0.14109848484848486
+        ],
+        "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+      },
+      "recency@8": {
+        "episodes": 24,
+        "difference": 0.3847853535353536,
+        "episode_bootstrap_95": [
+          0.34900831228956236,
+          0.4188762626262627
+        ],
+        "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+      }
+    },
+    "metric": "Expected accuracy of fixed decoder beliefs, not actual LLM accuracy"
+  },
+  "medium": {
+    "table": {
+      "complete@16": {
+        "queries": 1584,
+        "records": 15.893939393939394,
+        "same_as_learned": 815,
+        "score": 0.48522727272727273
+      },
+      "complete@8": {
+        "queries": 1584,
+        "records": 7.992424242424242,
+        "same_as_learned": 815,
+        "score": 0.47753577441077444
+      },
+      "full@16": {
+        "queries": 1584,
+        "records": 78.79924242424242,
+        "same_as_learned": 0,
+        "score": 0.49698021885521887
+      },
+      "full@8": {
+        "queries": 1584,
+        "records": 78.79924242424242,
+        "same_as_learned": 0,
+        "score": 0.49698021885521887
+      },
+      "learned@16": {
+        "queries": 1584,
+        "records": 15.893939393939394,
+        "same_as_learned": 1584,
+        "score": 0.48783670033670035
+      },
+      "learned@8": {
+        "queries": 1584,
+        "records": 7.992424242424242,
+        "same_as_learned": 1584,
+        "score": 0.48633207070707074
+      },
+      "ledger@16": {
+        "queries": 1584,
+        "records": 15.893939393939394,
+        "same_as_learned": 1541,
+        "score": 0.480239898989899
+      },
+      "ledger@8": {
+        "queries": 1584,
+        "records": 7.992424242424242,
+        "same_as_learned": 1538,
+        "score": 0.4739372895622896
+      },
+      "random@16": {
+        "queries": 1584,
+        "records": 15.893939393939394,
+        "same_as_learned": 6,
+        "score": 0.26927398989898993
+      },
+      "random@8": {
+        "queries": 1584,
+        "records": 7.992424242424242,
+        "same_as_learned": 6,
+        "score": 0.18034511784511786
+      },
+      "recency@16": {
+        "queries": 1584,
+        "records": 15.893939393939394,
+        "same_as_learned": 32,
+        "score": 0.21982533670033672
+      },
+      "recency@8": {
+        "queries": 1584,
+        "records": 7.992424242424242,
+        "same_as_learned": 142,
+        "score": 0.16108375420875423
+      },
+      "topology@16": {
+        "queries": 1584,
+        "records": 15.893939393939394,
+        "same_as_learned": 1017,
+        "score": 0.49113005050505054
+      },
+      "topology@8": {
+        "queries": 1584,
+        "records": 7.992424242424242,
+        "same_as_learned": 986,
+        "score": 0.4847327441077441
+      },
+      "wrong_17@16": {
+        "queries": 1584,
+        "records": 15.893939393939394,
+        "same_as_learned": 1540,
+        "score": 0.4797874579124579
+      },
+      "wrong_17@8": {
+        "queries": 1584,
+        "records": 7.992424242424242,
+        "same_as_learned": 1539,
+        "score": 0.47438973063973067
+      },
+      "wrong_29@16": {
+        "queries": 1584,
+        "records": 15.893939393939394,
+        "same_as_learned": 1535,
+        "score": 0.47901936026936026
+      },
+      "wrong_29@8": {
+        "queries": 1584,
+        "records": 7.992424242424242,
+        "same_as_learned": 1533,
+        "score": 0.4731797138047138
+      },
+      "wrong_43@16": {
+        "queries": 1584,
+        "records": 15.893939393939394,
+        "same_as_learned": 1537,
+        "score": 0.4768623737373738
+      },
+      "wrong_43@8": {
+        "queries": 1584,
+        "records": 7.992424242424242,
+        "same_as_learned": 1535,
+        "score": 0.4727588383838384
+      }
+    },
+    "structure": {
+      "false_negative": 31,
+      "false_positive": 0,
+      "predicted": [
+        [
+          "lisa",
+          "closet",
+          "closet|patio|horizontal"
+        ],
+        [
+          "mary",
+          "closet",
+          "closet|patio|horizontal"
+        ],
+        [
+          "michael",
+          "den",
+          "living|den|horizontal"
+        ],
+        [
+          "sarah",
+          "guest",
+          "guest|master|vertical"
+        ],
+        [
+          "sarah",
+          "master",
+          "guest|master|vertical"
+        ],
+        [
+          "sarah",
+          "master",
+          "master|laundry|vertical"
+        ]
+      ],
+      "reference": [
+        [
+          "david",
+          "closet",
+          "closet|foyer|vertical"
+        ],
+        [
+          "david",
+          "deck",
+          "deck|patio|vertical"
+        ],
+        [
+          "david",
+          "foyer",
+          "foyer|hallway|vertical"
+        ],
+        [
+          "david",
+          "garage",
+          "garage|basement|vertical"
+        ],
+        [
+          "david",
+          "guest",
+          "garage|guest|horizontal"
+        ],
+        [
+          "david",
+          "guest",
+          "guest|master|vertical"
+        ],
+        [
+          "david",
+          "hallway",
+          "hallway|porch|vertical"
+        ],
+        [
+          "david",
+          "master",
+          "master|laundry|vertical"
+        ],
+        [
+          "john",
+          "basement",
+          "bathroom|basement|horizontal"
+        ],
+        [
+          "john",
+          "den",
+          "living|den|horizontal"
+        ],
+        [
+          "john",
+          "guest",
+          "garage|guest|horizontal"
+        ],
+        [
+          "john",
+          "patio",
+          "closet|patio|horizontal"
+        ],
+        [
+          "lisa",
+          "closet",
+          "closet|patio|horizontal"
+        ],
+        [
+          "lisa",
+          "garage",
+          "garage|guest|horizontal"
+        ],
+        [
+          "lisa",
+          "patio",
+          "closet|patio|horizontal"
+        ],
+        [
+          "mary",
+          "closet",
+          "closet|patio|horizontal"
+        ],
+        [
+          "mary",
+          "garage",
+          "garage|guest|horizontal"
+        ],
+        [
+          "mary",
+          "living",
+          "living|den|horizontal"
+        ],
+        [
+          "mary",
+          "patio",
+          "closet|patio|horizontal"
+        ],
+        [
+          "mary",
+          "patio",
+          "deck|patio|vertical"
+        ],
+        [
+          "michael",
+          "basement",
+          "bathroom|basement|horizontal"
+        ],
+        [
+          "michael",
+          "basement",
+          "garage|basement|vertical"
+        ],
+        [
+          "michael",
+          "den",
+          "living|den|horizontal"
+        ],
+        [
+          "michael",
+          "family",
+          "dining|family|vertical"
+        ],
+        [
+          "michael",
+          "foyer",
+          "closet|foyer|vertical"
+        ],
+        [
+          "michael",
+          "hallway",
+          "foyer|hallway|vertical"
+        ],
+        [
+          "michael",
+          "patio",
+          "deck|patio|vertical"
+        ],
+        [
+          "sarah",
+          "closet",
+          "closet|foyer|vertical"
+        ],
+        [
+          "sarah",
+          "deck",
+          "deck|patio|vertical"
+        ],
+        [
+          "sarah",
+          "foyer",
+          "closet|foyer|vertical"
+        ],
+        [
+          "sarah",
+          "foyer",
+          "foyer|hallway|vertical"
+        ],
+        [
+          "sarah",
+          "guest",
+          "guest|master|vertical"
+        ],
+        [
+          "sarah",
+          "hallway",
+          "foyer|hallway|vertical"
+        ],
+        [
+          "sarah",
+          "hallway",
+          "hallway|porch|vertical"
+        ],
+        [
+          "sarah",
+          "master",
+          "guest|master|vertical"
+        ],
+        [
+          "sarah",
+          "master",
+          "master|laundry|vertical"
+        ],
+        [
+          "sarah",
+          "porch",
+          "hallway|porch|vertical"
+        ]
+      ],
+      "reference_contexts": 1904,
+      "reference_is_finite_support": true,
+      "true_positive": 6
+    },
+    "comparisons": {
+      "full@8": {
+        "episodes": 24,
+        "difference": -0.01064814814814815,
+        "episode_bootstrap_95": [
+          -0.02230639730639732,
+          -0.001283670033670035
+        ],
+        "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+      },
+      "topology@8": {
+        "episodes": 24,
+        "difference": 0.0015993265993266004,
+        "episode_bootstrap_95": [
+          -0.014321864478114487,
+          0.019234006734006742
+        ],
+        "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+      },
+      "complete@8": {
+        "episodes": 24,
+        "difference": 0.0087962962962963,
+        "episode_bootstrap_95": [
+          -0.004419191919191913,
+          0.0252109638047138
+        ],
+        "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+      },
+      "ledger@8": {
+        "episodes": 24,
+        "difference": 0.012394781144781148,
+        "episode_bootstrap_95": [
+          0.0,
+          0.02801978114478115
+        ],
+        "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+      },
+      "recency@8": {
+        "episodes": 24,
+        "difference": 0.3252483164983165,
+        "episode_bootstrap_95": [
+          0.27777262205387204,
+          0.370128367003367
+        ],
+        "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+      }
+    },
+    "metric": "Expected accuracy of fixed decoder beliefs, not actual LLM accuracy"
+  },
+  "actor": {
+    "table": {
+      "enabled/full": {
+        "correct": 10,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "bathroom",
+              "bathroom",
+              "bathroom"
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "kitchen"
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "living",
+              "living",
+              "living"
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 1,
+            "completed": 3,
+            "answers": [
+              null,
+              "kitchen",
+              null
+            ]
+          }
+        },
+        "stable": 3,
+        "truncations": 0,
+        "thinking_observed": 12,
+        "input_tokens": 24810,
+        "output_tokens": 103382,
+        "reasoning_tokens": 103291,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 12
+        }
+      },
+      "disabled/full": {
+        "correct": 3,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              "bedroom",
+              "bedroom",
+              "bedroom"
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "kitchen"
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              "kitchen",
+              null
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        "stable": 1,
+        "truncations": 0,
+        "thinking_observed": 0,
+        "input_tokens": 23862,
+        "output_tokens": 14527,
+        "reasoning_tokens": 0,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 12
+        }
+      },
+      "enabled/learned8": {
+        "correct": 9,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "bathroom",
+              "bathroom",
+              "bathroom"
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "kitchen"
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "living",
+              "living",
+              "living"
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        "stable": 3,
+        "truncations": 0,
+        "thinking_observed": 12,
+        "input_tokens": 14472,
+        "output_tokens": 67773,
+        "reasoning_tokens": 67683,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 12
+        }
+      },
+      "disabled/learned8": {
+        "correct": 1,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              null,
+              "kitchen"
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 1,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              "living",
+              "kitchen"
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              "bathroom",
+              "bathroom",
+              "bathroom"
+            ]
+          }
+        },
+        "stable": 0,
+        "truncations": 0,
+        "thinking_observed": 0,
+        "input_tokens": 13524,
+        "output_tokens": 3269,
+        "reasoning_tokens": 0,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 12
+        }
+      },
+      "enabled/topology8": {
+        "correct": 0,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        "stable": 0,
+        "truncations": 0,
+        "thinking_observed": 12,
+        "input_tokens": 14511,
+        "output_tokens": 120186,
+        "reasoning_tokens": 120114,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 12
+        }
+      },
+      "disabled/topology8": {
+        "correct": 0,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "kitchen"
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              "bathroom",
+              "bathroom",
+              null
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              "den",
+              "kitchen",
+              "kitchen"
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              "bathroom",
+              null
+            ]
+          }
+        },
+        "stable": 0,
+        "truncations": 0,
+        "thinking_observed": 0,
+        "input_tokens": 13563,
+        "output_tokens": 13025,
+        "reasoning_tokens": 0,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 12
+        }
+      },
+      "enabled/source_blocked": {
+        "correct": 3,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 1,
+            "completed": 3,
+            "answers": [
+              null,
+              "kitchen",
+              null
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 1,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              "living"
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 1,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              "kitchen"
+            ]
+          }
+        },
+        "stable": 0,
+        "truncations": 0,
+        "thinking_observed": 12,
+        "input_tokens": 23841,
+        "output_tokens": 213807,
+        "reasoning_tokens": 213730,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 12
+        }
+      },
+      "disabled/source_blocked": {
+        "correct": 2,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              "bedroom"
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 2,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "bathroom"
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              "bedroom",
+              "bedroom",
+              "bedroom"
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              "bathroom",
+              null
+            ]
+          }
+        },
+        "stable": 0,
+        "truncations": 0,
+        "thinking_observed": 0,
+        "input_tokens": 22893,
+        "output_tokens": 5239,
+        "reasoning_tokens": 0,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 12
+        }
+      },
+      "enabled/source_changed": {
+        "correct": 7,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "kitchen"
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "kitchen"
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "living",
+              "living",
+              "living"
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 1,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              null,
+              null
+            ]
+          }
+        },
+        "stable": 2,
+        "truncations": 0,
+        "thinking_observed": 12,
+        "input_tokens": 24810,
+        "output_tokens": 114556,
+        "reasoning_tokens": 114469,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 12
+        }
+      },
+      "disabled/source_changed": {
+        "correct": 3,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              "bedroom",
+              "bedroom",
+              "bedroom"
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "kitchen"
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              "kitchen",
+              null
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        "stable": 1,
+        "truncations": 0,
+        "thinking_observed": 0,
+        "input_tokens": 23862,
+        "output_tokens": 10840,
+        "reasoning_tokens": 0,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 12
+        }
+      },
+      "enabled/neutral_blocked": {
+        "correct": 10,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "bathroom",
+              "bathroom",
+              "bathroom"
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "kitchen"
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "living",
+              "living",
+              "living"
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 1,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              "kitchen"
+            ]
+          }
+        },
+        "stable": 3,
+        "truncations": 0,
+        "thinking_observed": 12,
+        "input_tokens": 21882,
+        "output_tokens": 129040,
+        "reasoning_tokens": 128947,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 11,
+          "deepseek-v4-flash-0731": 1
+        }
+      },
+      "disabled/neutral_blocked": {
+        "correct": 1,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 1,
+            "completed": 3,
+            "answers": [
+              "bedroom",
+              "bedroom",
+              "bathroom"
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              "bathroom",
+              "bathroom",
+              "bathroom"
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              "bathroom",
+              null,
+              null
+            ]
+          }
+        },
+        "stable": 0,
+        "truncations": 0,
+        "thinking_observed": 0,
+        "input_tokens": 20934,
+        "output_tokens": 2682,
+        "reasoning_tokens": 0,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 12
+        }
+      }
+    },
+    "scope": "Four fixed controlled model-based memory questions; not a native unassisted LLM benchmark",
+    "source_policy": "living|kitchen wall stream externally restricted in the audit scenario; labels absent from actor prompt"
+  },
+  "epistemic": {
+    "disabled/topology8": {
+      "completed": 12,
+      "location_correct": 0,
+      "consistent_with_available_evidence": 3,
+      "abstained": 3,
+      "unsupported_nonnull": 9
+    },
+    "disabled/source_blocked": {
+      "completed": 12,
+      "location_correct": 2,
+      "consistent_with_available_evidence": 4,
+      "abstained": 4,
+      "unsupported_nonnull": 8
+    },
+    "disabled/learned8": {
+      "completed": 12,
+      "location_correct": 1,
+      "consistent_with_available_evidence": 1,
+      "abstained": 4,
+      "unsupported_nonnull": 3
+    },
+    "enabled/full": {
+      "completed": 12,
+      "location_correct": 10,
+      "consistent_with_available_evidence": 11,
+      "abstained": 2,
+      "unsupported_nonnull": 1
+    },
+    "enabled/source_changed": {
+      "completed": 12,
+      "location_correct": 7,
+      "consistent_with_available_evidence": 11,
+      "abstained": 2,
+      "unsupported_nonnull": 1
+    },
+    "disabled/neutral_blocked": {
+      "completed": 12,
+      "location_correct": 1,
+      "consistent_with_available_evidence": 3,
+      "abstained": 5,
+      "unsupported_nonnull": 1
+    },
+    "disabled/source_changed": {
+      "completed": 12,
+      "location_correct": 3,
+      "consistent_with_available_evidence": 6,
+      "abstained": 4,
+      "unsupported_nonnull": 0
+    },
+    "enabled/learned8": {
+      "completed": 12,
+      "location_correct": 9,
+      "consistent_with_available_evidence": 12,
+      "abstained": 3,
+      "unsupported_nonnull": 0
+    },
+    "enabled/neutral_blocked": {
+      "completed": 12,
+      "location_correct": 10,
+      "consistent_with_available_evidence": 11,
+      "abstained": 2,
+      "unsupported_nonnull": 1
+    },
+    "enabled/topology8": {
+      "completed": 12,
+      "location_correct": 0,
+      "consistent_with_available_evidence": 12,
+      "abstained": 12,
+      "unsupported_nonnull": 0
+    },
+    "disabled/full": {
+      "completed": 12,
+      "location_correct": 3,
+      "consistent_with_available_evidence": 6,
+      "abstained": 5,
+      "unsupported_nonnull": 0
+    },
+    "enabled/source_blocked": {
+      "completed": 12,
+      "location_correct": 3,
+      "consistent_with_available_evidence": 9,
+      "abstained": 9,
+      "unsupported_nonnull": 3
+    }
+  },
+  "native": {
+    "table": {
+      "enabled/mem0_native8": {
+        "correct": 0,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        "stable": 0,
+        "truncations": 0,
+        "thinking_observed": 12,
+        "input_tokens": 12864,
+        "output_tokens": 2980,
+        "reasoning_tokens": 2908,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 12
+        }
+      },
+      "disabled/mem0_native8": {
+        "correct": 0,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        "stable": 0,
+        "truncations": 0,
+        "thinking_observed": 0,
+        "input_tokens": 11916,
+        "output_tokens": 60,
+        "reasoning_tokens": 0,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 12
+        }
+      },
+      "enabled/amem_native8": {
+        "correct": 10,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "bathroom",
+              "bathroom",
+              "bathroom"
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "kitchen"
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 3,
+            "completed": 3,
+            "answers": [
+              "living",
+              "living",
+              "living"
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 1,
+            "completed": 3,
+            "answers": [
+              "kitchen",
+              null,
+              null
+            ]
+          }
+        },
+        "stable": 3,
+        "truncations": 0,
+        "thinking_observed": 12,
+        "input_tokens": 91767,
+        "output_tokens": 132717,
+        "reasoning_tokens": 132629,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 11,
+          "deepseek-v4-flash-0731": 1
+        }
+      },
+      "disabled/amem_native8": {
+        "correct": 0,
+        "completed": 12,
+        "expected": 12,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              "bedroom",
+              "bedroom",
+              "den"
+            ]
+          },
+          "room-s6101-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              "garage",
+              null
+            ]
+          },
+          "room-s6102-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              null,
+              "kitchen",
+              "kitchen"
+            ]
+          },
+          "room-s6103-t50-mary": {
+            "correct": 0,
+            "completed": 3,
+            "answers": [
+              "bathroom",
+              "bathroom",
+              "bathroom"
+            ]
+          }
+        },
+        "stable": 0,
+        "truncations": 0,
+        "thinking_observed": 0,
+        "input_tokens": 90819,
+        "output_tokens": 80,
+        "reasoning_tokens": 0,
+        "returned_models": {
+          "DeepSeek-V4-Flash-0731": 12
+        }
+      }
+    },
+    "scope": "Four fixed controlled model-based memory questions; not a native unassisted LLM benchmark",
+    "source_policy": "living|kitchen wall stream externally restricted in the audit scenario; labels absent from actor prompt"
+  },
+  "controls": {
+    "evaluations": 108,
+    "scope": "Same four development cases; controller uses shared trained deterministic model",
+    "table": {
+      "enabled/bm25_8": {
+        "completed": 12,
+        "controller_abstained": 0,
+        "controller_correct": 0,
+        "controller_wrong": 0,
+        "correct": 6,
+        "expected": 12,
+        "mean_input_tokens": 1194.75,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6101-t50-mary": {
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "kitchen"
+            ],
+            "correct": 3
+          },
+          "room-s6102-t50-mary": {
+            "answers": [
+              "living",
+              null,
+              "living"
+            ],
+            "correct": 2
+          },
+          "room-s6103-t50-mary": {
+            "answers": [
+              "kitchen",
+              null,
+              null
+            ],
+            "correct": 1
+          }
+        },
+        "reused": 0,
+        "truncations": 0
+      },
+      "enabled/complete8": {
+        "completed": 12,
+        "controller_abstained": 0,
+        "controller_correct": 0,
+        "controller_wrong": 0,
+        "correct": 0,
+        "expected": 12,
+        "mean_input_tokens": 1207.0,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6101-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6102-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6103-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          }
+        },
+        "reused": 0,
+        "truncations": 0
+      },
+      "enabled/cyclic_wrong1_8": {
+        "completed": 12,
+        "controller_abstained": 0,
+        "controller_correct": 0,
+        "controller_wrong": 0,
+        "correct": 0,
+        "expected": 12,
+        "mean_input_tokens": 1199.5,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6101-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6102-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6103-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          }
+        },
+        "reused": 0,
+        "truncations": 0
+      },
+      "enabled/cyclic_wrong2_8": {
+        "completed": 12,
+        "controller_abstained": 0,
+        "controller_correct": 0,
+        "controller_wrong": 0,
+        "correct": 0,
+        "expected": 12,
+        "mean_input_tokens": 1211.25,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6101-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6102-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6103-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          }
+        },
+        "reused": 0,
+        "truncations": 0
+      },
+      "enabled/cyclic_wrong3_8": {
+        "completed": 12,
+        "controller_abstained": 0,
+        "controller_correct": 0,
+        "controller_wrong": 0,
+        "correct": 0,
+        "expected": 12,
+        "mean_input_tokens": 1205.75,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6101-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6102-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6103-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          }
+        },
+        "reused": 0,
+        "truncations": 0
+      },
+      "enabled/ledger8": {
+        "completed": 12,
+        "controller_abstained": 0,
+        "controller_correct": 0,
+        "controller_wrong": 0,
+        "correct": 0,
+        "expected": 12,
+        "mean_input_tokens": 1203.25,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6101-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6102-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6103-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          }
+        },
+        "reused": 3,
+        "truncations": 0
+      },
+      "enabled/query_only": {
+        "completed": 12,
+        "controller_abstained": 0,
+        "controller_correct": 0,
+        "controller_wrong": 0,
+        "correct": 0,
+        "expected": 12,
+        "mean_input_tokens": 1073.0,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6101-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6102-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6103-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          }
+        },
+        "reused": 0,
+        "truncations": 0
+      },
+      "enabled/recency8": {
+        "completed": 12,
+        "controller_abstained": 0,
+        "controller_correct": 0,
+        "controller_wrong": 0,
+        "correct": 0,
+        "expected": 12,
+        "mean_input_tokens": 1203.5,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6101-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6102-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6103-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          }
+        },
+        "reused": 0,
+        "truncations": 0
+      },
+      "enabled/table_sensitivity8": {
+        "completed": 12,
+        "controller_abstained": 0,
+        "controller_correct": 0,
+        "controller_wrong": 0,
+        "correct": 9,
+        "expected": 12,
+        "mean_input_tokens": 1206.0,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "answers": [
+              "bathroom",
+              "bathroom",
+              "bathroom"
+            ],
+            "correct": 3
+          },
+          "room-s6101-t50-mary": {
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "kitchen"
+            ],
+            "correct": 3
+          },
+          "room-s6102-t50-mary": {
+            "answers": [
+              "living",
+              "living",
+              "living"
+            ],
+            "correct": 3
+          },
+          "room-s6103-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          }
+        },
+        "reused": 12,
+        "truncations": 0
+      }
+    },
+    "unique_response_keys": 105
+  },
+  "controller": {
+    "evaluations": 48,
+    "scope": "Same four development cases; controller uses shared trained deterministic model",
+    "table": {
+      "disabled/sensor_available": {
+        "completed": 12,
+        "controller_abstained": 9,
+        "controller_correct": 3,
+        "controller_wrong": 0,
+        "correct": 3,
+        "expected": 12,
+        "mean_input_tokens": 1988.5,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "answers": [
+              "bedroom",
+              "bedroom",
+              "bedroom"
+            ],
+            "correct": 0
+          },
+          "room-s6101-t50-mary": {
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "kitchen"
+            ],
+            "correct": 3
+          },
+          "room-s6102-t50-mary": {
+            "answers": [
+              "kitchen",
+              "bedroom",
+              "kitchen"
+            ],
+            "correct": 0
+          },
+          "room-s6103-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          }
+        },
+        "reused": 0,
+        "truncations": 0
+      },
+      "disabled/sensor_unavailable": {
+        "completed": 12,
+        "controller_abstained": 12,
+        "controller_correct": 0,
+        "controller_wrong": 0,
+        "correct": 4,
+        "expected": 12,
+        "mean_input_tokens": 1907.75,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "answers": [
+              "bathroom",
+              null,
+              "bedroom"
+            ],
+            "correct": 1
+          },
+          "room-s6101-t50-mary": {
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "kitchen"
+            ],
+            "correct": 3
+          },
+          "room-s6102-t50-mary": {
+            "answers": [
+              null,
+              "bedroom",
+              "bedroom"
+            ],
+            "correct": 0
+          },
+          "room-s6103-t50-mary": {
+            "answers": [
+              null,
+              null,
+              "bathroom"
+            ],
+            "correct": 0
+          }
+        },
+        "reused": 0,
+        "truncations": 0
+      },
+      "enabled/sensor_available": {
+        "completed": 12,
+        "controller_abstained": 3,
+        "controller_correct": 9,
+        "controller_wrong": 0,
+        "correct": 9,
+        "expected": 12,
+        "mean_input_tokens": 2067.5,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "answers": [
+              "bathroom",
+              "bathroom",
+              "bathroom"
+            ],
+            "correct": 3
+          },
+          "room-s6101-t50-mary": {
+            "answers": [
+              "kitchen",
+              "kitchen",
+              "kitchen"
+            ],
+            "correct": 3
+          },
+          "room-s6102-t50-mary": {
+            "answers": [
+              "living",
+              "living",
+              "living"
+            ],
+            "correct": 3
+          },
+          "room-s6103-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          }
+        },
+        "reused": 0,
+        "truncations": 0
+      },
+      "enabled/sensor_unavailable": {
+        "completed": 12,
+        "controller_abstained": 12,
+        "controller_correct": 0,
+        "controller_wrong": 0,
+        "correct": 3,
+        "expected": 12,
+        "mean_input_tokens": 1986.75,
+        "per_case": {
+          "room-s6100-t50-mary": {
+            "answers": [
+              "bathroom",
+              null,
+              null
+            ],
+            "correct": 1
+          },
+          "room-s6101-t50-mary": {
+            "answers": [
+              "kitchen",
+              "kitchen",
+              null
+            ],
+            "correct": 2
+          },
+          "room-s6102-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          },
+          "room-s6103-t50-mary": {
+            "answers": [
+              null,
+              null,
+              null
+            ],
+            "correct": 0
+          }
+        },
+        "reused": 0,
+        "truncations": 0
+      }
+    },
+    "unique_response_keys": 48
+  },
+  "posthoc_controls": {
+    "medium": {
+      "scope": "Post-hoc comparisons on previously evaluated trajectories; no new training or LLM calls",
+      "sensitivity_edges": [
+        {
+          "object": "david",
+          "room": "closet",
+          "walls": [
+            "closet|foyer|vertical"
+          ]
+        },
+        {
+          "object": "david",
+          "room": "deck",
+          "walls": [
+            "deck|patio|vertical"
+          ]
+        },
+        {
+          "object": "david",
+          "room": "foyer",
+          "walls": [
+            "foyer|hallway|vertical"
+          ]
+        },
+        {
+          "object": "david",
+          "room": "garage",
+          "walls": [
+            "garage|basement|vertical"
+          ]
+        },
+        {
+          "object": "david",
+          "room": "guest",
+          "walls": [
+            "garage|guest|horizontal",
+            "guest|master|vertical"
+          ]
+        },
+        {
+          "object": "david",
+          "room": "master",
+          "walls": [
+            "master|laundry|vertical"
+          ]
+        },
+        {
+          "object": "john",
+          "room": "basement",
+          "walls": [
+            "bathroom|basement|horizontal",
+            "garage|basement|vertical"
+          ]
+        },
+        {
+          "object": "john",
+          "room": "den",
+          "walls": [
+            "living|den|horizontal"
+          ]
+        },
+        {
+          "object": "john",
+          "room": "guest",
+          "walls": [
+            "garage|guest|horizontal"
+          ]
+        },
+        {
+          "object": "john",
+          "room": "patio",
+          "walls": [
+            "closet|patio|horizontal",
+            "deck|patio|vertical"
+          ]
+        },
+        {
+          "object": "lisa",
+          "room": "closet",
+          "walls": [
+            "closet|patio|horizontal"
+          ]
+        },
+        {
+          "object": "lisa",
+          "room": "garage",
+          "walls": [
+            "garage|guest|horizontal"
+          ]
+        },
+        {
+          "object": "lisa",
+          "room": "patio",
+          "walls": [
+            "closet|patio|horizontal"
+          ]
+        },
+        {
+          "object": "mary",
+          "room": "bathroom",
+          "walls": [
+            "bathroom|basement|horizontal"
+          ]
+        },
+        {
+          "object": "mary",
+          "room": "closet",
+          "walls": [
+            "closet|patio|horizontal"
+          ]
+        },
+        {
+          "object": "mary",
+          "room": "garage",
+          "walls": [
+            "garage|guest|horizontal"
+          ]
+        },
+        {
+          "object": "mary",
+          "room": "living",
+          "walls": [
+            "living|den|horizontal"
+          ]
+        },
+        {
+          "object": "mary",
+          "room": "patio",
+          "walls": [
+            "closet|patio|horizontal",
+            "deck|patio|vertical"
+          ]
+        },
+        {
+          "object": "michael",
+          "room": "basement",
+          "walls": [
+            "bathroom|basement|horizontal",
+            "garage|basement|vertical"
+          ]
+        },
+        {
+          "object": "michael",
+          "room": "den",
+          "walls": [
+            "living|den|horizontal"
+          ]
+        },
+        {
+          "object": "michael",
+          "room": "family",
+          "walls": [
+            "dining|family|vertical"
+          ]
+        },
+        {
+          "object": "michael",
+          "room": "foyer",
+          "walls": [
+            "closet|foyer|vertical"
+          ]
+        },
+        {
+          "object": "michael",
+          "room": "hallway",
+          "walls": [
+            "foyer|hallway|vertical"
+          ]
+        },
+        {
+          "object": "michael",
+          "room": "laundry",
+          "walls": [
+            "master|laundry|vertical"
+          ]
+        },
+        {
+          "object": "michael",
+          "room": "master",
+          "walls": [
+            "guest|master|vertical"
+          ]
+        },
+        {
+          "object": "michael",
+          "room": "patio",
+          "walls": [
+            "deck|patio|vertical"
+          ]
+        },
+        {
+          "object": "michael",
+          "room": "porch",
+          "walls": [
+            "hallway|porch|vertical"
+          ]
+        },
+        {
+          "object": "sarah",
+          "room": "closet",
+          "walls": [
+            "closet|foyer|vertical"
+          ]
+        },
+        {
+          "object": "sarah",
+          "room": "deck",
+          "walls": [
+            "deck|patio|vertical"
+          ]
+        },
+        {
+          "object": "sarah",
+          "room": "foyer",
+          "walls": [
+            "closet|foyer|vertical"
+          ]
+        },
+        {
+          "object": "sarah",
+          "room": "garage",
+          "walls": [
+            "garage|basement|vertical"
+          ]
+        },
+        {
+          "object": "sarah",
+          "room": "guest",
+          "walls": [
+            "guest|master|vertical"
+          ]
+        },
+        {
+          "object": "sarah",
+          "room": "hallway",
+          "walls": [
+            "foyer|hallway|vertical"
+          ]
+        },
+        {
+          "object": "sarah",
+          "room": "laundry",
+          "walls": [
+            "master|laundry|vertical"
+          ]
+        },
+        {
+          "object": "sarah",
+          "room": "master",
+          "walls": [
+            "guest|master|vertical",
+            "master|laundry|vertical"
+          ]
+        },
+        {
+          "object": "sarah",
+          "room": "porch",
+          "walls": [
+            "hallway|porch|vertical"
+          ]
+        }
+      ],
+      "table": {
+        "cyclic_wrong1": {
+          "episode_scores": {
+            "5100": 0.41818181818181793,
+            "5101": 0.4021212121212119,
+            "5102": 0.4396969696969694,
+            "5103": 0.7787878787878788,
+            "5104": 0.6945454545454544,
+            "5105": 0.37090909090909063,
+            "5106": 0.37454545454545435,
+            "5107": 0.28727272727272707,
+            "5108": 0.3890909090909089,
+            "5109": 0.44727272727272704,
+            "5110": 0.5054545454545452,
+            "5111": 0.5781818181818181,
+            "5112": 0.5781818181818181,
+            "5113": 0.3486868686868683,
+            "5114": 0.4909090909090906,
+            "5115": 0.5636363636363635,
+            "5116": 0.4036363636363634,
+            "5117": 0.4987373737373736,
+            "5118": 0.5927272727272725,
+            "5119": 0.5385353535353534,
+            "5120": 0.6060606060606059,
+            "5121": 0.31636363636363607,
+            "5122": 0.28727272727272707,
+            "5123": 0.447272727272727
+          },
+          "learned_minus_control": {
+            "difference": 0.01307870370370393,
+            "episode_bootstrap_95": [
+              0.00015782828282852554,
+              0.029019360269360455
+            ],
+            "episodes": 24,
+            "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+          },
+          "queries": 1584,
+          "same_as_learned": 1536,
+          "score": 0.47325336700336385
+        },
+        "cyclic_wrong2": {
+          "episode_scores": {
+            "5100": 0.41818181818181793,
+            "5101": 0.4021212121212119,
+            "5102": 0.4396969696969694,
+            "5103": 0.7787878787878788,
+            "5104": 0.6945454545454544,
+            "5105": 0.3810101010101008,
+            "5106": 0.37454545454545435,
+            "5107": 0.28727272727272707,
+            "5108": 0.3890909090909089,
+            "5109": 0.44727272727272704,
+            "5110": 0.5054545454545452,
+            "5111": 0.5781818181818181,
+            "5112": 0.5781818181818181,
+            "5113": 0.3486868686868683,
+            "5114": 0.4909090909090906,
+            "5115": 0.5636363636363635,
+            "5116": 0.4036363636363634,
+            "5117": 0.5012626262626261,
+            "5118": 0.5927272727272725,
+            "5119": 0.5317171717171716,
+            "5120": 0.6060606060606059,
+            "5121": 0.31636363636363607,
+            "5122": 0.28727272727272707,
+            "5123": 0.447272727272727
+          },
+          "learned_minus_control": {
+            "difference": 0.012836700336700563,
+            "episode_bootstrap_95": [
+              0.00015782828282852554,
+              0.028409090909091123
+            ],
+            "episodes": 24,
+            "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+          },
+          "queries": 1584,
+          "same_as_learned": 1532,
+          "score": 0.4734953703703677
+        },
+        "cyclic_wrong3": {
+          "episode_scores": {
+            "5100": 0.41818181818181793,
+            "5101": 0.3793939393939392,
+            "5102": 0.4396969696969694,
+            "5103": 0.7787878787878788,
+            "5104": 0.6945454545454544,
+            "5105": 0.37090909090909063,
+            "5106": 0.37454545454545435,
+            "5107": 0.28727272727272707,
+            "5108": 0.3890909090909089,
+            "5109": 0.44727272727272704,
+            "5110": 0.5054545454545452,
+            "5111": 0.5781818181818181,
+            "5112": 0.5781818181818181,
+            "5113": 0.3486868686868683,
+            "5114": 0.4909090909090906,
+            "5115": 0.5636363636363635,
+            "5116": 0.4036363636363634,
+            "5117": 0.5017676767676764,
+            "5118": 0.5927272727272725,
+            "5119": 0.5296969696969697,
+            "5120": 0.6060606060606059,
+            "5121": 0.31636363636363607,
+            "5122": 0.28727272727272707,
+            "5123": 0.447272727272727
+          },
+          "learned_minus_control": {
+            "difference": 0.014267676767676998,
+            "episode_bootstrap_95": [
+              0.0011047979797982218,
+              0.03049242424242442
+            ],
+            "episodes": 24,
+            "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+          },
+          "queries": 1584,
+          "same_as_learned": 1533,
+          "score": 0.472064393939391
+        },
+        "table_sensitivity": {
+          "episode_scores": {
+            "5100": 0.41818181818181793,
+            "5101": 0.5043939393939392,
+            "5102": 0.4396969696969694,
+            "5103": 0.8545454545454545,
+            "5104": 0.6945454545454544,
+            "5105": 0.44161616161616135,
+            "5106": 0.37454545454545435,
+            "5107": 0.28727272727272707,
+            "5108": 0.3890909090909089,
+            "5109": 0.44727272727272704,
+            "5110": 0.5054545454545452,
+            "5111": 0.5781818181818181,
+            "5112": 0.5781818181818181,
+            "5113": 0.3890909090909088,
+            "5114": 0.4909090909090906,
+            "5115": 0.5636363636363635,
+            "5116": 0.4036363636363634,
+            "5117": 0.5148989898989897,
+            "5118": 0.5927272727272725,
+            "5119": 0.6052020202020201,
+            "5120": 0.6363636363636362,
+            "5121": 0.31636363636363607,
+            "5122": 0.28727272727272707,
+            "5123": 0.447272727272727
+          },
+          "learned_minus_control": {
+            "difference": -0.003682659932659711,
+            "episode_bootstrap_95": [
+              -0.017887205387205157,
+              0.01159511784511806
+            ],
+            "episodes": 24,
+            "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+          },
+          "queries": 1584,
+          "same_as_learned": 1511,
+          "score": 0.49001473063972745
+        }
+      }
+    },
+    "small": {
+      "scope": "Post-hoc comparisons on previously evaluated trajectories; no new training or LLM calls",
+      "sensitivity_edges": [
+        {
+          "object": "john",
+          "room": "bathroom",
+          "walls": [
+            "bathroom|study|horizontal"
+          ]
+        },
+        {
+          "object": "john",
+          "room": "den",
+          "walls": [
+            "office|den|vertical"
+          ]
+        },
+        {
+          "object": "john",
+          "room": "kitchen",
+          "walls": [
+            "living|kitchen|vertical"
+          ]
+        },
+        {
+          "object": "mary",
+          "room": "den",
+          "walls": [
+            "bedroom|den|horizontal",
+            "office|den|vertical"
+          ]
+        },
+        {
+          "object": "mary",
+          "room": "kitchen",
+          "walls": [
+            "living|kitchen|vertical"
+          ]
+        },
+        {
+          "object": "mary",
+          "room": "living",
+          "walls": [
+            "living|kitchen|vertical"
+          ]
+        },
+        {
+          "object": "mary",
+          "room": "study",
+          "walls": [
+            "bathroom|study|horizontal"
+          ]
+        }
+      ],
+      "table": {
+        "cyclic_wrong1": {
+          "episode_scores": {
+            "5000": 0.7247474747474748,
+            "5001": 0.7323232323232323,
+            "5002": 0.6565656565656566,
+            "5003": 0.7196969696969696,
+            "5004": 0.75,
+            "5005": 0.6742424242424242,
+            "5006": 0.5984848484848485,
+            "5007": 0.7196969696969697,
+            "5008": 0.5126262626262625,
+            "5009": 0.696969696969697,
+            "5010": 0.7323232323232323,
+            "5011": 0.6818181818181818,
+            "5012": 0.7777777777777778,
+            "5013": 0.7777777777777778,
+            "5014": 0.7550505050505051,
+            "5015": 0.6792929292929293,
+            "5016": 0.8409090909090909,
+            "5017": 0.6515151515151515,
+            "5018": 0.7727272727272727,
+            "5019": 0.553030303030303,
+            "5020": 0.7954545454545454,
+            "5021": 0.6792929292929293,
+            "5022": 0.8005050505050505,
+            "5023": 0.7828282828282828
+          },
+          "learned_minus_control": {
+            "difference": 0.16287878787878793,
+            "episode_bootstrap_95": [
+              0.13541666666666669,
+              0.18844696969696972
+            ],
+            "episodes": 24,
+            "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+          },
+          "queries": 528,
+          "same_as_learned": 285,
+          "score": 0.7110690235690229
+        },
+        "cyclic_wrong2": {
+          "episode_scores": {
+            "5000": 0.6792929292929293,
+            "5001": 0.7323232323232323,
+            "5002": 0.6792929292929293,
+            "5003": 0.7159090909090909,
+            "5004": 0.75,
+            "5005": 0.6742424242424242,
+            "5006": 0.6212121212121212,
+            "5007": 0.7424242424242425,
+            "5008": 0.5580808080808081,
+            "5009": 0.696969696969697,
+            "5010": 0.7323232323232323,
+            "5011": 0.7272727272727273,
+            "5012": 0.7777777777777778,
+            "5013": 0.7777777777777778,
+            "5014": 0.7777777777777778,
+            "5015": 0.6792929292929293,
+            "5016": 0.8409090909090909,
+            "5017": 0.6742424242424242,
+            "5018": 0.7954545454545454,
+            "5019": 0.553030303030303,
+            "5020": 0.7954545454545454,
+            "5021": 0.6792929292929293,
+            "5022": 0.8005050505050505,
+            "5023": 0.76010101010101
+          },
+          "learned_minus_control": {
+            "difference": 0.15640782828282832,
+            "episode_bootstrap_95": [
+              0.13083964646464646,
+              0.17834595959595956
+            ],
+            "episodes": 24,
+            "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+          },
+          "queries": 528,
+          "same_as_learned": 288,
+          "score": 0.7175399831649827
+        },
+        "cyclic_wrong3": {
+          "episode_scores": {
+            "5000": 0.702020202020202,
+            "5001": 0.7550505050505051,
+            "5002": 0.6792929292929293,
+            "5003": 0.7310606060606062,
+            "5004": 0.75,
+            "5005": 0.6742424242424242,
+            "5006": 0.5984848484848485,
+            "5007": 0.7424242424242425,
+            "5008": 0.48989898989898994,
+            "5009": 0.696969696969697,
+            "5010": 0.7323232323232323,
+            "5011": 0.7045454545454546,
+            "5012": 0.7777777777777778,
+            "5013": 0.8232323232323232,
+            "5014": 0.7777777777777778,
+            "5015": 0.6565656565656566,
+            "5016": 0.8409090909090909,
+            "5017": 0.6515151515151515,
+            "5018": 0.75,
+            "5019": 0.553030303030303,
+            "5020": 0.8636363636363636,
+            "5021": 0.702020202020202,
+            "5022": 0.8005050505050505,
+            "5023": 0.8055555555555555
+          },
+          "learned_minus_control": {
+            "difference": 0.15482954545454547,
+            "episode_bootstrap_95": [
+              0.1278409090909091,
+              0.17992424242424243
+            ],
+            "episodes": 24,
+            "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+          },
+          "queries": 528,
+          "same_as_learned": 287,
+          "score": 0.7191182659932653
+        },
+        "table_sensitivity": {
+          "episode_scores": {
+            "5000": 0.8383838383838383,
+            "5001": 0.9595959595959596,
+            "5002": 0.8383838383838383,
+            "5003": 0.8939393939393938,
+            "5004": 0.9545454545454546,
+            "5005": 0.6742424242424242,
+            "5006": 0.7575757575757577,
+            "5007": 0.8787878787878789,
+            "5008": 0.7171717171717171,
+            "5009": 0.8787878787878789,
+            "5010": 0.7550505050505051,
+            "5011": 0.9772727272727273,
+            "5012": 0.9141414141414141,
+            "5013": 0.9595959595959596,
+            "5014": 0.9595959595959596,
+            "5015": 0.8383838383838383,
+            "5016": 1.0,
+            "5017": 0.8787878787878788,
+            "5018": 0.9772727272727273,
+            "5019": 0.7575757575757575,
+            "5020": 1.0,
+            "5021": 0.8383838383838383,
+            "5022": 0.8232323232323232,
+            "5023": 0.9191919191919191
+          },
+          "learned_minus_control": {
+            "difference": -0.0006313131313131076,
+            "episode_bootstrap_95": [
+              -0.0018939393939393738,
+              3.700743415417188e-17
+            ],
+            "episodes": 24,
+            "scope": "Conditional on this configuration, fixed trained model and sampling protocol"
+          },
+          "queries": 528,
+          "same_as_learned": 523,
+          "score": 0.8745791245791238
+        }
+      }
+    }
+  },
+  "joint_phase_diagnostic": [
+    {
+      "arm": "full",
+      "case": "room-s6100-t50-mary",
+      "joint_phase_check": {
+        "assignments": 4,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 4,
+          "bedroom|den|horizontal": 1,
+          "living|kitchen|vertical": 1,
+          "office|den|vertical": 1
+        },
+        "rooms": [
+          "bathroom"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bathroom"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "learned8",
+      "case": "room-s6100-t50-mary",
+      "joint_phase_check": {
+        "assignments": 160,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 10,
+          "bedroom|den|horizontal": 8,
+          "living|kitchen|vertical": 1,
+          "office|den|vertical": 2
+        },
+        "rooms": [
+          "bathroom"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bathroom"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "topology8",
+      "case": "room-s6100-t50-mary",
+      "joint_phase_check": {
+        "assignments": 16,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 4,
+          "bedroom|den|horizontal": 1,
+          "living|kitchen|vertical": 2,
+          "office|den|vertical": 2
+        },
+        "rooms": [
+          "bathroom",
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bathroom",
+        "kitchen"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "source_blocked",
+      "case": "room-s6100-t50-mary",
+      "joint_phase_check": {
+        "assignments": 20,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 4,
+          "bedroom|den|horizontal": 1,
+          "living|kitchen|vertical": 5,
+          "office|den|vertical": 1
+        },
+        "rooms": [
+          "bathroom",
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bathroom",
+        "kitchen"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "source_changed",
+      "case": "room-s6100-t50-mary",
+      "joint_phase_check": {
+        "assignments": 4,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 4,
+          "bedroom|den|horizontal": 1,
+          "living|kitchen|vertical": 1,
+          "office|den|vertical": 1
+        },
+        "rooms": [
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "kitchen"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "neutral_blocked",
+      "case": "room-s6100-t50-mary",
+      "joint_phase_check": {
+        "assignments": 8,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 4,
+          "bedroom|den|horizontal": 1,
+          "living|kitchen|vertical": 1,
+          "office|den|vertical": 2
+        },
+        "rooms": [
+          "bathroom"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bathroom"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "full",
+      "case": "room-s6101-t50-mary",
+      "joint_phase_check": {
+        "assignments": 1,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 1,
+          "bedroom|den|horizontal": 1,
+          "living|kitchen|vertical": 1,
+          "office|den|vertical": 1
+        },
+        "rooms": [
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "kitchen"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "learned8",
+      "case": "room-s6101-t50-mary",
+      "joint_phase_check": {
+        "assignments": 160,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 10,
+          "bedroom|den|horizontal": 8,
+          "living|kitchen|vertical": 1,
+          "office|den|vertical": 2
+        },
+        "rooms": [
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "kitchen"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "topology8",
+      "case": "room-s6101-t50-mary",
+      "joint_phase_check": {
+        "assignments": 16,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 2,
+          "bedroom|den|horizontal": 2,
+          "living|kitchen|vertical": 2,
+          "office|den|vertical": 2
+        },
+        "rooms": [
+          "bathroom",
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bathroom",
+        "kitchen"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "source_blocked",
+      "case": "room-s6101-t50-mary",
+      "joint_phase_check": {
+        "assignments": 5,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 1,
+          "bedroom|den|horizontal": 1,
+          "living|kitchen|vertical": 5,
+          "office|den|vertical": 1
+        },
+        "rooms": [
+          "bathroom",
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bathroom",
+        "kitchen"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "source_changed",
+      "case": "room-s6101-t50-mary",
+      "joint_phase_check": {
+        "assignments": 1,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 1,
+          "bedroom|den|horizontal": 1,
+          "living|kitchen|vertical": 1,
+          "office|den|vertical": 1
+        },
+        "rooms": [
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "kitchen"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "neutral_blocked",
+      "case": "room-s6101-t50-mary",
+      "joint_phase_check": {
+        "assignments": 2,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 1,
+          "bedroom|den|horizontal": 1,
+          "living|kitchen|vertical": 1,
+          "office|den|vertical": 2
+        },
+        "rooms": [
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "kitchen"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "full",
+      "case": "room-s6102-t50-mary",
+      "joint_phase_check": {
+        "assignments": 1,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 1,
+          "bedroom|den|horizontal": 1,
+          "living|kitchen|vertical": 1,
+          "office|den|vertical": 1
+        },
+        "rooms": [
+          "living"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "living"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "learned8",
+      "case": "room-s6102-t50-mary",
+      "joint_phase_check": {
+        "assignments": 48,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 6,
+          "bedroom|den|horizontal": 8,
+          "living|kitchen|vertical": 1,
+          "office|den|vertical": 1
+        },
+        "rooms": [
+          "living"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "living"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "topology8",
+      "case": "room-s6102-t50-mary",
+      "joint_phase_check": {
+        "assignments": 8,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 2,
+          "bedroom|den|horizontal": 1,
+          "living|kitchen|vertical": 2,
+          "office|den|vertical": 2
+        },
+        "rooms": [
+          "bedroom",
+          "living"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bedroom",
+        "living"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "source_blocked",
+      "case": "room-s6102-t50-mary",
+      "joint_phase_check": {
+        "assignments": 5,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 1,
+          "bedroom|den|horizontal": 1,
+          "living|kitchen|vertical": 5,
+          "office|den|vertical": 1
+        },
+        "rooms": [
+          "bedroom",
+          "living"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bedroom",
+        "living"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "source_changed",
+      "case": "room-s6102-t50-mary",
+      "joint_phase_check": {
+        "assignments": 1,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 1,
+          "bedroom|den|horizontal": 1,
+          "living|kitchen|vertical": 1,
+          "office|den|vertical": 1
+        },
+        "rooms": [
+          "living"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "living"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "neutral_blocked",
+      "case": "room-s6102-t50-mary",
+      "joint_phase_check": {
+        "assignments": 2,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 1,
+          "bedroom|den|horizontal": 1,
+          "living|kitchen|vertical": 1,
+          "office|den|vertical": 2
+        },
+        "rooms": [
+          "living"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "living"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "full",
+      "case": "room-s6103-t50-mary",
+      "joint_phase_check": {
+        "assignments": 10,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 1,
+          "bedroom|den|horizontal": 2,
+          "living|kitchen|vertical": 5,
+          "office|den|vertical": 1
+        },
+        "rooms": [
+          "bathroom",
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bathroom",
+        "kitchen"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "learned8",
+      "case": "room-s6103-t50-mary",
+      "joint_phase_check": {
+        "assignments": 15,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 1,
+          "bedroom|den|horizontal": 3,
+          "living|kitchen|vertical": 5,
+          "office|den|vertical": 1
+        },
+        "rooms": [
+          "bathroom",
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bathroom",
+        "kitchen"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "topology8",
+      "case": "room-s6103-t50-mary",
+      "joint_phase_check": {
+        "assignments": 20,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 1,
+          "bedroom|den|horizontal": 2,
+          "living|kitchen|vertical": 5,
+          "office|den|vertical": 2
+        },
+        "rooms": [
+          "bathroom",
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bathroom",
+        "kitchen"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "source_blocked",
+      "case": "room-s6103-t50-mary",
+      "joint_phase_check": {
+        "assignments": 10,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 1,
+          "bedroom|den|horizontal": 2,
+          "living|kitchen|vertical": 5,
+          "office|den|vertical": 1
+        },
+        "rooms": [
+          "bathroom",
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bathroom",
+        "kitchen"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "source_changed",
+      "case": "room-s6103-t50-mary",
+      "joint_phase_check": {
+        "assignments": 10,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 1,
+          "bedroom|den|horizontal": 2,
+          "living|kitchen|vertical": 5,
+          "office|den|vertical": 1
+        },
+        "rooms": [
+          "bathroom",
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bathroom",
+        "kitchen"
+      ],
+      "same_rooms": true
+    },
+    {
+      "arm": "neutral_blocked",
+      "case": "room-s6103-t50-mary",
+      "joint_phase_check": {
+        "assignments": 20,
+        "missing_transition": false,
+        "phase_counts": {
+          "bathroom|study|horizontal": 1,
+          "bedroom|den|horizontal": 2,
+          "living|kitchen|vertical": 5,
+          "office|den|vertical": 2
+        },
+        "rooms": [
+          "bathroom",
+          "kitchen"
+        ],
+        "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+      },
+      "old_decoder": [
+        "bathroom",
+        "kitchen"
+      ],
+      "same_rooms": true
+    }
+  ],
+  "decoder_audit": {
+    "abstained_after_control": 85,
+    "all_metrics": {
+      "alert": {
+        "fn": 0,
+        "fp": 0,
+        "predicted": 171,
+        "reference_positive": 171,
+        "tp": 171
+      },
+      "learned_candidate": {
+        "fn": 0,
+        "fp": 36,
+        "predicted": 207,
+        "reference_positive": 171,
+        "tp": 171
+      },
+      "source_present": {
+        "fn": 0,
+        "fp": 1775,
+        "predicted": 1946,
+        "reference_positive": 171,
+        "tp": 171
+      },
+      "topology_candidate": {
+        "fn": 0,
+        "fp": 651,
+        "predicted": 822,
+        "reference_positive": 171,
+        "tp": 171
+      }
+    },
+    "all_queries": 528,
+    "authorized_sensor_reads": 1040,
+    "controller_on_normal": {
+      "abstain_tool_unavailable": 85,
+      "no_alert": 1639,
+      "sensor_answer": 84
+    },
+    "correct_after_control": 1723,
+    "episodes": [
+      {
+        "seed": 6000,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6001,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6002,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6003,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6004,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6005,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6006,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6007,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6008,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6009,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6010,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6011,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6012,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6013,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6014,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6015,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6016,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6017,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6018,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6019,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6020,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6021,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6022,
+        "source_scenarios": 88
+      },
+      {
+        "seed": 6023,
+        "source_scenarios": 88
+      }
+    ],
+    "limitations": [
+      "Controlled sensor extension, not native RoomEnv tool",
+      "Fixed deterministic decoder, not LLM audit",
+      "Finite group deletion and one phase perturbation reference, not all interventions",
+      "Same-query source scenarios are correlated; no independent-sample statistical claim",
+      "Graph narrows candidate causes; known transition-model provenance could also be informative"
+    ],
+    "normal_correct_metrics": {
+      "alert": {
+        "fn": 0,
+        "fp": 0,
+        "predicted": 169,
+        "reference_positive": 169,
+        "tp": 169
+      },
+      "learned_candidate": {
+        "fn": 0,
+        "fp": 26,
+        "predicted": 195,
+        "reference_positive": 169,
+        "tp": 169
+      },
+      "source_present": {
+        "fn": 0,
+        "fp": 1553,
+        "predicted": 1722,
+        "reference_positive": 169,
+        "tp": 169
+      },
+      "topology_candidate": {
+        "fn": 0,
+        "fp": 568,
+        "predicted": 737,
+        "reference_positive": 169,
+        "tp": 169
+      }
+    },
+    "normal_correct_queries": 452,
+    "normal_correct_scenarios": 1808,
+    "source_scenarios": 2112,
+    "wrong_after_control": 0
+  },
+  "cost": {
+    "by_source": {
+      "results/development/hm3/paired_actor_s82/ledger.jsonl": {
+        "responses": 72,
+        "failed_attempts": 0,
+        "reused_responses_excluded": 0,
+        "prompt_tokens": 402096,
+        "completion_tokens": 945732
+      },
+      "results/development/hm3/room_actor_v1/ledger.jsonl": {
+        "responses": 144,
+        "failed_attempts": 0,
+        "reused_responses_excluded": 0,
+        "prompt_tokens": 242964,
+        "completion_tokens": 798326
+      },
+      "results/development/hm3/room_native_actor_v1/ledger.jsonl": {
+        "responses": 48,
+        "failed_attempts": 0,
+        "reused_responses_excluded": 0,
+        "prompt_tokens": 207366,
+        "completion_tokens": 135837
+      },
+      "results/development/hm3/room_controls_v1/ledger.jsonl": {
+        "responses": 93,
+        "failed_attempts": 0,
+        "reused_responses_excluded": 0,
+        "prompt_tokens": 110358,
+        "completion_tokens": 738190
+      },
+      "results/development/hm3/room_controller_v1/ledger.jsonl": {
+        "responses": 48,
+        "failed_attempts": 0,
+        "reused_responses_excluded": 0,
+        "prompt_tokens": 95406,
+        "completion_tokens": 300825
+      },
+      "results/development/hm3/room_native/amem/room-s6100-t50-mary/memory_calls.jsonl": {
+        "responses": 16,
+        "failed_attempts": 1,
+        "reused_responses_excluded": 0,
+        "prompt_tokens": 17911,
+        "completion_tokens": 4026
+      },
+      "results/development/hm3/room_native/amem/room-s6101-t50-mary/memory_calls.jsonl": {
+        "responses": 22,
+        "failed_attempts": 0,
+        "reused_responses_excluded": 0,
+        "prompt_tokens": 25417,
+        "completion_tokens": 4511
+      },
+      "results/development/hm3/room_native/amem/room-s6102-t50-mary/memory_calls.jsonl": {
+        "responses": 2,
+        "failed_attempts": 1,
+        "reused_responses_excluded": 0,
+        "prompt_tokens": 1324,
+        "completion_tokens": 131
+      },
+      "results/development/hm3/room_native/amem/room-s6103-t50-mary/memory_calls.jsonl": {
+        "responses": 7,
+        "failed_attempts": 1,
+        "reused_responses_excluded": 0,
+        "prompt_tokens": 4970,
+        "completion_tokens": 652
+      },
+      "results/development/hm3/room_native/mem0/room-s6100-t50-mary/memory_calls.jsonl": {
+        "responses": 44,
+        "failed_attempts": 0,
+        "reused_responses_excluded": 0,
+        "prompt_tokens": 377638,
+        "completion_tokens": 222
+      },
+      "results/development/hm3/room_native_recovery/amem/room-s6100-t50-mary/memory_calls.jsonl": {
+        "responses": 5,
+        "failed_attempts": 0,
+        "reused_responses_excluded": 17,
+        "prompt_tokens": 7699,
+        "completion_tokens": 1518
+      },
+      "results/development/hm3/room_native_recovery/amem/room-s6102-t50-mary/memory_calls.jsonl": {
+        "responses": 19,
+        "failed_attempts": 3,
+        "reused_responses_excluded": 3,
+        "prompt_tokens": 23200,
+        "completion_tokens": 4044
+      },
+      "results/development/hm3/room_native_recovery/amem/room-s6103-t50-mary/memory_calls.jsonl": {
+        "responses": 14,
+        "failed_attempts": 2,
+        "reused_responses_excluded": 8,
+        "prompt_tokens": 18362,
+        "completion_tokens": 4700
+      },
+      "results/development/hm3/room_native_http_probe/room-s6100-t50-mary-17.json": {
+        "responses": 1,
+        "failed_attempts": 0,
+        "reused_responses_excluded": 0,
+        "prompt_tokens": 445,
+        "completion_tokens": 96
+      },
+      "results/development/hm3/room_native_http_probe/room-s6102-t50-mary-3.json": {
+        "responses": 1,
+        "failed_attempts": 0,
+        "reused_responses_excluded": 0,
+        "prompt_tokens": 509,
+        "completion_tokens": 86
+      },
+      "results/development/hm3/room_native_http_probe/room-s6103-t50-mary-8.json": {
+        "responses": 1,
+        "failed_attempts": 0,
+        "reused_responses_excluded": 0,
+        "prompt_tokens": 1446,
+        "completion_tokens": 396
+      }
+    },
+    "completed_responses": 537,
+    "failed_attempts": 8,
+    "prompt_tokens": 1537111,
+    "completion_tokens": 2939292,
+    "reasoning_tokens_subset": 2767239,
+    "models": {
+      "DeepSeek-V4-Flash-0731": 519,
+      "deepseek-v4-flash-0731": 18
+    },
+    "reused_responses_excluded": 28,
+    "actor_request_intents": 405,
+    "unresolved_actor_intents": [],
+    "reported_output_budget_exceedances": [
+      {
+        "directory": "paired_actor_s82",
+        "job_id": "ba02e525ed3730607ca8b126658391645d914a6eea121b702fce08ec472fe7e5",
+        "requested_max_tokens": 32768,
+        "reported_completion_tokens": 33183,
+        "finish_reason": "stop"
+      },
+      {
+        "directory": "paired_actor_s82",
+        "job_id": "526f10499924582d8f5e6be067841505df703f221749da6c5bf4b614e902f8a7",
+        "requested_max_tokens": 32768,
+        "reported_completion_tokens": 40281,
+        "finish_reason": "stop"
+      }
+    ],
+    "notes": [
+      "Reasoning tokens are already included in completion tokens; never add twice",
+      "Provider pricing unknown; no dollar/cny bill inferred",
+      "Mem0 all 44 responses are recorded under first case due to module cache; aggregate only",
+      "Includes original failed native attempts and probes; excludes exact replayed responses",
+      "Method alias rows are not new API responses; corpus embedding CPU cost not estimated"
+    ]
+  },
+  "scope": "Controlled component evidence; original memory-state SCM and broad actor generalization remain unestablished"
+}

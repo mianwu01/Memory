@@ -1,0 +1,96 @@
+{
+  "query": "Flight F19 (Eli, day 2) now arrives at 13:30.\n{\"object_id\": \"F19\", \"op\": \"shift_reservation\", \"payload\": {\"arrival\": 810}}",
+  "result": {
+    "results": [
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:47:31.450709+00:00",
+        "hash": "3b04c194e092ff5adc9ad7bac0bb37e4",
+        "id": "8c515060-5a07-44b2-943a-8c9d78b51171",
+        "memory": "Flight F93 (Eli, day 1) arrival was shifted from 11:45 to 12:15 on September 21, 2026",
+        "metadata": null,
+        "score": 0.8145057249536098,
+        "updated_at": "2026-09-21T16:47:31.450709+00:00",
+        "user_id": "travel-s71-test-001"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:47:38.568768+00:00",
+        "hash": "2ebfce78c86e93d7b86e9d55d4e26e23",
+        "id": "9768bf40-b69b-47d4-ba27-30844fd32657",
+        "memory": "Flight F87 (Gao, day 2) arrival was shifted from 16:15 to 19:00 on September 21, 2026",
+        "metadata": null,
+        "score": 0.7208178119930829,
+        "updated_at": "2026-09-21T16:47:38.568768+00:00",
+        "user_id": "travel-s71-test-001"
+      },
+      {
+        "attributed_to": "assistant",
+        "created_at": "2026-09-21T16:47:31.453840+00:00",
+        "hash": "3691fc04a783f7c3620fb3b194f1ee17",
+        "id": "3aeaf93f-315a-40e9-8722-3213f05f97f6",
+        "memory": "Transfer T68 pickup was automatically shifted from 12:35 to 12:40 on September 21, 2026 following the F93 arrival change",
+        "metadata": null,
+        "score": 0.3647838882068281,
+        "updated_at": "2026-09-21T16:47:31.453840+00:00",
+        "user_id": "travel-s71-test-001"
+      },
+      {
+        "attributed_to": "assistant",
+        "created_at": "2026-09-21T16:47:38.571508+00:00",
+        "hash": "a847cc81dc82af2e38ec6314bf639ec9",
+        "id": "fefa6f25-8c6c-485e-b802-1c729bb59df8",
+        "memory": "Transfer T99 pickup was automatically shifted from 17:00 to 19:30 on September 21, 2026 following the F87 arrival change",
+        "metadata": null,
+        "score": 0.3482279769106394,
+        "updated_at": "2026-09-21T16:47:38.571508+00:00",
+        "user_id": "travel-s71-test-001"
+      },
+      {
+        "attributed_to": "assistant",
+        "created_at": "2026-09-21T16:47:38.576861+00:00",
+        "hash": "47aa6849fce36240cf9a5a7af26a58ee",
+        "id": "c23307e9-dd69-4f12-a930-05403ec46b43",
+        "memory": "Dinner D69 start time was shifted from 20:00 to 20:45 on September 21, 2026 with a fee of 25",
+        "metadata": null,
+        "score": 0.15419348082236156,
+        "updated_at": "2026-09-21T16:47:38.576861+00:00",
+        "user_id": "travel-s71-test-001"
+      },
+      {
+        "attributed_to": "assistant",
+        "created_at": "2026-09-21T16:47:38.574194+00:00",
+        "hash": "cbfbfa168c3f3a7932bd305860e0f0da",
+        "id": "b94b9548-cb2f-4eb2-a9ef-f8853b759c59",
+        "memory": "Stay S42 check-in was shifted from 17:20 to 19:50 on September 21, 2026 with a fee of 25",
+        "metadata": null,
+        "score": 0.11198108672594528,
+        "updated_at": "2026-09-21T16:47:38.574194+00:00",
+        "user_id": "travel-s71-test-001"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:47:31.456601+00:00",
+        "hash": "4491c2f9aa4526d72432f4eab1343da5",
+        "id": "bbf22a8f-5f8e-4f17-815c-56bb910ab06c",
+        "memory": "Stay S20 check-in was shifted from 13:25 to 13:30 on September 21, 2026 with a fee of 25",
+        "metadata": null,
+        "score": 0.10452692771004564,
+        "updated_at": "2026-09-21T16:47:31.456601+00:00",
+        "user_id": "travel-s71-test-001"
+      },
+      {
+        "attributed_to": "assistant",
+        "created_at": "2026-09-21T16:47:38.579398+00:00",
+        "hash": "4a24b5c484b23ad59b098cb2565defc7",
+        "id": "1efa43dd-de47-496c-b6ac-b5779091ab80",
+        "memory": "Bundle B34 was rebooked on September 21, 2026 with a fee of 30",
+        "metadata": null,
+        "score": 0.08671543298607684,
+        "updated_at": "2026-09-21T16:47:38.579398+00:00",
+        "user_id": "travel-s71-test-001"
+      }
+    ]
+  },
+  "text": "Flight F93 (Eli, day 1) arrival was shifted from 11:45 to 12:15 on September 21, 2026\nFlight F87 (Gao, day 2) arrival was shifted from 16:15 to 19:00 on September 21, 2026\nTransfer T68 pickup was automatically shifted from 12:35 to 12:40 on September 21, 2026 following the F93 arrival change\nTransfer T99 pickup was automatically shifted from 17:00 to 19:30 on September 21, 2026 following the F87 arrival change\nDinner D69 start time was shifted from 20:00 to 20:45 on September 21, 2026 with a fee of 25\nStay S42 check-in was shifted from 17:20 to 19:50 on September 21, 2026 with a fee of 25\nStay S20 check-in was shifted from 13:25 to 13:30 on September 21, 2026 with a fee of 25\nBundle B34 was rebooked on September 21, 2026 with a fee of 30"
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "case": "room-s6100-t50-mary",
+    "characters": 0,
+    "empty": true,
+    "file_sha256": "205335d3bb9791685e8fec9db278b990e5bb323ee26b91d3cfaa0f55c825937b",
+    "path": "results/development/hm3/room_native/mem0/room-s6100-t50-mary/memory_output.json",
+    "prompt_sha256": "c346450949f33d06f9507f89cbb3cf11049e74cb40ab7dea9720f3de1aae5130",
+    "system": "mem0"
+  },
+  {
+    "case": "room-s6100-t50-mary",
+    "characters": 20768,
+    "empty": false,
+    "file_sha256": "804ea593ddd475bf4d319619b66df81342f724c8eb77dc04ca8c7ede10d3c8c8",
+    "path": "results/development/hm3/room_native_recovery/amem/room-s6100-t50-mary/memory_output.json",
+    "prompt_sha256": "819e100aab3b34445edb647c9e2c26effee62248e5d4b545e0e11ac4d744ebbb",
+    "system": "amem"
+  },
+  {
+    "case": "room-s6101-t50-mary",
+    "characters": 0,
+    "empty": true,
+    "file_sha256": "205335d3bb9791685e8fec9db278b990e5bb323ee26b91d3cfaa0f55c825937b",
+    "path": "results/development/hm3/room_native/mem0/room-s6101-t50-mary/memory_output.json",
+    "prompt_sha256": "c346450949f33d06f9507f89cbb3cf11049e74cb40ab7dea9720f3de1aae5130",
+    "system": "mem0"
+  },
+  {
+    "case": "room-s6101-t50-mary",
+    "characters": 20979,
+    "empty": false,
+    "file_sha256": "aaf05b753dd4a6e97285e185c46235cf15abfb3b5a42666a97435478486ea3ca",
+    "path": "results/development/hm3/room_native/amem/room-s6101-t50-mary/memory_output.json",
+    "prompt_sha256": "92fc50ae4e9ded009b9aa3a3cf48c7eace83d47b8e562f496822128cd966b444",
+    "system": "amem"
+  },
+  {
+    "case": "room-s6102-t50-mary",
+    "characters": 0,
+    "empty": true,
+    "file_sha256": "205335d3bb9791685e8fec9db278b990e5bb323ee26b91d3cfaa0f55c825937b",
+    "path": "results/development/hm3/room_native/mem0/room-s6102-t50-mary/memory_output.json",
+    "prompt_sha256": "c346450949f33d06f9507f89cbb3cf11049e74cb40ab7dea9720f3de1aae5130",
+    "system": "mem0"
+  },
+  {
+    "case": "room-s6102-t50-mary",
+    "characters": 25115,
+    "empty": false,
+    "file_sha256": "8c635d3eaa8bb92e64378e457092b2ca0def91d667b010ecd34828fd8671ee5f",
+    "path": "results/development/hm3/room_native_recovery/amem/room-s6102-t50-mary/memory_output.json",
+    "prompt_sha256": "7cb9e4d41e5386f0bfcd054645001823e65f1f9e700837785c17089a4ebab293",
+    "system": "amem"
+  },
+  {
+    "case": "room-s6103-t50-mary",
+    "characters": 0,
+    "empty": true,
+    "file_sha256": "205335d3bb9791685e8fec9db278b990e5bb323ee26b91d3cfaa0f55c825937b",
+    "path": "results/development/hm3/room_native/mem0/room-s6103-t50-mary/memory_output.json",
+    "prompt_sha256": "c346450949f33d06f9507f89cbb3cf11049e74cb40ab7dea9720f3de1aae5130",
+    "system": "mem0"
+  },
+  {
+    "case": "room-s6103-t50-mary",
+    "characters": 25644,
+    "empty": false,
+    "file_sha256": "42fa8a3e4dc0c24c7d7112f441600582f8d278249bb51d468ffc094c4b1de1c1",
+    "path": "results/development/hm3/room_native_recovery/amem/room-s6103-t50-mary/memory_output.json",
+    "prompt_sha256": "3c525198779985d17db2249205898862a1128f73176d08209c063b2c72364437",
+    "system": "amem"
+  }
+]

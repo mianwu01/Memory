@@ -1,0 +1,18 @@
+{
+  "from": "results/real/hm3/alignment/continuation_pro",
+  "source_ledger_sha256": "644b84a9c3a682ff319ca3c8c421f8b2fd5368aec50711e8d5affc56417eea94",
+  "reused_completed": 120,
+  "failed_requests": [
+    "3be01956068146a5ac32038161dcdf5d1475781e3e1aa8549eeb2363b31c6b5d",
+    "f92a41af5e236fe5c87216bfbaa084a2785531487c21e9da0348404ff2fd26c7",
+    "63d44fb43b8fa2108fe900bc881f2d0d739533cbfd821b1d5e733f3883254842",
+    "7016ce92f69015dac758049ee18641fe3932760934d6c10ca1ce2cc6e6e5a492",
+    "51133293f322ab77396cc47ae2ed361ff9c138cc1a79feb50bac3d6a50e59f97",
+    "fab9bec74b4d9bd17f5979b45cee19c7d54453510961292af4171d455d3fa0ef",
+    "3bc6892aa052a6374f826104fd51306c7575f3c41dd6f1ec84c81d670180284b"
+  ],
+  "in_flight_unknown": [
+    "029072eefaa1371408fa476a0f07a60a35636750bf2d2f6aafc7383c181285e8"
+  ],
+  "rule": "reuse all completed responses, recover missing/timeout once; no outcome filtering"
+}

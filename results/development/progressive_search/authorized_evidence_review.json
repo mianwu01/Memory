@@ -1,0 +1,140 @@
+[
+  {
+    "case": 0,
+    "results": [
+      {
+        "repeat": 0,
+        "extracted": "UNKNOWN",
+        "correct": false,
+        "finish_reason": "stop"
+      },
+      {
+        "repeat": 1,
+        "extracted": "UNKNOWN",
+        "correct": false,
+        "finish_reason": "stop"
+      },
+      {
+        "repeat": 2,
+        "extracted": null,
+        "correct": false,
+        "finish_reason": "length"
+      }
+    ],
+    "actual_documents": 67,
+    "literal_reference_support": [],
+    "same_origin_as_denied": []
+  },
+  {
+    "case": 1,
+    "results": [
+      {
+        "repeat": 0,
+        "extracted": "Tulsidas Balaram",
+        "correct": true,
+        "finish_reason": "stop"
+      },
+      {
+        "repeat": 1,
+        "extracted": "Tulsidas Balaram",
+        "correct": true,
+        "finish_reason": "stop"
+      },
+      {
+        "repeat": 2,
+        "extracted": "Tulsidas Balaram",
+        "correct": true,
+        "finish_reason": "stop"
+      }
+    ],
+    "actual_documents": 22,
+    "literal_reference_support": [
+      "17054",
+      "44448",
+      "81022"
+    ],
+    "same_origin_as_denied": []
+  },
+  {
+    "case": 2,
+    "results": [
+      {
+        "repeat": 0,
+        "extracted": "John Daniel delos Santos",
+        "correct": true,
+        "finish_reason": "stop"
+      },
+      {
+        "repeat": 1,
+        "extracted": "John Daniel delos Santos",
+        "correct": true,
+        "finish_reason": "stop"
+      },
+      {
+        "repeat": 2,
+        "extracted": "John Daniel delos Santos",
+        "correct": true,
+        "finish_reason": "stop"
+      }
+    ],
+    "actual_documents": 24,
+    "literal_reference_support": [
+      "5784"
+    ],
+    "same_origin_as_denied": []
+  },
+  {
+    "case": 6,
+    "results": [
+      {
+        "repeat": 0,
+        "extracted": "New York University",
+        "correct": false,
+        "finish_reason": "stop"
+      },
+      {
+        "repeat": 1,
+        "extracted": "New York University",
+        "correct": false,
+        "finish_reason": "stop"
+      },
+      {
+        "repeat": 2,
+        "extracted": "New York University",
+        "correct": false,
+        "finish_reason": "stop"
+      }
+    ],
+    "actual_documents": 82,
+    "literal_reference_support": [],
+    "same_origin_as_denied": []
+  },
+  {
+    "case": 9,
+    "results": [
+      {
+        "repeat": 0,
+        "extracted": "Joost Wolfswinkel",
+        "correct": true,
+        "finish_reason": "stop"
+      },
+      {
+        "repeat": 1,
+        "extracted": "Joost Wolfswinkel",
+        "correct": true,
+        "finish_reason": "stop"
+      },
+      {
+        "repeat": 2,
+        "extracted": "Joost Wolfswinkel",
+        "correct": true,
+        "finish_reason": "stop"
+      }
+    ],
+    "actual_documents": 41,
+    "literal_reference_support": [
+      "17342"
+    ],
+    "same_origin_as_denied": []
+  }
+]

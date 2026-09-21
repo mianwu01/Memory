@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="630" viewBox="0 0 1160 630">
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#176b67"/></marker></defs>
+<style>.title{font:700 24px sans-serif;fill:#123442}.head{font:700 18px sans-serif;fill:#123442}.body{font:16px sans-serif;fill:#213e4b}.small{font:14px sans-serif;fill:#42606c}.mono{font:15px monospace;fill:#123442}</style>
+<rect width="1160" height="630" fill="#f6fafb"/>
+<text x="30" y="38" class="title">Observed dynamics → memory selection → source intervention</text>
+<text x="30" y="66" class="small">Controlled RoomEnv extension. Shared trained world model. Not recovery of hidden LLM thoughts.</text>
+<rect x="30" y="88" width="1100" height="142" rx="10" fill="#e7f2ef"/>
+<text x="46" y="116" class="head">Actual discovered lag-1 edges (3 retained; finite reference also contains 4 missed edges)</text>
+<text x="46" y="147" class="body">bathroom–study wall(t)</text><path d="M330 142 H465" stroke="#176b67" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="485" y="147" class="body">john location(t+1), context: john in bathroom at t</text>
+<text x="46" y="180" class="body">living–kitchen wall(t)</text><path d="M330 175 H465" stroke="#176b67" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="485" y="180" class="body">mary location(t+1), context: mary in kitchen OR living at t</text>
+<text x="46" y="214" class="small">PCMCI+/G² on 64 fully observed training trajectories; test memory contains only local observations.</text>
+<text x="30" y="269" class="head">Fixed case 6100: correct ordinary answer = bathroom; thinking enabled, 3 responses</text>
+<text x="46" y="306" class="body">Full observed memory</text><text x="355" y="306" class="mono">bathroom, bathroom, bathroom</text><text x="46" y="342" class="body">Restricted stream removed</text><text x="355" y="342" class="mono">null, null, null</text><text x="46" y="378" class="body">Restricted values changed</text><text x="355" y="378" class="mono">kitchen, kitchen, kitchen</text><text x="46" y="414" class="body">Neutral stream removed</text><text x="355" y="414" class="mono">bathroom, bathroom, bathroom</text>
+<rect x="30" y="444" width="1100" height="126" rx="10" fill="#eaf0fb"/>
+<text x="46" y="474" class="head">Actionable controlled response</text>
+<text x="46" y="505" class="body">Independent authorized sensor → fresh actor responses: bathroom, bathroom, bathroom</text>
+<text x="46" y="535" class="body">Sensor unavailable → model-assisted gate refuses unsupported guesses.</text>
+<text x="30" y="600" class="small">All four fixed cases retained. This is one illustrative development case, not a perfect-detection or generalization claim.</text>
+</svg>

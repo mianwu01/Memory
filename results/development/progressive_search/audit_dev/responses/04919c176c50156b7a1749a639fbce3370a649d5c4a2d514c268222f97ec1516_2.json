@@ -1,0 +1,11 @@
+{
+  "case": 6,
+  "repeat": 2,
+  "prompt_sha256": "04919c176c50156b7a1749a639fbce3370a649d5c4a2d514c268222f97ec1516",
+  "extracted": "Amherst College",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: Josh Harmon worked as a newsletter writer for NBC’s “Today” show [61461], wrote a thesis on the French military snare drum/tambour [73276], and graduated from Amherst College in 2018 [61461]. Amherst College was established in 1821, within the 1800–1850 range [24389].\nExact Answer: Amherst College\nConfidence: 95%"
+}

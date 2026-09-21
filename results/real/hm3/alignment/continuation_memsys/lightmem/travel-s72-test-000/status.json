@@ -1,0 +1,30 @@
+{
+  "episode": "travel-s72-test-000",
+  "error_type": "AttributeError",
+  "memory_calls": 1,
+  "seconds": 77.10380338691175,
+  "status": "invalid_execution",
+  "system": "lightmem",
+  "traceback": [
+    {
+      "file": "continuation_memsys.py",
+      "function": "run",
+      "line": 222
+    },
+    {
+      "file": "continuation_memsys.py",
+      "function": "build_memory",
+      "line": 154
+    },
+    {
+      "file": "lightmem.py",
+      "function": "add_memory",
+      "line": 356
+    },
+    {
+      "file": "utils.py",
+      "function": "process_extraction_results",
+      "line": 389
+    }
+  ]
+}

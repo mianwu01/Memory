@@ -1,0 +1,12 @@
+{
+  "case": 8,
+  "repeat": 0,
+  "prompt_sha256": "0df5b15a0fe415f3fd949c08067b2e362794863351c572cc3e9199946edd7071",
+  "extracted": "The poem is “Namaste” and the book is *Almost Human* by Thomas Centolella.",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "all_memory_retained": true,
+  "writers_complete": true
+}

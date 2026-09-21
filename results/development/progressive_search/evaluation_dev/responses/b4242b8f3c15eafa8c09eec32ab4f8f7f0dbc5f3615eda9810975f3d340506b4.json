@@ -1,0 +1,10 @@
+{
+  "case": 3,
+  "prompt_sha256": "b4242b8f3c15eafa8c09eec32ab4f8f7f0dbc5f3615eda9810975f3d340506b4",
+  "extracted": "Manuelita",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to Manuel García Ferré’s universe: the series is *The Adventures of Hijitus*, where Hijitus transforms using his magic hat [20521], and the antagonist Witch Cachavacha has her owl Pajarraco [38612]. Among his later films, *Manuelita* (1999) features the Hijitus character Larguirucho as a school janitor/assistant teacher [86904]; the clue about the character appearing in his regular clothes rather than a costume tied to the film’s setting identifies this movie.\n\nExact Answer: Manuelita\n\nConfidence: 90%"
+}

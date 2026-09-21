@@ -1,0 +1,11 @@
+{
+  "case": 0,
+  "repeat": 1,
+  "prompt_sha256": "e78f1e4abfc9d8c9592c7ee022dd4bfcf3bec01435dd0cc4c2a260e054a6ee83",
+  "extracted": "Ihuoma Sonia Uche",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The described individual is Ihuoma Sonia Uche, professionally known as Sonia Uche. A biography reproducing her interview quotes her saying she got into acting through an audition she saw on Facebook while at “100 Level” (first year) at university, and that the resulting role in *Complicated* was her “first gig” [63918]. In the same interview she says she is “a child of divorce” [63918]. Her profiles also record that she is an entrepreneur with Sonia Hair Extensions [63918][62459], attended and graduated from the University of Abuja [82844][62459], was born on 25 May 1995 [62459][82844], was the subject of false rumors that she had a first child [82844][62459], and was the firstborn daughter with three siblings [82844][63918].\n\nExact Answer: Ihuoma Sonia Uche\n\nConfidence: 93%"
+}

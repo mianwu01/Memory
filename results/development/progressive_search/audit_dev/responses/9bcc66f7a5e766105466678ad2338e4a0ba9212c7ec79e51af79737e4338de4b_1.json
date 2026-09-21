@@ -1,0 +1,11 @@
+{
+  "case": 9,
+  "repeat": 1,
+  "prompt_sha256": "9bcc66f7a5e766105466678ad2338e4a0ba9212c7ec79e51af79737e4338de4b",
+  "extracted": "Joost Wolfswinkel",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The colonized/annexed country is Korea, and in 1907 Korean secret emissaries were sent to the Netherlands to promote Korea’s independence at the Hague Peace Conference [11997]. The Dutch person配 first visited and naturalized in Joseon/Korea was Jan Janse Weltevree, who took the Korean name Pak Yŏn [85933]. In the documentary depicting him, the production’s own documentation states that Jan Janse Weltevree (Park Yon) was played by Joost Wolfswinkel, then Dutch ambassador in South Korea [17342].\n\nExact Answer: Joost Wolfswinkel\n\nConfidence: 82%"
+}

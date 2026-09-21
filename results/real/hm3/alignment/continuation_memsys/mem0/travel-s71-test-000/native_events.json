@@ -1,0 +1,177 @@
+[
+  {
+    "result": {
+      "results": []
+    },
+    "segment": 0,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "c2f56183-9113-4026-b3ad-58733eb0fe0a",
+          "memory": "Flight F56 (Dana, day 2) arrival was shifted from 17:45 to 20:00 (arrival time 1200) in revision 2."
+        },
+        {
+          "event": "ADD",
+          "id": "3f47516f-858b-47bb-9bbf-e5f5ad9daacf",
+          "memory": "Reservation T78 pickup time was shifted from 1110 to 1245 with a fee of 25."
+        },
+        {
+          "event": "ADD",
+          "id": "5ff9084c-cbb3-43e6-bd41-6986eb7683a7",
+          "memory": "Reservation S85 check-in time was shifted from 1160 to 1295 with a fee of 25."
+        },
+        {
+          "event": "ADD",
+          "id": "2e094441-304a-4421-9311-ac3501345bc0",
+          "memory": "Reservation D84 start time was shifted from 1245 to 1350 with a fee of 25."
+        }
+      ]
+    },
+    "segment": 1,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "c924dbbc-565a-49fe-9745-6d0fd7fec1a5",
+          "memory": "Flight F92 (Lena, day 1) arrival was shifted from 19:15 to 21:15 (arrival time 1275) in revision 1."
+        },
+        {
+          "event": "ADD",
+          "id": "b9a2b0e1-ee5a-45f7-9fa2-8a3d5516c5f2",
+          "memory": "Reservation T83 pickup time was shifted from 19:30 to 21:55 (pickup time 1315) in revision 1."
+        },
+        {
+          "event": "ADD",
+          "id": "2f080e14-8764-4dae-aead-2364835f6f8b",
+          "memory": "Reservation S60 check-in time was shifted from 20:10 to 22:35 (check-in time 1355) with a fee of 25."
+        },
+        {
+          "event": "ADD",
+          "id": "8384aeab-4432-4e49-89ad-b9f347cfa39d",
+          "memory": "Reservation D12 start time was shifted from 21:15 to 23:30 (start time 1410) with a fee of 25."
+        },
+        {
+          "event": "ADD",
+          "id": "a42209c1-f409-4d94-9652-b198ef4035a2",
+          "memory": "Bundle B99 was rebooked with a fee of 30 in revision 1."
+        }
+      ]
+    },
+    "segment": 2,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "8ff4c79f-6a7d-402a-9d85-7929b0e1bb9d",
+          "memory": "Flight F92 (Lena, day 1) arrival was shifted from 21:15 to 18:15 (arrival time 1095) in revision 2."
+        },
+        {
+          "event": "ADD",
+          "id": "b9ef6998-2139-4e70-8b53-343e8ec17335",
+          "memory": "Reservation T83 pickup time was shifted from 21:55 to 18:55 (pickup time 1135) in revision 2."
+        },
+        {
+          "event": "ADD",
+          "id": "b9db0b71-6228-4322-b5cd-07573664a55b",
+          "memory": "Reservation S60 check-in time was shifted from 22:35 to 19:35 (check-in time 1175) with a fee of 25 in revision 2."
+        }
+      ]
+    },
+    "segment": 3,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "87c36317-f024-4a9d-a857-64d56a39fc4d",
+          "memory": "Flight F22 (Lena, day 2) arrival was shifted from 15:15 to 16:15 (arrival time 975) in revision 1."
+        },
+        {
+          "event": "ADD",
+          "id": "43f11de9-cc68-49d6-8fa6-7042b04fcfce",
+          "memory": "Reservation T62 pickup time was shifted from 16:00 to 16:50 (pickup time 1010) in revision 1."
+        },
+        {
+          "event": "ADD",
+          "id": "626fbbd6-9bc5-482c-9c92-7cae20da9a6a",
+          "memory": "Reservation S88 check-in time was shifted from 16:40 to 17:30 (check-in time 1050) with a fee of 25 in revision 1."
+        }
+      ]
+    },
+    "segment": 4,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "151314ee-09fa-4ce8-934e-76f1e00c690f",
+          "memory": "Flight F34 (Quinn, day 2) arrival was shifted from 19:00 to 22:00 (arrival time 1320) in revision 1."
+        },
+        {
+          "event": "ADD",
+          "id": "628deea6-cfde-4439-9a8d-0786ade0df3d",
+          "memory": "Reservation T73 pickup time was shifted from 19:50 to 22:40 (pickup time 1360) in revision 1."
+        },
+        {
+          "event": "ADD",
+          "id": "734eae97-0591-450d-aba1-9cf3d30cc595",
+          "memory": "Reservation S31 check-in time was shifted from 20:10 to 23:00 (check-in time 1380) with a fee of 25 in revision 1."
+        },
+        {
+          "event": "ADD",
+          "id": "effa84e0-0220-4767-8bc5-51ebe0c1231f",
+          "memory": "Reservation D77 start time was shifted from 21:00 to 23:45 (start time 1425) with a fee of 25 in revision 1."
+        }
+      ]
+    },
+    "segment": 5,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "35229922-0b9d-4cef-b315-2041c025bdff",
+          "memory": "Flight F81 (Dana, day 1) arrival was shifted from 15:45 to 19:15 (arrival time 1155) in revision 1."
+        },
+        {
+          "event": "ADD",
+          "id": "57d1fcc4-b7a5-4ae4-9968-aeffd2c259ec",
+          "memory": "Reservation T98 pickup time was shifted from 16:35 to 20:00 (pickup time 1200) with a fee of 25 in revision 1."
+        },
+        {
+          "event": "ADD",
+          "id": "ec5bed2d-45d3-44ec-8a9d-62131b5966b7",
+          "memory": "Reservation S77 check-in time was shifted from 17:25 to 20:50 (check-in time 1250) with a fee of 25 in revision 1."
+        },
+        {
+          "event": "ADD",
+          "id": "84ba9187-1035-48d5-8893-3fa836f74a09",
+          "memory": "Reservation D45 start time was shifted from 21:15 to 21:45 (start time 1305) with a fee of 25 in revision 1."
+        },
+        {
+          "event": "ADD",
+          "id": "cc899b2a-679d-4aa0-a07d-b8ba44069b74",
+          "memory": "Bundle B65 was rebooked with a fee of 30 in revision 1."
+        }
+      ]
+    },
+    "segment": 6,
+    "stage": "add"
+  }
+]

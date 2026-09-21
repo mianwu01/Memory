@@ -1,0 +1,7 @@
+{
+  "algorithm_or_prompt_changed": false,
+  "patch": "supply missing Python stdlib re in author module namespace",
+  "reuse_memory_calls": null,
+  "upstream_unchanged": true,
+  "wrapper_sha256": "09ddd1efa2d6fdc449542dc66da115fc84d1821af16b9dba397dd3bad4514cfc"
+}

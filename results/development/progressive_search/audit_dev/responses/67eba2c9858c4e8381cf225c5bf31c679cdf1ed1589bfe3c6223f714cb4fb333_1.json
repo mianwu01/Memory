@@ -1,0 +1,11 @@
+{
+  "case": 6,
+  "repeat": 1,
+  "prompt_sha256": "67eba2c9858c4e8381cf225c5bf31c679cdf1ed1589bfe3c6223f714cb4fb333",
+  "extracted": "Amherst College",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The evidence identifies Josh Harmon ’18 as an Amherst College graduate who was a French major, switched majors many times, wrote a thesis on a French military drum, and later worked as a writer at NBC [73276][61461]. Amherst College was established in 1821, within the 1800–1850 range [24389].\nExact Answer: Amherst College\nConfidence: 92%"
+}

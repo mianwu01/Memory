@@ -1,0 +1,10 @@
+{
+  "case": 9,
+  "prompt_sha256": "14663465c714802425b13adb1a4ed1770eeda1863144f1e8ee6513c813edd16f",
+  "extracted": "Joost Wolfswinkel",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The colonized country is Korea, annexed by Japan in 1910 [57336][24150]. The relevant activist sent abroad was Syngman Rhee [11997]. The first visitor who naturalized in Joseon/Korea was Jan Jansz Weltevree / Pak Yŏn [85933]. The 1990s documentary’s production stills state that Jan Janse Weltevree (Park Yon) was played by Joost Wolfswinkel, the Dutch ambassador in South Korea [17342].\n\nExact Answer: Joost Wolfswinkel\n\nConfidence: 80%"
+}

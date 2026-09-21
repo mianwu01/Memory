@@ -1,0 +1,11 @@
+{
+  "case": 2,
+  "repeat": 1,
+  "prompt_sha256": "ed0d964c2b1381303c55cb9709ec173e67e21a609c8c42e0b73dd26f1c41be5c",
+  "extracted": "John Daniel delos Santos",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The late teen was AJ Perez (Antonello Joseph Sarte Perez), an 18-year-old actor who died on April 17, 2011, when the van he was riding in was sideswiped by a bus in Moncada, Tarlac; his father and the driver survived, and AJ was the lone fatality [31584][62478]. His corneas were donated, and one cornea went to John Daniel delos Santos, who was 8 years old at the time of the transplant [62478][13127]. Before 2023, on the “Eat Bulaga!” segment “Bawal Judgmental” aired October 27, 2020, 17-year-old John Daniel delos Santos appeared, identified himself as a recipient of AJ Perez’s cornea, and thanked AJ and his parents on air [5784][58107].\n\nExact Answer: John Daniel delos Santos\n\nConfidence: 92%"
+}

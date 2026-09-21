@@ -1,0 +1,11 @@
+{
+  "case": 9,
+  "repeat": 0,
+  "prompt_sha256": "e9a58599b8ba7ccb2e50e5580ff4a715c86455d865132afd90833c9fbe184603",
+  "extracted": "Joost Wolfswinkel",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The colonized country in the chain is Korea, annexed by Japan in 1910 [57336][24150]. Syngman Rhee was the Korean activist sent to the United States in 1905 to promote independence [11997]. The first visitor who naturalized to Joseon/Korea was Jan Jansz Weltevree (Pak Yŏn), though the evidence identifies him as Dutch, not American [85933]. The documentary production-still page states that Jan Janse Weltevree / Park Yon was played by Joost Wolfswinkel, Dutch ambassador in South Korea [17342]. The “from the United States” part does not match the evidence, but the documentary casting is explicit.\n\nExact Answer: Joost Wolfswinkel\n\nConfidence: 80%"
+}

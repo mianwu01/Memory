@@ -1,0 +1,10 @@
+{
+  "case": 8,
+  "prompt_sha256": "c85a1fa60b239e019688c46becfbdfc1dff2693d3ef1e47d0301d977ee959e3d",
+  "extracted": "“Saudade” from *The Carrying* by Ada Limón",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to Ada Limón’s poem “Saudade”—a one-word Portuguese title—from her collection *The Carrying*. The poem ends with the two-word line “the carrying,” matching the book’s title. The book also aligns with the independent-press/award context: it was published by Milkweed Editions and became an award-winning collection.  \nExact Answer: “Saudade” from *The Carrying* by Ada Limón  \nConfidence: 85%"
+}

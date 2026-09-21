@@ -1,0 +1,10 @@
+{
+  "case": 4,
+  "prompt_sha256": "449aa70e4ed16f5d5fd0e18240929703212338b0321a6921d10c013eebe512ce",
+  "extracted": "Naveen Bawa",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The play-related clue matches the retained evidence about Naveen Bawa, who wrote/directed/acted in *Baap Ka Baap* and said music, dance, and songs make a play more lively and engaging by breaking the monotony of prose [2629]. The other background details align with this same figure’s profile.\n\nExact Answer: Naveen Bawa\n\nConfidence: 85%"
+}

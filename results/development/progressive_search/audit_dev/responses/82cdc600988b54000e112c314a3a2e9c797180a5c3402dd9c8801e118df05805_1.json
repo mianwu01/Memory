@@ -1,0 +1,11 @@
+{
+  "case": 1,
+  "repeat": 1,
+  "prompt_sha256": "82cdc600988b54000e112c314a3a2e9c797180a5c3402dd9c8801e118df05805",
+  "extracted": "Tulsidas Balaram",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues identify Indian footballer Tulsidas Balaram. He made his international debut against Yugoslavia at the 1956 Melbourne Olympics, a match India lost, and six years later was a key member of India’s gold-medal-winning football team at the 1962 Asian Games in Jakarta, Indonesia’s capital [44448][81022]. He was born in 1936 in British India, over a decade before India’s 1947 independence, and received the Arjuna Award in 1962, the same year as the Asiad gold [17054][81022]. The Arjuna Award is India’s second-highest sporting honor after the Khel Ratna [67380][28670], and Indonesia’s population is projected to exceed 300 million by 2050 [2817][63663].\nExact Answer: Tulsidas Balaram\nConfidence: 92%"
+}

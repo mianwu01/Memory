@@ -1,0 +1,5580 @@
+{
+  "status": "diagnostic results; scientific acceptance evaluated separately",
+  "actor_rows": 1020,
+  "expected_actor_rows": 1020,
+  "returned_models": {
+    "DeepSeek-V4-Pro-0813": 1019,
+    "deepseek-v4-pro-0813": 1
+  },
+  "arms": {
+    "bm25_matched": {
+      "completed_calls": 18,
+      "expected_calls": 18,
+      "correct_calls": 1,
+      "complete_episodes": 6,
+      "episode_mean": 0.05555555555555555,
+      "first_truncations": 2,
+      "infrastructure_failures": 0,
+      "mean_records": 8.0,
+      "mean_input_proxy_tokens": 5457.833333333333,
+      "failure_breakdown": {
+        "wrong_payload_values": 2,
+        "illegal_transaction": 11,
+        "wrong_affected_objects": 2,
+        "correct": 1,
+        "format_or_action_schema": 2
+      }
+    },
+    "full": {
+      "completed_calls": 18,
+      "expected_calls": 18,
+      "correct_calls": 3,
+      "complete_episodes": 6,
+      "episode_mean": 0.16666666666666666,
+      "first_truncations": 1,
+      "infrastructure_failures": 0,
+      "mean_records": 17.166666666666668,
+      "mean_input_proxy_tokens": 6304.5,
+      "failure_breakdown": {
+        "illegal_transaction": 10,
+        "wrong_payload_values": 3,
+        "correct": 3,
+        "wrong_affected_objects": 1,
+        "format_or_action_schema": 1
+      }
+    },
+    "learned_top2": {
+      "completed_calls": 18,
+      "expected_calls": 18,
+      "correct_calls": 1,
+      "complete_episodes": 6,
+      "episode_mean": 0.05555555555555555,
+      "first_truncations": 0,
+      "infrastructure_failures": 0,
+      "mean_records": 8.0,
+      "mean_input_proxy_tokens": 5392.666666666667,
+      "failure_breakdown": {
+        "wrong_payload_values": 2,
+        "correct": 1,
+        "illegal_transaction": 11,
+        "wrong_affected_objects": 4
+      }
+    },
+    "neutral_blocked": {
+      "completed_calls": 18,
+      "expected_calls": 18,
+      "correct_calls": 7,
+      "complete_episodes": 6,
+      "episode_mean": 0.38888888888888884,
+      "first_truncations": 0,
+      "infrastructure_failures": 0,
+      "mean_records": 12.5,
+      "mean_input_proxy_tokens": 5842.833333333333,
+      "failure_breakdown": {
+        "illegal_transaction": 10,
+        "correct": 7,
+        "wrong_payload_values": 1
+      }
+    },
+    "query_only": {
+      "completed_calls": 18,
+      "expected_calls": 18,
+      "correct_calls": 0,
+      "complete_episodes": 6,
+      "episode_mean": 0.0,
+      "first_truncations": 1,
+      "infrastructure_failures": 0,
+      "mean_records": 0.0,
+      "mean_input_proxy_tokens": 4584.333333333333,
+      "failure_breakdown": {
+        "illegal_transaction": 13,
+        "wrong_affected_objects": 4,
+        "format_or_action_schema": 1
+      }
+    },
+    "random_17": {
+      "completed_calls": 18,
+      "expected_calls": 18,
+      "correct_calls": 2,
+      "complete_episodes": 6,
+      "episode_mean": 0.1111111111111111,
+      "first_truncations": 1,
+      "infrastructure_failures": 0,
+      "mean_records": 8.0,
+      "mean_input_proxy_tokens": 5392.5,
+      "failure_breakdown": {
+        "illegal_transaction": 12,
+        "wrong_payload_values": 1,
+        "format_or_action_schema": 1,
+        "wrong_affected_objects": 2,
+        "correct": 2
+      }
+    },
+    "random_29": {
+      "completed_calls": 18,
+      "expected_calls": 18,
+      "correct_calls": 2,
+      "complete_episodes": 6,
+      "episode_mean": 0.1111111111111111,
+      "first_truncations": 3,
+      "infrastructure_failures": 0,
+      "mean_records": 8.0,
+      "mean_input_proxy_tokens": 5392.5,
+      "failure_breakdown": {
+        "illegal_transaction": 10,
+        "wrong_affected_objects": 3,
+        "format_or_action_schema": 3,
+        "correct": 2
+      }
+    },
+    "random_43": {
+      "completed_calls": 18,
+      "expected_calls": 18,
+      "correct_calls": 4,
+      "complete_episodes": 6,
+      "episode_mean": 0.2222222222222222,
+      "first_truncations": 1,
+      "infrastructure_failures": 0,
+      "mean_records": 8.0,
+      "mean_input_proxy_tokens": 5392.833333333333,
+      "failure_breakdown": {
+        "illegal_transaction": 9,
+        "format_or_action_schema": 1,
+        "wrong_payload_values": 1,
+        "wrong_affected_objects": 3,
+        "correct": 4
+      }
+    },
+    "recency_matched": {
+      "completed_calls": 18,
+      "expected_calls": 18,
+      "correct_calls": 2,
+      "complete_episodes": 6,
+      "episode_mean": 0.1111111111111111,
+      "first_truncations": 1,
+      "infrastructure_failures": 0,
+      "mean_records": 8.0,
+      "mean_input_proxy_tokens": 5371.5,
+      "failure_breakdown": {
+        "illegal_transaction": 12,
+        "wrong_affected_objects": 3,
+        "format_or_action_schema": 1,
+        "correct": 2
+      }
+    },
+    "source_blocked": {
+      "completed_calls": 18,
+      "expected_calls": 18,
+      "correct_calls": 2,
+      "complete_episodes": 6,
+      "episode_mean": 0.1111111111111111,
+      "first_truncations": 1,
+      "infrastructure_failures": 0,
+      "mean_records": 13.666666666666666,
+      "mean_input_proxy_tokens": 5948.666666666667,
+      "failure_breakdown": {
+        "illegal_transaction": 9,
+        "wrong_payload_values": 5,
+        "correct": 2,
+        "format_or_action_schema": 1,
+        "wrong_affected_objects": 1
+      }
+    },
+    "source_changed": {
+      "completed_calls": 18,
+      "expected_calls": 18,
+      "correct_calls": 0,
+      "complete_episodes": 6,
+      "episode_mean": 0.0,
+      "first_truncations": 1,
+      "infrastructure_failures": 0,
+      "mean_records": 17.166666666666668,
+      "mean_input_proxy_tokens": 6304.5,
+      "failure_breakdown": {
+        "wrong_payload_values": 4,
+        "illegal_transaction": 13,
+        "format_or_action_schema": 1
+      }
+    },
+    "wrong_17": {
+      "completed_calls": 18,
+      "expected_calls": 18,
+      "correct_calls": 0,
+      "complete_episodes": 6,
+      "episode_mean": 0.0,
+      "first_truncations": 1,
+      "infrastructure_failures": 0,
+      "mean_records": 8.0,
+      "mean_input_proxy_tokens": 5392.666666666667,
+      "failure_breakdown": {
+        "illegal_transaction": 14,
+        "format_or_action_schema": 1,
+        "wrong_affected_objects": 3
+      }
+    },
+    "wrong_29": {
+      "completed_calls": 18,
+      "expected_calls": 18,
+      "correct_calls": 4,
+      "complete_episodes": 6,
+      "episode_mean": 0.2222222222222222,
+      "first_truncations": 1,
+      "infrastructure_failures": 0,
+      "mean_records": 8.0,
+      "mean_input_proxy_tokens": 5392.5,
+      "failure_breakdown": {
+        "illegal_transaction": 9,
+        "wrong_affected_objects": 4,
+        "correct": 4,
+        "format_or_action_schema": 1
+      }
+    },
+    "wrong_43": {
+      "completed_calls": 18,
+      "expected_calls": 18,
+      "correct_calls": 1,
+      "complete_episodes": 6,
+      "episode_mean": 0.05555555555555555,
+      "first_truncations": 3,
+      "infrastructure_failures": 0,
+      "mean_records": 8.0,
+      "mean_input_proxy_tokens": 5392.666666666667,
+      "failure_breakdown": {
+        "illegal_transaction": 13,
+        "correct": 1,
+        "format_or_action_schema": 3,
+        "wrong_affected_objects": 1
+      }
+    }
+  },
+  "paired_comparisons": {
+    "bm25_matched": {
+      "paired_episodes": 6,
+      "delta": 0.0,
+      "ci95": [
+        -0.1111111111111111,
+        0.1111111111111111
+      ]
+    },
+    "full": {
+      "paired_episodes": 6,
+      "delta": -0.1111111111111111,
+      "ci95": [
+        -0.27777777777777773,
+        0.05555555555555555
+      ]
+    },
+    "learned_top2": {
+      "paired_episodes": 6,
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "neutral_blocked": {
+      "paired_episodes": 6,
+      "delta": -0.3333333333333333,
+      "ci95": [
+        -0.611111111111111,
+        -0.05555555555555555
+      ]
+    },
+    "query_only": {
+      "paired_episodes": 6,
+      "delta": 0.05555555555555555,
+      "ci95": [
+        0.0,
+        0.1111111111111111
+      ]
+    },
+    "random_17": {
+      "paired_episodes": 6,
+      "delta": -0.05555555555555555,
+      "ci95": [
+        -0.16666666666666666,
+        0.05555555555555555
+      ]
+    },
+    "random_29": {
+      "paired_episodes": 6,
+      "delta": -0.05555555555555555,
+      "ci95": [
+        -0.2222222222222222,
+        0.1111111111111111
+      ]
+    },
+    "random_43": {
+      "paired_episodes": 6,
+      "delta": -0.16666666666666666,
+      "ci95": [
+        -0.38888888888888884,
+        0.05555555555555555
+      ]
+    },
+    "recency_matched": {
+      "paired_episodes": 6,
+      "delta": -0.05555555555555555,
+      "ci95": [
+        -0.2222222222222222,
+        0.1111111111111111
+      ]
+    },
+    "source_blocked": {
+      "paired_episodes": 6,
+      "delta": -0.05555555555555555,
+      "ci95": [
+        -0.16666666666666666,
+        0.05555555555555555
+      ]
+    },
+    "source_changed": {
+      "paired_episodes": 6,
+      "delta": 0.05555555555555555,
+      "ci95": [
+        0.0,
+        0.1111111111111111
+      ]
+    },
+    "wrong_17": {
+      "paired_episodes": 6,
+      "delta": 0.05555555555555555,
+      "ci95": [
+        0.0,
+        0.1111111111111111
+      ]
+    },
+    "wrong_29": {
+      "paired_episodes": 6,
+      "delta": -0.16666666666666666,
+      "ci95": [
+        -0.3888888888888889,
+        0.05555555555555555
+      ]
+    },
+    "wrong_43": {
+      "paired_episodes": 6,
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "random_within_episode_mean": {
+      "paired_episodes": 6,
+      "delta": -0.0925925925925926,
+      "ci95": [
+        -0.24074074074074073,
+        0.05555555555555555
+      ]
+    },
+    "wrong_within_episode_mean": {
+      "paired_episodes": 6,
+      "delta": -0.037037037037037035,
+      "ci95": [
+        -0.12962962962962962,
+        0.05555555555555555
+      ]
+    }
+  },
+  "episodes": [
+    {
+      "episode": "travel-s70-test-000",
+      "seed": 70,
+      "groups": [
+        [
+          "h0",
+          "h1",
+          "h2",
+          "h3"
+        ],
+        [
+          "h4",
+          "h5",
+          "h6",
+          "h7"
+        ]
+      ],
+      "fit": {
+        "candidate_edges": 2,
+        "graph": [
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ]
+        ],
+        "known_design_constraint": "only independent randomized gates -> correctness",
+        "outcome_constant": false,
+        "p_values": [
+          0.22795368733922505,
+          0.23790365391007887
+        ],
+        "ranking": [
+          0,
+          1
+        ],
+        "statistics": [
+          1.4535843224711122,
+          1.3929731079308922
+        ],
+        "threshold_parents": [],
+        "train_success": 0.0234375,
+        "usable_lag_rows": 127
+      },
+      "training_completed": 128,
+      "training_requested": 128,
+      "train_unique_masks": 4,
+      "results": {
+        "bm25_matched": {
+          "n": 3,
+          "correct": 0
+        },
+        "full": {
+          "n": 3,
+          "correct": 0
+        },
+        "learned_top2": {
+          "n": 3,
+          "correct": 1
+        },
+        "neutral_blocked": {
+          "n": 3,
+          "correct": 0
+        },
+        "query_only": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_17": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_29": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_43": {
+          "n": 3,
+          "correct": 0
+        },
+        "recency_matched": {
+          "n": 3,
+          "correct": 0
+        },
+        "source_blocked": {
+          "n": 3,
+          "correct": 0
+        },
+        "source_changed": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_17": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_29": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_43": {
+          "n": 3,
+          "correct": 1
+        }
+      },
+      "matching": {
+        "bm25_matched": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "full": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "learned_top2": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "neutral_blocked": {
+          "same_input": false,
+          "record_residual": -4,
+          "serialized_token_residual": -426
+        },
+        "query_only": {
+          "same_input": false,
+          "record_residual": -8,
+          "serialized_token_residual": -828
+        },
+        "random_17": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "random_29": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "random_43": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "recency_matched": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "source_blocked": {
+          "same_input": false,
+          "record_residual": -4,
+          "serialized_token_residual": -402
+        },
+        "source_changed": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "wrong_17": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "wrong_29": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "wrong_43": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        }
+      },
+      "audit_available": true,
+      "source_audit_diagnostic_rule_passed": false
+    },
+    {
+      "episode": "travel-s70-test-001",
+      "seed": 70,
+      "groups": [
+        [
+          "h0",
+          "h1",
+          "h2"
+        ],
+        [
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "h7"
+        ],
+        [
+          "h8",
+          "h9",
+          "h10",
+          "h11"
+        ],
+        [
+          "h12",
+          "h13"
+        ],
+        [
+          "h14",
+          "h15",
+          "h16",
+          "h17"
+        ]
+      ],
+      "fit": {
+        "candidate_edges": 5,
+        "graph": [
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ]
+        ],
+        "known_design_constraint": "only independent randomized gates -> correctness",
+        "outcome_constant": false,
+        "p_values": [
+          0.6111608699567492,
+          0.34596307499465384,
+          0.992352792559692,
+          0.4604382639016138,
+          0.4811378741262753
+        ],
+        "ranking": [
+          1,
+          3,
+          4,
+          0,
+          2
+        ],
+        "statistics": [
+          0.25848793762706634,
+          0.8882091428426371,
+          9.186263903870895e-05,
+          0.544829072544049,
+          0.49628307817147466
+        ],
+        "threshold_parents": [],
+        "train_success": 0.1875,
+        "usable_lag_rows": 127
+      },
+      "training_completed": 128,
+      "training_requested": 128,
+      "train_unique_masks": 20,
+      "results": {
+        "bm25_matched": {
+          "n": 3,
+          "correct": 0
+        },
+        "full": {
+          "n": 3,
+          "correct": 1
+        },
+        "learned_top2": {
+          "n": 3,
+          "correct": 0
+        },
+        "neutral_blocked": {
+          "n": 3,
+          "correct": 2
+        },
+        "query_only": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_17": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_29": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_43": {
+          "n": 3,
+          "correct": 0
+        },
+        "recency_matched": {
+          "n": 3,
+          "correct": 2
+        },
+        "source_blocked": {
+          "n": 3,
+          "correct": 0
+        },
+        "source_changed": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_17": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_29": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_43": {
+          "n": 3,
+          "correct": 0
+        }
+      },
+      "matching": {
+        "bm25_matched": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 75
+        },
+        "full": {
+          "same_input": false,
+          "record_residual": 11,
+          "serialized_token_residual": 1107
+        },
+        "learned_top2": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "neutral_blocked": {
+          "same_input": false,
+          "record_residual": 7,
+          "serialized_token_residual": 705
+        },
+        "query_only": {
+          "same_input": false,
+          "record_residual": -7,
+          "serialized_token_residual": -705
+        },
+        "random_17": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "random_29": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "random_43": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "recency_matched": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 8
+        },
+        "source_blocked": {
+          "same_input": false,
+          "record_residual": 8,
+          "serialized_token_residual": 801
+        },
+        "source_changed": {
+          "same_input": false,
+          "record_residual": 11,
+          "serialized_token_residual": 1107
+        },
+        "wrong_17": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "wrong_29": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "wrong_43": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        }
+      },
+      "audit_available": true,
+      "source_audit_diagnostic_rule_passed": false
+    },
+    {
+      "episode": "travel-s71-test-000",
+      "seed": 71,
+      "groups": [
+        [
+          "h0",
+          "h1",
+          "h2"
+        ],
+        [
+          "h3",
+          "h4",
+          "h5",
+          "h6"
+        ],
+        [
+          "h7",
+          "h8",
+          "h9",
+          "h10",
+          "h11"
+        ],
+        [
+          "h12",
+          "h13",
+          "h14"
+        ],
+        [
+          "h15",
+          "h16",
+          "h17"
+        ],
+        [
+          "h18",
+          "h19",
+          "h20",
+          "h21"
+        ],
+        [
+          "h22",
+          "h23",
+          "h24",
+          "h25",
+          "h26"
+        ]
+      ],
+      "fit": {
+        "candidate_edges": 7,
+        "graph": [
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ]
+        ],
+        "known_design_constraint": "only independent randomized gates -> correctness",
+        "outcome_constant": false,
+        "p_values": [
+          0.2218671647263642,
+          0.09494720530011419,
+          0.09518002385526107,
+          0.0613525592925207,
+          0.4163093787731631,
+          0.052057420854465394,
+          0.9506016875810642
+        ],
+        "ranking": [
+          5,
+          3,
+          1,
+          2,
+          0,
+          4,
+          6
+        ],
+        "statistics": [
+          1.4922533760943217,
+          4.708868551083605,
+          4.703970385312152,
+          3.5004391208539354,
+          0.6607100557889858,
+          5.910815844863877,
+          0.0038379521900573366
+        ],
+        "threshold_parents": [],
+        "train_success": 0.2109375,
+        "usable_lag_rows": 127
+      },
+      "training_completed": 128,
+      "training_requested": 128,
+      "train_unique_masks": 43,
+      "results": {
+        "bm25_matched": {
+          "n": 3,
+          "correct": 0
+        },
+        "full": {
+          "n": 3,
+          "correct": 0
+        },
+        "learned_top2": {
+          "n": 3,
+          "correct": 0
+        },
+        "neutral_blocked": {
+          "n": 3,
+          "correct": 1
+        },
+        "query_only": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_17": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_29": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_43": {
+          "n": 3,
+          "correct": 0
+        },
+        "recency_matched": {
+          "n": 3,
+          "correct": 0
+        },
+        "source_blocked": {
+          "n": 3,
+          "correct": 0
+        },
+        "source_changed": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_17": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_29": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_43": {
+          "n": 3,
+          "correct": 0
+        }
+      },
+      "matching": {
+        "bm25_matched": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 116
+        },
+        "full": {
+          "same_input": false,
+          "record_residual": 20,
+          "serialized_token_residual": 1989
+        },
+        "learned_top2": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "neutral_blocked": {
+          "same_input": false,
+          "record_residual": 15,
+          "serialized_token_residual": 1503
+        },
+        "query_only": {
+          "same_input": false,
+          "record_residual": -7,
+          "serialized_token_residual": -712
+        },
+        "random_17": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "random_29": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "random_43": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "recency_matched": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": -36
+        },
+        "source_blocked": {
+          "same_input": false,
+          "record_residual": 17,
+          "serialized_token_residual": 1682
+        },
+        "source_changed": {
+          "same_input": false,
+          "record_residual": 20,
+          "serialized_token_residual": 1989
+        },
+        "wrong_17": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "wrong_29": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "wrong_43": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        }
+      },
+      "audit_available": true,
+      "source_audit_diagnostic_rule_passed": false
+    },
+    {
+      "episode": "travel-s71-test-001",
+      "seed": 71,
+      "groups": [
+        [
+          "h0",
+          "h1",
+          "h2"
+        ],
+        [
+          "h3",
+          "h4",
+          "h5",
+          "h6"
+        ],
+        [
+          "h7",
+          "h8",
+          "h9",
+          "h10"
+        ],
+        [
+          "h11",
+          "h12",
+          "h13"
+        ],
+        [
+          "h14",
+          "h15",
+          "h16",
+          "h17",
+          "h18"
+        ]
+      ],
+      "fit": {
+        "candidate_edges": 5,
+        "graph": [
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              "-->"
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ]
+        ],
+        "known_design_constraint": "only independent randomized gates -> correctness",
+        "outcome_constant": false,
+        "p_values": [
+          0.2963809449207535,
+          0.0992554112432153,
+          0.4329403155987416,
+          0.10200846464324546,
+          0.001847939040949228
+        ],
+        "ranking": [
+          4,
+          1,
+          3,
+          0,
+          2
+        ],
+        "statistics": [
+          1.0904074673525628,
+          2.7174670193559436,
+          0.6149227229759333,
+          2.67385818338257,
+          9.694763109201148
+        ],
+        "threshold_parents": [
+          4
+        ],
+        "train_success": 0.21875,
+        "usable_lag_rows": 127
+      },
+      "training_completed": 128,
+      "training_requested": 128,
+      "train_unique_masks": 19,
+      "results": {
+        "bm25_matched": {
+          "n": 3,
+          "correct": 0
+        },
+        "full": {
+          "n": 3,
+          "correct": 1
+        },
+        "learned_top2": {
+          "n": 3,
+          "correct": 0
+        },
+        "neutral_blocked": {
+          "n": 3,
+          "correct": 2
+        },
+        "query_only": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_17": {
+          "n": 3,
+          "correct": 1
+        },
+        "random_29": {
+          "n": 3,
+          "correct": 2
+        },
+        "random_43": {
+          "n": 3,
+          "correct": 1
+        },
+        "recency_matched": {
+          "n": 3,
+          "correct": 0
+        },
+        "source_blocked": {
+          "n": 3,
+          "correct": 1
+        },
+        "source_changed": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_17": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_29": {
+          "n": 3,
+          "correct": 3
+        },
+        "wrong_43": {
+          "n": 3,
+          "correct": 0
+        }
+      },
+      "matching": {
+        "bm25_matched": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 86
+        },
+        "full": {
+          "same_input": false,
+          "record_residual": 10,
+          "serialized_token_residual": 1000
+        },
+        "learned_top2": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "neutral_blocked": {
+          "same_input": false,
+          "record_residual": 5,
+          "serialized_token_residual": 513
+        },
+        "query_only": {
+          "same_input": false,
+          "record_residual": -9,
+          "serialized_token_residual": -904
+        },
+        "random_17": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "random_29": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "random_43": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "recency_matched": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": -23
+        },
+        "source_blocked": {
+          "same_input": false,
+          "record_residual": 7,
+          "serialized_token_residual": 700
+        },
+        "source_changed": {
+          "same_input": false,
+          "record_residual": 10,
+          "serialized_token_residual": 1000
+        },
+        "wrong_17": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "wrong_29": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "wrong_43": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        }
+      },
+      "audit_available": true,
+      "source_audit_diagnostic_rule_passed": false
+    },
+    {
+      "episode": "travel-s72-test-000",
+      "seed": 72,
+      "groups": [
+        [
+          "h0",
+          "h1",
+          "h2",
+          "h3"
+        ],
+        [
+          "h4",
+          "h5",
+          "h6",
+          "h7",
+          "h8"
+        ],
+        [
+          "h9",
+          "h10",
+          "h11",
+          "h12",
+          "h13",
+          "h14"
+        ]
+      ],
+      "fit": {
+        "candidate_edges": 3,
+        "graph": [
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ]
+        ],
+        "known_design_constraint": "only independent randomized gates -> correctness",
+        "outcome_constant": false,
+        "p_values": [
+          0.15716283695852692,
+          0.3012267899021017,
+          0.0992554112432153
+        ],
+        "ranking": [
+          2,
+          0,
+          1
+        ],
+        "statistics": [
+          2.0013147180604953,
+          1.0687551826287294,
+          2.7174670193559436
+        ],
+        "threshold_parents": [],
+        "train_success": 0.2734375,
+        "usable_lag_rows": 127
+      },
+      "training_completed": 128,
+      "training_requested": 128,
+      "train_unique_masks": 8,
+      "results": {
+        "bm25_matched": {
+          "n": 3,
+          "correct": 1
+        },
+        "full": {
+          "n": 3,
+          "correct": 1
+        },
+        "learned_top2": {
+          "n": 3,
+          "correct": 0
+        },
+        "neutral_blocked": {
+          "n": 3,
+          "correct": 2
+        },
+        "query_only": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_17": {
+          "n": 3,
+          "correct": 1
+        },
+        "random_29": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_43": {
+          "n": 3,
+          "correct": 3
+        },
+        "recency_matched": {
+          "n": 3,
+          "correct": 0
+        },
+        "source_blocked": {
+          "n": 3,
+          "correct": 1
+        },
+        "source_changed": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_17": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_29": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_43": {
+          "n": 3,
+          "correct": 0
+        }
+      },
+      "matching": {
+        "bm25_matched": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 33
+        },
+        "full": {
+          "same_input": false,
+          "record_residual": 5,
+          "serialized_token_residual": 473
+        },
+        "learned_top2": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "neutral_blocked": {
+          "same_input": false,
+          "record_residual": -1,
+          "serialized_token_residual": -108
+        },
+        "query_only": {
+          "same_input": false,
+          "record_residual": -10,
+          "serialized_token_residual": -972
+        },
+        "random_17": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "random_29": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "random_43": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "recency_matched": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": -36
+        },
+        "source_blocked": {
+          "same_input": false,
+          "record_residual": 1,
+          "serialized_token_residual": 82
+        },
+        "source_changed": {
+          "same_input": false,
+          "record_residual": 5,
+          "serialized_token_residual": 473
+        },
+        "wrong_17": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "wrong_29": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "wrong_43": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        }
+      },
+      "audit_available": true,
+      "source_audit_diagnostic_rule_passed": false
+    },
+    {
+      "episode": "travel-s72-test-001",
+      "seed": 72,
+      "groups": [
+        [
+          "h0",
+          "h1",
+          "h2",
+          "h3"
+        ],
+        [
+          "h4",
+          "h5",
+          "h6"
+        ],
+        [
+          "h7",
+          "h8",
+          "h9",
+          "h10",
+          "h11"
+        ],
+        [
+          "h12",
+          "h13",
+          "h14",
+          "h15"
+        ]
+      ],
+      "fit": {
+        "candidate_edges": 4,
+        "graph": [
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ],
+          [
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ]
+        ],
+        "known_design_constraint": "only independent randomized gates -> correctness",
+        "outcome_constant": false,
+        "p_values": [
+          0.11843096314939482,
+          0.3047840583835642,
+          0.6566952824559866,
+          0.3348633612712093
+        ],
+        "ranking": [
+          0,
+          1,
+          3,
+          2
+        ],
+        "statistics": [
+          2.437949283571837,
+          1.0531442031210045,
+          0.1975628431110087,
+          0.9299983213667566
+        ],
+        "threshold_parents": [],
+        "train_success": 0.0625,
+        "usable_lag_rows": 127
+      },
+      "training_completed": 128,
+      "training_requested": 128,
+      "train_unique_masks": 15,
+      "results": {
+        "bm25_matched": {
+          "n": 3,
+          "correct": 0
+        },
+        "full": {
+          "n": 3,
+          "correct": 0
+        },
+        "learned_top2": {
+          "n": 3,
+          "correct": 0
+        },
+        "neutral_blocked": {
+          "n": 3,
+          "correct": 0
+        },
+        "query_only": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_17": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_29": {
+          "n": 3,
+          "correct": 0
+        },
+        "random_43": {
+          "n": 3,
+          "correct": 0
+        },
+        "recency_matched": {
+          "n": 3,
+          "correct": 0
+        },
+        "source_blocked": {
+          "n": 3,
+          "correct": 0
+        },
+        "source_changed": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_17": {
+          "n": 3,
+          "correct": 0
+        },
+        "wrong_29": {
+          "n": 3,
+          "correct": 1
+        },
+        "wrong_43": {
+          "n": 3,
+          "correct": 0
+        }
+      },
+      "matching": {
+        "bm25_matched": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 81
+        },
+        "full": {
+          "same_input": false,
+          "record_residual": 9,
+          "serialized_token_residual": 902
+        },
+        "learned_top2": {
+          "same_input": true,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "neutral_blocked": {
+          "same_input": false,
+          "record_residual": 5,
+          "serialized_token_residual": 514
+        },
+        "query_only": {
+          "same_input": false,
+          "record_residual": -7,
+          "serialized_token_residual": -729
+        },
+        "random_17": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": -1
+        },
+        "random_29": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": -1
+        },
+        "random_43": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 1
+        },
+        "recency_matched": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": -40
+        },
+        "source_blocked": {
+          "same_input": false,
+          "record_residual": 5,
+          "serialized_token_residual": 473
+        },
+        "source_changed": {
+          "same_input": false,
+          "record_residual": 9,
+          "serialized_token_residual": 902
+        },
+        "wrong_17": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        },
+        "wrong_29": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": -1
+        },
+        "wrong_43": {
+          "same_input": false,
+          "record_residual": 0,
+          "serialized_token_residual": 0
+        }
+      },
+      "audit_available": true,
+      "source_audit_diagnostic_rule_passed": false
+    }
+  ],
+  "native_systems": {
+    "mem0": [
+      {
+        "episode": "travel-s70-test-000",
+        "status": {
+          "episode": "travel-s70-test-000",
+          "memory_calls": 2,
+          "output_characters": 528,
+          "seconds": 306.3863548999652,
+          "status": "completed",
+          "system": "mem0"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 0,
+        "actor_truncated": 1,
+        "memory_calls": 2,
+        "memory_input_tokens": 16818,
+        "memory_output_tokens": 278,
+        "actor_input_tokens": 15186,
+        "actor_output_tokens": 28058,
+        "failure_breakdown": {
+          "wrong_payload_values": 1,
+          "illegal_transaction": 1,
+          "format_or_action_schema": 1
+        },
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s70-test-001",
+        "status": {
+          "episode": "travel-s70-test-001",
+          "memory_calls": 5,
+          "output_characters": 635,
+          "seconds": 161.31544689740986,
+          "status": "completed",
+          "system": "mem0"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 0,
+        "actor_truncated": 0,
+        "memory_calls": 5,
+        "memory_input_tokens": 43920,
+        "memory_output_tokens": 967,
+        "actor_input_tokens": 14970,
+        "actor_output_tokens": 8416,
+        "failure_breakdown": {
+          "illegal_transaction": 2,
+          "wrong_affected_objects": 1
+        },
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s71-test-000",
+        "status": {
+          "episode": "travel-s71-test-000",
+          "memory_calls": 7,
+          "output_characters": 787,
+          "seconds": 98.1026956550777,
+          "status": "completed",
+          "system": "mem0"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 0,
+        "actor_truncated": 0,
+        "memory_calls": 7,
+        "memory_input_tokens": 62748,
+        "memory_output_tokens": 1467,
+        "actor_input_tokens": 14337,
+        "actor_output_tokens": 4908,
+        "failure_breakdown": {
+          "illegal_transaction": 3
+        },
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s71-test-001",
+        "status": {
+          "episode": "travel-s71-test-001",
+          "memory_calls": 5,
+          "output_characters": 747,
+          "seconds": 71.18206403404474,
+          "status": "completed",
+          "system": "mem0"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 2,
+        "actor_truncated": 1,
+        "memory_calls": 5,
+        "memory_input_tokens": 42966,
+        "memory_output_tokens": 463,
+        "actor_input_tokens": 14637,
+        "actor_output_tokens": 28112,
+        "failure_breakdown": {
+          "correct": 2,
+          "format_or_action_schema": 1
+        },
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s72-test-000",
+        "status": {
+          "episode": "travel-s72-test-000",
+          "memory_calls": 3,
+          "output_characters": 532,
+          "seconds": 61.653366851620376,
+          "status": "completed",
+          "system": "mem0"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 0,
+        "actor_truncated": 0,
+        "memory_calls": 3,
+        "memory_input_tokens": 26019,
+        "memory_output_tokens": 641,
+        "actor_input_tokens": 15231,
+        "actor_output_tokens": 1550,
+        "failure_breakdown": {
+          "illegal_transaction": 1,
+          "wrong_affected_objects": 2
+        },
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s72-test-001",
+        "status": {
+          "episode": "travel-s72-test-001",
+          "memory_calls": 4,
+          "output_characters": 955,
+          "seconds": 100.0017203791067,
+          "status": "completed",
+          "system": "mem0"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 0,
+        "actor_truncated": 0,
+        "memory_calls": 4,
+        "memory_input_tokens": 34616,
+        "memory_output_tokens": 577,
+        "actor_input_tokens": 14355,
+        "actor_output_tokens": 1858,
+        "failure_breakdown": {
+          "illegal_transaction": 3
+        },
+        "actor_variant": "actor_v2"
+      }
+    ],
+    "amem": [
+      {
+        "episode": "travel-s70-test-000",
+        "status": {
+          "episode": "travel-s70-test-000",
+          "memory_calls": 4,
+          "output_characters": 4574,
+          "seconds": 62.33882870152593,
+          "status": "completed",
+          "system": "amem"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 1,
+        "actor_truncated": 0,
+        "memory_calls": 4,
+        "memory_input_tokens": 4411,
+        "memory_output_tokens": 547,
+        "actor_input_tokens": 19578,
+        "actor_output_tokens": 9375,
+        "failure_breakdown": {
+          "illegal_transaction": 1,
+          "wrong_payload_values": 1,
+          "correct": 1
+        },
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s70-test-001",
+        "status": {
+          "episode": "travel-s70-test-001",
+          "memory_calls": 10,
+          "output_characters": 21386,
+          "seconds": 69.82280575763434,
+          "status": "completed",
+          "system": "amem"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 2,
+        "actor_truncated": 0,
+        "memory_calls": 10,
+        "memory_input_tokens": 14276,
+        "memory_output_tokens": 1871,
+        "actor_input_tokens": 36543,
+        "actor_output_tokens": 1362,
+        "failure_breakdown": {
+          "correct": 2,
+          "illegal_transaction": 1
+        },
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s71-test-000",
+        "status": {
+          "episode": "travel-s71-test-000",
+          "memory_calls": 14,
+          "output_characters": 32543,
+          "seconds": 114.25539141148329,
+          "status": "completed",
+          "system": "amem"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 1,
+        "actor_truncated": 0,
+        "memory_calls": 14,
+        "memory_input_tokens": 24301,
+        "memory_output_tokens": 4705,
+        "actor_input_tokens": 47196,
+        "actor_output_tokens": 1174,
+        "failure_breakdown": {
+          "illegal_transaction": 2,
+          "correct": 1
+        },
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s71-test-001",
+        "status": {
+          "episode": "travel-s71-test-001",
+          "memory_calls": 10,
+          "output_characters": 23012,
+          "seconds": 383.6599975153804,
+          "status": "completed",
+          "system": "amem"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 1,
+        "actor_truncated": 1,
+        "memory_calls": 10,
+        "memory_input_tokens": 14541,
+        "memory_output_tokens": 2383,
+        "actor_input_tokens": 36309,
+        "actor_output_tokens": 18882,
+        "failure_breakdown": {
+          "illegal_transaction": 1,
+          "correct": 1,
+          "format_or_action_schema": 1
+        },
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s72-test-000",
+        "status": {
+          "episode": "travel-s72-test-000",
+          "memory_calls": 6,
+          "output_characters": 10235,
+          "seconds": 80.56361465994269,
+          "status": "completed",
+          "system": "amem"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 0,
+        "actor_truncated": 0,
+        "memory_calls": 6,
+        "memory_input_tokens": 7993,
+        "memory_output_tokens": 968,
+        "actor_input_tokens": 25440,
+        "actor_output_tokens": 1529,
+        "failure_breakdown": {
+          "illegal_transaction": 2,
+          "wrong_payload_values": 1
+        },
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s72-test-001",
+        "status": {
+          "episode": "travel-s72-test-001",
+          "error_type": "UnboundLocalError",
+          "memory_calls": 5,
+          "seconds": 18.189472527243197,
+          "status": "invalid_execution",
+          "system": "amem",
+          "traceback": [
+            {
+              "file": "continuation_memsys.py",
+              "function": "run",
+              "line": 222
+            },
+            {
+              "file": "continuation_memsys.py",
+              "function": "build_memory",
+              "line": 141
+            },
+            {
+              "file": "memory_layer.py",
+              "function": "add_note",
+              "line": 716
+            },
+            {
+              "file": "memory_layer.py",
+              "function": "__init__",
+              "line": 282
+            },
+            {
+              "file": "memory_layer.py",
+              "function": "analyze_content",
+              "line": 395
+            }
+          ]
+        },
+        "actor_calls": 0,
+        "actor_attempts": 0,
+        "correct": 0,
+        "actor_truncated": 0,
+        "memory_calls": 5,
+        "memory_input_tokens": 4298,
+        "memory_output_tokens": 546,
+        "actor_input_tokens": 0,
+        "actor_output_tokens": 0,
+        "failure_breakdown": {},
+        "actor_variant": "actor_v2"
+      }
+    ],
+    "lightmem": [
+      {
+        "episode": "travel-s70-test-000",
+        "status": {
+          "episode": "travel-s70-test-000",
+          "memory_calls": 2,
+          "output_characters": 0,
+          "seconds": 71.88572220411152,
+          "status": "completed",
+          "system": "lightmem"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 0,
+        "actor_truncated": 0,
+        "memory_calls": 2,
+        "memory_input_tokens": 2016,
+        "memory_output_tokens": 14,
+        "actor_input_tokens": 14694,
+        "actor_output_tokens": 1437,
+        "failure_breakdown": {
+          "illegal_transaction": 3
+        },
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s70-test-001",
+        "status": {
+          "episode": "travel-s70-test-001",
+          "memory_calls": 5,
+          "output_characters": 0,
+          "seconds": 53.29742544144392,
+          "status": "completed",
+          "system": "lightmem"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 0,
+        "actor_truncated": 2,
+        "memory_calls": 5,
+        "memory_input_tokens": 4883,
+        "memory_output_tokens": 35,
+        "actor_input_tokens": 14271,
+        "actor_output_tokens": 34828,
+        "failure_breakdown": {
+          "wrong_affected_objects": 3
+        },
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s71-test-000",
+        "status": {
+          "episode": "travel-s71-test-000",
+          "memory_calls": 7,
+          "output_characters": 0,
+          "seconds": 60.21924035344273,
+          "status": "completed",
+          "system": "lightmem"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 0,
+        "actor_truncated": 0,
+        "memory_calls": 7,
+        "memory_input_tokens": 6935,
+        "memory_output_tokens": 47,
+        "actor_input_tokens": 13488,
+        "actor_output_tokens": 2228,
+        "failure_breakdown": {
+          "illegal_transaction": 3
+        },
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s71-test-001",
+        "status": {
+          "episode": "travel-s71-test-001",
+          "memory_calls": 5,
+          "output_characters": 0,
+          "seconds": 132.71249677054584,
+          "status": "completed",
+          "system": "lightmem"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 0,
+        "actor_truncated": 1,
+        "memory_calls": 5,
+        "memory_input_tokens": 4935,
+        "memory_output_tokens": 35,
+        "actor_input_tokens": 13890,
+        "actor_output_tokens": 17391,
+        "failure_breakdown": {
+          "illegal_transaction": 2,
+          "wrong_affected_objects": 1
+        },
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s72-test-000",
+        "status": {
+          "episode": "travel-s72-test-000",
+          "error_type": "AttributeError",
+          "memory_calls": 1,
+          "seconds": 77.10380338691175,
+          "status": "invalid_execution",
+          "system": "lightmem",
+          "traceback": [
+            {
+              "file": "continuation_memsys.py",
+              "function": "run",
+              "line": 222
+            },
+            {
+              "file": "continuation_memsys.py",
+              "function": "build_memory",
+              "line": 154
+            },
+            {
+              "file": "lightmem.py",
+              "function": "add_memory",
+              "line": 356
+            },
+            {
+              "file": "utils.py",
+              "function": "process_extraction_results",
+              "line": 389
+            }
+          ]
+        },
+        "actor_calls": 0,
+        "actor_attempts": 0,
+        "correct": 0,
+        "actor_truncated": 0,
+        "memory_calls": 1,
+        "memory_input_tokens": 0,
+        "memory_output_tokens": 0,
+        "actor_input_tokens": 0,
+        "actor_output_tokens": 0,
+        "failure_breakdown": {},
+        "actor_variant": "actor_v2"
+      },
+      {
+        "episode": "travel-s72-test-001",
+        "status": {
+          "episode": "travel-s72-test-001",
+          "memory_calls": 4,
+          "output_characters": 0,
+          "seconds": 93.17447217740119,
+          "status": "completed",
+          "system": "lightmem"
+        },
+        "actor_calls": 3,
+        "actor_attempts": 3,
+        "correct": 0,
+        "actor_truncated": 0,
+        "memory_calls": 4,
+        "memory_input_tokens": 4018,
+        "memory_output_tokens": 28,
+        "actor_input_tokens": 13470,
+        "actor_output_tokens": 4438,
+        "failure_breakdown": {
+          "illegal_transaction": 3
+        },
+        "actor_variant": "actor_v2"
+      }
+    ]
+  },
+  "state_panels": [
+    {
+      "changes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "changing_fields": 9,
+      "episode": "travel-s70-test-000",
+      "interpretation": "Observable synthetic environment states; not LLM hidden states. Few segment transitions and many constant fields; no reliable full-SCM fit asserted.",
+      "n_boundaries": 3,
+      "n_fields": 60,
+      "names": [
+        "A21.min_rest",
+        "A21.start",
+        "A28.min_rest",
+        "A28.start",
+        "A32.min_rest",
+        "A32.start",
+        "A63.min_rest",
+        "A63.start",
+        "A73.min_rest",
+        "A73.start",
+        "A90.min_rest",
+        "A90.start",
+        "B24.rebooked",
+        "B26.rebooked",
+        "B39.rebooked",
+        "B61.rebooked",
+        "B63.rebooked",
+        "B82.rebooked",
+        "D14.start",
+        "D56.start",
+        "D66.start",
+        "D88.start",
+        "D89.start",
+        "D97.start",
+        "F22.arrival",
+        "F60.arrival",
+        "F71.arrival",
+        "F73.arrival",
+        "F87.arrival",
+        "F88.arrival",
+        "S13.checkin",
+        "S13.late_arrival",
+        "S13.late_cutoff",
+        "S52.checkin",
+        "S52.late_arrival",
+        "S52.late_cutoff",
+        "S57.checkin",
+        "S57.late_arrival",
+        "S57.late_cutoff",
+        "S67.checkin",
+        "S67.late_arrival",
+        "S67.late_cutoff",
+        "S86.checkin",
+        "S86.late_arrival",
+        "S86.late_cutoff",
+        "S99.checkin",
+        "S99.late_arrival",
+        "S99.late_cutoff",
+        "T34.pickup",
+        "T34.ride",
+        "T43.pickup",
+        "T43.ride",
+        "T48.pickup",
+        "T48.ride",
+        "T57.pickup",
+        "T57.ride",
+        "T69.pickup",
+        "T69.ride",
+        "T99.pickup",
+        "T99.ride"
+      ],
+      "values": [
+        [
+          600,
+          2055,
+          480,
+          2025,
+          480,
+          1950,
+          600,
+          1950,
+          600,
+          1995,
+          480,
+          2055,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1245,
+          1215,
+          1350,
+          1365,
+          1170,
+          1395,
+          1170,
+          1035,
+          945,
+          780,
+          825,
+          1215,
+          1290,
+          0,
+          1320,
+          1035,
+          0,
+          1290,
+          1100,
+          0,
+          1230,
+          1275,
+          1,
+          1260,
+          905,
+          0,
+          1290,
+          845,
+          0,
+          1350,
+          1015,
+          20,
+          1240,
+          50,
+          1255,
+          20,
+          815,
+          30,
+          885,
+          20,
+          1070,
+          30
+        ],
+        [
+          600,
+          2055,
+          480,
+          2025,
+          480,
+          1950,
+          600,
+          1950,
+          600,
+          1995,
+          480,
+          2055,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1245,
+          1215,
+          1500,
+          1365,
+          1170,
+          1395,
+          1170,
+          1035,
+          945,
+          780,
+          825,
+          1395,
+          1290,
+          0,
+          1320,
+          1035,
+          0,
+          1290,
+          1100,
+          0,
+          1230,
+          1455,
+          1,
+          1260,
+          905,
+          0,
+          1290,
+          845,
+          0,
+          1350,
+          1015,
+          20,
+          1240,
+          50,
+          1435,
+          20,
+          815,
+          30,
+          885,
+          20,
+          1070,
+          30
+        ],
+        [
+          600,
+          2055,
+          480,
+          2025,
+          480,
+          1950,
+          600,
+          1950,
+          600,
+          1995,
+          480,
+          2055,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1245,
+          1215,
+          1500,
+          1425,
+          1170,
+          1395,
+          1170,
+          1035,
+          945,
+          780,
+          1305,
+          1395,
+          1290,
+          0,
+          1320,
+          1035,
+          0,
+          1290,
+          1100,
+          0,
+          1230,
+          1455,
+          1,
+          1260,
+          1375,
+          1,
+          1290,
+          845,
+          0,
+          1350,
+          1015,
+          20,
+          1240,
+          50,
+          1435,
+          20,
+          815,
+          30,
+          1355,
+          20,
+          1070,
+          30
+        ]
+      ]
+    },
+    {
+      "changes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "changing_fields": 12,
+      "episode": "travel-s70-test-001",
+      "interpretation": "Observable synthetic environment states; not LLM hidden states. Few segment transitions and many constant fields; no reliable full-SCM fit asserted.",
+      "n_boundaries": 6,
+      "n_fields": 59,
+      "names": [
+        "A17.min_rest",
+        "A17.start",
+        "A40.min_rest",
+        "A40.start",
+        "A71.min_rest",
+        "A71.start",
+        "A81.min_rest",
+        "A81.start",
+        "A89.min_rest",
+        "A89.start",
+        "A99.min_rest",
+        "A99.start",
+        "B22.rebooked",
+        "B25.rebooked",
+        "B28.rebooked",
+        "B44.rebooked",
+        "B98.rebooked",
+        "D18.start",
+        "D26.start",
+        "D29.start",
+        "D44.start",
+        "D62.start",
+        "D84.start",
+        "F20.arrival",
+        "F31.arrival",
+        "F37.arrival",
+        "F48.arrival",
+        "F72.arrival",
+        "F79.arrival",
+        "S11.checkin",
+        "S11.late_arrival",
+        "S11.late_cutoff",
+        "S13.checkin",
+        "S13.late_arrival",
+        "S13.late_cutoff",
+        "S48.checkin",
+        "S48.late_arrival",
+        "S48.late_cutoff",
+        "S49.checkin",
+        "S49.late_arrival",
+        "S49.late_cutoff",
+        "S52.checkin",
+        "S52.late_arrival",
+        "S52.late_cutoff",
+        "S64.checkin",
+        "S64.late_arrival",
+        "S64.late_cutoff",
+        "T19.pickup",
+        "T19.ride",
+        "T26.pickup",
+        "T26.ride",
+        "T27.pickup",
+        "T27.ride",
+        "T35.pickup",
+        "T35.ride",
+        "T41.pickup",
+        "T41.ride",
+        "T74.pickup",
+        "T74.ride"
+      ],
+      "values": [
+        [
+          540,
+          1995,
+          480,
+          2010,
+          540,
+          2040,
+          480,
+          2055,
+          540,
+          2025,
+          600,
+          1965,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1170,
+          1275,
+          1230,
+          1155,
+          1245,
+          1305,
+          1185,
+          720,
+          780,
+          645,
+          645,
+          1125,
+          1250,
+          0,
+          1230,
+          710,
+          0,
+          1350,
+          1220,
+          0,
+          1320,
+          885,
+          0,
+          1350,
+          725,
+          0,
+          1350,
+          800,
+          0,
+          1260,
+          855,
+          30,
+          1190,
+          30,
+          670,
+          40,
+          760,
+          40,
+          1210,
+          40,
+          705,
+          20
+        ],
+        [
+          540,
+          1995,
+          480,
+          2010,
+          540,
+          2040,
+          480,
+          2055,
+          540,
+          2025,
+          600,
+          1965,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1170,
+          1275,
+          1230,
+          1155,
+          1245,
+          1305,
+          1185,
+          1080,
+          780,
+          645,
+          645,
+          1125,
+          1250,
+          0,
+          1230,
+          710,
+          0,
+          1350,
+          1220,
+          0,
+          1320,
+          885,
+          0,
+          1350,
+          725,
+          0,
+          1350,
+          1140,
+          0,
+          1260,
+          855,
+          30,
+          1190,
+          30,
+          670,
+          40,
+          1100,
+          40,
+          1210,
+          40,
+          705,
+          20
+        ],
+        [
+          540,
+          1995,
+          480,
+          2010,
+          540,
+          2040,
+          480,
+          2055,
+          540,
+          2025,
+          600,
+          1965,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1170,
+          1275,
+          1230,
+          1155,
+          1245,
+          1515,
+          1410,
+          1080,
+          780,
+          645,
+          645,
+          1125,
+          1470,
+          0,
+          1230,
+          710,
+          0,
+          1350,
+          1220,
+          0,
+          1320,
+          885,
+          0,
+          1350,
+          725,
+          0,
+          1350,
+          1140,
+          0,
+          1260,
+          855,
+          30,
+          1190,
+          30,
+          670,
+          40,
+          1100,
+          40,
+          1430,
+          40,
+          705,
+          20
+        ],
+        [
+          540,
+          1995,
+          480,
+          2010,
+          540,
+          2040,
+          480,
+          2055,
+          540,
+          2025,
+          600,
+          1965,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1170,
+          1275,
+          1230,
+          1455,
+          1245,
+          1515,
+          1410,
+          1080,
+          780,
+          645,
+          1350,
+          1125,
+          1470,
+          0,
+          1230,
+          1410,
+          0,
+          1350,
+          1220,
+          0,
+          1320,
+          885,
+          0,
+          1350,
+          725,
+          0,
+          1350,
+          1140,
+          0,
+          1260,
+          855,
+          30,
+          1190,
+          30,
+          1370,
+          40,
+          1100,
+          40,
+          1430,
+          40,
+          705,
+          20
+        ],
+        [
+          540,
+          1995,
+          480,
+          2010,
+          540,
+          2040,
+          480,
+          2055,
+          540,
+          2025,
+          600,
+          1965,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1170,
+          1275,
+          1230,
+          1455,
+          1245,
+          1515,
+          1410,
+          1080,
+          780,
+          645,
+          1350,
+          1125,
+          1470,
+          0,
+          1230,
+          1410,
+          0,
+          1350,
+          1220,
+          0,
+          1320,
+          885,
+          0,
+          1350,
+          725,
+          0,
+          1350,
+          1085,
+          0,
+          1260,
+          855,
+          30,
+          1190,
+          30,
+          1370,
+          40,
+          1045,
+          40,
+          1430,
+          40,
+          705,
+          20
+        ],
+        [
+          540,
+          1995,
+          480,
+          2010,
+          540,
+          2040,
+          480,
+          2055,
+          540,
+          2025,
+          600,
+          1965,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1170,
+          1275,
+          1230,
+          1485,
+          1245,
+          1515,
+          1410,
+          1080,
+          780,
+          645,
+          1380,
+          1125,
+          1470,
+          0,
+          1230,
+          1440,
+          0,
+          1350,
+          1220,
+          0,
+          1320,
+          885,
+          0,
+          1350,
+          725,
+          0,
+          1350,
+          1085,
+          0,
+          1260,
+          855,
+          30,
+          1190,
+          30,
+          1400,
+          40,
+          1045,
+          40,
+          1430,
+          40,
+          705,
+          20
+        ]
+      ]
+    },
+    {
+      "changes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        0,
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0
+      ],
+      "changing_fields": 21,
+      "episode": "travel-s71-test-000",
+      "interpretation": "Observable synthetic environment states; not LLM hidden states. Few segment transitions and many constant fields; no reliable full-SCM fit asserted.",
+      "n_boundaries": 8,
+      "n_fields": 57,
+      "names": [
+        "A13.min_rest",
+        "A13.start",
+        "A59.min_rest",
+        "A59.start",
+        "A84.min_rest",
+        "A84.start",
+        "A86.min_rest",
+        "A86.start",
+        "A90.min_rest",
+        "A90.start",
+        "A92.min_rest",
+        "A92.start",
+        "B29.rebooked",
+        "B65.rebooked",
+        "B99.rebooked",
+        "D12.start",
+        "D26.start",
+        "D45.start",
+        "D77.start",
+        "D84.start",
+        "D85.start",
+        "F22.arrival",
+        "F34.arrival",
+        "F56.arrival",
+        "F74.arrival",
+        "F81.arrival",
+        "F92.arrival",
+        "S31.checkin",
+        "S31.late_arrival",
+        "S31.late_cutoff",
+        "S60.checkin",
+        "S60.late_arrival",
+        "S60.late_cutoff",
+        "S77.checkin",
+        "S77.late_arrival",
+        "S77.late_cutoff",
+        "S85.checkin",
+        "S85.late_arrival",
+        "S85.late_cutoff",
+        "S88.checkin",
+        "S88.late_arrival",
+        "S88.late_cutoff",
+        "S90.checkin",
+        "S90.late_arrival",
+        "S90.late_cutoff",
+        "T28.pickup",
+        "T28.ride",
+        "T62.pickup",
+        "T62.ride",
+        "T73.pickup",
+        "T73.ride",
+        "T78.pickup",
+        "T78.ride",
+        "T83.pickup",
+        "T83.ride",
+        "T98.pickup",
+        "T98.ride"
+      ],
+      "values": [
+        [
+          480,
+          2025,
+          480,
+          2070,
+          600,
+          2010,
+          480,
+          2070,
+          600,
+          1995,
+          480,
+          1950,
+          0,
+          0,
+          0,
+          1275,
+          1320,
+          1275,
+          1260,
+          1245,
+          1200,
+          915,
+          1140,
+          945,
+          1125,
+          945,
+          1155,
+          1210,
+          0,
+          1320,
+          1210,
+          0,
+          1260,
+          1045,
+          0,
+          1320,
+          1015,
+          0,
+          1230,
+          1000,
+          0,
+          1350,
+          1180,
+          0,
+          1290,
+          1140,
+          40,
+          960,
+          40,
+          1190,
+          20,
+          965,
+          50,
+          1170,
+          40,
+          995,
+          50
+        ],
+        [
+          480,
+          2025,
+          480,
+          2070,
+          600,
+          2010,
+          480,
+          2070,
+          600,
+          1995,
+          480,
+          1950,
+          0,
+          0,
+          0,
+          1275,
+          1320,
+          1275,
+          1260,
+          1245,
+          1200,
+          915,
+          1140,
+          1065,
+          1125,
+          945,
+          1155,
+          1210,
+          0,
+          1320,
+          1210,
+          0,
+          1260,
+          1045,
+          0,
+          1320,
+          1160,
+          0,
+          1230,
+          1000,
+          0,
+          1350,
+          1180,
+          0,
+          1290,
+          1140,
+          40,
+          960,
+          40,
+          1190,
+          20,
+          1110,
+          50,
+          1170,
+          40,
+          995,
+          50
+        ],
+        [
+          480,
+          2025,
+          480,
+          2070,
+          600,
+          2010,
+          480,
+          2070,
+          600,
+          1995,
+          480,
+          1950,
+          0,
+          0,
+          0,
+          1275,
+          1320,
+          1275,
+          1260,
+          1350,
+          1200,
+          915,
+          1140,
+          1200,
+          1125,
+          945,
+          1155,
+          1210,
+          0,
+          1320,
+          1210,
+          0,
+          1260,
+          1045,
+          0,
+          1320,
+          1295,
+          0,
+          1230,
+          1000,
+          0,
+          1350,
+          1180,
+          0,
+          1290,
+          1140,
+          40,
+          960,
+          40,
+          1190,
+          20,
+          1245,
+          50,
+          1170,
+          40,
+          995,
+          50
+        ],
+        [
+          480,
+          2025,
+          480,
+          2070,
+          600,
+          2010,
+          480,
+          2070,
+          600,
+          1995,
+          480,
+          1950,
+          0,
+          0,
+          1,
+          1410,
+          1320,
+          1275,
+          1260,
+          1350,
+          1200,
+          915,
+          1140,
+          1200,
+          1125,
+          945,
+          1275,
+          1210,
+          0,
+          1320,
+          1355,
+          0,
+          1260,
+          1045,
+          0,
+          1320,
+          1295,
+          0,
+          1230,
+          1000,
+          0,
+          1350,
+          1180,
+          0,
+          1290,
+          1140,
+          40,
+          960,
+          40,
+          1190,
+          20,
+          1245,
+          50,
+          1315,
+          40,
+          995,
+          50
+        ],
+        [
+          480,
+          2025,
+          480,
+          2070,
+          600,
+          2010,
+          480,
+          2070,
+          600,
+          1995,
+          480,
+          1950,
+          0,
+          0,
+          1,
+          1410,
+          1320,
+          1275,
+          1260,
+          1350,
+          1200,
+          915,
+          1140,
+          1200,
+          1125,
+          945,
+          1095,
+          1210,
+          0,
+          1320,
+          1175,
+          0,
+          1260,
+          1045,
+          0,
+          1320,
+          1295,
+          0,
+          1230,
+          1000,
+          0,
+          1350,
+          1180,
+          0,
+          1290,
+          1140,
+          40,
+          960,
+          40,
+          1190,
+          20,
+          1245,
+          50,
+          1135,
+          40,
+          995,
+          50
+        ],
+        [
+          480,
+          2025,
+          480,
+          2070,
+          600,
+          2010,
+          480,
+          2070,
+          600,
+          1995,
+          480,
+          1950,
+          0,
+          0,
+          1,
+          1410,
+          1320,
+          1275,
+          1260,
+          1350,
+          1200,
+          975,
+          1140,
+          1200,
+          1125,
+          945,
+          1095,
+          1210,
+          0,
+          1320,
+          1175,
+          0,
+          1260,
+          1045,
+          0,
+          1320,
+          1295,
+          0,
+          1230,
+          1050,
+          0,
+          1350,
+          1180,
+          0,
+          1290,
+          1140,
+          40,
+          1010,
+          40,
+          1190,
+          20,
+          1245,
+          50,
+          1135,
+          40,
+          995,
+          50
+        ],
+        [
+          480,
+          2025,
+          480,
+          2070,
+          600,
+          2010,
+          480,
+          2070,
+          600,
+          1995,
+          480,
+          1950,
+          0,
+          0,
+          1,
+          1410,
+          1320,
+          1275,
+          1425,
+          1350,
+          1200,
+          975,
+          1320,
+          1200,
+          1125,
+          945,
+          1095,
+          1380,
+          0,
+          1320,
+          1175,
+          0,
+          1260,
+          1045,
+          0,
+          1320,
+          1295,
+          0,
+          1230,
+          1050,
+          0,
+          1350,
+          1180,
+          0,
+          1290,
+          1140,
+          40,
+          1010,
+          40,
+          1360,
+          20,
+          1245,
+          50,
+          1135,
+          40,
+          995,
+          50
+        ],
+        [
+          480,
+          2025,
+          480,
+          2070,
+          600,
+          2010,
+          480,
+          2070,
+          600,
+          1995,
+          480,
+          1950,
+          0,
+          1,
+          1,
+          1410,
+          1320,
+          1305,
+          1425,
+          1350,
+          1200,
+          975,
+          1320,
+          1200,
+          1125,
+          1155,
+          1095,
+          1380,
+          0,
+          1320,
+          1175,
+          0,
+          1260,
+          1250,
+          0,
+          1320,
+          1295,
+          0,
+          1230,
+          1050,
+          0,
+          1350,
+          1180,
+          0,
+          1290,
+          1140,
+          40,
+          1010,
+          40,
+          1360,
+          20,
+          1245,
+          50,
+          1135,
+          40,
+          1200,
+          50
+        ]
+      ]
+    },
+    {
+      "changes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "changing_fields": 16,
+      "episode": "travel-s71-test-001",
+      "interpretation": "Observable synthetic environment states; not LLM hidden states. Few segment transitions and many constant fields; no reliable full-SCM fit asserted.",
+      "n_boundaries": 6,
+      "n_fields": 58,
+      "names": [
+        "A12.min_rest",
+        "A12.start",
+        "A16.min_rest",
+        "A16.start",
+        "A68.min_rest",
+        "A68.start",
+        "A69.min_rest",
+        "A69.start",
+        "A81.min_rest",
+        "A81.start",
+        "A99.min_rest",
+        "A99.start",
+        "B26.rebooked",
+        "B34.rebooked",
+        "B53.rebooked",
+        "B73.rebooked",
+        "D36.start",
+        "D52.start",
+        "D69.start",
+        "D79.start",
+        "D97.start",
+        "D99.start",
+        "F10.arrival",
+        "F19.arrival",
+        "F40.arrival",
+        "F50.arrival",
+        "F87.arrival",
+        "F93.arrival",
+        "S20.checkin",
+        "S20.late_arrival",
+        "S20.late_cutoff",
+        "S26.checkin",
+        "S26.late_arrival",
+        "S26.late_cutoff",
+        "S42.checkin",
+        "S42.late_arrival",
+        "S42.late_cutoff",
+        "S85.checkin",
+        "S85.late_arrival",
+        "S85.late_cutoff",
+        "S86.checkin",
+        "S86.late_arrival",
+        "S86.late_cutoff",
+        "S90.checkin",
+        "S90.late_arrival",
+        "S90.late_cutoff",
+        "T17.pickup",
+        "T17.ride",
+        "T36.pickup",
+        "T36.ride",
+        "T68.pickup",
+        "T68.ride",
+        "T76.pickup",
+        "T76.ride",
+        "T93.pickup",
+        "T93.ride",
+        "T99.pickup",
+        "T99.ride"
+      ],
+      "values": [
+        [
+          600,
+          1950,
+          540,
+          2025,
+          540,
+          1950,
+          540,
+          2085,
+          540,
+          1980,
+          600,
+          2055,
+          0,
+          0,
+          0,
+          0,
+          1170,
+          1305,
+          1200,
+          1155,
+          1140,
+          1275,
+          630,
+          690,
+          1155,
+          960,
+          975,
+          705,
+          805,
+          0,
+          1320,
+          715,
+          0,
+          1230,
+          1040,
+          0,
+          1350,
+          1230,
+          0,
+          1260,
+          765,
+          0,
+          1260,
+          1035,
+          0,
+          1230,
+          695,
+          20,
+          1180,
+          50,
+          755,
+          50,
+          745,
+          20,
+          1005,
+          30,
+          1020,
+          20
+        ],
+        [
+          600,
+          1950,
+          540,
+          2025,
+          540,
+          1950,
+          540,
+          2085,
+          540,
+          1980,
+          600,
+          2055,
+          0,
+          0,
+          0,
+          0,
+          1170,
+          1305,
+          1200,
+          1155,
+          1140,
+          1275,
+          750,
+          690,
+          1155,
+          960,
+          975,
+          705,
+          805,
+          0,
+          1320,
+          810,
+          0,
+          1230,
+          1040,
+          0,
+          1350,
+          1230,
+          0,
+          1260,
+          765,
+          0,
+          1260,
+          1035,
+          0,
+          1230,
+          790,
+          20,
+          1180,
+          50,
+          755,
+          50,
+          745,
+          20,
+          1005,
+          30,
+          1020,
+          20
+        ],
+        [
+          600,
+          1950,
+          540,
+          2025,
+          540,
+          1950,
+          540,
+          2085,
+          540,
+          1980,
+          600,
+          2055,
+          0,
+          0,
+          0,
+          0,
+          1170,
+          1305,
+          1200,
+          1155,
+          1140,
+          1275,
+          750,
+          690,
+          1185,
+          960,
+          975,
+          705,
+          805,
+          0,
+          1320,
+          810,
+          0,
+          1230,
+          1040,
+          0,
+          1350,
+          1275,
+          1,
+          1260,
+          765,
+          0,
+          1260,
+          1035,
+          0,
+          1230,
+          790,
+          20,
+          1225,
+          50,
+          755,
+          50,
+          745,
+          20,
+          1005,
+          30,
+          1020,
+          20
+        ],
+        [
+          600,
+          1950,
+          540,
+          2025,
+          540,
+          1950,
+          540,
+          2085,
+          540,
+          1980,
+          600,
+          2055,
+          0,
+          0,
+          0,
+          0,
+          1170,
+          1305,
+          1200,
+          1155,
+          1155,
+          1275,
+          1050,
+          690,
+          1185,
+          960,
+          975,
+          705,
+          805,
+          0,
+          1320,
+          1110,
+          0,
+          1230,
+          1040,
+          0,
+          1350,
+          1275,
+          1,
+          1260,
+          765,
+          0,
+          1260,
+          1035,
+          0,
+          1230,
+          1090,
+          20,
+          1225,
+          50,
+          755,
+          50,
+          745,
+          20,
+          1005,
+          30,
+          1020,
+          20
+        ],
+        [
+          600,
+          1950,
+          540,
+          2025,
+          540,
+          1950,
+          540,
+          2085,
+          540,
+          1980,
+          600,
+          2055,
+          0,
+          0,
+          0,
+          0,
+          1170,
+          1305,
+          1200,
+          1155,
+          1155,
+          1275,
+          1050,
+          690,
+          1185,
+          960,
+          975,
+          735,
+          810,
+          0,
+          1320,
+          1110,
+          0,
+          1230,
+          1040,
+          0,
+          1350,
+          1275,
+          1,
+          1260,
+          765,
+          0,
+          1260,
+          1035,
+          0,
+          1230,
+          1090,
+          20,
+          1225,
+          50,
+          760,
+          50,
+          745,
+          20,
+          1005,
+          30,
+          1020,
+          20
+        ],
+        [
+          600,
+          1950,
+          540,
+          2025,
+          540,
+          1950,
+          540,
+          2085,
+          540,
+          1980,
+          600,
+          2055,
+          0,
+          1,
+          0,
+          0,
+          1170,
+          1305,
+          1245,
+          1155,
+          1155,
+          1275,
+          1050,
+          690,
+          1185,
+          960,
+          1140,
+          735,
+          810,
+          0,
+          1320,
+          1110,
+          0,
+          1230,
+          1190,
+          0,
+          1350,
+          1275,
+          1,
+          1260,
+          765,
+          0,
+          1260,
+          1035,
+          0,
+          1230,
+          1090,
+          20,
+          1225,
+          50,
+          760,
+          50,
+          745,
+          20,
+          1005,
+          30,
+          1170,
+          20
+        ]
+      ]
+    },
+    {
+      "changes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "changing_fields": 13,
+      "episode": "travel-s72-test-000",
+      "interpretation": "Observable synthetic environment states; not LLM hidden states. Few segment transitions and many constant fields; no reliable full-SCM fit asserted.",
+      "n_boundaries": 4,
+      "n_fields": 60,
+      "names": [
+        "A18.min_rest",
+        "A18.start",
+        "A25.min_rest",
+        "A25.start",
+        "A31.min_rest",
+        "A31.start",
+        "A65.min_rest",
+        "A65.start",
+        "A92.min_rest",
+        "A92.start",
+        "A96.min_rest",
+        "A96.start",
+        "B37.rebooked",
+        "B39.rebooked",
+        "B41.rebooked",
+        "B59.rebooked",
+        "B83.rebooked",
+        "B97.rebooked",
+        "D10.start",
+        "D38.start",
+        "D61.start",
+        "D79.start",
+        "D80.start",
+        "D96.start",
+        "F18.arrival",
+        "F33.arrival",
+        "F39.arrival",
+        "F45.arrival",
+        "F58.arrival",
+        "F84.arrival",
+        "S13.checkin",
+        "S13.late_arrival",
+        "S13.late_cutoff",
+        "S38.checkin",
+        "S38.late_arrival",
+        "S38.late_cutoff",
+        "S44.checkin",
+        "S44.late_arrival",
+        "S44.late_cutoff",
+        "S59.checkin",
+        "S59.late_arrival",
+        "S59.late_cutoff",
+        "S64.checkin",
+        "S64.late_arrival",
+        "S64.late_cutoff",
+        "S75.checkin",
+        "S75.late_arrival",
+        "S75.late_cutoff",
+        "T28.pickup",
+        "T28.ride",
+        "T31.pickup",
+        "T31.ride",
+        "T52.pickup",
+        "T52.ride",
+        "T74.pickup",
+        "T74.ride",
+        "T89.pickup",
+        "T89.ride",
+        "T93.pickup",
+        "T93.ride"
+      ],
+      "values": [
+        [
+          600,
+          2115,
+          600,
+          2010,
+          540,
+          1920,
+          480,
+          2040,
+          540,
+          2085,
+          600,
+          1935,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1275,
+          1305,
+          1245,
+          1185,
+          1215,
+          1200,
+          735,
+          1035,
+          750,
+          1020,
+          1035,
+          990,
+          1055,
+          0,
+          1350,
+          815,
+          0,
+          1230,
+          815,
+          0,
+          1350,
+          1120,
+          0,
+          1230,
+          1130,
+          0,
+          1320,
+          1110,
+          0,
+          1290,
+          1070,
+          40,
+          1080,
+          40,
+          1005,
+          50,
+          775,
+          40,
+          1110,
+          20,
+          765,
+          50
+        ],
+        [
+          600,
+          2115,
+          600,
+          2010,
+          540,
+          1920,
+          480,
+          2040,
+          540,
+          2085,
+          600,
+          1935,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1275,
+          1305,
+          1245,
+          1185,
+          1215,
+          1200,
+          735,
+          1290,
+          750,
+          1020,
+          1035,
+          990,
+          1055,
+          0,
+          1350,
+          815,
+          0,
+          1230,
+          815,
+          0,
+          1350,
+          1120,
+          0,
+          1230,
+          1345,
+          0,
+          1320,
+          1110,
+          0,
+          1290,
+          1070,
+          40,
+          1080,
+          40,
+          1005,
+          50,
+          775,
+          40,
+          1325,
+          20,
+          765,
+          50
+        ],
+        [
+          600,
+          2115,
+          600,
+          2010,
+          540,
+          1920,
+          480,
+          2040,
+          540,
+          2085,
+          600,
+          1935,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1275,
+          1305,
+          1245,
+          1185,
+          1215,
+          1200,
+          1110,
+          1290,
+          750,
+          1020,
+          1035,
+          990,
+          1055,
+          0,
+          1350,
+          1180,
+          0,
+          1230,
+          815,
+          0,
+          1350,
+          1120,
+          0,
+          1230,
+          1345,
+          0,
+          1320,
+          1110,
+          0,
+          1290,
+          1070,
+          40,
+          1080,
+          40,
+          1005,
+          50,
+          775,
+          40,
+          1325,
+          20,
+          1130,
+          50
+        ],
+        [
+          600,
+          2115,
+          600,
+          2010,
+          540,
+          1920,
+          480,
+          2040,
+          540,
+          2085,
+          600,
+          1950,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1275,
+          1305,
+          1245,
+          1185,
+          1215,
+          1395,
+          1110,
+          1290,
+          750,
+          1020,
+          1035,
+          1230,
+          1340,
+          0,
+          1350,
+          1180,
+          0,
+          1230,
+          815,
+          0,
+          1350,
+          1120,
+          0,
+          1230,
+          1345,
+          0,
+          1320,
+          1110,
+          0,
+          1290,
+          1070,
+          40,
+          1080,
+          40,
+          1290,
+          50,
+          775,
+          40,
+          1325,
+          20,
+          1130,
+          50
+        ]
+      ]
+    },
+    {
+      "changes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "changing_fields": 17,
+      "episode": "travel-s72-test-001",
+      "interpretation": "Observable synthetic environment states; not LLM hidden states. Few segment transitions and many constant fields; no reliable full-SCM fit asserted.",
+      "n_boundaries": 5,
+      "n_fields": 57,
+      "names": [
+        "A11.min_rest",
+        "A11.start",
+        "A13.min_rest",
+        "A13.start",
+        "A41.min_rest",
+        "A41.start",
+        "A48.min_rest",
+        "A48.start",
+        "A51.min_rest",
+        "A51.start",
+        "A89.min_rest",
+        "A89.start",
+        "B30.rebooked",
+        "B70.rebooked",
+        "B71.rebooked",
+        "D14.start",
+        "D38.start",
+        "D43.start",
+        "D58.start",
+        "D64.start",
+        "D75.start",
+        "F10.arrival",
+        "F24.arrival",
+        "F25.arrival",
+        "F53.arrival",
+        "F80.arrival",
+        "F95.arrival",
+        "S14.checkin",
+        "S14.late_arrival",
+        "S14.late_cutoff",
+        "S37.checkin",
+        "S37.late_arrival",
+        "S37.late_cutoff",
+        "S51.checkin",
+        "S51.late_arrival",
+        "S51.late_cutoff",
+        "S93.checkin",
+        "S93.late_arrival",
+        "S93.late_cutoff",
+        "S94.checkin",
+        "S94.late_arrival",
+        "S94.late_cutoff",
+        "S95.checkin",
+        "S95.late_arrival",
+        "S95.late_cutoff",
+        "T29.pickup",
+        "T29.ride",
+        "T44.pickup",
+        "T44.ride",
+        "T57.pickup",
+        "T57.ride",
+        "T59.pickup",
+        "T59.ride",
+        "T67.pickup",
+        "T67.ride",
+        "T83.pickup",
+        "T83.ride"
+      ],
+      "values": [
+        [
+          480,
+          1965,
+          540,
+          1995,
+          480,
+          1950,
+          540,
+          1965,
+          540,
+          1980,
+          480,
+          2040,
+          0,
+          0,
+          0,
+          1245,
+          1170,
+          1290,
+          1365,
+          1245,
+          1260,
+          1050,
+          1155,
+          705,
+          810,
+          720,
+          720,
+          745,
+          0,
+          1350,
+          1260,
+          0,
+          1350,
+          1150,
+          0,
+          1290,
+          825,
+          0,
+          1380,
+          925,
+          0,
+          1290,
+          780,
+          0,
+          1290,
+          1210,
+          50,
+          1120,
+          30,
+          725,
+          20,
+          740,
+          40,
+          795,
+          30,
+          885,
+          40
+        ],
+        [
+          480,
+          1965,
+          540,
+          1995,
+          480,
+          1950,
+          540,
+          1965,
+          540,
+          1980,
+          480,
+          2040,
+          0,
+          0,
+          0,
+          1245,
+          1170,
+          1290,
+          1365,
+          1245,
+          1395,
+          1290,
+          1155,
+          705,
+          810,
+          720,
+          720,
+          745,
+          0,
+          1350,
+          1260,
+          0,
+          1350,
+          1340,
+          1,
+          1290,
+          825,
+          0,
+          1380,
+          925,
+          0,
+          1290,
+          780,
+          0,
+          1290,
+          1210,
+          50,
+          1310,
+          30,
+          725,
+          20,
+          740,
+          40,
+          795,
+          30,
+          885,
+          40
+        ],
+        [
+          480,
+          1965,
+          540,
+          1995,
+          480,
+          1950,
+          540,
+          1965,
+          540,
+          1980,
+          480,
+          2040,
+          0,
+          0,
+          0,
+          1245,
+          1170,
+          1290,
+          1365,
+          1245,
+          1395,
+          1290,
+          1155,
+          825,
+          810,
+          720,
+          720,
+          905,
+          0,
+          1350,
+          1260,
+          0,
+          1350,
+          1340,
+          1,
+          1290,
+          825,
+          0,
+          1380,
+          925,
+          0,
+          1290,
+          780,
+          0,
+          1290,
+          1210,
+          50,
+          1310,
+          30,
+          885,
+          20,
+          740,
+          40,
+          795,
+          30,
+          885,
+          40
+        ],
+        [
+          480,
+          1965,
+          540,
+          1995,
+          480,
+          1950,
+          540,
+          1965,
+          540,
+          1980,
+          480,
+          2040,
+          1,
+          0,
+          0,
+          1245,
+          1170,
+          1290,
+          1425,
+          1245,
+          1395,
+          1290,
+          1260,
+          825,
+          810,
+          720,
+          720,
+          905,
+          0,
+          1350,
+          1370,
+          1,
+          1350,
+          1340,
+          1,
+          1290,
+          825,
+          0,
+          1380,
+          925,
+          0,
+          1290,
+          780,
+          0,
+          1290,
+          1320,
+          50,
+          1310,
+          30,
+          885,
+          20,
+          740,
+          40,
+          795,
+          30,
+          885,
+          40
+        ],
+        [
+          480,
+          1965,
+          540,
+          1995,
+          480,
+          1950,
+          540,
+          1965,
+          540,
+          1980,
+          480,
+          2040,
+          1,
+          0,
+          0,
+          1245,
+          1170,
+          1290,
+          1425,
+          1245,
+          1395,
+          1290,
+          1260,
+          825,
+          810,
+          1065,
+          720,
+          905,
+          0,
+          1350,
+          1370,
+          1,
+          1350,
+          1340,
+          1,
+          1290,
+          1155,
+          0,
+          1380,
+          925,
+          0,
+          1290,
+          780,
+          0,
+          1290,
+          1320,
+          50,
+          1310,
+          30,
+          885,
+          20,
+          740,
+          40,
+          1125,
+          30,
+          885,
+          40
+        ]
+      ]
+    }
+  ],
+  "discovery_cost": {
+    "fresh_training_calls": 768,
+    "training_input_tokens": 4656132,
+    "training_output_tokens": 1102387,
+    "interpretation": "Per-episode discovery calls count toward method cost; selected-input savings alone are not total efficiency gains."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "alpha": 0.05,
+  "endpoint": "https://www.autodl.art/api/v1",
+  "episodes_per_seed": 2,
+  "extra_body": {
+    "reasoning_effort": "none",
+    "thinking": {
+      "type": "disabled"
+    }
+  },
+  "format_retries": 0,
+  "infrastructure_retries": 0,
+  "keep": 0.8,
+  "mask_seed": 20260922,
+  "max_requests": 1200,
+  "max_tokens": 16384,
+  "model": "DeepSeek-V4-Pro",
+  "repeats": 3,
+  "seed_panel": [
+    70,
+    71,
+    72
+  ],
+  "smoke": true,
+  "source_hashes": {
+    "code/hm3/continuation_actor.py": "e5f176d96000a3c7667b22e4caa1a1e42415aab59887f19467e0f894ea31437d",
+    "code/hm3/core.py": "dd77e7023773d48eb8a5d8b7f049bbb06ad0e91b17383ff757151bf783d8d5f8",
+    "code/hm3/dgp_travel.py": "a9a050a8e87221ea9a7a2c2c257aeb5f99e8fff0d9c3d731e00816982350ee1f",
+    "code/hm3/generate.py": "9a9af4a6a7cec70bb959cb6754451809f251b133487195d47d6560d2de2f294a",
+    "code/hm3/llm.py": "fdb8a39b3f784f4e93434e01b08f6e9897093a25f2a7e532440689eb22586a2f",
+    "docs/continuation-protocol-2026-09-22.md": "ba1497e251c2981ae64c993e4e9b57e0411328b1e49aac5d95b325bfdf591599"
+  },
+  "temperature": 0,
+  "test": "Gsquared",
+  "top_k_segments": 2,
+  "trials": 128,
+  "unit": "episode; repeated API calls averaged within episode"
+}

@@ -1,0 +1,11 @@
+{
+  "case": 6,
+  "repeat": 0,
+  "prompt_sha256": "fefaae16f94d6be916ec90aad4dae8ba781ca4c4b13a3fc161fcd2c994151b65",
+  "extracted": "New York University",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied memory contains a prior inference matching the clues to Bowen Yang and identifying his alma mater as New York University, which was founded in 1831 and thus fits the 1800–1850 window. No retrieved document in the trace directly confirms this, so confidence is moderate.  \nExact Answer: New York University  \nConfidence: 75%"
+}

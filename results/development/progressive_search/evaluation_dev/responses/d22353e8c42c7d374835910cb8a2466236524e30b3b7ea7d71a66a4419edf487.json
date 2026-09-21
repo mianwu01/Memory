@@ -1,0 +1,10 @@
+{
+  "case": 9,
+  "prompt_sha256": "d22353e8c42c7d374835910cb8a2466236524e30b3b7ea7d71a66a4419edf487",
+  "extracted": "UNKNOWN",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "deepseek-v4-flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied memory establishes only part of the chain: Korea was the colonized/annexed country and the activist context points to the Hague/United States period, while Jan Jansz Weltevree is identified as a Dutch visitor who naturalized in Joseon [11997][85933]. No evidence in the memory identifies a 1990–2000 documentary about him or an actor who portrayed him, so the final link cannot be determined.\nExact Answer: UNKNOWN\nConfidence: 90%"
+}

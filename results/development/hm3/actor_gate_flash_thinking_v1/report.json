@@ -1,0 +1,61 @@
+{
+  "completed": 30,
+  "correct": 29,
+  "discovery_authorized_by_this_gate": false,
+  "expected": 30,
+  "expected_cases": 10,
+  "infrastructure_unresolved": 0,
+  "input_tokens": 188178,
+  "output_tokens": 604164,
+  "passed": false,
+  "per_case": {
+    "travel-s80-dev-000": {
+      "completed": 3,
+      "correct": 3
+    },
+    "travel-s80-dev-001": {
+      "completed": 3,
+      "correct": 3
+    },
+    "travel-s80-dev-002": {
+      "completed": 3,
+      "correct": 3
+    },
+    "travel-s80-dev-003": {
+      "completed": 3,
+      "correct": 3
+    },
+    "travel-s80-dev-004": {
+      "completed": 3,
+      "correct": 3
+    },
+    "travel-s80-dev-005": {
+      "completed": 3,
+      "correct": 2
+    },
+    "travel-s80-dev-006": {
+      "completed": 3,
+      "correct": 3
+    },
+    "travel-s80-dev-007": {
+      "completed": 3,
+      "correct": 3
+    },
+    "travel-s80-dev-008": {
+      "completed": 3,
+      "correct": 3
+    },
+    "travel-s80-dev-009": {
+      "completed": 3,
+      "correct": 3
+    }
+  },
+  "returned_models": [
+    "DeepSeek-V4-Flash-0731",
+    "deepseek-v4-flash-0731"
+  ],
+  "scope": "Development actor only; native task requires independent qualification",
+  "stable_cases": 9,
+  "thinking_observed": 30,
+  "truncations": 0
+}

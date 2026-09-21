@@ -1,0 +1,7 @@
+{
+  "query": "Where is mary at environment time 50?\n{\"object\": \"mary\", \"time\": 50}",
+  "result": {
+    "results": []
+  },
+  "text": ""
+}

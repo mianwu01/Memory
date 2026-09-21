@@ -1,0 +1,10 @@
+{
+  "code/hm3/actor_gate.py": "b7fa05c371836ef89dbefa47351a032976e0c9e2b23bbe7494e4959580a30d97",
+  "code/hm3/actor_gate_report.py": "97b7f2ed733764e197b420f643f5e4158b98dd665446afc51d1834bd8cee35da",
+  "code/hm3/native_search_screen.py": "d48c74eed22be6ad1033fd1b2aab790ee839475d03226bd08431162b73a18738",
+  "code/hm3/test_actor_gate.py": "4352dc7b725fb7c8094844c9fcb7b91ab6ba396cba3c34d250a0a18c3fb28a9c",
+  "docs/actor-gates-protocol-2026-09-22.md": "de551d49505d338a759546cd72981d652300d6ff58f90162b3a5ae816f42ab08",
+  "docs/actor-gate-model-id-amendment-2026-09-22.md": "edee23c6bd5841a95a1366e060227b9a602b727c4fa1b211964f723d26d6716a",
+  "docs/actor-gates-results-2026-09-22.md": "d600a2a7a2baaf9c4f15d63ec81c5ab3bee7bfc0a607f6d0b230c69929aa4639",
+  "docs/native-task-screen-2026-09-22.md": "d4ae60eda14a3c4dcbc9b3e5427a4870bdccc39cc5551ef4cdd6b4260e40d99b"
+}

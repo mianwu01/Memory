@@ -1,0 +1,11 @@
+{
+  "case": 2,
+  "repeat": 2,
+  "prompt_sha256": "ed0d964c2b1381303c55cb9709ec173e67e21a609c8c42e0b73dd26f1c41be5c",
+  "extracted": "John Daniel delos Santos",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The teen donor was AJ Perez (Antonello Joseph Sarte Perez), 18, who died on April 17, 2011, in a vehicular accident in Moncada, Tarlac; his father and the van driver survived, and he was the lone fatality [31584][62478]. His donated corneas went to two people: John Daniel delos Santos, then 8 years old, and Lawrence Villanueva [62478][13127]. John Daniel delos Santos appeared on “Eat Bulaga!”’s “Bawal Judgmental” segment on October 27, 2020, when he was 17, identified himself as AJ Perez’s cornea recipient, and thanked AJ and his parents on air [5784][58107].\n\nExact Answer: John Daniel delos Santos\n\nConfidence: 90%"
+}

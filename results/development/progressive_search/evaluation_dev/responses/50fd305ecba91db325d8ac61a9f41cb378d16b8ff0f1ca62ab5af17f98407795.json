@@ -1,0 +1,10 @@
+{
+  "case": 7,
+  "prompt_sha256": "50fd305ecba91db325d8ac61a9f41cb378d16b8ff0f1ca62ab5af17f98407795",
+  "extracted": "UNKNOWN",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied evidence identifies Cory Monteith as a taxicab driver [77808][32366], with a TV debut in 2004 [32366], a role in “Monte Carlo” alongside Disney Channel star Selena Gomez [30018][32366], and attendance at 16 schools [32366]. However, the only volleyball-playing-girlfriend evidence in the memory points to Matthew Perry’s girlfriend Rachel Dunn [1605], not to Cory Monteith. Therefore, the supplied memory does not establish one actor who satisfies all the listed criteria.\n\nExact Answer: UNKNOWN\n\nConfidence: 70%"
+}

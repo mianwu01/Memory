@@ -1,0 +1,27 @@
+{
+  "case": 0,
+  "extracted": "Ihuoma Sonia Uche",
+  "correct": true,
+  "answer": "Explanation: The individual matching every criterion is the Nollywood actress Ihuoma Sonia Uche, known professionally as Sonia Uche. In an exclusive interview reproduced in her biography, she stated: \"I got into acting through an audition. I saw the audition notice... on Facebook. I was at 100 Level and about to write my first semester exams... I went to Abuja for the audition, and two weeks later, I was invited to play a role in the movie, Complicated. That was my first gig,\" confirming she entered through an audition during her first year of university [63918]. In the same interview she said, \"I am a child of divorce, so I'll say this: If partners realize that they are not compatible with each other, separation should be perfectly fine\" [63918]. The biography also records that \"aside from acting, she is also an entrepreneur with a hairline called Sonia Hair Extensions\" [63918], and a 2023 profile describes her as a \"successful businesswoman\" selling hair extensions and wigs [62459]. A 2023 article states \"Sonia attended the University of Abuja and graduated in 2018\" — Abuja is Nigeria's capital [82844][74302] — and gives her date of birth as 25 May 1995 (age 28 in 2023), which falls within 1986–1996 [82844][62459]. The same 2023 article reports that fans speculated she gave birth to her first child in 2022, but \"these rumours have been proven to be baseless, as the actress was merely playing a pregnant character in a movie titled The Beast in Him\" [82844][62459]. Additionally, 2023 articles state she is \"the firstborn among four sisters\" (\"Siblings | 3\") and \"the first child\" of Uche Nancy, making her the oldest with three siblings [82844][63918][62459]. Her full name is consistently given as Ihuoma Sonia Uche across multiple profiles [63918][62459][82844][53537].\n\nExact Answer: Ihuoma Sonia Uche\n\nConfidence: 90%",
+  "native_finish_reason": "stop",
+  "finish_reason": "stop",
+  "combined": [
+    {
+      "role": "assistant",
+      "content": "Explanation: The individual matching every criterion is the Nollywood actress Ihuoma Sonia Uche, known professionally as Sonia Uche. In an exclusive interview reproduced in her biography, she stated: \"I got into acting through an audition. I saw the audition notice... on Facebook. I was at 100 Level and about to write my first semester exams... I went to Abuja for the audition, and two weeks later, I was invited to play a role in the movie, Complicated. That was my first gig,\" confirming she entered through an audition during her first year of university [63918]. In the same interview she said, \"I am a child of divorce, so I'll say this: If partners realize that they are not compatible with each other, separation should be perfectly fine\" [63918]. The biography also records that \"aside from acting, she is also an entrepreneur with a hairline called Sonia Hair Extensions\" [63918], and a 2023 profile describes her as a \"successful businesswoman\" selling hair extensions and wigs [62459]. A 2023 article states \"Sonia attended the University of Abuja and graduated in 2018\" — Abuja is Nigeria's capital [82844][74302] — and gives her date of birth as 25 May 1995 (age 28 in 2023), which falls within 1986–1996 [82844][62459]. The same 2023 article reports that fans speculated she gave birth to her first child in 2022, but \"these rumours have been proven to be baseless, as the actress was merely playing a pregnant character in a movie titled The Beast in Him\" [82844][62459]. Additionally, 2023 articles state she is \"the firstborn among four sisters\" (\"Siblings | 3\") and \"the first child\" of Uche Nancy, making her the oldest with three siblings [82844][63918][62459]. Her full name is consistently given as Ihuoma Sonia Uche across multiple profiles [63918][62459][82844][53537].\n\nExact Answer: Ihuoma Sonia Uche\n\nConfidence: 90%"
+    }
+  ],
+  "source_reads": [],
+  "usage_native_loop": {
+    "input_tokens": 272947,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 1541,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 274488
+  },
+  "all_memory_retained": true
+}

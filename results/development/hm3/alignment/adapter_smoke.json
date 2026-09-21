@@ -1,0 +1,141 @@
+{
+ "config": {
+  "domains": [
+   "travel"
+  ],
+  "seeds": [
+   3
+  ],
+  "conditions": [
+   "native"
+  ],
+  "n_train": 4,
+  "n_eval": 4,
+  "split": "dev",
+  "train_seed_offset": 0,
+  "condition_specs": {
+   "native": [
+    null,
+    ""
+   ]
+  }
+ },
+ "runs": {
+  "travel/seed3/native": {
+   "augment_train": {},
+   "augment_eval": {},
+   "augment_seconds": 7.152557373046875e-07,
+   "n_train": 4,
+   "n_eval": 4,
+   "learners": {
+    "component_key2": {
+     "summary": {
+      "ees": 1.0,
+      "legal": 1.0,
+      "exact_action_set": 1.0,
+      "affected_precision": 1.0,
+      "affected_recall": 1.0,
+      "affected_f1": 1.0,
+      "collateral_txns": 0.0,
+      "value_accuracy": 1.0,
+      "required_read_recall": 1.0,
+      "n_reads": 16.0,
+      "regret": 0.0,
+      "n_plan": 1.75,
+      "n": 4,
+      "seconds": 0.0057373046875,
+      "illegal_rate": 0.0,
+      "fit_seconds": 2.3603439331054688e-05
+     },
+     "rows": [
+      {
+       "legal": true,
+       "ees": true,
+       "post_state_ok": true,
+       "receipt_ok": true,
+       "exact_action_set": true,
+       "affected_precision": 1.0,
+       "affected_recall": 1.0,
+       "affected_f1": 1.0,
+       "collateral_txns": 0,
+       "duplicate_txns": 0,
+       "value_accuracy": 1.0,
+       "required_read_recall": 1.0,
+       "n_reads": 18,
+       "regret": 0,
+       "n_plan": 3,
+       "n_oracle": 3,
+       "error": null,
+       "episode": "travel-s3-dev-000",
+       "unknown_params": 0
+      },
+      {
+       "legal": true,
+       "ees": true,
+       "post_state_ok": true,
+       "receipt_ok": true,
+       "exact_action_set": true,
+       "affected_precision": 1.0,
+       "affected_recall": 1.0,
+       "affected_f1": 1.0,
+       "collateral_txns": 0,
+       "duplicate_txns": 0,
+       "value_accuracy": 1.0,
+       "required_read_recall": 1.0,
+       "n_reads": 13,
+       "regret": 0,
+       "n_plan": 1,
+       "n_oracle": 1,
+       "error": null,
+       "episode": "travel-s3-dev-001",
+       "unknown_params": 0
+      },
+      {
+       "legal": true,
+       "ees": true,
+       "post_state_ok": true,
+       "receipt_ok": true,
+       "exact_action_set": true,
+       "affected_precision": 1.0,
+       "affected_recall": 1.0,
+       "affected_f1": 1.0,
+       "collateral_txns": 0,
+       "duplicate_txns": 0,
+       "value_accuracy": 1.0,
+       "required_read_recall": 1.0,
+       "n_reads": 16,
+       "regret": 0,
+       "n_plan": 2,
+       "n_oracle": 2,
+       "error": null,
+       "episode": "travel-s3-dev-002",
+       "unknown_params": 0
+      },
+      {
+       "legal": true,
+       "ees": true,
+       "post_state_ok": true,
+       "receipt_ok": true,
+       "exact_action_set": true,
+       "affected_precision": 1.0,
+       "affected_recall": 1.0,
+       "affected_f1": 1.0,
+       "collateral_txns": 0,
+       "duplicate_txns": 0,
+       "value_accuracy": 1.0,
+       "required_read_recall": 1.0,
+       "n_reads": 17,
+       "regret": 0,
+       "n_plan": 1,
+       "n_oracle": 1,
+       "error": null,
+       "episode": "travel-s3-dev-003",
+       "unknown_params": 0
+      }
+     ]
+    }
+   },
+   "complete": true
+  }
+ }
+}

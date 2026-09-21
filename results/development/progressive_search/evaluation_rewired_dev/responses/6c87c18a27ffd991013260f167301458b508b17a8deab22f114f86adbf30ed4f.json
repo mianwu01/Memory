@@ -1,0 +1,10 @@
+{
+  "case": 0,
+  "prompt_sha256": "6c87c18a27ffd991013260f167301458b508b17a8deab22f114f86adbf30ed4f",
+  "extracted": "Sonia Uche",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied memory identifies Sonia Uche as the person who, as of 2023, was the oldest child and had three siblings. It cites a 2023 article stating she is “the firstborn among four sisters” with “Siblings | 3” [82844], another calling her “the first of four girls” [63918], and a third describing her as “the eldest daughter of Uche Nancy” with three siblings [62459]. The 2020 interview details are not covered in the supplied memory, but the identifying condition matches.\n\nExact Answer: Sonia Uche\n\nConfidence: 85%"
+}

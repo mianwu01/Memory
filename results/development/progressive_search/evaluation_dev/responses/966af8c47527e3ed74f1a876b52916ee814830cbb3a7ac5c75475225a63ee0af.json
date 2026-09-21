@@ -1,0 +1,10 @@
+{
+  "case": 9,
+  "prompt_sha256": "966af8c47527e3ed74f1a876b52916ee814830cbb3a7ac5c75475225a63ee0af",
+  "extracted": "UNKNOWN",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "deepseek-v4-flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied memory establishes Korea as the colonized/annexed country [24150], identifies Syngman Rhee as an independence activist sent to the United States in 1905 [11997], and connects the American Homer Hulbert to the Korean independence mission [11997]. However, the memory does not provide any information about a 1990–2000 documentary depicting Homer Hulbert or about which actor portrayed him, so the requested actor cannot be identified from the evidence.\n\nExact Answer: UNKNOWN\n\nConfidence: 78%"
+}

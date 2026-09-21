@@ -1,0 +1,79 @@
+[
+  {
+    "result": {
+      "results": []
+    },
+    "segment": 0,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": []
+    },
+    "segment": 1,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": []
+    },
+    "segment": 2,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "8c515060-5a07-44b2-943a-8c9d78b51171",
+          "memory": "Flight F93 (Eli, day 1) arrival was shifted from 11:45 to 12:15 on September 21, 2026"
+        },
+        {
+          "event": "ADD",
+          "id": "3aeaf93f-315a-40e9-8722-3213f05f97f6",
+          "memory": "Transfer T68 pickup was automatically shifted from 12:35 to 12:40 on September 21, 2026 following the F93 arrival change"
+        },
+        {
+          "event": "ADD",
+          "id": "bbf22a8f-5f8e-4f17-815c-56bb910ab06c",
+          "memory": "Stay S20 check-in was shifted from 13:25 to 13:30 on September 21, 2026 with a fee of 25"
+        }
+      ]
+    },
+    "segment": 3,
+    "stage": "add"
+  },
+  {
+    "result": {
+      "results": [
+        {
+          "event": "ADD",
+          "id": "9768bf40-b69b-47d4-ba27-30844fd32657",
+          "memory": "Flight F87 (Gao, day 2) arrival was shifted from 16:15 to 19:00 on September 21, 2026"
+        },
+        {
+          "event": "ADD",
+          "id": "fefa6f25-8c6c-485e-b802-1c729bb59df8",
+          "memory": "Transfer T99 pickup was automatically shifted from 17:00 to 19:30 on September 21, 2026 following the F87 arrival change"
+        },
+        {
+          "event": "ADD",
+          "id": "b94b9548-cb2f-4eb2-a9ef-f8853b759c59",
+          "memory": "Stay S42 check-in was shifted from 17:20 to 19:50 on September 21, 2026 with a fee of 25"
+        },
+        {
+          "event": "ADD",
+          "id": "c23307e9-dd69-4f12-a930-05403ec46b43",
+          "memory": "Dinner D69 start time was shifted from 20:00 to 20:45 on September 21, 2026 with a fee of 25"
+        },
+        {
+          "event": "ADD",
+          "id": "1efa43dd-de47-496c-b6ac-b5779091ab80",
+          "memory": "Bundle B34 was rebooked on September 21, 2026 with a fee of 30"
+        }
+      ]
+    },
+    "segment": 4,
+    "stage": "add"
+  }
+]

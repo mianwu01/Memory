@@ -1,0 +1,2765 @@
+{
+  "scope": "development_in_sample",
+  "rows": [
+    {
+      "case": 0,
+      "method": "discovered",
+      "prompt_sha256": "0a0a01b18a1d704d95977424878ee04621be6b38a9d1f06bb8ddec6756835197",
+      "extracted": "Ihuoma Sonia Uche",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 0,
+      "method": "topic_only",
+      "prompt_sha256": "0a0a01b18a1d704d95977424878ee04621be6b38a9d1f06bb8ddec6756835197",
+      "extracted": "Ihuoma Sonia Uche",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 0,
+      "method": "complete",
+      "prompt_sha256": "0a0a01b18a1d704d95977424878ee04621be6b38a9d1f06bb8ddec6756835197",
+      "extracted": "Ihuoma Sonia Uche",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 0,
+      "method": "bm25",
+      "prompt_sha256": "0a0a01b18a1d704d95977424878ee04621be6b38a9d1f06bb8ddec6756835197",
+      "extracted": "Ihuoma Sonia Uche",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 0,
+      "method": "recency",
+      "prompt_sha256": "7f1ad7baef5147630030b099bb04cc49a8794e75d777ca83dff3b5216974fa91",
+      "extracted": "Ihuoma Sonia Uche",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 8764,
+      "indices": [
+        6,
+        7
+      ],
+      "token_residual_to_discovered": -7620,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 0,
+      "method": "bm25_matched",
+      "prompt_sha256": "0a0a01b18a1d704d95977424878ee04621be6b38a9d1f06bb8ddec6756835197",
+      "extracted": "Ihuoma Sonia Uche",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 0,
+      "method": "recency_matched",
+      "prompt_sha256": "7f1ad7baef5147630030b099bb04cc49a8794e75d777ca83dff3b5216974fa91",
+      "extracted": "Ihuoma Sonia Uche",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 8764,
+      "indices": [
+        6,
+        7
+      ],
+      "token_residual_to_discovered": -7620,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 0,
+      "method": "wrong_17",
+      "prompt_sha256": "0a0a01b18a1d704d95977424878ee04621be6b38a9d1f06bb8ddec6756835197",
+      "extracted": "Ihuoma Sonia Uche",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 0,
+      "method": "random_17",
+      "prompt_sha256": "f1ff65baa7720a95ff033bc7e5fcd1b40629442b0c8e49b782c0b8acb1ff715a",
+      "extracted": "Ihuoma Sonia Uche",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 0,
+      "method": "wrong_29",
+      "prompt_sha256": "0a0a01b18a1d704d95977424878ee04621be6b38a9d1f06bb8ddec6756835197",
+      "extracted": "Ihuoma Sonia Uche",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 0,
+      "method": "random_29",
+      "prompt_sha256": "f1ff65baa7720a95ff033bc7e5fcd1b40629442b0c8e49b782c0b8acb1ff715a",
+      "extracted": "Ihuoma Sonia Uche",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 0,
+      "method": "wrong_43",
+      "prompt_sha256": "0a0a01b18a1d704d95977424878ee04621be6b38a9d1f06bb8ddec6756835197",
+      "extracted": "Ihuoma Sonia Uche",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 0,
+      "method": "random_43",
+      "prompt_sha256": "db14fe4eb8229ebd4ea0705654c7de384720f1d5e31a7196dcd2440885f5b4e6",
+      "extracted": "Ihuoma Sonia Uche",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 0,
+      "method": "answer_reuse",
+      "prompt_sha256": "b0d0524fee9cad0151fb7e67bbb69abb6fe1d6d51d285604bd3ef53364413ed5",
+      "extracted": "Sonia Uche",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 205,
+      "indices": [
+        2
+      ],
+      "token_residual_to_discovered": -16179,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 0,
+      "method": "query_only",
+      "prompt_sha256": "2dcaba1a794a00b5951ba910c6184f46e979a0c85cac230a4e6b2cc4959e3b1d",
+      "extracted": "Patricia Njeri Kihoro",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 0,
+      "indices": [],
+      "token_residual_to_discovered": -16384,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 0,
+      "method": "full",
+      "repeat": 0,
+      "prompt_sha256": "f4b18666a47bde89dc52b92ab6e1ee4a186320225b79aa7756807b1c68b53960",
+      "extracted": "Ihuoma Sonia Uche",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "all_memory_retained": true,
+      "writers_complete": true,
+      "content_tokens": 269954,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "token_residual_to_discovered": 253570,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 1,
+      "method": "discovered",
+      "prompt_sha256": "863832421475fd0ad7b1d6aea650cc8bac31d843649d8cd5d8db4fa6839bdc54",
+      "extracted": "Tulsidas Balaram",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        4,
+        5
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 1,
+      "method": "topic_only",
+      "prompt_sha256": "863832421475fd0ad7b1d6aea650cc8bac31d843649d8cd5d8db4fa6839bdc54",
+      "extracted": "Tulsidas Balaram",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        4,
+        5
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 1,
+      "method": "complete",
+      "prompt_sha256": "863832421475fd0ad7b1d6aea650cc8bac31d843649d8cd5d8db4fa6839bdc54",
+      "extracted": "Tulsidas Balaram",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        4,
+        5
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 1,
+      "method": "bm25",
+      "prompt_sha256": "863832421475fd0ad7b1d6aea650cc8bac31d843649d8cd5d8db4fa6839bdc54",
+      "extracted": "Tulsidas Balaram",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        4,
+        5
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 1,
+      "method": "recency",
+      "prompt_sha256": "971d1d7df59221fa7e3b1c793b3be90d63e452dd3104a1fd361eb69fd20c12c1",
+      "extracted": "Tulsidas Balaram",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 9077,
+      "indices": [
+        9,
+        10
+      ],
+      "token_residual_to_discovered": -7307,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 1,
+      "method": "bm25_matched",
+      "prompt_sha256": "863832421475fd0ad7b1d6aea650cc8bac31d843649d8cd5d8db4fa6839bdc54",
+      "extracted": "Tulsidas Balaram",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        4,
+        5
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 1,
+      "method": "recency_matched",
+      "prompt_sha256": "971d1d7df59221fa7e3b1c793b3be90d63e452dd3104a1fd361eb69fd20c12c1",
+      "extracted": "Tulsidas Balaram",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 9077,
+      "indices": [
+        9,
+        10
+      ],
+      "token_residual_to_discovered": -7307,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 1,
+      "method": "wrong_17",
+      "prompt_sha256": "863832421475fd0ad7b1d6aea650cc8bac31d843649d8cd5d8db4fa6839bdc54",
+      "extracted": "Tulsidas Balaram",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        4,
+        5
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 1,
+      "method": "random_17",
+      "prompt_sha256": "8d074a42b39967d9fd2b3c704460ab845442fbbd5719389837fafc406ade3e7c",
+      "extracted": "Tulsidas Balaram",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        5
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 1,
+      "method": "wrong_29",
+      "prompt_sha256": "863832421475fd0ad7b1d6aea650cc8bac31d843649d8cd5d8db4fa6839bdc54",
+      "extracted": "Tulsidas Balaram",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        4,
+        5
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 1,
+      "method": "random_29",
+      "prompt_sha256": "6f9b1895d4b6bceb46088bf956a64dab12d881bd9b537f89a42c28286afc1293",
+      "extracted": "Tulsidas Balaram",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        2,
+        5
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 1,
+      "method": "wrong_43",
+      "prompt_sha256": "863832421475fd0ad7b1d6aea650cc8bac31d843649d8cd5d8db4fa6839bdc54",
+      "extracted": "Tulsidas Balaram",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        4,
+        5
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 1,
+      "method": "random_43",
+      "prompt_sha256": "467af20410a080ef74a4d03cdd0ca2f5d5520bd49c352ab277605e0a2a97c240",
+      "extracted": "Tulsidas Balaram",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        6
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 1,
+      "method": "answer_reuse",
+      "prompt_sha256": "b842ec443172ceed2c69d35d146f115dae578242751a2fc8fd1fd59a3b1abec0",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 579,
+      "indices": [
+        4
+      ],
+      "token_residual_to_discovered": -15805,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 1,
+      "method": "query_only",
+      "prompt_sha256": "18c18c76079960b42c92c698e188c27224543dae64a9e9c5dec6361e99665ba2",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 0,
+      "indices": [],
+      "token_residual_to_discovered": -16384,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 1,
+      "method": "full",
+      "repeat": 0,
+      "prompt_sha256": "cdd3ff1ec3d128222241fdfa5bf21b902035dba59c6b20c706068806c95f8f03",
+      "extracted": "Tulsidas Balaram",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "all_memory_retained": true,
+      "writers_complete": true,
+      "content_tokens": 377131,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "token_residual_to_discovered": 360747,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 2,
+      "method": "discovered",
+      "prompt_sha256": "49d34aaa72e348b7913398836d7d5fbd4043c4b7b5761d2218a23fbf8aa1fb5c",
+      "extracted": "John Daniel delos Santos (also referred to as Daniel Delos Santos)",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 2,
+      "method": "topic_only",
+      "prompt_sha256": "49d34aaa72e348b7913398836d7d5fbd4043c4b7b5761d2218a23fbf8aa1fb5c",
+      "extracted": "John Daniel delos Santos (also referred to as Daniel Delos Santos)",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 2,
+      "method": "complete",
+      "prompt_sha256": "49d34aaa72e348b7913398836d7d5fbd4043c4b7b5761d2218a23fbf8aa1fb5c",
+      "extracted": "John Daniel delos Santos (also referred to as Daniel Delos Santos)",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 2,
+      "method": "bm25",
+      "prompt_sha256": "49d34aaa72e348b7913398836d7d5fbd4043c4b7b5761d2218a23fbf8aa1fb5c",
+      "extracted": "John Daniel delos Santos (also referred to as Daniel Delos Santos)",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 2,
+      "method": "recency",
+      "prompt_sha256": "48fe3d1633dc4a44f1561203f75c0d2bdfc5867e0199906c2d4fa161ef964e9a",
+      "extracted": "John Daniel delos Santos",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 15897,
+      "indices": [
+        3,
+        4
+      ],
+      "token_residual_to_discovered": -487,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 2,
+      "method": "bm25_matched",
+      "prompt_sha256": "49d34aaa72e348b7913398836d7d5fbd4043c4b7b5761d2218a23fbf8aa1fb5c",
+      "extracted": "John Daniel delos Santos (also referred to as Daniel Delos Santos)",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 2,
+      "method": "recency_matched",
+      "prompt_sha256": "48fe3d1633dc4a44f1561203f75c0d2bdfc5867e0199906c2d4fa161ef964e9a",
+      "extracted": "John Daniel delos Santos",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 15897,
+      "indices": [
+        3,
+        4
+      ],
+      "token_residual_to_discovered": -487,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 2,
+      "method": "wrong_17",
+      "prompt_sha256": "49d34aaa72e348b7913398836d7d5fbd4043c4b7b5761d2218a23fbf8aa1fb5c",
+      "extracted": "John Daniel delos Santos (also referred to as Daniel Delos Santos)",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 2,
+      "method": "random_17",
+      "prompt_sha256": "522fbad0808e585ca25f1342a8413c047b8807afd19388ca75713a35d302bd8d",
+      "extracted": "John Daniel delos Santos",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 2,
+      "method": "wrong_29",
+      "prompt_sha256": "49d34aaa72e348b7913398836d7d5fbd4043c4b7b5761d2218a23fbf8aa1fb5c",
+      "extracted": "John Daniel delos Santos (also referred to as Daniel Delos Santos)",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 2,
+      "method": "random_29",
+      "prompt_sha256": "2202dbba5a757548d9116f40a00520a32d078be1e764ead6458309256b2bb16d",
+      "extracted": "John Daniel delos Santos",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 2,
+      "method": "wrong_43",
+      "prompt_sha256": "49d34aaa72e348b7913398836d7d5fbd4043c4b7b5761d2218a23fbf8aa1fb5c",
+      "extracted": "John Daniel delos Santos (also referred to as Daniel Delos Santos)",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 2,
+      "method": "random_43",
+      "prompt_sha256": "522fbad0808e585ca25f1342a8413c047b8807afd19388ca75713a35d302bd8d",
+      "extracted": "John Daniel delos Santos",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 2,
+      "method": "answer_reuse",
+      "prompt_sha256": "789f6a0a7617cd435c40782f8d7145ef2009a4936518e84b6de7da35147a896f",
+      "extracted": "John Daniel delos Santos",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 403,
+      "indices": [
+        0
+      ],
+      "token_residual_to_discovered": -15981,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 2,
+      "method": "query_only",
+      "prompt_sha256": "322a88af6a7b1f81d6d8aa746afdab171d4c6c400580e0f10c0c31f36d326eba",
+      "extracted": "Ethan Lybrand",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 0,
+      "indices": [],
+      "token_residual_to_discovered": -16384,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 2,
+      "method": "full",
+      "repeat": 0,
+      "prompt_sha256": "f76703b3b0720d3c5855f8b74a13b5a176f7a055a32a061d86c0d40678bcfa60",
+      "extracted": "John Daniel delos Santos",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "all_memory_retained": true,
+      "writers_complete": true,
+      "content_tokens": 131893,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "token_residual_to_discovered": 115509,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 3,
+      "method": "discovered",
+      "prompt_sha256": "c837b76aed5c7a0de95a7f772fbfe5f173d024d959fcce7de7d01172b8f2be65",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        1
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 3,
+      "method": "topic_only",
+      "prompt_sha256": "c837b76aed5c7a0de95a7f772fbfe5f173d024d959fcce7de7d01172b8f2be65",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        1
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 3,
+      "method": "complete",
+      "prompt_sha256": "582f59591b372bd453b132abcbe5adbff2d80980aed2500ac5d8fc4316c2879c",
+      "extracted": "Manuelita",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        2,
+        6
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 3,
+      "method": "bm25",
+      "prompt_sha256": "582f59591b372bd453b132abcbe5adbff2d80980aed2500ac5d8fc4316c2879c",
+      "extracted": "Manuelita",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        2,
+        6
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 3,
+      "method": "recency",
+      "prompt_sha256": "fbb1c8117a4b8f8987b4a2a4e968ea361d7788fb16b11fd473db4df667f9e1aa",
+      "extracted": "Corazón, las alegrías de Pantriste (2000)",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        8,
+        9
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 3,
+      "method": "bm25_matched",
+      "prompt_sha256": "582f59591b372bd453b132abcbe5adbff2d80980aed2500ac5d8fc4316c2879c",
+      "extracted": "Manuelita",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        2,
+        6
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 3,
+      "method": "recency_matched",
+      "prompt_sha256": "fbb1c8117a4b8f8987b4a2a4e968ea361d7788fb16b11fd473db4df667f9e1aa",
+      "extracted": "Corazón, las alegrías de Pantriste (2000)",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        8,
+        9
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 3,
+      "method": "wrong_17",
+      "prompt_sha256": "c837b76aed5c7a0de95a7f772fbfe5f173d024d959fcce7de7d01172b8f2be65",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        1
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 3,
+      "method": "random_17",
+      "prompt_sha256": "d66a75e6c29a0fd49b5d8fb811dfca2b95cbd3639360a571aacb56722308cfbf",
+      "extracted": "Manuelita",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 3,
+      "method": "wrong_29",
+      "prompt_sha256": "c837b76aed5c7a0de95a7f772fbfe5f173d024d959fcce7de7d01172b8f2be65",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        1
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 3,
+      "method": "random_29",
+      "prompt_sha256": "0bab2348beff1e095c6a3eb6d22b2b32fbb96f37adca1dbd54abfb0161ae674e",
+      "extracted": "Manuelita",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        2,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 3,
+      "method": "wrong_43",
+      "prompt_sha256": "c837b76aed5c7a0de95a7f772fbfe5f173d024d959fcce7de7d01172b8f2be65",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        1
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 3,
+      "method": "random_43",
+      "prompt_sha256": "b4242b8f3c15eafa8c09eec32ab4f8f7f0dbc5f3615eda9810975f3d340506b4",
+      "extracted": "Manuelita",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 13193,
+      "indices": [
+        0,
+        5
+      ],
+      "token_residual_to_discovered": -3191,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 3,
+      "method": "answer_reuse",
+      "prompt_sha256": "65e882d9521e93f98c11b21f9341ca07e0a030981f9498de3a9b5393e19bfdfc",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 445,
+      "indices": [
+        2
+      ],
+      "token_residual_to_discovered": -15939,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 3,
+      "method": "query_only",
+      "prompt_sha256": "abf3f834aa3aef3e368e17a5509bba8d587e51d219e15cf0b52e339ef7b7aaa8",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 0,
+      "indices": [],
+      "token_residual_to_discovered": -16384,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 3,
+      "method": "full",
+      "repeat": 0,
+      "prompt_sha256": "5233097c5dcc09fa729eb3b32e7fcb09e858fdff4e8c2ff64bd6596882db9ddb",
+      "extracted": "Corazón, las alegrías de Pantriste (Pantriste)",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "all_memory_retained": true,
+      "writers_complete": true,
+      "content_tokens": 498480,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "token_residual_to_discovered": 482096,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 4,
+      "method": "discovered",
+      "prompt_sha256": "449aa70e4ed16f5d5fd0e18240929703212338b0321a6921d10c013eebe512ce",
+      "extracted": "Naveen Bawa",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 4,
+      "method": "topic_only",
+      "prompt_sha256": "449aa70e4ed16f5d5fd0e18240929703212338b0321a6921d10c013eebe512ce",
+      "extracted": "Naveen Bawa",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 4,
+      "method": "complete",
+      "prompt_sha256": "449aa70e4ed16f5d5fd0e18240929703212338b0321a6921d10c013eebe512ce",
+      "extracted": "Naveen Bawa",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 4,
+      "method": "bm25",
+      "prompt_sha256": "449aa70e4ed16f5d5fd0e18240929703212338b0321a6921d10c013eebe512ce",
+      "extracted": "Naveen Bawa",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 4,
+      "method": "recency",
+      "prompt_sha256": "db8e4060de64543c08f3bd350446318fc7fb7f39c47be205bcb0a08fea43f69e",
+      "extracted": "Naveen Bawa",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        2,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 4,
+      "method": "bm25_matched",
+      "prompt_sha256": "449aa70e4ed16f5d5fd0e18240929703212338b0321a6921d10c013eebe512ce",
+      "extracted": "Naveen Bawa",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 4,
+      "method": "recency_matched",
+      "prompt_sha256": "db8e4060de64543c08f3bd350446318fc7fb7f39c47be205bcb0a08fea43f69e",
+      "extracted": "Naveen Bawa",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        2,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 4,
+      "method": "wrong_17",
+      "prompt_sha256": "449aa70e4ed16f5d5fd0e18240929703212338b0321a6921d10c013eebe512ce",
+      "extracted": "Naveen Bawa",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 4,
+      "method": "random_17",
+      "prompt_sha256": "bf5d8dce759c97b02cbccbc33745a281363d371de093b47d7e24aeb374db7624",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        1
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 4,
+      "method": "wrong_29",
+      "prompt_sha256": "449aa70e4ed16f5d5fd0e18240929703212338b0321a6921d10c013eebe512ce",
+      "extracted": "Naveen Bawa",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 4,
+      "method": "random_29",
+      "prompt_sha256": "bf5d8dce759c97b02cbccbc33745a281363d371de093b47d7e24aeb374db7624",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        1
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 4,
+      "method": "wrong_43",
+      "prompt_sha256": "449aa70e4ed16f5d5fd0e18240929703212338b0321a6921d10c013eebe512ce",
+      "extracted": "Naveen Bawa",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 4,
+      "method": "random_43",
+      "prompt_sha256": "0eb000af24e905fd2ce36a36870fe817840c5cda46528fd34be6ded3d8954b58",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 4,
+      "method": "answer_reuse",
+      "prompt_sha256": "30c6f214d7243f557338c4402cd770de66469e97b75261a255fae9f4716210e0",
+      "extracted": "Naveen Bawa",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 208,
+      "indices": [
+        3
+      ],
+      "token_residual_to_discovered": -16176,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 4,
+      "method": "query_only",
+      "prompt_sha256": "5f1f7a0b9da27e8ca48ed65516895680c48df78b63737ae2c971645756c7673e",
+      "extracted": "Vinod Khanna",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 0,
+      "indices": [],
+      "token_residual_to_discovered": -16384,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 4,
+      "method": "full",
+      "repeat": 0,
+      "prompt_sha256": "9b8ae8d04a03a508b1e8fcdb04cfc0b41844932bda91482c7041cc13ad8df4f8",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "all_memory_retained": true,
+      "writers_complete": true,
+      "content_tokens": 299461,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "token_residual_to_discovered": 283077,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 5,
+      "method": "discovered",
+      "prompt_sha256": "5ac609ac820731de42bb8d6355d1d2f5103af20a7367ae7737664e1d99585461",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 5,
+      "method": "topic_only",
+      "prompt_sha256": "5ac609ac820731de42bb8d6355d1d2f5103af20a7367ae7737664e1d99585461",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 5,
+      "method": "complete",
+      "prompt_sha256": "5ac609ac820731de42bb8d6355d1d2f5103af20a7367ae7737664e1d99585461",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 5,
+      "method": "bm25",
+      "prompt_sha256": "5ac609ac820731de42bb8d6355d1d2f5103af20a7367ae7737664e1d99585461",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 5,
+      "method": "recency",
+      "prompt_sha256": "6deea0ecaa14ce5d61bff9a2a2bcf3745cdfbe2acd0ceabb528b533aa0a1b9c8",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        6,
+        7
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 5,
+      "method": "bm25_matched",
+      "prompt_sha256": "5ac609ac820731de42bb8d6355d1d2f5103af20a7367ae7737664e1d99585461",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 5,
+      "method": "recency_matched",
+      "prompt_sha256": "6deea0ecaa14ce5d61bff9a2a2bcf3745cdfbe2acd0ceabb528b533aa0a1b9c8",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        6,
+        7
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 5,
+      "method": "wrong_17",
+      "prompt_sha256": "5ac609ac820731de42bb8d6355d1d2f5103af20a7367ae7737664e1d99585461",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 5,
+      "method": "random_17",
+      "prompt_sha256": "cd7bb9ff4bc452b7fd0981e6393c2c9b62fcf2919dee3c5992fa1f079bf3da79",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 5,
+      "method": "wrong_29",
+      "prompt_sha256": "5ac609ac820731de42bb8d6355d1d2f5103af20a7367ae7737664e1d99585461",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 5,
+      "method": "random_29",
+      "prompt_sha256": "cd7bb9ff4bc452b7fd0981e6393c2c9b62fcf2919dee3c5992fa1f079bf3da79",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 5,
+      "method": "wrong_43",
+      "prompt_sha256": "5ac609ac820731de42bb8d6355d1d2f5103af20a7367ae7737664e1d99585461",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 5,
+      "method": "random_43",
+      "prompt_sha256": "a5f6ebd1337051844ec11e76adcad3676ea5fd35e48a426205d41f3d283fa68b",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 5,
+      "method": "answer_reuse",
+      "prompt_sha256": "a22612b0874b68aa6527b1a4cbb07452feb72a198c9c802c623e212ee60d321c",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 385,
+      "indices": [
+        0
+      ],
+      "token_residual_to_discovered": -15999,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 5,
+      "method": "query_only",
+      "prompt_sha256": "38190125d5576a3473f62404298c1727ebe77cf977d8e0723b09f3dc5c60f61c",
+      "extracted": "Sardar Khan",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 0,
+      "indices": [],
+      "token_residual_to_discovered": -16384,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 5,
+      "method": "full",
+      "repeat": 0,
+      "prompt_sha256": "b31889389c7df17a2d920e864b941197ce70b196901fba9460bed34994a74ee8",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "all_memory_retained": true,
+      "writers_complete": true,
+      "content_tokens": 453878,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "token_residual_to_discovered": 437494,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 6,
+      "method": "discovered",
+      "prompt_sha256": "70fdb7b35dbe3cf6d4ebb16e903ab2937c3630fb0d7e21269e4424d08482f3d5",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 6,
+      "method": "topic_only",
+      "prompt_sha256": "70fdb7b35dbe3cf6d4ebb16e903ab2937c3630fb0d7e21269e4424d08482f3d5",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 6,
+      "method": "complete",
+      "prompt_sha256": "70fdb7b35dbe3cf6d4ebb16e903ab2937c3630fb0d7e21269e4424d08482f3d5",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 6,
+      "method": "bm25",
+      "prompt_sha256": "70fdb7b35dbe3cf6d4ebb16e903ab2937c3630fb0d7e21269e4424d08482f3d5",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 6,
+      "method": "recency",
+      "prompt_sha256": "51f168f130d69aefe2b58dd686f8c03f91c821d8ba5ec5a2d9e127429944e6ab",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 8665,
+      "indices": [
+        2,
+        3
+      ],
+      "token_residual_to_discovered": -7719,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 6,
+      "method": "bm25_matched",
+      "prompt_sha256": "70fdb7b35dbe3cf6d4ebb16e903ab2937c3630fb0d7e21269e4424d08482f3d5",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 6,
+      "method": "recency_matched",
+      "prompt_sha256": "51f168f130d69aefe2b58dd686f8c03f91c821d8ba5ec5a2d9e127429944e6ab",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 8665,
+      "indices": [
+        2,
+        3
+      ],
+      "token_residual_to_discovered": -7719,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 6,
+      "method": "wrong_17",
+      "prompt_sha256": "70fdb7b35dbe3cf6d4ebb16e903ab2937c3630fb0d7e21269e4424d08482f3d5",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 6,
+      "method": "random_17",
+      "prompt_sha256": "1986efde226cb1d3be114fcd58c956cac97ef0a8d3982ff6f0c65f98f58d5809",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        1
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 6,
+      "method": "wrong_29",
+      "prompt_sha256": "70fdb7b35dbe3cf6d4ebb16e903ab2937c3630fb0d7e21269e4424d08482f3d5",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 6,
+      "method": "random_29",
+      "prompt_sha256": "1986efde226cb1d3be114fcd58c956cac97ef0a8d3982ff6f0c65f98f58d5809",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        1
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 6,
+      "method": "wrong_43",
+      "prompt_sha256": "70fdb7b35dbe3cf6d4ebb16e903ab2937c3630fb0d7e21269e4424d08482f3d5",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 6,
+      "method": "random_43",
+      "prompt_sha256": "6ab573c1fe9d7485a6020efee781f31ea64cdc6cf106405fe8cba95861a557e6",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 6,
+      "method": "answer_reuse",
+      "prompt_sha256": "d427d995378f986fb1e997548cfc735772c5abae14fe86be8bba3a19f15d3f3b",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 522,
+      "indices": [
+        2
+      ],
+      "token_residual_to_discovered": -15862,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 6,
+      "method": "query_only",
+      "prompt_sha256": "ee74c79c717ccd20a0c1b1f14d3b56c9e3edbd1813b0223418a3fd0dff2232f3",
+      "extracted": "New York University",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 0,
+      "indices": [],
+      "token_residual_to_discovered": -16384,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 6,
+      "method": "full",
+      "repeat": 0,
+      "prompt_sha256": "7c9709a9fcdb39d86ea0c36a630687ae51cedf901b3b7ead68885ec082e24ac8",
+      "extracted": "Amherst College",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "all_memory_retained": true,
+      "writers_complete": true,
+      "content_tokens": 195201,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "token_residual_to_discovered": 178817,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 7,
+      "method": "discovered",
+      "prompt_sha256": "74f33be25974f75c50174f79dd050361205f244b27e75329bc5c9967f867b70f",
+      "extracted": "Cory Monteith",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 7,
+      "method": "topic_only",
+      "prompt_sha256": "74f33be25974f75c50174f79dd050361205f244b27e75329bc5c9967f867b70f",
+      "extracted": "Cory Monteith",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 7,
+      "method": "complete",
+      "prompt_sha256": "74f33be25974f75c50174f79dd050361205f244b27e75329bc5c9967f867b70f",
+      "extracted": "Cory Monteith",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 7,
+      "method": "bm25",
+      "prompt_sha256": "74f33be25974f75c50174f79dd050361205f244b27e75329bc5c9967f867b70f",
+      "extracted": "Cory Monteith",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 7,
+      "method": "recency",
+      "prompt_sha256": "b013bc36568aab198919fb443a108555190edc04a37d3957f92930f075b61868",
+      "extracted": "Cory Monteith",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        3,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 7,
+      "method": "bm25_matched",
+      "prompt_sha256": "74f33be25974f75c50174f79dd050361205f244b27e75329bc5c9967f867b70f",
+      "extracted": "Cory Monteith",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 7,
+      "method": "recency_matched",
+      "prompt_sha256": "b013bc36568aab198919fb443a108555190edc04a37d3957f92930f075b61868",
+      "extracted": "Cory Monteith",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        3,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 7,
+      "method": "wrong_17",
+      "prompt_sha256": "74f33be25974f75c50174f79dd050361205f244b27e75329bc5c9967f867b70f",
+      "extracted": "Cory Monteith",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 7,
+      "method": "random_17",
+      "prompt_sha256": "e9e1b14f14fc7005044d6e62d605ef68a57079c87047f58e924d4753c5d46eb6",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 7,
+      "method": "wrong_29",
+      "prompt_sha256": "74f33be25974f75c50174f79dd050361205f244b27e75329bc5c9967f867b70f",
+      "extracted": "Cory Monteith",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 7,
+      "method": "random_29",
+      "prompt_sha256": "50fd305ecba91db325d8ac61a9f41cb378d16b8ff0f1ca62ab5af17f98407795",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 7,
+      "method": "wrong_43",
+      "prompt_sha256": "74f33be25974f75c50174f79dd050361205f244b27e75329bc5c9967f867b70f",
+      "extracted": "Cory Monteith",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 7,
+      "method": "random_43",
+      "prompt_sha256": "e9e1b14f14fc7005044d6e62d605ef68a57079c87047f58e924d4753c5d46eb6",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 7,
+      "method": "answer_reuse",
+      "prompt_sha256": "942f24a4ed42cfb90883ee765dcd9e8c2b38af717a832ada8ab51ec3922d9d47",
+      "extracted": "Cory Monteith",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 278,
+      "indices": [
+        4
+      ],
+      "token_residual_to_discovered": -16106,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 7,
+      "method": "query_only",
+      "prompt_sha256": "a2aba32314ec0dcd54bb3c7c4bf77c949a144737d5402eb9950038958b172b6c",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 0,
+      "indices": [],
+      "token_residual_to_discovered": -16384,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 7,
+      "method": "full",
+      "repeat": 0,
+      "prompt_sha256": "7e2340e1cae65cbd5f5a419f738c8d136626eb86e2531bd9d5af76583529a59f",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "all_memory_retained": true,
+      "writers_complete": true,
+      "content_tokens": 189286,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "token_residual_to_discovered": 172902,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 8,
+      "method": "discovered",
+      "prompt_sha256": "31a27e416623eb51ad2fbfa3d620fd67f223ad99fb431123d707d3e57dc5b7eb",
+      "extracted": "“Namaste” by Thomas Centolella, from *Almost Human*",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 8,
+      "method": "topic_only",
+      "prompt_sha256": "31a27e416623eb51ad2fbfa3d620fd67f223ad99fb431123d707d3e57dc5b7eb",
+      "extracted": "“Namaste” by Thomas Centolella, from *Almost Human*",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 8,
+      "method": "complete",
+      "prompt_sha256": "31a27e416623eb51ad2fbfa3d620fd67f223ad99fb431123d707d3e57dc5b7eb",
+      "extracted": "“Namaste” by Thomas Centolella, from *Almost Human*",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 8,
+      "method": "bm25",
+      "prompt_sha256": "31a27e416623eb51ad2fbfa3d620fd67f223ad99fb431123d707d3e57dc5b7eb",
+      "extracted": "“Namaste” by Thomas Centolella, from *Almost Human*",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 8,
+      "method": "recency",
+      "prompt_sha256": "2be2a5325bcc4cec80ca76fedee09d14bedf0bd0b6f8008dfccabed835b42ecb",
+      "extracted": "“Namaste” from *Almost Human* by Thomas Centolella",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16277,
+      "indices": [
+        3,
+        4
+      ],
+      "token_residual_to_discovered": -107,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 8,
+      "method": "bm25_matched",
+      "prompt_sha256": "31a27e416623eb51ad2fbfa3d620fd67f223ad99fb431123d707d3e57dc5b7eb",
+      "extracted": "“Namaste” by Thomas Centolella, from *Almost Human*",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 8,
+      "method": "recency_matched",
+      "prompt_sha256": "2be2a5325bcc4cec80ca76fedee09d14bedf0bd0b6f8008dfccabed835b42ecb",
+      "extracted": "“Namaste” from *Almost Human* by Thomas Centolella",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16277,
+      "indices": [
+        3,
+        4
+      ],
+      "token_residual_to_discovered": -107,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 8,
+      "method": "wrong_17",
+      "prompt_sha256": "31a27e416623eb51ad2fbfa3d620fd67f223ad99fb431123d707d3e57dc5b7eb",
+      "extracted": "“Namaste” by Thomas Centolella, from *Almost Human*",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 8,
+      "method": "random_17",
+      "prompt_sha256": "c18c35e7d70cf8cb8673aea57437a61387e30132ea146f08d6a94f67ff22cff3",
+      "extracted": "“Namaste” by Thomas Centolella, from the book *Almost Human*",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 8,
+      "method": "wrong_29",
+      "prompt_sha256": "31a27e416623eb51ad2fbfa3d620fd67f223ad99fb431123d707d3e57dc5b7eb",
+      "extracted": "“Namaste” by Thomas Centolella, from *Almost Human*",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 8,
+      "method": "random_29",
+      "prompt_sha256": "31a27e416623eb51ad2fbfa3d620fd67f223ad99fb431123d707d3e57dc5b7eb",
+      "extracted": "“Namaste” by Thomas Centolella, from *Almost Human*",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 8,
+      "method": "wrong_43",
+      "prompt_sha256": "31a27e416623eb51ad2fbfa3d620fd67f223ad99fb431123d707d3e57dc5b7eb",
+      "extracted": "“Namaste” by Thomas Centolella, from *Almost Human*",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        1,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 8,
+      "method": "random_43",
+      "prompt_sha256": "c18c35e7d70cf8cb8673aea57437a61387e30132ea146f08d6a94f67ff22cff3",
+      "extracted": "“Namaste” by Thomas Centolella, from the book *Almost Human*",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        2
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 8,
+      "method": "answer_reuse",
+      "prompt_sha256": "1e9f1dc9e351913adb2239a00b25dcbcf00ddb771917f1af29a5855822e3fea6",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 215,
+      "indices": [
+        1
+      ],
+      "token_residual_to_discovered": -16169,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 8,
+      "method": "query_only",
+      "prompt_sha256": "c85a1fa60b239e019688c46becfbdfc1dff2693d3ef1e47d0301d977ee959e3d",
+      "extracted": "“Saudade” from *The Carrying* by Ada Limón",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 0,
+      "indices": [],
+      "token_residual_to_discovered": -16384,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 8,
+      "method": "full",
+      "repeat": 0,
+      "prompt_sha256": "0df5b15a0fe415f3fd949c08067b2e362794863351c572cc3e9199946edd7071",
+      "extracted": "The poem is “Namaste” and the book is *Almost Human* by Thomas Centolella.",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "all_memory_retained": true,
+      "writers_complete": true,
+      "content_tokens": 220056,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "token_residual_to_discovered": 203672,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 9,
+      "method": "discovered",
+      "prompt_sha256": "6d22a6378d4f49cdbda94a66421b9fb8bdda680cf768c1fec1ffb6058c256460",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 14180,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 9,
+      "method": "topic_only",
+      "prompt_sha256": "6d22a6378d4f49cdbda94a66421b9fb8bdda680cf768c1fec1ffb6058c256460",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 14180,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 9,
+      "method": "complete",
+      "prompt_sha256": "d22353e8c42c7d374835910cb8a2466236524e30b3b7ea7d71a66a4419edf487",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        4
+      ],
+      "token_residual_to_discovered": 2204,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 9,
+      "method": "bm25",
+      "prompt_sha256": "d22353e8c42c7d374835910cb8a2466236524e30b3b7ea7d71a66a4419edf487",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16384,
+      "indices": [
+        0,
+        4
+      ],
+      "token_residual_to_discovered": 2204,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 9,
+      "method": "recency",
+      "prompt_sha256": "45918a1db6707a3ce7025d11bbbb90c4a6ca4414bd7f55b78fda93d898a81774",
+      "extracted": "Joost Wolfswinkel (as Jan Jansz Weltevree / Pak Yŏn)",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 16074,
+      "indices": [
+        5,
+        6
+      ],
+      "token_residual_to_discovered": 1894,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 9,
+      "method": "bm25_matched",
+      "prompt_sha256": "9d623b61c9da38c375b488a9800622ee0c71e63e3f5961a32ef78104e80c84a5",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 14180,
+      "indices": [
+        0,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 9,
+      "method": "recency_matched",
+      "prompt_sha256": "efb532e9a5c949b26666ca471a5d1d944db537a4709eb7dc81cc74a87591387a",
+      "extracted": "Joost Wolfswinkel",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 14180,
+      "indices": [
+        5,
+        6
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 9,
+      "method": "wrong_17",
+      "prompt_sha256": "6d22a6378d4f49cdbda94a66421b9fb8bdda680cf768c1fec1ffb6058c256460",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 14180,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 9,
+      "method": "random_17",
+      "prompt_sha256": "966af8c47527e3ed74f1a876b52916ee814830cbb3a7ac5c75475225a63ee0af",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 14180,
+      "indices": [
+        0,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 9,
+      "method": "wrong_29",
+      "prompt_sha256": "6d22a6378d4f49cdbda94a66421b9fb8bdda680cf768c1fec1ffb6058c256460",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 14180,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 9,
+      "method": "random_29",
+      "prompt_sha256": "6d22a6378d4f49cdbda94a66421b9fb8bdda680cf768c1fec1ffb6058c256460",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 14180,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 9,
+      "method": "wrong_43",
+      "prompt_sha256": "6d22a6378d4f49cdbda94a66421b9fb8bdda680cf768c1fec1ffb6058c256460",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "deepseek-v4-flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 14180,
+      "indices": [
+        1,
+        3
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": true
+    },
+    {
+      "case": 9,
+      "method": "random_43",
+      "prompt_sha256": "9d623b61c9da38c375b488a9800622ee0c71e63e3f5961a32ef78104e80c84a5",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 14180,
+      "indices": [
+        0,
+        4
+      ],
+      "token_residual_to_discovered": 0,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 9,
+      "method": "answer_reuse",
+      "prompt_sha256": "d4f83b15ad197656e4117288c97b18f38347cb5f401fe7bdab966d823d6905d3",
+      "extracted": "UNKNOWN",
+      "correct": false,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 193,
+      "indices": [
+        0
+      ],
+      "token_residual_to_discovered": -13987,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 9,
+      "method": "query_only",
+      "prompt_sha256": "18fa5137c447df4e4c8fe29f588b0ab63a5c83e780e04816dde7d67ab14a5143",
+      "extracted": null,
+      "correct": false,
+      "finish_reason": "length",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "content_tokens": 0,
+      "indices": [],
+      "token_residual_to_discovered": -14180,
+      "identical_to_discovered": false
+    },
+    {
+      "case": 9,
+      "method": "full",
+      "repeat": 0,
+      "prompt_sha256": "d1212fdc0615e24186e3af52106fedb9cc17aa6ad658d009f9fc2898da61eb3c",
+      "extracted": "Joost Wolfswinkel",
+      "correct": true,
+      "finish_reason": "stop",
+      "returned_model": "DeepSeek-V4-Flash-0731",
+      "reasoning_observed": true,
+      "all_memory_retained": true,
+      "writers_complete": true,
+      "content_tokens": 329583,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "token_residual_to_discovered": 315403,
+      "identical_to_discovered": false
+    }
+  ],
+  "distinct_inputs": 74,
+  "method_rows": 160,
+  "reused_full_inputs": 10
+}

@@ -1,0 +1,288 @@
+[
+  {
+    "evolution_count": 0,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    855,\n    975\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F95\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 975\n  },\n  \"query\": \"Flight F95 (Bob, day 1) now arrives at 16:15.\",\n  \"rev\": 1,\n  \"rid\": \"h0\",\n  \"seg\": 0\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    895,\n    1035\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T37\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1035\n  },\n  \"rev\": 1,\n  \"rid\": \"h1\",\n  \"seg\": 0\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    945,\n    1085\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S81\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1085\n  },\n  \"rev\": 1,\n  \"rid\": \"h2\",\n  \"seg\": 0\n }\n]",
+      "context": "A structured log of reservation modifications involving flight F46 and related transactions, showing time shifts for arrival, pickup, check-in, and start events with associated fees, likely intended for system auditing or itinerary management.",
+      "evolution_history": [],
+      "id": "ba962745-7220-4cbd-a00b-a39d3f4e295d",
+      "importance_score": 1.0,
+      "keywords": [
+        "shift_reservation",
+        "arrival",
+        "pickup",
+        "checkin",
+        "fee",
+        "delta",
+        "payload",
+        "transaction",
+        "reservation",
+        "timestamp"
+      ],
+      "last_accessed": "202609220047",
+      "links": [],
+      "retrieval_count": 0,
+      "tags": [
+        "reservation system",
+        "transaction log",
+        "travel itinerary",
+        "shift_reservation",
+        "event delta",
+        "fee",
+        "flight intervention",
+        "rebook_bundle",
+        "revision update"
+      ],
+      "timestamp": "202609010000"
+    },
+    "segment": 0,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 1,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    1185,\n    1365\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F17\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 1365\n  },\n  \"query\": \"Flight F17 (Bob, day 2) now arrives at 22:45.\",\n  \"rev\": 1,\n  \"rid\": \"h3\",\n  \"seg\": 1\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    1240,\n    1425\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T22\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1425\n  },\n  \"rev\": 1,\n  \"rid\": \"h4\",\n  \"seg\": 1\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    1270,\n    1455\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S53\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1455\n  },\n  \"rev\": 1,\n  \"rid\": \"h5\",\n  \"seg\": 1\n },\n {\n  \"delta\": {\n   \"start\": [\n    1380,\n    1500\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"D91\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"start\": 1500\n  },\n  \"rev\": 1,\n  \"rid\": \"h6\",\n  \"seg\": 1\n }\n]",
+      "context": "This log records a sequence of reservation time shifts for a flight itinerary, showing an intervention on Flight F17's arrival followed by related transaction updates for pickup, check-in, and a start time, each with associated fees.",
+      "evolution_history": [],
+      "id": "dc9df322-5433-45da-89c4-63f22692b258",
+      "importance_score": 1.0,
+      "keywords": [
+        "shift_reservation",
+        "arrival",
+        "pickup",
+        "checkin",
+        "start",
+        "fee",
+        "Flight F17",
+        "transaction",
+        "intervention",
+        "reservation"
+      ],
+      "last_accessed": "202609220047",
+      "links": [
+        0
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "reservation system",
+        "transaction log",
+        "travel itinerary",
+        "shift_reservation",
+        "event delta",
+        "fee",
+        "flight intervention"
+      ],
+      "timestamp": "202609010100"
+    },
+    "segment": 1,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 2,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    1080,\n    1200\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F46\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 1200\n  },\n  \"query\": \"Flight F46 (Mateo, day 1) now arrives at 20:00.\",\n  \"rev\": 1,\n  \"rid\": \"h7\",\n  \"seg\": 2\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    1155,\n    1260\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T78\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1260\n  },\n  \"rev\": 1,\n  \"rid\": \"h8\",\n  \"seg\": 2\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    1175,\n    1280\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S13\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1280\n  },\n  \"rev\": 1,\n  \"rid\": \"h9\",\n  \"seg\": 2\n },\n {\n  \"delta\": {\n   \"start\": [\n    1260,\n    1335\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"D16\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"start\": 1335\n  },\n  \"rev\": 1,\n  \"rid\": \"h10\",\n  \"seg\": 2\n },\n {\n  \"delta\": {\n   \"rebooked\": [\n    0,\n    1\n   ]\n  },\n  \"fee\": 30,\n  \"kind\": \"txn\",\n  \"object_id\": \"B82\",\n  \"op\": \"rebook_bundle\",\n  \"payload\": {},\n  \"rev\": 1,\n  \"rid\": \"h11\",\n  \"seg\": 2\n }\n]",
+      "context": "This log records reservation time shifts across a flight itinerary, including an intervention on flight arrival followed by related transaction updates for pickup, check-in, and start time, each with associated fees and delta values.",
+      "evolution_history": [],
+      "id": "f7649042-ab9a-4bf3-932a-8ce789f9f5a1",
+      "importance_score": 1.0,
+      "keywords": [
+        "shift_reservation",
+        "rebook_bundle",
+        "arrival",
+        "pickup",
+        "checkin",
+        "start",
+        "fee",
+        "reservation",
+        "flight",
+        "transaction"
+      ],
+      "last_accessed": "202609220047",
+      "links": [
+        1,
+        0
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "reservation system",
+        "transaction log",
+        "travel itinerary",
+        "shift_reservation",
+        "event delta",
+        "fee",
+        "flight intervention"
+      ],
+      "timestamp": "202609010200"
+    },
+    "segment": 2,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 3,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    1365,\n    1170\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F17\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 1170\n  },\n  \"query\": \"Flight F17 (Bob, day 2) now arrives at 19:30.\",\n  \"rev\": 2,\n  \"rid\": \"h12\",\n  \"seg\": 3\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    1425,\n    1230\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T22\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1230\n  },\n  \"rev\": 2,\n  \"rid\": \"h13\",\n  \"seg\": 3\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    1455,\n    1260\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S53\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1260\n  },\n  \"rev\": 2,\n  \"rid\": \"h14\",\n  \"seg\": 3\n }\n]",
+      "context": "This is a sequence of reservation system operations involving a flight arrival delay that triggers downstream shifts in pickup, check-in, and start times, along with a bundle rebooking and associated fees.",
+      "evolution_history": [],
+      "id": "9f6fe4dc-79c9-4c23-8523-7be6b0db297d",
+      "importance_score": 1.0,
+      "keywords": [
+        "shift_reservation",
+        "arrival",
+        "pickup",
+        "checkin",
+        "flight",
+        "reservation",
+        "fee",
+        "transaction"
+      ],
+      "last_accessed": "202609220047",
+      "links": [
+        1
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "reservation system",
+        "transaction log",
+        "travel itinerary",
+        "shift_reservation",
+        "event delta",
+        "fee",
+        "flight intervention",
+        "rebook_bundle",
+        "revision update"
+      ],
+      "timestamp": "202609010300"
+    },
+    "segment": 3,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 4,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    1200,\n    1305\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F46\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 1305\n  },\n  \"query\": \"Flight F46 (Mateo, day 1) now arrives at 21:45.\",\n  \"rev\": 2,\n  \"rid\": \"h15\",\n  \"seg\": 4\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    1260,\n    1365\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T78\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1365\n  },\n  \"rev\": 2,\n  \"rid\": \"h16\",\n  \"seg\": 4\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    1280,\n    1385\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S13\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1385\n  },\n  \"rev\": 2,\n  \"rid\": \"h17\",\n  \"seg\": 4\n },\n {\n  \"delta\": {\n   \"start\": [\n    1335,\n    1440\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"D16\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"start\": 1440\n  },\n  \"rev\": 2,\n  \"rid\": \"h18\",\n  \"seg\": 4\n },\n {\n  \"delta\": {\n   \"rebooked\": [\n    1,\n    2\n   ]\n  },\n  \"fee\": 30,\n  \"kind\": \"txn\",\n  \"object_id\": \"B82\",\n  \"op\": \"rebook_bundle\",\n  \"payload\": {},\n  \"rev\": 2,\n  \"rid\": \"h19\",\n  \"seg\": 4\n }\n]",
+      "context": "This content records a series of reservation schedule adjustments involving a flight, pickup, check-in, and start times, with associated fees and a rebook bundle, likely for system operators or analysts reviewing itinerary modifications.",
+      "evolution_history": [],
+      "id": "14924b7f-d1e3-4394-8d01-688d49f10b72",
+      "importance_score": 1.0,
+      "keywords": [
+        "shift_reservation",
+        "rebook_bundle",
+        "arrival",
+        "pickup",
+        "checkin",
+        "fee",
+        "delta",
+        "transaction"
+      ],
+      "last_accessed": "202609220047",
+      "links": [
+        2
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "reservation system",
+        "transaction log",
+        "travel itinerary",
+        "shift_reservation",
+        "event delta",
+        "fee",
+        "flight intervention",
+        "revision update",
+        "rebook_bundle"
+      ],
+      "timestamp": "202609010400"
+    },
+    "segment": 4,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 5,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    630,\n    810\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F33\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 810\n  },\n  \"query\": \"Flight F33 (Omar, day 1) now arrives at 13:30.\",\n  \"rev\": 1,\n  \"rid\": \"h20\",\n  \"seg\": 5\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    695,\n    845\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T40\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 845\n  },\n  \"rev\": 1,\n  \"rid\": \"h21\",\n  \"seg\": 5\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    715,\n    865\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S91\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 865\n  },\n  \"rev\": 1,\n  \"rid\": \"h22\",\n  \"seg\": 5\n }\n]",
+      "context": "The content records a sequence of schedule changes for a flight reservation system, where a flight arrival delay triggers adjusted pickup and check-in times along with associated transaction fees, likely for system logs or reservation management analysis.",
+      "evolution_history": [],
+      "id": "2e3f091b-364b-4cf6-abba-ea4f85cf5bc5",
+      "importance_score": 1.0,
+      "keywords": [
+        "shift_reservation",
+        "arrival",
+        "pickup",
+        "checkin",
+        "fee",
+        "reservation",
+        "flight"
+      ],
+      "last_accessed": "202609220047",
+      "links": [
+        0,
+        1,
+        3
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "reservation system",
+        "transaction log",
+        "travel itinerary",
+        "shift_reservation",
+        "event delta",
+        "fee",
+        "flight intervention",
+        "revision update"
+      ],
+      "timestamp": "202609010500"
+    },
+    "segment": 5,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 6,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    810,\n    1245\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F33\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 1245\n  },\n  \"query\": \"Flight F33 (Omar, day 1) now arrives at 20:45.\",\n  \"rev\": 2,\n  \"rid\": \"h23\",\n  \"seg\": 6\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    845,\n    1280\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T40\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1280\n  },\n  \"rev\": 2,\n  \"rid\": \"h24\",\n  \"seg\": 6\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    865,\n    1300\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S91\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1300\n  },\n  \"rev\": 2,\n  \"rid\": \"h25\",\n  \"seg\": 6\n },\n {\n  \"delta\": {\n   \"start\": [\n    1335,\n    1350\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"D29\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"start\": 1350\n  },\n  \"rev\": 1,\n  \"rid\": \"h26\",\n  \"seg\": 6\n }\n]",
+      "context": "This content records a sequence of reservation schedule changes (arrival, pickup, check-in, and start times) for a flight-related itinerary, with associated fees and revision metadata, intended for system or operational tracking.",
+      "evolution_history": [],
+      "id": "72bee94e-c151-4ad0-8d8c-b873c672b7f4",
+      "importance_score": 1.0,
+      "keywords": [
+        "shift_reservation",
+        "arrival",
+        "pickup",
+        "checkin",
+        "fee",
+        "delta",
+        "reservation",
+        "flight",
+        "transaction",
+        "intervention"
+      ],
+      "last_accessed": "202609220048",
+      "links": [
+        4,
+        5,
+        1,
+        3,
+        2
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "reservation system",
+        "transaction log",
+        "travel itinerary",
+        "shift_reservation",
+        "event delta",
+        "fee",
+        "flight intervention",
+        "revision update"
+      ],
+      "timestamp": "202609010600"
+    },
+    "segment": 6,
+    "stage": "add_note"
+  }
+]

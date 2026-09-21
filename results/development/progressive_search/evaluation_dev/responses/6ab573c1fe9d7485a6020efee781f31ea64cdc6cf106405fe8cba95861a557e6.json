@@ -1,0 +1,10 @@
+{
+  "case": 6,
+  "prompt_sha256": "6ab573c1fe9d7485a6020efee781f31ea64cdc6cf106405fe8cba95861a557e6",
+  "extracted": "Amherst College",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The described man is Josh Harmon. An Amherst College profile identifies him as a French major who switched majors many times and wrote a thesis on the French military tambour/drum [73276]. A Business Insider account confirms he graduated from Amherst College in 2018 and worked as a writer at NBC [61461]. Amherst College was founded in 1821, within the 1800–1850 window [24389].  \nExact Answer: Amherst College  \nConfidence: 92%"
+}

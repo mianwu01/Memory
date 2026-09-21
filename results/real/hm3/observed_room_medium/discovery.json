@@ -1,0 +1,1625 @@
+{
+  "actual_time_lag": 1,
+  "candidates": [
+    "bathroom|basement|horizontal",
+    "closet|foyer|vertical",
+    "closet|patio|horizontal",
+    "deck|patio|vertical",
+    "dining|family|vertical",
+    "foyer|hallway|vertical",
+    "garage|basement|vertical",
+    "garage|guest|horizontal",
+    "guest|master|vertical",
+    "hallway|porch|vertical",
+    "living|den|horizontal",
+    "master|laundry|vertical",
+    "david",
+    "john",
+    "lisa",
+    "mary",
+    "michael",
+    "sarah"
+  ],
+  "context_counts": {
+    "david/attic": 40,
+    "david/balcony": 4,
+    "david/basement": 18,
+    "david/bathroom": 3675,
+    "david/bedroom": 21,
+    "david/closet": 5,
+    "david/deck": 2,
+    "david/den": 5,
+    "david/dining": 5,
+    "david/family": 17,
+    "david/foyer": 5,
+    "david/garage": 15,
+    "david/guest": 26,
+    "david/hallway": 3,
+    "david/kitchen": 7,
+    "david/laundry": 19,
+    "david/library": 7,
+    "david/living": 4,
+    "david/master": 14,
+    "david/office": 3693,
+    "david/pantry": 3,
+    "david/patio": 3,
+    "david/porch": 11,
+    "david/study": 8,
+    "david/sunroom": 6,
+    "john/attic": 13,
+    "john/balcony": 3,
+    "john/basement": 15,
+    "john/bathroom": 27,
+    "john/bedroom": 36,
+    "john/closet": 3,
+    "john/deck": 3,
+    "john/den": 11,
+    "john/dining": 9,
+    "john/family": 9,
+    "john/foyer": 5,
+    "john/garage": 6,
+    "john/guest": 8,
+    "john/hallway": 5,
+    "john/kitchen": 3707,
+    "john/laundry": 6,
+    "john/library": 2,
+    "john/living": 3684,
+    "john/master": 10,
+    "john/office": 17,
+    "john/pantry": 5,
+    "john/patio": 4,
+    "john/porch": 4,
+    "john/study": 20,
+    "john/sunroom": 4,
+    "lisa/attic": 9,
+    "lisa/balcony": 992,
+    "lisa/basement": 3,
+    "lisa/bathroom": 2,
+    "lisa/bedroom": 239,
+    "lisa/closet": 306,
+    "lisa/deck": 531,
+    "lisa/den": 2,
+    "lisa/dining": 3,
+    "lisa/family": 304,
+    "lisa/foyer": 988,
+    "lisa/garage": 243,
+    "lisa/guest": 5,
+    "lisa/hallway": 651,
+    "lisa/kitchen": 4,
+    "lisa/laundry": 11,
+    "lisa/library": 1054,
+    "lisa/living": 1,
+    "lisa/master": 6,
+    "lisa/office": 4,
+    "lisa/pantry": 535,
+    "lisa/patio": 8,
+    "lisa/porch": 1062,
+    "lisa/study": 4,
+    "lisa/sunroom": 649,
+    "mary/attic": 5,
+    "mary/balcony": 997,
+    "mary/basement": 5,
+    "mary/bathroom": 3,
+    "mary/bedroom": 241,
+    "mary/closet": 363,
+    "mary/deck": 768,
+    "mary/den": 2,
+    "mary/dining": 6,
+    "mary/family": 360,
+    "mary/foyer": 994,
+    "mary/garage": 240,
+    "mary/guest": 7,
+    "mary/hallway": 768,
+    "mary/kitchen": 1,
+    "mary/laundry": 5,
+    "mary/library": 648,
+    "mary/living": 2,
+    "mary/master": 9,
+    "mary/office": 4,
+    "mary/pantry": 764,
+    "mary/patio": 7,
+    "mary/porch": 647,
+    "mary/study": 6,
+    "mary/sunroom": 764,
+    "michael/attic": 13,
+    "michael/balcony": 10,
+    "michael/basement": 18,
+    "michael/bathroom": 13,
+    "michael/bedroom": 18,
+    "michael/closet": 4,
+    "michael/deck": 8,
+    "michael/den": 70,
+    "michael/dining": 19,
+    "michael/family": 8,
+    "michael/foyer": 4,
+    "michael/garage": 6,
+    "michael/guest": 8,
+    "michael/hallway": 3,
+    "michael/kitchen": 3651,
+    "michael/laundry": 7,
+    "michael/library": 3,
+    "michael/living": 3663,
+    "michael/master": 7,
+    "michael/office": 1,
+    "michael/pantry": 16,
+    "michael/patio": 10,
+    "michael/porch": 3,
+    "michael/study": 49,
+    "michael/sunroom": 4,
+    "sarah/attic": 884,
+    "sarah/balcony": 14,
+    "sarah/basement": 883,
+    "sarah/bathroom": 708,
+    "sarah/bedroom": 7,
+    "sarah/closet": 415,
+    "sarah/deck": 3,
+    "sarah/den": 3,
+    "sarah/dining": 3,
+    "sarah/family": 110,
+    "sarah/foyer": 8,
+    "sarah/garage": 185,
+    "sarah/guest": 156,
+    "sarah/hallway": 8,
+    "sarah/kitchen": 7,
+    "sarah/laundry": 32,
+    "sarah/library": 1395,
+    "sarah/living": 2,
+    "sarah/master": 78,
+    "sarah/office": 704,
+    "sarah/pantry": 413,
+    "sarah/patio": 6,
+    "sarah/porch": 3,
+    "sarah/study": 187,
+    "sarah/sunroom": 1402
+  },
+  "edges": [
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 9.588292855116162e-13,
+      "room": "closet",
+      "source": "closet|patio|horizontal",
+      "statistic": 50.92664892127656
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 3.3620738202037186e-11,
+      "room": "closet",
+      "source": "closet|patio|horizontal",
+      "statistic": 43.95386738850732
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 2.8388040570120347e-22,
+      "room": "den",
+      "source": "living|den|horizontal",
+      "statistic": 94.20918454290384
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 1.370108884611631e-42,
+      "room": "guest",
+      "source": "guest|master|vertical",
+      "statistic": 187.09362489424043
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 4.985194765554511e-05,
+      "room": "master",
+      "source": "guest|master|vertical",
+      "statistic": 16.453731969949928
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 7.222123082775947e-23,
+      "room": "master",
+      "source": "master|laundry|vertical",
+      "statistic": 101.9646163467962
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.0002673729694514653,
+      "room": "master",
+      "source": "david",
+      "statistic": 16.453731969949928
+    }
+  ],
+  "interpretation": "Context-conditioned world dynamics, not hidden thought or agent-state graph",
+  "raw_tests": [
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 0.6402513804313483,
+      "room": "closet",
+      "source": "bathroom|basement|horizontal",
+      "statistic": 0.2184135512050771
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 0.3483741867038127,
+      "room": "closet",
+      "source": "closet|foyer|vertical",
+      "statistic": 0.8793703746190189
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 9.588292855116162e-13,
+      "room": "closet",
+      "source": "closet|patio|horizontal",
+      "statistic": 50.92664892127656
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 0.661690143200808,
+      "room": "closet",
+      "source": "deck|patio|vertical",
+      "statistic": 0.1914770153050327
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 0.7573370174437275,
+      "room": "closet",
+      "source": "dining|family|vertical",
+      "statistic": 0.0954684155265797
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 0.3483741867038127,
+      "room": "closet",
+      "source": "foyer|hallway|vertical",
+      "statistic": 0.8793703746190189
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 1.0,
+      "room": "closet",
+      "source": "garage|basement|vertical",
+      "statistic": 0.0
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 0.9780770689679478,
+      "room": "closet",
+      "source": "garage|guest|horizontal",
+      "statistic": 0.0007551381718329253
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 0.9854246376609698,
+      "room": "closet",
+      "source": "guest|master|vertical",
+      "statistic": 0.0003337389610331698
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 0.994032847491464,
+      "room": "closet",
+      "source": "hallway|porch|vertical",
+      "statistic": 5.593224475189222e-05
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 0.26024145529345166,
+      "room": "closet",
+      "source": "living|den|horizontal",
+      "statistic": 1.2674720634189511
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 0.8304591085893813,
+      "room": "closet",
+      "source": "master|laundry|vertical",
+      "statistic": 0.04584428327658463
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 0.18779275032335194,
+      "room": "closet",
+      "source": "david",
+      "statistic": 6.156060913646453
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 0.09747996512970845,
+      "room": "closet",
+      "source": "john",
+      "statistic": 14.768991981374553
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 1.0,
+      "room": "closet",
+      "source": "mary",
+      "statistic": 0.0
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 0.06222017256060085,
+      "room": "closet",
+      "source": "michael",
+      "statistic": 17.593505865195972
+    },
+    {
+      "n": 306,
+      "object": "lisa",
+      "p": 1.0,
+      "room": "closet",
+      "source": "sarah",
+      "statistic": 0.0
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 0.9809559084219458,
+      "room": "garage",
+      "source": "bathroom|basement|horizontal",
+      "statistic": 0.0005698005753275656
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 1.0,
+      "room": "garage",
+      "source": "closet|foyer|vertical",
+      "statistic": 0.0
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 0.2865491710972784,
+      "room": "garage",
+      "source": "closet|patio|horizontal",
+      "statistic": 1.1357641282511923
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 0.9904777846757076,
+      "room": "garage",
+      "source": "deck|patio|vertical",
+      "statistic": 0.0001424349253043508
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 0.6228009846361635,
+      "room": "garage",
+      "source": "dining|family|vertical",
+      "statistic": 0.2419503775689027
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 0.2063802700499647,
+      "room": "garage",
+      "source": "foyer|hallway|vertical",
+      "statistic": 1.5966382572308297
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 0.641312405253152,
+      "room": "garage",
+      "source": "garage|basement|vertical",
+      "statistic": 0.2170298466670575
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 1.0,
+      "room": "garage",
+      "source": "garage|guest|horizontal",
+      "statistic": 0.0
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 0.1761609580642745,
+      "room": "garage",
+      "source": "guest|master|vertical",
+      "statistic": 1.8297171491735669
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 0.35419968479774033,
+      "room": "garage",
+      "source": "hallway|porch|vertical",
+      "statistic": 0.858354137126405
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 0.1580267583049328,
+      "room": "garage",
+      "source": "living|den|horizontal",
+      "statistic": 1.9930076479009404
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 0.05037684971055605,
+      "room": "garage",
+      "source": "master|laundry|vertical",
+      "statistic": 3.8288711779581375
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 0.07236157306299235,
+      "room": "garage",
+      "source": "david",
+      "statistic": 11.566769342072112
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 1.0,
+      "room": "garage",
+      "source": "john",
+      "statistic": 0.0
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 1.0,
+      "room": "garage",
+      "source": "mary",
+      "statistic": 0.0
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 0.8178915352667828,
+      "room": "garage",
+      "source": "michael",
+      "statistic": 2.927486200975522
+    },
+    {
+      "n": 243,
+      "object": "lisa",
+      "p": 0.8306411629128889,
+      "room": "garage",
+      "source": "sarah",
+      "statistic": 2.823581658313586
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 1.0,
+      "room": "closet",
+      "source": "bathroom|basement|horizontal",
+      "statistic": 0.0
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 0.4975990952916779,
+      "room": "closet",
+      "source": "closet|foyer|vertical",
+      "statistic": 0.46005323390951425
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 3.3620738202037186e-11,
+      "room": "closet",
+      "source": "closet|patio|horizontal",
+      "statistic": 43.95386738850732
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 0.3141166750014381,
+      "room": "closet",
+      "source": "deck|patio|vertical",
+      "statistic": 1.013286942706087
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 0.5209452544835751,
+      "room": "closet",
+      "source": "dining|family|vertical",
+      "statistic": 0.4120214931688173
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 0.1578610994063371,
+      "room": "closet",
+      "source": "foyer|hallway|vertical",
+      "statistic": 1.994596539686551
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 0.7242681171604859,
+      "room": "closet",
+      "source": "garage|basement|vertical",
+      "statistic": 0.12443985899550625
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 0.07072337355997234,
+      "room": "closet",
+      "source": "garage|guest|horizontal",
+      "statistic": 3.2661510453990896
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 0.49020156437461626,
+      "room": "closet",
+      "source": "guest|master|vertical",
+      "statistic": 0.47608381179516823
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 0.18357658483740982,
+      "room": "closet",
+      "source": "hallway|porch|vertical",
+      "statistic": 1.7684293016116186
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 0.369386818800269,
+      "room": "closet",
+      "source": "living|den|horizontal",
+      "statistic": 0.8057262220942574
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 0.38707271311544367,
+      "room": "closet",
+      "source": "master|laundry|vertical",
+      "statistic": 0.748118078468528
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 0.1164469946295331,
+      "room": "closet",
+      "source": "david",
+      "statistic": 14.168773985406082
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 1.0,
+      "room": "closet",
+      "source": "john",
+      "statistic": 0.0
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 1.0,
+      "room": "closet",
+      "source": "lisa",
+      "statistic": 0.0
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 1.0,
+      "room": "closet",
+      "source": "michael",
+      "statistic": 0.0
+    },
+    {
+      "n": 363,
+      "object": "mary",
+      "p": 1.0,
+      "room": "closet",
+      "source": "sarah",
+      "statistic": 0.0
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 1.0,
+      "room": "garage",
+      "source": "bathroom|basement|horizontal",
+      "statistic": 0.0
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 0.1321768954556134,
+      "room": "garage",
+      "source": "closet|foyer|vertical",
+      "statistic": 2.2667492202893174
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 1.0,
+      "room": "garage",
+      "source": "closet|patio|horizontal",
+      "statistic": 0.0
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 0.5526656732330419,
+      "room": "garage",
+      "source": "deck|patio|vertical",
+      "statistic": 0.3525633163892826
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 0.9793553650434512,
+      "room": "garage",
+      "source": "dining|family|vertical",
+      "statistic": 0.0006696243328783713
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 0.5526656732330419,
+      "room": "garage",
+      "source": "foyer|hallway|vertical",
+      "statistic": 0.3525633163892826
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 0.5623719345750755,
+      "room": "garage",
+      "source": "garage|basement|vertical",
+      "statistic": 0.3356139609643868
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 1.0,
+      "room": "garage",
+      "source": "garage|guest|horizontal",
+      "statistic": 0.0
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 0.7169608287143734,
+      "room": "garage",
+      "source": "guest|master|vertical",
+      "statistic": 0.13142332391542222
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 0.25003382623719517,
+      "room": "garage",
+      "source": "hallway|porch|vertical",
+      "statistic": 1.3231146850510145
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 0.35940673991822336,
+      "room": "garage",
+      "source": "living|den|horizontal",
+      "statistic": 0.8399651437371349
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 0.9292449270013592,
+      "room": "garage",
+      "source": "master|laundry|vertical",
+      "statistic": 0.0078845306663759
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 1.0,
+      "room": "garage",
+      "source": "david",
+      "statistic": 0.0
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 1.0,
+      "room": "garage",
+      "source": "john",
+      "statistic": 0.0
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 1.0,
+      "room": "garage",
+      "source": "lisa",
+      "statistic": 0.0
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 1.0,
+      "room": "garage",
+      "source": "michael",
+      "statistic": 0.0
+    },
+    {
+      "n": 240,
+      "object": "mary",
+      "p": 0.06302026960251837,
+      "room": "garage",
+      "source": "sarah",
+      "statistic": 11.953233804184887
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.9943034870570662,
+      "room": "den",
+      "source": "bathroom|basement|horizontal",
+      "statistic": 5.09736148472939e-05
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.308157320820714,
+      "room": "den",
+      "source": "closet|foyer|vertical",
+      "statistic": 1.0385569670450039
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.959285239705467,
+      "room": "den",
+      "source": "closet|patio|horizontal",
+      "statistic": 0.002606158687427751
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.8190466460717791,
+      "room": "den",
+      "source": "deck|patio|vertical",
+      "statistic": 0.052336324463510664
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.4919919347597571,
+      "room": "den",
+      "source": "dining|family|vertical",
+      "statistic": 0.47216699582063626
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.13894564159876643,
+      "room": "den",
+      "source": "foyer|hallway|vertical",
+      "statistic": 2.189597265045336
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.6564034114509396,
+      "room": "den",
+      "source": "garage|basement|vertical",
+      "statistic": 0.19792198823469676
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.5309948216457239,
+      "room": "den",
+      "source": "garage|guest|horizontal",
+      "statistic": 0.39248737418083834
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.13138944141851938,
+      "room": "den",
+      "source": "guest|master|vertical",
+      "statistic": 2.2760107556192963
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.2953817188694873,
+      "room": "den",
+      "source": "hallway|porch|vertical",
+      "statistic": 1.0949288076898505
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 2.8388040570120347e-22,
+      "room": "den",
+      "source": "living|den|horizontal",
+      "statistic": 94.20918454290384
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.43306183693199796,
+      "room": "den",
+      "source": "master|laundry|vertical",
+      "statistic": 0.6145979432710362
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 1.0,
+      "room": "den",
+      "source": "david",
+      "statistic": 0.0
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.49595715552058106,
+      "room": "den",
+      "source": "john",
+      "statistic": 8.384015661102296
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.1656957971481406,
+      "room": "den",
+      "source": "lisa",
+      "statistic": 18.980497104769153
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.7695324131728856,
+      "room": "den",
+      "source": "mary",
+      "statistic": 7.356381969722432
+    },
+    {
+      "n": 70,
+      "object": "michael",
+      "p": 0.5813409309592636,
+      "room": "den",
+      "source": "sarah",
+      "statistic": 9.440069439122825
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.9972612088405665,
+      "room": "closet",
+      "source": "bathroom|basement|horizontal",
+      "statistic": 1.1782553418582774e-05
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.09589096714246556,
+      "room": "closet",
+      "source": "closet|foyer|vertical",
+      "statistic": 2.772588722239781
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.16596191741575536,
+      "room": "closet",
+      "source": "closet|patio|horizontal",
+      "statistic": 1.9190455417887025
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.9917836589521569,
+      "room": "closet",
+      "source": "deck|patio|vertical",
+      "statistic": 0.00010604547562808805
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.6283126325908482,
+      "room": "closet",
+      "source": "dining|family|vertical",
+      "statistic": 0.23435590523486605
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.8495908163412634,
+      "room": "closet",
+      "source": "foyer|hallway|vertical",
+      "statistic": 0.035963534871764236
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.72478216305477,
+      "room": "closet",
+      "source": "garage|basement|vertical",
+      "statistic": 0.12395666817208728
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.9479721690650853,
+      "room": "closet",
+      "source": "garage|guest|horizontal",
+      "statistic": 0.004258018598588778
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.05411611738453657,
+      "room": "closet",
+      "source": "guest|master|vertical",
+      "statistic": 3.709113758863097
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.35019607287737065,
+      "room": "closet",
+      "source": "hallway|porch|vertical",
+      "statistic": 0.8727465326106125
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.893266976943518,
+      "room": "closet",
+      "source": "living|den|horizontal",
+      "statistic": 0.018001986279224946
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.05411611738453657,
+      "room": "closet",
+      "source": "master|laundry|vertical",
+      "statistic": 3.709113758863097
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.47467248519500804,
+      "room": "closet",
+      "source": "david",
+      "statistic": 8.603257545800377
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.08629565707409557,
+      "room": "closet",
+      "source": "john",
+      "statistic": 13.830357458065413
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 0.5436152929101978,
+      "room": "closet",
+      "source": "lisa",
+      "statistic": 5.001542504401095
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "closet",
+      "source": "mary",
+      "statistic": 0.0
+    },
+    {
+      "n": 415,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "closet",
+      "source": "michael",
+      "statistic": 0.0
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 0.4328720774553029,
+      "room": "garage",
+      "source": "bathroom|basement|horizontal",
+      "statistic": 0.6151051579902531
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 0.9923567639786856,
+      "room": "garage",
+      "source": "closet|foyer|vertical",
+      "statistic": 9.176724697379512e-05
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "garage",
+      "source": "closet|patio|horizontal",
+      "statistic": 0.0
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "garage",
+      "source": "deck|patio|vertical",
+      "statistic": 0.0
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 0.9169503449265347,
+      "room": "garage",
+      "source": "dining|family|vertical",
+      "statistic": 0.010873478490617039
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 0.15487130320285292,
+      "room": "garage",
+      "source": "foyer|hallway|vertical",
+      "statistic": 2.0236028369402987
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 0.09589096714246556,
+      "room": "garage",
+      "source": "garage|basement|vertical",
+      "statistic": 2.772588722239781
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "garage",
+      "source": "garage|guest|horizontal",
+      "statistic": 0.0
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 0.08321689645744047,
+      "room": "garage",
+      "source": "guest|master|vertical",
+      "statistic": 3.0009268676461414
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 0.09620900142175504,
+      "room": "garage",
+      "source": "hallway|porch|vertical",
+      "statistic": 2.7672886325711934
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 0.5329335943153273,
+      "room": "garage",
+      "source": "living|den|horizontal",
+      "statistic": 0.3887947864537069
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 0.663559972869471,
+      "room": "garage",
+      "source": "master|laundry|vertical",
+      "statistic": 0.1892279420229328
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "garage",
+      "source": "david",
+      "statistic": 0.0
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "garage",
+      "source": "john",
+      "statistic": 0.0
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "garage",
+      "source": "lisa",
+      "statistic": 0.0
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "garage",
+      "source": "mary",
+      "statistic": 0.0
+    },
+    {
+      "n": 185,
+      "object": "sarah",
+      "p": 0.2535203972242956,
+      "room": "garage",
+      "source": "michael",
+      "statistic": 12.491287655884998
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 0.4852952819991889,
+      "room": "guest",
+      "source": "bathroom|basement|horizontal",
+      "statistic": 0.48694045272742414
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 0.7404974538776578,
+      "room": "guest",
+      "source": "closet|foyer|vertical",
+      "statistic": 0.10968990251124922
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 0.7916363518171579,
+      "room": "guest",
+      "source": "closet|patio|horizontal",
+      "statistic": 0.0697944116448781
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "guest",
+      "source": "deck|patio|vertical",
+      "statistic": 0.0
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 0.47813452227454056,
+      "room": "guest",
+      "source": "dining|family|vertical",
+      "statistic": 0.503115192770963
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 0.5509815884720436,
+      "room": "guest",
+      "source": "foyer|hallway|vertical",
+      "statistic": 0.35556162459133134
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 0.48027009081035843,
+      "room": "guest",
+      "source": "garage|basement|vertical",
+      "statistic": 0.4982499478638971
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 0.3255893551423015,
+      "room": "guest",
+      "source": "garage|guest|horizontal",
+      "statistic": 0.9663612385847955
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 1.370108884611631e-42,
+      "room": "guest",
+      "source": "guest|master|vertical",
+      "statistic": 187.09362489424043
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 0.9930515893830354,
+      "room": "guest",
+      "source": "hallway|porch|vertical",
+      "statistic": 7.584060807630522e-05
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 0.4895841826255082,
+      "room": "guest",
+      "source": "living|den|horizontal",
+      "statistic": 0.47744000597435843
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "guest",
+      "source": "master|laundry|vertical",
+      "statistic": 0.0
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 0.5549834840199213,
+      "room": "guest",
+      "source": "david",
+      "statistic": 4.913275235924526
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 0.4183525067512813,
+      "room": "guest",
+      "source": "john",
+      "statistic": 6.043341479476194
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 0.7646964560640068,
+      "room": "guest",
+      "source": "lisa",
+      "statistic": 1.8425097151065355
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 0.5634676954582962,
+      "room": "guest",
+      "source": "mary",
+      "statistic": 2.043303622456944
+    },
+    {
+      "n": 156,
+      "object": "sarah",
+      "p": 0.6446360091648367,
+      "room": "guest",
+      "source": "michael",
+      "statistic": 2.499998792456402
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "laundry",
+      "source": "bathroom|basement|horizontal",
+      "statistic": 0.0
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 0.23327441076024236,
+      "room": "laundry",
+      "source": "closet|foyer|vertical",
+      "statistic": 1.42078395667475
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 0.39352141027967413,
+      "room": "laundry",
+      "source": "closet|patio|horizontal",
+      "statistic": 0.7280333182896985
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "laundry",
+      "source": "deck|patio|vertical",
+      "statistic": 0.0
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 0.36282974632963827,
+      "room": "laundry",
+      "source": "dining|family|vertical",
+      "statistic": 0.8280750266789326
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 0.1321533466016427,
+      "room": "laundry",
+      "source": "foyer|hallway|vertical",
+      "statistic": 2.267025292684868
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 0.36282974632963827,
+      "room": "laundry",
+      "source": "garage|basement|vertical",
+      "statistic": 0.8280750266789326
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 0.1321533466016427,
+      "room": "laundry",
+      "source": "garage|guest|horizontal",
+      "statistic": 2.267025292684868
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "laundry",
+      "source": "guest|master|vertical",
+      "statistic": 0.0
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 0.06671901113901495,
+      "room": "laundry",
+      "source": "hallway|porch|vertical",
+      "statistic": 3.3619502541181716
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 0.3067644203189547,
+      "room": "laundry",
+      "source": "living|den|horizontal",
+      "statistic": 1.044555174163254
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "laundry",
+      "source": "master|laundry|vertical",
+      "statistic": 0.0
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "laundry",
+      "source": "david",
+      "statistic": 0.0
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "laundry",
+      "source": "john",
+      "statistic": 0.0
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "laundry",
+      "source": "lisa",
+      "statistic": 0.0
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 0.2565365761322549,
+      "room": "laundry",
+      "source": "mary",
+      "statistic": 1.2873516819071218
+    },
+    {
+      "n": 32,
+      "object": "sarah",
+      "p": 1.0,
+      "room": "laundry",
+      "source": "michael",
+      "statistic": 0.0
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.008800874658772094,
+      "room": "master",
+      "source": "bathroom|basement|horizontal",
+      "statistic": 6.8627956754281705
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.06711056091487291,
+      "room": "master",
+      "source": "closet|foyer|vertical",
+      "statistic": 5.402827713410931
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.22302542259545752,
+      "room": "master",
+      "source": "closet|patio|horizontal",
+      "statistic": 3.0009390226992316
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.5292455767407231,
+      "room": "master",
+      "source": "deck|patio|vertical",
+      "statistic": 1.272605453202198
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.4117040548189378,
+      "room": "master",
+      "source": "dining|family|vertical",
+      "statistic": 1.774901002579328
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.31598986495738807,
+      "room": "master",
+      "source": "foyer|hallway|vertical",
+      "statistic": 1.0054727972488307
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.41309024034816155,
+      "room": "master",
+      "source": "garage|basement|vertical",
+      "statistic": 0.6698891979067543
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.31598986495738807,
+      "room": "master",
+      "source": "garage|guest|horizontal",
+      "statistic": 1.0054727972488307
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 4.985194765554511e-05,
+      "room": "master",
+      "source": "guest|master|vertical",
+      "statistic": 16.453731969949928
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.6549915389361523,
+      "room": "master",
+      "source": "hallway|porch|vertical",
+      "statistic": 0.8462659221700964
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.33377689111666425,
+      "room": "master",
+      "source": "living|den|horizontal",
+      "statistic": 2.194564999758556
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 7.222123082775947e-23,
+      "room": "master",
+      "source": "master|laundry|vertical",
+      "statistic": 101.9646163467962
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.0002673729694514653,
+      "room": "master",
+      "source": "david",
+      "statistic": 16.453731969949928
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.2672829638941802,
+      "room": "master",
+      "source": "john",
+      "statistic": 7.620029451177986
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.0009151979068707945,
+      "room": "master",
+      "source": "lisa",
+      "statistic": 16.453731969949985
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.029660118115725095,
+      "room": "master",
+      "source": "mary",
+      "statistic": 8.97239889134326
+    },
+    {
+      "n": 78,
+      "object": "sarah",
+      "p": 0.07091705769689338,
+      "room": "master",
+      "source": "michael",
+      "statistic": 11.623410263699519
+    }
+  ],
+  "rooms": [
+    "attic",
+    "balcony",
+    "basement",
+    "bathroom",
+    "bedroom",
+    "closet",
+    "deck",
+    "den",
+    "dining",
+    "family",
+    "foyer",
+    "garage",
+    "guest",
+    "hallway",
+    "kitchen",
+    "laundry",
+    "library",
+    "living",
+    "master",
+    "office",
+    "pantry",
+    "patio",
+    "porch",
+    "study",
+    "sunroom"
+  ],
+  "train_steps": 7680,
+  "train_trajectories": 64
+}

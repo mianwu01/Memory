@@ -1,0 +1,11 @@
+{
+  "case": 9,
+  "repeat": 0,
+  "prompt_sha256": "805fc073ce8e09d05f43aaa7d33b6f5902ce1c802929535c1df7111b40434c16",
+  "extracted": "Joost Wolfswinkel",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: Korea was annexed by Japan in 1910 [57336][24150]. Korean secret emissaries were sent to the Netherlands in 1907 to appeal for independence [11997]. The Dutch sailor Jan Jansz Weltevree, who naturalized to Joseon/Korea as Pak Yŏn, was the first such visitor from that country [85933]. In documentary production stills, Weltevree is explicitly listed as played by Joost Wolfswinkel, then Dutch ambassador in South Korea [17342].\n\nExact Answer: Joost Wolfswinkel\n\nConfidence: 80%"
+}

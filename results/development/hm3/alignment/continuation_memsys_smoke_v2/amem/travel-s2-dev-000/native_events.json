@@ -1,0 +1,218 @@
+[
+  {
+    "evolution_count": 0,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    855,\n    975\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F95\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 975\n  },\n  \"query\": \"Flight F95 (Bob, day 1) now arrives at 16:15.\",\n  \"rev\": 1,\n  \"rid\": \"h0\",\n  \"seg\": 0\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    895,\n    1035\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T37\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1035\n  },\n  \"rev\": 1,\n  \"rid\": \"h1\",\n  \"seg\": 0\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    945,\n    1085\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S81\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1085\n  },\n  \"rev\": 1,\n  \"rid\": \"h2\",\n  \"seg\": 0\n }\n]",
+      "context": "General",
+      "evolution_history": [],
+      "id": "78b36c4d-5dc7-4afe-bf0d-cf1c3251415f",
+      "importance_score": 1.0,
+      "keywords": [],
+      "last_accessed": "202609220041",
+      "links": [],
+      "retrieval_count": 0,
+      "tags": [
+        "flight_delay",
+        "reservation_shift",
+        "Bob",
+        "day_1",
+        "intervention",
+        "transaction",
+        "revision_1",
+        "multi_segment"
+      ],
+      "timestamp": "202609010000"
+    },
+    "segment": 0,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 1,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    1185,\n    1365\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F17\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 1365\n  },\n  \"query\": \"Flight F17 (Bob, day 2) now arrives at 22:45.\",\n  \"rev\": 1,\n  \"rid\": \"h3\",\n  \"seg\": 1\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    1240,\n    1425\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T22\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1425\n  },\n  \"rev\": 1,\n  \"rid\": \"h4\",\n  \"seg\": 1\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    1270,\n    1455\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S53\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1455\n  },\n  \"rev\": 1,\n  \"rid\": \"h5\",\n  \"seg\": 1\n },\n {\n  \"delta\": {\n   \"start\": [\n    1380,\n    1500\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"D91\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"start\": 1500\n  },\n  \"rev\": 1,\n  \"rid\": \"h6\",\n  \"seg\": 1\n }\n]",
+      "context": "General",
+      "evolution_history": [],
+      "id": "13d6c85d-5486-4a44-85aa-5b9f5df23c42",
+      "importance_score": 1.0,
+      "keywords": [],
+      "last_accessed": "202609220041",
+      "links": [
+        0
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "flight_delay",
+        "reservation_shift",
+        "Bob",
+        "day_2",
+        "intervention",
+        "transaction",
+        "revision_1",
+        "multi_segment"
+      ],
+      "timestamp": "202609010100"
+    },
+    "segment": 1,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 2,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    1080,\n    1200\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F46\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 1200\n  },\n  \"query\": \"Flight F46 (Mateo, day 1) now arrives at 20:00.\",\n  \"rev\": 1,\n  \"rid\": \"h7\",\n  \"seg\": 2\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    1155,\n    1260\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T78\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1260\n  },\n  \"rev\": 1,\n  \"rid\": \"h8\",\n  \"seg\": 2\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    1175,\n    1280\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S13\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1280\n  },\n  \"rev\": 1,\n  \"rid\": \"h9\",\n  \"seg\": 2\n },\n {\n  \"delta\": {\n   \"start\": [\n    1260,\n    1335\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"D16\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"start\": 1335\n  },\n  \"rev\": 1,\n  \"rid\": \"h10\",\n  \"seg\": 2\n },\n {\n  \"delta\": {\n   \"rebooked\": [\n    0,\n    1\n   ]\n  },\n  \"fee\": 30,\n  \"kind\": \"txn\",\n  \"object_id\": \"B82\",\n  \"op\": \"rebook_bundle\",\n  \"payload\": {},\n  \"rev\": 1,\n  \"rid\": \"h11\",\n  \"seg\": 2\n }\n]",
+      "context": "General",
+      "evolution_history": [],
+      "id": "495281d2-e718-4fa5-b4bf-e467539acfc8",
+      "importance_score": 1.0,
+      "keywords": [],
+      "last_accessed": "202609220041",
+      "links": [
+        1
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "flight_delay",
+        "reservation_shift",
+        "Mateo",
+        "day_1",
+        "intervention",
+        "transaction",
+        "rebooking",
+        "multi_segment",
+        "revision_1"
+      ],
+      "timestamp": "202609010200"
+    },
+    "segment": 2,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 3,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    1365,\n    1170\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F17\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 1170\n  },\n  \"query\": \"Flight F17 (Bob, day 2) now arrives at 19:30.\",\n  \"rev\": 2,\n  \"rid\": \"h12\",\n  \"seg\": 3\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    1425,\n    1230\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T22\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1230\n  },\n  \"rev\": 2,\n  \"rid\": \"h13\",\n  \"seg\": 3\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    1455,\n    1260\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S53\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1260\n  },\n  \"rev\": 2,\n  \"rid\": \"h14\",\n  \"seg\": 3\n }\n]",
+      "context": "General",
+      "evolution_history": [],
+      "id": "8dd318bd-d02c-4a56-be64-6ffb6446bf20",
+      "importance_score": 1.0,
+      "keywords": [],
+      "last_accessed": "202609220041",
+      "links": [
+        1,
+        0
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "flight_delay",
+        "reservation_shift",
+        "Bob",
+        "day_2",
+        "intervention",
+        "transaction",
+        "revision_2",
+        "shift_back",
+        "multi_segment"
+      ],
+      "timestamp": "202609010300"
+    },
+    "segment": 3,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 4,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    1200,\n    1305\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F46\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 1305\n  },\n  \"query\": \"Flight F46 (Mateo, day 1) now arrives at 21:45.\",\n  \"rev\": 2,\n  \"rid\": \"h15\",\n  \"seg\": 4\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    1260,\n    1365\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T78\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1365\n  },\n  \"rev\": 2,\n  \"rid\": \"h16\",\n  \"seg\": 4\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    1280,\n    1385\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S13\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1385\n  },\n  \"rev\": 2,\n  \"rid\": \"h17\",\n  \"seg\": 4\n },\n {\n  \"delta\": {\n   \"start\": [\n    1335,\n    1440\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"D16\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"start\": 1440\n  },\n  \"rev\": 2,\n  \"rid\": \"h18\",\n  \"seg\": 4\n },\n {\n  \"delta\": {\n   \"rebooked\": [\n    1,\n    2\n   ]\n  },\n  \"fee\": 30,\n  \"kind\": \"txn\",\n  \"object_id\": \"B82\",\n  \"op\": \"rebook_bundle\",\n  \"payload\": {},\n  \"rev\": 2,\n  \"rid\": \"h19\",\n  \"seg\": 4\n }\n]",
+      "context": "General",
+      "evolution_history": [],
+      "id": "b437c463-f9b8-4912-88e6-ef9417317519",
+      "importance_score": 1.0,
+      "keywords": [],
+      "last_accessed": "202609220041",
+      "links": [
+        2
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "flight_delay",
+        "reservation_shift",
+        "Mateo",
+        "day_1",
+        "intervention",
+        "transaction",
+        "rebooking",
+        "multi_segment",
+        "revision_2"
+      ],
+      "timestamp": "202609010400"
+    },
+    "segment": 4,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 5,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    630,\n    810\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F33\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 810\n  },\n  \"query\": \"Flight F33 (Omar, day 1) now arrives at 13:30.\",\n  \"rev\": 1,\n  \"rid\": \"h20\",\n  \"seg\": 5\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    695,\n    845\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T40\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 845\n  },\n  \"rev\": 1,\n  \"rid\": \"h21\",\n  \"seg\": 5\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    715,\n    865\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S91\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 865\n  },\n  \"rev\": 1,\n  \"rid\": \"h22\",\n  \"seg\": 5\n }\n]",
+      "context": "General",
+      "evolution_history": [],
+      "id": "bb506b6b-b0a6-4679-b22c-58f27a5b582f",
+      "importance_score": 1.0,
+      "keywords": [],
+      "last_accessed": "202609220041",
+      "links": [
+        4,
+        1,
+        3,
+        0,
+        2
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "flight_delay",
+        "reservation_shift",
+        "Omar",
+        "day_1",
+        "intervention",
+        "transaction",
+        "multi_segment",
+        "revision_1"
+      ],
+      "timestamp": "202609010500"
+    },
+    "segment": 5,
+    "stage": "add_note"
+  },
+  {
+    "evolution_count": 6,
+    "note": {
+      "category": "Uncategorized",
+      "content": "[\n {\n  \"delta\": {\n   \"arrival\": [\n    810,\n    1245\n   ]\n  },\n  \"fee\": 0,\n  \"kind\": \"intervention\",\n  \"object_id\": \"F33\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"arrival\": 1245\n  },\n  \"query\": \"Flight F33 (Omar, day 1) now arrives at 20:45.\",\n  \"rev\": 2,\n  \"rid\": \"h23\",\n  \"seg\": 6\n },\n {\n  \"delta\": {\n   \"pickup\": [\n    845,\n    1280\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"T40\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"pickup\": 1280\n  },\n  \"rev\": 2,\n  \"rid\": \"h24\",\n  \"seg\": 6\n },\n {\n  \"delta\": {\n   \"checkin\": [\n    865,\n    1300\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"S91\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"checkin\": 1300\n  },\n  \"rev\": 2,\n  \"rid\": \"h25\",\n  \"seg\": 6\n },\n {\n  \"delta\": {\n   \"start\": [\n    1335,\n    1350\n   ]\n  },\n  \"fee\": 25,\n  \"kind\": \"txn\",\n  \"object_id\": \"D29\",\n  \"op\": \"shift_reservation\",\n  \"payload\": {\n   \"start\": 1350\n  },\n  \"rev\": 1,\n  \"rid\": \"h26\",\n  \"seg\": 6\n }\n]",
+      "context": "General",
+      "evolution_history": [],
+      "id": "ad788a85-8b95-421f-b48e-a82d17478692",
+      "importance_score": 1.0,
+      "keywords": [],
+      "last_accessed": "202609220041",
+      "links": [
+        5
+      ],
+      "retrieval_count": 0,
+      "tags": [
+        "flight_delay",
+        "reservation_shift",
+        "Omar",
+        "day_1",
+        "intervention",
+        "transaction",
+        "multi_segment",
+        "revision_2"
+      ],
+      "timestamp": "202609010600"
+    },
+    "segment": 6,
+    "stage": "add_note"
+  }
+]

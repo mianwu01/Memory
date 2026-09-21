@@ -1,0 +1,115 @@
+{
+  "results": [
+    {
+      "created_at": "2026-09-21T16:50:11.954927+00:00",
+      "hash": "e2840eeaee876e02409b0f48e04f13f8",
+      "id": "284ca99d-f6f9-4278-85aa-e88be610c5da",
+      "memory": "Reservation S37 check-in was shifted from 21:00 to 22:50 on September 21, 2026, with a fee of 25 and marked as late arrival",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:50:11.954927+00:00",
+      "user_id": "travel-s72-test-001"
+    },
+    {
+      "created_at": "2026-09-21T16:50:17.564889+00:00",
+      "hash": "9a89f9365c2fde4852e15cc4e48d3670",
+      "id": "341ccc84-bb06-47ee-ab0e-b4972a5a328f",
+      "memory": "Reservation S93 check-in was shifted from 13:45 to 19:15 on September 21, 2026, with a fee of 25",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:50:17.564889+00:00",
+      "user_id": "travel-s72-test-001"
+    },
+    {
+      "created_at": "2026-09-21T16:50:17.559232+00:00",
+      "hash": "83585030cb63448c76db65e6a1216e7f",
+      "id": "3829ef6b-acc5-4329-9554-82d3ffd336ef",
+      "memory": "Flight F80 (Priya, day 2) arrival was shifted from 12:00 to 17:45 on September 21, 2026, as an intervention with no fee",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:50:17.559232+00:00",
+      "user_id": "travel-s72-test-001"
+    },
+    {
+      "attributed_to": "assistant",
+      "created_at": "2026-09-21T16:50:05.409970+00:00",
+      "hash": "56e796c15d04581f7ec265a89bdb67c4",
+      "id": "7cdc419c-f496-4b45-b825-6f81a7c10a48",
+      "memory": "Reservation T57 pickup was automatically shifted from 12:05 to 14:45 on September 21, 2026, following the F25 arrival change",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:50:05.409970+00:00",
+      "user_id": "travel-s72-test-001"
+    },
+    {
+      "created_at": "2026-09-21T16:50:17.567476+00:00",
+      "hash": "98899829d26336b3204b0edbb70f739b",
+      "id": "897cc8f7-0272-49f4-ab11-95dc8aee9b14",
+      "memory": "Reservation D38 was cancelled on September 21, 2026, with a fee of 40",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:50:17.567476+00:00",
+      "user_id": "travel-s72-test-001"
+    },
+    {
+      "attributed_to": "user",
+      "created_at": "2026-09-21T16:50:05.406699+00:00",
+      "hash": "fdfc68d63b3e44ffbc270df5ac78b999",
+      "id": "9cc0d241-87df-46c2-bcbf-2638323a61eb",
+      "memory": "Flight F25 (Omar, day 1) arrival was shifted from 11:45 to 13:45 on September 21, 2026, as an intervention with no fee",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:50:05.406699+00:00",
+      "user_id": "travel-s72-test-001"
+    },
+    {
+      "created_at": "2026-09-21T16:50:11.960437+00:00",
+      "hash": "b548c74a0075ac6ba359c78982a410a6",
+      "id": "9cf5e375-ebfe-46b6-967b-0bf6889e37df",
+      "memory": "Bundle B30 was rebooked on September 21, 2026, with a fee of 30",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:50:11.960437+00:00",
+      "user_id": "travel-s72-test-001"
+    },
+    {
+      "created_at": "2026-09-21T16:50:11.949042+00:00",
+      "hash": "02019e805c338d45b691aad6ecbe1421",
+      "id": "d0ff7b85-7fd1-4cf8-82a8-f0742cd5dc5f",
+      "memory": "Flight F24 (Omar, day 2) arrival was shifted from 19:15 to 21:00 on September 21, 2026, as an intervention with no fee",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:50:11.949042+00:00",
+      "user_id": "travel-s72-test-001"
+    },
+    {
+      "attributed_to": "assistant",
+      "created_at": "2026-09-21T16:50:05.412673+00:00",
+      "hash": "207b9d9491e581134b6119939555000e",
+      "id": "df83d7b6-d78c-403c-8c67-ccd3989eff8a",
+      "memory": "Reservation S14 check-in was shifted from 12:25 to 15:05 on September 21, 2026, with a fee of 25",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:50:05.412673+00:00",
+      "user_id": "travel-s72-test-001"
+    },
+    {
+      "created_at": "2026-09-21T16:50:17.562203+00:00",
+      "hash": "2de1dc78de1f60881f861d40262e5b3b",
+      "id": "e1f72e30-154a-441c-b580-6d3695ce9b3c",
+      "memory": "Reservation T67 pickup was automatically shifted from 13:15 to 18:45 on September 21, 2026, following the F80 arrival change",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:50:17.562203+00:00",
+      "user_id": "travel-s72-test-001"
+    },
+    {
+      "created_at": "2026-09-21T16:50:11.951884+00:00",
+      "hash": "11dd253ca6f4101161630876b595342a",
+      "id": "f15fc22b-334c-4682-9fb5-26ed1d7dcc38",
+      "memory": "Reservation T29 pickup was automatically shifted from 20:10 to 22:00 on September 21, 2026, following the F24 arrival change",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:50:11.951884+00:00",
+      "user_id": "travel-s72-test-001"
+    },
+    {
+      "created_at": "2026-09-21T16:50:11.957785+00:00",
+      "hash": "cf720ba1fe129b51ad628630e56a54b9",
+      "id": "feffd94e-72bf-4955-bc2b-426c3b4a6e88",
+      "memory": "Reservation D58 start time was shifted from 22:45 to 23:45 on September 21, 2026, with a fee of 25",
+      "metadata": null,
+      "updated_at": "2026-09-21T16:50:11.957785+00:00",
+      "user_id": "travel-s72-test-001"
+    }
+  ]
+}

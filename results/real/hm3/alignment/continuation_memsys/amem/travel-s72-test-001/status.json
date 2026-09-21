@@ -1,0 +1,35 @@
+{
+  "episode": "travel-s72-test-001",
+  "error_type": "UnboundLocalError",
+  "memory_calls": 5,
+  "seconds": 18.189472527243197,
+  "status": "invalid_execution",
+  "system": "amem",
+  "traceback": [
+    {
+      "file": "continuation_memsys.py",
+      "function": "run",
+      "line": 222
+    },
+    {
+      "file": "continuation_memsys.py",
+      "function": "build_memory",
+      "line": 141
+    },
+    {
+      "file": "memory_layer.py",
+      "function": "add_note",
+      "line": 716
+    },
+    {
+      "file": "memory_layer.py",
+      "function": "__init__",
+      "line": 282
+    },
+    {
+      "file": "memory_layer.py",
+      "function": "analyze_content",
+      "line": 395
+    }
+  ]
+}

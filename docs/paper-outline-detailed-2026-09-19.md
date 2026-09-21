@@ -1,5 +1,12 @@
 # Detailed paper outline with the results we have (2026-09-19)
 
+> Alignment correction (2026-09-21): this is a historical outline, not a frozen
+> submission narrative. Claims attributing utility to learned topology must first
+> pass the complete-type-graph and matched controls in
+> `structure-alignment-protocol-2026-09-21.md`. Retain both memory utility and
+> actionable auditing as research goals. Do not replace the latter with
+> failure-only localisation or claim that a sufficient read set reveals intent.
+
 For Yujia's abstract. Every number is traceable: `docs/hm3-results-package-2026-09-19.md` (summary tables),
 `docs/hm3-history-scaling-results-2026-09-18.md` (full log), `results/e0v2/summary.md`, `docs/hidden-mechanism-v3-results.md`.
 Status labels: **have** = frozen result on held-out data; **partial** = running or single-seed; **missing** = not run.

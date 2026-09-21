@@ -1,0 +1,55 @@
+{
+  "seed": 30,
+  "condition": "500",
+  "episode": "travel-s30-test-004",
+  "domain": "travel",
+  "reads": {
+    "objects": [
+      "A12",
+      "A159",
+      "B126",
+      "B139",
+      "B48",
+      "D140",
+      "D159",
+      "D54",
+      "D84",
+      "F140",
+      "F159",
+      "F46",
+      "F85",
+      "S10",
+      "S140",
+      "S159",
+      "S35",
+      "T11",
+      "T140",
+      "T159",
+      "T95"
+    ],
+    "records": [
+      "h461",
+      "h463",
+      "h479",
+      "h482",
+      "h496",
+      "h497",
+      "h499"
+    ]
+  },
+  "originating_prompt_sha256": "c9dce80a25bc910b57391f4a1266a86e7b65c4c374a59a5eadccfa04eeb2970b",
+  "selection": "first lexicographic completed correct no-type-filter actor input; one illustrative case",
+  "source_policy": "controlled external source manifest; no claim of recovered private intent",
+  "suspect_record": "h461",
+  "neutral_record": "h463",
+  "proposal_source": "deterministic executor single-record ablation, LLM validation still required",
+  "source_manifest": {
+    "h461": "disallowed_external_answer_source",
+    "h463": "allowed_history",
+    "h479": "allowed_history",
+    "h482": "allowed_history",
+    "h496": "allowed_history",
+    "h497": "allowed_history",
+    "h499": "allowed_history"
+  }
+}

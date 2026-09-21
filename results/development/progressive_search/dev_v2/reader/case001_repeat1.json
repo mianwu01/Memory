@@ -1,0 +1,12 @@
+{
+  "case": 1,
+  "repeat": 1,
+  "prompt_sha256": "cdd3ff1ec3d128222241fdfa5bf21b902035dba59c6b20c706068806c95f8f03",
+  "extracted": "Tulsidas Balaram",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "all_memory_retained": true,
+  "writers_complete": true
+}

@@ -1,0 +1,554 @@
+[
+  {
+    "arm": "full",
+    "case": "room-s6100-t50-mary",
+    "joint_phase_check": {
+      "assignments": 4,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 4,
+        "bedroom|den|horizontal": 1,
+        "living|kitchen|vertical": 1,
+        "office|den|vertical": 1
+      },
+      "rooms": [
+        "bathroom"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bathroom"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6100-t50-mary",
+    "joint_phase_check": {
+      "assignments": 160,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 10,
+        "bedroom|den|horizontal": 8,
+        "living|kitchen|vertical": 1,
+        "office|den|vertical": 2
+      },
+      "rooms": [
+        "bathroom"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bathroom"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6100-t50-mary",
+    "joint_phase_check": {
+      "assignments": 16,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 4,
+        "bedroom|den|horizontal": 1,
+        "living|kitchen|vertical": 2,
+        "office|den|vertical": 2
+      },
+      "rooms": [
+        "bathroom",
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bathroom",
+      "kitchen"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6100-t50-mary",
+    "joint_phase_check": {
+      "assignments": 20,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 4,
+        "bedroom|den|horizontal": 1,
+        "living|kitchen|vertical": 5,
+        "office|den|vertical": 1
+      },
+      "rooms": [
+        "bathroom",
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bathroom",
+      "kitchen"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6100-t50-mary",
+    "joint_phase_check": {
+      "assignments": 4,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 4,
+        "bedroom|den|horizontal": 1,
+        "living|kitchen|vertical": 1,
+        "office|den|vertical": 1
+      },
+      "rooms": [
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "kitchen"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6100-t50-mary",
+    "joint_phase_check": {
+      "assignments": 8,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 4,
+        "bedroom|den|horizontal": 1,
+        "living|kitchen|vertical": 1,
+        "office|den|vertical": 2
+      },
+      "rooms": [
+        "bathroom"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bathroom"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "full",
+    "case": "room-s6101-t50-mary",
+    "joint_phase_check": {
+      "assignments": 1,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 1,
+        "bedroom|den|horizontal": 1,
+        "living|kitchen|vertical": 1,
+        "office|den|vertical": 1
+      },
+      "rooms": [
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "kitchen"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6101-t50-mary",
+    "joint_phase_check": {
+      "assignments": 160,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 10,
+        "bedroom|den|horizontal": 8,
+        "living|kitchen|vertical": 1,
+        "office|den|vertical": 2
+      },
+      "rooms": [
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "kitchen"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6101-t50-mary",
+    "joint_phase_check": {
+      "assignments": 16,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 2,
+        "bedroom|den|horizontal": 2,
+        "living|kitchen|vertical": 2,
+        "office|den|vertical": 2
+      },
+      "rooms": [
+        "bathroom",
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bathroom",
+      "kitchen"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6101-t50-mary",
+    "joint_phase_check": {
+      "assignments": 5,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 1,
+        "bedroom|den|horizontal": 1,
+        "living|kitchen|vertical": 5,
+        "office|den|vertical": 1
+      },
+      "rooms": [
+        "bathroom",
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bathroom",
+      "kitchen"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6101-t50-mary",
+    "joint_phase_check": {
+      "assignments": 1,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 1,
+        "bedroom|den|horizontal": 1,
+        "living|kitchen|vertical": 1,
+        "office|den|vertical": 1
+      },
+      "rooms": [
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "kitchen"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6101-t50-mary",
+    "joint_phase_check": {
+      "assignments": 2,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 1,
+        "bedroom|den|horizontal": 1,
+        "living|kitchen|vertical": 1,
+        "office|den|vertical": 2
+      },
+      "rooms": [
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "kitchen"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "full",
+    "case": "room-s6102-t50-mary",
+    "joint_phase_check": {
+      "assignments": 1,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 1,
+        "bedroom|den|horizontal": 1,
+        "living|kitchen|vertical": 1,
+        "office|den|vertical": 1
+      },
+      "rooms": [
+        "living"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "living"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6102-t50-mary",
+    "joint_phase_check": {
+      "assignments": 48,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 6,
+        "bedroom|den|horizontal": 8,
+        "living|kitchen|vertical": 1,
+        "office|den|vertical": 1
+      },
+      "rooms": [
+        "living"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "living"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6102-t50-mary",
+    "joint_phase_check": {
+      "assignments": 8,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 2,
+        "bedroom|den|horizontal": 1,
+        "living|kitchen|vertical": 2,
+        "office|den|vertical": 2
+      },
+      "rooms": [
+        "bedroom",
+        "living"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bedroom",
+      "living"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6102-t50-mary",
+    "joint_phase_check": {
+      "assignments": 5,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 1,
+        "bedroom|den|horizontal": 1,
+        "living|kitchen|vertical": 5,
+        "office|den|vertical": 1
+      },
+      "rooms": [
+        "bedroom",
+        "living"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bedroom",
+      "living"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6102-t50-mary",
+    "joint_phase_check": {
+      "assignments": 1,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 1,
+        "bedroom|den|horizontal": 1,
+        "living|kitchen|vertical": 1,
+        "office|den|vertical": 1
+      },
+      "rooms": [
+        "living"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "living"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6102-t50-mary",
+    "joint_phase_check": {
+      "assignments": 2,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 1,
+        "bedroom|den|horizontal": 1,
+        "living|kitchen|vertical": 1,
+        "office|den|vertical": 2
+      },
+      "rooms": [
+        "living"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "living"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "full",
+    "case": "room-s6103-t50-mary",
+    "joint_phase_check": {
+      "assignments": 10,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 1,
+        "bedroom|den|horizontal": 2,
+        "living|kitchen|vertical": 5,
+        "office|den|vertical": 1
+      },
+      "rooms": [
+        "bathroom",
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bathroom",
+      "kitchen"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6103-t50-mary",
+    "joint_phase_check": {
+      "assignments": 15,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 1,
+        "bedroom|den|horizontal": 3,
+        "living|kitchen|vertical": 5,
+        "office|den|vertical": 1
+      },
+      "rooms": [
+        "bathroom",
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bathroom",
+      "kitchen"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6103-t50-mary",
+    "joint_phase_check": {
+      "assignments": 20,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 1,
+        "bedroom|den|horizontal": 2,
+        "living|kitchen|vertical": 5,
+        "office|den|vertical": 2
+      },
+      "rooms": [
+        "bathroom",
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bathroom",
+      "kitchen"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6103-t50-mary",
+    "joint_phase_check": {
+      "assignments": 10,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 1,
+        "bedroom|den|horizontal": 2,
+        "living|kitchen|vertical": 5,
+        "office|den|vertical": 1
+      },
+      "rooms": [
+        "bathroom",
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bathroom",
+      "kitchen"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6103-t50-mary",
+    "joint_phase_check": {
+      "assignments": 10,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 1,
+        "bedroom|den|horizontal": 2,
+        "living|kitchen|vertical": 5,
+        "office|den|vertical": 1
+      },
+      "rooms": [
+        "bathroom",
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bathroom",
+      "kitchen"
+    ],
+    "same_rooms": true
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6103-t50-mary",
+    "joint_phase_check": {
+      "assignments": 20,
+      "missing_transition": false,
+      "phase_counts": {
+        "bathroom|study|horizontal": 1,
+        "bedroom|den|horizontal": 2,
+        "living|kitchen|vertical": 5,
+        "office|den|vertical": 2
+      },
+      "rooms": [
+        "bathroom",
+        "kitchen"
+      ],
+      "scope": "Exact constant phases, latest retained sighting, shared trained transition table"
+    },
+    "old_decoder": [
+      "bathroom",
+      "kitchen"
+    ],
+    "same_rooms": true
+  }
+]

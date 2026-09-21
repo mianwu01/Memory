@@ -1,0 +1,12 @@
+{
+  "case": 3,
+  "repeat": 2,
+  "prompt_sha256": "5233097c5dcc09fa729eb3b32e7fcb09e858fdff4e8c2ff64bd6596882db9ddb",
+  "extracted": "Corazón, las alegrías de Pantriste",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "all_memory_retained": true,
+  "writers_complete": true
+}

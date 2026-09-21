@@ -1,0 +1,10 @@
+{
+  "case": 0,
+  "prompt_sha256": "f1ff65baa7720a95ff033bc7e5fcd1b40629442b0c8e49b782c0b8acb1ff715a",
+  "extracted": "Ihuoma Sonia Uche",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The interview excerpt in Sonia Uche’s biography says she got into acting through a Facebook audition while in her first year (“100 Level”) at university, which led to her first gig in *Complicated*; the same piece says she is a child of divorce and runs a hair business [63918]. A 2023 profile gives her full name as Ihuoma Sonia Uche, born May 25, 1995, and educated at the University of Abuja, Nigeria’s capital [62459][53537]. Other profiles describe her as the first child/daughter of Uche Nancy with three siblings [82844][63918].\n\nExact Answer: Ihuoma Sonia Uche\n\nConfidence: 90%"
+}

@@ -1,0 +1,230 @@
+{
+  "corpus": {
+    "documents": 100195,
+    "source": {
+      "repository": "Tevatron/browsecomp-plus-corpus",
+      "revision": "b27b02bc3e45511b8b82a13e6f90ce761df726f6",
+      "files": [
+        {
+          "type": "directory",
+          "oid": "ddd70f3f59cbc59cb67b7c2f1b41af13baae988e",
+          "size": 0,
+          "path": "data"
+        },
+        {
+          "type": "file",
+          "oid": "1ef325f1b111266a6b26e0196871bd78baa8c2f3",
+          "size": 2461,
+          "path": ".gitattributes"
+        },
+        {
+          "type": "file",
+          "oid": "580447f000d53cb6f6bc50d15a8da97ea4ce33b1",
+          "size": 3232,
+          "path": "README.md"
+        },
+        {
+          "type": "file",
+          "oid": "3add794e0f9cae2156c1fd5c9821b3ea888d614d",
+          "size": 218510750,
+          "lfs": {
+            "oid": "7c07f9e23b1ca548110fd831714cadc67d44db5223bace6e45fcaa795d3153d0",
+            "size": 218510750,
+            "pointerSize": 134
+          },
+          "xetHash": "1674b71b80f2f31b0613e1256cf1f6dd55bb30493d66ca55e899e6bf00603164",
+          "path": "data/train-00000-of-00007.parquet"
+        },
+        {
+          "type": "file",
+          "oid": "2acda8517208db7829599c5606a7aadaa3481853",
+          "size": 271758203,
+          "lfs": {
+            "oid": "e92d8202e0f656a85b262153dbcd22ecf80ea2d0c96d9884f9c8e25480b869ab",
+            "size": 271758203,
+            "pointerSize": 134
+          },
+          "xetHash": "a9fd7ecea6999d0377c6ed235fc08dff028b7ac3988752d4b8aeea98587b765a",
+          "path": "data/train-00001-of-00007.parquet"
+        },
+        {
+          "type": "file",
+          "oid": "b0629598d656da7f25053d93e528a4f2f2a2c390",
+          "size": 257605847,
+          "lfs": {
+            "oid": "0e4113a4503342527258d8f2c49877747435f3e65bfe1f7306b4f488c8d225fe",
+            "size": 257605847,
+            "pointerSize": 134
+          },
+          "xetHash": "407654c1e5decb4b1ca686a241b2e5e1e4840aebdb2c033e28baeb723d551bab",
+          "path": "data/train-00002-of-00007.parquet"
+        },
+        {
+          "type": "file",
+          "oid": "6b74604da17d51d9245410052c923ce01d9f5188",
+          "size": 239125125,
+          "lfs": {
+            "oid": "0ceea5e703332a2e3ce700f641273400d84583fad84b659d3248ed06d3a9fef3",
+            "size": 239125125,
+            "pointerSize": 134
+          },
+          "xetHash": "59aa96678da3a8a01b127aa67898d3eb2314358c62f8d2413d2153e2ed62acbb",
+          "path": "data/train-00003-of-00007.parquet"
+        },
+        {
+          "type": "file",
+          "oid": "e66dfc62197b61be753757b398d404674118007f",
+          "size": 259072824,
+          "lfs": {
+            "oid": "15b62914ddc3de6946893c770f07d5d84d29646e833ca1447955668f2b57940c",
+            "size": 259072824,
+            "pointerSize": 134
+          },
+          "xetHash": "7dd9c44de5ac2c6296e3bca28039e592a510ec8b2e251245c492799ca1854da3",
+          "path": "data/train-00004-of-00007.parquet"
+        },
+        {
+          "type": "file",
+          "oid": "b89895d4007db00a3277c51ed637afdffc694df0",
+          "size": 257706279,
+          "lfs": {
+            "oid": "a9a75708ad37c522e93a774e5a968a3129e12b0559971c8f950a5628e0201df0",
+            "size": 257706279,
+            "pointerSize": 134
+          },
+          "xetHash": "937bd3850021477595c760e5616e3f7558f5579ab8d72af6888aa702e02e69ae",
+          "path": "data/train-00005-of-00007.parquet"
+        },
+        {
+          "type": "file",
+          "oid": "7300cf6f47896bc80db7601151ee98ffe0969107",
+          "size": 257801458,
+          "lfs": {
+            "oid": "290062b60c1a6ebba7d5469a37a431f0a2596e68788295284b1b2d35db07b62c",
+            "size": 257801458,
+            "pointerSize": 134
+          },
+          "xetHash": "d00fc6b4a2a4411fafc6a3156c5820d7841771547ba6264ca9f6b48a2be0f7aa",
+          "path": "data/train-00006-of-00007.parquet"
+        }
+      ]
+    },
+    "backend": "SQLite FTS5 BM25, porter unicode61"
+  },
+  "shards": [
+    {
+      "file": "train-00000-of-00007.parquet",
+      "bytes": 218510750,
+      "sha256": "7c07f9e23b1ca548110fd831714cadc67d44db5223bace6e45fcaa795d3153d0",
+      "verified": true
+    },
+    {
+      "file": "train-00001-of-00007.parquet",
+      "bytes": 271758203,
+      "sha256": "e92d8202e0f656a85b262153dbcd22ecf80ea2d0c96d9884f9c8e25480b869ab",
+      "verified": true
+    },
+    {
+      "file": "train-00002-of-00007.parquet",
+      "bytes": 257605847,
+      "sha256": "0e4113a4503342527258d8f2c49877747435f3e65bfe1f7306b4f488c8d225fe",
+      "verified": true
+    },
+    {
+      "file": "train-00003-of-00007.parquet",
+      "bytes": 239125125,
+      "sha256": "0ceea5e703332a2e3ce700f641273400d84583fad84b659d3248ed06d3a9fef3",
+      "verified": true
+    },
+    {
+      "file": "train-00004-of-00007.parquet",
+      "bytes": 259072824,
+      "sha256": "15b62914ddc3de6946893c770f07d5d84d29646e833ca1447955668f2b57940c",
+      "verified": true
+    },
+    {
+      "file": "train-00005-of-00007.parquet",
+      "bytes": 257706279,
+      "sha256": "a9a75708ad37c522e93a774e5a968a3129e12b0559971c8f950a5628e0201df0",
+      "verified": true
+    },
+    {
+      "file": "train-00006-of-00007.parquet",
+      "bytes": 257801458,
+      "sha256": "290062b60c1a6ebba7d5469a37a431f0a2596e68788295284b1b2d35db07b62c",
+      "verified": true
+    }
+  ],
+  "dev_cases": [
+    {
+      "case": 0,
+      "writes": 8,
+      "lag1_pairs": 7,
+      "explicit_previous": 0,
+      "final_question_words": 143
+    },
+    {
+      "case": 1,
+      "writes": 11,
+      "lag1_pairs": 10,
+      "explicit_previous": 9,
+      "final_question_words": 95
+    },
+    {
+      "case": 2,
+      "writes": 5,
+      "lag1_pairs": 4,
+      "explicit_previous": 1,
+      "final_question_words": 136
+    },
+    {
+      "case": 3,
+      "writes": 10,
+      "lag1_pairs": 9,
+      "explicit_previous": 0,
+      "final_question_words": 141
+    },
+    {
+      "case": 4,
+      "writes": 4,
+      "lag1_pairs": 3,
+      "explicit_previous": 0,
+      "final_question_words": 84
+    },
+    {
+      "case": 5,
+      "writes": 8,
+      "lag1_pairs": 7,
+      "explicit_previous": 5,
+      "final_question_words": 158
+    },
+    {
+      "case": 6,
+      "writes": 4,
+      "lag1_pairs": 3,
+      "explicit_previous": 0,
+      "final_question_words": 83
+    },
+    {
+      "case": 7,
+      "writes": 5,
+      "lag1_pairs": 4,
+      "explicit_previous": 0,
+      "final_question_words": 62
+    },
+    {
+      "case": 8,
+      "writes": 5,
+      "lag1_pairs": 4,
+      "explicit_previous": 0,
+      "final_question_words": 109
+    },
+    {
+      "case": 9,
+      "writes": 7,
+      "lag1_pairs": 6,
+      "explicit_previous": 0,
+      "final_question_words": 103
+    }
+  ]
+}

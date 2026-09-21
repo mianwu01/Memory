@@ -1,0 +1,40 @@
+{
+  "case": "room-s6103-t50-mary",
+  "error_type": "RuntimeError",
+  "memory_calls": 8,
+  "seconds": 75.24754637200385,
+  "status": "invalid_execution",
+  "system": "amem",
+  "traceback": [
+    {
+      "file": "room_memsys.py",
+      "function": "run",
+      "line": 75
+    },
+    {
+      "file": "continuation_memsys.py",
+      "function": "build_memory",
+      "line": 141
+    },
+    {
+      "file": "memory_layer.py",
+      "function": "add_note",
+      "line": 720
+    },
+    {
+      "file": "memory_layer.py",
+      "function": "process_memory",
+      "line": 758
+    },
+    {
+      "file": "memory_layer.py",
+      "function": "get_completion",
+      "line": 44
+    },
+    {
+      "file": "continuation_memsys.py",
+      "function": "measured",
+      "line": 75
+    }
+  ]
+}

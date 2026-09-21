@@ -1,0 +1,10 @@
+{
+  "case": 0,
+  "prompt_sha256": "c1f52de885173c3aa6d5dbf6ecc3362af1cf0a7c03ab31984cc86f28cedf6c38",
+  "extracted": "Sonia Uche",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied memory identifies the individual from the first-year-university audition clue as Sonia Uche. Her biography says she was at “100 Level” when she found an audition on Facebook and later got her “first gig” in *Complicated* [63918]. Other profiles corroborate her as the Nollywood actress Sonia Uche [62459][82844][53537].\n\nExact Answer: Sonia Uche\n\nConfidence: 90%"
+}

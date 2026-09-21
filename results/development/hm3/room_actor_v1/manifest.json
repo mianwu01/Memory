@@ -1,0 +1,1298 @@
+[
+  {
+    "arm": "full",
+    "case": "room-s6100-t50-mary",
+    "job_id": "b259ac2015b1b93f2557ded6885301d9a8c5c62222a02e911e82e55db864f6d0",
+    "mode": "enabled",
+    "prompt_sha256": "2cc0e5bd99dc570fb75748919453e1e7f9f4890585fc79d61452eec5e905a6ce",
+    "records": 63,
+    "repeat": 0
+  },
+  {
+    "arm": "full",
+    "case": "room-s6100-t50-mary",
+    "job_id": "dbb64227a261d785e9acbe1f02dabb68e918a49b11b8a91378da04480763e6a6",
+    "mode": "enabled",
+    "prompt_sha256": "2cc0e5bd99dc570fb75748919453e1e7f9f4890585fc79d61452eec5e905a6ce",
+    "records": 63,
+    "repeat": 1
+  },
+  {
+    "arm": "full",
+    "case": "room-s6100-t50-mary",
+    "job_id": "077ceeb2911f986c69a0d38dda4e336c14f26641ac6a02ba96807d97dfc93167",
+    "mode": "enabled",
+    "prompt_sha256": "2cc0e5bd99dc570fb75748919453e1e7f9f4890585fc79d61452eec5e905a6ce",
+    "records": 63,
+    "repeat": 2
+  },
+  {
+    "arm": "full",
+    "case": "room-s6100-t50-mary",
+    "job_id": "5668e0cf98a8536cd0ef9405a783a4f9218a07a8b83933e884d481e514a792a9",
+    "mode": "disabled",
+    "prompt_sha256": "2cc0e5bd99dc570fb75748919453e1e7f9f4890585fc79d61452eec5e905a6ce",
+    "records": 63,
+    "repeat": 0
+  },
+  {
+    "arm": "full",
+    "case": "room-s6100-t50-mary",
+    "job_id": "74df07c2fa6f6869d0752237ad8a9a12fe47cd63a16f9a390f4ded5fc7ccaaa0",
+    "mode": "disabled",
+    "prompt_sha256": "2cc0e5bd99dc570fb75748919453e1e7f9f4890585fc79d61452eec5e905a6ce",
+    "records": 63,
+    "repeat": 1
+  },
+  {
+    "arm": "full",
+    "case": "room-s6100-t50-mary",
+    "job_id": "b5f51f69f44897d9120e09d3f8cdaa2c930e2a80c9b87e385700f06ff4edad30",
+    "mode": "disabled",
+    "prompt_sha256": "2cc0e5bd99dc570fb75748919453e1e7f9f4890585fc79d61452eec5e905a6ce",
+    "records": 63,
+    "repeat": 2
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6100-t50-mary",
+    "job_id": "5ae47fac356edee430b76fdcd1966d764dc97d4eba8df4aec1444aee82dbbfd8",
+    "mode": "enabled",
+    "prompt_sha256": "6f7b7cea1fcba2cc3ab8495697c0e593092c626017e299e302fca4ad230ef118",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6100-t50-mary",
+    "job_id": "5411dbf842969db15e2b20d20983500a9bfc872f9ccd98848a575dfdc6bf7ae6",
+    "mode": "enabled",
+    "prompt_sha256": "6f7b7cea1fcba2cc3ab8495697c0e593092c626017e299e302fca4ad230ef118",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6100-t50-mary",
+    "job_id": "dab9bec27082f61495d31505d0007fa40a4f07a649dbdd7c5cfa64d516c0f5c4",
+    "mode": "enabled",
+    "prompt_sha256": "6f7b7cea1fcba2cc3ab8495697c0e593092c626017e299e302fca4ad230ef118",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6100-t50-mary",
+    "job_id": "e9293c4fdc1b46b422b063c0d6b4cb81a0b11e8f74ed056c4f830f6004dde811",
+    "mode": "disabled",
+    "prompt_sha256": "6f7b7cea1fcba2cc3ab8495697c0e593092c626017e299e302fca4ad230ef118",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6100-t50-mary",
+    "job_id": "95cb3f2f16b7540de9db56f09ac5009f4ef49dbc8a33dfbb6055b26d94136811",
+    "mode": "disabled",
+    "prompt_sha256": "6f7b7cea1fcba2cc3ab8495697c0e593092c626017e299e302fca4ad230ef118",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6100-t50-mary",
+    "job_id": "13e6a07dcd694edab254df8c7ca39737758da7a8595ea00cfee615ee2b05961d",
+    "mode": "disabled",
+    "prompt_sha256": "6f7b7cea1fcba2cc3ab8495697c0e593092c626017e299e302fca4ad230ef118",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6100-t50-mary",
+    "job_id": "cf7287c87970f0fcfb90683ac35e1684f521bcae1841ef2d9a2d3754d7741b28",
+    "mode": "enabled",
+    "prompt_sha256": "6d43afd86ae5eb0bc419c220a0b39a1b00342a0059cb0911bb6b3244def079b3",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6100-t50-mary",
+    "job_id": "a7c890873216d4eff0760c166e7497070856c0622653d7d622af7b6356bbb674",
+    "mode": "enabled",
+    "prompt_sha256": "6d43afd86ae5eb0bc419c220a0b39a1b00342a0059cb0911bb6b3244def079b3",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6100-t50-mary",
+    "job_id": "92f04e6d5da3e8414e31ffe5de678ffb5e28d42765be8aa79eb15727da484bad",
+    "mode": "enabled",
+    "prompt_sha256": "6d43afd86ae5eb0bc419c220a0b39a1b00342a0059cb0911bb6b3244def079b3",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6100-t50-mary",
+    "job_id": "4714ccbe1c32ea3801138129b1b1860121aed9e828e18a9cbc84661ec3ed5464",
+    "mode": "disabled",
+    "prompt_sha256": "6d43afd86ae5eb0bc419c220a0b39a1b00342a0059cb0911bb6b3244def079b3",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6100-t50-mary",
+    "job_id": "4d374258fc8d0125d90eb83a1bfeb6b9e3835d632d5d060e63342d0abb088f02",
+    "mode": "disabled",
+    "prompt_sha256": "6d43afd86ae5eb0bc419c220a0b39a1b00342a0059cb0911bb6b3244def079b3",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6100-t50-mary",
+    "job_id": "58b4b94c19dea899e228ba9ea2394acb0f1e748a1ef1ac5ef88fc798ffe2dba8",
+    "mode": "disabled",
+    "prompt_sha256": "6d43afd86ae5eb0bc419c220a0b39a1b00342a0059cb0911bb6b3244def079b3",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6100-t50-mary",
+    "job_id": "645d68e2ec25fc603a4183e6ac103897833519b552c6d2fe5acd130a5807f55e",
+    "mode": "enabled",
+    "prompt_sha256": "1d7ebdd8156ec044b2f55d49823d84b70d6a96fb9d6a7676ed51cc75e7a1c701",
+    "records": 56,
+    "repeat": 0
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6100-t50-mary",
+    "job_id": "4a9cf755efac619e0c66fc53339bd02ed91dfde628c3358d89afe46332107b23",
+    "mode": "enabled",
+    "prompt_sha256": "1d7ebdd8156ec044b2f55d49823d84b70d6a96fb9d6a7676ed51cc75e7a1c701",
+    "records": 56,
+    "repeat": 1
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6100-t50-mary",
+    "job_id": "ab467507e45be4179c9504ae1eb5786a9a529f463c0c7bdb3aa7958079f990fa",
+    "mode": "enabled",
+    "prompt_sha256": "1d7ebdd8156ec044b2f55d49823d84b70d6a96fb9d6a7676ed51cc75e7a1c701",
+    "records": 56,
+    "repeat": 2
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6100-t50-mary",
+    "job_id": "695c3b105a6ed68e4d9f0c7796130e45d130448de0893c81ccdefb3e3e75abc0",
+    "mode": "disabled",
+    "prompt_sha256": "1d7ebdd8156ec044b2f55d49823d84b70d6a96fb9d6a7676ed51cc75e7a1c701",
+    "records": 56,
+    "repeat": 0
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6100-t50-mary",
+    "job_id": "c3457d164b047e63651febd5342f90af8e4cf64b9f4493fb414aabddf82adbbc",
+    "mode": "disabled",
+    "prompt_sha256": "1d7ebdd8156ec044b2f55d49823d84b70d6a96fb9d6a7676ed51cc75e7a1c701",
+    "records": 56,
+    "repeat": 1
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6100-t50-mary",
+    "job_id": "9944289ed1986b8d81486655f818dd3113d09b81c329953f4ef1510dedfce652",
+    "mode": "disabled",
+    "prompt_sha256": "1d7ebdd8156ec044b2f55d49823d84b70d6a96fb9d6a7676ed51cc75e7a1c701",
+    "records": 56,
+    "repeat": 2
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6100-t50-mary",
+    "job_id": "1351bed806ec3877bf11da81570177822e00b5dade9995592abc41b22d097db0",
+    "mode": "enabled",
+    "prompt_sha256": "e60ad92eb7cd3d7e23fe53a8b1d0b7caa39e068eccb41382236f737fc8558cfb",
+    "records": 63,
+    "repeat": 0
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6100-t50-mary",
+    "job_id": "c8141fb2a536e8a62d48ab4db131eca9cf2745dcd285dfffef417077d4090dc6",
+    "mode": "enabled",
+    "prompt_sha256": "e60ad92eb7cd3d7e23fe53a8b1d0b7caa39e068eccb41382236f737fc8558cfb",
+    "records": 63,
+    "repeat": 1
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6100-t50-mary",
+    "job_id": "8d8a50528ab4bb3c7d0fab1f8143caaf0c522b97fdc443942082f243bfcf525e",
+    "mode": "enabled",
+    "prompt_sha256": "e60ad92eb7cd3d7e23fe53a8b1d0b7caa39e068eccb41382236f737fc8558cfb",
+    "records": 63,
+    "repeat": 2
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6100-t50-mary",
+    "job_id": "5e4965f7d79605c4fba0b15554eda05e278c75c4743bc714b4c717437bbf91da",
+    "mode": "disabled",
+    "prompt_sha256": "e60ad92eb7cd3d7e23fe53a8b1d0b7caa39e068eccb41382236f737fc8558cfb",
+    "records": 63,
+    "repeat": 0
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6100-t50-mary",
+    "job_id": "f3446ae8081bc8a6812e50b6128dbd9ccbfe0f5ba30c232c84be2acfc8c06b26",
+    "mode": "disabled",
+    "prompt_sha256": "e60ad92eb7cd3d7e23fe53a8b1d0b7caa39e068eccb41382236f737fc8558cfb",
+    "records": 63,
+    "repeat": 1
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6100-t50-mary",
+    "job_id": "93829667a760485cc448fbcd2161c213309af8beb0267b32cb0428879b591893",
+    "mode": "disabled",
+    "prompt_sha256": "e60ad92eb7cd3d7e23fe53a8b1d0b7caa39e068eccb41382236f737fc8558cfb",
+    "records": 63,
+    "repeat": 2
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6100-t50-mary",
+    "job_id": "86db8597ad96c52d8d84ca3904f3d3e3eadb6faf2918997bdef51a7d0870dba4",
+    "mode": "enabled",
+    "prompt_sha256": "7e2f4a1ada02534f5c3a415ad160b3b12025d143b8f81c1e662d42e4b1489989",
+    "records": 49,
+    "repeat": 0
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6100-t50-mary",
+    "job_id": "b7af4821a3402409442adc46d685bbb9fdf244674b3d974a12bd2dff0f56e27f",
+    "mode": "enabled",
+    "prompt_sha256": "7e2f4a1ada02534f5c3a415ad160b3b12025d143b8f81c1e662d42e4b1489989",
+    "records": 49,
+    "repeat": 1
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6100-t50-mary",
+    "job_id": "0e4ec8f2ee013e2d835d18bed4bab044a30f2401cb03bb97e1f8a9a8fb33c592",
+    "mode": "enabled",
+    "prompt_sha256": "7e2f4a1ada02534f5c3a415ad160b3b12025d143b8f81c1e662d42e4b1489989",
+    "records": 49,
+    "repeat": 2
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6100-t50-mary",
+    "job_id": "9ee4236a33db3bc39af8ce75498c5602335d6293b6aab2860bee74368c37c528",
+    "mode": "disabled",
+    "prompt_sha256": "7e2f4a1ada02534f5c3a415ad160b3b12025d143b8f81c1e662d42e4b1489989",
+    "records": 49,
+    "repeat": 0
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6100-t50-mary",
+    "job_id": "30a0aea1de5459c9389f409e5ee7240ec1e87fedc5d10c2e7501b7c852f38aa7",
+    "mode": "disabled",
+    "prompt_sha256": "7e2f4a1ada02534f5c3a415ad160b3b12025d143b8f81c1e662d42e4b1489989",
+    "records": 49,
+    "repeat": 1
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6100-t50-mary",
+    "job_id": "84bea84cc628ec5a2f53a9dc098e47dddde85b25277c03afffa3eaab3845bd68",
+    "mode": "disabled",
+    "prompt_sha256": "7e2f4a1ada02534f5c3a415ad160b3b12025d143b8f81c1e662d42e4b1489989",
+    "records": 49,
+    "repeat": 2
+  },
+  {
+    "arm": "full",
+    "case": "room-s6101-t50-mary",
+    "job_id": "756216d25e72e566f2449c58fc4f66c36fc59299409402ce0c18bb478e22cabd",
+    "mode": "enabled",
+    "prompt_sha256": "e705656245dac2fe9b4f9cd15753dabf24792b4771cdc39fb8bb9da0b8fbb8dc",
+    "records": 63,
+    "repeat": 0
+  },
+  {
+    "arm": "full",
+    "case": "room-s6101-t50-mary",
+    "job_id": "6d491e072ddba19c5aac321d2c5099253fdd4ab586f152db0f7fa76db94d5e1f",
+    "mode": "enabled",
+    "prompt_sha256": "e705656245dac2fe9b4f9cd15753dabf24792b4771cdc39fb8bb9da0b8fbb8dc",
+    "records": 63,
+    "repeat": 1
+  },
+  {
+    "arm": "full",
+    "case": "room-s6101-t50-mary",
+    "job_id": "270d1ca0fde37ae442509f997fd89b4c6de423a6c703d89258130e5637ab4264",
+    "mode": "enabled",
+    "prompt_sha256": "e705656245dac2fe9b4f9cd15753dabf24792b4771cdc39fb8bb9da0b8fbb8dc",
+    "records": 63,
+    "repeat": 2
+  },
+  {
+    "arm": "full",
+    "case": "room-s6101-t50-mary",
+    "job_id": "8a1d946717e8b8c22923409734400a10ba3f7c9109f55e06b3fbb0ad42f46907",
+    "mode": "disabled",
+    "prompt_sha256": "e705656245dac2fe9b4f9cd15753dabf24792b4771cdc39fb8bb9da0b8fbb8dc",
+    "records": 63,
+    "repeat": 0
+  },
+  {
+    "arm": "full",
+    "case": "room-s6101-t50-mary",
+    "job_id": "be5930ff8175f346a8141933b958562323f4ea0973fd068a01ba48d506b2cbee",
+    "mode": "disabled",
+    "prompt_sha256": "e705656245dac2fe9b4f9cd15753dabf24792b4771cdc39fb8bb9da0b8fbb8dc",
+    "records": 63,
+    "repeat": 1
+  },
+  {
+    "arm": "full",
+    "case": "room-s6101-t50-mary",
+    "job_id": "1b0f4b38c1e87b6b44542d2f722c5bd30d81aa79c36ea3604c91884fdab1fda6",
+    "mode": "disabled",
+    "prompt_sha256": "e705656245dac2fe9b4f9cd15753dabf24792b4771cdc39fb8bb9da0b8fbb8dc",
+    "records": 63,
+    "repeat": 2
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6101-t50-mary",
+    "job_id": "21c9cc1296188f617c2843c6706ca3783622c621b8cb1631eca9e26627ceaf6f",
+    "mode": "enabled",
+    "prompt_sha256": "e61e161cc688b8e4fb4915d4b2ed75fa991755cfaa8e1a49441dbeab149f72f0",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6101-t50-mary",
+    "job_id": "8f5ea281fb7f6a12528826f6e1b116482cb3713800fba3a8a6f19a40fbcbe84f",
+    "mode": "enabled",
+    "prompt_sha256": "e61e161cc688b8e4fb4915d4b2ed75fa991755cfaa8e1a49441dbeab149f72f0",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6101-t50-mary",
+    "job_id": "ebcf3cb8e73e1d16dbcae8e0daf756751a57cf5e604f12f52bd41c4dff0274af",
+    "mode": "enabled",
+    "prompt_sha256": "e61e161cc688b8e4fb4915d4b2ed75fa991755cfaa8e1a49441dbeab149f72f0",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6101-t50-mary",
+    "job_id": "6d38c11fa4b2b7994b46bbb7337f2acb9e593d4475f7f2ba53648d2626482465",
+    "mode": "disabled",
+    "prompt_sha256": "e61e161cc688b8e4fb4915d4b2ed75fa991755cfaa8e1a49441dbeab149f72f0",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6101-t50-mary",
+    "job_id": "7e16ce74bd5f7de2cecd49fce63da47ac7da0438a0c3fd0e9b657c212b3644e6",
+    "mode": "disabled",
+    "prompt_sha256": "e61e161cc688b8e4fb4915d4b2ed75fa991755cfaa8e1a49441dbeab149f72f0",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6101-t50-mary",
+    "job_id": "f108823e0626fc2dba0773026ab5c443b796a6cb1808b80f293845376e957841",
+    "mode": "disabled",
+    "prompt_sha256": "e61e161cc688b8e4fb4915d4b2ed75fa991755cfaa8e1a49441dbeab149f72f0",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6101-t50-mary",
+    "job_id": "da2e1c1f6db444fb53d42256ce45bd45edafa6288cd038a26e7b10113c71d2cf",
+    "mode": "enabled",
+    "prompt_sha256": "405935e6f19122a5e45c4618dcac449c29a447f1298bc465b765250611be4258",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6101-t50-mary",
+    "job_id": "209538ab83de51b2522a5d1283b08fff8c6691d11f3e2ce4fa8b42dd5da21bbc",
+    "mode": "enabled",
+    "prompt_sha256": "405935e6f19122a5e45c4618dcac449c29a447f1298bc465b765250611be4258",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6101-t50-mary",
+    "job_id": "07080802a676a08ed911f6c237d62cea096965f20c478a601bfa1736bca295b6",
+    "mode": "enabled",
+    "prompt_sha256": "405935e6f19122a5e45c4618dcac449c29a447f1298bc465b765250611be4258",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6101-t50-mary",
+    "job_id": "77feec8045da34c9b73990768d281ef70613d837802b9103c0b5a357f91d8fb3",
+    "mode": "disabled",
+    "prompt_sha256": "405935e6f19122a5e45c4618dcac449c29a447f1298bc465b765250611be4258",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6101-t50-mary",
+    "job_id": "abbf05532e27f7c0b602f41710ffa85508c956ceb82758f7c5bbddde60e022d1",
+    "mode": "disabled",
+    "prompt_sha256": "405935e6f19122a5e45c4618dcac449c29a447f1298bc465b765250611be4258",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6101-t50-mary",
+    "job_id": "4fd14dae5ff5851c4f911b121544cf17c054051d3dfdaa19712da7e41afae149",
+    "mode": "disabled",
+    "prompt_sha256": "405935e6f19122a5e45c4618dcac449c29a447f1298bc465b765250611be4258",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6101-t50-mary",
+    "job_id": "d1714380f9dbaa4665ce54b854f6dc11c971b27c60ada18fdd81e3a2452643d0",
+    "mode": "enabled",
+    "prompt_sha256": "a6f55417abcb5061c1205544857157d9120e67025f299ad69c31ffd7ba2cc804",
+    "records": 54,
+    "repeat": 0
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6101-t50-mary",
+    "job_id": "65306b6939cba8bbdca4affa787b764b8cda7f3a539ff63aa31476d36114b6f0",
+    "mode": "enabled",
+    "prompt_sha256": "a6f55417abcb5061c1205544857157d9120e67025f299ad69c31ffd7ba2cc804",
+    "records": 54,
+    "repeat": 1
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6101-t50-mary",
+    "job_id": "15b4326a89f96a83d80b2b5f7634e4d9c7ae278c84b0185eea89e110d9a18f98",
+    "mode": "enabled",
+    "prompt_sha256": "a6f55417abcb5061c1205544857157d9120e67025f299ad69c31ffd7ba2cc804",
+    "records": 54,
+    "repeat": 2
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6101-t50-mary",
+    "job_id": "1586421aabc8b69f27c1b866fe1f9667929437d43523e75581f23eb16b955a09",
+    "mode": "disabled",
+    "prompt_sha256": "a6f55417abcb5061c1205544857157d9120e67025f299ad69c31ffd7ba2cc804",
+    "records": 54,
+    "repeat": 0
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6101-t50-mary",
+    "job_id": "65b0021230d0d4fe8fd23566de16d2539aef329a35c29e9f2d08302d22b46bb9",
+    "mode": "disabled",
+    "prompt_sha256": "a6f55417abcb5061c1205544857157d9120e67025f299ad69c31ffd7ba2cc804",
+    "records": 54,
+    "repeat": 1
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6101-t50-mary",
+    "job_id": "44615e485ba343082db933d8feb35e93cc2a203c25c076d5790574d78958cb54",
+    "mode": "disabled",
+    "prompt_sha256": "a6f55417abcb5061c1205544857157d9120e67025f299ad69c31ffd7ba2cc804",
+    "records": 54,
+    "repeat": 2
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6101-t50-mary",
+    "job_id": "f73c5c5db9d7a6c8976ebb4b51c667406e1460f324bcab04520b4ef2849772da",
+    "mode": "enabled",
+    "prompt_sha256": "2143f8ddfb0520ff48d9099b9023f093448e08655cc3e87860271bfa08f320af",
+    "records": 63,
+    "repeat": 0
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6101-t50-mary",
+    "job_id": "467ed9cf0601bf717276c3800904652c1af914aaa4cdd7a9b3b5d80763583f80",
+    "mode": "enabled",
+    "prompt_sha256": "2143f8ddfb0520ff48d9099b9023f093448e08655cc3e87860271bfa08f320af",
+    "records": 63,
+    "repeat": 1
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6101-t50-mary",
+    "job_id": "5bbb9de8d519bea611060ab6a39c2ae1a9e2b7eb30375d7a084b558ed9cff849",
+    "mode": "enabled",
+    "prompt_sha256": "2143f8ddfb0520ff48d9099b9023f093448e08655cc3e87860271bfa08f320af",
+    "records": 63,
+    "repeat": 2
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6101-t50-mary",
+    "job_id": "596b5a87116bf109ff596acb7db62b8cd650cdff498cb02bfc594aab3f34aa9e",
+    "mode": "disabled",
+    "prompt_sha256": "2143f8ddfb0520ff48d9099b9023f093448e08655cc3e87860271bfa08f320af",
+    "records": 63,
+    "repeat": 0
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6101-t50-mary",
+    "job_id": "063e47c3ba2421d636e71298e7124328840929334a8c47d6ba6dd23298e5d447",
+    "mode": "disabled",
+    "prompt_sha256": "2143f8ddfb0520ff48d9099b9023f093448e08655cc3e87860271bfa08f320af",
+    "records": 63,
+    "repeat": 1
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6101-t50-mary",
+    "job_id": "dbc0d28fb9f1a85d81a955d4794b5c06d9bea2e59fe0a06541e28bf52f4aba39",
+    "mode": "disabled",
+    "prompt_sha256": "2143f8ddfb0520ff48d9099b9023f093448e08655cc3e87860271bfa08f320af",
+    "records": 63,
+    "repeat": 2
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6101-t50-mary",
+    "job_id": "a6011fea8c615c1f8fb2534e6486cfccb7d82d824d7ca83f21a0d1a55226784b",
+    "mode": "enabled",
+    "prompt_sha256": "94474ec8bab41e58c5525383721ac70fcd09029278c24151a09133accf040054",
+    "records": 47,
+    "repeat": 0
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6101-t50-mary",
+    "job_id": "cec23fd857ca4fa47c522581dd107213b33c40c8fdff0f3ccec886550d768c4f",
+    "mode": "enabled",
+    "prompt_sha256": "94474ec8bab41e58c5525383721ac70fcd09029278c24151a09133accf040054",
+    "records": 47,
+    "repeat": 1
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6101-t50-mary",
+    "job_id": "6814858e0e3580bd58c7d721eecc7101c2853cef3fb7ff14efd141170d67e8d0",
+    "mode": "enabled",
+    "prompt_sha256": "94474ec8bab41e58c5525383721ac70fcd09029278c24151a09133accf040054",
+    "records": 47,
+    "repeat": 2
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6101-t50-mary",
+    "job_id": "f9ede5bf9aa69ff41ebbad4257a00e278b4deb7b634ac1443f7d288b97017c55",
+    "mode": "disabled",
+    "prompt_sha256": "94474ec8bab41e58c5525383721ac70fcd09029278c24151a09133accf040054",
+    "records": 47,
+    "repeat": 0
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6101-t50-mary",
+    "job_id": "56446ebd09e3e7707dd29d7d9373347e08d5dc1b5e4c130f224c7dd7b9da8e18",
+    "mode": "disabled",
+    "prompt_sha256": "94474ec8bab41e58c5525383721ac70fcd09029278c24151a09133accf040054",
+    "records": 47,
+    "repeat": 1
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6101-t50-mary",
+    "job_id": "500296eb0037e1ba6f91d1821130305389a89f7635455943aa8a821ddc16309d",
+    "mode": "disabled",
+    "prompt_sha256": "94474ec8bab41e58c5525383721ac70fcd09029278c24151a09133accf040054",
+    "records": 47,
+    "repeat": 2
+  },
+  {
+    "arm": "full",
+    "case": "room-s6102-t50-mary",
+    "job_id": "7476cd47688c81d52d5e43bac9b390375d95487a25ac489b33914d8c04eed07d",
+    "mode": "enabled",
+    "prompt_sha256": "f49144057a3611a7239c12dd87d9c9998bda7729f5ad35bc4a4a80ab39f101e2",
+    "records": 63,
+    "repeat": 0
+  },
+  {
+    "arm": "full",
+    "case": "room-s6102-t50-mary",
+    "job_id": "0746a3ef19d0afc3cffb8c942564e9978823de836dad447a84ce14b9cae91c83",
+    "mode": "enabled",
+    "prompt_sha256": "f49144057a3611a7239c12dd87d9c9998bda7729f5ad35bc4a4a80ab39f101e2",
+    "records": 63,
+    "repeat": 1
+  },
+  {
+    "arm": "full",
+    "case": "room-s6102-t50-mary",
+    "job_id": "b3df2dc3182fb21fa6911f87aa8fdbf1f198a58378630059a8fe5d8f2b0c4051",
+    "mode": "enabled",
+    "prompt_sha256": "f49144057a3611a7239c12dd87d9c9998bda7729f5ad35bc4a4a80ab39f101e2",
+    "records": 63,
+    "repeat": 2
+  },
+  {
+    "arm": "full",
+    "case": "room-s6102-t50-mary",
+    "job_id": "22af468a30480129d010955105f2844ded2ab3526d268bd8d66c9defd88bed6c",
+    "mode": "disabled",
+    "prompt_sha256": "f49144057a3611a7239c12dd87d9c9998bda7729f5ad35bc4a4a80ab39f101e2",
+    "records": 63,
+    "repeat": 0
+  },
+  {
+    "arm": "full",
+    "case": "room-s6102-t50-mary",
+    "job_id": "d6e3ac305a35888d854641b699a1acb758b4042d7ff863535777e0c98b4fd4a4",
+    "mode": "disabled",
+    "prompt_sha256": "f49144057a3611a7239c12dd87d9c9998bda7729f5ad35bc4a4a80ab39f101e2",
+    "records": 63,
+    "repeat": 1
+  },
+  {
+    "arm": "full",
+    "case": "room-s6102-t50-mary",
+    "job_id": "f5f8bffdb91752b5b8075e1719045298e49b33ca0fac79a67c85fab441810355",
+    "mode": "disabled",
+    "prompt_sha256": "f49144057a3611a7239c12dd87d9c9998bda7729f5ad35bc4a4a80ab39f101e2",
+    "records": 63,
+    "repeat": 2
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6102-t50-mary",
+    "job_id": "b30fda92e4c2308af370150d348fe3a8a85f45b1d13f5d5f8b443be5c4d223dd",
+    "mode": "enabled",
+    "prompt_sha256": "9ace1ad253c42fbf01f8521a0f7f5ee3245eced2310c442a13a5e6d3f27847de",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6102-t50-mary",
+    "job_id": "7e584c52977a6bce18659fd3fadfb09e3bc33085f1fd9d9d0c3a68437a47d1df",
+    "mode": "enabled",
+    "prompt_sha256": "9ace1ad253c42fbf01f8521a0f7f5ee3245eced2310c442a13a5e6d3f27847de",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6102-t50-mary",
+    "job_id": "f351393ed535ad55d402e95e5ecc6e6364bcc70b6a10825eee4a9312198f5147",
+    "mode": "enabled",
+    "prompt_sha256": "9ace1ad253c42fbf01f8521a0f7f5ee3245eced2310c442a13a5e6d3f27847de",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6102-t50-mary",
+    "job_id": "9aaa8cd15e23a92218dd5c3b09302f93638505394007088c95847b69a1d5a6d2",
+    "mode": "disabled",
+    "prompt_sha256": "9ace1ad253c42fbf01f8521a0f7f5ee3245eced2310c442a13a5e6d3f27847de",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6102-t50-mary",
+    "job_id": "1cd9a7d4384c248361d7ee1f8245c4399b85e338e01710b14d15cf1192e31adb",
+    "mode": "disabled",
+    "prompt_sha256": "9ace1ad253c42fbf01f8521a0f7f5ee3245eced2310c442a13a5e6d3f27847de",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6102-t50-mary",
+    "job_id": "3dde03c732d9c492101d185722cdb8ed5cb56073fc092b856899e2f6ee7d69cc",
+    "mode": "disabled",
+    "prompt_sha256": "9ace1ad253c42fbf01f8521a0f7f5ee3245eced2310c442a13a5e6d3f27847de",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6102-t50-mary",
+    "job_id": "19ef67fdb6f3a34eda8efa3d7e00ec13bdadfb852b80e78d53ba89520fc2e838",
+    "mode": "enabled",
+    "prompt_sha256": "3c43595c566d8be797b35c9ae9bfdbf7925647302b88c16718dcb4b4483e8f65",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6102-t50-mary",
+    "job_id": "de34fe5e8219ceae36f7626871d05c256c50732b974afde2d8649be7cd5c385d",
+    "mode": "enabled",
+    "prompt_sha256": "3c43595c566d8be797b35c9ae9bfdbf7925647302b88c16718dcb4b4483e8f65",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6102-t50-mary",
+    "job_id": "85570b6797c13cc069fe71d24e564a9fa1dfe5673633b04c397d7b92ae73e48b",
+    "mode": "enabled",
+    "prompt_sha256": "3c43595c566d8be797b35c9ae9bfdbf7925647302b88c16718dcb4b4483e8f65",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6102-t50-mary",
+    "job_id": "3625a70d6b68d41741d7a8837362e9a893483e618951473aa4e674c931de4844",
+    "mode": "disabled",
+    "prompt_sha256": "3c43595c566d8be797b35c9ae9bfdbf7925647302b88c16718dcb4b4483e8f65",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6102-t50-mary",
+    "job_id": "46b8c79142f57b9ee2375b3a039da5c1158bfc7ef3c24bc99db8c68b0474db83",
+    "mode": "disabled",
+    "prompt_sha256": "3c43595c566d8be797b35c9ae9bfdbf7925647302b88c16718dcb4b4483e8f65",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6102-t50-mary",
+    "job_id": "6ad083b82c2125d932787ba60f438a9c2fea3f8bf35dd7b6f1b41c0c0ffc7683",
+    "mode": "disabled",
+    "prompt_sha256": "3c43595c566d8be797b35c9ae9bfdbf7925647302b88c16718dcb4b4483e8f65",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6102-t50-mary",
+    "job_id": "7bd56b73ff60a71d0253bad8b17c0b6452920b61e13a53c37c9d1b8d8a4ccf86",
+    "mode": "enabled",
+    "prompt_sha256": "da32993c28eb4079e37c5786aa96327f9a1a0f48cdbbfd2a4acf2300e7e4c569",
+    "records": 60,
+    "repeat": 0
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6102-t50-mary",
+    "job_id": "7a616339b681bd1a6a25d815d16f7325ae00b09a9be00b8e26f31f0ba29c687b",
+    "mode": "enabled",
+    "prompt_sha256": "da32993c28eb4079e37c5786aa96327f9a1a0f48cdbbfd2a4acf2300e7e4c569",
+    "records": 60,
+    "repeat": 1
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6102-t50-mary",
+    "job_id": "ab12267afe5f74e80d5eb76f227f155fa08d151ca9d8c250f33066c476085b71",
+    "mode": "enabled",
+    "prompt_sha256": "da32993c28eb4079e37c5786aa96327f9a1a0f48cdbbfd2a4acf2300e7e4c569",
+    "records": 60,
+    "repeat": 2
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6102-t50-mary",
+    "job_id": "254258bd03b04a6337282e5d4000736faf715b6b71a08c00ca5fe3682bc764e3",
+    "mode": "disabled",
+    "prompt_sha256": "da32993c28eb4079e37c5786aa96327f9a1a0f48cdbbfd2a4acf2300e7e4c569",
+    "records": 60,
+    "repeat": 0
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6102-t50-mary",
+    "job_id": "b08d9e28955b04db7eb10fd40757448f814df4cc74d70781b0422413882162ea",
+    "mode": "disabled",
+    "prompt_sha256": "da32993c28eb4079e37c5786aa96327f9a1a0f48cdbbfd2a4acf2300e7e4c569",
+    "records": 60,
+    "repeat": 1
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6102-t50-mary",
+    "job_id": "79ca3554a91c145bc64cea7e0f3dd2fc31b53579dde54aff0e2b8e854d874b07",
+    "mode": "disabled",
+    "prompt_sha256": "da32993c28eb4079e37c5786aa96327f9a1a0f48cdbbfd2a4acf2300e7e4c569",
+    "records": 60,
+    "repeat": 2
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6102-t50-mary",
+    "job_id": "5329130fdaf10bd00ad2c61a44058f2787f65a5f22ce58a864a52b599ddaca0b",
+    "mode": "enabled",
+    "prompt_sha256": "55e362b6f8cf29f01487b12262ce273ab669e17634a75aed8dc0f735cc893913",
+    "records": 63,
+    "repeat": 0
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6102-t50-mary",
+    "job_id": "5a006c3b14f7389127bbfb9cf22a2f6764fcdfbdbbc44a1652a233d9cf9452fa",
+    "mode": "enabled",
+    "prompt_sha256": "55e362b6f8cf29f01487b12262ce273ab669e17634a75aed8dc0f735cc893913",
+    "records": 63,
+    "repeat": 1
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6102-t50-mary",
+    "job_id": "d57fc87d857da40878e2f54152806d0c30e47bdee33cdf9ec2413583d3e8e192",
+    "mode": "enabled",
+    "prompt_sha256": "55e362b6f8cf29f01487b12262ce273ab669e17634a75aed8dc0f735cc893913",
+    "records": 63,
+    "repeat": 2
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6102-t50-mary",
+    "job_id": "d66a29683479e5284356925e0f4b8369db8aeec9dd46c25dc6c8d4a7400b2a9a",
+    "mode": "disabled",
+    "prompt_sha256": "55e362b6f8cf29f01487b12262ce273ab669e17634a75aed8dc0f735cc893913",
+    "records": 63,
+    "repeat": 0
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6102-t50-mary",
+    "job_id": "13d7e4a7ee3288fbf7b719bf8744ccb81b506acbbceb0c08718e027b57ce4d6a",
+    "mode": "disabled",
+    "prompt_sha256": "55e362b6f8cf29f01487b12262ce273ab669e17634a75aed8dc0f735cc893913",
+    "records": 63,
+    "repeat": 1
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6102-t50-mary",
+    "job_id": "ecc2cbf3b5362a4b45d3b260970727f5fccc2b6d0a1f602c147b0129102e00a8",
+    "mode": "disabled",
+    "prompt_sha256": "55e362b6f8cf29f01487b12262ce273ab669e17634a75aed8dc0f735cc893913",
+    "records": 63,
+    "repeat": 2
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6102-t50-mary",
+    "job_id": "3f95377d269667c664761a91fba809c62a0604721c1d7f1680ff03b9745e0678",
+    "mode": "enabled",
+    "prompt_sha256": "714cdfda8a849737d1a1a333db29b253ce312d945422e37c3eb6f14a024c104d",
+    "records": 44,
+    "repeat": 0
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6102-t50-mary",
+    "job_id": "1facc719fb5b71aa83a2de0584ba83e29187c95eba575aff9cdcfc386f79aad6",
+    "mode": "enabled",
+    "prompt_sha256": "714cdfda8a849737d1a1a333db29b253ce312d945422e37c3eb6f14a024c104d",
+    "records": 44,
+    "repeat": 1
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6102-t50-mary",
+    "job_id": "a07c068094e3c65e126018b41cbe12f1b5d5a52ee4db58b8eaf98ad1fe018dd9",
+    "mode": "enabled",
+    "prompt_sha256": "714cdfda8a849737d1a1a333db29b253ce312d945422e37c3eb6f14a024c104d",
+    "records": 44,
+    "repeat": 2
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6102-t50-mary",
+    "job_id": "8551d24d71db5aa1cd7a9eaaf5ce181fcb7f226507c5f8779259a213bbd8ee98",
+    "mode": "disabled",
+    "prompt_sha256": "714cdfda8a849737d1a1a333db29b253ce312d945422e37c3eb6f14a024c104d",
+    "records": 44,
+    "repeat": 0
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6102-t50-mary",
+    "job_id": "1ea922d8d0d65340dcc249e9b7214286404ecbc3cd9d26e5627d2a223078c1ee",
+    "mode": "disabled",
+    "prompt_sha256": "714cdfda8a849737d1a1a333db29b253ce312d945422e37c3eb6f14a024c104d",
+    "records": 44,
+    "repeat": 1
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6102-t50-mary",
+    "job_id": "0272777d0ce809692b3262178df5a46fdd2da9608565dffdc761e763cc5ae142",
+    "mode": "disabled",
+    "prompt_sha256": "714cdfda8a849737d1a1a333db29b253ce312d945422e37c3eb6f14a024c104d",
+    "records": 44,
+    "repeat": 2
+  },
+  {
+    "arm": "full",
+    "case": "room-s6103-t50-mary",
+    "job_id": "fbb5960fdf6cea4e573de9e7b2cb75e650eacba9b79f20f81088a8d4ef5f37f5",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 0
+  },
+  {
+    "arm": "full",
+    "case": "room-s6103-t50-mary",
+    "job_id": "72e7ad47cc134a7c033c8b1c21777919d276270c7197fd198d8182c0eca8c6ef",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 1
+  },
+  {
+    "arm": "full",
+    "case": "room-s6103-t50-mary",
+    "job_id": "4732a707cd18c99016839858294f0061b73f52b3b5651b8fc0b18c47980d10de",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 2
+  },
+  {
+    "arm": "full",
+    "case": "room-s6103-t50-mary",
+    "job_id": "e851f92e078c4c0405264cf4b421638e2b80c44c68c1d039ee93502636246a84",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 0
+  },
+  {
+    "arm": "full",
+    "case": "room-s6103-t50-mary",
+    "job_id": "b51c4d4565177bccb03b45fb0b252c91e2d4e36142547a29228ba36901a2aba5",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 1
+  },
+  {
+    "arm": "full",
+    "case": "room-s6103-t50-mary",
+    "job_id": "9ef0722140932bc7ce37ba9193adddd21d9163fcbb2096cfcdcb4343599afa1e",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 2
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6103-t50-mary",
+    "job_id": "9933b848a28a4e6fb6199bccaf0df30e992953dc14a84960cdd63cb32de0733f",
+    "mode": "enabled",
+    "prompt_sha256": "6dfad38589353448ca8874bef9e3adc42badfdaa133d6c479b541ce18e470bc2",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6103-t50-mary",
+    "job_id": "56d9d578fe3ea78b1d3fa77713f1a0ed9e264d1057d6fc2dc110b65ebd939d46",
+    "mode": "enabled",
+    "prompt_sha256": "6dfad38589353448ca8874bef9e3adc42badfdaa133d6c479b541ce18e470bc2",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6103-t50-mary",
+    "job_id": "b9fc921d3e2c5bec9c33782013f9402463b5e813b5bd80028eee39e41fc8c19f",
+    "mode": "enabled",
+    "prompt_sha256": "6dfad38589353448ca8874bef9e3adc42badfdaa133d6c479b541ce18e470bc2",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6103-t50-mary",
+    "job_id": "27a40f7e75aafbd6649df72a2833100ffdcd7a3e2a6f3d4cb219223981e5a4b7",
+    "mode": "disabled",
+    "prompt_sha256": "6dfad38589353448ca8874bef9e3adc42badfdaa133d6c479b541ce18e470bc2",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6103-t50-mary",
+    "job_id": "af4470fd5402d42c204f8d19fa50d9022b48839275a54e37dc1c119e6a5332c5",
+    "mode": "disabled",
+    "prompt_sha256": "6dfad38589353448ca8874bef9e3adc42badfdaa133d6c479b541ce18e470bc2",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "learned8",
+    "case": "room-s6103-t50-mary",
+    "job_id": "41d62b1809d5a852af1e7e8018ae0662634d18a2d391e44e21cb68f4634c36fe",
+    "mode": "disabled",
+    "prompt_sha256": "6dfad38589353448ca8874bef9e3adc42badfdaa133d6c479b541ce18e470bc2",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6103-t50-mary",
+    "job_id": "40e513d165e91542527e81ed1132ed6a85503813d7f7ba723a228621d22a3169",
+    "mode": "enabled",
+    "prompt_sha256": "933267f4db9c7ebeac73771038847c162c60579508919ee1fcdd4a106c563bc3",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6103-t50-mary",
+    "job_id": "e35458985ce97bfa3e31d9925dc4ebdf2d2f31f332c8ec75f5d18c78232d3539",
+    "mode": "enabled",
+    "prompt_sha256": "933267f4db9c7ebeac73771038847c162c60579508919ee1fcdd4a106c563bc3",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6103-t50-mary",
+    "job_id": "b592406e0431ce68f4b20f4a53cf2e78558c294d46610daae147f434271d8a3e",
+    "mode": "enabled",
+    "prompt_sha256": "933267f4db9c7ebeac73771038847c162c60579508919ee1fcdd4a106c563bc3",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6103-t50-mary",
+    "job_id": "c53b8080b3b040afcc32f3e5ce14679750bafe05f14df1dc18b8059b33772eb0",
+    "mode": "disabled",
+    "prompt_sha256": "933267f4db9c7ebeac73771038847c162c60579508919ee1fcdd4a106c563bc3",
+    "records": 8,
+    "repeat": 0
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6103-t50-mary",
+    "job_id": "4d1b634b1860eb8b66b27baf39223923aa0fbf7895fc99d832eaf6a98944789a",
+    "mode": "disabled",
+    "prompt_sha256": "933267f4db9c7ebeac73771038847c162c60579508919ee1fcdd4a106c563bc3",
+    "records": 8,
+    "repeat": 1
+  },
+  {
+    "arm": "topology8",
+    "case": "room-s6103-t50-mary",
+    "job_id": "1af0869c65780eb10675a2a09e1439690e524d9d61e8f83e62f4c6d57dab0c2b",
+    "mode": "disabled",
+    "prompt_sha256": "933267f4db9c7ebeac73771038847c162c60579508919ee1fcdd4a106c563bc3",
+    "records": 8,
+    "repeat": 2
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6103-t50-mary",
+    "job_id": "46a1d25911a39c506c07532d0ef0f6ce5c8b65d97efeb031aabbdf22a852d9ed",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 0
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6103-t50-mary",
+    "job_id": "d36e411b5fd881f365b806c8ffc7e5a9053d5583a835559af0ee774540ae0da4",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 1
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6103-t50-mary",
+    "job_id": "b0e2cf7233e7b5a73f89069f82be6122da2c0be191aeb28683ed2416ffc6b96f",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 2
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6103-t50-mary",
+    "job_id": "8f720c95bc479ed948697caccafdb6d559bdd09aefb9ee34022508fda4847f27",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 0
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6103-t50-mary",
+    "job_id": "52f4e5911a1ce32ea705149be0c4e077e5bfc5fd231448ca2d1b1ccc71aebe15",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 1
+  },
+  {
+    "arm": "source_blocked",
+    "case": "room-s6103-t50-mary",
+    "job_id": "c1694f881adc8623d84c829390e79399ffe4f4a204469531e400c40b74067398",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 2
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6103-t50-mary",
+    "job_id": "bc020e05e859e1d637dbf38589c040925776ca78266236ebb2a25894ce9d02f2",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 0
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6103-t50-mary",
+    "job_id": "1eae734e039b2d4b85218aa90ec9d504d04f977ce5e097302de4c1cbb01ef4fa",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 1
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6103-t50-mary",
+    "job_id": "8648dd1552f9582568091d09ccbe7631fa6a4b498b2b6ee360733b8de7741381",
+    "mode": "enabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 2
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6103-t50-mary",
+    "job_id": "299ddbd9f8adc0109e41ba7a471243b7647eaf1521455fa0576bd622344ba8f7",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 0
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6103-t50-mary",
+    "job_id": "ae66dcc9db8e1a02e48db845993cfc1793e7f8b3cd7d5bcd17a8c4ea6276d784",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 1
+  },
+  {
+    "arm": "source_changed",
+    "case": "room-s6103-t50-mary",
+    "job_id": "eccd24f9f4f02ff623696d7baf0a1cbf8a8178ab3dd762fff1ac542cdb1c7a71",
+    "mode": "disabled",
+    "prompt_sha256": "56d98b16a00d3dc9fc372b739e5801d2ba19ad5eebc2f723a4b7df0d2f47922a",
+    "records": 54,
+    "repeat": 2
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6103-t50-mary",
+    "job_id": "a57edb86a19fc2a8710b8c187980692c6171004bca8e4d908e5c9c36f98c5a89",
+    "mode": "enabled",
+    "prompt_sha256": "0f2849b3a6c34cab16e2b99c9a840318f29a3549a27687a5fb02f93e98167908",
+    "records": 42,
+    "repeat": 0
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6103-t50-mary",
+    "job_id": "0d3e92294955cd29213b6e72119ddca5f62c6dd21cf249cd152362b6394c3c36",
+    "mode": "enabled",
+    "prompt_sha256": "0f2849b3a6c34cab16e2b99c9a840318f29a3549a27687a5fb02f93e98167908",
+    "records": 42,
+    "repeat": 1
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6103-t50-mary",
+    "job_id": "9fea65ecb60d98413fcf0f0dc72760a5c7b1629cc6e9292d2670433a0d99868a",
+    "mode": "enabled",
+    "prompt_sha256": "0f2849b3a6c34cab16e2b99c9a840318f29a3549a27687a5fb02f93e98167908",
+    "records": 42,
+    "repeat": 2
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6103-t50-mary",
+    "job_id": "1aeb2638daadc062a9b9408a26e765b56f7915db6311f2dc2d17e715c8a6e970",
+    "mode": "disabled",
+    "prompt_sha256": "0f2849b3a6c34cab16e2b99c9a840318f29a3549a27687a5fb02f93e98167908",
+    "records": 42,
+    "repeat": 0
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6103-t50-mary",
+    "job_id": "7e0a44af2dcca3669c49e7a451c672301a260567312d1b75cf9b7a3ca2d25638",
+    "mode": "disabled",
+    "prompt_sha256": "0f2849b3a6c34cab16e2b99c9a840318f29a3549a27687a5fb02f93e98167908",
+    "records": 42,
+    "repeat": 1
+  },
+  {
+    "arm": "neutral_blocked",
+    "case": "room-s6103-t50-mary",
+    "job_id": "662757b829044df1e6439dc8ddad9e6b793a9cacc07f81b5698cd87ff4b163e1",
+    "mode": "disabled",
+    "prompt_sha256": "0f2849b3a6c34cab16e2b99c9a840318f29a3549a27687a5fb02f93e98167908",
+    "records": 42,
+    "repeat": 2
+  }
+]

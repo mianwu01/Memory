@@ -1,0 +1,12 @@
+{
+  "case": 0,
+  "repeat": 0,
+  "prompt_sha256": "f4b18666a47bde89dc52b92ab6e1ee4a186320225b79aa7756807b1c68b53960",
+  "extracted": "Ihuoma Sonia Uche",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "all_memory_retained": true,
+  "writers_complete": true
+}

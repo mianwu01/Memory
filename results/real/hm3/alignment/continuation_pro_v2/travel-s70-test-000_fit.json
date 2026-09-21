@@ -1,0 +1,64 @@
+{
+  "candidate_edges": 2,
+  "graph": [
+    [
+      [
+        "",
+        ""
+      ],
+      [
+        "",
+        ""
+      ],
+      [
+        "",
+        ""
+      ]
+    ],
+    [
+      [
+        "",
+        ""
+      ],
+      [
+        "",
+        ""
+      ],
+      [
+        "",
+        ""
+      ]
+    ],
+    [
+      [
+        "",
+        ""
+      ],
+      [
+        "",
+        ""
+      ],
+      [
+        "",
+        ""
+      ]
+    ]
+  ],
+  "known_design_constraint": "only independent randomized gates -> correctness",
+  "outcome_constant": false,
+  "p_values": [
+    0.22795368733922505,
+    0.23790365391007887
+  ],
+  "ranking": [
+    0,
+    1
+  ],
+  "statistics": [
+    1.4535843224711122,
+    1.3929731079308922
+  ],
+  "threshold_parents": [],
+  "train_success": 0.0234375,
+  "usable_lag_rows": 127
+}

@@ -1,0 +1,187 @@
+{
+  "evaluations": 48,
+  "scope": "Same four development cases; controller uses shared trained deterministic model",
+  "table": {
+    "disabled/sensor_available": {
+      "completed": 12,
+      "controller_abstained": 9,
+      "controller_correct": 3,
+      "controller_wrong": 0,
+      "correct": 3,
+      "expected": 12,
+      "mean_input_tokens": 1988.5,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "answers": [
+            "bedroom",
+            "bedroom",
+            "bedroom"
+          ],
+          "correct": 0
+        },
+        "room-s6101-t50-mary": {
+          "answers": [
+            "kitchen",
+            "kitchen",
+            "kitchen"
+          ],
+          "correct": 3
+        },
+        "room-s6102-t50-mary": {
+          "answers": [
+            "kitchen",
+            "bedroom",
+            "kitchen"
+          ],
+          "correct": 0
+        },
+        "room-s6103-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        }
+      },
+      "reused": 0,
+      "truncations": 0
+    },
+    "disabled/sensor_unavailable": {
+      "completed": 12,
+      "controller_abstained": 12,
+      "controller_correct": 0,
+      "controller_wrong": 0,
+      "correct": 4,
+      "expected": 12,
+      "mean_input_tokens": 1907.75,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "answers": [
+            "bathroom",
+            null,
+            "bedroom"
+          ],
+          "correct": 1
+        },
+        "room-s6101-t50-mary": {
+          "answers": [
+            "kitchen",
+            "kitchen",
+            "kitchen"
+          ],
+          "correct": 3
+        },
+        "room-s6102-t50-mary": {
+          "answers": [
+            null,
+            "bedroom",
+            "bedroom"
+          ],
+          "correct": 0
+        },
+        "room-s6103-t50-mary": {
+          "answers": [
+            null,
+            null,
+            "bathroom"
+          ],
+          "correct": 0
+        }
+      },
+      "reused": 0,
+      "truncations": 0
+    },
+    "enabled/sensor_available": {
+      "completed": 12,
+      "controller_abstained": 3,
+      "controller_correct": 9,
+      "controller_wrong": 0,
+      "correct": 9,
+      "expected": 12,
+      "mean_input_tokens": 2067.5,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "answers": [
+            "bathroom",
+            "bathroom",
+            "bathroom"
+          ],
+          "correct": 3
+        },
+        "room-s6101-t50-mary": {
+          "answers": [
+            "kitchen",
+            "kitchen",
+            "kitchen"
+          ],
+          "correct": 3
+        },
+        "room-s6102-t50-mary": {
+          "answers": [
+            "living",
+            "living",
+            "living"
+          ],
+          "correct": 3
+        },
+        "room-s6103-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        }
+      },
+      "reused": 0,
+      "truncations": 0
+    },
+    "enabled/sensor_unavailable": {
+      "completed": 12,
+      "controller_abstained": 12,
+      "controller_correct": 0,
+      "controller_wrong": 0,
+      "correct": 3,
+      "expected": 12,
+      "mean_input_tokens": 1986.75,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "answers": [
+            "bathroom",
+            null,
+            null
+          ],
+          "correct": 1
+        },
+        "room-s6101-t50-mary": {
+          "answers": [
+            "kitchen",
+            "kitchen",
+            null
+          ],
+          "correct": 2
+        },
+        "room-s6102-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6103-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        }
+      },
+      "reused": 0,
+      "truncations": 0
+    }
+  },
+  "unique_response_keys": 48
+}

@@ -1,0 +1,96 @@
+{
+  "query": "Flight F92 (Lena, day 1) now arrives at 23:30.\n{\"object_id\": \"F92\", \"op\": \"shift_reservation\", \"payload\": {\"arrival\": 1410}}",
+  "result": {
+    "results": [
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:46:16.575079+00:00",
+        "hash": "206c9f2a77903e820b5196bcb82744fc",
+        "id": "c924dbbc-565a-49fe-9745-6d0fd7fec1a5",
+        "memory": "Flight F92 (Lena, day 1) arrival was shifted from 19:15 to 21:15 (arrival time 1275) in revision 1.",
+        "metadata": null,
+        "score": 0.8946069329402301,
+        "updated_at": "2026-09-21T16:46:16.575079+00:00",
+        "user_id": "travel-s71-test-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:46:22.817831+00:00",
+        "hash": "48ce16e742d7c5fc6d153ab6b85c4446",
+        "id": "8ff4c79f-6a7d-402a-9d85-7929b0e1bb9d",
+        "memory": "Flight F92 (Lena, day 1) arrival was shifted from 21:15 to 18:15 (arrival time 1095) in revision 2.",
+        "metadata": null,
+        "score": 0.8934607085312912,
+        "updated_at": "2026-09-21T16:46:22.817831+00:00",
+        "user_id": "travel-s71-test-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:46:32.980596+00:00",
+        "hash": "3423e9d3f46372d0a93bc9dd3f31dc32",
+        "id": "87c36317-f024-4a9d-a857-64d56a39fc4d",
+        "memory": "Flight F22 (Lena, day 2) arrival was shifted from 15:15 to 16:15 (arrival time 975) in revision 1.",
+        "metadata": null,
+        "score": 0.8652800649222883,
+        "updated_at": "2026-09-21T16:46:32.980596+00:00",
+        "user_id": "travel-s71-test-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:46:49.301637+00:00",
+        "hash": "4373483e25cfbd6234376e705e1f096f",
+        "id": "35229922-0b9d-4cef-b315-2041c025bdff",
+        "memory": "Flight F81 (Dana, day 1) arrival was shifted from 15:45 to 19:15 (arrival time 1155) in revision 1.",
+        "metadata": null,
+        "score": 0.7494641300137708,
+        "updated_at": "2026-09-21T16:46:49.301637+00:00",
+        "user_id": "travel-s71-test-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:46:40.680987+00:00",
+        "hash": "e523aa4855aebd7dc994d36de5f39381",
+        "id": "151314ee-09fa-4ce8-934e-76f1e00c690f",
+        "memory": "Flight F34 (Quinn, day 2) arrival was shifted from 19:00 to 22:00 (arrival time 1320) in revision 1.",
+        "metadata": null,
+        "score": 0.7468232737741975,
+        "updated_at": "2026-09-21T16:46:40.680987+00:00",
+        "user_id": "travel-s71-test-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:46:08.413428+00:00",
+        "hash": "d42360b4cc3d02b85abe9a1819bd1098",
+        "id": "c2f56183-9113-4026-b3ad-58733eb0fe0a",
+        "memory": "Flight F56 (Dana, day 2) arrival was shifted from 17:45 to 20:00 (arrival time 1200) in revision 2.",
+        "metadata": null,
+        "score": 0.6973059089368667,
+        "updated_at": "2026-09-21T16:46:08.413428+00:00",
+        "user_id": "travel-s71-test-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:46:22.821002+00:00",
+        "hash": "2151405f54d8ec6a429201988871df4f",
+        "id": "b9ef6998-2139-4e70-8b53-343e8ec17335",
+        "memory": "Reservation T83 pickup time was shifted from 21:55 to 18:55 (pickup time 1135) in revision 2.",
+        "metadata": null,
+        "score": 0.312943195980342,
+        "updated_at": "2026-09-21T16:46:22.821002+00:00",
+        "user_id": "travel-s71-test-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:46:16.578132+00:00",
+        "hash": "71169d0b9be4ac83e7f3adabe1db8188",
+        "id": "b9a2b0e1-ee5a-45f7-9fa2-8a3d5516c5f2",
+        "memory": "Reservation T83 pickup time was shifted from 19:30 to 21:55 (pickup time 1315) in revision 1.",
+        "metadata": null,
+        "score": 0.31178971792474497,
+        "updated_at": "2026-09-21T16:46:16.578132+00:00",
+        "user_id": "travel-s71-test-000"
+      }
+    ]
+  },
+  "text": "Flight F92 (Lena, day 1) arrival was shifted from 19:15 to 21:15 (arrival time 1275) in revision 1.\nFlight F92 (Lena, day 1) arrival was shifted from 21:15 to 18:15 (arrival time 1095) in revision 2.\nFlight F22 (Lena, day 2) arrival was shifted from 15:15 to 16:15 (arrival time 975) in revision 1.\nFlight F81 (Dana, day 1) arrival was shifted from 15:45 to 19:15 (arrival time 1155) in revision 1.\nFlight F34 (Quinn, day 2) arrival was shifted from 19:00 to 22:00 (arrival time 1320) in revision 1.\nFlight F56 (Dana, day 2) arrival was shifted from 17:45 to 20:00 (arrival time 1200) in revision 2.\nReservation T83 pickup time was shifted from 21:55 to 18:55 (pickup time 1135) in revision 2.\nReservation T83 pickup time was shifted from 19:30 to 21:55 (pickup time 1315) in revision 1."
+}

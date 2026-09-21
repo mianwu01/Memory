@@ -1,5 +1,35 @@
 # Causal memory: method, experiments, results and paper plan — the whole picture (2026-09-21, 03:00)
 
+## Current correction: alignment audit supersedes the historical claims below
+
+The user requested a correction/rework after comparison with Yujia's latest
+meeting. The active protocol is `structure-alignment-protocol-2026-09-21.md`;
+new artifacts are under `results/{development,real}/hm3/alignment/`.
+
+Completed alignment results are summarized in
+`yujia-alignment-results-2026-09-21.md`. The user's follow-up to evaluate other
+recent causal discovery methods is tracked separately in
+`causal-discovery-alternatives-2026-09-21.md`; it does not restore the historical
+claims below.
+
+- GRACE integration is real. Its benefit over supplied instance links + parser is
+  not established: complete-type-graph controls can produce identical selections.
+- The old reference graph is a typed path projection, not a verified direct
+  mechanism graph. Travel dinner->bundle must not be scored only against
+  stay->bundle without distinguishing these estimands.
+- The strongest historical graph_seg actor results remain attributed to that
+  parser-assisted arm. They are not replay-selector or GRACE actor results by fiat.
+- Shopping v2 +0.25 is not an accepted accuracy headline pending output-truncation
+  controls. Stable cost evidence is a separate claim.
+- Read interventions are an experimental alternative and an audit/validation
+  instrument; advisor approval for replacing discovery is not recorded.
+- Universal observational impossibility, unconditional identifiability, exact
+  frontier equivalence, and general O(k log n) ddmin bounds are withdrawn from the
+  active claim set. The revised method draft states the actual narrower facts.
+
+The remainder documents the earlier campaign and contains superseded interpretations;
+it must not be copied into a submission without the corrections above.
+
 给 Yujia / 组内的摘要（其余为英文，直接供论文用）：
 
 1. 9/20 会议的判断已执行：GRACE / PCMCI+ 跑同一批日志，恢复的图插进已有 pipeline，前向与后向数字与干预式骨架相同；CI 类方法在确定性写入上剪掉中介边、Shopping 上返回空图（这是 faithfulness 失效的实例）。交付页 `docs/yujia-causal-bridge-2026-09-20.md`。

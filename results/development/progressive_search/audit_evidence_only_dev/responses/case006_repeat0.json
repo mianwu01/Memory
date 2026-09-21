@@ -1,0 +1,13 @@
+{
+  "case": 6,
+  "repeat": 0,
+  "prompt_sha256": "9c0709ee8b61221ef1b57f8db7f2c84bcbf18fa47a4542156f2304e587c6ffff",
+  "extracted": "New York University",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to Bowen Yang: he was a writer on NBC’s *Saturday Night Live* before becoming an on-camera cast member; he graduated from New York University in 2013 after switching to a French major, and his thesis was on a French battalion drum. NYU was founded in 1831. (No specific supporting document id appears in the supplied memory.)\n\nExact Answer: New York University\n\nConfidence: 82%",
+  "abstained_strict": false,
+  "abstained_prefix": false
+}

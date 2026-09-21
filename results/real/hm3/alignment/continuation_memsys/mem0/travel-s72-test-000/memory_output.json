@@ -1,0 +1,96 @@
+{
+  "query": "Flight F18 (Lena, day 2) now arrives at 18:15.\n{\"object_id\": \"F18\", \"op\": \"shift_reservation\", \"payload\": {\"arrival\": 1095}}",
+  "result": {
+    "results": [
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:48:41.778985+00:00",
+        "hash": "0f09bdc8debcc9115883b2139cc9a531",
+        "id": "e7d8ef3c-847c-4cf1-a372-55788e8dc900",
+        "memory": "Flight F18 (Lena, day 2) arrival was shifted to 18:30 (1110) via intervention.",
+        "metadata": null,
+        "score": 0.8777651225752798,
+        "updated_at": "2026-09-21T16:48:41.778985+00:00",
+        "user_id": "travel-s72-test-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:48:47.908759+00:00",
+        "hash": "4a3ae6795125e3fc9bf8fffc0ea79d59",
+        "id": "b2a00a68-eceb-4fb8-8e40-dbe8ee4ce4c5",
+        "memory": "Flight F84 (Lena, day 1) arrival was shifted to 20:30 (1230) via intervention.",
+        "metadata": null,
+        "score": 0.8568311970875463,
+        "updated_at": "2026-09-21T16:48:47.908759+00:00",
+        "user_id": "travel-s72-test-000"
+      },
+      {
+        "attributed_to": "assistant",
+        "created_at": "2026-09-21T16:48:35.366682+00:00",
+        "hash": "5ca21a84c18fec5d7aca5aef932498ae",
+        "id": "82f79190-6c44-4ee7-859b-b27b356ddb5d",
+        "memory": "Flight F33 (Nia, day 2) arrival was shifted to 21:30 (1290) via intervention.",
+        "metadata": null,
+        "score": 0.7753174228079678,
+        "updated_at": "2026-09-21T16:48:35.366682+00:00",
+        "user_id": "travel-s72-test-000"
+      },
+      {
+        "attributed_to": "assistant",
+        "created_at": "2026-09-21T16:48:35.369192+00:00",
+        "hash": "ffbd65f182326d6c4b67af24b10c378b",
+        "id": "814edab0-9e85-4f47-b547-dfbf436809ea",
+        "memory": "Reservation T89 pickup was shifted to 1325 via auto operation.",
+        "metadata": null,
+        "score": 0.27391737406061056,
+        "updated_at": "2026-09-21T16:48:35.369192+00:00",
+        "user_id": "travel-s72-test-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:48:47.921244+00:00",
+        "hash": "b0959f5610372e3512e1682c4c831c66",
+        "id": "3d2e88e3-00e1-4460-b0c3-02b7e3a654fb",
+        "memory": "Reservation A96 start was shifted to 1950 with a fee of 25.",
+        "metadata": null,
+        "score": 0.2183219143370773,
+        "updated_at": "2026-09-21T16:48:47.921244+00:00",
+        "user_id": "travel-s72-test-000"
+      },
+      {
+        "attributed_to": "assistant",
+        "created_at": "2026-09-21T16:48:35.371824+00:00",
+        "hash": "75c7c8b7504d452ff81d37f90910ed92",
+        "id": "55c968f9-d767-4b27-a2f8-207177d2b0a7",
+        "memory": "Reservation S64 check-in was shifted to 1345 with a fee of 25.",
+        "metadata": null,
+        "score": 0.21404473478657585,
+        "updated_at": "2026-09-21T16:48:35.371824+00:00",
+        "user_id": "travel-s72-test-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:48:47.913815+00:00",
+        "hash": "3c8e46f853f888f2bb4f349658da44db",
+        "id": "db4f2b03-f49f-4629-9350-920e20e7fe20",
+        "memory": "Reservation S13 check-in was shifted to 1340 with a fee of 25.",
+        "metadata": null,
+        "score": 0.20258345678050213,
+        "updated_at": "2026-09-21T16:48:47.913815+00:00",
+        "user_id": "travel-s72-test-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:48:41.786345+00:00",
+        "hash": "3efc22c2ac256129cd4af7f5e132a3f5",
+        "id": "6929ba90-dbd7-4c4b-9d5c-276b6f3a6ddb",
+        "memory": "Reservation D79 was cancelled with a fee of 40.",
+        "metadata": null,
+        "score": 0.1952066351842872,
+        "updated_at": "2026-09-21T16:48:41.786345+00:00",
+        "user_id": "travel-s72-test-000"
+      }
+    ]
+  },
+  "text": "Flight F18 (Lena, day 2) arrival was shifted to 18:30 (1110) via intervention.\nFlight F84 (Lena, day 1) arrival was shifted to 20:30 (1230) via intervention.\nFlight F33 (Nia, day 2) arrival was shifted to 21:30 (1290) via intervention.\nReservation T89 pickup was shifted to 1325 via auto operation.\nReservation A96 start was shifted to 1950 with a fee of 25.\nReservation S64 check-in was shifted to 1345 with a fee of 25.\nReservation S13 check-in was shifted to 1340 with a fee of 25.\nReservation D79 was cancelled with a fee of 40."
+}

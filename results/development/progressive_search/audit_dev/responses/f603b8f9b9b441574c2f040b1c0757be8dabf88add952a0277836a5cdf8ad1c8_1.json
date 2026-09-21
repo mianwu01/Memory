@@ -1,0 +1,11 @@
+{
+  "case": 9,
+  "repeat": 1,
+  "prompt_sha256": "f603b8f9b9b441574c2f040b1c0757be8dabf88add952a0277836a5cdf8ad1c8",
+  "extracted": "Joost Wolfswinkel",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The colonized country is Korea, annexed by Japan in 1910 [57336][24150]. The 1907 Hague Secret Emissary mission sent Koreans to the Netherlands to contest Japan’s seizure and assert Korean independence [11997]. The first visitor from that destination country to naturalize to Joseon/Korea was the Dutch sailor Jan Jansz Weltevree, later known as Pak Yŏn [85933]. Production stills from the documentary about him state that Weltevree/Pak Yŏn was played by Joost Wolfswinkel [17342].  \nExact Answer: Joost Wolfswinkel  \nConfidence: 80%"
+}

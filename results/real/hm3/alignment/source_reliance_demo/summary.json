@@ -1,0 +1,24 @@
+{
+  "baseline": {
+    "n": 3,
+    "correct": 3,
+    "truncated": 0
+  },
+  "without_suspect": {
+    "n": 3,
+    "correct": 3,
+    "truncated": 0
+  },
+  "without_neutral": {
+    "n": 3,
+    "correct": 3,
+    "truncated": 0
+  },
+  "suspect_value_plus30": {
+    "n": 3,
+    "correct": 3,
+    "truncated": 0
+  },
+  "interpretation": "One controlled source-reliance example; source authorization is supplied, not inferred. Fresh validation may fail and must be reported. No claim of detecting lying, hidden thoughts, or the entire causal graph.",
+  "cost_upper_accounting": 0.1828925
+}

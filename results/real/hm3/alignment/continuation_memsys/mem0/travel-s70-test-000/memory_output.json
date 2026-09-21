@@ -1,0 +1,52 @@
+{
+  "query": "Flight F60 (Hana, day 2) now arrives at 18:15.\n{\"object_id\": \"F60\", \"op\": \"shift_reservation\", \"payload\": {\"arrival\": 1095}}",
+  "result": {
+    "results": [
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:41:07.342573+00:00",
+        "hash": "f06147499924c6adbfb35151465b14c6",
+        "id": "b001c48a-a534-4400-b7f5-b0c6973253c9",
+        "memory": "Flight F87 (Hana, day 1) arrival was shifted from 13:45 to 21:45 (arrival time changed from 825 to 1305 minutes) with no fee.",
+        "metadata": null,
+        "score": 0.74816268991439,
+        "updated_at": "2026-09-21T16:41:07.342573+00:00",
+        "user_id": "travel-s70-test-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:41:07.345569+00:00",
+        "hash": "30911f314d264f04fa9d577c6493c307",
+        "id": "b710287f-1d31-4db5-8e40-72890c9d6b29",
+        "memory": "Reservation T69 pickup time was shifted from 14:45 to 22:35 (pickup changed from 885 to 1355 minutes) with no fee.",
+        "metadata": null,
+        "score": 0.2709743559103214,
+        "updated_at": "2026-09-21T16:41:07.345569+00:00",
+        "user_id": "travel-s70-test-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:41:07.349292+00:00",
+        "hash": "aac133a05539cc2005fd1c6b013fdd75",
+        "id": "51c38623-1849-4171-bea8-cd43075ccf17",
+        "memory": "Reservation S86 check-in time was shifted from 15:05 to 22:55 (check-in changed from 905 to 1375 minutes) and was marked as a late arrival, incurring a fee of 25.",
+        "metadata": null,
+        "score": 0.16702145972236992,
+        "updated_at": "2026-09-21T16:41:07.349292+00:00",
+        "user_id": "travel-s70-test-000"
+      },
+      {
+        "attributed_to": "user",
+        "created_at": "2026-09-21T16:41:07.352294+00:00",
+        "hash": "09deb1c04bc237b1e903553309a5508c",
+        "id": "1bd3cc81-aff4-40fd-ac65-79e9706a3973",
+        "memory": "Reservation D88 start time was shifted from 22:45 to 23:45 (start changed from 1365 to 1425 minutes), incurring a fee of 25.",
+        "metadata": null,
+        "score": 0.1379597611051006,
+        "updated_at": "2026-09-21T16:41:07.352294+00:00",
+        "user_id": "travel-s70-test-000"
+      }
+    ]
+  },
+  "text": "Flight F87 (Hana, day 1) arrival was shifted from 13:45 to 21:45 (arrival time changed from 825 to 1305 minutes) with no fee.\nReservation T69 pickup time was shifted from 14:45 to 22:35 (pickup changed from 885 to 1355 minutes) with no fee.\nReservation S86 check-in time was shifted from 15:05 to 22:55 (check-in changed from 905 to 1375 minutes) and was marked as a late arrival, incurring a fee of 25.\nReservation D88 start time was shifted from 22:45 to 23:45 (start changed from 1365 to 1425 minutes), incurring a fee of 25."
+}

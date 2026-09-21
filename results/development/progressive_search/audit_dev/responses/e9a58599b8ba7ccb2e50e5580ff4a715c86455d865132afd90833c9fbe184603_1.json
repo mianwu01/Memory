@@ -1,0 +1,11 @@
+{
+  "case": 9,
+  "repeat": 1,
+  "prompt_sha256": "e9a58599b8ba7ccb2e50e5580ff4a715c86455d865132afd90833c9fbe184603",
+  "extracted": "Joost Wolfswinkel",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The evidence identifies Korea as the colonized kingdom annexed by Japan in 1910, and Syngman Rhee as the Korean activist sent to the United States in 1905 to promote Korean independence [11997][57336][24150]. The first recorded visitor who naturalized in Joseon/Korea was Jan Jansz Weltevree, a Dutch sailor who took the Korean name Pak Yŏn [85933]; the evidence does not support that he was American. Production stills from the documentary identify Weltevree/Pak Yŏn as being played by Joost Wolfswinkel, Dutch ambassador in South Korea [17342].\n\nExact Answer: Joost Wolfswinkel\n\nConfidence: 80%"
+}

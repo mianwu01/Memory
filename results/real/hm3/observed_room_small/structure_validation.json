@@ -1,0 +1,61 @@
+{
+  "false_negative": 4,
+  "false_positive": 0,
+  "predicted": [
+    [
+      "john",
+      "bathroom",
+      "bathroom|study|horizontal"
+    ],
+    [
+      "mary",
+      "kitchen",
+      "living|kitchen|vertical"
+    ],
+    [
+      "mary",
+      "living",
+      "living|kitchen|vertical"
+    ]
+  ],
+  "reference": [
+    [
+      "john",
+      "bathroom",
+      "bathroom|study|horizontal"
+    ],
+    [
+      "john",
+      "den",
+      "office|den|vertical"
+    ],
+    [
+      "john",
+      "kitchen",
+      "living|kitchen|vertical"
+    ],
+    [
+      "mary",
+      "den",
+      "bedroom|den|horizontal"
+    ],
+    [
+      "mary",
+      "den",
+      "office|den|vertical"
+    ],
+    [
+      "mary",
+      "kitchen",
+      "living|kitchen|vertical"
+    ],
+    [
+      "mary",
+      "living",
+      "living|kitchen|vertical"
+    ]
+  ],
+  "reference_contexts": 1904,
+  "reference_is_finite_support": true,
+  "true_positive": 3
+}

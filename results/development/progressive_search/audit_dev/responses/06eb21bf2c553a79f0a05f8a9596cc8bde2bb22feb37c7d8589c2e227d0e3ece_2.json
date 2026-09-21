@@ -1,0 +1,11 @@
+{
+  "case": 1,
+  "repeat": 2,
+  "prompt_sha256": "06eb21bf2c553a79f0a05f8a9596cc8bde2bb22feb37c7d8589c2e227d0e3ece",
+  "extracted": "Tulsidas Balaram",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "deepseek-v4-flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The chain points to Tulsidas Balaram: he was born in 1936 [17054], more than a decade before India’s 1947 independence [93861]; he made his international debut against Yugoslavia at the 1956 Melbourne Olympics [44448][17054], losing that match, and six years later he was instrumental in India’s gold-medal win at the 1962 Asian Games in Jakarta [37746][17054]. In 1962, the same year as that gold, he received the Arjuna Award, India’s second-highest sporting honour after the Khel Ratna [90980][29312][43513][17054][81022].\n\nExact Answer: Tulsidas Balaram\n\nConfidence: 90%"
+}

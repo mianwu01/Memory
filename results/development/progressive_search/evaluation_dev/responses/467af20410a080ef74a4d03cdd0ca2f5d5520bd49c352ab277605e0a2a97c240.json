@@ -1,0 +1,10 @@
+{
+  "case": 1,
+  "prompt_sha256": "467af20410a080ef74a4d03cdd0ca2f5d5520bd49c352ab277605e0a2a97c240",
+  "extracted": "Tulsidas Balaram",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues point to Tulsidas Balaram. The 1962 Asian Games were held in Jakarta, the capital of Indonesia, and the Asian Games is described as the second-largest multi-sport event after the Olympics [61503]. India’s football team won gold at those Games [89915], and Balaram’s medal record lists “Men’s football, Asian Games, 1962 Jakarta, Team” [17054]. His India career ran from 1956 to 1962, placing a lost international debut six years before that gold; he was born in 1936, more than a decade before India’s 1947 independence; and he received the Arjuna Award in 1962, the same year as the gold [17054].\n\nExact Answer: Tulsidas Balaram\n\nConfidence: 75%"
+}

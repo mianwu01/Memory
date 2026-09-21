@@ -1,0 +1,299 @@
+{
+  "status": "post-hoc frozen-input component attribution; no GRACE retraining or parameter tuning",
+  "config": {
+    "inputs": [
+      "results/real/hm3/alignment/read_gate_tcd_s50.json",
+      "results/real/hm3/alignment/read_gate_tcd_s51.json",
+      "results/real/hm3/alignment/read_gate_tcd_s52.json"
+    ],
+    "pc_alpha": 0.05,
+    "test": "gsquared",
+    "max_lag": 1
+  },
+  "episodes": [
+    {
+      "episode": "travel-s50-test-000",
+      "seed": 50,
+      "parents": [
+        "g14",
+        "g15"
+      ],
+      "selected_records": [
+        "h14",
+        "h15"
+      ],
+      "correct": true,
+      "full_read_correct": true,
+      "empty_read_correct": false,
+      "same_parents_as_grace": true,
+      "skeleton_lagged_edges": 8,
+      "same_skeleton_edge_count_as_original": true,
+      "empirical_flip_precision": 1.0,
+      "empirical_flip_recall": 1.0
+    },
+    {
+      "episode": "travel-s50-test-001",
+      "seed": 50,
+      "parents": [
+        "g11",
+        "g12"
+      ],
+      "selected_records": [
+        "h11",
+        "h12"
+      ],
+      "correct": true,
+      "full_read_correct": true,
+      "empty_read_correct": false,
+      "same_parents_as_grace": true,
+      "skeleton_lagged_edges": 3,
+      "same_skeleton_edge_count_as_original": true,
+      "empirical_flip_precision": 1.0,
+      "empirical_flip_recall": 1.0
+    },
+    {
+      "episode": "travel-s50-test-002",
+      "seed": 50,
+      "parents": [
+        "g0",
+        "g1",
+        "g12",
+        "g13",
+        "g4"
+      ],
+      "selected_records": [
+        "h0",
+        "h1",
+        "h4",
+        "h12",
+        "h13"
+      ],
+      "correct": true,
+      "full_read_correct": true,
+      "empty_read_correct": false,
+      "same_parents_as_grace": true,
+      "skeleton_lagged_edges": 11,
+      "same_skeleton_edge_count_as_original": true,
+      "empirical_flip_precision": 1.0,
+      "empirical_flip_recall": 0.8333333333333334
+    },
+    {
+      "episode": "travel-s50-test-003",
+      "seed": 50,
+      "parents": [
+        "g14",
+        "g15"
+      ],
+      "selected_records": [
+        "h14",
+        "h15"
+      ],
+      "correct": false,
+      "full_read_correct": true,
+      "empty_read_correct": false,
+      "same_parents_as_grace": true,
+      "skeleton_lagged_edges": 14,
+      "same_skeleton_edge_count_as_original": true,
+      "empirical_flip_precision": 1.0,
+      "empirical_flip_recall": 0.5
+    },
+    {
+      "episode": "travel-s51-test-000",
+      "seed": 51,
+      "parents": [
+        "g0",
+        "g1",
+        "g14",
+        "g8"
+      ],
+      "selected_records": [
+        "h0",
+        "h1",
+        "h8",
+        "h14"
+      ],
+      "correct": true,
+      "full_read_correct": true,
+      "empty_read_correct": false,
+      "same_parents_as_grace": true,
+      "skeleton_lagged_edges": 12,
+      "same_skeleton_edge_count_as_original": true,
+      "empirical_flip_precision": 0.5,
+      "empirical_flip_recall": 0.5
+    },
+    {
+      "episode": "travel-s51-test-001",
+      "seed": 51,
+      "parents": [
+        "g1",
+        "g14",
+        "g15",
+        "g7",
+        "g8"
+      ],
+      "selected_records": [
+        "h1",
+        "h7",
+        "h8",
+        "h14",
+        "h15"
+      ],
+      "correct": true,
+      "full_read_correct": true,
+      "empty_read_correct": false,
+      "same_parents_as_grace": true,
+      "skeleton_lagged_edges": 12,
+      "same_skeleton_edge_count_as_original": true,
+      "empirical_flip_precision": 1.0,
+      "empirical_flip_recall": 0.625
+    },
+    {
+      "episode": "travel-s51-test-002",
+      "seed": 51,
+      "parents": [
+        "g10",
+        "g25",
+        "g26",
+        "g3",
+        "g4",
+        "g7",
+        "g9"
+      ],
+      "selected_records": [
+        "h3",
+        "h4",
+        "h7",
+        "h9",
+        "h10",
+        "h25",
+        "h26"
+      ],
+      "correct": true,
+      "full_read_correct": true,
+      "empty_read_correct": false,
+      "same_parents_as_grace": true,
+      "skeleton_lagged_edges": 20,
+      "same_skeleton_edge_count_as_original": true,
+      "empirical_flip_precision": 1.0,
+      "empirical_flip_recall": 0.5833333333333334
+    },
+    {
+      "episode": "travel-s51-test-003",
+      "seed": 51,
+      "parents": [
+        "g20",
+        "g21"
+      ],
+      "selected_records": [
+        "h20",
+        "h21"
+      ],
+      "correct": true,
+      "full_read_correct": true,
+      "empty_read_correct": false,
+      "same_parents_as_grace": true,
+      "skeleton_lagged_edges": 16,
+      "same_skeleton_edge_count_as_original": true,
+      "empirical_flip_precision": 1.0,
+      "empirical_flip_recall": 1.0
+    },
+    {
+      "episode": "travel-s52-test-000",
+      "seed": 52,
+      "parents": [
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "selected_records": [
+        "h2",
+        "h3",
+        "h4"
+      ],
+      "correct": true,
+      "full_read_correct": true,
+      "empty_read_correct": false,
+      "same_parents_as_grace": true,
+      "skeleton_lagged_edges": 7,
+      "same_skeleton_edge_count_as_original": true,
+      "empirical_flip_precision": 1.0,
+      "empirical_flip_recall": 1.0
+    },
+    {
+      "episode": "travel-s52-test-001",
+      "seed": 52,
+      "parents": [
+        "g0",
+        "g1",
+        "g3",
+        "g4"
+      ],
+      "selected_records": [
+        "h0",
+        "h1",
+        "h3",
+        "h4"
+      ],
+      "correct": true,
+      "full_read_correct": true,
+      "empty_read_correct": false,
+      "same_parents_as_grace": true,
+      "skeleton_lagged_edges": 5,
+      "same_skeleton_edge_count_as_original": true,
+      "empirical_flip_precision": 1.0,
+      "empirical_flip_recall": 1.0
+    },
+    {
+      "episode": "travel-s52-test-002",
+      "seed": 52,
+      "parents": [
+        "g0",
+        "g1",
+        "g12",
+        "g13",
+        "g5"
+      ],
+      "selected_records": [
+        "h0",
+        "h1",
+        "h5",
+        "h12",
+        "h13"
+      ],
+      "correct": true,
+      "full_read_correct": true,
+      "empty_read_correct": false,
+      "same_parents_as_grace": true,
+      "skeleton_lagged_edges": 19,
+      "same_skeleton_edge_count_as_original": true,
+      "empirical_flip_precision": 1.0,
+      "empirical_flip_recall": 0.8333333333333334
+    },
+    {
+      "episode": "travel-s52-test-003",
+      "seed": 52,
+      "parents": [
+        "g0",
+        "g13",
+        "g16",
+        "g17",
+        "g9"
+      ],
+      "selected_records": [
+        "h0",
+        "h9",
+        "h13",
+        "h16",
+        "h17"
+      ],
+      "correct": true,
+      "full_read_correct": true,
+      "empty_read_correct": false,
+      "same_parents_as_grace": true,
+      "skeleton_lagged_edges": 10,
+      "same_skeleton_edge_count_as_original": true,
+      "empirical_flip_precision": 1.0,
+      "empirical_flip_recall": 0.625
+    }
+  ]
+}

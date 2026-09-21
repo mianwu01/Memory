@@ -1,0 +1,13 @@
+{
+  "request": {
+    "model": "text-embedding-3-small",
+    "input": [
+      "memory search"
+    ]
+  },
+  "started": 1790026267.7500007,
+  "event": "infrastructure_failure",
+  "error_type": "NotFoundError",
+  "status": 404,
+  "finished": 1790026268.2495413
+}

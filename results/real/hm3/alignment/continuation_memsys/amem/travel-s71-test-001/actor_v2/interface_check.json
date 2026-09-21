@@ -1,0 +1,7 @@
+{
+  "exact_shared_system_state_query": true,
+  "memory_output_sha256": "00849e240ec60a6c58fc4dc8a272311b1e22c17923bc9847177c224506d2eb81",
+  "prior_actor_excluded_from_primary_table": true,
+  "reference_prompt_sha256": "e47e51d980647e13f1733ea47f56826250f373e033484bcd63cfe39129c872aa",
+  "shared_framing_sha256": "af98ea215259b67bed2c0903622c0a3c74dbf1dc66fb92788c58ed88510ebd59"
+}

@@ -1,0 +1,10 @@
+{
+  "case": 9,
+  "prompt_sha256": "efb532e9a5c949b26666ca471a5d1d944db537a4709eb7dc81cc74a87591387a",
+  "extracted": "Joost Wolfswinkel",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The evidence identifies the first foreign visitor who naturalized in Joseon/Korea as Jan Jansz Weltevree (Pak Yŏn), a Dutch sailor [85933]. In the documentary’s production stills, Weltevree is explicitly captioned as “played by Joost Wolfswinkel, Dutch ambassador in South Korea” [17342]. So the actor who played this person was Joost Wolfswinkel.  \nExact Answer: Joost Wolfswinkel  \nConfidence: 85%"
+}

@@ -1,0 +1,9 @@
+{
+  "actor_passed": false,
+  "identical_inputs": {
+    "complete": 8,
+    "topic_only": 10
+  },
+  "stop_structure_claim": true,
+  "expand_to_train_test": false
+}

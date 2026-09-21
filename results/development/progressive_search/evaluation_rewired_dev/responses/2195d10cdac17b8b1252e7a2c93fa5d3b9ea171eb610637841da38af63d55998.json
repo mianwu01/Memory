@@ -1,0 +1,10 @@
+{
+  "case": 2,
+  "prompt_sha256": "2195d10cdac17b8b1252e7a2c93fa5d3b9ea171eb610637841da38af63d55998",
+  "extracted": "John Daniel delos Santos",
+  "correct": true,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The described teen organ/tissue donor is AJ Perez, who died in a vehicular accident in 2011 [31584][62478]. His corneas were donated [62478]. The kid who received one cornea and later appeared on a TV show segment as a teenager before 2023 was John Daniel delos Santos, on “Eat Bulaga!” “Bawal Judgmental,” aired October 27, 2020, where he thanked AJ’s family [5784][58107].\n\nExact Answer: John Daniel delos Santos\n\nConfidence: 90%"
+}

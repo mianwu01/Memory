@@ -1,0 +1,10 @@
+{
+  "case": 7,
+  "prompt_sha256": "e9e1b14f14fc7005044d6e62d605ef68a57079c87047f58e924d4753c5d46eb6",
+  "extracted": "UNKNOWN",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "deepseek-v4-flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The supplied memory gives partial, conflicting matches: Alexander Sokovikov is identified as an actor/taxicab driver [54077][13279], while Matthew Perry is identified as an actor whose girlfriend Rachel Dunn was a professional volleyball player [1605]. No supplied evidence connects either person to all the remaining criteria (TV debut in 2004, a movie with a Disney Channel star, switching schools at least 10 times), so the full set cannot be confirmed from memory.\n\nExact Answer: UNKNOWN\n\nConfidence: 88%"
+}

@@ -1,5 +1,12 @@
 # 给 Yujia：成熟因果发现算法 → 同一条 pipeline（2026-09-20 会后一页）
 
+> **2026-09-21 核验修正：本页保留历史实验记录，不作为“已满足要求”的结论。**
+> GRACE 确实运行并接入，但开放图在 Travel 接近全连接；保留原实例链接和
+> parser、取消类型边筛选，也能得到相同读取。新对照见
+> `structure-alignment-protocol-2026-09-21.md` 与 `results/real/hm3/alignment/`。
+> 参照的五条边是 LearnedGraph 的路径投影，不是逐条核验的直接机制图。
+> GRACE 原文 Appendix B 明确不提供完整非线性模型的 identifiability 保证。
+
 会上的结论：pipeline 完整；"causal" 这个词要站得住，结构发现必须能由成熟的 causal discovery 算法在同一批日志上得到。下面是照这个顺序做完的结果：GRACE / PCMCI+ 跑同一批日志 → 与干预式骨架比图恢复 → 把恢复的图插进已有的 forward selection 与 backward provenance → 判断是否需要重跑 actor。没有为了让某个方法"赢"而调参；Shopping 按边界如实报。
 
 ## 一张图
@@ -51,7 +58,10 @@ Actor 层（DeepSeek-V4-Flash，16k，同序列化，两种 prompt；结构臂�
 | 100 条含冲突证人 | 0.33 vs 0.14（**+0.19 [+0.06, +0.32]**） | 0.44 vs 0.19（+0.22 [+0.07, +0.39]） |
 | 500 条 | 0.33 vs 0.16（**+0.17 [+0.03, +0.32]**） | 0.56 vs 0.11（+0.44 [+0.30, +0.57]） |
 
-GRACE 选出的记录集与参照在 63–64/64 episode 上相同（seed 30 只有 2 个 episode 多读一条 flight），actor prompt 由这些记录构造，所以不需要用 GRACE 图重跑 actor 面板；上表即是。
+历史上的记录集相似性不足以把上表整体归给 GRACE：actor 还接收对象状态，
+graph_seg 还扩展整个 segment。只有逐 episode 的完整 messages 哈希一致时，
+才能复用相同输入的调用；差异输入需要新调用。新 alignment 面板显式记录
+这种等价关系和共享调用，不把它们当独立重复实验。
 
 ## 第三组：Backward（同一张图正向选、反向追；Travel test seeds 30/31/32）
 

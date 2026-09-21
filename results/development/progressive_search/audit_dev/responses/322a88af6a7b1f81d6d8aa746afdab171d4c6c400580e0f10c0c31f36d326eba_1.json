@@ -1,0 +1,11 @@
+{
+  "case": 2,
+  "repeat": 1,
+  "prompt_sha256": "322a88af6a7b1f81d6d8aa746afdab171d4c6c400580e0f10c0c31f36d326eba",
+  "extracted": "Sirine Jahangir",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The clues describe a teenage cornea donor whose donated tissues helped two people, one a child. The child recipient later appeared on a TV music-show segment as a teenager and thanked the donor’s family. This matches the singer Sirine Jahangir, who was featured on *The Voice Kids*.\n\nExact Answer: Sirine Jahangir\n\nConfidence: 65%"
+}

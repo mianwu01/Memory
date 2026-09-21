@@ -1,0 +1,151 @@
+{
+  "by_source": {
+    "results/development/hm3/paired_actor_s82/ledger.jsonl": {
+      "responses": 72,
+      "failed_attempts": 0,
+      "reused_responses_excluded": 0,
+      "prompt_tokens": 402096,
+      "completion_tokens": 945732
+    },
+    "results/development/hm3/room_actor_v1/ledger.jsonl": {
+      "responses": 144,
+      "failed_attempts": 0,
+      "reused_responses_excluded": 0,
+      "prompt_tokens": 242964,
+      "completion_tokens": 798326
+    },
+    "results/development/hm3/room_native_actor_v1/ledger.jsonl": {
+      "responses": 48,
+      "failed_attempts": 0,
+      "reused_responses_excluded": 0,
+      "prompt_tokens": 207366,
+      "completion_tokens": 135837
+    },
+    "results/development/hm3/room_controls_v1/ledger.jsonl": {
+      "responses": 93,
+      "failed_attempts": 0,
+      "reused_responses_excluded": 0,
+      "prompt_tokens": 110358,
+      "completion_tokens": 738190
+    },
+    "results/development/hm3/room_controller_v1/ledger.jsonl": {
+      "responses": 48,
+      "failed_attempts": 0,
+      "reused_responses_excluded": 0,
+      "prompt_tokens": 95406,
+      "completion_tokens": 300825
+    },
+    "results/development/hm3/room_native/amem/room-s6100-t50-mary/memory_calls.jsonl": {
+      "responses": 16,
+      "failed_attempts": 1,
+      "reused_responses_excluded": 0,
+      "prompt_tokens": 17911,
+      "completion_tokens": 4026
+    },
+    "results/development/hm3/room_native/amem/room-s6101-t50-mary/memory_calls.jsonl": {
+      "responses": 22,
+      "failed_attempts": 0,
+      "reused_responses_excluded": 0,
+      "prompt_tokens": 25417,
+      "completion_tokens": 4511
+    },
+    "results/development/hm3/room_native/amem/room-s6102-t50-mary/memory_calls.jsonl": {
+      "responses": 2,
+      "failed_attempts": 1,
+      "reused_responses_excluded": 0,
+      "prompt_tokens": 1324,
+      "completion_tokens": 131
+    },
+    "results/development/hm3/room_native/amem/room-s6103-t50-mary/memory_calls.jsonl": {
+      "responses": 7,
+      "failed_attempts": 1,
+      "reused_responses_excluded": 0,
+      "prompt_tokens": 4970,
+      "completion_tokens": 652
+    },
+    "results/development/hm3/room_native/mem0/room-s6100-t50-mary/memory_calls.jsonl": {
+      "responses": 44,
+      "failed_attempts": 0,
+      "reused_responses_excluded": 0,
+      "prompt_tokens": 377638,
+      "completion_tokens": 222
+    },
+    "results/development/hm3/room_native_recovery/amem/room-s6100-t50-mary/memory_calls.jsonl": {
+      "responses": 5,
+      "failed_attempts": 0,
+      "reused_responses_excluded": 17,
+      "prompt_tokens": 7699,
+      "completion_tokens": 1518
+    },
+    "results/development/hm3/room_native_recovery/amem/room-s6102-t50-mary/memory_calls.jsonl": {
+      "responses": 19,
+      "failed_attempts": 3,
+      "reused_responses_excluded": 3,
+      "prompt_tokens": 23200,
+      "completion_tokens": 4044
+    },
+    "results/development/hm3/room_native_recovery/amem/room-s6103-t50-mary/memory_calls.jsonl": {
+      "responses": 14,
+      "failed_attempts": 2,
+      "reused_responses_excluded": 8,
+      "prompt_tokens": 18362,
+      "completion_tokens": 4700
+    },
+    "results/development/hm3/room_native_http_probe/room-s6100-t50-mary-17.json": {
+      "responses": 1,
+      "failed_attempts": 0,
+      "reused_responses_excluded": 0,
+      "prompt_tokens": 445,
+      "completion_tokens": 96
+    },
+    "results/development/hm3/room_native_http_probe/room-s6102-t50-mary-3.json": {
+      "responses": 1,
+      "failed_attempts": 0,
+      "reused_responses_excluded": 0,
+      "prompt_tokens": 509,
+      "completion_tokens": 86
+    },
+    "results/development/hm3/room_native_http_probe/room-s6103-t50-mary-8.json": {
+      "responses": 1,
+      "failed_attempts": 0,
+      "reused_responses_excluded": 0,
+      "prompt_tokens": 1446,
+      "completion_tokens": 396
+    }
+  },
+  "completed_responses": 537,
+  "failed_attempts": 8,
+  "prompt_tokens": 1537111,
+  "completion_tokens": 2939292,
+  "reasoning_tokens_subset": 2767239,
+  "models": {
+    "DeepSeek-V4-Flash-0731": 519,
+    "deepseek-v4-flash-0731": 18
+  },
+  "reused_responses_excluded": 28,
+  "actor_request_intents": 405,
+  "unresolved_actor_intents": [],
+  "reported_output_budget_exceedances": [
+    {
+      "directory": "paired_actor_s82",
+      "job_id": "ba02e525ed3730607ca8b126658391645d914a6eea121b702fce08ec472fe7e5",
+      "requested_max_tokens": 32768,
+      "reported_completion_tokens": 33183,
+      "finish_reason": "stop"
+    },
+    {
+      "directory": "paired_actor_s82",
+      "job_id": "526f10499924582d8f5e6be067841505df703f221749da6c5bf4b614e902f8a7",
+      "requested_max_tokens": 32768,
+      "reported_completion_tokens": 40281,
+      "finish_reason": "stop"
+    }
+  ],
+  "notes": [
+    "Reasoning tokens are already included in completion tokens; never add twice",
+    "Provider pricing unknown; no dollar/cny bill inferred",
+    "Mem0 all 44 responses are recorded under first case due to module cache; aggregate only",
+    "Includes original failed native attempts and probes; excludes exact replayed responses",
+    "Method alias rows are not new API responses; corpus embedding CPU cost not estimated"
+  ]
+}

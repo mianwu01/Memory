@@ -1,0 +1,10 @@
+{
+  "case": 9,
+  "prompt_sha256": "45918a1db6707a3ce7025d11bbbb90c4a6ca4414bd7f55b78fda93d898a81774",
+  "extracted": "Joost Wolfswinkel (as Jan Jansz Weltevree / Pak Yŏn)",
+  "correct": false,
+  "finish_reason": "stop",
+  "returned_model": "DeepSeek-V4-Flash-0731",
+  "reasoning_observed": true,
+  "answer": "Explanation: The colonized country is Korea, annexed by Japan [57336][24150], and Syngman Rhee was the activist sent to the U.S. [11997]. The documentary production-still page identifies Jan Jansz Weltevree / Pak Yŏn—the first foreign visitor who naturalized to Joseon [85933]—as “played by Joost Wolfswinkel, Dutch ambassador in South Korea” [17342]. So the actor was Joost Wolfswinkel, although the evidence identifies Weltevree as Dutch rather than American.\n\nExact Answer: Joost Wolfswinkel (as Jan Jansz Weltevree / Pak Yŏn)\n\nConfidence: 80%"
+}

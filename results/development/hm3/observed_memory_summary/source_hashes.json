@@ -1,0 +1,15 @@
+{
+  "code/hm3/observed_room.py": "820a62ce1003ff363635de9897247b98db42c661081e4dfdf69d7641e03eca23",
+  "code/hm3/paired_actor.py": "f9fcb26d97d16c1bb67d3e34379d1cf827606f164c4e6461056b14080fd15609",
+  "code/hm3/room_actor.py": "8a09397685db9ab16a9c1739b8c9c5951ecc23998f9e4457da75d29f47893f10",
+  "code/hm3/room_source_audit.py": "6ed7b657edaab0995ecbf52b1d26b51ac5ca9042b5317ddcf717361f1592c393",
+  "code/hm3/room_memsys.py": "2112d49a40250dbf1042a2c6d3944c5fcf30ccdf311e1991f57d96f40aa2e82c",
+  "code/hm3/room_amem_probe.py": "0d5a6c8db3d61f97575f2ea50faa489b3bd382c8a79552c760d93bc7484d43b0",
+  "code/hm3/room_amem_recover.py": "830fcbd113315eaab395f0b0ccaf54dcc8857f0943c4883589fe48b07b21177d",
+  "code/hm3/room_native_actor.py": "bf8dcb1d6b6258974bcc167395ee23f6f2e877473cc1fcb404f3abd06e4d8094",
+  "code/hm3/room_closure.py": "ebf56a36f6a8f83042fabfe949c502545ae96e699695cdfe34ac4e855aa6a094",
+  "code/hm3/room_posthoc_controls.py": "624655c903116917f01834e59c2cfc9f85e8afdf6926f55385413e31da9206b0",
+  "code/hm3/room_belief_diagnostic.py": "93f48ef7126d5be0bc27ca2e468fad099c3f748d783db779e35e473ddf970e36",
+  "code/hm3/observed_memory_report.py": "60d808a2c26742e97ac67b437915d4e00308cb79f702d6dd1c2bae03384b8664",
+  "code/hm3/test_observed_memory.py": "b35b5417f3bc8465dfa9fb3f4797814c15ed1d0cec6c884169214c318a359dc6"
+}

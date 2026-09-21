@@ -1,0 +1,412 @@
+{
+  "evaluations": 108,
+  "scope": "Same four development cases; controller uses shared trained deterministic model",
+  "table": {
+    "enabled/bm25_8": {
+      "completed": 12,
+      "controller_abstained": 0,
+      "controller_correct": 0,
+      "controller_wrong": 0,
+      "correct": 6,
+      "expected": 12,
+      "mean_input_tokens": 1194.75,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6101-t50-mary": {
+          "answers": [
+            "kitchen",
+            "kitchen",
+            "kitchen"
+          ],
+          "correct": 3
+        },
+        "room-s6102-t50-mary": {
+          "answers": [
+            "living",
+            null,
+            "living"
+          ],
+          "correct": 2
+        },
+        "room-s6103-t50-mary": {
+          "answers": [
+            "kitchen",
+            null,
+            null
+          ],
+          "correct": 1
+        }
+      },
+      "reused": 0,
+      "truncations": 0
+    },
+    "enabled/complete8": {
+      "completed": 12,
+      "controller_abstained": 0,
+      "controller_correct": 0,
+      "controller_wrong": 0,
+      "correct": 0,
+      "expected": 12,
+      "mean_input_tokens": 1207.0,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6101-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6102-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6103-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        }
+      },
+      "reused": 0,
+      "truncations": 0
+    },
+    "enabled/cyclic_wrong1_8": {
+      "completed": 12,
+      "controller_abstained": 0,
+      "controller_correct": 0,
+      "controller_wrong": 0,
+      "correct": 0,
+      "expected": 12,
+      "mean_input_tokens": 1199.5,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6101-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6102-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6103-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        }
+      },
+      "reused": 0,
+      "truncations": 0
+    },
+    "enabled/cyclic_wrong2_8": {
+      "completed": 12,
+      "controller_abstained": 0,
+      "controller_correct": 0,
+      "controller_wrong": 0,
+      "correct": 0,
+      "expected": 12,
+      "mean_input_tokens": 1211.25,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6101-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6102-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6103-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        }
+      },
+      "reused": 0,
+      "truncations": 0
+    },
+    "enabled/cyclic_wrong3_8": {
+      "completed": 12,
+      "controller_abstained": 0,
+      "controller_correct": 0,
+      "controller_wrong": 0,
+      "correct": 0,
+      "expected": 12,
+      "mean_input_tokens": 1205.75,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6101-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6102-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6103-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        }
+      },
+      "reused": 0,
+      "truncations": 0
+    },
+    "enabled/ledger8": {
+      "completed": 12,
+      "controller_abstained": 0,
+      "controller_correct": 0,
+      "controller_wrong": 0,
+      "correct": 0,
+      "expected": 12,
+      "mean_input_tokens": 1203.25,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6101-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6102-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6103-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        }
+      },
+      "reused": 3,
+      "truncations": 0
+    },
+    "enabled/query_only": {
+      "completed": 12,
+      "controller_abstained": 0,
+      "controller_correct": 0,
+      "controller_wrong": 0,
+      "correct": 0,
+      "expected": 12,
+      "mean_input_tokens": 1073.0,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6101-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6102-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6103-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        }
+      },
+      "reused": 0,
+      "truncations": 0
+    },
+    "enabled/recency8": {
+      "completed": 12,
+      "controller_abstained": 0,
+      "controller_correct": 0,
+      "controller_wrong": 0,
+      "correct": 0,
+      "expected": 12,
+      "mean_input_tokens": 1203.5,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6101-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6102-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        },
+        "room-s6103-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        }
+      },
+      "reused": 0,
+      "truncations": 0
+    },
+    "enabled/table_sensitivity8": {
+      "completed": 12,
+      "controller_abstained": 0,
+      "controller_correct": 0,
+      "controller_wrong": 0,
+      "correct": 9,
+      "expected": 12,
+      "mean_input_tokens": 1206.0,
+      "per_case": {
+        "room-s6100-t50-mary": {
+          "answers": [
+            "bathroom",
+            "bathroom",
+            "bathroom"
+          ],
+          "correct": 3
+        },
+        "room-s6101-t50-mary": {
+          "answers": [
+            "kitchen",
+            "kitchen",
+            "kitchen"
+          ],
+          "correct": 3
+        },
+        "room-s6102-t50-mary": {
+          "answers": [
+            "living",
+            "living",
+            "living"
+          ],
+          "correct": 3
+        },
+        "room-s6103-t50-mary": {
+          "answers": [
+            null,
+            null,
+            null
+          ],
+          "correct": 0
+        }
+      },
+      "reused": 12,
+      "truncations": 0
+    }
+  },
+  "unique_response_keys": 105
+}
