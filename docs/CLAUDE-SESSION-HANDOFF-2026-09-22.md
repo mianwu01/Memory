@@ -26,7 +26,7 @@ by git after GitHub rejected the token at 16:01 on 9/21, so the user must re-add
 | file | state after reconciliation |
 |---|---|
 | `paper-draft-method-2026-09-21.md` | **Rewritten 9/22 under your protocol**: Observation 1 replaces Proposition 1; O(k log n) withdrawn, measured counts only; monotone use stated as a property of HM3's witness layout; randomised gates + PCMCI+ (G²) is Procedure A (the established-algorithm discovery), ddmin is Procedure B; §3.6 carries the attribution rules and the complete-graph control; template vs mechanism reference (stay→bundle vs dinner→bundle) named. Your amended version was the input; this supersedes it. |
-| `paper-draft-experiments-2026-09-20.md` | **Rewritten 9/22 morning, before your branch was seen; NOT yet reconciled.** It still attributes forward gains to "structure", calls Proposition 1 a proposition, and has no complete-graph control, no read-gate PCMCI table, no Progressive Search / RoomEnv / source-audit boundaries. That rewrite is the next task on this side; do not cite this file's §5.2 until it is done. Its tables 5–9 and the ablation rows are numerically correct. |
+| `paper-draft-experiments-2026-09-20.md` | **Rewritten 9/22 morning, reconciled 9/22 evening.** §5.2 now opens with your randomised-gate PCMCI result (Table 1a) and carries the complete-graph control (Table 3b, 1,531/1,531); every "structure" arm is renamed "instance links + parser"; v2 rows are marked cap-limited; §5.7 adds Progressive Search, RoomEnv and the two failed source audits as boundaries; Observation 1 replaces Proposition 1 throughout. Tables 5–9 are the frozen full-n numbers. |
 | `paper-draft-appendix-2026-09-22.md` | New: gate C1–C8, augmentation A–D, replay oracles, frontier-model config, prompts v1/v2, actor settings, cost table (~$1,640 through 9/22 morning, before your runs), reproduction pointers. Needs your runs' costs and protocols added. |
 | `paper-internal-review-2026-09-22.md` | New: items 1–12 from the morning pass, items 13–18 added after the merge (attribution, withdrawn statements, Procedure A, v2 rows, new boundaries, open questions for Yujia). |
 | `full-status-method-experiments-paper-2026-09-21.md` | Your correction header kept verbatim; a "Reconciliation" section inserted right after it with the active six-point claim set; §4.9 holds the frozen tables; §7 plan and §8 files updated. |
@@ -56,7 +56,6 @@ rule, not as a replacement for the 190-episode panels.
 
 ## 5. Next on this side (in order)
 
-1. Reconcile the experiments draft (§5.2 identification with Procedure A table and the complete-graph control; rename
-   "structure" arms to "instance links + parser"; v2 rows with cap rates; boundaries from your audit).
-2. Add your protocols and costs to the appendix.
-3. Commit; push once the token is restored.
+1. Add your protocols and costs (Progressive Search, RoomEnv, read-gate, UnCLe) to the appendix; only you have the
+   exact configurations, so a two-line pointer per experiment from you would be enough.
+2. Push once the token is restored (all work is committed locally through c0316f2 and the commit after it).
